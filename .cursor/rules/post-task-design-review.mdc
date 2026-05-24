@@ -1,0 +1,82 @@
+---
+description: Na elke voltooide opdracht — design/UX/UI-review en verbeteringen binnen huisstijl
+alwaysApply: true
+---
+
+# Post-task design review (Preludens)
+
+## Wanneer
+
+Zodra de **primaire opdracht** klaar, getest en (indien van toepassing) gemerged naar `main` is, start **altijd** een aparte design-reviewronde — ook als de opdracht geen visuele wijziging leek te zijn.
+
+## Design-review agent starten
+
+1. Start een **aparte agent** (Task-tool, `subagent_type: generalPurpose` of browser-ondersteunde review) met als enige focus: graphic, UX en UI van de gewijzigde pagina('s).
+2. Bekijk elke gewijzigde pagina via browser-MCP of lokaal (`bundle exec jekyll serve`).
+3. Rapporteer kort wat je ziet vóór je wijzigingen doorvoert.
+
+## Verplichte check: desktop én mobiel
+
+**Elke design-review moet expliciet beide viewports controleren.** Geen eindverslag zonder desktop- én mobiel-screenshot of -snapshot.
+
+| Viewport | Breedte | Doel |
+|----------|---------|------|
+| Desktop | ≥ 1280px | Professionele eerste indruk, hiërarchie, witruimte, navigatie |
+| Mobiel | 375px (iPhone) of 390px | Leesbaarheid, touch targets, geen afgeknipte content |
+
+### Checklist per viewport
+
+Beoordeel of de pagina **goed én professioneel** oogt:
+
+- **Layout:** geen overlappende elementen, geen horizontale scroll, consistente uitlijning
+- **Typografie:** koppen en bodytekst leesbaar; geen te kleine font sizes op mobiel
+- **Navigatie:** header/menu bruikbaar (hamburger op mobiel indien van toepassing)
+- **Afbeeldingen & media:** correct geschaald, niet pixelig of afgesneden
+- **CTA's & knoppen:** volledig zichtbaar, voldoende contrast, min. 44px hoog op mobiel
+- **Footer & secties:** geen lege gaten of gebroken spacing tussen breakpoints
+- **Algemeen:** oogt het als een professionele merksite — niet als een half-af prototype?
+
+Bij afwijkingen tussen desktop en mobiel: **fix vóór afronding**, tenzij de gebruiker expliciet vraagt om te wachten.
+
+Gebruik browser-resize, `browser_take_screenshot`, of CDP viewport-instellingen; scroll door de hele pagina op beide formaten.
+
+## Analyse — waar op letten
+
+Beoordeel systematisch aan de hand van gangbare methodologieën:
+
+| Domein | Methodologie / checklist |
+|--------|--------------------------|
+| Visuele hiërarchie | Typografische schaal, contrast, witruimte, scanbaarheid (F-/Z-patroon) |
+| UX | Duidelijke CTA's, leesvolgorde, cognitieve belasting, feedback op interactie |
+| UI | Consistentie in spacing, radius, schaduwen, knoppen, kaarten, states (hover/focus) |
+| Toegankelijkheid | WCAG 2.2 AA: contrast, focus-visible, semantiek, touch targets (min. 44px) |
+| Responsive | Mobile-first breakpoints, geen horizontale scroll, leesbare regellengte |
+| Performance | Geen zware assets; bestaande CSS-variabelen en patronen hergebruiken |
+
+Prioriteer verbeteringen met de hoogste impact op leesbaarheid, vertrouwen en conversie (contact / play / diensten).
+
+## Huisstijl Preludens — harde grenzen
+
+Alle implementaties blijven binnen de bestaande merkidentiteit (**speels, helder, rustig**):
+
+- **Kleuren & tokens:** uitsluitend CSS-variabelen uit `assets/css/main.scss` (`:root`) — geen ad-hoc HEX-waarden.
+- **Typografie:** `--font-display` (Outfit) voor koppen, `--font-body` (DM Sans) voor lopende tekst.
+- **Spacing & vorm:** `--space-*`, `--radius-*`, `--shadow-*` — geen willekeurige px-waarden waar tokens bestaan.
+- **Accenten:** coral/gold/mint/lilac spaarzaam en doelgericht; cream-achtergrond behouden als basis.
+- **Geen** generieke “AI-landingpage”-look: geen nieuwe fonts, geen neon-gradiënten, geen glassmorphism tenzij al in het design aanwezig.
+
+Lees `assets/css/main.scss` en bestaande componenten in `_includes/` vóór je nieuwe patronen introduceert.
+
+## Implementatie
+
+- Voer **concrete, kleine verbeteringen** door in `assets/css/main.scss`, `_layouts/`, `_includes/` of pagina-markdown — alleen wat de review rechtvaardigt.
+- Hergebruik bestaande classes en BEM-achtige patronen; geen parallelle design systemen.
+- Test visueel na elke wijziging op **desktop én mobiel**; fix regressies direct.
+
+## Afronding
+
+Sluit de design-reviewronde af volgens `.cursor/rules/github-pages-workflow.mdc`:
+
+- Merge naar `main` als er wijzigingen zijn.
+- Vermeld in het eindverslag expliciet **Design review:** korte samenvatting van bevindingen + doorgevoerde verbeteringen, inclusief bevestiging dat desktop (≥1280px) en mobiel (~375px) professioneel zijn gecontroleerd.
+- Geef live links naar de aangepaste pagina('s).

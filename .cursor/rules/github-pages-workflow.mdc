@@ -42,6 +42,10 @@ Sluit **elk eindverslag** af met:
 
 Wacht na push op `main` kort (~1 min) op de deploy voordat je live links verifieert.
 
+## Design review na afronding
+
+Na de primaire opdracht: start altijd de design/UX/UI-reviewronde volgens `.cursor/rules/post-task-design-review.mdc` vóór het definitieve eindverslag.
+
 ### Voorbeeld eindverslag
 
 > **Live:** https://preludens.github.io/preludens-website/  
