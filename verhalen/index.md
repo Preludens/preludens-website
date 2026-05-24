@@ -3,6 +3,7 @@ layout: default
 title: Verhalen
 description: Klantverhalen van teams die met Preludens leren door te spelen.
 permalink: /verhalen/
+body_class: page-verhalen
 ---
 
 <section class="page-hero">
@@ -16,34 +17,34 @@ permalink: /verhalen/
   </div>
 </section>
 
-<section class="section">
+<section class="section section--alt">
   <div class="container">
-    <div class="story-grid">
+    <div class="section-header">
+      <span class="section-label">Opdrachtgevers</span>
+      <h2>Samen leren door te spelen</h2>
+      <p>
+        Elk verhaal laat zien hoe we een concrete vraag vertalen naar interactieve leerervaringen
+        met merkbare impact.
+      </p>
+    </div>
+
+    <div class="story-grid" role="list">
       {% assign verhalen = site.verhalen | sort: "order" %}
       {% for verhaal in verhalen %}
-        <a class="story-card" href="{{ verhaal.url | relative_url }}">
-          {% if verhaal.client_logo %}
-            <div class="story-card-logo">
-              <img
-                src="{{ '/assets/images/clients/' | append: verhaal.client_logo | relative_url }}"
-                alt="{{ verhaal.client }}"
-                width="160"
-                height="64"
-                loading="lazy"
-                decoding="async"
-              >
-            </div>
-          {% endif %}
-          <p class="story-card-meta">{{ verhaal.client }} · {{ verhaal.project }}</p>
-          <h2 class="story-card-title">{{ verhaal.title }}</h2>
-          <p class="story-card-summary">{{ verhaal.summary }}</p>
-          <span class="story-card-link">Lees het verhaal →</span>
-        </a>
+        <div role="listitem">
+          {% include story-card.html verhaal=verhaal index=forloop.index0 %}
+        </div>
       {% endfor %}
     </div>
-    <p class="story-cta">
-      Wil je jouw verhaal delen of referenties bespreken?
-      <a href="{{ '/contact/' | relative_url }}">Mail ons</a>.
-    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Jouw verhaal hier?</h2>
+      <p>Wil je jouw traject delen of referenties bespreken? We denken graag mee.</p>
+      <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Neem contact op</a>
+    </div>
   </div>
 </section>
