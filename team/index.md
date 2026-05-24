@@ -18,28 +18,18 @@ permalink: /team/
 <section class="section">
   <div class="container">
     <p class="prose">
-      Ons team groeit mee met elke opdracht. Hieronder een overzicht van rollen — vul namen en foto's aan wanneer jullie klaar zijn om te publiceren.
+      Maak kennis met de mensen achter Preludens: een compact team dat spel, verhaal en technologie samenbrengt in leerervaringen die blijven hangen.
     </p>
     <div class="team-grid" style="margin-top: var(--space-lg);">
       <div class="team-member">
-        <div class="avatar" aria-hidden="true">S</div>
-        <h3>Story &amp; Concept</h3>
-        <p>Verhaallijnen, scenario's en stripverhalen</p>
+        <div class="avatar" aria-hidden="true">DG</div>
+        <h3>Daan Groen</h3>
+        <p>Founder &amp; Game Designer</p>
       </div>
       <div class="team-member">
-        <div class="avatar" aria-hidden="true">G</div>
-        <h3>Game Design</h3>
-        <p>MicroGames, mechanics en feedback</p>
-      </div>
-      <div class="team-member">
-        <div class="avatar" aria-hidden="true">L</div>
-        <h3>Learning</h3>
-        <p>Leerdoelen, gedrag en impactmeting</p>
-      </div>
-      <div class="team-member">
-        <div class="avatar" aria-hidden="true">T</div>
-        <h3>Tech &amp; Product</h3>
-        <p>Online ervaringen en data</p>
+        <div class="avatar" aria-hidden="true">JWM</div>
+        <h3>Jan-Willem Manenschijn</h3>
+        <p>Chief Technology Officer</p>
       </div>
     </div>
     <p style="margin-top: var(--space-lg);">
