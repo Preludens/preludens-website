@@ -1,0 +1,58 @@
+---
+layout: default
+---
+<section class="page-hero page-hero--compact">
+  <div class="container page-hero-inner">
+    <p class="hero-eyebrow"><a href="{{ '/verhalen/' | relative_url }}">Verhalen</a></p>
+  </div>
+</section>
+
+<article class="section">
+  <div class="container verhaal-detail">
+    <header class="verhaal-header">
+      <div class="verhaal-client">
+        {% if page.client_logo %}
+          <img
+            class="verhaal-client-logo"
+            src="{{ '/assets/images/clients/' | append: page.client_logo | relative_url }}"
+            alt="{{ page.client }}"
+            width="200"
+            height="80"
+            loading="lazy"
+            decoding="async"
+          >
+        {% endif %}
+        <p class="verhaal-meta">{{ page.client }} · {{ page.project }}</p>
+      </div>
+      <h1>{{ page.title }}</h1>
+      <p class="verhaal-lead">{{ page.summary }}</p>
+    </header>
+
+    {% if page.highlights %}
+    <ul class="verhaal-highlights">
+      {% for point in page.highlights %}
+        <li>{{ point }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="verhaal-blocks">
+      <section class="verhaal-block">
+        <h2>Vraag vanuit de klant</h2>
+        <p>{{ page.vraag }}</p>
+      </section>
+      <section class="verhaal-block">
+        <h2>Onze oplossing</h2>
+        <p>{{ page.oplossing }}</p>
+      </section>
+      <section class="verhaal-block verhaal-block--result">
+        <h2>Eindresultaat</h2>
+        <p>{{ page.resultaat }}</p>
+      </section>
+    </div>
+
+    <p class="verhaal-back">
+      <a href="{{ '/verhalen/' | relative_url }}">← Alle verhalen</a>
+    </p>
+  </div>
+</article>

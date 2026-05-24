@@ -31,12 +31,22 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
 
+collections:
+  verhalen:
+    output: true
+    permalink: /verhalen/:name/
+
 defaults:
   - scope:
       path: ""
       type: "pages"
     values:
       layout: default
+  - scope:
+      path: ""
+      type: "verhalen"
+    values:
+      layout: verhaal
 
 social:
   email: info@preludens.nl

@@ -39,6 +39,10 @@ permalink: /play/
       In combinatie met MicroGames en verhalende scenario's wordt leren geen passieve verplichting,
       maar een actieve ervaring waarin betekenis, emotie en toepassing samenkomen.
     </p>
+
+    <p>
+      <a href="{{ '/play/in-de-praktijk/' | relative_url }}">Bekijk voorbeelden van Play in de praktijk →</a>
+    </p>
   </div>
 </section>
 
