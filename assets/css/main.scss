@@ -695,7 +695,7 @@ p { margin: 0 0 var(--space-sm); }
 .team-grid {
   display: grid;
   gap: var(--space-md);
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .team-member {
@@ -704,6 +704,25 @@ p { margin: 0 0 var(--space-sm); }
   background: var(--color-white);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
+
+  h3 {
+    margin-bottom: var(--space-xs);
+  }
+
+  .team-role {
+    margin: 0 0 var(--space-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-lilac);
+  }
+
+  .team-bio {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--color-ink-soft);
+    text-align: left;
+  }
 
   .avatar {
     width: 5rem;

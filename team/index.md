@@ -26,14 +26,24 @@ permalink: /team/
           <img src="{{ '/assets/images/team/daan-groen.jpg' | relative_url }}" alt="Daan Groen" width="200" height="200" loading="lazy" decoding="async">
         </div>
         <h3>Daan Groen</h3>
-        <p>Founder &amp; Game Designer</p>
+        <p class="team-role">Founder &amp; Game Designer</p>
+        <p class="team-bio">
+          Daan zoekt zelden de eerste oplossing — hij graaft dieper naar creatieve antwoorden op procesvraagstukken,
+          met spelmechanismen en win-win denken als kompas. Met meer dan vijftien jaar ervaring in serious games
+          begeleidt hij organisaties die spel en verhaal doordachter willen inzetten voor meer impact bij leren en veranderen.
+        </p>
       </div>
       <div class="team-member">
         <div class="avatar">
           <img src="{{ '/assets/images/team/jan-willem-manenschijn.jpg' | relative_url }}" alt="Jan-Willem Manenschijn" width="200" height="200" loading="lazy" decoding="async">
         </div>
         <h3>Jan-Willem Manenschijn</h3>
-        <p>Chief Technology Officer</p>
+        <p class="team-role">Chief Technology Officer</p>
+        <p class="team-bio">
+          Enthousiaste creatieveling met een passie voor onderwijs, techniek en puzzels. Hij maakt vage ideeën concreet
+          met snelle prototypes en zet mensen in beweging — van escape rooms tot serious games. Bij Preludens bouwt hij
+          de techniek en het ontwerpproces dat saaie e-learning omzet in verhalende, interactieve leerervaringen.
+        </p>
       </div>
     </div>
     <p style="margin-top: var(--space-lg);">
