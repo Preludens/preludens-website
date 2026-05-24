@@ -1,0 +1,48 @@
+---
+description: PR-merge naar main en GitHub Pages-links in elk eindverslag
+alwaysApply: true
+---
+
+# GitHub Pages & PR-workflow (Preludens)
+
+## PR's mergen naar main
+
+- Werk op een feature branch (`cursor/<beschrijving>-a370`), commit en push.
+- Open een PR naar `main` indien nodig voor review/traceability.
+- **Merge de wijzigingen altijd naar `main`** zodra de taak klaar en getest is — laat geen afgeronde PR's ongemerged staan (tenzij de gebruiker expliciet vraagt om te wachten).
+- Na merge: `git checkout main && git pull origin main` en bevestig dat `main` op GitHub up-to-date is.
+
+## Deploy
+
+- De site wordt via GitHub Actions gedeployed na push naar `main` (workflow: `.github/workflows/pages.yml`).
+- **GitHub Pages-basis-URL:** https://preludens.github.io/preludens-website/
+- Bij actieve custom domain: https://preludens.nl/ (zelfde paden, zonder `/preludens-website` prefix).
+
+## Eindverslag — verplichte links
+
+Sluit **elk eindverslag** af met:
+
+1. **Link naar de live site (basis):**  
+   https://preludens.github.io/preludens-website/
+
+2. **Link(s) naar de specifieke pagina('s) waar inhoud is gewijzigd** — afgeleid van gewijzigde bestanden:
+
+| Bestand / map | Live URL |
+|---------------|----------|
+| `index.md` | https://preludens.github.io/preludens-website/ |
+| `play/index.md` | https://preludens.github.io/preludens-website/play/ |
+| `diensten/index.md` | https://preludens.github.io/preludens-website/diensten/ |
+| `team/index.md` | https://preludens.github.io/preludens-website/team/ |
+| `impact/index.md` | https://preludens.github.io/preludens-website/impact/ |
+| `verhalen/index.md` | https://preludens.github.io/preludens-website/verhalen/ |
+| `contact/index.md` | https://preludens.github.io/preludens-website/contact/ |
+| Alleen `_layouts/`, `_includes/`, `assets/` | basis-URL + alle pagina's die visueel geraakt worden (minimaal home) |
+
+3. **Optioneel:** link naar de laatste GitHub Actions run of PR, als relevant.
+
+Wacht na push op `main` kort (~1 min) op de deploy voordat je live links verifieert.
+
+### Voorbeeld eindverslag
+
+> **Live:** https://preludens.github.io/preludens-website/  
+> **Gewijzigde pagina:** https://preludens.github.io/preludens-website/diensten/
