@@ -44,3 +44,10 @@ Het bestand `CNAME` wijst naar `preludens.nl`. Stel in GitHub Pages onder **Cust
 ## Kleuren aanpassen
 
 Het palet staat bovenaan `assets/css/main.scss` onder `:root`. Pas de HEX-waarden aan zodat ze exact overeenkomen met jullie Canva-huisstijl.
+## Agent-workflow (Cursor)
+
+Zie `.cursor/rules/github-pages-workflow.mdc`:
+
+- PR's na afronding **mergen naar `main`**
+- Elk eindverslag bevat een link naar **https://preludens.github.io/preludens-website/** plus de specifieke pagina('s) die zijn aangepast
+
