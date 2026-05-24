@@ -28,6 +28,10 @@
             {% if page.url == "/" or page.url == "/index.html" %}
               {% assign is_active = true %}
             {% endif %}
+          {% elsif path == "/verhalen/" and page.url contains "/verhalen/" %}
+            {% assign is_active = true %}
+          {% elsif path == "/play/" and page.url contains "/play/" %}
+            {% assign is_active = true %}
           {% elsif page.url == path %}
             {% assign is_active = true %}
           {% endif %}
