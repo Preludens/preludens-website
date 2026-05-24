@@ -40,3 +40,10 @@ verhaal:
   all_stories: "← All stories"
   read_story: "Read the story"
   read_story_aria: "Read the story: %s, %s"
+
+play_blog:
+  breadcrumb: "Blog"
+  all_posts: "← All Play articles"
+  back_to_play: "← Back to Play"
+  read_post: "Read the article"
+  read_post_aria: "Read the article: %s"

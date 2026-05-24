@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{% include locale.html %}
+<section class="page-hero page-hero--compact">
+  <div class="container page-hero-inner">
+    <p class="hero-eyebrow">
+      <a href="{{ '/play/' | relative_url }}">{{ t.nav.play }}</a>
+      ·
+      <a href="{{ '/play/blog/' | relative_url }}">{{ t.play_blog.breadcrumb }}</a>
+    </p>
+  </div>
+</section>
+
+<article class="section">
+  <div class="container play-blog-detail">
+    <header class="play-blog-header">
+      {% if page.date %}
+        <time class="play-blog-date" datetime="{{ page.date | date: '%Y-%m-%d' }}">
+          {{ page.date | date: "%-d %B %Y" }}
+        </time>
+      {% endif %}
+      <h1>{{ page.title }}</h1>
+      {% if page.summary %}
+        <p class="play-blog-lead">{{ page.summary }}</p>
+      {% endif %}
+    </header>
+
+    <div class="prose play-blog-body">
+      {{ content }}
+    </div>
+
+    <p class="play-blog-back">
+      <a href="{{ '/play/blog/' | relative_url }}">{{ t.play_blog.all_posts }}</a>
+      ·
+      <a href="{{ '/play/' | relative_url }}">{{ t.play_blog.back_to_play }}</a>
+    </p>
+  </div>
+</article>

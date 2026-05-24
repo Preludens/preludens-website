@@ -49,6 +49,9 @@ collections:
   verhalen:
     output: true
     permalink: /verhalen/:name/
+  play_blog:
+    output: true
+    permalink: /play/blog/:name/
 
 defaults:
   - scope:
@@ -61,6 +64,11 @@ defaults:
       type: "verhalen"
     values:
       layout: verhaal
+  - scope:
+      path: ""
+      type: "play_blog"
+    values:
+      layout: play-blog
 
 social:
   email: info@preludens.nl

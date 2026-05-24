@@ -1115,3 +1115,113 @@ p { margin: 0 0 var(--space-sm); }
 .verhaal-back {
   margin-top: var(--space-lg);
 }
+
+/* Play blog */
+.play-blog-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-md);
+}
+
+.play-blog-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover,
+  &:focus-within {
+    border-color: var(--color-coral);
+    box-shadow: var(--shadow-card);
+  }
+}
+
+.play-blog-card__link {
+  display: block;
+  padding: var(--space-md);
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-coral);
+    outline-offset: 3px;
+  }
+}
+
+.play-blog-card__date {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-lilac);
+}
+
+.play-blog-card__title {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.play-blog-card__excerpt {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-ink-soft);
+  line-height: 1.55;
+}
+
+.play-blog-card__cta {
+  font-weight: 600;
+  color: var(--color-coral);
+  font-size: 0.95rem;
+}
+
+.play-blog-detail {
+  max-width: 42rem;
+}
+
+.play-blog-header {
+  margin-bottom: var(--space-lg);
+}
+
+.play-blog-date {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-lilac);
+}
+
+.play-blog-lead {
+  margin: var(--space-sm) 0 0;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--color-ink-soft);
+}
+
+.play-blog-body {
+  blockquote {
+    margin: var(--space-md) 0;
+    padding: var(--space-sm) var(--space-md);
+    border-left: 3px solid var(--color-mint);
+    background: rgba(61, 204, 199, 0.08);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-style: italic;
+    color: var(--color-ink-soft);
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.play-blog-back {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}

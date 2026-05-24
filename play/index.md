@@ -42,6 +42,8 @@ permalink: /play/
     </p>
 
     <p>
+      <a href="{{ '/play/blog/' | relative_url }}">Lees de Play-blog →</a>
+      ·
       <a href="{{ '/play/in-de-praktijk/' | relative_url }}">Bekijk voorbeelden van Play in de praktijk →</a>
     </p>
   </div>
