@@ -1,7 +1,8 @@
 skip_link: "Skip to content"
 menu: "Menu"
-lang_switch: "Nederlands"
-lang_switch_aria: "Switch to Dutch"
+lang_switch_group: "Language"
+lang_switch_aria_nl: "Switch to Dutch"
+lang_switch_aria_en: "Switch to English"
 
 nav:
   home: "Home"

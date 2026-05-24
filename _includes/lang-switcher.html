@@ -1,8 +1,18 @@
 {% include locale.html %}
-{% assign other_lang = "en" %}
-{% if locale == "en" %}
-  {% assign other_lang = "nl" %}
-{% endif %}
-{% assign other_permalink = page.permalink_lang[other_lang] | default: page.url %}
-{% capture lang_href %}{{ site.baseurl }}{% if other_lang != site.default_lang %}/{{ other_lang }}{% endif %}{% if other_permalink != '/' %}{{ other_permalink }}{% else %}/{% endif %}{% endcapture %}
-<a class="lang-switch" {% static_href %}href="{{ lang_href }}"{% endstatic_href %} hreflang="{{ other_lang }}" lang="{{ other_lang }}" aria-label="{{ t.lang_switch_aria }}">{{ t.lang_switch }}</a>
+{% assign langs = "nl,en" | split: "," %}
+<div class="lang-switch" role="group" aria-label="{{ t.lang_switch_group }}">
+  {% for lang in langs %}
+    {% assign lang_permalink = page.permalink_lang[lang] | default: page.url %}
+    {% capture lang_href %}{{ site.baseurl }}{% if lang != site.default_lang %}/{{ lang }}{% endif %}{% if lang_permalink != '/' %}{{ lang_permalink }}{% else %}/{% endif %}{% endcapture %}
+    {% if lang == locale %}
+      <span class="lang-switch__option is-active" aria-current="true">{{ lang | upcase }}</span>
+    {% else %}
+      {% if lang == "nl" %}
+        {% assign lang_aria = t.lang_switch_aria_nl %}
+      {% else %}
+        {% assign lang_aria = t.lang_switch_aria_en %}
+      {% endif %}
+      <a class="lang-switch__option" {% static_href %}href="{{ lang_href }}"{% endstatic_href %} hreflang="{{ lang }}" lang="{{ lang }}" aria-label="{{ lang_aria }}">{{ lang | upcase }}</a>
+    {% endif %}
+  {% endfor %}
+</div>
