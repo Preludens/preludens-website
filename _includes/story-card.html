@@ -1,0 +1,42 @@
+{% comment %}
+  Case-study teaser card. Pass: verhaal (collection item), index (0-based for accent rotation).
+{% endcomment %}
+{% assign accent_index = include.index | modulo: 4 %}
+{% assign accents = "coral,gold,mint,lilac" | split: "," %}
+{% assign accent = accents[accent_index] %}
+{% assign hook = include.verhaal.highlights | first %}
+
+<article class="story-card story-card--{{ accent }}">
+  <a
+    class="story-card__link"
+    href="{{ include.verhaal.url | relative_url }}"
+    aria-label="Lees het verhaal: {{ include.verhaal.title }}, {{ include.verhaal.client }}"
+  >
+    <div class="story-card__header">
+      {% if include.verhaal.client_logo %}
+        <img
+          class="story-card__logo"
+          src="{{ '/assets/images/clients/' | append: include.verhaal.client_logo | relative_url }}"
+          alt=""
+          width="160"
+          height="64"
+          loading="lazy"
+          decoding="async"
+        >
+      {% endif %}
+      <span class="story-card__badge">{{ include.verhaal.project }}</span>
+    </div>
+    <div class="story-card__body">
+      <p class="story-card__client">{{ include.verhaal.client }}</p>
+      <h2 class="story-card__title">{{ include.verhaal.title }}</h2>
+      {% if hook %}
+        <p class="story-card__hook">{{ hook }}</p>
+      {% endif %}
+      <p class="story-card__excerpt">{{ include.verhaal.summary }}</p>
+    </div>
+    <footer class="story-card__footer">
+      <span class="story-card__cta">Lees het verhaal</span>
+      <span class="story-card__arrow" aria-hidden="true">→</span>
+    </footer>
+  </a>
+</article>
