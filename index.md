@@ -11,11 +11,11 @@ body_class: page-home
       <p class="hero-eyebrow">Challenge · activate · motivate</p>
       <h1>Activeer je team en bereid ze voor op de toekomst.</h1>
       <p class="hero-lead">
-        Wij bereiden teams voor op de werkelijkheid van morgen door ze nu al ervaringen te bieden die ertoe doen.
-        Via storytelling en MicroGames zetten we medewerkers in realistische situaties waar ze moeten kiezen, handelen en leren.
+        Preludens richt zich op het voorbereiden van een brede doelgroep op toekomstige veranderingen en nieuwe kennis.
+        In plaats van passieve kennisoverdracht creëren we leerervaringen die aansluiten bij de praktijk en vooruitkijken naar wat komt.
       </p>
       <p>
-        We dagen hen uit, activeren we hun denkkracht en motiveren we hen om sterker en zelfverzekerder te presteren wanneer het er écht op aankomt.
+        Zo helpen we deelnemers om niet alleen te begrijpen wat er verandert, maar vooral wat dit betekent voor hun eigen handelen.
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Start met een GameStorm</a>
@@ -33,50 +33,90 @@ body_class: page-home
   </div>
 </section>
 
-<section class="section section--alt" id="online-focus">
+<section class="section section--alt" id="strategie">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Online focus</span>
-      <h2>Interactieve stories die teams uitdagen, activeren en motiveren</h2>
-      <p>
-        Bij Preludens geloven we dat leren impactvol én natuurlijk moet zijn. Daarom ontwerpen we interactieve leerervaringen die mensen écht raken:
-        relevant voor hun werk, visueel opgebouwd en gericht op gedragsverandering.
-      </p>
+      <span class="section-label">Samenwerking</span>
+      <h2>Betrouwbare partner in de educatieve sector</h2>
     </div>
     <div class="prose">
       <p>
-        We zetten jouw lesmateriaal om in een krachtige verhaallijn en voegen MicroGames toe: korte, interactieve uitdagingen die kennis activeren en direct feedback geven.
-        Storytelling zorgt voor context en herkenning, MicroGames motiveren en versterken retentie, en data helpt om gericht te verbeteren.
+        Alle projecten worden gerealiseerd met terugkerende klanten. Dit bevestigt een gezonde prijs-kwaliteitverhouding van onze producten en diensten
+        en benadrukt dat Preludens wordt gezien als een betrouwbare samenwerkingspartner.
       </p>
       <p>
-        Zo wordt leren geen verplichting, maar een inspirerende reis die uitdaagt, activeert en zichtbaar resultaat oplevert.
+        Binnen de educatieve sector onderscheiden we twee typen opdrachten: doorlopende projecten en eenmalige (innovatie)projecten.
+        Eenmalige projecten kennen doorgaans grotere budgetten, maar zijn minder voorspelbaar en lastiger te verkrijgen.
+        Doorlopende projecten hebben een lager budget, maar bieden meer stabiliteit en continuïteit.
+      </p>
+      <p>
+        De producten MicroGame Stories en Short Stories sluiten hier goed op aan. Door de relatief lage kosten en hoge schaalbaarheid zijn ze geschikt
+        voor langdurige samenwerking, met voldoende inhoud om relaties duurzaam uit te bouwen.
+        De strategische focus ligt daarom op toegankelijke verkoopprijzen in combinatie met een sterke verlaging van interne kosten,
+        zodat een gezonde en schaalbare marge ontstaat.
       </p>
     </div>
   </div>
 </section>
 
-<section class="section" id="diensten-preview">
+<section class="section" id="visie-preview">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Wat we doen</span>
-      <h2>Leerervaringen met verhaal, spel en impact</h2>
+      <span class="section-label">Visie</span>
+      <h2>Leerervaringen die aansluiten bij de praktijk</h2>
+    </div>
+    <ul class="feature-list">
+      <li>Een brede doelgroep voorbereiden op komende veranderingen en nieuwe kennis</li>
+      <li>Korte, visuele stripverhalen om de inleving te versterken</li>
+      <li>Uitdagingen voor activatie, motivatie en herhaling</li>
+      <li>Directe feedback en voortgang voor dieper inzicht</li>
+      <li>Beschikbaar in de eigen leeromgeving</li>
+    </ul>
+    <div class="prose">
+      <p>
+        De kern van onze aanpak ligt in korte, visuele stripverhalen die zorgen voor herkenning en inleving.
+        Door verhalen te combineren met uitdagingen (MicroGames) activeren we deelnemers continu: ze maken keuzes, worden gemotiveerd om verder te gaan
+        en worden gestimuleerd om kennis te herhalen. Dit zorgt voor een leerervaring die niet alleen begrijpelijk is, maar ook blijft hangen.
+      </p>
+      <p>
+        Door het geven van directe feedback en inzicht in voortgang ontstaat verdieping tijdens het leerproces.
+        De volledige leerervaring is beschikbaar in de eigen leeromgeving, waardoor deze eenvoudig te integreren is in bestaande processen
+        en direct toepasbaar wordt in de praktijk.
+      </p>
+      <p><a href="{{ '/play/' | relative_url }}">Lees meer over onze visie →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="diensten-preview">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Producten</span>
+      <h2>MicroGame Stories en Short Stories</h2>
+      <p>
+        Twee schaalbare producten voor langdurige samenwerking: van uitgebreide leertrajecten tot korte, krachtige interventies.
+      </p>
     </div>
     <div class="card-grid">
       <article class="card card--coral">
         <span class="card-icon" aria-hidden="true">📖</span>
         <h3>MicroGame Stories</h3>
         <p>
-          Korte, verhalende online trainingen waarin medewerkers oefenen in realistische situaties — verrijkt met stripverhalen en krachtige MicroGames die kennis activeren en motivatie vergroten.
+          Visuele storytelling om casuïstiek inzichtelijk te maken. Per leerdoel één hoofdstuk en één MicroGame,
+          samen een storyline van circa zeven hoofdstukken en vijf MicroGames.
         </p>
+        <p class="card-meta">Circa € 10.000 per storyline</p>
         <a href="{{ '/diensten/#microgame-stories' | relative_url }}">Meer over MicroGame Stories</a>
       </article>
       <article class="card card--gold">
         <span class="card-icon" aria-hidden="true">⚖️</span>
-        <h3>Dilemma Storytelling</h3>
+        <h3>Short Stories</h3>
         <p>
-          Realistische scenario’s waarin lastige keuzes en directe gevolgen besluitvaardigheid en inzicht versterken — zonder één juist antwoord.
+          Compacte storytelling in enkele slides met herkenbare dilemma's. De speler maakt keuzes met verschillende uitkomsten
+          en balanceert tussen tijdsdruk, onvoorspelbaarheid en interactie met collega's.
         </p>
-        <a href="{{ '/diensten/#dilemma-storytelling' | relative_url }}">Meer over Dilemma Stories</a>
+        <p class="card-meta">Circa € 1.500 per short story</p>
+        <a href="{{ '/diensten/#short-stories' | relative_url }}">Meer over Short Stories</a>
       </article>
       <article class="card card--mint">
         <span class="card-icon" aria-hidden="true">🎯</span>
@@ -120,21 +160,22 @@ body_class: page-home
 <section class="section" id="play-preview">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">What we do</span>
-      <h2>In de wereld van Play</h2>
-      <p>
-        We bereiden teams voor op de toekomst door kennis en besluitvorming te laten ervaren nog vóór het een probleem wordt.
-      </p>
+      <span class="section-label">Krachten</span>
+      <h2>Waarom Preludens</h2>
     </div>
+    <ul class="feature-list">
+      <li>Passie voor product en dienst</li>
+      <li>Autoriteit op het gebied van MicroGames</li>
+      <li>Lage kosten versus grote impact</li>
+      <li>Innovatie en professioneel product</li>
+      <li>Modulaire aanpak van kennis</li>
+    </ul>
     <div class="prose">
       <p>
-        In <em>Homo Ludens</em> beschrijft Huizinga hoe spel een veilige, afgescheiden ruimte creëert — de magische cirkel — waarin fouten maken mag en nieuwsgierigheid wordt geactiveerd.
-        Dat is precies wat Preludens toepast: leerervaringen met duidelijke kaders waarin experimenteren en gedragsverandering mogelijk worden.
+        Tijdens salesgesprekken wordt onze passie en betrokkenheid consequent als onderscheidende factor ervaren.
+        Preludens beschikt over een sterke inhoudelijke basis, ondersteund door een lange staat van dienst en meerdere wetenschappelijke publicaties rondom onze aanpak.
       </p>
-      <p>
-        Storytelling biedt context en herkenning, MicroGames creëren heldere uitdagingen met directe feedback, en de combinatie van verhaal, actie en herhaling verankert kennis op een manier die aansluit bij hoe mensen écht leren.
-      </p>
-      <p><a href="{{ '/play/' | relative_url }}">Ontdek onze visie op Play →</a></p>
+      <p><a href="{{ '/impact/' | relative_url }}">Meer over onze krachten en impact →</a></p>
     </div>
   </div>
 </section>
