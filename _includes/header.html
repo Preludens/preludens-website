@@ -17,7 +17,7 @@
 
     <nav id="site-nav" class="site-nav" data-nav>
       <ul>
-        {% assign nav_items = "Home:/,Play:/play/,Diensten:/diensten/,Team:/team/,Impact:/impact/,Verhalen:/verhalen/,Contact:/contact/" | split: "," %}
+        {% assign nav_items = "Home:/,Visie:/play/,Diensten:/diensten/,Team:/team/,Impact:/impact/,Verhalen:/verhalen/,Contact:/contact/" | split: "," %}
         {% for item in nav_items %}
           {% assign parts = item | split: ":" %}
           {% assign label = parts[0] %}

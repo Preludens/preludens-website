@@ -691,6 +691,43 @@ p { margin: 0 0 var(--space-sm); }
   &--wide { max-width: none; }
 }
 
+.feature-list {
+  margin: 0 0 var(--space-md);
+  padding: 0;
+  list-style: none;
+  max-width: 42rem;
+
+  li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.65rem;
+    line-height: 1.5;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--color-coral);
+    }
+  }
+}
+
+.card-meta {
+  margin: 0 0 var(--space-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+}
+
+.service-detail .feature-list {
+  max-width: none;
+  margin-bottom: var(--space-md);
+}
+
 /* Team */
 .team-grid {
   display: grid;
