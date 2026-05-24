@@ -1,0 +1,42 @@
+title: Preludens
+tagline: Find the Game
+description: >-
+  Preludens bereidt teams voor op de toekomst met storytelling,
+  MicroGames en interactieve leerervaringen.
+url: https://preludens.nl
+baseurl: ""
+lang: nl
+email: info@preludens.nl
+
+permalink: pretty
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .bundle
+  - node_modules
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
+
+social:
+  email: info@preludens.nl

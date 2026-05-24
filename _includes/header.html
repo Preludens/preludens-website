@@ -1,0 +1,42 @@
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="logo" href="{{ '/' | relative_url }}" aria-label="Preludens – naar home">
+      <span class="logo-mark" aria-hidden="true">▶</span>
+      <span class="logo-text">
+        <strong>Preludens</strong>
+        <small>{{ site.tagline }}</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+      <span class="sr-only">Menu</span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" data-nav>
+      <ul>
+        {% assign nav_items = "Home:/,Play:/play/,Diensten:/diensten/,Team:/team/,Impact:/impact/,Verhalen:/verhalen/,Contact:/contact/" | split: "," %}
+        {% for item in nav_items %}
+          {% assign parts = item | split: ":" %}
+          {% assign label = parts[0] %}
+          {% assign path = parts[1] %}
+          {% assign href = path | relative_url %}
+          {% assign is_active = false %}
+          {% if path == "/" %}
+            {% if page.url == "/" or page.url == "/index.html" %}
+              {% assign is_active = true %}
+            {% endif %}
+          {% elsif page.url == path %}
+            {% assign is_active = true %}
+          {% endif %}
+          <li>
+            <a href="{{ href }}"{% if is_active %} aria-current="page"{% endif %}>{{ label }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <a class="btn btn-primary btn-sm nav-cta" href="{{ '/contact/' | relative_url }}">GameStorm</a>
+    </nav>
+  </div>
+</header>

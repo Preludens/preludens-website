@@ -1,0 +1,38 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo logo-footer" href="{{ '/' | relative_url }}">
+        <span class="logo-mark" aria-hidden="true">▶</span>
+        <span class="logo-text">
+          <strong>Preludens</strong>
+          <small>{{ site.tagline }}</small>
+        </span>
+      </a>
+      <p class="footer-tagline">Challenge · activate · motivate</p>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </div>
+
+    <div class="footer-links">
+      <h2>Navigatie</h2>
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/play/' | relative_url }}">Play</a></li>
+        <li><a href="{{ '/diensten/' | relative_url }}">Diensten</a></li>
+        <li><a href="{{ '/team/' | relative_url }}">Team</a></li>
+        <li><a href="{{ '/impact/' | relative_url }}">Impact</a></li>
+        <li><a href="{{ '/verhalen/' | relative_url }}">Verhalen</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-cta">
+      <h2>Start met spelen</h2>
+      <p>Wil je online leren omzetten in een verhaal dat raakt? Plan een GameStorm.</p>
+      <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Neem contact op</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; {{ 'now' | date: '%Y' }} Preludens. Alle rechten voorbehouden.</p>
+  </div>
+</footer>
