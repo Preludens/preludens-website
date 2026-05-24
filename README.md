@@ -9,7 +9,9 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Open [http://localhost:4000](http://localhost:4000).
+Open [http://localhost:4000/preludens-website/](http://localhost:4000/preludens-website/).
+
+De site staat op GitHub Pages onder **https://preludens.github.io/preludens-website/** (`baseurl: /preludens-website`). Bij een custom domain (`preludens.nl`) zet de deploy-workflow `baseurl` automatisch leeg.
 
 ## Deploy naar GitHub Pages
 

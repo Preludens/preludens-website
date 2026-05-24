@@ -3,8 +3,8 @@ tagline: Find the Game
 description: >-
   Preludens bereidt teams voor op de toekomst met storytelling,
   MicroGames en interactieve leerervaringen.
-url: https://preludens.nl
-baseurl: ""
+url: "https://preludens.github.io"
+baseurl: "/preludens-website"
 lang: nl
 email: info@preludens.nl
 
