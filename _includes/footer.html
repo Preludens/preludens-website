@@ -1,3 +1,4 @@
+{% include locale.html %}
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
@@ -13,26 +14,26 @@
     </div>
 
     <div class="footer-links">
-      <h2>Navigatie</h2>
+      <h2>{{ t.footer.navigation }}</h2>
       <ul>
-        <li><a href="{{ '/' | relative_url }}">Home</a></li>
-        <li><a href="{{ '/play/' | relative_url }}">Play</a></li>
-        <li><a href="{{ '/diensten/' | relative_url }}">Diensten</a></li>
-        <li><a href="{{ '/team/' | relative_url }}">Team</a></li>
-        <li><a href="{{ '/impact/' | relative_url }}">Impact</a></li>
-        <li><a href="{{ '/verhalen/' | relative_url }}">Verhalen</a></li>
-        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        <li><a href="{{ '/' | relative_url }}">{{ t.nav.home }}</a></li>
+        <li><a href="{{ '/play/' | relative_url }}">{{ t.nav.play }}</a></li>
+        <li><a href="{{ '/diensten/' | relative_url }}">{{ t.nav.diensten }}</a></li>
+        <li><a href="{{ '/team/' | relative_url }}">{{ t.nav.team }}</a></li>
+        <li><a href="{{ '/impact/' | relative_url }}">{{ t.nav.impact }}</a></li>
+        <li><a href="{{ '/verhalen/' | relative_url }}">{{ t.nav.verhalen }}</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}">{{ t.nav.contact }}</a></li>
       </ul>
     </div>
 
     <div class="footer-cta">
-      <h2>Start met spelen</h2>
-      <p>Wil je online leren omzetten in een verhaal dat raakt? Plan een GameStorm.</p>
-      <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Neem contact op</a>
+      <h2>{{ t.footer.start_playing }}</h2>
+      <p>{{ t.footer.start_playing_text }}</p>
+      <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">{{ t.cta.contact }}</a>
     </div>
   </div>
 
   <div class="container footer-bottom">
-    <p>&copy; {{ 'now' | date: '%Y' }} Preludens. Alle rechten voorbehouden.</p>
+    <p>&copy; {{ 'now' | date: '%Y' }} Preludens. {{ t.footer.rights }}</p>
   </div>
 </footer>

@@ -1,6 +1,7 @@
+{% include locale.html %}
 <header class="site-header" data-header>
   <div class="container header-inner">
-    <a class="logo" href="{{ '/' | relative_url }}" aria-label="Preludens – naar home">
+    <a class="logo" href="{{ '/' | relative_url }}" aria-label="Preludens – {% if locale == 'en' %}home{% else %}naar home{% endif %}">
       <span class="logo-mark" aria-hidden="true">▶</span>
       <span class="logo-text">
         <strong>Preludens</strong>
@@ -9,7 +10,7 @@
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
-      <span class="sr-only">Menu</span>
+      <span class="sr-only">{{ t.menu }}</span>
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>
@@ -17,22 +18,21 @@
 
     <nav id="site-nav" class="site-nav" data-nav>
       <ul>
-        {% assign nav_items = "Home:/,Play:/play/,Diensten:/diensten/,Team:/team/,Impact:/impact/,Verhalen:/verhalen/,Contact:/contact/" | split: "," %}
-        {% for item in nav_items %}
-          {% assign parts = item | split: ":" %}
-          {% assign label = parts[0] %}
-          {% assign path = parts[1] %}
+        {% assign nav_keys = "home,play,diensten,team,impact,verhalen,contact" | split: "," %}
+        {% for key in nav_keys %}
+          {% assign label = t.nav[key] %}
+          {% assign path = t.nav_paths[key] %}
           {% assign href = path | relative_url %}
           {% assign is_active = false %}
           {% if path == "/" %}
-            {% if page.url == "/" or page.url == "/index.html" %}
+            {% if page.url == "/" or page.url == "/index.html" or page.url == "/en/" or page.url == "/en/index.html" %}
               {% assign is_active = true %}
             {% endif %}
           {% elsif path == "/verhalen/" and page.url contains "/verhalen/" %}
             {% assign is_active = true %}
           {% elsif path == "/play/" and page.url contains "/play/" %}
             {% assign is_active = true %}
-          {% elsif page.url == path %}
+          {% elsif page.url == path or page.url == path | append: "index.html" %}
             {% assign is_active = true %}
           {% endif %}
           <li>
@@ -40,7 +40,10 @@
           </li>
         {% endfor %}
       </ul>
-      <a class="btn btn-primary btn-sm nav-cta" href="{{ '/contact/' | relative_url }}">GameStorm</a>
+      <div class="nav-actions">
+        {% include lang-switcher.html %}
+        <a class="btn btn-primary btn-sm nav-cta" href="{{ '/contact/' | relative_url }}">{{ t.cta.gamestorm }}</a>
+      </div>
     </nav>
   </div>
 </header>

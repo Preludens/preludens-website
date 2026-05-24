@@ -1,19 +1,19 @@
 ---
 layout: default
-lang: nl
-title: Verhalen
-description: Klantverhalen van teams die met Preludens leren door te spelen.
+lang: en
+title: Stories
+description: Client stories from teams who learn by playing with Preludens.
 permalink: /verhalen/
 body_class: page-verhalen
 ---
 
 <section class="page-hero">
   <div class="container page-hero-inner">
-    <p class="hero-eyebrow">Verhalen</p>
-    <h1>Verhalen die teams in beweging zetten</h1>
+    <p class="hero-eyebrow">Stories</p>
+    <h1>Stories that move teams forward</h1>
     <p>
-      Van e-learning naar een reis die uitdaagt, activeert en inspireert — dit zijn de verhalen
-      die we samen met opdrachtgevers schrijven.
+      From e-learning to a journey that challenges, activates, and inspires — these are the stories
+      we write together with our clients.
     </p>
   </div>
 </section>
@@ -21,11 +21,11 @@ body_class: page-verhalen
 <section class="section section--alt">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Opdrachtgevers</span>
-      <h2>Samen leren door te spelen</h2>
+      <span class="section-label">Clients</span>
+      <h2>Learning together through play</h2>
       <p>
-        Elk verhaal laat zien hoe we een concrete vraag vertalen naar interactieve leerervaringen
-        met merkbare impact.
+        Each story shows how we turn a concrete question into interactive learning experiences
+        with measurable impact.
       </p>
     </div>
 
@@ -46,9 +46,9 @@ body_class: page-verhalen
 <section class="section">
   <div class="container">
     <div class="cta-band">
-      <h2>Jouw verhaal hier?</h2>
-      <p>Wil je jouw traject delen of referenties bespreken? We denken graag mee.</p>
-      <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Neem contact op</a>
+      <h2>Your story here?</h2>
+      <p>Want to share your journey or discuss references? We are happy to think along.</p>
+      <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Get in touch</a>
     </div>
   </div>
 </section>

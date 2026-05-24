@@ -1,0 +1,8 @@
+{% include locale.html %}
+{% assign other_lang = "en" %}
+{% if locale == "en" %}
+  {% assign other_lang = "nl" %}
+{% endif %}
+{% assign other_permalink = page.permalink_lang[other_lang] | default: page.url %}
+{% capture lang_href %}{{ site.baseurl }}{% if other_lang != site.default_lang %}/{{ other_lang }}{% endif %}{% if other_permalink != '/' %}{{ other_permalink }}{% else %}/{% endif %}{% endcapture %}
+<a class="lang-switch" {% static_href %}href="{{ lang_href }}"{% endstatic_href %} hreflang="{{ other_lang }}" lang="{{ other_lang }}" aria-label="{{ t.lang_switch_aria }}">{{ t.lang_switch }}</a>

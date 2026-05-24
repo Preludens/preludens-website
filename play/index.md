@@ -1,5 +1,6 @@
 ---
 layout: default
+lang: nl
 title: Play
 description: Play als techniek voor een open mindset, intrinsieke motivatie en gedragsverandering.
 permalink: /play/

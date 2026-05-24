@@ -8,6 +8,18 @@ baseurl: "/preludens-website"
 lang: nl
 email: info@preludens.nl
 
+languages: ["nl", "en"]
+default_lang: "nl"
+exclude_from_localization:
+  - assets
+  - sitemap.xml
+  - CNAME
+  - .gitignore
+  - .github
+  - .cursor
+lang_from_path: true
+parallel_localization: true
+
 permalink: pretty
 
 markdown: kramdown
@@ -17,6 +29,7 @@ kramdown:
 
 sass:
   style: compressed
+  sourcemap: never
 
 exclude:
   - Gemfile
@@ -27,6 +40,7 @@ exclude:
   - node_modules
 
 plugins:
+  - jekyll-polyglot
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed

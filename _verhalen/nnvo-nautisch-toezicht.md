@@ -1,4 +1,6 @@
 ---
+lang: nl
+permalink: /verhalen/nnvo-nautisch-toezicht/
 title: Oefenen met keuzes in de praktijk van nautisch toezicht
 client: NNVO
 client_logo: nnvo.png

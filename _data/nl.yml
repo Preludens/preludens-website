@@ -1,0 +1,41 @@
+skip_link: "Ga naar inhoud"
+menu: "Menu"
+lang_switch: "English"
+lang_switch_aria: "Schakel naar Engels"
+
+nav:
+  home: "Home"
+  play: "Play"
+  diensten: "Diensten"
+  team: "Team"
+  impact: "Impact"
+  verhalen: "Verhalen"
+  contact: "Contact"
+
+nav_paths:
+  home: "/"
+  play: "/play/"
+  diensten: "/diensten/"
+  team: "/team/"
+  impact: "/impact/"
+  verhalen: "/verhalen/"
+  contact: "/contact/"
+
+cta:
+  gamestorm: "GameStorm"
+  contact: "Neem contact op"
+
+footer:
+  navigation: "Navigatie"
+  start_playing: "Start met spelen"
+  start_playing_text: "Wil je online leren omzetten in een verhaal dat raakt? Plan een GameStorm."
+  rights: "Alle rechten voorbehouden."
+
+verhaal:
+  breadcrumb: "Verhalen"
+  client_question: "Vraag vanuit de klant"
+  our_solution: "Onze oplossing"
+  result: "Eindresultaat"
+  all_stories: "← Alle verhalen"
+  read_story: "Lees het verhaal"
+  read_story_aria: "Lees het verhaal: %s, %s"

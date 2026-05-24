@@ -1,5 +1,6 @@
 ---
 layout: default
+lang: nl
 title: Diensten
 description: MicroGame Stories, Dilemma Storytelling en Game Thinking voor impactvol online leren.
 permalink: /diensten/

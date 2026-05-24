@@ -1,4 +1,6 @@
 ---
+lang: nl
+permalink: /verhalen/studium-co-wijzer/
 title: CO‑veiligheid begrijpelijk maken voor iedereen
 client: Studium
 client_logo: studium.png

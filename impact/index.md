@@ -1,5 +1,6 @@
 ---
 layout: default
+lang: nl
 title: Impact
 description: Zichtbaar resultaat door storytelling, MicroGames en data-gedreven verbetering.
 permalink: /impact/

@@ -1,5 +1,6 @@
 ---
 layout: default
+lang: nl
 title: Team
 description: Het team achter Preludens — storytelling, games en leren met impact.
 permalink: /team/

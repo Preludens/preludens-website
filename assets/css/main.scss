@@ -185,6 +185,29 @@ p { margin: 0 0 var(--space-sm); }
   }
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.lang-switch {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--color-coral);
+    border-color: var(--color-coral);
+  }
+}
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -259,6 +282,12 @@ p { margin: 0 0 var(--space-sm); }
       gap: 0.5rem;
     }
 
+    .nav-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .lang-switch { width: 100%; text-align: center; }
     .nav-cta { width: 100%; text-align: center; }
   }
 }

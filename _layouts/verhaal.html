@@ -1,9 +1,10 @@
 ---
 layout: default
 ---
+{% include locale.html %}
 <section class="page-hero page-hero--compact">
   <div class="container page-hero-inner">
-    <p class="hero-eyebrow"><a href="{{ '/verhalen/' | relative_url }}">Verhalen</a></p>
+    <p class="hero-eyebrow"><a href="{{ '/verhalen/' | relative_url }}">{{ t.verhaal.breadcrumb }}</a></p>
   </div>
 </section>
 
@@ -38,21 +39,21 @@ layout: default
 
     <div class="verhaal-blocks">
       <section class="verhaal-block">
-        <h2>Vraag vanuit de klant</h2>
+        <h2>{{ t.verhaal.client_question }}</h2>
         <p>{{ page.vraag }}</p>
       </section>
       <section class="verhaal-block">
-        <h2>Onze oplossing</h2>
+        <h2>{{ t.verhaal.our_solution }}</h2>
         <p>{{ page.oplossing }}</p>
       </section>
       <section class="verhaal-block verhaal-block--result">
-        <h2>Eindresultaat</h2>
+        <h2>{{ t.verhaal.result }}</h2>
         <p>{{ page.resultaat }}</p>
       </section>
     </div>
 
     <p class="verhaal-back">
-      <a href="{{ '/verhalen/' | relative_url }}">← Alle verhalen</a>
+      <a href="{{ '/verhalen/' | relative_url }}">{{ t.verhaal.all_stories }}</a>
     </p>
   </div>
 </article>

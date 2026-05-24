@@ -1,5 +1,6 @@
 ---
 layout: default
+lang: nl
 title: Contact
 description: Neem contact op met Preludens voor een GameStorm of meer informatie.
 permalink: /contact/

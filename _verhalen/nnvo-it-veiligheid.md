@@ -1,4 +1,6 @@
 ---
+lang: nl
+permalink: /verhalen/nnvo-it-veiligheid/
 title: IT-veiligheid die mensen begrijpen én toepassen
 client: NNVO
 client_logo: nnvo.png

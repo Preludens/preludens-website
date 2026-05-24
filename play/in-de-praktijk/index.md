@@ -1,5 +1,6 @@
 ---
 layout: default
+lang: nl
 title: Play in de praktijk
 description: Voorbeelden van hoe Play, GameStorm en Game Thinking teams in beweging zetten.
 permalink: /play/in-de-praktijk/

@@ -1,16 +1,16 @@
 {% comment %}
   Case-study teaser card. Pass: verhaal (collection item), index (0-based for accent rotation).
 {% endcomment %}
+{% include locale.html %}
 {% assign accent_index = include.index | modulo: 4 %}
 {% assign accents = "coral,gold,mint,lilac" | split: "," %}
 {% assign accent = accents[accent_index] %}
 {% assign hook = include.verhaal.highlights | first %}
-
 <article class="story-card story-card--{{ accent }}">
   <a
     class="story-card__link"
     href="{{ include.verhaal.url | relative_url }}"
-    aria-label="Lees het verhaal: {{ include.verhaal.title }}, {{ include.verhaal.client }}"
+    aria-label="{{ t.verhaal.read_story }}: {{ include.verhaal.title }}, {{ include.verhaal.client }}"
   >
     <div class="story-card__header">
       {% if include.verhaal.client_logo %}
@@ -35,7 +35,7 @@
       <p class="story-card__excerpt">{{ include.verhaal.summary }}</p>
     </div>
     <footer class="story-card__footer">
-      <span class="story-card__cta">Lees het verhaal</span>
+      <span class="story-card__cta">{{ t.verhaal.read_story }}</span>
       <span class="story-card__arrow" aria-hidden="true">→</span>
     </footer>
   </a>

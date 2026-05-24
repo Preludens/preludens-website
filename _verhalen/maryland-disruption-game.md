@@ -1,4 +1,6 @@
 ---
+lang: nl
+permalink: /verhalen/maryland-disruption-game/
 title: Inzicht krijgen in verstoringen door ze zelf te ervaren
 client: Maryland
 client_logo: maryland.svg

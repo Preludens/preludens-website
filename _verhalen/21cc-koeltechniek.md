@@ -1,4 +1,6 @@
 ---
+lang: nl
+permalink: /verhalen/21cc-koeltechniek/
 title: Techniek leren door het te ervaren
 client: 21CC
 client_logo: 21cc.png
