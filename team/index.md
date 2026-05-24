@@ -22,12 +22,16 @@ permalink: /team/
     </p>
     <div class="team-grid" style="margin-top: var(--space-lg);">
       <div class="team-member">
-        <div class="avatar" aria-hidden="true">DG</div>
+        <div class="avatar">
+          <img src="{{ '/assets/images/team/daan-groen.jpg' | relative_url }}" alt="Daan Groen" width="200" height="200" loading="lazy" decoding="async">
+        </div>
         <h3>Daan Groen</h3>
         <p>Founder &amp; Game Designer</p>
       </div>
       <div class="team-member">
-        <div class="avatar" aria-hidden="true">JWM</div>
+        <div class="avatar">
+          <img src="{{ '/assets/images/team/jan-willem-manenschijn.jpg' | relative_url }}" alt="Jan-Willem Manenschijn" width="200" height="200" loading="lazy" decoding="async">
+        </div>
         <h3>Jan-Willem Manenschijn</h3>
         <p>Chief Technology Officer</p>
       </div>
