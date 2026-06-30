@@ -67,7 +67,7 @@ body_class: page-scroll-preview
   .sp-panel--hero {
     background-color: var(--color-prussian-blue);
     background-image:
-      radial-gradient(ellipse at 72% 20%, rgba(252, 166, 83, 0.18), transparent 42%),
+      radial-gradient(ellipse at 72% 20%, rgba(242, 196, 92, 0.18), transparent 42%),
       linear-gradient(135deg, var(--color-prussian-blue), var(--color-regal-navy));
     color: var(--color-white);
   }
@@ -78,44 +78,44 @@ body_class: page-scroll-preview
     inset: 0;
     z-index: 0;
     background:
-      linear-gradient(90deg, rgba(1, 28, 66, 0.78) 0%, rgba(1, 28, 66, 0.38) 34%, rgba(1, 28, 66, 0.1) 62%, rgba(1, 28, 66, 0.44) 100%),
-      linear-gradient(180deg, rgba(1, 28, 66, 0.36) 0%, rgba(1, 28, 66, 0.05) 35%, rgba(1, 28, 66, 0.56) 100%),
+      linear-gradient(90deg, rgba(11, 42, 53, 0.78) 0%, rgba(11, 42, 53, 0.38) 34%, rgba(11, 42, 53, 0.1) 62%, rgba(11, 42, 53, 0.44) 100%),
+      linear-gradient(180deg, rgba(11, 42, 53, 0.36) 0%, rgba(11, 42, 53, 0.05) 35%, rgba(11, 42, 53, 0.56) 100%),
       url("{{ '/assets/images/hero/preludens-hero-bg.jpg' | relative_url }}");
     background-size: cover, cover, cover;
     background-position: center, center, center;
     pointer-events: none;
     opacity: 0.94;
     -webkit-mask-image:
-      linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%),
-      linear-gradient(180deg, transparent 0%, #000 8%, #000 88%, transparent 100%);
+      linear-gradient(90deg, transparent 0%, var(--color-deep-navy) 9%, var(--color-deep-navy) 91%, transparent 100%),
+      linear-gradient(180deg, transparent 0%, var(--color-deep-navy) 8%, var(--color-deep-navy) 88%, transparent 100%);
     -webkit-mask-composite: source-in;
     mask-image:
-      linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%),
-      linear-gradient(180deg, transparent 0%, #000 8%, #000 88%, transparent 100%);
+      linear-gradient(90deg, transparent 0%, var(--color-deep-navy) 9%, var(--color-deep-navy) 91%, transparent 100%),
+      linear-gradient(180deg, transparent 0%, var(--color-deep-navy) 8%, var(--color-deep-navy) 88%, transparent 100%);
     mask-composite: intersect;
   }
   .sp-panel--cream {
     background-color: var(--color-cream);
-    background-image: radial-gradient(ellipse at 80% 20%, rgba(233, 124, 44, 0.10), transparent 45%);
+    background-image: radial-gradient(ellipse at 80% 20%, rgba(237, 167, 14, 0.10), transparent 45%);
     color: var(--color-ink);
   }
   .sp-panel--navy {
     background-color: var(--color-regal-navy);
-    background-image: radial-gradient(ellipse at 20% 80%, rgba(252, 166, 83, 0.16), transparent 45%);
+    background-image: radial-gradient(ellipse at 20% 80%, rgba(242, 196, 92, 0.16), transparent 45%);
     color: var(--color-white);
   }
   .sp-panel--quote {
     background-color: var(--color-prussian-blue);
-    background-image: radial-gradient(ellipse at 50% 50%, rgba(233, 124, 44, 0.12), transparent 55%);
+    background-image: radial-gradient(ellipse at 50% 50%, rgba(237, 167, 14, 0.12), transparent 55%);
     color: var(--color-white);
   }
   .sp-panel--warm {
     background: linear-gradient(135deg, var(--color-coral) 0%, var(--color-gold) 100%);
-    color: var(--color-white);
+    color: var(--color-deep-navy);
   }
   .sp-panel--play {
     background-color: var(--color-cream-dark);
-    background-image: radial-gradient(ellipse at 25% 25%, rgba(18, 55, 99, 0.10), transparent 50%);
+    background-image: radial-gradient(ellipse at 25% 25%, rgba(17, 56, 71, 0.10), transparent 50%);
     color: var(--color-ink);
   }
 
@@ -137,6 +137,7 @@ body_class: page-scroll-preview
   .sp-final-copy {
     max-width: 46rem;
   }
+  .sp-final-copy a { color: var(--color-deep-gold); font-weight: 600; }
 
   .sp-panel--play .site-footer {
     width: 100%;
@@ -185,7 +186,7 @@ body_class: page-scroll-preview
   .sp-panel--micro {
     background-color: var(--color-prussian-blue);
     background-image:
-      radial-gradient(ellipse at 82% 18%, rgba(252, 166, 83, 0.20), transparent 42%),
+      radial-gradient(ellipse at 82% 18%, rgba(242, 196, 92, 0.20), transparent 42%),
       linear-gradient(140deg, var(--color-prussian-blue), var(--color-regal-navy));
     color: var(--color-white);
   }
@@ -196,7 +197,7 @@ body_class: page-scroll-preview
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(90deg, transparent 0 49.6%, rgba(233, 124, 44, 0.22) 49.8% 50.2%, transparent 50.4% 100%);
+      linear-gradient(90deg, transparent 0 49.6%, rgba(237, 167, 14, 0.22) 49.8% 50.2%, transparent 50.4% 100%);
     background-size: 200% 1px;
     background-position: 0 88%;
     background-repeat: no-repeat;
@@ -218,7 +219,7 @@ body_class: page-scroll-preview
     margin-bottom: var(--space-sm);
   }
   .sp-panel--cream .sp-eyebrow,
-  .sp-panel--play .sp-eyebrow { color: var(--color-coral); }
+  .sp-panel--play .sp-eyebrow { color: var(--color-deep-gold); }
 
   .sp-panel h2 {
     font-family: var(--font-display);
@@ -246,8 +247,8 @@ body_class: page-scroll-preview
   .sp-panel--hero p,
   .sp-panel--navy p,
   .sp-panel--quote p,
-  .sp-panel--micro p,
-  .sp-panel--warm p { color: rgba(255, 255, 255, 0.9); }
+  .sp-panel--micro p { color: rgba(246, 249, 249, 0.9); }
+  .sp-panel--warm p { color: var(--color-deep-navy); }
   .sp-panel--cream p,
   .sp-panel--play p { color: var(--color-ink-soft); }
 
@@ -260,9 +261,9 @@ body_class: page-scroll-preview
     gap: 1px;
     margin-top: clamp(var(--space-md), 3vw, var(--space-lg));
     max-width: min(100%, 58rem);
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(246, 249, 249, 0.16);
     border-radius: var(--radius-lg);
-    background: rgba(255, 255, 255, 0.14);
+    background: rgba(246, 249, 249, 0.14);
     overflow: hidden;
     box-shadow: var(--shadow-card);
   }
@@ -270,7 +271,7 @@ body_class: page-scroll-preview
   .sp-hero-pillar {
     position: relative;
     padding: clamp(1rem, 2vw, var(--space-md));
-    background: rgba(1, 28, 66, 0.72);
+    background: rgba(11, 42, 53, 0.72);
     backdrop-filter: blur(10px);
   }
 
@@ -292,7 +293,7 @@ body_class: page-scroll-preview
   }
 
   .sp-hero-pillar p {
-    color: rgba(255, 255, 255, 0.74);
+    color: rgba(246, 249, 249, 0.74);
     font-size: 0.94rem;
     line-height: 1.45;
     margin: 0;
@@ -311,11 +312,11 @@ body_class: page-scroll-preview
   .sp-slider-card {
     margin-top: var(--space-lg);
     padding: clamp(var(--space-md), 3vw, var(--space-lg));
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(246, 249, 249, 0.16);
     border-radius: var(--radius-xl);
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06)),
-      radial-gradient(ellipse at 84% 0%, rgba(252, 166, 83, 0.20), transparent 52%);
+      linear-gradient(180deg, rgba(246, 249, 249, 0.12), rgba(246, 249, 249, 0.06)),
+      radial-gradient(ellipse at 84% 0%, rgba(242, 196, 92, 0.20), transparent 52%);
     box-shadow: var(--shadow-soft);
     text-align: left;
   }
@@ -334,7 +335,7 @@ body_class: page-scroll-preview
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(246, 249, 249, 0.7);
   }
   .sp-range {
     width: 100%;
@@ -345,9 +346,9 @@ body_class: page-scroll-preview
     margin-top: var(--space-md);
     padding: var(--space-md);
     border-radius: var(--radius-lg);
-    background: rgba(1, 28, 66, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: rgba(255, 255, 255, 0.85);
+    background: rgba(11, 42, 53, 0.55);
+    border: 1px solid rgba(246, 249, 249, 0.12);
+    color: rgba(246, 249, 249, 0.85);
     line-height: 1.5;
   }
   .sp-feedback strong {
@@ -365,7 +366,7 @@ body_class: page-scroll-preview
   .sp-cards .card { background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-card); }
   .sp-cards .card h3 { color: var(--color-ink); margin-bottom: var(--space-xs); }
   .sp-cards .card p { color: var(--color-ink-soft); font-size: 0.98rem; }
-  .sp-cards .card a { color: var(--color-coral); font-weight: 600; }
+  .sp-cards .card a { color: var(--color-deep-gold); font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 3px; }
   .sp-card-icon { font-size: 1.6rem; display: block; margin-bottom: var(--space-xs); }
 
   /* Quote paneel */
@@ -412,8 +413,8 @@ body_class: page-scroll-preview
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.35);
-    box-shadow: 0 0 0 0 rgba(252, 166, 83, 0);
+    background: rgba(246, 249, 249, 0.35);
+    box-shadow: 0 0 0 0 rgba(242, 196, 92, 0);
     transition:
       background 0.32s cubic-bezier(0.22, 1, 0.36, 1),
       border-radius 0.32s cubic-bezier(0.22, 1, 0.36, 1),
@@ -426,7 +427,7 @@ body_class: page-scroll-preview
     background: var(--color-gold);
     height: 22px;
     border-radius: var(--radius-pill);
-    box-shadow: 0 0 0 5px rgba(252, 166, 83, 0.1);
+    box-shadow: 0 0 0 5px rgba(242, 196, 92, 0.1);
   }
 
   .sp-rail button:hover::after,
@@ -435,7 +436,7 @@ body_class: page-scroll-preview
   .sp-rail button.is-label-visible::after {
     background: var(--color-gold);
     transform: scale(1.18);
-    box-shadow: 0 0 0 8px rgba(252, 166, 83, 0.13);
+    box-shadow: 0 0 0 8px rgba(242, 196, 92, 0.13);
   }
 
   .sp-rail-label {
@@ -444,9 +445,9 @@ body_class: page-scroll-preview
     right: 1.65rem;
     max-width: min(18rem, calc(100vw - 5rem));
     padding: 0.48rem 0.72rem;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(246, 249, 249, 0.18);
     border-radius: var(--radius-pill);
-    background: rgba(1, 28, 66, 0.78);
+    background: rgba(11, 42, 53, 0.78);
     box-shadow: var(--shadow-card);
     backdrop-filter: blur(10px);
     color: var(--color-white);
@@ -482,7 +483,7 @@ body_class: page-scroll-preview
     font-size: 0.72rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(246, 249, 249, 0.7);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -492,7 +493,7 @@ body_class: page-scroll-preview
   .sp-scrollhint::after {
     content: "";
     width: 1px; height: 28px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.7), transparent);
+    background: linear-gradient(180deg, rgba(246,249,249,0.7), transparent);
   }
   @keyframes sp-bob { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 6px); } }
 
@@ -731,7 +732,10 @@ body_class: page-scroll-preview
   function panelTarget(i) {
     var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     if (i === panels.length - 1) return maxScroll;
-    return clamp(absOffsetTop(panels[i]) - headerHeight, 0, maxScroll);
+    // Land precies op de paneeltop (rect.top = 0) zodat de fade-in volledig op
+    // 100% opacity uitkomt. De inhoud is verticaal gecentreerd en het vaste menu
+    // overlapt enkel de lege bovenruimte, dus er valt niets onder de header weg.
+    return clamp(absOffsetTop(panels[i]), 0, maxScroll);
   }
   function scrollToPanel(i) {
     var target = panelTarget(i);
