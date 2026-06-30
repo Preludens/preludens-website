@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preludens — Homepage (alternatieve stijl, preview)</title>
+  <meta name="description" content="Activeer je team en bereid ze voor op de toekomst met storytelling en MicroGames.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-harvest-orange: #E97C2C;
+      --color-prussian-blue: #011C42;
+      --color-regal-navy: #123763;
+      --color-dusk-blue: #37547E;
+      --color-sandy-brown: #FCA653;
+
+      --color-ink: var(--color-regal-navy);
+      --color-ink-soft: var(--color-dusk-blue);
+      --color-coral: var(--color-harvest-orange);
+      --color-gold: var(--color-sandy-brown);
+
+      --color-cream: #F7F3EF;
+      --color-cream-dark: #EEF2F7;
+      --color-white: #ffffff;
+
+      --color-border: rgba(18, 55, 99, 0.16);
+      --shadow-soft: 0 12px 40px rgba(1, 28, 66, 0.14);
+      --shadow-card: 0 4px 24px rgba(1, 28, 66, 0.1);
+
+      --font-display: "Outfit", system-ui, sans-serif;
+      --font-body: "DM Sans", system-ui, sans-serif;
+
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2.5rem;
+      --space-xl: 4rem;
+      --space-2xl: 6rem;
+
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --radius-pill: 999px;
+
+      --max-width: 75rem;
+      --transition: 0.2s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--color-ink-soft);
+      background: var(--color-cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    a { color: var(--color-coral); text-underline-offset: 3px; }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      color: var(--color-ink);
+      line-height: 1.12;
+      margin-top: 0;
+    }
+
+    p { margin: 0 0 var(--space-sm); }
+
+    .container { width: min(100% - 2rem, var(--max-width)); margin-inline: auto; }
+
+    /* ---- Preview ribbon ---- */
+    .preview-flag {
+      background: var(--color-prussian-blue);
+      color: #fff;
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+    }
+    .preview-flag span { color: var(--color-gold); }
+
+    /* ---- Buttons ---- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.6rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border-radius: var(--radius-pill);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+    .btn-primary { background: var(--color-coral); color: #fff; }
+    .btn-secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,0.4); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.08); }
+    .btn-ghost { background: var(--color-white); color: var(--color-ink); border-color: var(--color-border); }
+
+    .link-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--color-coral);
+    }
+    .link-arrow span { transition: transform var(--transition); }
+    .link-arrow:hover span { transform: translateX(4px); }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-coral);
+      margin: 0 0 var(--space-sm);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 1.8rem;
+      height: 3px;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(90deg, var(--color-coral), var(--color-gold));
+    }
+    .eyebrow--light { color: var(--color-gold); }
+
+    /* =====================================================
+       1. HERO — asymmetrische split met pijlers
+       ===================================================== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--color-prussian-blue);
+      background-image:
+        linear-gradient(115deg, rgba(1,28,66,0.94) 0%, rgba(1,28,66,0.72) 45%, rgba(18,55,99,0.62) 100%),
+        url("../assets/images/hero/lineplay-hero.png");
+      background-size: cover, cover;
+      background-position: center, center;
+      color: #fff;
+      padding: clamp(3rem, 7vw, 6rem) 0 0;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 78% 10%, rgba(233,124,44,0.28), transparent 45%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: var(--space-xl);
+      grid-template-columns: 1fr;
+      align-items: end;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(2.4rem, 5.4vw, 4.25rem);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin: 0 0 var(--space-md);
+    }
+    .hero h1 .accent { color: var(--color-gold); }
+    .hero-lead {
+      font-size: 1.2rem;
+      max-width: 36rem;
+      color: rgba(255,255,255,0.9);
+    }
+    .hero-sub {
+      max-width: 36rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-lg); }
+
+    /* hero pijlers strook */
+    .hero-pillars {
+      position: relative;
+      z-index: 1;
+      margin-top: clamp(2.5rem, 5vw, 4rem);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: rgba(255,255,255,0.14);
+      border-top: 1px solid rgba(255,255,255,0.14);
+    }
+    .hero-pillar {
+      background: var(--color-prussian-blue);
+      padding: var(--space-lg) var(--space-md);
+      position: relative;
+    }
+    .hero-pillar__num {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: var(--color-gold);
+    }
+    .hero-pillar h3 { color: #fff; font-size: 1.3rem; margin: 0.4rem 0 0.3rem; }
+    .hero-pillar p { color: rgba(255,255,255,0.7); font-size: 0.95rem; margin: 0; }
+
+    @media (min-width: 880px) {
+      .hero-grid { grid-template-columns: 1.5fr 1fr; }
+      .hero-pillars { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* =====================================================
+       2. INTRO — twee koloms statement + tekst
+       ===================================================== */
+    .section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
+    .section--white { background: var(--color-white); }
+    .section--cream { background: var(--color-cream); }
+
+    .split {
+      display: grid;
+      gap: var(--space-xl);
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+    .split__lead h2 {
+      font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+      margin: 0;
+    }
+    .split__lead .rule {
+      width: 4rem; height: 4px; margin-top: var(--space-md);
+      border-radius: var(--radius-pill);
+      background: linear-gradient(90deg, var(--color-coral), var(--color-gold));
+    }
+    .split__body p { font-size: 1.08rem; }
+    .split__body p:first-child { margin-top: 0; }
+
+    .keyword-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: var(--space-lg);
+    }
+    .keyword {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-pill);
+      background: var(--color-cream-dark);
+      color: var(--color-ink);
+      border: 1px solid var(--color-border);
+    }
+
+    @media (min-width: 880px) {
+      .split { grid-template-columns: 0.85fr 1.15fr; gap: var(--space-2xl); }
+    }
+
+    /* =====================================================
+       3. DIENSTEN — bento genummerde kaarten
+       ===================================================== */
+    .section-head { max-width: 44rem; margin-bottom: var(--space-xl); }
+    .section-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin: 0 0 var(--space-sm); }
+
+    .bento {
+      display: grid;
+      gap: var(--space-md);
+      grid-template-columns: 1fr;
+    }
+    .svc {
+      position: relative;
+      overflow: hidden;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-card);
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .svc:hover { transform: translateY(-5px); box-shadow: var(--shadow-soft); }
+    .svc__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--space-md);
+    }
+    .svc__num {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 2.4rem;
+      line-height: 1;
+      color: var(--color-cream-dark);
+      -webkit-text-stroke: 1px var(--color-border);
+    }
+    .svc__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem; height: 3rem;
+      border-radius: var(--radius-md);
+      font-size: 1.4rem;
+    }
+    .svc h3 { font-size: 1.4rem; margin: 0 0 var(--space-sm); }
+    .svc p { margin: 0 0 var(--space-md); }
+    .svc .link-arrow { margin-top: auto; }
+    .svc::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 60%; height: 5px;
+    }
+    .svc--coral::after { background: linear-gradient(90deg, var(--color-coral), transparent); }
+    .svc--coral .svc__icon { background: rgba(233,124,44,0.16); }
+    .svc--gold::after { background: linear-gradient(90deg, var(--color-gold), transparent); }
+    .svc--gold .svc__icon { background: rgba(252,166,83,0.28); }
+    .svc--navy::after { background: linear-gradient(90deg, var(--color-dusk-blue), transparent); }
+    .svc--navy .svc__icon { background: rgba(55,84,126,0.18); }
+
+    @media (min-width: 760px) {
+      .bento { grid-template-columns: repeat(2, 1fr); }
+      .svc--coral { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: var(--space-lg); flex-wrap: wrap; }
+      .svc--coral .svc__top { flex-direction: column; align-items: flex-start; gap: var(--space-sm); margin: 0; }
+      .svc--coral .svc__body { flex: 1; min-width: 16rem; }
+    }
+    @media (min-width: 1040px) {
+      .bento { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* =====================================================
+       4. QUOTE — full-bleed donkere band, groot
+       ===================================================== */
+    .quote-band {
+      position: relative;
+      overflow: hidden;
+      background: var(--color-prussian-blue);
+      color: var(--color-cream);
+      padding: clamp(3.5rem, 7vw, 6rem) 0;
+    }
+    .quote-band::before {
+      content: "\201C";
+      position: absolute;
+      top: -1.5rem; left: 2rem;
+      font-family: Georgia, serif;
+      font-size: 16rem;
+      line-height: 1;
+      color: rgba(255,255,255,0.06);
+    }
+    .quote-band blockquote {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      max-width: 52rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
+      line-height: 1.3;
+      color: #fff;
+      font-style: italic;
+    }
+    .quote-band cite {
+      display: block;
+      margin-top: var(--space-md);
+      font-family: var(--font-body);
+      font-style: normal;
+      font-size: 0.95rem;
+      color: var(--color-gold);
+    }
+
+    /* =====================================================
+       5. GAMESTORM CTA — split donker paneel + stappen
+       ===================================================== */
+    .gamestorm {
+      display: grid;
+      gap: var(--space-md);
+      grid-template-columns: 1fr;
+      align-items: stretch;
+    }
+    .gamestorm__cta {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(150deg, var(--color-regal-navy) 0%, var(--color-harvest-orange) 135%);
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .gamestorm__cta h2 { color: #fff; font-size: clamp(1.7rem, 3vw, 2.3rem); margin: 0 0 var(--space-sm); }
+    .gamestorm__cta p { color: rgba(255,255,255,0.88); }
+    .gamestorm__cta .btn { margin-top: var(--space-md); align-self: flex-start; }
+    .gamestorm__cta .btn-primary { background: #fff; color: var(--color-ink); }
+    .gamestorm__cta::after {
+      content: "";
+      position: absolute;
+      right: -2rem; bottom: -2rem;
+      width: 11rem; height: 11rem;
+      border: 2.5px solid rgba(255,255,255,0.28);
+      border-left: none; border-bottom: none;
+      border-radius: 0 100% 0 0;
+    }
+    .gamestorm__info {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+    }
+    .gamestorm__info p:first-child { margin-top: 0; }
+
+    .steps {
+      list-style: none;
+      counter-reset: step;
+      margin: var(--space-md) 0 0;
+      padding: 0;
+      display: grid;
+      gap: var(--space-sm);
+    }
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding-left: 3rem;
+      font-size: 0.98rem;
+    }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0; top: -0.1rem;
+      width: 2rem; height: 2rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(233,124,44,0.14);
+      color: var(--color-coral);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 880px) {
+      .gamestorm { grid-template-columns: 1fr 1.1fr; gap: var(--space-lg); }
+    }
+
+    /* =====================================================
+       6. PLAY — alternerend met magische cirkel
+       ===================================================== */
+    .play {
+      display: grid;
+      gap: var(--space-xl);
+      grid-template-columns: 1fr;
+      align-items: center;
+    }
+    .play__text p:first-of-type { margin-top: var(--space-md); }
+    .circle-art {
+      position: relative;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(252,166,83,0.12), transparent 62%),
+        var(--color-prussian-blue);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-soft);
+    }
+    .circle-art::before,
+    .circle-art::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(252,166,83,0.4);
+    }
+    .circle-art::before { inset: 12%; }
+    .circle-art::after { inset: 26%; border-style: solid; border-color: rgba(255,255,255,0.12); }
+    .circle-art span {
+      position: relative;
+      z-index: 1;
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      padding: 1rem;
+    }
+    .circle-art .dot {
+      position: absolute;
+      width: 0.7rem; height: 0.7rem;
+      border-radius: 50%;
+      background: var(--color-coral);
+      top: 12%; left: 50%;
+      box-shadow: 0 0 0 6px rgba(233,124,44,0.18);
+    }
+
+    @media (min-width: 880px) {
+      .play { grid-template-columns: 1fr 0.9fr; }
+      .play--reverse .play__text { order: 2; }
+    }
+
+    /* =====================================================
+       Footer (compact)
+       ===================================================== */
+    .footer {
+      background: var(--color-prussian-blue);
+      color: rgba(255,255,255,0.7);
+      padding: var(--space-xl) 0 var(--space-md);
+      text-align: center;
+    }
+    .footer p { margin: 0.3rem 0; }
+    .footer .footer-tagline { font-family: var(--font-display); color: var(--color-gold); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="preview-flag">Preview · alternatieve homepage-stijl <span>(zelfde teksten, ander ritme)</span></div>
+
+  <!-- 1. HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow eyebrow--light">Challenge · activate · motivate</p>
+          <h1>Activeer je team en bereid ze voor op de <span class="accent">toekomst.</span></h1>
+          <p class="hero-lead">
+            Wij bereiden teams voor op de werkelijkheid van morgen door ze nu al ervaringen te bieden die ertoe doen.
+            Via storytelling en MicroGames zetten we medewerkers in realistische situaties waar ze moeten kiezen, handelen en leren.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#">Start met een GameStorm</a>
+            <a class="btn btn-secondary" href="#">Onze diensten</a>
+          </div>
+        </div>
+        <div>
+          <p class="hero-sub">
+            We dagen hen uit, activeren we hun denkkracht en motiveren we hen om sterker en zelfverzekerder te presteren wanneer het er écht op aankomt.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero-pillars">
+        <div class="hero-pillar">
+          <span class="hero-pillar__num">01 — Challenge</span>
+          <h3>Uitdagen</h3>
+          <p>Realistische situaties waarin medewerkers moeten kiezen en handelen.</p>
+        </div>
+        <div class="hero-pillar">
+          <span class="hero-pillar__num">02 — Activate</span>
+          <h3>Activeren</h3>
+          <p>MicroGames die kennis activeren en denkkracht aanspreken.</p>
+        </div>
+        <div class="hero-pillar">
+          <span class="hero-pillar__num">03 — Motivate</span>
+          <h3>Motiveren</h3>
+          <p>Sterker en zelfverzekerder presteren wanneer het er écht op aankomt.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. INTRO -->
+  <section class="section section--white" id="online-focus">
+    <div class="container">
+      <div class="split">
+        <div class="split__lead">
+          <p class="eyebrow">Online focus</p>
+          <h2>Interactieve stories die teams uitdagen, activeren en motiveren</h2>
+          <div class="rule"></div>
+        </div>
+        <div class="split__body">
+          <p>
+            Bij Preludens geloven we dat leren impactvol én natuurlijk moet zijn. Daarom ontwerpen we interactieve leerervaringen die mensen écht raken:
+            relevant voor hun werk, visueel opgebouwd en gericht op gedragsverandering.
+          </p>
+          <p>
+            We zetten jouw lesmateriaal om in een krachtige verhaallijn en voegen MicroGames toe: korte, interactieve uitdagingen die kennis activeren en direct feedback geven.
+            Storytelling zorgt voor context en herkenning, MicroGames motiveren en versterken retentie, en data helpt om gericht te verbeteren.
+          </p>
+          <p>
+            Zo wordt leren geen verplichting, maar een inspirerende reis die uitdaagt, activeert en zichtbaar resultaat oplevert.
+          </p>
+          <div class="keyword-row">
+            <span class="keyword">Storytelling</span>
+            <span class="keyword">MicroGames</span>
+            <span class="keyword">Gedragsverandering</span>
+            <span class="keyword">Directe feedback</span>
+            <span class="keyword">Retentie</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. DIENSTEN -->
+  <section class="section section--cream" id="diensten-preview">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Wat we doen</p>
+        <h2>Leerervaringen met verhaal, spel en impact</h2>
+      </div>
+      <div class="bento">
+        <article class="svc svc--coral">
+          <div class="svc__top">
+            <span class="svc__num">01</span>
+            <span class="svc__icon" aria-hidden="true">📖</span>
+          </div>
+          <div class="svc__body">
+            <h3>MicroGame Stories</h3>
+            <p>
+              Korte, verhalende online trainingen waarin medewerkers oefenen in realistische situaties — verrijkt met stripverhalen en krachtige MicroGames die kennis activeren en motivatie vergroten.
+            </p>
+            <a class="link-arrow" href="#">Meer over MicroGame Stories <span>→</span></a>
+          </div>
+        </article>
+        <article class="svc svc--gold">
+          <div class="svc__top">
+            <span class="svc__num">02</span>
+            <span class="svc__icon" aria-hidden="true">⚖️</span>
+          </div>
+          <h3>Dilemma Storytelling</h3>
+          <p>
+            Realistische scenario’s waarin lastige keuzes en directe gevolgen besluitvaardigheid en inzicht versterken — zonder één juist antwoord.
+          </p>
+          <a class="link-arrow" href="#">Meer over Dilemma Stories <span>→</span></a>
+        </article>
+        <article class="svc svc--navy">
+          <div class="svc__top">
+            <span class="svc__num">03</span>
+            <span class="svc__icon" aria-hidden="true">🎯</span>
+          </div>
+          <h3>Game Thinking</h3>
+          <p>
+            Complexe vraagstukken oplossen door processen te bekijken alsof het een game is — met workshops en concrete blauwdrukken voor gedrag en leerdoelen.
+          </p>
+          <a class="link-arrow" href="#">Meer over Game Thinking <span>→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. QUOTE -->
+  <section class="quote-band">
+    <div class="container">
+      <figure style="margin:0;">
+        <blockquote>
+          Play is older than culture, for culture, however inadequately defined, always presupposes human society, and animals have not waited for man to teach them their playing.
+        </blockquote>
+        <cite>Johan Huizinga – Homo Ludens (1938)</cite>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 5. GAMESTORM CTA -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="gamestorm">
+        <div class="gamestorm__cta">
+          <h2>Neem morgen de eerste stap</h2>
+          <p>Start met een GameStorm: een creatieve workshop van een dagdeel waarin we samen jouw verhaal vormgeven.</p>
+          <a class="btn btn-primary" href="#">Plan een GameStorm</a>
+        </div>
+        <div class="gamestorm__info">
+          <p>
+            Wil je jouw online leren omzetten in een verhaal dat mensen écht raakt? Met de structuur van de Hero's Journey ontwerpen we één of twee krachtige verhaallijnen en koppelen daar 4 tot 5 leerdoelen aan — de basis voor impactvolle MicroGames.
+          </p>
+          <p>
+            De uitkomst is een helder concept, een verhaallijn die inspireert en leerdoelen die perfect aansluiten. Zelfs als je niet doorgaat, is het een waardevolle sessie die richting geeft aan jouw e-learning.
+          </p>
+          <ol class="steps">
+            <li>Eén of twee verhaallijnen op basis van de Hero's Journey.</li>
+            <li>4 tot 5 leerdoelen gekoppeld aan het verhaal.</li>
+            <li>Een helder concept als basis voor impactvolle MicroGames.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PLAY -->
+  <section class="section section--cream" id="play-preview">
+    <div class="container">
+      <div class="play play--reverse">
+        <div class="play__text">
+          <p class="eyebrow">What we do</p>
+          <h2 style="font-size:clamp(1.9rem,3.4vw,2.6rem);margin:0;">In de wereld van Play</h2>
+          <p>
+            We bereiden teams voor op de toekomst door kennis en besluitvorming te laten ervaren nog vóór het een probleem wordt.
+          </p>
+          <p>
+            In <em>Homo Ludens</em> beschrijft Huizinga hoe spel een veilige, afgescheiden ruimte creëert — de magische cirkel — waarin fouten maken mag en nieuwsgierigheid wordt geactiveerd.
+            Dat is precies wat Preludens toepast: leerervaringen met duidelijke kaders waarin experimenteren en gedragsverandering mogelijk worden.
+          </p>
+          <p>
+            Storytelling biedt context en herkenning, MicroGames creëren heldere uitdagingen met directe feedback, en de combinatie van verhaal, actie en herhaling verankert kennis op een manier die aansluit bij hoe mensen écht leren.
+          </p>
+          <p><a class="link-arrow" href="#">Ontdek onze visie op Play <span>→</span></a></p>
+        </div>
+        <div class="circle-art" aria-hidden="true">
+          <span class="dot"></span>
+          <span>De magische cirkel<br>— ruimte om te spelen, kiezen en leren</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-tagline">Leren als verkennen met rust, richting en diepgang</p>
+      <p>Preview · alternatieve stijl voor de Preludens-homepage</p>
+    </div>
+  </footer>
+</body>
+</html>

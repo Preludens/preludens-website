@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preludens — Demo Storytelling Website</title>
+  <meta name="description" content="Een storytelling demo-site voor Preludens: professionele e-learning via MicroGame Stories." />
+  <style>
+    :root {
+      --ink: #113847;
+      --ink-2: #0b2632;
+      --ink-3: #194b5f;
+      --amber: #eda70e;
+      --amber-2: #f4bd45;
+      --amber-3: #c77f05;
+      --paper: #f6f2e9;
+      --paper-2: #fffaf0;
+      --white: #ffffff;
+      --muted: #6f7f85;
+      --line: rgba(17,56,71,0.16);
+      --shadow: 0 24px 70px rgba(5, 25, 34, .18);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(237,167,14,.18), transparent 28rem),
+        radial-gradient(circle at 82% 15%, rgba(255,250,240,.18), transparent 28rem),
+        linear-gradient(180deg, var(--ink-2) 0%, var(--ink) 36%, var(--paper) 36%, var(--paper) 100%);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, #000, transparent 78%);
+      z-index: 0;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(11,38,50,.74);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      color: var(--paper-2);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--ink);
+      background: linear-gradient(135deg, var(--amber), var(--amber-2));
+      box-shadow: 0 10px 30px rgba(237,167,14,.35);
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,250,240,.8);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      padding: 10px 12px;
+      border-radius: 999px;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,.08); color: white; }
+
+    .nav-cta {
+      background: var(--amber);
+      color: var(--ink-2) !important;
+      font-weight: 800;
+      box-shadow: 0 8px 28px rgba(237,167,14,.26);
+    }
+
+    main { position: relative; z-index: 1; }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 84px 22px 50px;
+      min-height: 760px;
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      gap: 42px;
+      align-items: center;
+      color: var(--paper-2);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.07);
+      color: rgba(255,250,240,.88);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      letter-spacing: .02em;
+      margin-bottom: 22px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      background: var(--amber);
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(237,167,14,.14);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: .94;
+      letter-spacing: -.07em;
+    }
+    .accent { color: var(--amber-2); }
+
+    .hero-lead {
+      max-width: 660px;
+      color: rgba(255,250,240,.78);
+      font-size: clamp(18px, 2vw, 23px);
+      line-height: 1.46;
+      margin: 26px 0 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 15px 21px;
+      cursor: pointer;
+      font-weight: 850;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--amber); color: var(--ink-2); box-shadow: 0 14px 34px rgba(237,167,14,.28); }
+    .btn-secondary { color: var(--paper-2); background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 44px;
+      max-width: 620px;
+    }
+    .meta-card {
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.055);
+      border-radius: 20px;
+      padding: 16px;
+      min-height: 112px;
+    }
+    .meta-card strong { display: block; color: white; font-size: 26px; letter-spacing: -.04em; }
+    .meta-card span { display: block; margin-top: 8px; color: rgba(255,250,240,.7); font-size: 13px; line-height: 1.35; }
+
+    .story-device {
+      position: relative;
+      perspective: 1000px;
+    }
+    .device-card {
+      border: 1px solid rgba(255,255,255,.16);
+      background: linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.07));
+      box-shadow: var(--shadow);
+      border-radius: 40px;
+      padding: 18px;
+      transform: rotateY(-7deg) rotateX(2deg);
+    }
+    .screen {
+      min-height: 560px;
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(17,56,71,.88), rgba(11,38,50,.95)),
+        radial-gradient(circle at 80% 0%, rgba(237,167,14,.42), transparent 20rem);
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .screen-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,250,240,.75);
+      font-size: 13px;
+    }
+    .dots { display: flex; gap: 6px; }
+    .dots i { display: block; width: 9px; height: 9px; border-radius: 50%; background: rgba(255,250,240,.28); }
+    .screen-body { padding: 24px; }
+    .scenario-label { color: var(--amber-2); font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: .12em; }
+    .scenario-title { color: white; margin: 12px 0 14px; font-size: 34px; line-height: 1.05; letter-spacing: -.045em; }
+    .scenario-text { color: rgba(255,250,240,.72); line-height: 1.6; max-width: 420px; }
+    .choice-stack { margin-top: 26px; display: grid; gap: 12px; }
+    .choice {
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.08);
+      color: rgba(255,250,240,.92);
+      border-radius: 18px;
+      padding: 14px 15px;
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      align-items: start;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+    .choice:hover, .choice.active { background: rgba(237,167,14,.17); border-color: rgba(237,167,14,.5); }
+    .choice b {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(237,167,14,.18);
+      color: var(--amber-2);
+    }
+    .choice span { font-size: 14px; line-height: 1.38; }
+    .kpi-panel {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      width: 245px;
+      border-radius: 24px;
+      background: rgba(255,250,240,.95);
+      color: var(--ink);
+      padding: 18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.24);
+    }
+    .kpi-panel h3 { margin: 0 0 12px; font-size: 15px; }
+    .bar { margin: 12px 0; }
+    .bar-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    .bar-track { height: 9px; border-radius: 999px; background: rgba(17,56,71,.12); overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--amber-2)); }
+
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 92px 22px;
+    }
+    .section-grid {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 54px;
+      align-items: start;
+    }
+    .section-kicker { color: var(--amber-3); font-weight: 900; text-transform: uppercase; letter-spacing: .12em; font-size: 13px; }
+    h2 {
+      margin: 14px 0 18px;
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: 1;
+      letter-spacing: -.06em;
+      color: var(--ink-2);
+    }
+    .section-lead { color: var(--muted); font-size: 19px; line-height: 1.58; margin: 0; }
+
+    .chapter-nav {
+      position: sticky;
+      top: 86px;
+      background: rgba(255,250,240,.82);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 14px;
+      box-shadow: 0 14px 40px rgba(5,25,34,.08);
+    }
+    .chapter-nav a {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 15px 14px;
+      border-radius: 18px;
+      color: rgba(17,56,71,.72);
+      font-weight: 750;
+    }
+    .chapter-nav a:hover, .chapter-nav a.active { background: var(--ink); color: white; }
+    .chapter-nav small { color: currentColor; opacity: .58; }
+
+    .storyline {
+      display: grid;
+      gap: 18px;
+    }
+    .story-card {
+      background: var(--white);
+      border: 1px solid rgba(17,56,71,.11);
+      border-radius: var(--radius-xl);
+      padding: 30px;
+      box-shadow: 0 18px 52px rgba(17,56,71,.08);
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -60px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(237,167,14,.10);
+    }
+    .chapter-number {
+      width: 72px;
+      height: 72px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      color: var(--paper-2);
+      font-size: 26px;
+      font-weight: 950;
+      box-shadow: 0 16px 38px rgba(17,56,71,.2);
+    }
+    .story-card h3 { margin: 3px 0 10px; font-size: 27px; letter-spacing: -.035em; color: var(--ink-2); }
+    .story-card p { margin: 0; color: var(--muted); line-height: 1.65; }
+    .micro-tag-row { margin-top: 18px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag { border: 1px solid rgba(17,56,71,.13); background: rgba(17,56,71,.04); color: var(--ink); font-size: 12px; font-weight: 800; padding: 8px 10px; border-radius: 999px; }
+
+    .dark-band {
+      background:
+        radial-gradient(circle at 15% 0%, rgba(237,167,14,.22), transparent 24rem),
+        linear-gradient(180deg, var(--ink-2), var(--ink));
+      color: var(--paper-2);
+      margin: 38px 0 0;
+    }
+    .dark-band h2 { color: white; }
+    .dark-band .section-lead { color: rgba(255,250,240,.72); }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .proof-card {
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.065);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      min-height: 226px;
+    }
+    .proof-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: rgba(237,167,14,.16);
+      color: var(--amber-2);
+      display: grid;
+      place-items: center;
+      font-weight: 950;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+    .proof-card h3 { margin: 0 0 10px; font-size: 22px; letter-spacing: -.03em; }
+    .proof-card p { color: rgba(255,250,240,.69); line-height: 1.55; margin: 0; }
+
+    .case-lab {
+      background: var(--paper-2);
+      border: 1px solid rgba(17,56,71,.12);
+      border-radius: 42px;
+      box-shadow: 0 20px 70px rgba(17,56,71,.11);
+      overflow: hidden;
+      margin-top: 34px;
+    }
+    .case-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 24px 28px;
+      border-bottom: 1px solid rgba(17,56,71,.12);
+      background: rgba(255,255,255,.45);
+    }
+    .case-head strong { font-size: 18px; }
+    .case-status { color: var(--amber-3); font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: .12em; }
+    .case-body {
+      display: grid;
+      grid-template-columns: 1fr .78fr;
+      gap: 0;
+    }
+    .case-scene { padding: 34px; border-right: 1px solid rgba(17,56,71,.12); }
+    .case-scene h3 { font-size: 34px; line-height: 1.05; margin: 0 0 16px; letter-spacing: -.05em; color: var(--ink-2); }
+    .case-scene p { color: var(--muted); line-height: 1.68; margin: 0 0 22px; }
+    .dialogue {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .bubble {
+      border-radius: 20px 20px 20px 4px;
+      background: white;
+      border: 1px solid rgba(17,56,71,.1);
+      padding: 14px 16px;
+      line-height: 1.45;
+      color: var(--ink-2);
+      box-shadow: 0 10px 28px rgba(17,56,71,.06);
+    }
+    .bubble.user {
+      background: var(--ink);
+      color: var(--paper-2);
+      margin-left: 36px;
+      border-radius: 20px 20px 4px 20px;
+    }
+    .case-side { padding: 28px; background: rgba(17,56,71,.035); }
+    .slider-card {
+      background: white;
+      border-radius: 26px;
+      padding: 22px;
+      border: 1px solid rgba(17,56,71,.1);
+      box-shadow: 0 14px 34px rgba(17,56,71,.07);
+      margin-bottom: 16px;
+    }
+    .slider-card h4 { margin: 0 0 12px; font-size: 18px; }
+    .range-row { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+    input[type="range"] { width: 100%; accent-color: var(--amber); }
+    .feedback-box {
+      background: var(--ink);
+      color: rgba(255,250,240,.82);
+      border-radius: 26px;
+      padding: 22px;
+      line-height: 1.5;
+    }
+    .feedback-box strong { color: white; display: block; margin-bottom: 6px; }
+
+    .conversion {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+    .proposal {
+      background: var(--ink);
+      color: white;
+      border-radius: 42px;
+      padding: 34px;
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow);
+    }
+    .proposal h2 { color: white; margin-top: 0; }
+    .proposal p { color: rgba(255,250,240,.72); line-height: 1.62; }
+    .proposal .btn { width: fit-content; }
+    .scope-list {
+      display: grid;
+      gap: 14px;
+    }
+    .scope-item {
+      background: white;
+      border: 1px solid rgba(17,56,71,.11);
+      border-radius: 26px;
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 16px;
+      align-items: start;
+      box-shadow: 0 14px 36px rgba(17,56,71,.07);
+    }
+    .check {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(237,167,14,.16);
+      color: var(--amber-3);
+      font-weight: 950;
+    }
+    .scope-item h3 { margin: 0 0 6px; font-size: 18px; }
+    .scope-item p { margin: 0; color: var(--muted); line-height: 1.5; }
+
+    .footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 40px 22px 72px;
+      color: rgba(17,56,71,.68);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-top: 1px solid rgba(17,56,71,.12);
+    }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 980px) {
+      .hero, .section-grid, .case-body, .conversion { grid-template-columns: 1fr; }
+      .hero { padding-top: 54px; min-height: auto; }
+      .device-card { transform: none; }
+      .chapter-nav { position: static; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .case-scene { border-right: 0; border-bottom: 1px solid rgba(17,56,71,.12); }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-meta, .story-card { grid-template-columns: 1fr; }
+      .kpi-panel { position: relative; right: auto; bottom: auto; width: auto; margin: 20px; }
+      .screen { min-height: auto; }
+      .section { padding: 68px 18px; }
+      .footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Hoofdnavigatie">
+      <a class="brand" href="#top" aria-label="Preludens home">
+        <span class="brand-mark">P</span>
+        <span>Preludens</span>
+      </a>
+      <div class="nav-links">
+        <a href="#verhaal">Het verhaal</a>
+        <a href="#bewijs">Waarom dit werkt</a>
+        <a href="#demo">Demo</a>
+        <a href="#start" class="nav-cta">Start een traject</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <span class="eyebrow">Story-driven learning voor complexe organisaties</span>
+        <h1 id="hero-title">Training die voelt als een <span class="accent">keerpunt</span>.</h1>
+        <p class="hero-lead">Geen catalogus met modules. Geen standaard e-learningpagina. Deze site neemt de prospect mee in één herkenbare situatie: medewerkers weten wat ze moeten doen, maar doen het onder druk nét anders.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#demo">Bekijk de demo-case →</a>
+          <a class="btn btn-secondary" href="#verhaal">Lees het verhaal</a>
+        </div>
+        <div class="hero-meta" aria-label="Belangrijkste belofte">
+          <div class="meta-card">
+            <strong>3 sec.</strong>
+            <span>Direct helder: interactieve leerverhalen voor gedrag in de praktijk.</span>
+          </div>
+          <div class="meta-card">
+            <strong>12 sec.</strong>
+            <span>De klant ziet het verschil: verhaal, keuzes, feedback en meetbaar gedrag.</span>
+          </div>
+          <div class="meta-card">
+            <strong>120 sec.</strong>
+            <span>De prospect heeft een concrete case ervaren en wil doorpraten.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-device" aria-label="Interactieve MicroGame preview">
+        <div class="device-card">
+          <div class="screen">
+            <div class="screen-top">
+              <div class="dots"><i></i><i></i><i></i></div>
+              <span>MicroGame Story · Live preview</span>
+            </div>
+            <div class="screen-body">
+              <div class="scenario-label">Hoofdstuk 02 · De twijfel</div>
+              <h2 class="scenario-title">De installatie lijkt veilig. De bewoner wil door.</h2>
+              <p class="scenario-text">Je merkt een detail dat niet klopt. Technisch kun je verder, maar professioneel gezien ontstaat er risico. Wat doe je?</p>
+              <div class="choice-stack">
+                <div class="choice active" data-feedback="Goed: je maakt het risico expliciet voordat het routine wordt."><b>A</b><span>Je benoemt het risico en legt kort uit waarom je de situatie eerst wilt controleren.</span></div>
+                <div class="choice" data-feedback="Twijfelachtig: tempo voelt professioneel, maar het risico blijft onder water."><b>B</b><span>Je werkt door en noteert het punt later in je rapportage.</span></div>
+                <div class="choice" data-feedback="Onvoldoende: je kiest voor comfort boven veiligheid en eigenaarschap."><b>C</b><span>Je stelt de bewoner gerust en rondt de installatie af volgens planning.</span></div>
+              </div>
+            </div>
+            <aside class="kpi-panel" aria-live="polite">
+              <h3>Effect van je keuze</h3>
+              <div class="bar">
+                <div class="bar-label"><span>Veiligheid</span><span id="kpi1">84%</span></div>
+                <div class="bar-track"><div class="bar-fill" id="fill1" style="width:84%"></div></div>
+              </div>
+              <div class="bar">
+                <div class="bar-label"><span>Vertrouwen</span><span id="kpi2">71%</span></div>
+                <div class="bar-track"><div class="bar-fill" id="fill2" style="width:71%"></div></div>
+              </div>
+              <div class="bar">
+                <div class="bar-label"><span>Tempo</span><span id="kpi3">62%</span></div>
+                <div class="bar-track"><div class="bar-fill" id="fill3" style="width:62%"></div></div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="verhaal">
+      <div class="section-grid">
+        <aside class="chapter-nav" aria-label="Storytelling structuur">
+          <a href="#c1" class="active"><span>1. Herkenning</span><small>probleem</small></a>
+          <a href="#c2"><span>2. Spanning</span><small>druk</small></a>
+          <a href="#c3"><span>3. Keuze</span><small>gedrag</small></a>
+          <a href="#c4"><span>4. Bewijs</span><small>impact</small></a>
+        </aside>
+        <div>
+          <span class="section-kicker">De vorm die ik zou kiezen</span>
+          <h2>Een interactieve casefilm als website.</h2>
+          <p class="section-lead">De homepage is geen etalage, maar een korte ervaring. De bezoeker stapt in een realistische werksituatie, voelt de spanning, maakt een keuze en ziet direct hoe Preludens gedrag zichtbaar maakt. Daarna pas komen diensten, aanpak en contact.</p>
+
+          <div class="storyline" style="margin-top:34px">
+            <article class="story-card reveal" id="c1">
+              <div class="chapter-number">1</div>
+              <div>
+                <h3>Begin met een herkenbare praktijksituatie</h3>
+                <p>De prospect leest niet eerst wat Preludens allemaal kan. Hij herkent meteen zijn eigen organisatie: mensen volgen trainingen, maar op het beslissende moment sturen tijdsdruk, routine en sociale spanning het gedrag.</p>
+                <div class="micro-tag-row"><span class="tag">Herkenning</span><span class="tag">3 seconden</span><span class="tag">Niet generiek</span></div>
+              </div>
+            </article>
+            <article class="story-card reveal" id="c2">
+              <div class="chapter-number">2</div>
+              <div>
+                <h3>Maak de spanning zakelijk en concreet</h3>
+                <p>Geen theatrale marketingtaal, maar professionele frictie: compliance versus praktijk, veiligheid versus tempo, klantvriendelijkheid versus begrenzen. Dit geeft autoriteit zonder afstandelijk te worden.</p>
+                <div class="micro-tag-row"><span class="tag">Complexe context</span><span class="tag">Professioneel</span><span class="tag">Menselijk</span></div>
+              </div>
+            </article>
+            <article class="story-card reveal" id="c3">
+              <div class="chapter-number">3</div>
+              <div>
+                <h3>Laat de bezoeker één microkeuze maken</h3>
+                <p>De site toont direct het verschil tussen informatie overdragen en gedrag trainen. Een kleine keuze met directe feedback maakt de propositie voelbaar: leren door scenario, consequentie en reflectie.</p>
+                <div class="micro-tag-row"><span class="tag">MicroGame</span><span class="tag">Keuze</span><span class="tag">Feedback</span></div>
+              </div>
+            </article>
+            <article class="story-card reveal" id="c4">
+              <div class="chapter-number">4</div>
+              <div>
+                <h3>Eindig met bewijs, aanpak en actie</h3>
+                <p>Na de ervaring volgt pas de rationale: hoe Preludens verhalen ontwerpt, omzet naar leerdoelen, keuzes koppelt aan KPI’s en oplevert als schaalbare e-learning of blended programma.</p>
+                <div class="micro-tag-row"><span class="tag">12 seconden</span><span class="tag">120 seconden</span><span class="tag">Conversie</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-band" id="bewijs">
+      <div class="section">
+        <span class="section-kicker">Waarom deze vorm professioneel voelt</span>
+        <h2>Groot genoeg voor enterprise. Menselijk genoeg om te blijven hangen.</h2>
+        <p class="section-lead">De stijl combineert donkere autoriteit met warme accenten. Het ontwerp voelt serieus, maar niet koud. De inhoud verkoopt niet met claims, maar met een demonstratie van expertise.</p>
+        <div class="proof-grid">
+          <article class="proof-card reveal">
+            <div class="proof-icon">01</div>
+            <h3>De klant ziet zijn probleem</h3>
+            <p>De eerste laag is herkenning: situaties waarin kennis aanwezig is, maar gedrag onder druk afwijkt.</p>
+          </article>
+          <article class="proof-card reveal">
+            <div class="proof-icon">02</div>
+            <h3>De oplossing wordt ervaren</h3>
+            <p>Door een keuze te laten maken, begrijpt de bezoeker intuïtief wat een MicroGame anders maakt.</p>
+          </article>
+          <article class="proof-card reveal">
+            <div class="proof-icon">03</div>
+            <h3>De investering voelt logisch</h3>
+            <p>Na de demo is het gesprek niet “wat kost e-learning?”, maar “welke gedragsmomenten moeten wij trainen?”</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <span class="section-kicker">Voorbeeldsectie op de website</span>
+      <h2>Ervaar één minuut van een MicroGame Story.</h2>
+      <p class="section-lead">Deze demo-case is bewust kort. De bezoeker hoeft niets te downloaden en niets uit te leggen. Hij krijgt meteen een inhoudelijke ervaring.</p>
+
+      <div class="case-lab reveal">
+        <div class="case-head">
+          <strong>Case: De overdracht aan het eind van de dienst</strong>
+          <span class="case-status">Interactief fragment</span>
+        </div>
+        <div class="case-body">
+          <div class="case-scene">
+            <h3>Je collega zegt: “Zet maar op groen, anders halen we de planning niet.”</h3>
+            <p>De procedure is duidelijk, maar de praktijk schuurt. Je ziet een afwijking die waarschijnlijk klein is. Tegelijk staat de klant te wachten en je team loopt achter.</p>
+            <div class="dialogue">
+              <div class="bubble">Collega: “We doen dit altijd zo. Als er echt iets mis was, hadden we dat allang gezien.”</div>
+              <div class="bubble user">Jij: “Ik wil één controle doen voordat ik dit vrijgeef.”</div>
+              <div class="bubble">Collega: “Dan moeten we wel uitleggen waarom we vertragen.”</div>
+            </div>
+          </div>
+          <aside class="case-side">
+            <div class="slider-card">
+              <h4>Wat weegt zwaarder?</h4>
+              <div class="range-row"><span>Tempo</span><span>Veiligheid</span></div>
+              <input id="choiceRange" type="range" min="0" max="100" value="68" aria-label="Balans tussen tempo en veiligheid" />
+            </div>
+            <div class="slider-card">
+              <h4>Leerdoel</h4>
+              <p style="margin:0;color:var(--muted);line-height:1.55">De deelnemer leert niet alleen de regel, maar oefent het moment waarop hij de regel moet verdedigen.</p>
+            </div>
+            <div class="feedback-box" id="rangeFeedback">
+              <strong>Feedback</strong>
+              Je kiest voor controle en maakt professioneel gedrag zichtbaar. Dat kost tijd, maar verhoogt veiligheid en eigenaarschap.
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="start">
+      <div class="conversion">
+        <div class="proposal reveal">
+          <div>
+            <span class="section-kicker">Volgende stap</span>
+            <h2>Laat je leerdoel voelen voordat je het uitlegt.</h2>
+            <p>Een goede Preludens-site moet prospects niet alleen informeren, maar laten ervaren hoe jullie denken: scherp, verhalend, visueel en gedragsgericht.</p>
+          </div>
+          <a class="btn btn-primary" href="mailto:hello@preludens.nl?subject=Demo%20MicroGame%20Story">Plan een demo-gesprek →</a>
+        </div>
+        <div class="scope-list">
+          <article class="scope-item reveal">
+            <div class="check">✓</div>
+            <div><h3>Hero met directe belofte</h3><p>In één zin duidelijk: Preludens maakt interactieve leerverhalen voor gedrag in complexe praktijksituaties.</p></div>
+          </article>
+          <article class="scope-item reveal">
+            <div class="check">✓</div>
+            <div><h3>Storytelling als structuur</h3><p>Niet losse blokken, maar een volgorde: herkenning, spanning, keuze, bewijs en actie.</p></div>
+          </article>
+          <article class="scope-item reveal">
+            <div class="check">✓</div>
+            <div><h3>Interactieve mini-demo</h3><p>De bezoeker voelt binnen twee minuten hoe een MicroGame werkt.</p></div>
+          </article>
+          <article class="scope-item reveal">
+            <div class="check">✓</div>
+            <div><h3>Enterprise uitstraling</h3><p>Donkerblauw als autoriteit, oranje als energie, veel witruimte en scherpe inhoudelijke taal.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>Preludens · Demo storytelling website</strong>
+    <span>Conceptuele demo — teksten, interacties en structuur zijn bedoeld als startpunt.</span>
+  </footer>
+
+  <script>
+    const revealItems = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in');
+      });
+    }, { threshold: 0.12 });
+    revealItems.forEach(item => observer.observe(item));
+
+    const choices = document.querySelectorAll('.choice');
+    const kpis = [
+      { one: 84, two: 71, three: 62 },
+      { one: 58, two: 66, three: 83 },
+      { one: 39, two: 52, three: 91 }
+    ];
+    choices.forEach((choice, index) => {
+      choice.addEventListener('click', () => {
+        choices.forEach(c => c.classList.remove('active'));
+        choice.classList.add('active');
+        const set = kpis[index];
+        document.getElementById('kpi1').textContent = set.one + '%';
+        document.getElementById('kpi2').textContent = set.two + '%';
+        document.getElementById('kpi3').textContent = set.three + '%';
+        document.getElementById('fill1').style.width = set.one + '%';
+        document.getElementById('fill2').style.width = set.two + '%';
+        document.getElementById('fill3').style.width = set.three + '%';
+      });
+    });
+
+    const range = document.getElementById('choiceRange');
+    const feedback = document.getElementById('rangeFeedback');
+    range.addEventListener('input', () => {
+      const value = Number(range.value);
+      let text = 'Je kiest voor controle en maakt professioneel gedrag zichtbaar. Dat kost tijd, maar verhoogt veiligheid en eigenaarschap.';
+      if (value < 35) text = 'Je kiest sterk voor tempo. Dat kan efficiënt lijken, maar maakt het risico afhankelijk van aannames in plaats van controle.';
+      if (value > 82) text = 'Je kiest zeer sterk voor veiligheid. Goed, maar let op: professioneel handelen betekent ook helder communiceren waarom vertraging nodig is.';
+      feedback.innerHTML = '<strong>Feedback</strong>' + text;
+    });
+
+    const navLinks = document.querySelectorAll('.chapter-nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.forEach(item => item.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

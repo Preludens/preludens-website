@@ -3,29 +3,34 @@ name: "Preludens"
 description: "Leren als verkennen met rust, richting en diepgang"
 version: "1.0.0"
 colors:
-  primary: "#1a1230"
-  primaryLight: "#3d3560"
-  primaryDark: "#110c24"
-  secondary: "#9b8cff"
-  accent: "#3dccc7"
-  success: "#2a9d99"
-  warning: "#f5b942"
-  danger: "#d94a38"
-  info: "#9b8cff"
-  background: "#fbf7f2"
+  harvestOrange: "#E97C2C"
+  prussianBlue: "#011C42"
+  regalNavy: "#123763"
+  duskBlue: "#37547E"
+  sandyBrown: "#FCA653"
+  primary: "#123763"
+  primaryLight: "#37547E"
+  primaryDark: "#011C42"
+  secondary: "#37547E"
+  accent: "#E97C2C"
+  success: "#37547E"
+  warning: "#FCA653"
+  danger: "#E97C2C"
+  info: "#FCA653"
+  background: "#F7F3EF"
   surface: "#ffffff"
-  surfaceAlt: "#f0e8de"
-  text: "#1a1230"
-  textMuted: "#3d3560"
-  textSubtle: "#6b6388"
-  border: "rgba(26, 18, 48, 0.1)"
-  borderFocused: "#e85d4c"
-  accentSoft: "rgba(61, 204, 199, 0.15)"
-  accentWarm: "#e85d4c"
-  accentWarmSoft: "#ff8a7a"
-  accentBlueGray: "#3d3560"
+  surfaceAlt: "#EEF2F7"
+  text: "#123763"
+  textMuted: "#37547E"
+  textSubtle: "#37547E"
+  border: "rgba(18, 55, 99, 0.16)"
+  borderFocused: "#E97C2C"
+  accentSoft: "rgba(252, 166, 83, 0.18)"
+  accentWarm: "#E97C2C"
+  accentWarmSoft: "#FCA653"
+  accentBlueGray: "#37547E"
   backgroundSection: "#ffffff"
-  backgroundHero: "#fbf7f2"
+  backgroundHero: "#011C42"
 typography:
   fontHeading: "Outfit, system-ui, sans-serif"
   fontBody: "DM Sans, system-ui, sans-serif"
@@ -64,30 +69,40 @@ Personality traits: Nieuwsgierig, Avontuurlijk, Rustig, Gelaagd, Richtinggevend,
 
 ## Colors
 
+Brand palette (CSS: `assets/css/main.scss`):
+
+| Token | Hex | Gebruik |
+|-------|-----|---------|
+| harvest-orange | `#E97C2C` | Hoofdaccent, links, primaire knoppen |
+| prussian-blue | `#011C42` | Hero-achtergrond, footer, quote-blokken |
+| regal-navy | `#123763` | Koppen, donkere UI (`--color-ink`) |
+| dusk-blue | `#37547E` | Bodytekst, secundaire accenten (`--color-ink-soft`) |
+| sandy-brown | `#FCA653` | Warm accent, labels, hero-eyebrows (`--color-gold`) |
+
 Use semantic color tokens. Never hardcode hex values in components.
-- **primary**: `#1a1230` — use as `var(--hs-color-primary)`
-- **primaryLight**: `#3d3560` — use as `var(--hs-color-primaryLight)`
-- **primaryDark**: `#110c24` — use as `var(--hs-color-primaryDark)`
-- **secondary**: `#9b8cff` — use as `var(--hs-color-secondary)`
-- **accent**: `#3dccc7` — use as `var(--hs-color-accent)`
-- **success**: `#2a9d99` — use as `var(--hs-color-success)`
-- **warning**: `#f5b942` — use as `var(--hs-color-warning)`
-- **danger**: `#d94a38` — use as `var(--hs-color-danger)`
-- **info**: `#9b8cff` — use as `var(--hs-color-info)`
-- **background**: `#fbf7f2` — use as `var(--hs-color-background)`
-- **surface**: `#ffffff` — use as `var(--hs-color-surface)`
-- **surfaceAlt**: `#f0e8de` — use as `var(--hs-color-surfaceAlt)`
-- **text**: `#1a1230` — use as `var(--hs-color-text)`
-- **textMuted**: `#3d3560` — use as `var(--hs-color-textMuted)`
-- **textSubtle**: `#6b6388` — use as `var(--hs-color-textSubtle)`
-- **border**: `rgba(26, 18, 48, 0.1)` — use as `var(--hs-color-border)`
-- **borderFocused**: `#e85d4c` — use as `var(--hs-color-borderFocused)`
-- **accentSoft**: `rgba(61, 204, 199, 0.15)` — use as `var(--hs-color-accentSoft)`
-- **accentWarm**: `#e85d4c` — use as `var(--hs-color-accentWarm)`
-- **accentWarmSoft**: `#ff8a7a` — use as `var(--hs-color-accentWarmSoft)`
-- **accentBlueGray**: `#3d3560` — use as `var(--hs-color-accentBlueGray)`
-- **backgroundSection**: `#ffffff` — use as `var(--hs-color-backgroundSection)`
-- **backgroundHero**: `#fbf7f2` — use as `var(--hs-color-backgroundHero)`
+- **primary**: `#123763` — use as `var(--color-ink)` / `var(--hs-color-primary)`
+- **primaryLight**: `#37547E` — use as `var(--color-ink-soft)`
+- **primaryDark**: `#011C42` — use as `var(--color-prussian-blue)`
+- **secondary**: `#37547E` — use as `var(--color-lilac)`
+- **accent**: `#E97C2C` — use as `var(--color-coral)`
+- **success**: `#37547E`
+- **warning**: `#FCA653`
+- **danger**: `#E97C2C`
+- **info**: `#FCA653`
+- **background**: `#F7F3EF` — use as `var(--color-cream)`
+- **surface**: `#ffffff`
+- **surfaceAlt**: `#EEF2F7` — use as `var(--color-cream-dark)`
+- **text**: `#123763`
+- **textMuted**: `#37547E`
+- **textSubtle**: `#37547E`
+- **border**: `rgba(18, 55, 99, 0.16)`
+- **borderFocused**: `#E97C2C`
+- **accentSoft**: `rgba(252, 166, 83, 0.18)`
+- **accentWarm**: `#E97C2C`
+- **accentWarmSoft**: `#FCA653`
+- **accentBlueGray**: `#37547E`
+- **backgroundSection**: `#ffffff`
+- **backgroundHero**: `#011C42`
 
 ## Typography
 
@@ -191,6 +206,7 @@ AI negative prompt: busy corporate office, cheesy stock photo, chaotic compositi
 
 ## Projectregels (preludens-website)
 
+- Kernpalette: `#E97C2C` (harvest-orange), `#011C42` (prussian-blue), `#123763` (regal-navy), `#37547E` (dusk-blue), `#FCA653` (sandy-brown).
 - Gebruik in implementatie altijd bestaande CSS-tokens uit `assets/css/main.scss` (geen losse hex-waarden).
 - Behoud de merktoon: speels, helder, rustig; vermijd drukke of generieke corporate stijl.
 - Hero- en bannerbeelden volgen het principe: grote wereld, kleine mens, subtiele route/koerslaag.

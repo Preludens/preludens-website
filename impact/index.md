@@ -40,7 +40,7 @@ permalink: /impact/
         <p>Intrinsieke betrokkenheid door relevante scenario's en een veilige speelruimte.</p>
       </article>
     </div>
-    <div class="prose" style="margin-top: var(--space-lg);">
+    <div class="prose u-mt-lg">
       <p>
         Impact betekent voor ons niet alleen afrondingspercentages, maar merkbare verandering in hoe mensen afwegen, kiezen en handelen wanneer het erop aankomt.
       </p>

@@ -34,7 +34,7 @@ permalink: /contact/
           Tell us briefly about your team, learning goals, and timing. We will respond as soon as we can.
         </li>
       </ul>
-      <p style="margin-top: var(--space-md);">
+      <p class="u-mt-md">
         <a class="btn btn-primary" href="mailto:{{ site.email }}?subject=GameStorm%20request">Send a message</a>
       </p>
     </div>

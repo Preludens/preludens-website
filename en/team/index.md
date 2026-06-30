@@ -21,7 +21,7 @@ permalink: /team/
     <p class="prose">
       Meet the people behind Preludens: a focused team that brings play, narrative, and technology together in learning experiences that stay with you.
     </p>
-    <div class="team-grid" style="margin-top: var(--space-lg);">
+    <div class="team-grid u-mt-lg">
       <div class="team-member">
         <div class="avatar">
           <img src="{{ '/assets/images/team/daan-groen.jpg' | relative_url }}" alt="Daan Groen" width="200" height="200" loading="lazy" decoding="async">
@@ -47,7 +47,7 @@ permalink: /team/
         </p>
       </div>
     </div>
-    <p style="margin-top: var(--space-lg);">
+    <p class="u-mt-lg">
       <a href="{{ '/contact/' | relative_url }}">Want to meet the team? Get in touch →</a>
     </p>
   </div>

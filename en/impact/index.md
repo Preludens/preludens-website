@@ -40,7 +40,7 @@ permalink: /impact/
         <p>Intrinsic engagement through relevant scenarios and a safe space to play.</p>
       </article>
     </div>
-    <div class="prose" style="margin-top: var(--space-lg);">
+    <div class="prose u-mt-lg">
       <p>
         For us, impact is not only completion rates, but a noticeable shift in how people weigh options, choose, and act when it counts.
       </p>

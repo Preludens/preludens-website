@@ -18,7 +18,7 @@ permalink: /diensten/
 
 <section class="section" id="microgame-stories">
   <div class="container">
-    <article class="card card--coral" style="max-width: none;">
+    <article class="card card--coral card--full">
       <span class="card-icon" aria-hidden="true">📖</span>
       <h2>MicroGame Stories</h2>
       <p>
@@ -32,7 +32,7 @@ permalink: /diensten/
 
 <section class="section section--alt" id="dilemma-storytelling">
   <div class="container">
-    <article class="card card--gold" style="max-width: none;">
+    <article class="card card--gold card--full">
       <span class="card-icon" aria-hidden="true">⚖️</span>
       <h2>Dilemma Storytelling</h2>
       <p>
@@ -46,7 +46,7 @@ permalink: /diensten/
 
 <section class="section" id="game-thinking">
   <div class="container">
-    <article class="card card--mint" style="max-width: none;">
+    <article class="card card--mint card--full">
       <span class="card-icon" aria-hidden="true">🎯</span>
       <h2>Game Thinking</h2>
       <p>

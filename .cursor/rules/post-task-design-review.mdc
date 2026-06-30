@@ -1,48 +1,68 @@
 ---
-description: Na elke voltooide opdracht — design/UX/UI-review en verbeteringen binnen huisstijl
-alwaysApply: true
+description: Optionele design/UX/UI-review en verbeteringen binnen huisstijl
+alwaysApply: false
 ---
 
-# Post-task design review (Preludens)
+# Design review (Preludens)
 
 ## Wanneer
 
-Zodra de **primaire opdracht** klaar, getest en (indien van toepassing) gemerged naar `main` is, start **altijd** een aparte design-reviewronde — ook als de opdracht geen visuele wijziging leek te zijn.
+Start een design/UX/UI-review alleen wanneer de gebruiker daar expliciet om vraagt, of wanneer de opdracht zelf draait om visuele QA, responsive gedrag, layout, interactie of browsercontrole.
+
+Voer dus niet na elke prompt of na elke afgeronde taak automatisch een mobiele en desktop/browser-check uit.
 
 ## Design-review agent starten
 
-1. Start een **aparte agent** (Task-tool, `subagent_type: generalPurpose` of browser-ondersteunde review) met als enige focus: graphic, UX en UI van de gewijzigde pagina('s).
-2. Bekijk elke gewijzigde pagina via browser-MCP of lokaal (`bundle exec jekyll serve`).
+1. Start een **aparte agent** (Task-tool, `subagent_type: generalPurpose`) met als enige focus: graphic, UX en UI van de gewijzigde pagina('s).
+2. Voer de browser-review uit wanneer de gevraagde review visuele of responsive controle vereist.
 3. Rapporteer kort wat je ziet vóór je wijzigingen doorvoert.
 
-## Verplichte check: desktop én mobiel
+## Browser-review — workflow bij gevraagde visuele check
 
-**Elke design-review moet expliciet beide viewports controleren.** Geen eindverslag zonder desktop- én mobiel-screenshot of -snapshot.
+Gebruik **browser-MCP** (`cursor-ide-browser`) als primaire methode. Fallback: lokaal `bundle exec jekyll serve` + browser, alleen als live deploy nog niet klaar is.
 
-| Viewport | Breedte | Doel |
-|----------|---------|------|
-| Desktop | ≥ 1280px | Professionele eerste indruk, hiërarchie, witruimte, navigatie |
-| Mobiel | 375px (iPhone) of 390px | Leesbaarheid, touch targets, geen afgeknipte content |
+**Basis-URL:** https://preludens.github.io/preludens-website/ (paden afleiden uit gewijzigde bestanden; NL én EN indien van toepassing).
 
-### Checklist per viewport
+### Stappen per gewijzigde pagina
 
-Beoordeel of de pagina **goed én professioneel** oogt:
+1. **Navigeer** — `browser_navigate` naar live URL; wacht op paginalaad.
+2. **Lock** — `browser_lock` vóór langere interacties; `browser_lock` unlock na afloop.
+3. **Desktop (1280×900)** — CDP viewport instellen, pagina herladen, volledige pagina scrollen:
+   ```text
+   Emulation.setDeviceMetricsOverride
+   { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false }
+   ```
+4. **Screenshot + snapshot** — `browser_take_screenshot` (fullPage) en `browser_snapshot` voor structuur/accessibility.
+5. **Mobiel (375×812)** — viewport wisselen, pagina herladen, opnieuw scrollen:
+   ```text
+   Emulation.setDeviceMetricsOverride
+   { width: 375, height: 812, deviceScaleFactor: 2, mobile: true }
+   ```
+6. **Interactie testen** — hamburger-menu openen (mobiel); hover/focus op kaarten en CTA's (desktop); minstens één primaire link/kaart klikken.
+7. **Layout-check (CDP)** — op beide viewports:
+   ```javascript
+   document.documentElement.scrollWidth <= document.documentElement.clientWidth
+   ```
+   Geen horizontale scroll = geslaagd.
+8. **Touch targets (mobiel)** — primaire tap-doelen (kaarten, knoppen) min. ~44px hoog; noteer kleine inline links apart.
 
-- **Layout:** geen overlappende elementen, geen horizontale scroll, consistente uitlijning
-- **Typografie:** koppen en bodytekst leesbaar; geen te kleine font sizes op mobiel
-- **Navigatie:** header/menu bruikbaar (hamburger op mobiel indien van toepassing)
-- **Afbeeldingen & media:** correct geschaald, niet pixelig of afgesneden
-- **CTA's & knoppen:** volledig zichtbaar, voldoende contrast, min. 44px hoog op mobiel
-- **Footer & secties:** geen lege gaten of gebroken spacing tussen breakpoints
-- **Algemeen:** oogt het als een professionele merksite — niet als een half-af prototype?
+### Browser-checklist (invullen per viewport)
 
-Bij afwijkingen tussen desktop en mobiel: **fix vóór afronding**, tenzij de gebruiker expliciet vraagt om te wachten.
+| Check | Desktop | Mobiel |
+|-------|---------|--------|
+| Geen horizontale scroll | ☐ | ☐ |
+| Hero + koppen hiërarchie duidelijk | ☐ | ☐ |
+| Bodytekst leesbaar (geen te kleine fonts) | ☐ | ☐ |
+| Navigatie bruikbaar (header / hamburger) | ☐ | ☐ |
+| CTA's en kaarten volledig zichtbaar | ☐ | ☐ |
+| Afbeeldingen/media correct geschaald | ☐ | ☐ |
+| Footer + secties: geen gebroken spacing | ☐ | ☐ |
+| Hover/focus states (desktop) | ☐ | n.v.t. |
+| Oogt professioneel (geen prototype-gevoel) | ☐ | ☐ |
 
-Gebruik browser-resize, `browser_take_screenshot`, of CDP viewport-instellingen; scroll door de hele pagina op beide formaten.
+Bij afwijkingen: fix vóór afronding, tenzij de gebruiker expliciet vraagt om te wachten. Na fixes die layout of responsive gedrag raken: controleer opnieuw op de relevante viewport(s).
 
 ## Analyse — waar op letten
-
-Beoordeel systematisch aan de hand van gangbare methodologieën:
 
 | Domein | Methodologie / checklist |
 |--------|--------------------------|
@@ -71,12 +91,13 @@ Lees `assets/css/main.scss` en bestaande componenten in `_includes/` vóór je n
 
 - Voer **concrete, kleine verbeteringen** door in `assets/css/main.scss`, `_layouts/`, `_includes/` of pagina-markdown — alleen wat de review rechtvaardigt.
 - Hergebruik bestaande classes en BEM-achtige patronen; geen parallelle design systemen.
-- Test visueel na elke wijziging op **desktop én mobiel**; fix regressies direct.
+- Test visueel via browser-MCP op de relevante viewport(s) wanneer de wijziging of opdracht daarom vraagt; fix regressies direct.
 
 ## Afronding
 
-Sluit de design-reviewronde af volgens `.cursor/rules/github-pages-workflow.mdc`:
+Sluit een gevraagde design-reviewronde af volgens `.cursor/rules/github-pages-workflow.mdc`:
 
 - Merge naar `main` als er wijzigingen zijn.
-- Vermeld in het eindverslag expliciet **Design review:** korte samenvatting van bevindingen + doorgevoerde verbeteringen, inclusief bevestiging dat desktop (≥1280px) en mobiel (~375px) professioneel zijn gecontroleerd.
+- Vermeld in het eindverslag expliciet **Design review:** korte samenvatting van bevindingen + doorgevoerde verbeteringen.
+- Bevestig welke viewport(s) visueel in de browser zijn gecontroleerd wanneer zo'n check is uitgevoerd.
 - Geef live links naar de aangepaste pagina('s).

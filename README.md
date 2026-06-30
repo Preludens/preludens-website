@@ -39,6 +39,7 @@ Het bestand `CNAME` wijst naar `preludens.nl`. Stel in GitHub Pages onder **Cust
 - `index.md` — Home
 - `play/`, `diensten/`, `team/`, `impact/`, `verhalen/`, `contact/` — overige pagina’s
 - `_layouts/`, `_includes/` — templates
+- `content-structuur-en-copy.md` — storytelling- en copyrichtlijnen voor alle pagina's
 - `assets/css/main.scss` — styling (kleurenpalet in CSS-variabelen)
 
 ## Kleuren aanpassen

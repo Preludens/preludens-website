@@ -10,6 +10,13 @@ layout: default
 
 <article class="section">
   <div class="container verhaal-detail">
+    {% assign uitdaging = page.uitdaging | default: page.vraag %}
+    {% assign ontwerpvraag = page.ontwerpvraag %}
+    {% assign aanpak = page.aanpak | default: page.oplossing %}
+    {% assign route = page.route %}
+    {% assign ervaring = page.ervaring %}
+    {% assign resultaat = page.resultaat %}
+    {% assign inzicht = page.inzicht | default: page.reflectie %}
     <header class="verhaal-header">
       <div class="verhaal-client">
         {% if page.client_logo %}
@@ -29,6 +36,30 @@ layout: default
       <p class="verhaal-lead">{{ page.summary }}</p>
     </header>
 
+    {% assign has_project_details = false %}
+    {% if page.client or page.project or page.sector or page.jaar or page.oplossingstype or page.doelgroep or page.thema or page.vorm or page.rol %}
+      {% assign has_project_details = true %}
+    {% endif %}
+    {% if has_project_details %}
+      <section class="verhaal-block">
+        <h2>{{ t.verhaal.project_intro }}</h2>
+        <p>
+          {{ page.summary }}
+        </p>
+        <dl class="verhaal-meta-list">
+          {% if page.client %}<dt>{{ t.verhaal.meta_client }}</dt><dd>{{ page.client }}</dd>{% endif %}
+          {% if page.sector %}<dt>{{ t.verhaal.meta_sector }}</dt><dd>{{ page.sector }}</dd>{% endif %}
+          {% if page.jaar %}<dt>{{ t.verhaal.meta_year }}</dt><dd>{{ page.jaar }}</dd>{% endif %}
+          {% if page.oplossingstype %}<dt>{{ t.verhaal.meta_solution_type }}</dt><dd>{{ page.oplossingstype }}</dd>{% endif %}
+          {% if page.doelgroep %}<dt>{{ t.verhaal.meta_audience }}</dt><dd>{{ page.doelgroep }}</dd>{% endif %}
+          {% if page.thema %}<dt>{{ t.verhaal.meta_theme }}</dt><dd>{{ page.thema }}</dd>{% endif %}
+          {% if page.vorm %}<dt>{{ t.verhaal.meta_format }}</dt><dd>{{ page.vorm }}</dd>{% endif %}
+          {% if page.rol %}<dt>{{ t.verhaal.meta_role }}</dt><dd>{{ page.rol }}</dd>{% endif %}
+          {% if page.project %}<dt>{{ t.verhaal.meta_project }}</dt><dd>{{ page.project }}</dd>{% endif %}
+        </dl>
+      </section>
+    {% endif %}
+
     {% if page.highlights %}
     <ul class="verhaal-highlights">
       {% for point in page.highlights %}
@@ -38,18 +69,46 @@ layout: default
     {% endif %}
 
     <div class="verhaal-blocks">
-      <section class="verhaal-block">
-        <h2>{{ t.verhaal.client_question }}</h2>
-        <p>{{ page.vraag }}</p>
-      </section>
-      <section class="verhaal-block">
-        <h2>{{ t.verhaal.our_solution }}</h2>
-        <p>{{ page.oplossing }}</p>
-      </section>
+      {% if uitdaging %}
+        <section class="verhaal-block">
+          <h2>{{ t.verhaal.challenge }}</h2>
+          <p>{{ uitdaging }}</p>
+        </section>
+      {% endif %}
+      {% if ontwerpvraag %}
+        <section class="verhaal-block">
+          <h2>{{ t.verhaal.design_question }}</h2>
+          <p>{{ ontwerpvraag }}</p>
+        </section>
+      {% endif %}
+      {% if aanpak %}
+        <section class="verhaal-block">
+          <h2>{{ t.verhaal.our_solution }}</h2>
+          <p>{{ aanpak }}</p>
+        </section>
+      {% endif %}
+      {% if route %}
+        <section class="verhaal-block">
+          <h2>{{ t.verhaal.route }}</h2>
+          <p>{{ route }}</p>
+        </section>
+      {% endif %}
+      {% if ervaring %}
+        <section class="verhaal-block">
+          <h2>{{ t.verhaal.experience }}</h2>
+          <p>{{ ervaring }}</p>
+        </section>
+      {% endif %}
       <section class="verhaal-block verhaal-block--result">
         <h2>{{ t.verhaal.result }}</h2>
-        <p>{{ page.resultaat }}</p>
+        <p>{{ resultaat }}</p>
       </section>
+      {% if inzicht %}
+        <section class="verhaal-block">
+          <h2>{{ t.verhaal.insight }}</h2>
+          <p>{{ inzicht }}</p>
+        </section>
+      {% endif %}
     </div>
 
     <p class="verhaal-back">

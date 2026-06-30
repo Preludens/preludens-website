@@ -41,7 +41,7 @@ permalink: /play/in-de-praktijk/
         </p>
       </li>
     </ul>
-    <p style="margin-top: var(--space-lg);">
+    <p class="u-mt-lg">
       <a href="{{ '/play/' | relative_url }}">← Back to Play</a>
       ·
       <a href="{{ '/verhalen/' | relative_url }}">View client stories →</a>

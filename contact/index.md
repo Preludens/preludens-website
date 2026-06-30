@@ -34,7 +34,7 @@ permalink: /contact/
           Vertel kort over je team, leerdoelen en timing. We reageren zo snel mogelijk.
         </li>
       </ul>
-      <p style="margin-top: var(--space-md);">
+      <p class="u-mt-md">
         <a class="btn btn-primary" href="mailto:{{ site.email }}?subject=GameStorm%20aanvraag">Stuur een brief</a>
       </p>
     </div>

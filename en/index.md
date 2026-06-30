@@ -24,14 +24,7 @@ permalink: /
         <a class="btn btn-secondary" href="{{ '/diensten/' | relative_url }}">Our services</a>
       </div>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="play-shapes">
-        <span class="shape shape--1"></span>
-        <span class="shape shape--2"></span>
-        <span class="shape shape--3"></span>
-        <p class="hero-quote">Find the Game in learning</p>
-      </div>
-    </div>
+    <div class="hero-art" aria-hidden="true"></div>
   </div>
 </section>
 
