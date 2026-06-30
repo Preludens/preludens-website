@@ -1,0 +1,41 @@
+---
+description: Pas Preludens visuele stijl uit design.MD toe
+alwaysApply: true
+---
+
+# Preludens visuele stijl (verplicht)
+
+Gebruik `design.MD` als primaire bron voor visuele en redactionele keuzes in dit project.
+
+## Kernprincipes
+
+- Stijl: avontuurlijk, verkennend, rustig, gelaagd en mensgericht.
+- Altijd richting tonen: pad, route of koers als subtiele betekenislaag.
+- Grote context, kleine mens: mens zichtbaar maar niet dominant.
+- Complexiteit toegankelijk maken: helder, overzichtelijk, niet druk.
+
+## Kleur- en tokengebruik
+
+- Gebruik uitsluitend bestaande CSS-variabelen uit `assets/css/main.scss`.
+- Voeg geen ad-hoc hex-kleuren toe als een bestaand token bruikbaar is.
+- Behoud rolverdeling: donkere blauwtinten voor rust/diepte, warme accenten voor energie/richting.
+- Gebruik accentkleuren spaarzaam en doelgericht.
+
+## Typografie en layout
+
+- Gebruik `--font-display` voor koppen en `--font-body` voor lopende tekst.
+- Gebruik spacing- en radius-tokens (`--space-*`, `--radius-*`) in plaats van willekeurige waarden.
+- Bewaak visuele hiërarchie: duidelijke kopniveaus, scanbare tekst, voldoende witruimte.
+- Vermijd overvolle secties, visuele ruis en decoratieve overdaad.
+
+## Beeldtaal en componenten
+
+- Hero- en bannerbeelden: open/gelaagde wereld + subtiele menselijke aanwezigheid + route-element.
+- Vermijd standaard corporate stock-look en kinderlijke game-esthetiek.
+- Interactieve elementen blijven professioneel, kalm en richtinggevend.
+
+## Taal en tone of voice
+
+- Schrijf helder, onderzoekend, menselijk en professioneel.
+- Vermijd schreeuwerige, belerende of hype-gedreven formuleringen.
+- Leg uit waarom iets ertoe doet; hou de toon uitnodigend.
