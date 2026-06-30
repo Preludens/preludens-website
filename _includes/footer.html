@@ -2,12 +2,8 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a class="logo logo-footer" href="{{ '/' | relative_url }}">
-        <span class="logo-mark" aria-hidden="true">▶</span>
-        <span class="logo-text">
-          <strong>Preludens</strong>
-          <small>{{ site.tagline }}</small>
-        </span>
+      <a class="logo logo-footer" href="{{ '/' | relative_url }}" aria-label="Preludens – naar home">
+        <img class="logo-img" src="{{ '/assets/images/logo/preludens-logo-inverse.png' | relative_url }}" alt="Preludens" width="180" height="53">
       </a>
       <p class="footer-tagline">Challenge · activate · motivate</p>
       <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
