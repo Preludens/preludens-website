@@ -1,0 +1,162 @@
+backend:
+  name: github
+  repo: preludens/preludens-website
+  branch: main
+  base_url: https://preludens-decap-oauth.preludens-decap-oauth.workers.dev
+  auth_endpoint: /auth
+
+site_url: https://preludens.nl
+display_url: https://preludens.nl
+
+media_folder: assets/images/uploads
+public_folder: /assets/images/uploads
+publish_mode: simple
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+editor:
+  preview: true
+
+collections:
+  - name: pages_nl
+    label: Pagina's (NL)
+    delete: false
+    editor:
+      preview: true
+    files:
+      - name: home_nl
+        label: Home (NL)
+        file: index.md
+        fields: &page_fields_nl
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Taal, name: lang, widget: hidden, default: nl }
+          - { label: Titel, name: title, widget: string }
+          - { label: Beschrijving, name: description, widget: text, required: false }
+          - { label: Permalink, name: permalink, widget: string, required: false }
+          - { label: Body class, name: body_class, widget: string, required: false }
+          - { label: Inhoud, name: body, widget: markdown, modes: [raw, rich_text], buttons: [bold, italic, link, quote, heading-two, heading-three, bulleted-list, numbered-list] }
+      - name: play_nl
+        label: Play (NL)
+        file: play/index.md
+        fields: *page_fields_nl
+      - name: play_blog_nl
+        label: Play Blog overzicht (NL)
+        file: play/blog/index.md
+        fields: *page_fields_nl
+      - name: play_praktijk_nl
+        label: Play In de praktijk (NL)
+        file: play/in-de-praktijk/index.md
+        fields: *page_fields_nl
+      - name: diensten_nl
+        label: Diensten (NL)
+        file: diensten/index.md
+        fields: *page_fields_nl
+      - name: team_nl
+        label: Team (NL)
+        file: team/index.md
+        fields: *page_fields_nl
+      - name: impact_nl
+        label: Impact (NL)
+        file: impact/index.md
+        fields: *page_fields_nl
+      - name: verhalen_nl
+        label: Verhalen overzicht (NL)
+        file: verhalen/index.md
+        fields: *page_fields_nl
+      - name: contact_nl
+        label: Contact (NL)
+        file: contact/index.md
+        fields: *page_fields_nl
+
+  - name: pages_en
+    label: Pagina's (EN)
+    delete: false
+    editor:
+      preview: true
+    files:
+      - name: home_en
+        label: Home (EN)
+        file: en/index.md
+        fields: &page_fields_en
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Language, name: lang, widget: hidden, default: en }
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Permalink, name: permalink, widget: string, required: false }
+          - { label: Body class, name: body_class, widget: string, required: false }
+          - { label: Content, name: body, widget: markdown, modes: [raw, rich_text], buttons: [bold, italic, link, quote, heading-two, heading-three, bulleted-list, numbered-list] }
+      - name: play_en
+        label: Play (EN)
+        file: en/play/index.md
+        fields: *page_fields_en
+      - name: play_blog_en
+        label: Play blog index (EN)
+        file: en/play/blog/index.md
+        fields: *page_fields_en
+      - name: play_praktijk_en
+        label: Play In practice (EN)
+        file: en/play/in-de-praktijk/index.md
+        fields: *page_fields_en
+      - name: diensten_en
+        label: Services (EN)
+        file: en/diensten/index.md
+        fields: *page_fields_en
+      - name: team_en
+        label: Team (EN)
+        file: en/team/index.md
+        fields: *page_fields_en
+      - name: impact_en
+        label: Impact (EN)
+        file: en/impact/index.md
+        fields: *page_fields_en
+      - name: verhalen_en
+        label: Stories index (EN)
+        file: en/verhalen/index.md
+        fields: *page_fields_en
+      - name: contact_en
+        label: Contact (EN)
+        file: en/contact/index.md
+        fields: *page_fields_en
+
+  - name: verhalen
+    label: Verhalen cases
+    folder: _verhalen
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    fields:
+      - { label: Taal, name: lang, widget: select, options: [nl, en], default: nl }
+      - { label: Permalink, name: permalink, widget: string, hint: "/verhalen/slug/" }
+      - { label: Titel, name: title, widget: string }
+      - { label: Client, name: client, widget: string, required: false }
+      - { label: Client logo, name: client_logo, widget: image, required: false }
+      - { label: Project, name: project, widget: string, required: false }
+      - { label: Samenvatting, name: summary, widget: text, required: false }
+      - label: Highlights
+        name: highlights
+        widget: list
+        required: false
+        field: { label: Highlight, name: item, widget: string }
+      - { label: Vraag, name: vraag, widget: text, required: false }
+      - { label: Oplossing, name: oplossing, widget: text, required: false }
+      - { label: Resultaat, name: resultaat, widget: text, required: false }
+      - { label: Volgorde, name: order, widget: number, required: false, value_type: int, min: 1 }
+
+  - name: play_blog
+    label: Play blog posts
+    folder: _play_blog
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    fields:
+      - { label: Taal, name: lang, widget: select, options: [nl, en], default: nl }
+      - { label: Permalink, name: permalink, widget: string, hint: "/play/blog/slug/" }
+      - { label: Titel, name: title, widget: string }
+      - { label: Datum, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: Samenvatting, name: summary, widget: text, required: false }
+      - { label: Leestijd, name: reading_time, widget: string, required: false }
+      - { label: Inhoud, name: body, widget: markdown }

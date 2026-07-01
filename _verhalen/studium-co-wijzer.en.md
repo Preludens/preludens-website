@@ -19,5 +19,6 @@ oplossing: >-
   directly to how people work and live.
 resultaat: >-
   A clear evolution of CO-wijzer with new content and stronger existing modules.
+image: studium-co-wijzer.png
 order: 3
 ---

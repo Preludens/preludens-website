@@ -20,5 +20,6 @@ oplossing: >-
   like practice — not like working through theory.
 resultaat: >-
   A first set of working scenarios and a solid foundation to expand the learning programme further.
+image: nnvo-nautisch-toezicht.png
 order: 2
 ---

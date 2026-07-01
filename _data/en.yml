@@ -32,6 +32,24 @@ footer:
   start_playing_text: "Ready to turn online learning into a story that resonates? Book a GameStorm."
   rights: "All rights reserved."
 
+verhalen:
+  filter_label: "Filter by type"
+  filter_all: "All"
+  filter_projects: "Projects"
+  filter_knowledge: "Knowledge"
+  filter_whitepapers: "Whitepapers"
+  type_knowledge: "Knowledge"
+  featured_label: "Featured"
+  section_label: "Overview"
+  section_title: "Projects, knowledge and depth"
+  section_intro: >-
+    Client cases, articles on learning and play, and whitepapers coming soon —
+    filter by what you are looking for.
+  empty_whitepapers_title: "Whitepapers coming soon"
+  empty_whitepapers_text: >-
+    We are preparing in-depth whitepapers on game-based learning and behaviour change.
+    Get in touch if you would like to discuss a specific topic now.
+
 verhaal:
   breadcrumb: "Stories"
   client_question: "The client's challenge"
@@ -55,6 +73,9 @@ verhaal:
   all_stories: "← All stories"
   read_story: "Read the story"
   read_story_aria: "Read the story: %s, %s"
+  summary_label: "In short"
+  highlights_label: "Key insights"
+  facts_label: "Key facts"
 
 play_blog:
   breadcrumb: "Blog"

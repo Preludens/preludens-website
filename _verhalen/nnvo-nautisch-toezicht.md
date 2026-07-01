@@ -19,5 +19,6 @@ oplossing: >-
   als oefenen in plaats van theorie doornemen.
 resultaat: >-
   Een eerste set werkende scenario's en een stevig fundament om het leerprogramma verder uit te bouwen.
+image: nnvo-nautisch-toezicht.png
 order: 2
 ---

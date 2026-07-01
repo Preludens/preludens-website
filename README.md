@@ -47,8 +47,49 @@ Het bestand `CNAME` wijst naar `preludens.nl`. Stel in GitHub Pages onder **Cust
 Het palet staat bovenaan `assets/css/main.scss` onder `:root`. Pas de HEX-waarden aan zodat ze exact overeenkomen met jullie Canva-huisstijl.
 ## Agent-workflow (Cursor)
 
-Zie `.cursor/rules/`:
+Zie **`AGENTS.md`** voor agent-instructies (o.a. beeldgeneratie via `/Users/jw/programming/creatievemaan/tools`).
+
+Projectregels in `.cursor/rules/`:
 
 - **`github-pages-workflow.mdc`** — PR's na afronding **mergen naar `main`**; elk eindverslag bevat live links
-- **`post-task-design-review.mdc`** — na elke voltooide opdracht start een aparte design/UX/UI-review; verplichte desktop- én mobielcheck; verbeteringen binnen de Preludens-huisstijl (`assets/css/main.scss`)
+- **`post-task-design-review.mdc`** — design/UX/UI-review bij expliciete visuele QA; verbeteringen binnen de Preludens-huisstijl (`assets/css/main.scss`)
+
+## Online Markdown editor (Decap CMS)
+
+De repository bevat nu een eenvoudige online editor op:
+
+- `https://preludens.nl/admin/`
+- `https://preludens.github.io/preludens-website/admin/`
+
+Bestanden:
+
+- `admin/index.html` - Decap CMS app shell
+- `admin/config.yml` - collections, GitHub backend en media-instellingen
+- `admin/preview.js` - basis preview templates
+- `cloudflare/decap-oauth-worker/` - OAuth proxy voor GitHub login
+
+### OAuth bridge deployen (Cloudflare)
+
+```bash
+cd /Users/jw/programming/preludens/preludens-website/cloudflare/decap-oauth-worker
+npm install
+wrangler login
+wrangler secret put GITHUB_CLIENT_ID
+wrangler secret put GITHUB_CLIENT_SECRET
+wrangler deploy
+```
+
+Gebruik een workers.dev URL met dit patroon:
+
+- Base URL: `https://preludens-decap-oauth.preludens-decap-oauth.workers.dev`
+- Callback URL: `https://preludens-decap-oauth.preludens-decap-oauth.workers.dev/callback`
+
+### GitHub toegang voor editors
+
+Voeg een editor toe als collaborator op de repository:
+
+```bash
+gh auth login
+gh api -X PUT /repos/preludens/preludens-website/collaborators/Daan-Groen -f permission=push
+```
 

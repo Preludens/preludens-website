@@ -21,5 +21,11 @@ oplossing: >-
 resultaat: >-
   Een groeiende set MicroGames die IT-veilig gedrag zichtbaar en bespreekbaar maakt in de
   dagelijkse praktijk.
+image: nnvo-it-veiligheid.png
+featured: true
+quote: >-
+  Voor het eerst zien we dat mensen veiligheidskeuzes niet alleen kennen,
+  maar ook echt maken in hun werk.
+quote_author: "Naam achternaam — Opleidingsmanager, NNVO"
 order: 1
 ---

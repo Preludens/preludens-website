@@ -12,6 +12,8 @@ languages: ["nl", "en"]
 default_lang: "nl"
 exclude_from_localization:
   - assets
+  - admin
+  - cloudflare
   - sitemap.xml
   - CNAME
   - .gitignore
@@ -38,6 +40,7 @@ exclude:
   - vendor
   - .bundle
   - node_modules
+  - cloudflare
 
 plugins:
   - jekyll-polyglot

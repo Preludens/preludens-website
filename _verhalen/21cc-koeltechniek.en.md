@@ -20,5 +20,6 @@ oplossing: >-
   narrative and interaction.
 resultaat: >-
   A coherent learning experience in which students gradually build real command of refrigeration technology.
+image: 21cc-koeltechniek.png
 order: 4
 ---

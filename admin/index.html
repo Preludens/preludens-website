@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Preludens CMS</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      .cms-loading {
+        padding: 24px;
+        color: #1d2433;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cms-loading">Preludens CMS laden...</div>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script src="{{ '/admin/preview.js' | relative_url }}"></script>
+  </body>
+</html>
