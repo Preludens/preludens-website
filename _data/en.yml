@@ -28,6 +28,10 @@ cta:
 
 footer:
   navigation: "Navigation"
+  about_heading: "About Preludens"
+  about: "Preludens is a Dutch learning- and game-design studio that prepares teams for the future with storytelling, MicroGames and interactive learning experiences."
+  direct_contact: "Direct contact"
+  response_note: "We usually reply within one business day."
   start_playing: "Start playing"
   start_playing_text: "Ready to turn online learning into a story that resonates? Book a GameStorm."
   rights: "All rights reserved."
