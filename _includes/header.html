@@ -14,7 +14,7 @@
 
     <nav id="site-nav" class="site-nav" data-nav>
       <ul>
-        {% assign nav_keys = "home,play,diensten,team,impact,verhalen,contact" | split: "," %}
+        {% assign nav_keys = "home,play,team,verhalen,contact" | split: "," %}
         {% for key in nav_keys %}
           {% assign label = t.nav[key] %}
           {% assign path = t.nav_paths[key] %}

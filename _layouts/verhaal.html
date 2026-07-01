@@ -2,117 +2,181 @@
 layout: default
 ---
 {% include locale.html %}
-<section class="page-hero page-hero--compact">
-  <div class="container page-hero-inner">
-    <p class="hero-eyebrow"><a href="{{ '/verhalen/' | relative_url }}">{{ t.verhaal.breadcrumb }}</a></p>
-  </div>
-</section>
+{% assign uitdaging = page.uitdaging | default: page.vraag %}
+{% assign ontwerpvraag = page.ontwerpvraag %}
+{% assign aanpak = page.aanpak | default: page.oplossing %}
+{% assign route = page.route %}
+{% assign ervaring = page.ervaring %}
+{% assign resultaat = page.resultaat %}
+{% assign inzicht = page.inzicht | default: page.reflectie %}
 
-<article class="section">
-  <div class="container verhaal-detail">
-    {% assign uitdaging = page.uitdaging | default: page.vraag %}
-    {% assign ontwerpvraag = page.ontwerpvraag %}
-    {% assign aanpak = page.aanpak | default: page.oplossing %}
-    {% assign route = page.route %}
-    {% assign ervaring = page.ervaring %}
-    {% assign resultaat = page.resultaat %}
-    {% assign inzicht = page.inzicht | default: page.reflectie %}
-    <header class="verhaal-header">
-      <div class="verhaal-client">
-        {% if page.client_logo %}
-          <img
-            class="verhaal-client-logo"
-            src="{{ '/assets/images/clients/' | append: page.client_logo | relative_url }}"
-            alt="{{ page.client }}"
-            width="200"
-            height="80"
-            loading="lazy"
-            decoding="async"
-          >
-        {% endif %}
-        <p class="verhaal-meta">{{ page.client }} · {{ page.project }}</p>
+<article class="verhaal-a">
+  <header class="verhaal-hero{% unless page.image %} verhaal-hero--plain{% endunless %}">
+    {% if page.image %}
+      <div class="verhaal-hero__media">
+        <img
+          src="{{ '/assets/images/verhalen/' | append: page.image | relative_url }}"
+          alt=""
+          width="1600"
+          height="900"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </div>
+    {% endif %}
+    <div class="container verhaal-hero__inner">
+      <p class="hero-eyebrow"><a href="{{ '/verhalen/' | relative_url }}">{{ t.verhaal.breadcrumb }}</a></p>
+      <div class="verhaal-hero__chips">
+        {% if page.client %}<span class="verhaal-chip">{{ page.client }}</span>{% endif %}
+        {% if page.project %}<span class="verhaal-chip">{{ page.project }}</span>{% endif %}
       </div>
       <h1>{{ page.title }}</h1>
-      <p class="verhaal-lead">{{ page.summary }}</p>
-    </header>
-
-    {% assign has_project_details = false %}
-    {% if page.client or page.project or page.sector or page.jaar or page.oplossingstype or page.doelgroep or page.thema or page.vorm or page.rol %}
-      {% assign has_project_details = true %}
-    {% endif %}
-    {% if has_project_details %}
-      <section class="verhaal-block">
-        <h2>{{ t.verhaal.project_intro }}</h2>
-        <p>
-          {{ page.summary }}
-        </p>
-        <dl class="verhaal-meta-list">
-          {% if page.client %}<dt>{{ t.verhaal.meta_client }}</dt><dd>{{ page.client }}</dd>{% endif %}
-          {% if page.sector %}<dt>{{ t.verhaal.meta_sector }}</dt><dd>{{ page.sector }}</dd>{% endif %}
-          {% if page.jaar %}<dt>{{ t.verhaal.meta_year }}</dt><dd>{{ page.jaar }}</dd>{% endif %}
-          {% if page.oplossingstype %}<dt>{{ t.verhaal.meta_solution_type }}</dt><dd>{{ page.oplossingstype }}</dd>{% endif %}
-          {% if page.doelgroep %}<dt>{{ t.verhaal.meta_audience }}</dt><dd>{{ page.doelgroep }}</dd>{% endif %}
-          {% if page.thema %}<dt>{{ t.verhaal.meta_theme }}</dt><dd>{{ page.thema }}</dd>{% endif %}
-          {% if page.vorm %}<dt>{{ t.verhaal.meta_format }}</dt><dd>{{ page.vorm }}</dd>{% endif %}
-          {% if page.rol %}<dt>{{ t.verhaal.meta_role }}</dt><dd>{{ page.rol }}</dd>{% endif %}
-          {% if page.project %}<dt>{{ t.verhaal.meta_project }}</dt><dd>{{ page.project }}</dd>{% endif %}
-        </dl>
-      </section>
-    {% endif %}
-
-    {% if page.highlights %}
-    <ul class="verhaal-highlights">
-      {% for point in page.highlights %}
-        <li>{{ point }}</li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-
-    <div class="verhaal-blocks">
-      {% if uitdaging %}
-        <section class="verhaal-block">
-          <h2>{{ t.verhaal.challenge }}</h2>
-          <p>{{ uitdaging }}</p>
-        </section>
-      {% endif %}
-      {% if ontwerpvraag %}
-        <section class="verhaal-block">
-          <h2>{{ t.verhaal.design_question }}</h2>
-          <p>{{ ontwerpvraag }}</p>
-        </section>
-      {% endif %}
-      {% if aanpak %}
-        <section class="verhaal-block">
-          <h2>{{ t.verhaal.our_solution }}</h2>
-          <p>{{ aanpak }}</p>
-        </section>
-      {% endif %}
-      {% if route %}
-        <section class="verhaal-block">
-          <h2>{{ t.verhaal.route }}</h2>
-          <p>{{ route }}</p>
-        </section>
-      {% endif %}
-      {% if ervaring %}
-        <section class="verhaal-block">
-          <h2>{{ t.verhaal.experience }}</h2>
-          <p>{{ ervaring }}</p>
-        </section>
-      {% endif %}
-      <section class="verhaal-block verhaal-block--result">
-        <h2>{{ t.verhaal.result }}</h2>
-        <p>{{ resultaat }}</p>
-      </section>
-      {% if inzicht %}
-        <section class="verhaal-block">
-          <h2>{{ t.verhaal.insight }}</h2>
-          <p>{{ inzicht }}</p>
-        </section>
-      {% endif %}
     </div>
+  </header>
 
-    <p class="verhaal-back">
-      <a href="{{ '/verhalen/' | relative_url }}">{{ t.verhaal.all_stories }}</a>
-    </p>
+  <div class="section">
+    <div class="container">
+      {% if page.summary %}
+        <div class="verhaal-tldr">
+          <p class="verhaal-tldr__label">{{ t.verhaal.summary_label }}</p>
+          <p>{{ page.summary }}</p>
+        </div>
+      {% endif %}
+
+      <div class="verhaal-layout">
+        <div class="verhaal-main">
+          {% assign figure_shown = false %}
+          {% if uitdaging %}
+            <section class="verhaal-section">
+              <h2>{{ t.verhaal.challenge }}</h2>
+              <p>{{ uitdaging }}</p>
+            </section>
+            {% if page.image %}
+              <figure class="verhaal-figure">
+                <img src="{{ '/assets/images/verhalen/' | append: page.image | relative_url }}" alt="" width="960" height="540" loading="lazy" decoding="async">
+              </figure>
+              {% assign figure_shown = true %}
+            {% endif %}
+          {% endif %}
+
+          {% if ontwerpvraag %}
+            <section class="verhaal-section">
+              <h2>{{ t.verhaal.design_question }}</h2>
+              <p>{{ ontwerpvraag }}</p>
+            </section>
+          {% endif %}
+
+          {% if aanpak %}
+            <section class="verhaal-section">
+              <h2>{{ t.verhaal.our_solution }}</h2>
+              <p>{{ aanpak }}</p>
+            </section>
+            {% unless figure_shown %}
+              {% if page.image %}
+                <figure class="verhaal-figure">
+                  <img src="{{ '/assets/images/verhalen/' | append: page.image | relative_url }}" alt="" width="960" height="540" loading="lazy" decoding="async">
+                </figure>
+              {% endif %}
+            {% endunless %}
+          {% endif %}
+
+          {% if route %}
+            <section class="verhaal-section">
+              <h2>{{ t.verhaal.route }}</h2>
+              <p>{{ route }}</p>
+            </section>
+          {% endif %}
+
+          {% if ervaring %}
+            <section class="verhaal-section">
+              <h2>{{ t.verhaal.experience }}</h2>
+              <p>{{ ervaring }}</p>
+            </section>
+          {% endif %}
+
+          {% if resultaat %}
+            <section class="verhaal-section">
+              <h2>{{ t.verhaal.result }}</h2>
+              <p>{{ resultaat }}</p>
+            </section>
+          {% endif %}
+
+          {% if inzicht %}
+            <section class="verhaal-section">
+              <h2>{{ t.verhaal.insight }}</h2>
+              <p>{{ inzicht }}</p>
+            </section>
+          {% endif %}
+        </div>
+
+        <aside class="verhaal-aside">
+          {% comment %} Quote met portret. Zonder eigen quote tonen we een placeholder-referentie. {% endcomment %}
+          {% assign q_text = page.quote %}
+          {% assign q_author = page.quote_author %}
+          {% assign q_role = page.quote_role %}
+          {% assign q_photo = page.quote_photo %}
+          {% unless q_text %}
+            {% if page.lang == 'en' %}
+              {% assign q_text = "We're very happy with Daan's client-focused approach. The game was delivered on time, on scope and on budget, with broad satisfaction across the board." %}
+              {% assign q_role = "Team lead CIVVV, Rijkswaterstaat" %}
+            {% else %}
+              {% assign q_text = "We zijn erg blij met het klantgerichte meedenken door Daan. Hierdoor is de game binnen tijd, scope en budget en naar breed gedragen tevredenheid opgeleverd." %}
+              {% assign q_role = "Teamleider CIVVV, Rijkswaterstaat" %}
+            {% endif %}
+            {% assign q_author = "Martijn Dorresteijn" %}
+            {% assign q_photo = "testimonials/martijn-dorrestijn.jpg" %}
+          {% endunless %}
+          <figure class="verhaal-quote{% if q_photo %} verhaal-quote--with-photo{% endif %}">
+            {% if q_photo %}
+              <img class="verhaal-quote__photo" src="{{ '/assets/images/' | append: q_photo | relative_url }}" alt="{{ q_author }}" width="800" height="800" loading="lazy" decoding="async">
+            {% endif %}
+            <span class="verhaal-quote__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote>{{ q_text }}</blockquote>
+            {% if q_author %}
+              <figcaption class="verhaal-quote__cite">
+                <span class="verhaal-quote__name">{{ q_author }}</span>
+                {% if q_role %}<span class="verhaal-quote__role">{{ q_role }}</span>{% endif %}
+              </figcaption>
+            {% endif %}
+          </figure>
+
+          {% if page.highlights %}
+            <div class="verhaal-aside-box">
+              <h2>{{ t.verhaal.highlights_label }}</h2>
+              <ul>
+                {% for point in page.highlights %}
+                  <li>{{ point }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </aside>
+      </div>
+
+      {% assign has_project_details = false %}
+      {% if page.client or page.project or page.sector or page.jaar or page.oplossingstype or page.doelgroep or page.thema or page.vorm or page.rol %}
+        {% assign has_project_details = true %}
+      {% endif %}
+      {% if has_project_details %}
+        <section class="verhaal-facts-block">
+          <h2>{{ t.verhaal.facts_label }}</h2>
+          <dl class="verhaal-facts">
+            {% if page.client %}<div><dt>{{ t.verhaal.meta_client }}</dt><dd>{{ page.client }}</dd></div>{% endif %}
+            {% if page.project %}<div><dt>{{ t.verhaal.meta_project }}</dt><dd>{{ page.project }}</dd></div>{% endif %}
+            {% if page.sector %}<div><dt>{{ t.verhaal.meta_sector }}</dt><dd>{{ page.sector }}</dd></div>{% endif %}
+            {% if page.jaar %}<div><dt>{{ t.verhaal.meta_year }}</dt><dd>{{ page.jaar }}</dd></div>{% endif %}
+            {% if page.oplossingstype %}<div><dt>{{ t.verhaal.meta_solution_type }}</dt><dd>{{ page.oplossingstype }}</dd></div>{% endif %}
+            {% if page.doelgroep %}<div><dt>{{ t.verhaal.meta_audience }}</dt><dd>{{ page.doelgroep }}</dd></div>{% endif %}
+            {% if page.thema %}<div><dt>{{ t.verhaal.meta_theme }}</dt><dd>{{ page.thema }}</dd></div>{% endif %}
+            {% if page.vorm %}<div><dt>{{ t.verhaal.meta_format }}</dt><dd>{{ page.vorm }}</dd></div>{% endif %}
+            {% if page.rol %}<div><dt>{{ t.verhaal.meta_role }}</dt><dd>{{ page.rol }}</dd></div>{% endif %}
+          </dl>
+        </section>
+      {% endif %}
+
+      <p class="verhaal-back">
+        <a href="{{ '/verhalen/' | relative_url }}">{{ t.verhaal.all_stories }}</a>
+      </p>
+    </div>
   </div>
 </article>

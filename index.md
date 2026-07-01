@@ -33,8 +33,6 @@ body_class: page-scroll-preview
 
   .sp-stack {
     position: relative;
-    /* Geeft de laatste sticky slide genoeg ruimte om onder het vaste menu te landen. */
-    padding-bottom: calc(var(--header-height) + var(--space-lg));
   }
 
   .sp-panel {
@@ -119,66 +117,59 @@ body_class: page-scroll-preview
     color: var(--color-ink);
   }
 
-  .sp-panel--play {
-    align-items: stretch;
-    flex-direction: column;
-    justify-content: flex-end;
-    transform: none !important; /* footer moet full-width blijven en niet meeschalen met de panel-animatie */
-  }
-
-  .sp-panel--play .sp-inner {
-    min-height: auto;
-    flex: 1 1 auto;
-    display: block;
-    padding-top: clamp(var(--space-md), 4vw, var(--space-lg));
-    padding-bottom: var(--space-md);
-  }
-
   .sp-final-copy {
     max-width: 46rem;
   }
-  .sp-final-copy a { color: var(--color-deep-gold); font-weight: 600; }
+  .sp-final-copy a { color: var(--color-harbor-teal); font-weight: 600; }
 
-  .sp-panel--play .site-footer {
+  /* ===== Footer-reveal =====
+     De footer staat als los blok ná de laatste (sticky) slide. Bij doorscrollen
+     schuift hij over het onderste deel van de slide heen (hogere z-index), zodat
+     de slide zelf full-view blijft en er nog een gedeelte zichtbaar blijft. */
+  .sp-footer-reveal {
+    position: relative;
+    z-index: 10;
+  }
+
+  .sp-footer-reveal .site-footer {
     width: 100%;
     margin: 0;
     padding: var(--space-lg) 0 var(--space-sm);
     border-radius: 0;
-    flex: 0 0 auto;
   }
 
-  .sp-panel--play .footer-grid {
+  .sp-footer-reveal .footer-grid {
     gap: var(--space-sm);
     align-items: start;
   }
 
-  .sp-panel--play .site-footer h2 {
+  .sp-footer-reveal .site-footer h2 {
     margin-bottom: 0.45rem;
   }
 
-  .sp-panel--play .site-footer p {
+  .sp-footer-reveal .site-footer p {
     margin-bottom: 0.45rem;
     font-size: 0.92rem;
     line-height: 1.45;
   }
 
-  .sp-panel--play .footer-links li {
+  .sp-footer-reveal .footer-links li {
     margin-bottom: 0.15rem;
   }
 
-  .sp-panel--play .footer-cta .btn {
+  .sp-footer-reveal .footer-cta .btn {
     padding: 0.65rem 1rem;
   }
 
-  .sp-panel--play .footer-cta p {
+  .sp-footer-reveal .footer-cta p {
     display: none;
   }
 
-  .sp-panel--play .logo-footer .logo-img {
+  .sp-footer-reveal .logo-footer .logo-img {
     height: 1.85rem;
   }
 
-  .sp-panel--play .footer-bottom {
+  .sp-footer-reveal .footer-bottom {
     margin-top: 0.45rem;
     padding-top: 0.45rem;
     font-size: 0.78rem;
@@ -191,21 +182,39 @@ body_class: page-scroll-preview
     color: var(--color-white);
   }
 
-  /* Route/richting-lijn als subtiele betekenislaag */
-  .sp-panel::before {
+  /* ===== Achtergrondlaag per slide — abstracte LinePlay-stijl =====
+     Eén rustige gouden koerslijn in de rechterderde, met twee subtiele parallelle
+     metgezellen (dotted, geen kruisingen) en een handvol bewuste waypoints. De lijn komt
+     per slide op dezelfde x binnen/uit als de buurslide, zodat de route van slide naar
+     slide doorloopt. Kleuren passen per paneel. Ligt achter de inhoud (z-index 0). */
+  .sp-panel--cream::after,
+  .sp-panel--navy::after,
+  .sp-panel--testimonial::after,
+  .sp-panel--quote::after,
+  .sp-panel--warm::after,
+  .sp-panel--micro::after,
+  .sp-panel--play::after {
     content: "";
     position: absolute;
     inset: 0;
-    background-image:
-      linear-gradient(90deg, transparent 0 49.6%, rgba(237, 167, 14, 0.22) 49.8% 50.2%, transparent 50.4% 100%);
-    background-size: 200% 1px;
-    background-position: 0 88%;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.5;
     pointer-events: none;
-    z-index: 1;
   }
-  .sp-panel--hero::before { background-position: 0 92%; opacity: 0.7; }
+
+  .sp-panel--cream::after { background-image: url("{{ '/assets/images/panels/online-focus.svg' | relative_url }}"); }
+  .sp-panel--navy::after  { background-image: url("{{ '/assets/images/panels/diensten.svg' | relative_url }}"); }
+  .sp-panel--testimonial::after { background-image: url("{{ '/assets/images/panels/testimonial.svg' | relative_url }}"); }
+  .sp-panel--quote::after { background-image: url("{{ '/assets/images/panels/quote.svg' | relative_url }}"); }
+  .sp-panel--warm::after  { background-image: url("{{ '/assets/images/panels/cta.svg' | relative_url }}"); }
+  .sp-panel--micro::after { background-image: url("{{ '/assets/images/panels/micro.svg' | relative_url }}"); }
+  .sp-panel--play::after  { background-image: url("{{ '/assets/images/panels/play.svg' | relative_url }}"); }
+
+  /* Inhoud van het play-paneel (incl. footer) boven het achtergrondbeeld houden */
+  .sp-panel--play .sp-inner,
+  .sp-panel--play .site-footer { position: relative; z-index: 2; }
 
   /* Typografie inside panels */
   .sp-eyebrow {
@@ -219,7 +228,7 @@ body_class: page-scroll-preview
     margin-bottom: var(--space-sm);
   }
   .sp-panel--cream .sp-eyebrow,
-  .sp-panel--play .sp-eyebrow { color: var(--color-deep-gold); }
+  .sp-panel--play .sp-eyebrow { color: var(--color-harbor-teal); }
 
   .sp-panel h2 {
     font-family: var(--font-display);
@@ -228,6 +237,7 @@ body_class: page-scroll-preview
     line-height: 1.08;
     margin: 0 0 var(--space-md);
     max-width: 22ch;
+    color: inherit;
   }
   .sp-panel--hero h1 {
     font-family: var(--font-display);
@@ -254,6 +264,17 @@ body_class: page-scroll-preview
 
   .sp-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-md); }
   .sp-actions .btn { padding: 0.85rem 1.4rem; border-radius: var(--radius-md); font-weight: 600; }
+
+  /* Warm (geel/koraal) paneel: koraal primaire knop valt weg tegen de achtergrond.
+     Gebruik een blauwe knop voor voldoende contrast. */
+  .sp-panel--warm .sp-actions .btn-primary {
+    background: var(--color-regal-navy);
+    color: var(--color-white) !important;
+  }
+  .sp-panel--warm .sp-actions .btn-primary:hover {
+    background: var(--color-prussian-blue);
+    color: var(--color-white) !important;
+  }
 
   .sp-hero-pillars {
     display: grid;
@@ -366,7 +387,7 @@ body_class: page-scroll-preview
   .sp-cards .card { background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-card); }
   .sp-cards .card h3 { color: var(--color-ink); margin-bottom: var(--space-xs); }
   .sp-cards .card p { color: var(--color-ink-soft); font-size: 0.98rem; }
-  .sp-cards .card a { color: var(--color-deep-gold); font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .sp-cards .card a { color: var(--color-harbor-teal); font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 3px; }
   .sp-card-icon { font-size: 1.6rem; display: block; margin-bottom: var(--space-xs); }
 
   /* Quote paneel */
@@ -380,6 +401,56 @@ body_class: page-scroll-preview
     color: var(--color-white);
   }
   .sp-quote cite { font-style: normal; color: var(--color-gold); letter-spacing: 0.04em; }
+
+  /* Klant-testimonial paneel (met portret) */
+  .sp-panel--testimonial {
+    background-color: var(--color-cream);
+    background-image: radial-gradient(ellipse at 18% 22%, rgba(237, 167, 14, 0.12), transparent 48%);
+    color: var(--color-ink);
+  }
+  .sp-panel--testimonial .sp-eyebrow { color: var(--color-harbor-teal); }
+
+  .sp-testimonial {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, var(--space-xl));
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  .sp-testimonial__photo {
+    flex: 0 0 auto;
+    width: clamp(8rem, 16vw, 12.5rem);
+    height: clamp(8rem, 16vw, 12.5rem);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-white);
+    box-shadow: var(--shadow-card);
+  }
+  .sp-testimonial__body { min-width: 0; }
+  .sp-testimonial blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.4vw, 1.9rem);
+    font-weight: 600;
+    line-height: 1.32;
+    margin: 0.4rem 0 var(--space-md);
+    color: var(--color-ink);
+    max-width: 34ch;
+  }
+  .sp-testimonial blockquote::before { content: "\201C"; color: var(--color-harbor-teal); }
+  .sp-testimonial blockquote::after { content: "\201D"; color: var(--color-harbor-teal); }
+  .sp-testimonial__cite { display: flex; flex-direction: column; gap: 0.1rem; }
+  .sp-testimonial__name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+  .sp-testimonial__role { font-size: 0.9rem; color: var(--color-ink-soft); }
+
+  @media (max-width: 640px) {
+    .sp-testimonial { flex-direction: column; text-align: center; }
+    .sp-testimonial__cite { align-items: center; }
+    .sp-testimonial blockquote { max-width: none; }
+  }
 
   /* Scroll indicator + voortgangsrail (richting) */
   .sp-rail {
@@ -606,8 +677,35 @@ body_class: page-scroll-preview
     </div>
   </section>
 
-  <!-- 4. Quote -->
-  <section class="sp-panel sp-panel--quote" data-sp="3">
+  <!-- 4. Klant-testimonial -->
+  <section class="sp-panel sp-panel--testimonial" data-sp="3" data-title="Wat klanten zeggen">
+    <div class="sp-inner">
+      <figure class="sp-testimonial">
+        <img
+          class="sp-testimonial__photo"
+          src="{{ '/assets/images/testimonials/renee-heller.jpg' | relative_url }}"
+          alt="Renée Heller"
+          width="800"
+          height="800"
+          loading="lazy"
+          decoding="async"
+        >
+        <div class="sp-testimonial__body">
+          <span class="sp-eyebrow">Wat klanten zeggen</span>
+          <blockquote>
+            Daan heeft ons erg geholpen van een statische ontwerptool een game te maken waarin spelers op alle aspecten van hun keuzes uitgedaagd worden. Het werk van Daan zorgde ervoor dat alle stappen logisch en voor een breed publiek van professionals en studenten zijn neergezet in een prachtig kaartspel.
+          </blockquote>
+          <figcaption class="sp-testimonial__cite">
+            <span class="sp-testimonial__name">Renée Heller</span>
+            <span class="sp-testimonial__role">Professor Energy &amp; Innovation, Hogeschool van Amsterdam</span>
+          </figcaption>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 5. Quote -->
+  <section class="sp-panel sp-panel--quote" data-sp="4">
     <div class="sp-inner">
       <figure class="sp-quote">
         <blockquote>
@@ -618,8 +716,8 @@ body_class: page-scroll-preview
     </div>
   </section>
 
-  <!-- 5. CTA -->
-  <section class="sp-panel sp-panel--warm" data-sp="4">
+  <!-- 6. CTA -->
+  <section class="sp-panel sp-panel--warm" data-sp="5">
     <div class="sp-inner">
       <h2>Neem morgen de eerste stap</h2>
       <p class="sp-lead">
@@ -632,8 +730,8 @@ body_class: page-scroll-preview
     </div>
   </section>
 
-  <!-- 6. Mini-interactie — slider -->
-  <section class="sp-panel sp-panel--micro" data-sp="5">
+  <!-- 7. Mini-interactie — slider -->
+  <section class="sp-panel sp-panel--micro" data-sp="6">
     <div class="sp-inner">
       <div class="sp-micro">
         <span class="sp-eyebrow">Ervaar het zelf</span>
@@ -655,8 +753,8 @@ body_class: page-scroll-preview
     </div>
   </section>
 
-  <!-- 7. Play -->
-  <section class="sp-panel sp-panel--play" data-sp="6">
+  <!-- 8. Play -->
+  <section class="sp-panel sp-panel--play" data-sp="7">
     <div class="sp-inner">
       <div class="sp-final-copy">
         <span class="sp-eyebrow">What we do</span>
@@ -670,8 +768,13 @@ body_class: page-scroll-preview
         <p><a href="{{ '/play/' | relative_url }}">Ontdek onze visie op Play →</a></p>
       </div>
     </div>
-    {% include footer.html %}
   </section>
+
+  <!-- Footer verschijnt als je voorbij de laatste slide scrollt; de slide blijft
+       gedeeltelijk zichtbaar omdat de footer geen full-view heeft. -->
+  <div class="sp-footer-reveal">
+    {% include footer.html %}
+  </div>
 
 </div>
 
@@ -680,6 +783,8 @@ body_class: page-scroll-preview
   "use strict";
   var panels = Array.prototype.slice.call(document.querySelectorAll(".sp-panel"));
   if (!panels.length) return;
+  // Naast de panelen is er één extra "view": de footer-reveal onder de laatste slide.
+  var maxIndex = panels.length;
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var rail = document.querySelector(".sp-rail");
 
@@ -710,7 +815,7 @@ body_class: page-scroll-preview
   var current = 0;
 
   function goTo(i) {
-    i = clamp(i, 0, panels.length - 1);
+    i = clamp(i, 0, maxIndex);
     if (i === current || lock) return;
     current = i;                       // direct updaten, anders loopt current achter op de smooth scroll
     lock = true;
@@ -731,7 +836,9 @@ body_class: page-scroll-preview
   }
   function panelTarget(i) {
     var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    if (i === panels.length - 1) return maxScroll;
+    // Extra view voorbij de laatste slide: scroll naar de bodem zodat de footer
+    // onthuld wordt terwijl de laatste slide (sticky) gedeeltelijk zichtbaar blijft.
+    if (i >= panels.length) return maxScroll;
     // Land precies op de paneeltop (rect.top = 0) zodat de fade-in volledig op
     // 100% opacity uitkomt. De inhoud is verticaal gecentreerd en het vaste menu
     // overlapt enkel de lege bovenruimte, dus er valt niets onder de header weg.
@@ -814,21 +921,33 @@ body_class: page-scroll-preview
         blur: cover * 12,
         bright: 1 - cover * 0.4
       };
-      // Actief paneel = degene waarvan het scroll-doel (offsetTop-keten) dichtst bij scrollY zit
+    });
+    // Actieve view = die waarvan het scroll-doel (offsetTop-keten) dichtst bij
+    // scrollY zit. Ook de footer-reveal (maxIndex) telt mee, zodat current klopt
+    // wanneer je onderaan staat.
+    for (var i = 0; i <= maxIndex; i++) {
       var dist = Math.abs(sy - panelTarget(i));
       if (dist < bestDist) { bestDist = dist; active = i; }
-    });
+    }
     return active;
   }
 
-  // Initiele target direct overnemen (geen flash bij laden)
-  compute();
+  // Initiele target direct overnemen (geen flash bij laden). Synchroniseer current
+  // meteen met de (evt. door de browser herstelde) scrollpositie.
+  current = compute();
   panels.forEach(function (p, i) { state[i] = Object.assign({}, p._t); });
-  if (railButtons.length) railButtons[0].setAttribute("aria-current", "true");
 
   var raf = null;
   var last = performance.now();
-  var lastActive = 0;
+  var lastActive = current;
+
+  function setActiveRail(active) {
+    railButtons.forEach(function (b, i) {
+      if (i === active) b.setAttribute("aria-current", "true");
+      else b.removeAttribute("aria-current");
+    });
+  }
+  setActiveRail(current);
 
   function apply(p, s) {
     p.style.opacity = s.opacity.toFixed(4);
@@ -850,12 +969,12 @@ body_class: page-scroll-preview
       s.bright += (t.bright - s.bright) * k;
       apply(p, s);
     });
+    // Zolang er geen programma-scroll loopt, moet current de echte scrollpositie
+    // volgen (o.a. na een refresh met herstelde scroll, of vrij scrollen).
+    if (!lock) current = active;
     if (active !== lastActive) {
       lastActive = active;
-      railButtons.forEach(function (b, i) {
-        if (i === active) b.setAttribute("aria-current", "true");
-        else b.removeAttribute("aria-current");
-      });
+      setActiveRail(active);
     }
     raf = requestAnimationFrame(tick);
   }

@@ -19,5 +19,6 @@ oplossing: >-
   verhaal en interactie.
 resultaat: >-
   Een samenhangende leerervaring waarin studenten stap voor stap grip krijgen op koeltechniek.
+image: 21cc-koeltechniek.png
 order: 4
 ---

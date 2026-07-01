@@ -20,5 +20,6 @@ oplossing: >-
   op de praktijk van de gebruiker.
 resultaat: >-
   Een duidelijke doorontwikkeling van CO‑wijzer met nieuwe inhoud en verbeterde bestaande onderdelen.
+image: studium-co-wijzer.png
 order: 3
 ---

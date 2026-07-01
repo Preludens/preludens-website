@@ -6,26 +6,40 @@
 {% assign accents = "coral,gold,mint,lilac" | split: "," %}
 {% assign accent = accents[accent_index] %}
 {% assign hook = include.verhaal.highlights | first %}
-<article class="story-card story-card--{{ accent }}">
+<article class="story-card story-card--{{ accent }}{% if include.verhaal.image %} story-card--media{% endif %}">
   <a
     class="story-card__link"
     href="{{ include.verhaal.url | relative_url }}"
     aria-label="{{ t.verhaal.read_story }}: {{ include.verhaal.title }}, {{ include.verhaal.client }}"
   >
-    <div class="story-card__header">
-      {% if include.verhaal.client_logo %}
+    {% if include.verhaal.image %}
+      <div class="story-card__media">
         <img
-          class="story-card__logo"
-          src="{{ '/assets/images/clients/' | append: include.verhaal.client_logo | relative_url }}"
+          src="{{ '/assets/images/verhalen/' | append: include.verhaal.image | relative_url }}"
           alt=""
-          width="160"
-          height="64"
+          width="640"
+          height="360"
           loading="lazy"
           decoding="async"
         >
-      {% endif %}
-      <span class="story-card__badge">{{ include.verhaal.project }}</span>
-    </div>
+        <span class="story-card__badge story-card__badge--onmedia">{{ include.verhaal.project }}</span>
+      </div>
+    {% else %}
+      <div class="story-card__header">
+        {% if include.verhaal.client_logo %}
+          <img
+            class="story-card__logo"
+            src="{{ '/assets/images/clients/' | append: include.verhaal.client_logo | relative_url }}"
+            alt=""
+            width="160"
+            height="64"
+            loading="lazy"
+            decoding="async"
+          >
+        {% endif %}
+        <span class="story-card__badge">{{ include.verhaal.project }}</span>
+      </div>
+    {% endif %}
     <div class="story-card__body">
       <p class="story-card__client">{{ include.verhaal.client }}</p>
       <h2 class="story-card__title">{{ include.verhaal.title }}</h2>

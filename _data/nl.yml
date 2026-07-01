@@ -32,6 +32,24 @@ footer:
   start_playing_text: "Wil je online leren omzetten in een verhaal dat raakt? Plan een GameStorm."
   rights: "Alle rechten voorbehouden."
 
+verhalen:
+  filter_label: "Filter op type"
+  filter_all: "Alle"
+  filter_projects: "Projecten"
+  filter_knowledge: "Kennis"
+  filter_whitepapers: "Whitepapers"
+  type_knowledge: "Kennis"
+  featured_label: "Uitgelicht"
+  section_label: "Overzicht"
+  section_title: "Projecten, kennis en verdieping"
+  section_intro: >-
+    Cases van opdrachtgevers, artikelen over leren en spel, en binnenkort whitepapers —
+    filter op wat je zoekt.
+  empty_whitepapers_title: "Whitepapers volgen binnenkort"
+  empty_whitepapers_text: >-
+    We werken aan diepgaande whitepapers over game-based leren en gedragsverandering.
+    Neem contact op als je nu al iets specifieks wilt bespreken.
+
 verhaal:
   breadcrumb: "Verhalen"
   client_question: "Vraag vanuit de klant"
@@ -55,6 +73,9 @@ verhaal:
   all_stories: "← Alle verhalen"
   read_story: "Lees het verhaal"
   read_story_aria: "Lees het verhaal: %s, %s"
+  summary_label: "In het kort"
+  highlights_label: "Belangrijkste inzichten"
+  facts_label: "Kerngegevens"
 
 play_blog:
   breadcrumb: "Blog"

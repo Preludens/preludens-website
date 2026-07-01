@@ -21,5 +21,11 @@ oplossing: >-
 resultaat: >-
   A growing set of MicroGames that makes secure behaviour visible and discussable in
   everyday practice.
+image: nnvo-it-veiligheid.png
+featured: true
+quote: >-
+  For the first time we see that people don't just know the safe choice —
+  they actually make it in their day-to-day work.
+quote_author: "Name surname — Training manager, NNVO"
 order: 1
 ---

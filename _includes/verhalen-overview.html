@@ -1,0 +1,118 @@
+{% include locale.html %}
+{% assign current_lang = site.active_lang | default: site.default_lang %}
+
+{% assign verhalen = site.verhalen | sort: "order" %}
+
+{% comment %} Twee uitgelichte verhalen bovenaan (featured: true) {% endcomment %}
+{% capture featured_html %}
+{% assign featured_count = 0 %}
+{% for verhaal in verhalen %}
+  {% assign item_lang = verhaal.lang | default: site.default_lang %}
+  {% unless item_lang == current_lang %}{% continue %}{% endunless %}
+  {% unless verhaal.featured %}{% continue %}{% endunless %}
+  {% if featured_count >= 2 %}{% continue %}{% endif %}
+    <a class="story-feature" href="{{ verhaal.url | relative_url }}" aria-label="{{ t.verhaal.read_story }}: {{ verhaal.title }}, {{ verhaal.client }}">
+      {% if verhaal.image %}
+        <div class="story-feature__media">
+          <img src="{{ '/assets/images/verhalen/' | append: verhaal.image | relative_url }}" alt="" width="720" height="450" loading="lazy" decoding="async">
+        </div>
+      {% endif %}
+      <div class="story-feature__body">
+        <span class="story-feature__flag">{{ t.verhalen.featured_label }} · {{ verhaal.project }}</span>
+        <p class="story-card__client">{{ verhaal.client }}</p>
+        <h2 class="story-feature__title">{{ verhaal.title }}</h2>
+        <p class="story-feature__excerpt">{{ verhaal.summary }}</p>
+        <span class="story-card__cta">{{ t.verhaal.read_story }} →</span>
+      </div>
+    </a>
+  {% assign featured_count = featured_count | plus: 1 %}
+{% endfor %}
+{% endcapture %}
+{% assign featured_trim = featured_html | strip %}
+{% if featured_trim != "" %}
+<div class="verhalen-featured" data-verhalen-featured>
+{{ featured_html }}
+</div>
+{% endif %}
+
+<div class="verhalen-filters" data-verhalen-filters>
+  <p class="verhalen-filters__label" id="verhalen-filter-label">{{ t.verhalen.filter_label }}</p>
+  <div class="verhalen-filters__list" role="tablist" aria-labelledby="verhalen-filter-label">
+    <button
+      class="verhalen-filters__btn is-active"
+      type="button"
+      role="tab"
+      id="verhalen-filter-all"
+      aria-selected="true"
+      aria-controls="verhalen-panel"
+      data-verhaal-filter="all"
+    >
+      {{ t.verhalen.filter_all }}
+    </button>
+    <button
+      class="verhalen-filters__btn"
+      type="button"
+      role="tab"
+      id="verhalen-filter-projecten"
+      aria-selected="false"
+      aria-controls="verhalen-panel"
+      data-verhaal-filter="projecten"
+    >
+      {{ t.verhalen.filter_projects }}
+    </button>
+    <button
+      class="verhalen-filters__btn"
+      type="button"
+      role="tab"
+      id="verhalen-filter-kennis"
+      aria-selected="false"
+      aria-controls="verhalen-panel"
+      data-verhaal-filter="kennis"
+    >
+      {{ t.verhalen.filter_knowledge }}
+    </button>
+    <button
+      class="verhalen-filters__btn"
+      type="button"
+      role="tab"
+      id="verhalen-filter-whitepapers"
+      aria-selected="false"
+      aria-controls="verhalen-panel"
+      data-verhaal-filter="whitepapers"
+    >
+      {{ t.verhalen.filter_whitepapers }}
+    </button>
+  </div>
+</div>
+
+<div class="verhalen-panel" id="verhalen-panel" role="tabpanel" aria-labelledby="verhalen-filter-all">
+  <div class="story-grid" data-verhalen-grid role="list">
+    {% assign project_index = 0 %}
+    {% for verhaal in verhalen %}
+      {% assign item_lang = verhaal.lang | default: site.default_lang %}
+      {% unless item_lang == current_lang %}{% continue %}{% endunless %}
+      {% if verhaal.featured %}{% continue %}{% endif %}
+      {% assign verhaal_type = verhaal.type | default: "projecten" %}
+      <div role="listitem" data-verhaal-type="{{ verhaal_type }}">
+        {% include story-card.html verhaal=verhaal index=project_index %}
+      </div>
+      {% assign project_index = project_index | plus: 1 %}
+    {% endfor %}
+
+    {% assign posts = site.play_blog | sort: "date" | reverse %}
+    {% assign kennis_index = 0 %}
+    {% for post in posts %}
+      {% assign item_lang = post.lang | default: site.default_lang %}
+      {% unless item_lang == current_lang %}{% continue %}{% endunless %}
+      <div role="listitem" data-verhaal-type="kennis">
+        {% include kennis-card.html post=post index=kennis_index %}
+      </div>
+      {% assign kennis_index = kennis_index | plus: 1 %}
+    {% endfor %}
+  </div>
+
+  <div class="verhalen-empty" data-verhalen-empty hidden>
+    <p class="verhalen-empty__title">{{ t.verhalen.empty_whitepapers_title }}</p>
+    <p class="verhalen-empty__text">{{ t.verhalen.empty_whitepapers_text }}</p>
+  </div>
+</div>

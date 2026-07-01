@@ -7,6 +7,8 @@ permalink: /verhalen/
 body_class: page-verhalen
 ---
 
+{% include locale.html %}
+
 <section class="page-hero">
   <div class="container page-hero-inner">
     <p class="hero-eyebrow">Verhalen</p>
@@ -21,25 +23,12 @@ body_class: page-verhalen
 <section class="section section--alt">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Opdrachtgevers</span>
-      <h2>Samen leren door te spelen</h2>
-      <p>
-        Elk verhaal laat zien hoe we een concrete vraag vertalen naar interactieve leerervaringen
-        met merkbare impact.
-      </p>
+      <span class="section-label">{{ t.verhalen.section_label }}</span>
+      <h2>{{ t.verhalen.section_title }}</h2>
+      <p>{{ t.verhalen.section_intro }}</p>
     </div>
 
-    <div class="story-grid" role="list">
-      {% assign current_lang = site.active_lang | default: site.default_lang %}
-      {% assign verhalen = site.verhalen | sort: "order" %}
-      {% for verhaal in verhalen %}
-        {% assign item_lang = verhaal.lang | default: site.default_lang %}
-        {% unless item_lang == current_lang %}{% continue %}{% endunless %}
-        <div role="listitem">
-          {% include story-card.html verhaal=verhaal index=forloop.index0 %}
-        </div>
-      {% endfor %}
-    </div>
+    {% include verhalen-overview.html %}
   </div>
 </section>
 

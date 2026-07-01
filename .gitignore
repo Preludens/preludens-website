@@ -6,3 +6,8 @@ vendor/
 .bundle/
 *.gem
 .DS_Store
+
+# Node / Cloudflare worker
+node_modules/
+.wrangler/
+.dev.vars
