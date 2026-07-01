@@ -1,0 +1,91 @@
+{%- comment -%}
+  JSON-LD structured data voor SEO/GEO. Organization + WebSite site-breed,
+  aangevuld met Service-nodes op de homepage. URL's gebruiken het canonieke
+  productie-domein (prod_url) zodat AI-engines en zoekmachines de juiste
+  entiteit koppelen.
+{%- endcomment -%}
+{%- assign prod = site.prod_url | default: site.url -%}
+{%- assign is_en = false -%}
+{%- if page.lang == 'en' -%}{%- assign is_en = true -%}{%- endif -%}
+{%- if page.url == '/' or page.url == '/en/' or page.url == '/index.html' or page.url == '/en/index.html' -%}{%- assign is_home = true -%}{%- endif -%}
+{%- if is_en -%}
+  {%- assign org_desc = 'Preludens is a Dutch learning- and game-design studio that prepares teams for the future with storytelling, MicroGames and interactive learning experiences.' -%}
+  {%- assign svc1 = 'Short, story-driven online training in which employees practise realistic situations, enriched with comic storytelling and MicroGames that activate knowledge.' -%}
+  {%- assign svc2 = 'Realistic scenarios with tough choices and immediate consequences that strengthen decisiveness and insight, without a single right answer.' -%}
+  {%- assign svc3 = 'Solving complex challenges by looking at processes as if they were a game, with workshops and concrete blueprints for behaviour and learning goals.' -%}
+  {%- assign svc_prefix = '/en' -%}
+{%- else -%}
+  {%- assign org_desc = 'Preludens is een Nederlands leer- en spelontwerpstudio die teams voorbereidt op de toekomst met storytelling, MicroGames en interactieve leerervaringen.' -%}
+  {%- assign svc1 = 'Korte, verhalende online trainingen waarin medewerkers oefenen in realistische situaties, verrijkt met stripverhalen en MicroGames die kennis activeren.' -%}
+  {%- assign svc2 = 'Realistische scenario''s met lastige keuzes en directe gevolgen die besluitvaardigheid en inzicht versterken, zonder één juist antwoord.' -%}
+  {%- assign svc3 = 'Complexe vraagstukken oplossen door processen als een game te benaderen, met workshops en concrete blauwdrukken voor gedrag en leerdoelen.' -%}
+  {%- assign svc_prefix = '' -%}
+{%- endif -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ prod }}/#organization",
+      "name": "Preludens",
+      "url": "{{ prod }}/",
+      "email": "info@preludens.nl",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ prod }}/assets/images/logo/preludens-logo.png"
+      },
+      "image": "{{ prod }}/assets/images/og/preludens-og.jpg",
+      "description": {{ org_desc | jsonify }},
+      "slogan": "Challenge \u00b7 activate \u00b7 motivate",
+      "knowsLanguage": ["nl", "en"],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Netherlands"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "NL"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@preludens.nl",
+        "contactType": "sales",
+        "availableLanguage": ["Dutch", "English"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ prod }}/#website",
+      "url": "{{ prod }}/",
+      "name": "Preludens",
+      "inLanguage": "{{ page.lang | default: 'nl' }}",
+      "publisher": { "@id": "{{ prod }}/#organization" }
+    }{% if is_home %},
+    {
+      "@type": "Service",
+      "name": "MicroGame Stories",
+      "serviceType": "Interactieve online training",
+      "url": "{{ prod }}{{ svc_prefix }}/diensten/#microgame-stories",
+      "provider": { "@id": "{{ prod }}/#organization" },
+      "description": {{ svc1 | jsonify }}
+    },
+    {
+      "@type": "Service",
+      "name": "Dilemma Storytelling",
+      "serviceType": "Scenario-based learning",
+      "url": "{{ prod }}{{ svc_prefix }}/diensten/#dilemma-storytelling",
+      "provider": { "@id": "{{ prod }}/#organization" },
+      "description": {{ svc2 | jsonify }}
+    },
+    {
+      "@type": "Service",
+      "name": "Game Thinking",
+      "serviceType": "Workshop",
+      "url": "{{ prod }}{{ svc_prefix }}/diensten/#game-thinking",
+      "provider": { "@id": "{{ prod }}/#organization" },
+      "description": {{ svc3 | jsonify }}
+    }{% endif %}
+  ]
+}
+</script>

@@ -6,7 +6,12 @@
         <img class="logo-img" src="{{ '/assets/images/logo/preludens-logo-inverse.png' | relative_url }}" alt="Preludens" width="180" height="53">
       </a>
       <p class="footer-tagline">Challenge · activate · motivate</p>
-      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      <p class="footer-about">{{ t.footer.about }}</p>
+      <p class="footer-contact">
+        <strong>{{ t.footer.direct_contact }}</strong><br>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+        <span class="footer-response">{{ t.footer.response_note }}</span>
+      </p>
     </div>
 
     <div class="footer-links">

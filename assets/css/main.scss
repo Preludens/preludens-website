@@ -878,6 +878,27 @@ p { margin: 0 0 var(--space-sm); }
   letter-spacing: 0.04em;
 }
 
+.footer-about {
+  margin-top: var(--space-sm);
+  max-width: 32ch;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(246, 249, 249, 0.72);
+}
+
+.footer-contact {
+  margin-top: var(--space-sm);
+  font-size: 0.9rem;
+  line-height: 1.6;
+
+  strong { color: var(--color-white); }
+}
+
+.footer-response {
+  color: rgba(246, 249, 249, 0.6);
+  font-size: 0.82rem;
+}
+
 .footer-links ul {
   list-style: none;
   padding: 0;

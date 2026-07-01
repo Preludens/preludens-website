@@ -4,6 +4,7 @@ lang: nl
 title: Home
 description: Activeer je team en bereid ze voor op de toekomst met storytelling en MicroGames.
 body_class: page-scroll-preview
+hero_preload: /assets/images/hero/preludens-hero-bg.webp
 ---
 
 <style>
@@ -75,10 +76,19 @@ body_class: page-scroll-preview
     position: absolute;
     inset: 0;
     z-index: 0;
+    /* Basis: JPG (altijd geldig). Daarna een image-set()-override zodat moderne
+       browsers de veel lichtere WebP laden; oude browsers negeren die regel. */
     background:
       linear-gradient(90deg, rgba(11, 42, 53, 0.78) 0%, rgba(11, 42, 53, 0.38) 34%, rgba(11, 42, 53, 0.1) 62%, rgba(11, 42, 53, 0.44) 100%),
       linear-gradient(180deg, rgba(11, 42, 53, 0.36) 0%, rgba(11, 42, 53, 0.05) 35%, rgba(11, 42, 53, 0.56) 100%),
       url("{{ '/assets/images/hero/preludens-hero-bg.jpg' | relative_url }}");
+    background-image:
+      linear-gradient(90deg, rgba(11, 42, 53, 0.78) 0%, rgba(11, 42, 53, 0.38) 34%, rgba(11, 42, 53, 0.1) 62%, rgba(11, 42, 53, 0.44) 100%),
+      linear-gradient(180deg, rgba(11, 42, 53, 0.36) 0%, rgba(11, 42, 53, 0.05) 35%, rgba(11, 42, 53, 0.56) 100%),
+      image-set(
+        url("{{ '/assets/images/hero/preludens-hero-bg.webp' | relative_url }}") type("image/webp"),
+        url("{{ '/assets/images/hero/preludens-hero-bg.jpg' | relative_url }}") type("image/jpeg")
+      );
     background-size: cover, cover, cover;
     background-position: center, center, center;
     pointer-events: none;
@@ -116,11 +126,26 @@ body_class: page-scroll-preview
     background-image: radial-gradient(ellipse at 25% 25%, rgba(17, 56, 71, 0.10), transparent 50%);
     color: var(--color-ink);
   }
+  .sp-panel--verhalen {
+    background-color: var(--color-prussian-blue);
+    background-image:
+      radial-gradient(ellipse at 18% 22%, rgba(242, 196, 92, 0.16), transparent 46%),
+      linear-gradient(160deg, var(--color-prussian-blue), var(--color-regal-navy));
+    color: var(--color-white);
+  }
+  .sp-panel--team {
+    background-color: var(--color-regal-navy);
+    background-image:
+      radial-gradient(ellipse at 78% 78%, rgba(45, 143, 158, 0.18), transparent 46%),
+      linear-gradient(150deg, var(--color-regal-navy), var(--color-prussian-blue));
+    color: var(--color-white);
+  }
 
   .sp-final-copy {
     max-width: 46rem;
   }
   .sp-final-copy a { color: var(--color-harbor-teal); font-weight: 600; }
+  .sp-panel--team a { color: var(--color-gold); font-weight: 600; }
 
   /* ===== Footer-reveal =====
      De footer staat als los blok ná de laatste (sticky) slide. Bij doorscrollen
@@ -189,7 +214,9 @@ body_class: page-scroll-preview
      slide doorloopt. Kleuren passen per paneel. Ligt achter de inhoud (z-index 0). */
   .sp-panel--cream::after,
   .sp-panel--navy::after,
+  .sp-panel--verhalen::after,
   .sp-panel--testimonial::after,
+  .sp-panel--team::after,
   .sp-panel--quote::after,
   .sp-panel--warm::after,
   .sp-panel--micro::after,
@@ -206,7 +233,9 @@ body_class: page-scroll-preview
 
   .sp-panel--cream::after { background-image: url("{{ '/assets/images/panels/online-focus.svg' | relative_url }}"); }
   .sp-panel--navy::after  { background-image: url("{{ '/assets/images/panels/diensten.svg' | relative_url }}"); }
+  .sp-panel--verhalen::after { background-image: url("{{ '/assets/images/panels/verhalen.svg' | relative_url }}"); }
   .sp-panel--testimonial::after { background-image: url("{{ '/assets/images/panels/testimonial.svg' | relative_url }}"); }
+  .sp-panel--team::after  { background-image: url("{{ '/assets/images/panels/team.svg' | relative_url }}"); }
   .sp-panel--quote::after { background-image: url("{{ '/assets/images/panels/quote.svg' | relative_url }}"); }
   .sp-panel--warm::after  { background-image: url("{{ '/assets/images/panels/cta.svg' | relative_url }}"); }
   .sp-panel--micro::after { background-image: url("{{ '/assets/images/panels/micro.svg' | relative_url }}"); }
@@ -256,6 +285,8 @@ body_class: page-scroll-preview
   }
   .sp-panel--hero p,
   .sp-panel--navy p,
+  .sp-panel--verhalen p,
+  .sp-panel--team p,
   .sp-panel--quote p,
   .sp-panel--micro p { color: rgba(246, 249, 249, 0.9); }
   .sp-panel--warm p { color: var(--color-deep-navy); }
@@ -264,6 +295,38 @@ body_class: page-scroll-preview
 
   .sp-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-md); }
   .sp-actions .btn { padding: 0.85rem 1.4rem; border-radius: var(--radius-md); font-weight: 600; }
+
+  /* Geruststelling onder de CTA (risk reversal) */
+  .sp-reassure {
+    margin-top: var(--space-sm);
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-deep-navy);
+    opacity: 0.8;
+  }
+
+  /* Opdrachtgevers-strip (social proof / vertrouwen) */
+  .sp-clients {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    padding: 0;
+    margin: var(--space-md) 0 0;
+  }
+  .sp-clients li {
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: rgba(246, 249, 249, 0.9);
+    padding: 0.35rem 0.7rem;
+    border: 1px solid rgba(246, 249, 249, 0.22);
+    border-radius: var(--radius-pill);
+    background: rgba(246, 249, 249, 0.06);
+  }
 
   /* Warm (geel/koraal) paneel: koraal primaire knop valt weg tegen de achtergrond.
      Gebruik een blauwe knop voor voldoende contrast. */
@@ -677,8 +740,31 @@ body_class: page-scroll-preview
     </div>
   </section>
 
-  <!-- 4. Klant-testimonial -->
-  <section class="sp-panel sp-panel--testimonial" data-sp="3" data-title="Wat klanten zeggen">
+  <!-- 4. Verhalen — bewijs uit de praktijk -->
+  <section class="sp-panel sp-panel--verhalen" data-sp="3" data-title="Verhalen uit de praktijk">
+    <div class="sp-inner">
+      <span class="sp-eyebrow">Bewezen in de praktijk</span>
+      <h2>Van vraagstuk naar spelbare leerervaring</h2>
+      <p class="sp-lead">
+        Van nautisch toezicht tot energietransitie: we vertaalden uiteenlopende vraagstukken naar
+        verhalen en games die blijven hangen. Lees hoe organisaties leren, kiezen en veranderen met Preludens.
+      </p>
+      <ul class="sp-clients" aria-label="Een selectie van opdrachtgevers">
+        <li>Hogeschool van Amsterdam</li>
+        <li>NNVO</li>
+        <li>21CC</li>
+        <li>Studium</li>
+        <li>Wijkz</li>
+        <li>onITnow</li>
+      </ul>
+      <div class="sp-actions">
+        <a class="btn btn-primary" href="{{ '/verhalen/' | relative_url }}">Bekijk de verhalen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Klant-testimonial -->
+  <section class="sp-panel sp-panel--testimonial" data-sp="4" data-title="Wat klanten zeggen">
     <div class="sp-inner">
       <figure class="sp-testimonial">
         <img
@@ -704,8 +790,22 @@ body_class: page-scroll-preview
     </div>
   </section>
 
-  <!-- 5. Quote -->
-  <section class="sp-panel sp-panel--quote" data-sp="4">
+  <!-- 6. Team — de makers (E-E-A-T) -->
+  <section class="sp-panel sp-panel--team" data-sp="5" data-title="Het team">
+    <div class="sp-inner">
+      <span class="sp-eyebrow">Het team</span>
+      <h2>De makers achter Preludens</h2>
+      <p class="sp-lead">
+        Preludens combineert meer dan vijftien jaar ervaring in serious games met storytelling,
+        game design en techniek. Een compact team dat spel, verhaal en technologie samenbrengt
+        in leerervaringen die blijven hangen.
+      </p>
+      <p><a href="{{ '/team/' | relative_url }}">Maak kennis met het team →</a></p>
+    </div>
+  </section>
+
+  <!-- 7. Quote -->
+  <section class="sp-panel sp-panel--quote" data-sp="6">
     <div class="sp-inner">
       <figure class="sp-quote">
         <blockquote>
@@ -716,28 +816,32 @@ body_class: page-scroll-preview
     </div>
   </section>
 
-  <!-- 6. CTA -->
-  <section class="sp-panel sp-panel--warm" data-sp="5">
+  <!-- 8. CTA -->
+  <section class="sp-panel sp-panel--warm" data-sp="7">
     <div class="sp-inner">
       <h2>Neem morgen de eerste stap</h2>
       <p class="sp-lead">
-        Start met een GameStorm: een creatieve workshop van een dagdeel waarin we samen jouw verhaal vormgeven. Met de structuur van de Hero’s Journey ontwerpen we één of twee krachtige verhaallijnen en koppelen daar 4 tot 5 leerdoelen aan.
+        Een GameStorm is een creatieve workshop van een dagdeel waarin we samen jouw verhaal vormgeven. Met de structuur van de Hero’s Journey ontwerpen we één of twee krachtige verhaallijnen en koppelen daar 4 tot 5 leerdoelen aan.
+      </p>
+      <p class="sp-lead">
+        Je gaat naar huis met een helder concept, een inspirerende verhaallijn en passende leerdoelen. En ook als je daarna niet met ons verdergaat, is het een waardevolle sessie die richting geeft aan je e-learning.
       </p>
       <div class="sp-actions">
         <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Plan een GameStorm</a>
         <a class="btn btn-secondary" href="{{ '/play/' | relative_url }}">Ontdek Play</a>
       </div>
+      <p class="sp-reassure">Vrijblijvend · geen verplichtingen · reactie binnen één werkdag</p>
     </div>
   </section>
 
-  <!-- 7. Mini-interactie — slider -->
-  <section class="sp-panel sp-panel--micro" data-sp="6">
+  <!-- 9. Mini-interactie — slider -->
+  <section class="sp-panel sp-panel--micro" data-sp="8">
     <div class="sp-inner">
       <div class="sp-micro">
         <span class="sp-eyebrow">Ervaar het zelf</span>
         <h2>Wat weegt zwaarder?</h2>
         <p class="sp-lead">
-          Schuif tussen tempo en veiligheid en zie direct hoe de feedback meebeweegt — precies wat een MicroGame doet: kiezen, voelen, leren.
+          Een MicroGame is een korte, interactieve oefening waarin je een keuze maakt en meteen feedback krijgt. Schuif tussen tempo en veiligheid en zie direct hoe de feedback meebeweegt — precies wat een MicroGame doet: kiezen, voelen, leren.
         </p>
 
         <div class="sp-slider-card">
@@ -753,8 +857,8 @@ body_class: page-scroll-preview
     </div>
   </section>
 
-  <!-- 8. Play -->
-  <section class="sp-panel sp-panel--play" data-sp="7">
+  <!-- 10. Play -->
+  <section class="sp-panel sp-panel--play" data-sp="9">
     <div class="sp-inner">
       <div class="sp-final-copy">
         <span class="sp-eyebrow">What we do</span>
