@@ -134,15 +134,18 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     color: var(--color-white);
   }
   .sp-panel--team {
-    background-color: var(--color-cream);
-    background-image: radial-gradient(ellipse at 82% 24%, rgba(237, 167, 14, 0.12), transparent 48%);
-    color: var(--color-ink);
+    background-color: var(--color-regal-navy);
+    background-image:
+      radial-gradient(ellipse at 78% 78%, rgba(45, 143, 158, 0.18), transparent 46%),
+      linear-gradient(150deg, var(--color-regal-navy), var(--color-prussian-blue));
+    color: var(--color-white);
   }
 
   .sp-final-copy {
     max-width: 46rem;
   }
   .sp-final-copy a { color: var(--color-harbor-teal); font-weight: 600; }
+  .sp-panel--team a { color: var(--color-gold); font-weight: 600; }
 
   /* ===== Footer-reveal =====
      De footer staat als los blok ná de laatste (sticky) slide. Bij doorscrollen
@@ -254,7 +257,6 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     margin-bottom: var(--space-sm);
   }
   .sp-panel--cream .sp-eyebrow,
-  .sp-panel--team .sp-eyebrow,
   .sp-panel--play .sp-eyebrow { color: var(--color-harbor-teal); }
 
   .sp-panel h2 {
@@ -284,11 +286,11 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
   .sp-panel--hero p,
   .sp-panel--navy p,
   .sp-panel--verhalen p,
+  .sp-panel--team p,
   .sp-panel--quote p,
   .sp-panel--micro p { color: rgba(246, 249, 249, 0.9); }
   .sp-panel--warm p { color: var(--color-deep-navy); }
   .sp-panel--cream p,
-  .sp-panel--team p,
   .sp-panel--play p { color: var(--color-ink-soft); }
 
   .sp-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-md); }
