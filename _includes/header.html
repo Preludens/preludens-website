@@ -14,7 +14,7 @@
 
     <nav id="site-nav" class="site-nav" data-nav>
       <ul>
-        {% assign nav_keys = "home,play,team,verhalen,contact" | split: "," %}
+        {% assign nav_keys = "home,play,prepo,team,verhalen,contact" | split: "," %}
         {% for key in nav_keys %}
           {% assign label = t.nav[key] %}
           {% assign path = t.nav_paths[key] %}
@@ -28,6 +28,8 @@
             {% assign is_active = true %}
           {% elsif path == "/play/" and page.url contains "/play/" %}
             {% assign is_active = true %}
+          {% elsif path == "/prepo/" and page.url contains "/prepo/" %}
+            {% assign is_active = true %}
           {% elsif page.url == path or page.url == path | append: "index.html" %}
             {% assign is_active = true %}
           {% endif %}
@@ -38,7 +40,7 @@
       </ul>
       <div class="nav-actions">
         {% include lang-switcher.html %}
-        <a class="btn btn-primary btn-sm nav-cta" href="{{ '/contact/' | relative_url }}">{{ t.cta.gamestorm }}</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="{{ '/gamestorm/' | relative_url }}">{{ t.cta.gamestorm }}</a>
       </div>
     </nav>
   </div>

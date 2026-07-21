@@ -18,6 +18,8 @@
   --color-deep-gold: #C88405;
   --color-soft-gold: #F2C45C;
   --color-pale-gold: #FBF0D8;
+  /* Tekst-op-licht: WCAG AA (≥4.5:1) op wit/creme */
+  --color-ink-gold: #8B5A04;
   /* 3. Creatieve signaalkleur */
   --color-discovery-teal: #2A7C86;
 
@@ -99,7 +101,7 @@ img {
 }
 
 a {
-  color: var(--color-coral);
+  color: var(--color-ink-gold);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   transition: color var(--transition);
@@ -222,7 +224,7 @@ p { margin: 0 0 var(--space-sm); }
   transition: color var(--transition), background var(--transition), box-shadow var(--transition);
 
   &:hover {
-    color: var(--color-coral);
+    color: var(--color-ink-gold);
   }
 
   &:focus-visible {
@@ -260,7 +262,7 @@ p { margin: 0 0 var(--space-sm); }
 
     &:hover,
     &[aria-current="page"] {
-      color: var(--color-coral);
+      color: var(--color-ink-gold);
     }
   }
 }
@@ -448,7 +450,7 @@ p { margin: 0 0 var(--space-sm); }
   font-size: 0.85rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-soft-gold);
   margin-bottom: var(--space-sm);
 
   &::before {
@@ -539,7 +541,7 @@ p { margin: 0 0 var(--space-sm); }
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-ink-gold);
   margin-bottom: var(--space-xs);
 }
 
@@ -950,7 +952,7 @@ p { margin: 0 0 var(--space-sm); }
     margin: 0 0 var(--space-sm);
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--color-gold);
+    color: var(--color-ink-gold);
   }
 
   .team-bio {
@@ -1048,8 +1050,8 @@ p { margin: 0 0 var(--space-sm); }
   transition: background var(--transition), border-color var(--transition), color var(--transition);
 
   &:hover {
-    border-color: var(--color-coral);
-    color: var(--color-coral);
+    border-color: var(--color-ink-gold);
+    color: var(--color-ink-gold);
   }
 
   &:focus-visible {
@@ -1258,7 +1260,7 @@ p { margin: 0 0 var(--space-sm); }
     font-family: var(--font-display);
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--color-coral);
+    color: var(--color-ink-gold);
   }
 
   &__arrow {
@@ -1271,7 +1273,7 @@ p { margin: 0 0 var(--space-sm); }
     font-size: 1.1rem;
     line-height: 1;
     background: rgba(237, 167, 14, 0.14);
-    color: var(--color-coral);
+    color: var(--color-ink-gold);
     transition: transform var(--transition), background var(--transition);
   }
 
@@ -1302,12 +1304,12 @@ p { margin: 0 0 var(--space-sm); }
   }
 
   &--coral:hover &__cta,
-  &--coral &__cta { color: var(--color-coral); }
-  &--coral &__arrow { background: rgba(237, 167, 14, 0.14); color: var(--color-coral); }
+  &--coral &__cta { color: var(--color-ink-gold); }
+  &--coral &__arrow { background: rgba(237, 167, 14, 0.14); color: var(--color-ink-gold); }
 
   &--gold:hover &__cta,
-  &--gold &__cta { color: var(--color-gold); }
-  &--gold &__arrow { background: rgba(242, 196, 92, 0.28); color: var(--color-gold); }
+  &--gold &__cta { color: var(--color-ink-gold); }
+  &--gold &__arrow { background: rgba(242, 196, 92, 0.28); color: var(--color-ink-gold); }
 
   &--mint:hover &__cta,
   &--mint &__cta { color: var(--color-mint); }
@@ -1497,7 +1499,7 @@ p { margin: 0 0 var(--space-sm); }
     padding: 0.3rem 0.7rem;
     border-radius: var(--radius-pill);
     background: var(--color-pale-gold);
-    color: var(--color-deep-gold);
+    color: var(--color-ink-gold);
     margin-bottom: var(--space-xs);
   }
 
@@ -1898,7 +1900,7 @@ p { margin: 0 0 var(--space-sm); }
 
 .play-blog-card__cta {
   font-weight: 600;
-  color: var(--color-coral);
+  color: var(--color-ink-gold);
   font-size: 0.95rem;
 }
 
@@ -1945,4 +1947,441 @@ p { margin: 0 0 var(--space-sm); }
   margin-top: var(--space-xl);
   padding-top: var(--space-md);
   border-top: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   Content pages: Prepo, GameStorm, Team (uitgebreid)
+   ========================================================================== */
+
+/* Hero-banner: links uitgelijnde tekst over een volledige bannerafbeelding.
+   Layout afgeleid van de aangeleverde "Full" hero-ontwerpen. */
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: clamp(24rem, 56vh, 40rem);
+  padding: var(--space-2xl) 0;
+  background-color: var(--color-mist-blue);
+  background-image: var(--hero-bg, url("../images/hero/lineplay-hero.png"));
+  background-size: cover;
+  background-position: var(--hero-pos, center);
+  background-repeat: no-repeat;
+
+  /* leesbaarheids-scrim aan de tekstzijde */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 36rem;
+  }
+
+  &__eyebrow {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+    color: var(--color-ink-gold);
+  }
+
+  h1 {
+    font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+    line-height: 1.06;
+    margin-bottom: var(--space-md);
+  }
+
+  .hl { color: var(--color-preludens-gold); }
+
+  &__accent {
+    width: 3.5rem;
+    height: 3px;
+    border: 0;
+    margin: 0 0 var(--space-md);
+    border-radius: var(--radius-pill);
+    background: linear-gradient(90deg, var(--color-preludens-gold), var(--color-soft-gold));
+  }
+
+  &__lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+    max-width: 30rem;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  /* decoratief stippenraster linksonder */
+  &__dots {
+    position: absolute;
+    left: clamp(1rem, 4vw, 3rem);
+    bottom: var(--space-lg);
+    width: 7rem;
+    height: 4.5rem;
+    z-index: 1;
+    background-image: radial-gradient(currentColor 1.6px, transparent 1.7px);
+    background-size: 15px 15px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  /* Lichte variant: donkere tekst op licht beeld (Prepo, Team) */
+  &--light {
+    color: var(--color-slate-teal);
+
+    &::before {
+      background: linear-gradient(90deg,
+        rgba(246, 249, 249, 0.94) 0%,
+        rgba(246, 249, 249, 0.78) 34%,
+        rgba(246, 249, 249, 0.28) 58%,
+        rgba(246, 249, 249, 0) 74%);
+    }
+
+    h1 { color: var(--color-deep-navy); }
+    .hero-banner__lead { color: var(--color-slate-teal); }
+    .hero-banner__dots { color: var(--color-harbor-teal); }
+  }
+
+  /* Donkere variant: witte tekst op donker beeld (GameStorm) */
+  &--dark {
+    color: rgba(246, 249, 249, 0.92);
+
+    &::before {
+      background: linear-gradient(90deg,
+        rgba(11, 42, 53, 0.86) 0%,
+        rgba(11, 42, 53, 0.62) 38%,
+        rgba(11, 42, 53, 0.2) 62%,
+        rgba(11, 42, 53, 0) 78%);
+    }
+
+    .hero-banner__eyebrow { color: var(--color-soft-gold); }
+    h1 { color: var(--color-white); }
+    .hero-banner__lead { color: rgba(246, 249, 249, 0.9); }
+    .hero-banner__dots { color: var(--color-soft-gold); }
+  }
+}
+
+/* Pijl in hero-knoppen */
+.btn__arrow {
+  margin-left: 0.5rem;
+  transition: transform var(--transition);
+}
+.btn:hover .btn__arrow { transform: translateX(3px); }
+
+@media (max-width: 640px) {
+  .hero-banner {
+    min-height: 0;
+
+    /* sterker, over de volle breedte, zodat tekst leesbaar blijft op mobiel */
+    &--light::before {
+      background: linear-gradient(180deg,
+        rgba(246, 249, 249, 0.92) 0%,
+        rgba(246, 249, 249, 0.82) 60%,
+        rgba(246, 249, 249, 0.7) 100%);
+    }
+    &--dark::before {
+      background: linear-gradient(180deg,
+        rgba(11, 42, 53, 0.9) 0%,
+        rgba(11, 42, 53, 0.78) 60%,
+        rgba(11, 42, 53, 0.66) 100%);
+    }
+    &__dots { display: none; }
+  }
+}
+
+/* Tekst + beeld naast elkaar */
+.media-block {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+
+    &--reverse .media-block__media { order: 2; }
+  }
+
+  &__media {
+    margin: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-card);
+    }
+  }
+
+  &__body {
+    min-width: 0;
+
+    h2 { margin-bottom: var(--space-sm); }
+    p:last-child { margin-bottom: 0; }
+  }
+}
+
+/* Genummerde functie-grid (Prepo) */
+.feature-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.feature-item {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+
+  &__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-deep-navy);
+    background: rgba(237, 167, 14, 0.18);
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--color-ink-soft);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 64%;
+    height: 4px;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(90deg, rgba(237, 167, 14, 0.82), rgba(237, 167, 14, 0));
+    pointer-events: none;
+  }
+}
+
+/* Checklist met vinkjes ("Geschikt voor", "Wat levert het op") */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-sm) 0 0;
+  display: grid;
+  gap: var(--space-xs);
+
+  li {
+    position: relative;
+    padding-left: 1.9rem;
+    line-height: 1.5;
+    color: var(--color-ink-soft);
+  }
+
+  li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: rgba(42, 124, 134, 0.14);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232A7C86' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0.8rem;
+  }
+}
+
+/* Persona-kaarten (Team) */
+.persona-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.persona {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+
+  @media (min-width: 640px) {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+  }
+
+  &__photo {
+    width: clamp(6rem, 22vw, 9rem);
+    height: clamp(6rem, 22vw, 9rem);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-white);
+    box-shadow: var(--shadow-soft);
+  }
+
+  &__name { margin-bottom: var(--space-xs); }
+
+  &__role {
+    margin: 0 0 var(--space-sm);
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--color-ink-gold);
+  }
+
+  &__bio {
+    color: var(--color-ink-soft);
+    p:last-child { margin-bottom: 0; }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 4px;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(90deg, rgba(242, 196, 92, 0.85), rgba(242, 196, 92, 0));
+    pointer-events: none;
+  }
+}
+
+/* Genummerde ontwerpprincipes (Team) */
+.principle-list {
+  counter-reset: principle;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-md);
+
+  li {
+    position: relative;
+    padding-left: 3.25rem;
+
+    h3 {
+      font-size: 1.05rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    p {
+      margin: 0;
+      color: var(--color-ink-soft);
+      font-size: 0.95rem;
+    }
+  }
+
+  li::before {
+    counter-increment: principle;
+    content: counter(principle);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-deep-navy);
+    background: rgba(237, 167, 14, 0.18);
+  }
+}
+
+/* Prijs/hoogtepunt-blok (GameStorm) */
+.price-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-pale-gold);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  &__amount {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--color-deep-navy);
+  }
+
+  &__label {
+    color: var(--color-ink-soft);
+  }
+}
+
+/* Definitie/waarden-lijst ("Waar wij voor staan") */
+.value-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-sm);
+
+  li {
+    padding: var(--space-md);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-gold);
+    border-radius: var(--radius-sm);
+
+    strong {
+      display: block;
+      font-family: var(--font-display);
+      color: var(--color-ink);
+      margin-bottom: var(--space-xs);
+    }
+
+    span {
+      color: var(--color-ink-soft);
+      font-size: 0.95rem;
+    }
+  }
+}
+
+/* Kop met introtekst binnen een sectie */
+.block-head {
+  max-width: 46rem;
+  margin-bottom: var(--space-lg);
+
+  .section-label {
+    display: block;
+    margin-bottom: var(--space-xs);
+  }
+
+  p { color: var(--color-ink-soft); }
 }
