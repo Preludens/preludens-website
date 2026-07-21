@@ -8,18 +8,22 @@ nav:
   home: "Home"
   play: "Play"
   diensten: "Services"
+  prepo: "Prepo"
   team: "Team"
   impact: "Impact"
   verhalen: "Stories"
+  gamestorm: "GameStorm"
   contact: "Contact"
 
 nav_paths:
   home: "/"
   play: "/play/"
   diensten: "/diensten/"
+  prepo: "/prepo/"
   team: "/team/"
   impact: "/impact/"
   verhalen: "/verhalen/"
+  gamestorm: "/gamestorm/"
   contact: "/contact/"
 
 cta:
