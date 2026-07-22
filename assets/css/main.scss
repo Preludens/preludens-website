@@ -412,9 +412,10 @@ p { margin: 0 0 var(--space-sm); }
    boog van .btn-primary (die wordt hier door overflow:hidden een hoek-artefact).
    Subtiele gouden schaduw geeft diepte i.p.v. een vlak blok. */
 .nav-cta {
-  /* Extra horizontale padding: bij een pill vreet de boog ruimte weg,
-     waardoor 1.35rem van .btn-sm te krap aanvoelt naast de tekst. */
-  padding: 0.6rem 1.75rem;
+  /* Pill-CTA's hebben optisch meer side-padding nodig: de ronde zijkanten
+     'vreten' ruimte weg, dus horizontale padding ≥ ~halve knophoogte. */
+  padding-block: 0.6rem;
+  padding-inline: 2.5rem;
   border-radius: var(--radius-pill);
   box-shadow: 0 2px 8px rgba(200, 132, 5, 0.30);
 
