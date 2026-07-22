@@ -395,6 +395,18 @@ p { margin: 0 0 var(--space-sm); }
   font-size: 0.875rem;
 }
 
+/* Header-CTA: pill-vorm i.l.m. de taalwissel ernaast, zonder de decoratieve
+   boog van .btn-primary (die wordt hier door overflow:hidden een hoek-artefact).
+   Subtiele gouden schaduw geeft diepte i.p.v. een vlak blok. */
+.nav-cta {
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 8px rgba(200, 132, 5, 0.30);
+
+  &::after { content: none; }
+
+  &:hover { box-shadow: 0 5px 16px rgba(200, 132, 5, 0.38); }
+}
+
 /* Hero */
 .hero {
   position: relative;
