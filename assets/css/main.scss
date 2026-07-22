@@ -2415,6 +2415,30 @@ p { margin: 0 0 var(--space-sm); }
   }
 }
 
+/* Compacte teaser-variant (alleen titels) */
+.principle-list--compact {
+  gap: var(--space-sm);
+
+  li {
+    padding-left: 2.9rem;
+
+    h3 {
+      margin-bottom: 0;
+      font-size: 1rem;
+      line-height: 1.3;
+      display: flex;
+      align-items: center;
+      min-height: 1.9rem;
+    }
+  }
+
+  li::before {
+    width: 1.9rem;
+    height: 1.9rem;
+    font-size: 0.9rem;
+  }
+}
+
 /* Prijs-kaart (GameStorm) — grote prijs, als in de demo */
 .price-card {
   background: var(--color-pale-gold);
