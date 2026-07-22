@@ -6,14 +6,18 @@ description: Neem contact op met Preludens voor een GameStorm of meer informatie
 permalink: /contact/
 ---
 
-<section class="page-hero">
-  <div class="container page-hero-inner">
-    <p class="hero-eyebrow">Contact</p>
-    <h1>Start het gesprek</h1>
-    <p>
-      Wil je jouw online leren omzetten in een verhaal dat mensen écht raakt? We horen graag van je.
-    </p>
+<section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/contact-hero.jpg' | relative_url }}');">
+  <div class="container">
+    <div class="hero-banner__inner">
+      <p class="hero-banner__eyebrow">Contact</p>
+      <h1>Start het <span class="hl">gesprek</span></h1>
+      <hr class="hero-banner__accent">
+      <p class="hero-banner__lead">
+        Wil je jouw online leren omzetten in een verhaal dat mensen écht raakt? We horen graag van je.
+      </p>
+    </div>
   </div>
+  <span class="hero-banner__dots" aria-hidden="true"></span>
 </section>
 
 <section class="section">

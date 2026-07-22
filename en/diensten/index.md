@@ -6,14 +6,22 @@ description: MicroGame Stories, Dilemma Storytelling, and Game Thinking for impa
 permalink: /diensten/
 ---
 
-<section class="page-hero">
-  <div class="container page-hero-inner">
-    <p class="hero-eyebrow">Services</p>
-    <h1>Challenge · activate · motivate</h1>
-    <p>
-      We design learning experiences that challenge, activate, and deliver visible results — through story, play, and data.
-    </p>
+<section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/diensten-hero.jpg' | relative_url }}');">
+  <div class="container">
+    <div class="hero-banner__inner">
+      <p class="hero-banner__eyebrow">Services</p>
+      <h1>Challenge · <span class="hl">activate</span> · motivate</h1>
+      <hr class="hero-banner__accent">
+      <p class="hero-banner__lead">
+        We design learning experiences that challenge, activate, and deliver visible results — through story, play, and data.
+      </p>
+      <div class="hero-banner__actions">
+        <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Start with a GameStorm <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-secondary" href="{{ '/verhalen/' | relative_url }}">See the stories</a>
+      </div>
+    </div>
   </div>
+  <span class="hero-banner__dots" aria-hidden="true"></span>
 </section>
 
 <section class="section" id="microgame-stories">

@@ -2026,6 +2026,8 @@ p { margin: 0 0 var(--space-sm); }
     text-transform: uppercase;
     margin-bottom: var(--space-sm);
     color: var(--color-ink-gold);
+
+    a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
   }
 
   h1 {

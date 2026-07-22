@@ -6,14 +6,22 @@ description: MicroGame Stories, Dilemma Storytelling en Game Thinking voor impac
 permalink: /diensten/
 ---
 
-<section class="page-hero">
-  <div class="container page-hero-inner">
-    <p class="hero-eyebrow">Diensten</p>
-    <h1>Challenge · activate · motivate</h1>
-    <p>
-      We ontwerpen leerervaringen die uitdagen, activeren en zichtbaar resultaat opleveren — met verhaal, spel en data.
-    </p>
+<section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/diensten-hero.jpg' | relative_url }}');">
+  <div class="container">
+    <div class="hero-banner__inner">
+      <p class="hero-banner__eyebrow">Diensten</p>
+      <h1>Challenge · <span class="hl">activate</span> · motivate</h1>
+      <hr class="hero-banner__accent">
+      <p class="hero-banner__lead">
+        We ontwerpen leerervaringen die uitdagen, activeren en zichtbaar resultaat opleveren — met verhaal, spel en data.
+      </p>
+      <div class="hero-banner__actions">
+        <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Start met een GameStorm <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-secondary" href="{{ '/verhalen/' | relative_url }}">Bekijk verhalen</a>
+      </div>
+    </div>
   </div>
+  <span class="hero-banner__dots" aria-hidden="true"></span>
 </section>
 
 <section class="section" id="microgame-stories">

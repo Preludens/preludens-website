@@ -9,15 +9,19 @@ body_class: page-verhalen
 
 {% include locale.html %}
 
-<section class="page-hero">
-  <div class="container page-hero-inner">
-    <p class="hero-eyebrow">Stories</p>
-    <h1>Stories that move teams forward</h1>
-    <p>
-      From e-learning to a journey that challenges, activates, and inspires — these are the stories
-      we write together with our clients.
-    </p>
+<section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/verhalen-hero.jpg' | relative_url }}');">
+  <div class="container">
+    <div class="hero-banner__inner">
+      <p class="hero-banner__eyebrow">Stories</p>
+      <h1>Stories that <span class="hl">move teams</span> forward</h1>
+      <hr class="hero-banner__accent">
+      <p class="hero-banner__lead">
+        From e-learning to a journey that challenges, activates, and inspires — these are the stories
+        we write together with our clients.
+      </p>
+    </div>
   </div>
+  <span class="hero-banner__dots" aria-hidden="true"></span>
 </section>
 
 <section class="section section--alt">

@@ -9,15 +9,19 @@ body_class: page-play-blog
 
 {% include locale.html %}
 
-<section class="page-hero">
-  <div class="container page-hero-inner">
-    <p class="hero-eyebrow"><a href="{{ '/play/' | relative_url }}">{{ t.nav.play }}</a></p>
-    <h1>Play blog</h1>
-    <p>
-      Insights on play, learning, and behaviour change. Practical ideas you can apply tomorrow —
-      in the warm, clear tone that matches how we think about learning.
-    </p>
+<section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/play-hero.jpg' | relative_url }}');">
+  <div class="container">
+    <div class="hero-banner__inner">
+      <p class="hero-banner__eyebrow"><a href="{{ '/play/' | relative_url }}">{{ t.nav.play }}</a></p>
+      <h1><span class="hl">Play</span> blog</h1>
+      <hr class="hero-banner__accent">
+      <p class="hero-banner__lead">
+        Insights on play, learning, and behaviour change. Practical ideas you can apply tomorrow —
+        in the warm, clear tone that matches how we think about learning.
+      </p>
+    </div>
   </div>
+  <span class="hero-banner__dots" aria-hidden="true"></span>
 </section>
 
 <section class="section">
