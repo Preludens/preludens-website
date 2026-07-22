@@ -167,44 +167,29 @@ permalink: /team/
 
 <section class="section">
   <div class="container">
-    <div class="block-head">
-      <span class="section-label">Zo ontwerpen wij leerervaringen</span>
-      <h2>Zeven principes achter ons ontwerp</h2>
-      <p>
-        Deze principes bepalen hoe Daan en Jan-Willem samen ontwerpen: inhoudelijk scherp, technisch stevig en altijd
-        gericht op leren dat toepasbaar wordt.
-      </p>
+    <div class="split split--wide-text">
+      <div class="split__text">
+        <span class="section-label">Zo ontwerpen wij leerervaringen</span>
+        <h2>Zeven principes achter ons ontwerp</h2>
+        <p>
+          Elk ontwerp is inhoudelijk scherp, technisch stevig en gericht op leren dat in de praktijk toepasbaar wordt.
+          In onze ontwerpmethodiek lees je precies hoe we dat doen — van heldere doelstellingen tot duidelijke feedback
+          en een altijd zichtbare volgende stap.
+        </p>
+        <a class="btn btn-primary" href="{{ '/ontwerpmethodiek/' | relative_url }}">Bekijk onze ontwerpmethodiek <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="split__aside">
+        <ol class="principle-list principle-list--compact">
+          <li><h3>Heldere en haalbare doelstellingen</h3></li>
+          <li><h3>Balans tussen kennis, skills en geluk</h3></li>
+          <li><h3>Mechanismen uit de realiteit</h3></li>
+          <li><h3>Focus op positieve, menselijke emoties</h3></li>
+          <li><h3>Robuuste, logische besturing</h3></li>
+          <li><h3>Duidelijke feedback, zonder afleiding</h3></li>
+          <li><h3>De volgende stap altijd duidelijk</h3></li>
+        </ol>
+      </div>
     </div>
-    <ol class="principle-list">
-      <li>
-        <h3>Gebruik heldere en haalbare doelstellingen</h3>
-        <p>Ieder succesvol ontwerp begint met een solide doel. Bepaal wat je wilt bereiken, zorg dat het haalbaar is en stel een manier vast om voortgang te meten. Goede leerdoelen zetten we om naar uitdagingen voor maximale intrinsieke motivatie.</p>
-      </li>
-      <li>
-        <h3>Balanceer kennis met skills en geluk</h3>
-        <p>De gameplay is gericht op het vergroten van kennis, en succes wordt behaald door die kennis toe te passen. Hoewel skills en geluk onderdeel zijn van gameplay, moet de speler sterk voelen dat voortgang op kennis is gebaseerd.</p>
-      </li>
-      <li>
-        <h3>Gebruik mechanismen uit de realiteit</h3>
-        <p>Kennis ontstaat wanneer je de context herkent en begrijpt. Hoe dichter we bij de realiteit blijven, hoe groter de kennisretentie. Herkenbare mechanismen maken de gameplay ook toegankelijker en begrijpelijker.</p>
-      </li>
-      <li>
-        <h3>Focus op positieve, menselijke emoties</h3>
-        <p>Intrinsieke motivatie ontstaat alleen wanneer de speler via emotie betrokken is bij de leerstof. Het gaat om een behoefte om te leren én om af te ronden en te behalen — die emotie hoeft niet eens direct aan de leerdoelen gekoppeld te zijn.</p>
-      </li>
-      <li>
-        <h3>Maak besturing robuust</h3>
-        <p>Een training moet robuust en zoveel mogelijk bugvrij zijn. De interactie is logisch en de speler kan direct aan de slag zonder verloren te raken. Robuust betekent ook: in het juiste tempo door het object heen werken.</p>
-      </li>
-      <li>
-        <h3>Geef duidelijke feedback, zonder afleiding</h3>
-        <p>Bij elke actie — goed of fout — volgt direct feedback, zonder vertraging. De feedback is helder en to-the-point, zodat de speler precies weet wat er nu en in de toekomst verwacht wordt.</p>
-      </li>
-      <li>
-        <h3>Maak de volgende stap altijd duidelijk</h3>
-        <p>De speler weet altijd wat er verwacht wordt, hoe je voortgang maakt en wat je kunt doen om die te verbeteren. Het object voelt logisch en geeft op natuurlijke wijze een gevoel van accomplishment tijdens de training.</p>
-      </li>
-    </ol>
   </div>
 </section>
 
