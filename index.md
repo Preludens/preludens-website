@@ -277,6 +277,7 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     max-width: 18ch;
     color: var(--color-white);
   }
+  .sp-panel--hero h1 .hl { color: var(--color-gold); }
   .sp-panel p.sp-lead {
     font-size: clamp(1.05rem, 1.6vw, 1.3rem);
     line-height: 1.6;
@@ -668,7 +669,7 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
   <section class="sp-panel sp-panel--hero" data-sp="0">
     <div class="sp-inner">
       <p class="sp-eyebrow">Challenge · activate · motivate</p>
-      <h1>Activeer je team en bereid ze voor op de toekomst.</h1>
+      <h1>Activeer je team en bereid ze voor op de <span class="hl">toekomst</span>.</h1>
       <p class="sp-lead">
         Wij bereiden teams voor op de werkelijkheid van morgen door ze nu al ervaringen te bieden die ertoe doen.
         Via storytelling en MicroGames zetten we medewerkers in realistische situaties waar ze moeten kiezen, handelen en leren.

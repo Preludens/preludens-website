@@ -249,6 +249,7 @@ permalink: /
     max-width: 18ch;
     color: var(--color-white);
   }
+  .sp-panel--hero h1 .hl { color: var(--color-gold); }
   .sp-panel p.sp-lead {
     font-size: clamp(1.05rem, 1.6vw, 1.3rem);
     line-height: 1.6;
@@ -606,7 +607,7 @@ permalink: /
   <section class="sp-panel sp-panel--hero" data-sp="0">
     <div class="sp-inner">
       <p class="sp-eyebrow">Challenge · activate · motivate</p>
-      <h1>Activate your team and prepare them for what comes next.</h1>
+      <h1>Activate your team and prepare them for <span class="hl">what comes next</span>.</h1>
       <p class="sp-lead">
         We prepare teams for the reality of tomorrow by giving them meaningful experiences today.
         Through storytelling and MicroGames, we place people in realistic situations where they choose, act, and learn.

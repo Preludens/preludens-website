@@ -6,14 +6,18 @@ description: Examples of how Play, GameStorm, and Game Thinking move teams forwa
 permalink: /play/in-de-praktijk/
 ---
 
-<section class="page-hero page-hero--compact">
-  <div class="container page-hero-inner">
-    <p class="hero-eyebrow"><a href="{{ '/play/' | relative_url }}">Play</a></p>
-    <h1>Play in practice</h1>
-    <p>
-      How play, story, and interaction come together in concrete programmes — from workshop to full learning experience.
-    </p>
+<section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/play-hero.jpg' | relative_url }}');">
+  <div class="container">
+    <div class="hero-banner__inner">
+      <p class="hero-banner__eyebrow"><a href="{{ '/play/' | relative_url }}">Play</a></p>
+      <h1>Play in <span class="hl">practice</span></h1>
+      <hr class="hero-banner__accent">
+      <p class="hero-banner__lead">
+        How play, story, and interaction come together in concrete programmes — from workshop to full learning experience.
+      </p>
+    </div>
   </div>
+  <span class="hero-banner__dots" aria-hidden="true"></span>
 </section>
 
 <section class="section">

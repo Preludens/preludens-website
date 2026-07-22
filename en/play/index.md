@@ -6,14 +6,22 @@ description: Play as a technique for an open mindset, intrinsic motivation, and 
 permalink: /play/
 ---
 
-<section class="page-hero">
-  <div class="container page-hero-inner">
-    <p class="hero-eyebrow">Play</p>
-    <h1>The magic circle of learning</h1>
-    <p>
-      Play is not a distraction from work — it is a powerful way to prepare people for choices that truly matter.
-    </p>
+<section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/play-hero.jpg' | relative_url }}');">
+  <div class="container">
+    <div class="hero-banner__inner">
+      <p class="hero-banner__eyebrow">Play</p>
+      <h1>The <span class="hl">magic circle</span> of learning</h1>
+      <hr class="hero-banner__accent">
+      <p class="hero-banner__lead">
+        Play is not a distraction from work — it is a powerful way to prepare people for choices that truly matter.
+      </p>
+      <div class="hero-banner__actions">
+        <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Start with a GameStorm <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-secondary" href="{{ '/diensten/' | relative_url }}">Our services</a>
+      </div>
+    </div>
   </div>
+  <span class="hero-banner__dots" aria-hidden="true"></span>
 </section>
 
 <section class="section">

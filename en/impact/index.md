@@ -6,14 +6,22 @@ description: Visible results through storytelling, MicroGames, and data-driven i
 permalink: /impact/
 ---
 
-<section class="page-hero">
-  <div class="container page-hero-inner">
-    <p class="hero-eyebrow">Impact</p>
-    <h1>Learning that delivers visible results</h1>
-    <p>
-      We measure what matters: engagement, decisiveness, and behaviour change in practice.
-    </p>
+<section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/impact-hero.jpg' | relative_url }}');">
+  <div class="container">
+    <div class="hero-banner__inner">
+      <p class="hero-banner__eyebrow">Impact</p>
+      <h1>Learning that delivers <span class="hl">visible results</span></h1>
+      <hr class="hero-banner__accent">
+      <p class="hero-banner__lead">
+        We measure what matters: engagement, decisiveness, and behaviour change in practice.
+      </p>
+      <div class="hero-banner__actions">
+        <a class="btn btn-primary" href="{{ '/verhalen/' | relative_url }}">See the stories <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-secondary" href="{{ '/contact/' | relative_url }}">Get in touch</a>
+      </div>
+    </div>
   </div>
+  <span class="hero-banner__dots" aria-hidden="true"></span>
 </section>
 
 <section class="section">
