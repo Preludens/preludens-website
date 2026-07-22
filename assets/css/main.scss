@@ -114,15 +114,23 @@ a {
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   color: var(--color-ink);
-  line-height: 1.15;
+  line-height: 1.12;
   margin-top: 0;
 }
 
-h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 800; }
-h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 700; }
-h3 { font-size: 1.25rem; font-weight: 600; }
+/* Grote, lichte, strakke koppen — dicht bij de demo, met ons Outfit-font */
+h1 { font-size: clamp(2.5rem, 5.6vw, 4.5rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.05; }
+h2 { font-size: clamp(1.9rem, 3.8vw, 3.1rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+h3 { font-size: clamp(1.2rem, 1.7vw, 1.45rem); font-weight: 600; letter-spacing: -0.01em; }
 
 p { margin: 0 0 var(--space-sm); }
+
+/* Introparagraaf — groter, rustiger */
+.lead {
+  font-size: clamp(1.15rem, 1.8vw, 1.3rem);
+  line-height: 1.55;
+  color: var(--color-ink-soft);
+}
 
 .sr-only {
   position: absolute;
@@ -489,11 +497,39 @@ p { margin: 0 0 var(--space-sm); }
 
 /* Sections */
 .section {
-  padding: var(--space-xl) 0;
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
 }
 
+/* Sectieritme: wit / mist-blauw / navy — geeft ritme zonder banners */
 .section--alt {
   background: var(--color-white);
+}
+
+.section--mist {
+  background: var(--color-mist-blue);
+}
+
+.section--navy {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-brand-navy);
+  color: rgba(246, 249, 249, 0.86);
+
+  h1, h2, h3, h4 { color: var(--color-white); }
+  .section-label { color: var(--color-soft-gold); }
+  .lead { color: rgba(246, 249, 249, 0.82); }
+  .block-head p { color: rgba(246, 249, 249, 0.82); }
+
+  /* subtiele gouden gloed rechtsboven, als in de demo */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 82% 12%, rgba(237, 167, 14, 0.16), transparent 34%);
+    pointer-events: none;
+  }
+
+  > .container { position: relative; z-index: 1; }
 }
 
 .section-header {
@@ -2133,6 +2169,35 @@ p { margin: 0 0 var(--space-sm); }
   }
 }
 
+/* Tweekoloms compositie: tekst links, bullets/beeld rechts */
+.split {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: start;
+
+  @media (min-width: 860px) {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: center;
+  }
+
+  &__text {
+    min-width: 0;
+
+    .checklist { margin-top: 0; }
+    p:last-child { margin-bottom: 0; }
+  }
+
+  &__aside { min-width: 0; }
+
+  /* iets bredere tekstkolom voor lange copy */
+  &--wide-text {
+    @media (min-width: 860px) {
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+  }
+}
+
 /* Genummerde functie-grid (Prepo) */
 .feature-grid {
   display: grid;
@@ -2143,137 +2208,166 @@ p { margin: 0 0 var(--space-sm); }
 .feature-item {
   position: relative;
   overflow: hidden;
-  padding: var(--space-md);
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-
-  &__num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-bottom: var(--space-sm);
-    border-radius: var(--radius-sm);
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--color-deep-navy);
-    background: rgba(237, 167, 14, 0.18);
-  }
-
-  h3 {
-    font-size: 1.1rem;
-    margin-bottom: var(--space-xs);
-  }
-
-  p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: var(--color-ink-soft);
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 64%;
-    height: 4px;
-    border-radius: var(--radius-pill);
-    background: linear-gradient(90deg, rgba(237, 167, 14, 0.82), rgba(237, 167, 14, 0));
-    pointer-events: none;
-  }
-}
-
-/* Checklist met vinkjes ("Geschikt voor", "Wat levert het op") */
-.checklist {
-  list-style: none;
-  padding: 0;
-  margin: var(--space-sm) 0 0;
-  display: grid;
-  gap: var(--space-xs);
-
-  li {
-    position: relative;
-    padding-left: 1.9rem;
-    line-height: 1.5;
-    color: var(--color-ink-soft);
-  }
-
-  li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.15em;
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: 50%;
-    background: rgba(42, 124, 134, 0.14);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232A7C86' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 0.8rem;
-  }
-}
-
-/* Persona-kaarten (Team) */
-.persona-grid {
-  display: grid;
-  gap: var(--space-lg);
-}
-
-.persona {
-  position: relative;
-  overflow: hidden;
-  display: grid;
-  gap: var(--space-md);
   padding: var(--space-lg);
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition);
 
-  @media (min-width: 640px) {
-    grid-template-columns: auto 1fr;
-    align-items: start;
-  }
-
-  &__photo {
-    width: clamp(6rem, 22vw, 9rem);
-    height: clamp(6rem, 22vw, 9rem);
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--color-white);
+  &:hover {
+    transform: translateY(-4px);
     box-shadow: var(--shadow-soft);
   }
 
-  &__name { margin-bottom: var(--space-xs); }
+  &__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-bottom: var(--space-md);
+    border-radius: 50%;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--color-deep-navy);
+    background: var(--color-preludens-gold);
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    line-height: 1.25;
+    margin-bottom: var(--space-sm);
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-ink-soft);
+  }
+}
+
+/* Checklist als kaarten met gouden vinkje-badge — laat de lijst "springen" */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-md) 0 0;
+  display: grid;
+  gap: var(--space-sm);
+
+  li {
+    position: relative;
+    padding: 0.95rem 1.1rem 0.95rem 3.1rem;
+    line-height: 1.5;
+    color: var(--color-ink);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+  }
+
+  li::before {
+    content: "\2713";
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 1.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-preludens-gold);
+    color: var(--color-deep-navy);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.85rem;
+    line-height: 1;
+  }
+}
+
+/* Tweekoloms checklist voor langere lijsten */
+.checklist--cols {
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Op donkere secties: kaarten donkerder, tekst licht */
+.section--navy .checklist li {
+  background: rgba(246, 249, 249, 0.06);
+  border-color: rgba(246, 249, 249, 0.16);
+  color: rgba(246, 249, 249, 0.9);
+  box-shadow: none;
+}
+
+/* Persona-kaarten (Team) — foto groot en direct zichtbaar bovenaan */
+.persona-grid {
+  display: grid;
+  gap: var(--space-lg);
+
+  @media (min-width: 780px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.persona {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: clamp(6.5rem, 14vw, 9.5rem) 1fr;
+    gap: var(--space-md);
+    align-items: center;
+    padding: var(--space-lg) var(--space-lg) var(--space-md);
+  }
+
+  &__photo {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    box-shadow: var(--shadow-soft);
+  }
+
+  &__name {
+    font-size: clamp(1.4rem, 2.4vw, 1.65rem);
+    line-height: 1.1;
+    margin-bottom: var(--space-xs);
+  }
 
   &__role {
-    margin: 0 0 var(--space-sm);
+    margin: 0;
     font-family: var(--font-display);
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     color: var(--color-ink-gold);
   }
 
-  &__bio {
+  &__body {
+    padding: 0 var(--space-lg) var(--space-lg);
     color: var(--color-ink-soft);
+
     p:last-child { margin-bottom: 0; }
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60%;
-    height: 4px;
-    border-radius: var(--radius-pill);
-    background: linear-gradient(90deg, rgba(242, 196, 92, 0.85), rgba(242, 196, 92, 0));
-    pointer-events: none;
+  @media (max-width: 460px) {
+    &__top { grid-template-columns: 1fr; text-align: left; }
+    &__photo { width: clamp(7rem, 40vw, 9rem); }
   }
 }
 
@@ -2321,6 +2415,39 @@ p { margin: 0 0 var(--space-sm); }
   }
 }
 
+/* Prijs-kaart (GameStorm) — grote prijs, als in de demo */
+.price-card {
+  background: var(--color-pale-gold);
+  border: 1px solid #f2dfb2;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-card);
+
+  &__amount {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(3rem, 6vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--color-brand-navy);
+  }
+
+  &__meta {
+    display: block;
+    margin-top: var(--space-sm);
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  &__note {
+    display: block;
+    margin-top: var(--space-xs);
+    color: var(--color-ink-soft);
+    font-size: 0.95rem;
+  }
+}
+
 /* Prijs/hoogtepunt-blok (GameStorm) */
 .price-note {
   display: flex;
@@ -2344,38 +2471,76 @@ p { margin: 0 0 var(--space-sm); }
   }
 }
 
-/* Definitie/waarden-lijst ("Waar wij voor staan") */
+/* Waarden/principes als 2×2 kaartenraster ("Waar wij voor staan") */
 .value-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  gap: var(--space-sm);
+  gap: var(--space-md);
+  counter-reset: value;
+
+  @media (min-width: 720px) {
+    grid-template-columns: 1fr 1fr;
+  }
 
   li {
-    padding: var(--space-md);
+    position: relative;
+    overflow: hidden;
+    padding: var(--space-lg);
     background: var(--color-white);
     border: 1px solid var(--color-border);
-    border-left: 4px solid var(--color-gold);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition), box-shadow var(--transition);
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+    }
 
     strong {
       display: block;
       font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
       color: var(--color-ink);
-      margin-bottom: var(--space-xs);
+      margin-bottom: var(--space-sm);
     }
 
     span {
       color: var(--color-ink-soft);
-      font-size: 0.95rem;
+      font-size: 1rem;
+    }
+
+    &::before {
+      counter-increment: value;
+      content: counter(value, decimal-leading-zero);
+      position: absolute;
+      top: var(--space-md);
+      right: var(--space-md);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--color-preludens-gold);
     }
   }
 }
 
+/* Op donkere secties */
+.section--navy .value-list li {
+  background: rgba(246, 249, 249, 0.06);
+  border-color: rgba(246, 249, 249, 0.16);
+  box-shadow: none;
+
+  strong { color: var(--color-white); }
+  span { color: rgba(246, 249, 249, 0.82); }
+}
+
 /* Kop met introtekst binnen een sectie */
 .block-head {
-  max-width: 46rem;
+  max-width: 48rem;
   margin-bottom: var(--space-lg);
 
   .section-label {
@@ -2383,5 +2548,77 @@ p { margin: 0 0 var(--space-sm); }
     margin-bottom: var(--space-xs);
   }
 
-  p { color: var(--color-ink-soft); }
+  p {
+    color: var(--color-ink-soft);
+    font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+    line-height: 1.55;
+  }
+
+  &--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   Spannende, full-bleed call-to-action (navy + gouden gloed of bannerbeeld)
+   ========================================================================== */
+.cta-feature {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  text-align: center;
+  color: var(--color-white);
+  background:
+    radial-gradient(circle at 82% 14%, rgba(237, 167, 14, 0.22), transparent 34%),
+    radial-gradient(circle at 12% 90%, rgba(242, 196, 92, 0.12), transparent 40%),
+    var(--color-deep-navy);
+
+  /* optioneel bannerbeeld via --cta-bg */
+  &--image {
+    background:
+      linear-gradient(90deg, rgba(11, 42, 53, 0.92), rgba(11, 42, 53, 0.72) 55%, rgba(11, 42, 53, 0.55)),
+      var(--cta-bg, none) center / cover no-repeat,
+      var(--color-deep-navy);
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 46rem;
+    margin-inline: auto;
+  }
+
+  .section-label { color: var(--color-soft-gold); }
+
+  h2 {
+    color: var(--color-white);
+    margin-bottom: var(--space-md);
+  }
+
+  .hl { color: var(--color-preludens-gold); }
+
+  p {
+    color: rgba(246, 249, 249, 0.86);
+    font-size: clamp(1.1rem, 1.7vw, 1.28rem);
+    line-height: 1.55;
+    max-width: 40rem;
+    margin-inline: auto;
+    margin-bottom: var(--space-lg);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+  }
+
+  .btn-secondary {
+    background: rgba(246, 249, 249, 0.08);
+    color: var(--color-white) !important;
+    border-color: rgba(246, 249, 249, 0.4);
+
+    &:hover { background: rgba(246, 249, 249, 0.16); color: var(--color-white) !important; }
+  }
 }
