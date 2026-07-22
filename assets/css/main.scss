@@ -203,36 +203,37 @@ p { margin: 0 0 var(--space-sm); }
   flex-shrink: 0;
 }
 
+/* Rustige, minimale tekst-toggle: geen kader/achtergrond meer, zodat de
+   taalwissel op de achtergrond blijft en de GameStorm-CTA het primaire
+   accent is. Actieve taal alleen subtiel benadrukt. */
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  padding: 3px;
-  background: rgba(246, 249, 249, 0.98);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-pill);
-  box-shadow: inset 0 1px 0 rgba(246, 249, 249, 0.75);
+  gap: 0.15rem;
   flex-shrink: 0;
 }
 
 .lang-switch__option {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2.35rem;
-  padding: 0.32rem 0.55rem;
+  padding: 0.28rem 0.45rem;
   font-family: var(--font-display);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   line-height: 1;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--color-ink-soft);
-  border-radius: var(--radius-pill);
-  transition: color var(--transition), background var(--transition), box-shadow var(--transition);
+  opacity: 0.72;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), opacity var(--transition);
 
   &:hover {
     color: var(--color-ink-gold);
+    opacity: 1;
   }
 
   &:focus-visible {
@@ -241,10 +242,22 @@ p { margin: 0 0 var(--space-sm); }
   }
 
   &.is-active {
-    background: var(--color-prussian-blue);
-    color: var(--color-white);
-    box-shadow: 0 1px 3px rgba(11, 42, 53, 0.22);
+    color: var(--color-ink);
+    opacity: 1;
+    font-weight: 700;
   }
+}
+
+/* dun scheidingslijntje tussen de twee talen */
+.lang-switch__option + .lang-switch__option::before {
+  content: "";
+  position: absolute;
+  left: calc(-0.075rem - 0.5px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 0.8rem;
+  background: var(--color-border);
 }
 
 .site-nav {
