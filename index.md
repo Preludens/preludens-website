@@ -277,7 +277,7 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     max-width: 18ch;
     color: var(--color-white);
   }
-  .sp-panel--hero h1 .hl { color: var(--color-gold); }
+  .sp-panel--hero h1 .hl { color: var(--color-preludens-gold); }
   .sp-panel p.sp-lead {
     font-size: clamp(1.05rem, 1.6vw, 1.3rem);
     line-height: 1.6;
