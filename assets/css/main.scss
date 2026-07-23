@@ -410,18 +410,24 @@ p { margin: 0 0 var(--space-sm); }
 
 /* Header-CTA: pill-vorm i.l.m. de taalwissel ernaast, zonder de decoratieve
    boog van .btn-primary (die wordt hier door overflow:hidden een hoek-artefact).
-   Subtiele gouden schaduw geeft diepte i.p.v. een vlak blok. */
-.nav-cta {
-  /* Pill-CTA's hebben optisch meer side-padding nodig: de ronde zijkanten
-     'vreten' ruimte weg, dus horizontale padding ≥ ~halve knophoogte. */
-  padding-block: 0.6rem;
-  padding-inline: 2.5rem;
+   Subtiele gouden schaduw geeft diepte i.p.v. een vlak blok.
+
+   Belangrijk: selector moet zwaarder zijn dan `.site-nav a` (padding: .35rem 0),
+   anders wint die regel en blijft padding-inline effectief 0. */
+.site-nav a.nav-cta {
+  padding: 0.6rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-deep-navy) !important;
   border-radius: var(--radius-pill);
   box-shadow: 0 2px 8px rgba(200, 132, 5, 0.30);
 
   &::after { content: none; }
 
-  &:hover { box-shadow: 0 5px 16px rgba(200, 132, 5, 0.38); }
+  &:hover {
+    color: var(--color-deep-navy) !important;
+    box-shadow: 0 5px 16px rgba(200, 132, 5, 0.38);
+  }
 }
 
 /* Hero */
