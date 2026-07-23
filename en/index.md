@@ -117,11 +117,26 @@ permalink: /
     background-image: radial-gradient(ellipse at 25% 25%, rgba(17, 56, 71, 0.10), transparent 50%);
     color: var(--color-ink);
   }
+  .sp-panel--verhalen {
+    background-color: var(--color-prussian-blue);
+    background-image:
+      radial-gradient(ellipse at 18% 22%, rgba(242, 196, 92, 0.16), transparent 46%),
+      linear-gradient(160deg, var(--color-prussian-blue), var(--color-regal-navy));
+    color: var(--color-white);
+  }
+  .sp-panel--team {
+    background-color: var(--color-regal-navy);
+    background-image:
+      radial-gradient(ellipse at 78% 78%, rgba(45, 143, 158, 0.18), transparent 46%),
+      linear-gradient(150deg, var(--color-regal-navy), var(--color-prussian-blue));
+    color: var(--color-white);
+  }
 
   .sp-final-copy {
     max-width: 46rem;
   }
   .sp-final-copy a { color: var(--color-harbor-teal); font-weight: 600; }
+  .sp-panel--team a { color: var(--color-gold); font-weight: 600; }
 
   /* ===== Footer-reveal =====
      De footer staat als los blok ná de laatste (sticky) slide. Bij doorscrollen
@@ -190,7 +205,9 @@ permalink: /
      slide doorloopt. Kleuren passen per paneel. Ligt achter de inhoud (z-index 0). */
   .sp-panel--cream::after,
   .sp-panel--navy::after,
+  .sp-panel--verhalen::after,
   .sp-panel--testimonial::after,
+  .sp-panel--team::after,
   .sp-panel--quote::after,
   .sp-panel--warm::after,
   .sp-panel--micro::after,
@@ -207,7 +224,9 @@ permalink: /
 
   .sp-panel--cream::after { background-image: url("{{ '/assets/images/panels/online-focus.svg' | relative_url }}"); }
   .sp-panel--navy::after  { background-image: url("{{ '/assets/images/panels/diensten.svg' | relative_url }}"); }
+  .sp-panel--verhalen::after { background-image: url("{{ '/assets/images/panels/verhalen.svg' | relative_url }}"); }
   .sp-panel--testimonial::after { background-image: url("{{ '/assets/images/panels/testimonial.svg' | relative_url }}"); }
+  .sp-panel--team::after  { background-image: url("{{ '/assets/images/panels/team.svg' | relative_url }}"); }
   .sp-panel--quote::after { background-image: url("{{ '/assets/images/panels/quote.svg' | relative_url }}"); }
   .sp-panel--warm::after  { background-image: url("{{ '/assets/images/panels/cta.svg' | relative_url }}"); }
   .sp-panel--micro::after { background-image: url("{{ '/assets/images/panels/micro.svg' | relative_url }}"); }
@@ -258,6 +277,8 @@ permalink: /
   }
   .sp-panel--hero p,
   .sp-panel--navy p,
+  .sp-panel--verhalen p,
+  .sp-panel--team p,
   .sp-panel--quote p,
   .sp-panel--micro p { color: rgba(246, 249, 249, 0.9); }
   .sp-panel--warm p { color: var(--color-deep-navy); }
@@ -266,6 +287,36 @@ permalink: /
 
   .sp-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-md); }
   .sp-actions .btn { padding: 0.85rem 1.4rem; border-radius: var(--radius-md); font-weight: 600; }
+
+  .sp-reassure {
+    margin-top: var(--space-sm);
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-deep-navy);
+    opacity: 0.8;
+  }
+
+  .sp-clients {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    padding: 0;
+    margin: var(--space-md) 0 0;
+  }
+  .sp-clients li {
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: rgba(246, 249, 249, 0.9);
+    padding: 0.35rem 0.7rem;
+    border: 1px solid rgba(246, 249, 249, 0.22);
+    border-radius: var(--radius-pill);
+    background: rgba(246, 249, 249, 0.06);
+  }
 
   /* Warm (geel/koraal) paneel: koraal primaire knop valt weg tegen de achtergrond.
      Gebruik een blauwe knop voor voldoende contrast. */
@@ -606,31 +657,32 @@ permalink: /
   <!-- 1. Hero -->
   <section class="sp-panel sp-panel--hero" data-sp="0">
     <div class="sp-inner">
-      <p class="sp-eyebrow">Challenge · activate · motivate</p>
-      <h1>Activate your team and prepare them for <span class="hl">what comes next</span>.</h1>
+      <p class="sp-eyebrow">Challenge · Activate · Motivate</p>
+      <h1>Activate your team and challenge them to explore the <span class="hl">future</span>.</h1>
       <p class="sp-lead">
-        We prepare teams for the reality of tomorrow by giving them meaningful experiences today.
-        Through storytelling and MicroGames, we place people in realistic situations where they choose, act, and learn.
+        Preludens uses storytelling and game-based learning to challenge teams, activate them and let them explore
+        new situations. That is how intrinsic motivation grows and essential knowledge is better understood, applied
+        and embedded.
       </p>
       <div class="sp-actions">
-        <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Start with a GameStorm</a>
+        <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Start with a GameStorm</a>
         <a class="btn btn-secondary" href="{{ '/diensten/' | relative_url }}">Our services</a>
       </div>
       <div class="sp-hero-pillars" aria-label="Challenge, activate, motivate">
         <div class="sp-hero-pillar">
           <span class="sp-hero-pillar__num">01 — Challenge</span>
           <h3>Challenge</h3>
-          <p>Realistic situations where people have to choose and act.</p>
+          <p>Challenge teams to make choices in realistic situations, practise trade-offs and experience the consequences of their actions.</p>
         </div>
         <div class="sp-hero-pillar">
           <span class="sp-hero-pillar__num">02 — Activate</span>
           <h3>Activate</h3>
-          <p>MicroGames that activate knowledge and engage thinking.</p>
+          <p>Use Play so participants choose actively. Not watching or clicking, but trying, responding, deciding and learning from immediate feedback.</p>
         </div>
         <div class="sp-hero-pillar">
           <span class="sp-hero-pillar__num">03 — Motivate</span>
           <h3>Motivate</h3>
-          <p>Perform stronger and more confidently when it truly matters.</p>
+          <p>Strengthen engagement and intrinsic motivation so teams act with more confidence when it truly matters in practice.</p>
         </div>
       </div>
     </div>
@@ -641,73 +693,190 @@ permalink: /
   <section class="sp-panel sp-panel--cream" data-sp="1">
     <div class="sp-inner">
       <span class="sp-eyebrow">Online focus</span>
-      <h2>Interactive stories that challenge, activate, and motivate teams</h2>
+      <h2>Interactive stories that challenge, activate and motivate teams</h2>
       <p class="sp-lead">
-        At Preludens, we believe learning should be impactful and natural. That is why we design interactive learning experiences that truly connect with people: relevant to their work, visually built up, and focused on behaviour change.
+        At Preludens we believe online learning only works when people become actively engaged. That is why we design
+        interactive learning experiences that connect to practice: visually built, recognisable and focused on knowledge
+        people truly need to apply.
       </p>
       <p class="sp-lead">
-        Storytelling provides context and recognition, MicroGames boost motivation and retention, and data helps you improve with purpose. So learning is no longer an obligation, but an inspiring journey.
+        Storytelling gives context and meaning. MicroGames create choices, repetition and immediate feedback. Data shows
+        where participants get stuck and where improvement is possible. So online learning is no longer a click-through
+        obligation, but a focused experience in which teams practise, discover and grow.
       </p>
+      <ul class="sp-pain-points" aria-label="Three friction points we remove">
+        <li>
+          <strong>Engagement</strong>
+          <span>Grow intrinsic motivation so people want to practise instead of click through.</span>
+        </li>
+        <li>
+          <strong>Knowledge retention</strong>
+          <span>Strengthen insight through repetition, context and choices that stick better.</span>
+        </li>
+        <li>
+          <strong>Safe practice space</strong>
+          <span>Create room to explore, make mistakes and act more strongly in practice.</span>
+        </li>
+      </ul>
     </div>
   </section>
 
-  <!-- 3. Diensten -->
+  <!-- 3. Services -->
   <section class="sp-panel sp-panel--navy" data-sp="2">
     <div class="sp-inner">
       <span class="sp-eyebrow">What we do</span>
-      <h2>Learning experiences with story, play, and impact</h2>
+      <h2>Learning experiences with story, play and impact</h2>
       <div class="sp-cards">
         <article class="card card--coral">
           <span class="sp-card-icon" aria-hidden="true">📖</span>
           <h3>MicroGame Stories</h3>
-          <p>Short, story-driven online training in which people practise realistic situations — enriched with comic-style storytelling and powerful MicroGames that activate knowledge and build motivation.</p>
+          <p>Short visual stories that link basic knowledge to recognisable work situations. People practise with short game mechanisms, make choices and get immediate feedback.</p>
           <a href="{{ '/diensten/#microgame-stories' | relative_url }}">More about MicroGame Stories</a>
         </article>
         <article class="card card--gold">
           <span class="sp-card-icon" aria-hidden="true">⚖️</span>
           <h3>Dilemma Storytelling</h3>
-          <p>Realistic scenarios with tough choices and immediate consequences — strengthening decisiveness and insight without a single “right” answer.</p>
-          <a href="{{ '/diensten/#dilemma-storytelling' | relative_url }}">More about Dilemma Stories</a>
+          <p>Realistic scenarios in which people make tough choices, experience consequences and learn to weigh options — linked to goals or KPIs from practice.</p>
+          <a href="{{ '/diensten/#dilemma-storytelling' | relative_url }}">More about Dilemma Storytelling</a>
         </article>
         <article class="card card--mint">
           <span class="sp-card-icon" aria-hidden="true">🎯</span>
           <h3>Game Thinking</h3>
-          <p>Solving complex challenges by looking at processes as if they were a game — with workshops and concrete blueprints for behaviour and learning goals.</p>
+          <p>Explore complex challenges as if they were a game — with workshops that make goals, behaviour, choices and feedback visible in a concrete blueprint.</p>
           <a href="{{ '/diensten/#game-thinking' | relative_url }}">More about Game Thinking</a>
         </article>
+      </div>
+      <div class="sp-fit-note">
+        <p>
+          <strong>Which form fits your challenge?</strong>
+          Want to train and embed basic knowledge? A MicroGame Story. Want to strengthen decisiveness around tough
+          choices? Dilemma Storytelling. Want grip on behaviour, learning goals and interventions first? We start with
+          Game Thinking.
+        </p>
+        <a class="btn btn-secondary" href="{{ '/diensten/' | relative_url }}">Explore our services</a>
       </div>
     </div>
   </section>
 
-  <!-- 4. Klant-testimonial -->
-  <section class="sp-panel sp-panel--testimonial" data-sp="3" data-title="What clients say">
+  <!-- 4. Stories — proof from practice -->
+  <section class="sp-panel sp-panel--verhalen" data-sp="3" data-title="Stories from practice">
     <div class="sp-inner">
-      <figure class="sp-testimonial">
-        <img
-          class="sp-testimonial__photo"
-          src="{{ '/assets/images/testimonials/renee-heller.jpg' | relative_url }}"
-          alt="Renée Heller"
-          width="800"
-          height="800"
-          loading="lazy"
-          decoding="async"
-        >
-        <div class="sp-testimonial__body">
-          <span class="sp-eyebrow">What clients say</span>
-          <blockquote>
-            Daan helped us turn a static design tool into a game that challenges players on every aspect of their choices. His work made sure every step was set out logically — for a broad audience of professionals and students — in a beautiful card game.
-          </blockquote>
-          <figcaption class="sp-testimonial__cite">
-            <span class="sp-testimonial__name">Renée Heller</span>
-            <span class="sp-testimonial__role">Professor Energy &amp; Innovation, Amsterdam University of Applied Sciences</span>
-          </figcaption>
-        </div>
-      </figure>
+      <span class="sp-eyebrow">Proven in practice</span>
+      <h2>From challenge to playable learning experience</h2>
+      <p class="sp-lead">
+        From nautical supervision to the energy transition: every project starts with a challenge that asks for
+        movement. That is why Preludens offers an end-to-end approach to game-based learning: from first exploration
+        to implementation in your own learning environment.
+      </p>
+      <ol class="sp-steps" aria-label="The 7 steps of success">
+        <li><span class="sp-steps__num">1</span> GameStorm</li>
+        <li><span class="sp-steps__num">2</span> Storytelling</li>
+        <li><span class="sp-steps__num">3</span> Visualisation</li>
+        <li><span class="sp-steps__num">4</span> Learning goals</li>
+        <li><span class="sp-steps__num">5</span> Design</li>
+        <li><span class="sp-steps__num">6</span> Production</li>
+        <li><span class="sp-steps__num">7</span> Implementation</li>
+      </ol>
+      <ul class="sp-clients" aria-label="A selection of clients">
+        <li>Amsterdam University of Applied Sciences</li>
+        <li>NNVO</li>
+        <li>21CC</li>
+        <li>Studium</li>
+        <li>Wijkz</li>
+        <li>onITnow</li>
+      </ul>
+      <div class="sp-actions">
+        <a class="btn btn-primary" href="{{ '/verhalen/' | relative_url }}">Read the stories</a>
+      </div>
     </div>
   </section>
 
-  <!-- 5. Quote -->
-  <section class="sp-panel sp-panel--quote" data-sp="4">
+  <!-- 5. Client testimonial -->
+  <section class="sp-panel sp-panel--testimonial" data-sp="4" data-title="What clients say">
+    <div class="sp-inner">
+      <div class="sp-carousel" data-sp-carousel>
+        <div class="sp-carousel__track">
+          <figure class="sp-testimonial sp-carousel__slide is-active">
+            <img
+              class="sp-testimonial__photo"
+              src="{{ '/assets/images/testimonials/renee-heller.jpg' | relative_url }}"
+              alt="Renée Heller"
+              width="800"
+              height="800"
+              loading="lazy"
+              decoding="async"
+            >
+            <div class="sp-testimonial__body">
+              <span class="sp-eyebrow">Experiences from practice</span>
+              <blockquote>
+                Daan helped us turn a static design tool into a game that challenges players on every aspect of their choices. His work made sure every step was set out logically — for a broad audience of professionals and students — in a beautiful card game.
+              </blockquote>
+              <figcaption class="sp-testimonial__cite">
+                <span class="sp-testimonial__name">Renée Heller</span>
+                <span class="sp-testimonial__role">Professor Energy &amp; Innovation, Amsterdam University of Applied Sciences</span>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="sp-testimonial sp-carousel__slide">
+            <img
+              class="sp-testimonial__photo"
+              src="{{ '/assets/images/testimonials/martijn-dorrestijn.jpg' | relative_url }}"
+              alt="Martijn Dorrestijn"
+              width="800"
+              height="800"
+              loading="lazy"
+              decoding="async"
+            >
+            <div class="sp-testimonial__body">
+              <span class="sp-eyebrow">Experiences from practice</span>
+              <blockquote>
+                [Quote to follow] — placeholder for Martijn Dorrestijn’s experience. Replace with the final quote once available.
+              </blockquote>
+              <figcaption class="sp-testimonial__cite">
+                <span class="sp-testimonial__name">Martijn Dorrestijn</span>
+                <span class="sp-testimonial__role">Quote and role to follow</span>
+              </figcaption>
+            </div>
+          </figure>
+        </div>
+        <div class="sp-carousel__dots" role="tablist" aria-label="Quotes">
+          <button class="sp-carousel__dot is-active" type="button" aria-label="Quote 1" data-sp-carousel-dot="0"></button>
+          <button class="sp-carousel__dot" type="button" aria-label="Quote 2" data-sp-carousel-dot="1"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Team -->
+  <section class="sp-panel sp-panel--team" data-sp="5" data-title="The team">
+    <div class="sp-inner">
+      <span class="sp-eyebrow">The team</span>
+      <h2>The people behind Preludens</h2>
+      <p class="sp-lead">
+        Preludens combines more than fifteen years of experience in serious games with storytelling, game design,
+        didactics and technology. We are a compact team of makers, designers and developers that turns complex
+        knowledge into learning experiences in which people actively discover, choose and practise.
+      </p>
+      <p><a href="{{ '/team/' | relative_url }}">Meet the team →</a></p>
+      <ul class="sp-values" aria-label="What we stand for">
+        <li>
+          <strong>Robust</strong>
+          <span>Learning experiences that work reliably, feel logical and build trust.</span>
+        </li>
+        <li>
+          <strong>Purposeful</strong>
+          <span>Design choices that always trace back to learning goals, behaviour and application.</span>
+        </li>
+        <li>
+          <strong>Accessible</strong>
+          <span>Complex knowledge becomes clear, recognisable and playable for the people who need to use it.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Quote -->
+  <section class="sp-panel sp-panel--quote" data-sp="6">
     <div class="sp-inner">
       <figure class="sp-quote">
         <blockquote>
@@ -718,22 +887,29 @@ permalink: /
     </div>
   </section>
 
-  <!-- 6. CTA -->
-  <section class="sp-panel sp-panel--warm" data-sp="5">
+  <!-- 8. CTA -->
+  <section class="sp-panel sp-panel--warm" data-sp="7">
     <div class="sp-inner">
+      <p class="sp-reassure">No obligation · no commitments · reply within one business day</p>
       <h2>Take the first step tomorrow</h2>
       <p class="sp-lead">
-        Start with a GameStorm: a creative half-day workshop in which we shape your story together. Using the structure of the Hero’s Journey, we design one or two strong narrative arcs and connect 4 to 5 learning goals.
+        In a GameStorm we explore your learning challenge together. In one half-day we bring the audience, context and
+        key learning goals into sharp focus. Then we translate those insights into a first storyline, fitting choices
+        and short game mechanisms.
+      </p>
+      <p class="sp-lead">
+        You leave with a clear concept and a concrete direction for your learning experience. Even without a follow-up
+        project, the session gives valuable footing for better e-learning, training or knowledge transfer.
       </p>
       <div class="sp-actions">
-        <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Plan a GameStorm</a>
+        <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Plan a GameStorm</a>
         <a class="btn btn-secondary" href="{{ '/play/' | relative_url }}">Discover Play</a>
       </div>
     </div>
   </section>
 
-  <!-- 7. Mini-interactie — slider -->
-  <section class="sp-panel sp-panel--micro" data-sp="6">
+  <!-- 9. Mini interaction — slider -->
+  <section class="sp-panel sp-panel--micro" data-sp="8">
     <div class="sp-inner">
       <div class="sp-micro">
         <span class="sp-eyebrow">Experience it yourself</span>
@@ -755,8 +931,8 @@ permalink: /
     </div>
   </section>
 
-  <!-- 8. Play -->
-  <section class="sp-panel sp-panel--play" data-sp="7">
+  <!-- 10. Play -->
+  <section class="sp-panel sp-panel--play" data-sp="9">
     <div class="sp-inner">
       <div class="sp-final-copy">
         <span class="sp-eyebrow">What we do</span>
@@ -808,6 +984,25 @@ permalink: /
       if (value < 35) text = "You lean strongly towards speed. That can seem efficient, but makes the risk depend on assumptions rather than control.";
       else if (value > 82) text = "You lean very strongly towards safety. Good, but be careful: acting professionally also means clearly communicating why a delay is needed.";
       if (microText) microText.textContent = text;
+    });
+  }
+
+  var carousel = document.querySelector("[data-sp-carousel]");
+  if (carousel) {
+    var slides = Array.prototype.slice.call(carousel.querySelectorAll(".sp-carousel__slide"));
+    var dots = Array.prototype.slice.call(carousel.querySelectorAll("[data-sp-carousel-dot]"));
+    function showSlide(index) {
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle("is-active", i === index);
+      });
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle("is-active", i === index);
+      });
+    }
+    dots.forEach(function (dot) {
+      dot.addEventListener("click", function () {
+        showSlide(Number(dot.getAttribute("data-sp-carousel-dot")) || 0);
+      });
     });
   }
 

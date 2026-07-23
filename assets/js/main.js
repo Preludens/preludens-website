@@ -27,7 +27,19 @@
   var featured = document.querySelector("[data-verhalen-featured]");
   var items = grid ? grid.querySelectorAll("[data-verhaal-type]") : [];
   var panel = document.getElementById("verhalen-panel");
-  var validFilters = ["all", "projecten", "kennis", "whitepapers"];
+  var validFilters = ["all", "projecten", "kennis", "whitepapers", "demos"];
+  var emptyTitle = empty ? empty.querySelector(".verhalen-empty__title") : null;
+  var emptyText = empty ? empty.querySelector(".verhalen-empty__text") : null;
+  var emptyCopy = {
+    whitepapers: {
+      title: emptyTitle ? emptyTitle.getAttribute("data-whitepapers-title") || emptyTitle.textContent : "",
+      text: emptyText ? emptyText.getAttribute("data-whitepapers-text") || emptyText.textContent : ""
+    },
+    demos: {
+      title: emptyTitle ? emptyTitle.getAttribute("data-demos-title") || "" : "",
+      text: emptyText ? emptyText.getAttribute("data-demos-text") || "" : ""
+    }
+  };
 
   function setActiveTab(activeFilter) {
     tabs.forEach(function (tab) {
@@ -64,9 +76,12 @@
       if (show) visibleCount += 1;
     });
 
-    if (filter === "whitepapers" && visibleCount === 0) {
+    if ((filter === "whitepapers" || filter === "demos") && visibleCount === 0) {
       if (grid) grid.hidden = true;
       if (empty) empty.hidden = false;
+      var copy = emptyCopy[filter];
+      if (copy && emptyTitle) emptyTitle.textContent = copy.title;
+      if (copy && emptyText) emptyText.textContent = copy.text;
     }
   }
 
@@ -85,4 +100,28 @@
   }
 
   applyFilter(initialFilter);
+})();
+
+(function () {
+  var forms = document.querySelectorAll("[data-mailto-form]");
+  if (!forms.length) return;
+
+  forms.forEach(function (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var to = form.getAttribute("action") || "mailto:info@preludens.nl";
+      var naam = (form.querySelector('[name="naam"]') || {}).value || "";
+      var email = (form.querySelector('[name="email"]') || {}).value || "";
+      var organisatie = (form.querySelector('[name="organisatie"]') || {}).value || "";
+      var bericht = (form.querySelector('[name="bericht"]') || {}).value || "";
+      var subject = encodeURIComponent("Contact via preludens.nl — " + (naam || "nieuwe aanvraag"));
+      var body = encodeURIComponent(
+        "Naam: " + naam + "\n" +
+        "E-mail: " + email + "\n" +
+        "Organisatie: " + organisatie + "\n\n" +
+        bericht
+      );
+      window.location.href = to + "?subject=" + subject + "&body=" + body;
+    });
+  });
 })();

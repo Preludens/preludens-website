@@ -16,8 +16,8 @@ body_class: page-verhalen
       <h1>Verhalen die teams <span class="hl">in beweging</span> zetten</h1>
       <hr class="hero-banner__accent">
       <p class="hero-banner__lead">
-        Van e-learning naar een reis die uitdaagt, activeert en inspireert — dit zijn de verhalen
-        die we samen met opdrachtgevers schrijven.
+        Via storytelling maken we complexe kennis herkenbaar en speelbaar. Hier vind je projecten, kennisartikelen
+        en binnenkort demo’s en whitepapers — de verhalen die we samen met opdrachtgevers schrijven.
       </p>
     </div>
   </div>

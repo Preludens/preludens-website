@@ -10,12 +10,12 @@ permalink: /team/
   <div class="container">
     <div class="hero-banner__inner">
       <p class="hero-banner__eyebrow">Team</p>
-      <h1>People learn better when they're actively <span class="hl">involved</span></h1>
+      <h1>We believe people learn better when they're actively <span class="hl">involved</span></h1>
       <hr class="hero-banner__accent">
       <p class="hero-banner__lead">
-        That's why we design learning experiences where people make their own choices, experience the consequences and
-        get targeted feedback. Knowledge applied in a recognisable context is better understood, remembered and used when
-        it matters.
+        That's why we design learning experiences where people don't just receive information, but make their own
+        choices, experience the consequences of their actions and get targeted feedback. By applying knowledge in a
+        recognisable context, it is better understood, remembered and used when it matters.
       </p>
       <div class="hero-banner__actions">
         <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Get in touch <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
@@ -30,27 +30,32 @@ permalink: /team/
   <div class="container">
     <div class="block-head">
       <span class="section-label">Knowledge doesn't happen automatically</span>
-      <h2>The power of play in complex challenges</h2>
+      <h2>We see the power of play in complex challenges every day</h2>
     </div>
     <div class="split split--wide-text">
       <div class="split__text">
         <p>
           Preludens is made up of Daan Groen and Jan-Willem Manenschijn, complemented by specialists when a project calls
-          for it. We combine storytelling, game design and learning &amp; development to prepare teams for situations
-          where knowledge and action come together.
+          for it. We combine expertise in storytelling, game design and learning &amp; development to prepare teams for
+          situations where knowledge and action come together.
         </p>
         <p>
           We work in small, dedicated teams and keep the lines short. Clients work directly with the designers and
-          developers who run the project. That lets us move quickly, ask critical questions and test ideas early — making
-          complex knowledge playable, narrative and applicable.
+          developers who run the project. That lets us move quickly, ask critical questions and test ideas early.
+        </p>
+        <p>
+          Preludens makes complex knowledge playable, narrative and applicable. With MicroGames, storytelling and play
+          principles we create learning experiences that spark curiosity, stimulate active involvement and motivate
+          people to keep learning.
         </p>
       </div>
       <div class="split__aside">
+        <h3 style="margin-bottom:var(--space-sm)">From involvement to applicable knowledge</h3>
         <ul class="checklist">
           <li>Involvement activates people.</li>
           <li>Play and storytelling create that involvement.</li>
           <li>People discover, choose, practise and process feedback.</li>
-          <li>Complex knowledge becomes clearer, better remembered and applicable.</li>
+          <li>Complex knowledge becomes clearer, better remembered and applicable in practice.</li>
         </ul>
       </div>
     </div>
