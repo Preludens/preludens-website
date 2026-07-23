@@ -101,27 +101,3 @@
 
   applyFilter(initialFilter);
 })();
-
-(function () {
-  var forms = document.querySelectorAll("[data-mailto-form]");
-  if (!forms.length) return;
-
-  forms.forEach(function (form) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      var to = form.getAttribute("action") || "mailto:info@preludens.nl";
-      var naam = (form.querySelector('[name="naam"]') || {}).value || "";
-      var email = (form.querySelector('[name="email"]') || {}).value || "";
-      var organisatie = (form.querySelector('[name="organisatie"]') || {}).value || "";
-      var bericht = (form.querySelector('[name="bericht"]') || {}).value || "";
-      var subject = encodeURIComponent("Contact via preludens.nl — " + (naam || "nieuwe aanvraag"));
-      var body = encodeURIComponent(
-        "Naam: " + naam + "\n" +
-        "E-mail: " + email + "\n" +
-        "Organisatie: " + organisatie + "\n\n" +
-        bericht
-      );
-      window.location.href = to + "?subject=" + subject + "&body=" + body;
-    });
-  });
-})();
