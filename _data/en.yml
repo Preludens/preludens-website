@@ -48,17 +48,22 @@ verhalen:
   filter_projects: "Projects"
   filter_knowledge: "Knowledge"
   filter_whitepapers: "Whitepapers"
+  filter_demos: "Demos"
   type_knowledge: "Knowledge"
   featured_label: "Featured"
   section_label: "Overview"
   section_title: "Projects, knowledge and depth"
   section_intro: >-
-    Client cases, articles on learning and play, and whitepapers coming soon —
+    Client cases, articles on learning and play, and whitepapers and demos coming soon —
     filter by what you are looking for.
   empty_whitepapers_title: "Whitepapers coming soon"
   empty_whitepapers_text: >-
     We are preparing in-depth whitepapers on game-based learning and behaviour change.
     Get in touch if you would like to discuss a specific topic now.
+  empty_demos_title: "Demos coming soon"
+  empty_demos_text: >-
+    We are preparing playable demos that give a first impression of MicroGames and Stories.
+    Get in touch if you would like to see a demo now.
 
 verhaal:
   breadcrumb: "Stories"

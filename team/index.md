@@ -10,11 +10,12 @@ permalink: /team/
   <div class="container">
     <div class="hero-banner__inner">
       <p class="hero-banner__eyebrow">Team</p>
-      <h1>Mensen leren beter wanneer ze actief <span class="hl">betrokken</span> zijn</h1>
+      <h1>Wij geloven dat mensen beter leren wanneer ze actief <span class="hl">betrokken</span> zijn</h1>
       <hr class="hero-banner__accent">
       <p class="hero-banner__lead">
-        Daarom ontwerpen we leerervaringen waarin mensen zelf keuzes maken, de gevolgen ervaren en gerichte feedback
-        krijgen. Kennis in een herkenbare context wordt beter begrepen, onthouden en gebruikt wanneer het ertoe doet.
+        Daarom ontwerpen we leerervaringen waarin mensen niet alleen informatie ontvangen, maar zelf keuzes maken, de
+        gevolgen van hun handelen ervaren en gerichte feedback krijgen. Door kennis in een herkenbare context toe te
+        passen, wordt die beter begrepen, onthouden en gebruikt wanneer het ertoe doet.
       </p>
       <div class="hero-banner__actions">
         <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Neem contact op <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
@@ -29,27 +30,33 @@ permalink: /team/
   <div class="container">
     <div class="block-head">
       <span class="section-label">Kennis komt niet automatisch</span>
-      <h2>De kracht van het spel binnen complexe vraagstukken</h2>
+      <h2>Wij zien dagelijks de kracht van het spel binnen complexe vraagstukken</h2>
     </div>
     <div class="split split--wide-text">
       <div class="split__text">
         <p>
           Preludens wordt gevormd door Daan Groen en Jan-Willem Manenschijn, aangevuld met specialisten wanneer een
-          project daarom vraagt. We combineren storytelling, game design en learning &amp; development om teams voor te
-          bereiden op situaties waarin kennis en handelen samenkomen.
+          project daarom vraagt. We combineren expertise in storytelling, game design en learning &amp; development om
+          teams voor te bereiden op situaties waarin kennis en handelen samenkomen.
         </p>
         <p>
           We werken in kleine, betrokken teams en houden de lijnen kort. Klanten werken rechtstreeks met de ontwerpers
           en ontwikkelaars die het project uitvoeren. Daardoor kunnen we snel schakelen, kritisch doorvragen en ideeën
-          vroeg testen. Zo maken we complexe kennis speelbaar, verhalend en toepasbaar.
+          vroeg testen.
+        </p>
+        <p>
+          Preludens maakt complexe kennis speelbaar, verhalend en toepasbaar. Met MicroGames, storytelling en
+          spelprincipes creëren we leerervaringen die nieuwsgierigheid oproepen, actieve betrokkenheid stimuleren en
+          mensen motiveren om verder te leren.
         </p>
       </div>
       <div class="split__aside">
+        <h3 style="margin-bottom:var(--space-sm)">Van betrokkenheid naar toepasbare kennis</h3>
         <ul class="checklist">
           <li>Betrokkenheid activeert mensen.</li>
           <li>Spel en storytelling creëren die betrokkenheid.</li>
-          <li>Mensen gaan ontdekken, kiezen, oefenen en feedback verwerken.</li>
-          <li>Complexe kennis wordt begrijpelijker, beter onthouden en toepasbaar.</li>
+          <li>Daardoor gaan mensen ontdekken, kiezen, oefenen en feedback verwerken.</li>
+          <li>Zo wordt complexe kennis begrijpelijker, beter onthouden en toepasbaar in de praktijk.</li>
         </ul>
       </div>
     </div>

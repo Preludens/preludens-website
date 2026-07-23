@@ -48,17 +48,22 @@ verhalen:
   filter_projects: "Projecten"
   filter_knowledge: "Kennis"
   filter_whitepapers: "Whitepapers"
+  filter_demos: "Demo's"
   type_knowledge: "Kennis"
   featured_label: "Uitgelicht"
   section_label: "Overzicht"
   section_title: "Projecten, kennis en verdieping"
   section_intro: >-
-    Cases van opdrachtgevers, artikelen over leren en spel, en binnenkort whitepapers —
+    Cases van opdrachtgevers, artikelen over leren en spel, en binnenkort whitepapers en demo's —
     filter op wat je zoekt.
   empty_whitepapers_title: "Whitepapers volgen binnenkort"
   empty_whitepapers_text: >-
     We werken aan diepgaande whitepapers over game-based leren en gedragsverandering.
     Neem contact op als je nu al iets specifieks wilt bespreken.
+  empty_demos_title: "Demo's volgen binnenkort"
+  empty_demos_text: >-
+    We werken aan speelbare demo's die je een eerste indruk geven van MicroGames en Stories.
+    Neem contact op als je nu al een demo wilt zien.
 
 verhaal:
   breadcrumb: "Verhalen"

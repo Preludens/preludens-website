@@ -16,8 +16,8 @@ body_class: page-verhalen
       <h1>Stories that <span class="hl">move teams</span> forward</h1>
       <hr class="hero-banner__accent">
       <p class="hero-banner__lead">
-        From e-learning to a journey that challenges, activates, and inspires — these are the stories
-        we write together with our clients.
+        Through storytelling we make complex knowledge recognisable and playable. Here you find projects, knowledge
+        articles and soon demos and whitepapers — the stories we write together with our clients.
       </p>
     </div>
   </div>

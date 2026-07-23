@@ -13,8 +13,9 @@ permalink: /prepo/
       <h1><span class="hl">One environment</span> for use, management and continuous improvement</h1>
       <hr class="hero-banner__accent">
       <p class="hero-banner__lead">
-        Prepo keeps MicroGames and Stories from scattering across loose links, files and versions after delivery.
-        Projects, distribution, feedback, statistics, version control and support all come together in one place.
+        Prepo (Preludens Portal) is Preludens’ management and distribution environment. It keeps MicroGames and Stories
+        from scattering across loose links, files, emails and versions after delivery. Prepo brings projects, products,
+        distribution, feedback, statistics, version control and support together in one environment.
       </p>
       <div class="hero-banner__actions">
         <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Request a demo <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
@@ -34,9 +35,9 @@ permalink: /prepo/
     <div class="split split--wide-text">
       <div class="split__text">
         <p>
-          Preludens doesn't just help you design playable learning experiences, but also thinks along about how those
-          experiences are used, managed and improved. Your learning experiences stay not only playable, but findable,
-          manageable and ready to evolve.
+          Preludens doesn't just help you design playable learning experiences. We also think along about how those
+          experiences are used, managed and improved. That is why Prepo connects logically to our approach. Your
+          learning experiences stay not only playable, but findable, manageable and ready to evolve.
         </p>
         <p>
           After launch, MicroGames and Stories need to remain available, versions need managing and feedback needs

@@ -82,6 +82,17 @@
     >
       {{ t.verhalen.filter_whitepapers }}
     </button>
+    <button
+      class="verhalen-filters__btn"
+      type="button"
+      role="tab"
+      id="verhalen-filter-demos"
+      aria-selected="false"
+      aria-controls="verhalen-panel"
+      data-verhaal-filter="demos"
+    >
+      {{ t.verhalen.filter_demos }}
+    </button>
   </div>
 </div>
 
@@ -112,7 +123,15 @@
   </div>
 
   <div class="verhalen-empty" data-verhalen-empty hidden>
-    <p class="verhalen-empty__title">{{ t.verhalen.empty_whitepapers_title }}</p>
-    <p class="verhalen-empty__text">{{ t.verhalen.empty_whitepapers_text }}</p>
+    <p
+      class="verhalen-empty__title"
+      data-whitepapers-title="{{ t.verhalen.empty_whitepapers_title }}"
+      data-demos-title="{{ t.verhalen.empty_demos_title }}"
+    >{{ t.verhalen.empty_whitepapers_title }}</p>
+    <p
+      class="verhalen-empty__text"
+      data-whitepapers-text="{{ t.verhalen.empty_whitepapers_text }}"
+      data-demos-text="{{ t.verhalen.empty_demos_text }}"
+    >{{ t.verhalen.empty_whitepapers_text }}</p>
   </div>
 </div>
