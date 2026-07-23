@@ -76,27 +76,15 @@ permalink: /contact/
         <a class="btn btn-secondary btn-sm" href="{{ '/diensten/#microgame-stories' | relative_url }}">More about one chapter</a>
       </div>
 
-      <form class="contact-form" data-mailto-form action="mailto:info@preludens.nl" method="get" enctype="text/plain">
+      <div class="contact-mail-cta">
         <h3>Tell us briefly what you are running into</h3>
-        <p class="contact-form__intro">We will get in touch to look together at which next step makes sense.</p>
-        <label>
-          <span>Name</span>
-          <input type="text" name="naam" required autocomplete="name">
-        </label>
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" required autocomplete="email">
-        </label>
-        <label>
-          <span>Organisation</span>
-          <input type="text" name="organisatie" autocomplete="organization">
-        </label>
-        <label>
-          <span>What are you running into?</span>
-          <textarea name="bericht" rows="5" required></textarea>
-        </label>
-        <button class="btn btn-primary" type="submit">Get in touch <span class="btn__arrow" aria-hidden="true">&rarr;</span></button>
-      </form>
+        <p>
+          Send an email to
+          <a href="mailto:info@preludens.nl">info@preludens.nl</a>.
+          We will get in touch to look together at which next step makes sense.
+        </p>
+        <a class="btn btn-primary" href="mailto:info@preludens.nl">Send an email to info@preludens.nl <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
     </div>
   </div>
 </section>
