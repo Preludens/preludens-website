@@ -121,11 +121,6 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     background: linear-gradient(135deg, var(--color-coral) 0%, var(--color-gold) 100%);
     color: var(--color-deep-navy);
   }
-  .sp-panel--play {
-    background-color: var(--color-cream-dark);
-    background-image: radial-gradient(ellipse at 25% 25%, rgba(17, 56, 71, 0.10), transparent 50%);
-    color: var(--color-ink);
-  }
   .sp-panel--verhalen {
     background-color: var(--color-prussian-blue);
     background-image:
@@ -199,13 +194,6 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     padding-top: 0.45rem;
     font-size: 0.78rem;
   }
-  .sp-panel--micro {
-    background-color: var(--color-prussian-blue);
-    background-image:
-      radial-gradient(ellipse at 82% 18%, rgba(242, 196, 92, 0.20), transparent 42%),
-      linear-gradient(140deg, var(--color-prussian-blue), var(--color-regal-navy));
-    color: var(--color-white);
-  }
 
   /* ===== Achtergrondlaag per slide — abstracte LinePlay-stijl =====
      Eén rustige gouden koerslijn in de rechterderde, met twee subtiele parallelle
@@ -218,9 +206,7 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
   .sp-panel--testimonial::after,
   .sp-panel--team::after,
   .sp-panel--quote::after,
-  .sp-panel--warm::after,
-  .sp-panel--micro::after,
-  .sp-panel--play::after {
+  .sp-panel--warm::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -238,12 +224,6 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
   .sp-panel--team::after  { background-image: url("{{ '/assets/images/panels/team.svg' | relative_url }}"); }
   .sp-panel--quote::after { background-image: url("{{ '/assets/images/panels/quote.svg' | relative_url }}"); }
   .sp-panel--warm::after  { background-image: url("{{ '/assets/images/panels/cta.svg' | relative_url }}"); }
-  .sp-panel--micro::after { background-image: url("{{ '/assets/images/panels/micro.svg' | relative_url }}"); }
-  .sp-panel--play::after  { background-image: url("{{ '/assets/images/panels/play.svg' | relative_url }}"); }
-
-  /* Inhoud van het play-paneel (incl. footer) boven het achtergrondbeeld houden */
-  .sp-panel--play .sp-inner,
-  .sp-panel--play .site-footer { position: relative; z-index: 2; }
 
   /* Typografie inside panels */
   .sp-eyebrow {
@@ -256,8 +236,7 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     color: var(--color-gold);
     margin-bottom: var(--space-sm);
   }
-  .sp-panel--cream .sp-eyebrow,
-  .sp-panel--play .sp-eyebrow { color: var(--color-harbor-teal); }
+  .sp-panel--cream .sp-eyebrow { color: var(--color-harbor-teal); }
 
   .sp-panel h2 {
     font-family: var(--font-display);
@@ -288,11 +267,9 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
   .sp-panel--navy p,
   .sp-panel--verhalen p,
   .sp-panel--team p,
-  .sp-panel--quote p,
-  .sp-panel--micro p { color: rgba(246, 249, 249, 0.9); }
+  .sp-panel--quote p { color: rgba(246, 249, 249, 0.9); }
   .sp-panel--warm p { color: var(--color-deep-navy); }
-  .sp-panel--cream p,
-  .sp-panel--play p { color: var(--color-ink-soft); }
+  .sp-panel--cream p { color: var(--color-ink-soft); }
 
   .sp-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-md); }
   .sp-actions .btn { padding: 0.85rem 1.4rem; border-radius: var(--radius-md); font-weight: 600; }
@@ -382,68 +359,6 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     font-size: 0.94rem;
     line-height: 1.45;
     margin: 0;
-  }
-
-  /* Mini-interactie — slider */
-  .sp-micro {
-    width: min(100%, 40rem);
-    margin-inline: auto;
-    text-align: center;
-  }
-  .sp-micro .sp-eyebrow { color: var(--color-gold); }
-  .sp-micro h2 { margin-inline: auto; max-width: 20ch; }
-  .sp-micro > .sp-lead { margin-inline: auto; }
-
-  .sp-slider-card {
-    margin-top: var(--space-lg);
-    padding: clamp(var(--space-md), 3vw, var(--space-lg));
-    border: 1px solid rgba(246, 249, 249, 0.16);
-    border-radius: var(--radius-xl);
-    background:
-      linear-gradient(180deg, rgba(246, 249, 249, 0.12), rgba(246, 249, 249, 0.06)),
-      radial-gradient(ellipse at 84% 0%, rgba(242, 196, 92, 0.20), transparent 52%);
-    box-shadow: var(--shadow-soft);
-    text-align: left;
-  }
-  .sp-slider-card h3 {
-    color: var(--color-white);
-    font-size: 1.15rem;
-    margin: 0 0 var(--space-md);
-  }
-  .sp-range-row {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--space-sm);
-    margin-bottom: 0.6rem;
-    font-family: var(--font-display);
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(246, 249, 249, 0.7);
-  }
-  .sp-range {
-    width: 100%;
-    accent-color: var(--color-gold);
-    cursor: pointer;
-  }
-  .sp-feedback {
-    margin-top: var(--space-md);
-    padding: var(--space-md);
-    border-radius: var(--radius-lg);
-    background: rgba(11, 42, 53, 0.55);
-    border: 1px solid rgba(246, 249, 249, 0.12);
-    color: rgba(246, 249, 249, 0.85);
-    line-height: 1.5;
-  }
-  .sp-feedback strong {
-    display: block;
-    margin-bottom: 0.3rem;
-    color: var(--color-gold);
-    font-family: var(--font-display);
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
   }
 
   /* Diensten kaarten in navy paneel */
@@ -715,6 +630,9 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
         zien waar deelnemers vastlopen en waar verbetering mogelijk is. Zo wordt online leren geen verplichting om
         doorheen te klikken, maar een gerichte ervaring waarin teams oefenen, ontdekken en groeien.
       </p>
+      <p class="sp-lead">
+        Zo wordt leren geen verplichting, maar een inspirerende reis.
+      </p>
       <ul class="sp-pain-points" aria-label="Drie pijnpunten die we wegwerken">
         <li>
           <strong>Betrokkenheid</strong>
@@ -769,8 +687,29 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     </div>
   </section>
 
-  <!-- 4. Verhalen — bewijs uit de praktijk -->
-  <section class="sp-panel sp-panel--verhalen" data-sp="3" data-title="Verhalen uit de praktijk">
+  <!-- 4. CTA -->
+  <section class="sp-panel sp-panel--warm" data-sp="3">
+    <div class="sp-inner">
+      <p class="sp-reassure">Vrijblijvend · geen verplichtingen · reactie binnen één werkdag</p>
+      <h2>Zet morgen de eerste stap</h2>
+      <p class="sp-lead">
+        In een GameStorm verkennen we samen jouw leeruitdaging. In één dagdeel brengen we de doelgroep, context en
+        belangrijkste leerdoelen scherp in beeld. Daarna vertalen we die inzichten naar een eerste verhaallijn,
+        passende keuzes en korte spelmechanismen.
+      </p>
+      <p class="sp-lead">
+        Je gaat naar huis met een helder concept en een concrete richting voor je leerervaring. Ook los van een
+        vervolgtraject geeft de sessie waardevolle houvast voor betere e-learning, training of kennisoverdracht.
+      </p>
+      <div class="sp-actions">
+        <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Plan een GameStorm</a>
+        <a class="btn btn-secondary" href="{{ '/play/' | relative_url }}">Ontdek Play</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Verhalen — bewijs uit de praktijk -->
+  <section class="sp-panel sp-panel--verhalen" data-sp="4" data-title="Verhalen uit de praktijk">
     <div class="sp-inner">
       <span class="sp-eyebrow">Bewezen in de praktijk</span>
       <h2>Van vraagstuk naar spelbare leerervaring</h2>
@@ -802,8 +741,8 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     </div>
   </section>
 
-  <!-- 5. Klant-testimonial -->
-  <section class="sp-panel sp-panel--testimonial" data-sp="4" data-title="Wat klanten zeggen">
+  <!-- 6. Klant-testimonial -->
+  <section class="sp-panel sp-panel--testimonial" data-sp="5" data-title="Wat klanten zeggen">
     <div class="sp-inner">
       <div class="sp-carousel" data-sp-carousel>
         <div class="sp-carousel__track">
@@ -828,38 +767,16 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
               </figcaption>
             </div>
           </figure>
-          <figure class="sp-testimonial sp-carousel__slide">
-            <img
-              class="sp-testimonial__photo"
-              src="{{ '/assets/images/testimonials/martijn-dorrestijn.jpg' | relative_url }}"
-              alt="Martijn Dorrestijn"
-              width="800"
-              height="800"
-              loading="lazy"
-              decoding="async"
-            >
-            <div class="sp-testimonial__body">
-              <span class="sp-eyebrow">Ervaringen uit de praktijk</span>
-              <blockquote>
-                [Quote volgt] — placeholder voor de ervaring van Martijn Dorrestijn. Vul hier de definitieve quote in zodra die beschikbaar is.
-              </blockquote>
-              <figcaption class="sp-testimonial__cite">
-                <span class="sp-testimonial__name">Martijn Dorrestijn</span>
-                <span class="sp-testimonial__role">Quote en functie volgen</span>
-              </figcaption>
-            </div>
-          </figure>
         </div>
         <div class="sp-carousel__dots" role="tablist" aria-label="Quotes">
           <button class="sp-carousel__dot is-active" type="button" aria-label="Quote 1" data-sp-carousel-dot="0"></button>
-          <button class="sp-carousel__dot" type="button" aria-label="Quote 2" data-sp-carousel-dot="1"></button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. Team — de makers (E-E-A-T) -->
-  <section class="sp-panel sp-panel--team" data-sp="5" data-title="Het team">
+  <!-- 7. Team — de makers (E-E-A-T) -->
+  <section class="sp-panel sp-panel--team" data-sp="6" data-title="Het team">
     <div class="sp-inner">
       <span class="sp-eyebrow">Het team</span>
       <h2>De mensen achter Preludens</h2>
@@ -887,8 +804,8 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     </div>
   </section>
 
-  <!-- 7. Quote -->
-  <section class="sp-panel sp-panel--quote" data-sp="6">
+  <!-- 8. Quote -->
+  <section class="sp-panel sp-panel--quote" data-sp="7">
     <div class="sp-inner">
       <figure class="sp-quote">
         <blockquote>
@@ -896,67 +813,6 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
         </blockquote>
         <cite>Johan Huizinga — Homo Ludens (1938)</cite>
       </figure>
-    </div>
-  </section>
-
-  <!-- 8. CTA -->
-  <section class="sp-panel sp-panel--warm" data-sp="7">
-    <div class="sp-inner">
-      <p class="sp-reassure">Vrijblijvend · geen verplichtingen · reactie binnen één werkdag</p>
-      <h2>Zet morgen de eerste stap</h2>
-      <p class="sp-lead">
-        In een GameStorm verkennen we samen jouw leeruitdaging. In één dagdeel brengen we de doelgroep, context en
-        belangrijkste leerdoelen scherp in beeld. Daarna vertalen we die inzichten naar een eerste verhaallijn,
-        passende keuzes en korte spelmechanismen.
-      </p>
-      <p class="sp-lead">
-        Je gaat naar huis met een helder concept en een concrete richting voor je leerervaring. Ook los van een
-        vervolgtraject geeft de sessie waardevolle houvast voor betere e-learning, training of kennisoverdracht.
-      </p>
-      <div class="sp-actions">
-        <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Plan een GameStorm</a>
-        <a class="btn btn-secondary" href="{{ '/play/' | relative_url }}">Ontdek Play</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. Mini-interactie — slider -->
-  <section class="sp-panel sp-panel--micro" data-sp="8">
-    <div class="sp-inner">
-      <div class="sp-micro">
-        <span class="sp-eyebrow">Ervaar het zelf</span>
-        <h2>Wat weegt zwaarder?</h2>
-        <p class="sp-lead">
-          Een MicroGame is een korte, interactieve oefening waarin je een keuze maakt en meteen feedback krijgt. Schuif tussen tempo en veiligheid en zie direct hoe de feedback meebeweegt — precies wat een MicroGame doet: kiezen, voelen, leren.
-        </p>
-
-        <div class="sp-slider-card">
-          <h3>Tempo of veiligheid?</h3>
-          <div class="sp-range-row"><span>Tempo</span><span>Veiligheid</span></div>
-          <input id="spRange" class="sp-range" type="range" min="0" max="100" value="68" aria-label="Balans tussen tempo en veiligheid" />
-          <div class="sp-feedback" id="spRangeFeedback" aria-live="polite">
-            <strong>Feedback</strong>
-            <span>Je kiest voor controle en maakt professioneel gedrag zichtbaar. Dat kost tijd, maar verhoogt veiligheid en eigenaarschap.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10. Play -->
-  <section class="sp-panel sp-panel--play" data-sp="9">
-    <div class="sp-inner">
-      <div class="sp-final-copy">
-        <span class="sp-eyebrow">What we do</span>
-        <h2>In de wereld van Play</h2>
-        <p class="sp-lead">
-          We bereiden teams voor op de toekomst door kennis en besluitvorming te laten ervaren nog vóór het een probleem wordt.
-        </p>
-        <p class="sp-lead">
-          In <em>Homo Ludens</em> beschrijft Huizinga hoe spel een veilige, afgescheiden ruimte creëert — de magische cirkel — waarin fouten maken mag en nieuwsgierigheid wordt geactiveerd. Dat is precies wat Preludens toepast.
-        </p>
-        <p><a href="{{ '/play/' | relative_url }}">Ontdek onze visie op Play →</a></p>
-      </div>
     </div>
   </section>
 
@@ -985,19 +841,6 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
   function measureHeader() { return headerEl ? headerEl.getBoundingClientRect().height : 0; }
   var headerHeight = measureHeader();
   window.addEventListener("resize", function () { headerHeight = measureHeader(); });
-
-  var microRange = document.getElementById("spRange");
-  var microFeedback = document.getElementById("spRangeFeedback");
-  if (microRange && microFeedback) {
-    var microText = microFeedback.querySelector("span");
-    microRange.addEventListener("input", function () {
-      var value = Number(microRange.value);
-      var text = "Je kiest voor controle en maakt professioneel gedrag zichtbaar. Dat kost tijd, maar verhoogt veiligheid en eigenaarschap.";
-      if (value < 35) text = "Je kiest sterk voor tempo. Dat kan efficiënt lijken, maar maakt het risico afhankelijk van aannames in plaats van controle.";
-      else if (value > 82) text = "Je kiest zeer sterk voor veiligheid. Goed, maar let op: professioneel handelen betekent ook helder communiceren waarom vertraging nodig is.";
-      if (microText) microText.textContent = text;
-    });
-  }
 
   var carousel = document.querySelector("[data-sp-carousel]");
   if (carousel) {

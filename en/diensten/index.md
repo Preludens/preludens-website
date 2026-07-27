@@ -43,6 +43,9 @@ permalink: /diensten/
           always prepare them for the moments when they need to weigh options, respond or act.
         </p>
         <p>
+          That is exactly where the learning challenge arises.
+        </p>
+        <p>
           When safety, quality, customer contact, collaboration or efficiency are at stake, explanation alone is often
           not enough. Teams need to practise with recognisable situations. They need to experience which choices are
           possible, what the consequences are and how they can adjust.
@@ -51,6 +54,9 @@ permalink: /diensten/
           That is why we design learning experiences in which people actively discover, choose, practise and reflect.
           With storytelling we give knowledge context. With MicroGames we make practice short, focused and active.
           With feedback and data it becomes clear where participants are strong and where they need extra support.
+        </p>
+        <p>
+          That way, learning is no longer a click-through obligation, but a route in which people learn to act more confidently step by step.
         </p>
       </div>
       <div class="split__aside">
