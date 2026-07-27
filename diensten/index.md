@@ -45,6 +45,9 @@ permalink: /diensten/
           dragen, maar het bereidt mensen niet altijd voor op de momenten waarop ze moeten afwegen, reageren of handelen.
         </p>
         <p>
+          Juist daar ontstaat de leeruitdaging.
+        </p>
+        <p>
           Wanneer veiligheid, kwaliteit, klantcontact, samenwerking of efficiëntie op het spel staan, is alleen uitleg
           geven vaak niet genoeg. Teams moeten kunnen oefenen met herkenbare situaties. Ze moeten ervaren welke keuzes
           mogelijk zijn, wat de gevolgen zijn en hoe ze kunnen bijsturen.
@@ -53,6 +56,9 @@ permalink: /diensten/
           Daarom ontwerpen wij leerervaringen waarin mensen actief ontdekken, kiezen, oefenen en reflecteren. Met
           storytelling geven we kennis context. Met MicroGames maken we oefenen kort, gericht en actief. Met feedback
           en data wordt zichtbaar waar deelnemers sterk zijn en waar ze extra ondersteuning nodig hebben.
+        </p>
+        <p>
+          Zo wordt leren geen verplichting om doorheen te klikken, maar een route waarin mensen stap voor stap sterker leren handelen.
         </p>
       </div>
       <div class="split__aside">

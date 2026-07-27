@@ -112,11 +112,6 @@ permalink: /
     background: linear-gradient(135deg, var(--color-coral) 0%, var(--color-gold) 100%);
     color: var(--color-deep-navy);
   }
-  .sp-panel--play {
-    background-color: var(--color-cream-dark);
-    background-image: radial-gradient(ellipse at 25% 25%, rgba(17, 56, 71, 0.10), transparent 50%);
-    color: var(--color-ink);
-  }
   .sp-panel--verhalen {
     background-color: var(--color-prussian-blue);
     background-image:
@@ -190,13 +185,6 @@ permalink: /
     padding-top: 0.45rem;
     font-size: 0.78rem;
   }
-  .sp-panel--micro {
-    background-color: var(--color-prussian-blue);
-    background-image:
-      radial-gradient(ellipse at 82% 18%, rgba(242, 196, 92, 0.20), transparent 42%),
-      linear-gradient(140deg, var(--color-prussian-blue), var(--color-regal-navy));
-    color: var(--color-white);
-  }
 
   /* ===== Achtergrondlaag per slide — abstracte LinePlay-stijl =====
      Eén rustige gouden koerslijn in de rechterderde, met twee subtiele parallelle
@@ -209,9 +197,7 @@ permalink: /
   .sp-panel--testimonial::after,
   .sp-panel--team::after,
   .sp-panel--quote::after,
-  .sp-panel--warm::after,
-  .sp-panel--micro::after,
-  .sp-panel--play::after {
+  .sp-panel--warm::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -229,12 +215,6 @@ permalink: /
   .sp-panel--team::after  { background-image: url("{{ '/assets/images/panels/team.svg' | relative_url }}"); }
   .sp-panel--quote::after { background-image: url("{{ '/assets/images/panels/quote.svg' | relative_url }}"); }
   .sp-panel--warm::after  { background-image: url("{{ '/assets/images/panels/cta.svg' | relative_url }}"); }
-  .sp-panel--micro::after { background-image: url("{{ '/assets/images/panels/micro.svg' | relative_url }}"); }
-  .sp-panel--play::after  { background-image: url("{{ '/assets/images/panels/play.svg' | relative_url }}"); }
-
-  /* Inhoud van het play-paneel (incl. footer) boven het achtergrondbeeld houden */
-  .sp-panel--play .sp-inner,
-  .sp-panel--play .site-footer { position: relative; z-index: 2; }
 
   /* Typografie inside panels */
   .sp-eyebrow {
@@ -247,8 +227,7 @@ permalink: /
     color: var(--color-gold);
     margin-bottom: var(--space-sm);
   }
-  .sp-panel--cream .sp-eyebrow,
-  .sp-panel--play .sp-eyebrow { color: var(--color-harbor-teal); }
+  .sp-panel--cream .sp-eyebrow { color: var(--color-harbor-teal); }
 
   .sp-panel h2 {
     font-family: var(--font-display);
@@ -279,11 +258,9 @@ permalink: /
   .sp-panel--navy p,
   .sp-panel--verhalen p,
   .sp-panel--team p,
-  .sp-panel--quote p,
-  .sp-panel--micro p { color: rgba(246, 249, 249, 0.9); }
+  .sp-panel--quote p { color: rgba(246, 249, 249, 0.9); }
   .sp-panel--warm p { color: var(--color-deep-navy); }
-  .sp-panel--cream p,
-  .sp-panel--play p { color: var(--color-ink-soft); }
+  .sp-panel--cream p { color: var(--color-ink-soft); }
 
   .sp-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-md); }
   .sp-actions .btn { padding: 0.85rem 1.4rem; border-radius: var(--radius-md); font-weight: 600; }
@@ -371,68 +348,6 @@ permalink: /
     font-size: 0.94rem;
     line-height: 1.45;
     margin: 0;
-  }
-
-  /* Mini-interactie — slider */
-  .sp-micro {
-    width: min(100%, 40rem);
-    margin-inline: auto;
-    text-align: center;
-  }
-  .sp-micro .sp-eyebrow { color: var(--color-gold); }
-  .sp-micro h2 { margin-inline: auto; max-width: 20ch; }
-  .sp-micro > .sp-lead { margin-inline: auto; }
-
-  .sp-slider-card {
-    margin-top: var(--space-lg);
-    padding: clamp(var(--space-md), 3vw, var(--space-lg));
-    border: 1px solid rgba(246, 249, 249, 0.16);
-    border-radius: var(--radius-xl);
-    background:
-      linear-gradient(180deg, rgba(246, 249, 249, 0.12), rgba(246, 249, 249, 0.06)),
-      radial-gradient(ellipse at 84% 0%, rgba(242, 196, 92, 0.20), transparent 52%);
-    box-shadow: var(--shadow-soft);
-    text-align: left;
-  }
-  .sp-slider-card h3 {
-    color: var(--color-white);
-    font-size: 1.15rem;
-    margin: 0 0 var(--space-md);
-  }
-  .sp-range-row {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--space-sm);
-    margin-bottom: 0.6rem;
-    font-family: var(--font-display);
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(246, 249, 249, 0.7);
-  }
-  .sp-range {
-    width: 100%;
-    accent-color: var(--color-gold);
-    cursor: pointer;
-  }
-  .sp-feedback {
-    margin-top: var(--space-md);
-    padding: var(--space-md);
-    border-radius: var(--radius-lg);
-    background: rgba(11, 42, 53, 0.55);
-    border: 1px solid rgba(246, 249, 249, 0.12);
-    color: rgba(246, 249, 249, 0.85);
-    line-height: 1.5;
-  }
-  .sp-feedback strong {
-    display: block;
-    margin-bottom: 0.3rem;
-    color: var(--color-gold);
-    font-family: var(--font-display);
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
   }
 
   /* Diensten kaarten in navy paneel */
@@ -704,6 +619,9 @@ permalink: /
         where participants get stuck and where improvement is possible. So online learning is no longer a click-through
         obligation, but a focused experience in which teams practise, discover and grow.
       </p>
+      <p class="sp-lead">
+        So learning is no longer an obligation, but an inspiring journey.
+      </p>
       <ul class="sp-pain-points" aria-label="Three friction points we remove">
         <li>
           <strong>Engagement</strong>
@@ -758,8 +676,29 @@ permalink: /
     </div>
   </section>
 
-  <!-- 4. Stories — proof from practice -->
-  <section class="sp-panel sp-panel--verhalen" data-sp="3" data-title="Stories from practice">
+  <!-- 4. CTA -->
+  <section class="sp-panel sp-panel--warm" data-sp="3">
+    <div class="sp-inner">
+      <p class="sp-reassure">No obligation · no commitments · reply within one business day</p>
+      <h2>Take the first step tomorrow</h2>
+      <p class="sp-lead">
+        In a GameStorm we explore your learning challenge together. In one half-day we bring the audience, context and
+        key learning goals into sharp focus. Then we translate those insights into a first storyline, fitting choices
+        and short game mechanisms.
+      </p>
+      <p class="sp-lead">
+        You leave with a clear concept and a concrete direction for your learning experience. Even without a follow-up
+        project, the session gives valuable footing for better e-learning, training or knowledge transfer.
+      </p>
+      <div class="sp-actions">
+        <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Plan a GameStorm</a>
+        <a class="btn btn-secondary" href="{{ '/play/' | relative_url }}">Discover Play</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Stories — proof from practice -->
+  <section class="sp-panel sp-panel--verhalen" data-sp="4" data-title="Stories from practice">
     <div class="sp-inner">
       <span class="sp-eyebrow">Proven in practice</span>
       <h2>From challenge to playable learning experience</h2>
@@ -791,8 +730,8 @@ permalink: /
     </div>
   </section>
 
-  <!-- 5. Client testimonial -->
-  <section class="sp-panel sp-panel--testimonial" data-sp="4" data-title="What clients say">
+  <!-- 6. Client testimonial -->
+  <section class="sp-panel sp-panel--testimonial" data-sp="5" data-title="What clients say">
     <div class="sp-inner">
       <div class="sp-carousel" data-sp-carousel>
         <div class="sp-carousel__track">
@@ -817,38 +756,16 @@ permalink: /
               </figcaption>
             </div>
           </figure>
-          <figure class="sp-testimonial sp-carousel__slide">
-            <img
-              class="sp-testimonial__photo"
-              src="{{ '/assets/images/testimonials/martijn-dorrestijn.jpg' | relative_url }}"
-              alt="Martijn Dorrestijn"
-              width="800"
-              height="800"
-              loading="lazy"
-              decoding="async"
-            >
-            <div class="sp-testimonial__body">
-              <span class="sp-eyebrow">Experiences from practice</span>
-              <blockquote>
-                [Quote to follow] — placeholder for Martijn Dorrestijn’s experience. Replace with the final quote once available.
-              </blockquote>
-              <figcaption class="sp-testimonial__cite">
-                <span class="sp-testimonial__name">Martijn Dorrestijn</span>
-                <span class="sp-testimonial__role">Quote and role to follow</span>
-              </figcaption>
-            </div>
-          </figure>
         </div>
         <div class="sp-carousel__dots" role="tablist" aria-label="Quotes">
           <button class="sp-carousel__dot is-active" type="button" aria-label="Quote 1" data-sp-carousel-dot="0"></button>
-          <button class="sp-carousel__dot" type="button" aria-label="Quote 2" data-sp-carousel-dot="1"></button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. Team -->
-  <section class="sp-panel sp-panel--team" data-sp="5" data-title="The team">
+  <!-- 7. Team -->
+  <section class="sp-panel sp-panel--team" data-sp="6" data-title="The team">
     <div class="sp-inner">
       <span class="sp-eyebrow">The team</span>
       <h2>The people behind Preludens</h2>
@@ -875,8 +792,8 @@ permalink: /
     </div>
   </section>
 
-  <!-- 7. Quote -->
-  <section class="sp-panel sp-panel--quote" data-sp="6">
+  <!-- 8. Quote -->
+  <section class="sp-panel sp-panel--quote" data-sp="7">
     <div class="sp-inner">
       <figure class="sp-quote">
         <blockquote>
@@ -884,67 +801,6 @@ permalink: /
         </blockquote>
         <cite>Johan Huizinga — Homo Ludens (1938)</cite>
       </figure>
-    </div>
-  </section>
-
-  <!-- 8. CTA -->
-  <section class="sp-panel sp-panel--warm" data-sp="7">
-    <div class="sp-inner">
-      <p class="sp-reassure">No obligation · no commitments · reply within one business day</p>
-      <h2>Take the first step tomorrow</h2>
-      <p class="sp-lead">
-        In a GameStorm we explore your learning challenge together. In one half-day we bring the audience, context and
-        key learning goals into sharp focus. Then we translate those insights into a first storyline, fitting choices
-        and short game mechanisms.
-      </p>
-      <p class="sp-lead">
-        You leave with a clear concept and a concrete direction for your learning experience. Even without a follow-up
-        project, the session gives valuable footing for better e-learning, training or knowledge transfer.
-      </p>
-      <div class="sp-actions">
-        <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Plan a GameStorm</a>
-        <a class="btn btn-secondary" href="{{ '/play/' | relative_url }}">Discover Play</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. Mini interaction — slider -->
-  <section class="sp-panel sp-panel--micro" data-sp="8">
-    <div class="sp-inner">
-      <div class="sp-micro">
-        <span class="sp-eyebrow">Experience it yourself</span>
-        <h2>What weighs heavier?</h2>
-        <p class="sp-lead">
-          Slide between speed and safety and see the feedback respond instantly — exactly what a MicroGame does: choose, feel, learn.
-        </p>
-
-        <div class="sp-slider-card">
-          <h3>Speed or safety?</h3>
-          <div class="sp-range-row"><span>Speed</span><span>Safety</span></div>
-          <input id="spRange" class="sp-range" type="range" min="0" max="100" value="68" aria-label="Balance between speed and safety" />
-          <div class="sp-feedback" id="spRangeFeedback" aria-live="polite">
-            <strong>Feedback</strong>
-            <span>You choose control and make professional behaviour visible. It takes time, but increases safety and ownership.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10. Play -->
-  <section class="sp-panel sp-panel--play" data-sp="9">
-    <div class="sp-inner">
-      <div class="sp-final-copy">
-        <span class="sp-eyebrow">What we do</span>
-        <h2>In the world of Play</h2>
-        <p class="sp-lead">
-          We prepare teams for the future by letting them experience knowledge and decision-making before it becomes a problem.
-        </p>
-        <p class="sp-lead">
-          In <em>Homo Ludens</em>, Huizinga describes how play creates a safe, separate space — the magic circle — where mistakes are allowed and curiosity is sparked. That is exactly what Preludens applies.
-        </p>
-        <p><a href="{{ '/play/' | relative_url }}">Discover our view on Play →</a></p>
-      </div>
     </div>
   </section>
 
@@ -973,19 +829,6 @@ permalink: /
   function measureHeader() { return headerEl ? headerEl.getBoundingClientRect().height : 0; }
   var headerHeight = measureHeader();
   window.addEventListener("resize", function () { headerHeight = measureHeader(); });
-
-  var microRange = document.getElementById("spRange");
-  var microFeedback = document.getElementById("spRangeFeedback");
-  if (microRange && microFeedback) {
-    var microText = microFeedback.querySelector("span");
-    microRange.addEventListener("input", function () {
-      var value = Number(microRange.value);
-      var text = "You choose control and make professional behaviour visible. It takes time, but increases safety and ownership.";
-      if (value < 35) text = "You lean strongly towards speed. That can seem efficient, but makes the risk depend on assumptions rather than control.";
-      else if (value > 82) text = "You lean very strongly towards safety. Good, but be careful: acting professionally also means clearly communicating why a delay is needed.";
-      if (microText) microText.textContent = text;
-    });
-  }
 
   var carousel = document.querySelector("[data-sp-carousel]");
   if (carousel) {
