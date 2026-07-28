@@ -575,17 +575,17 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
       </div>
       <div class="sp-hero-pillars" aria-label="Uitdagen, activeren, motiveren">
         <div class="sp-hero-pillar">
-          <span class="sp-hero-pillar__num">01 — Uitdagen</span>
+          <span class="sp-hero-pillar__num">01</span>
           <h3>Uitdagen</h3>
           <p>Daag teams uit om binnen realistische situaties keuzes te maken, afwegingen te oefenen en de gevolgen van hun handelen te ervaren.</p>
         </div>
         <div class="sp-hero-pillar">
-          <span class="sp-hero-pillar__num">02 — Activeren</span>
+          <span class="sp-hero-pillar__num">02</span>
           <h3>Activeren</h3>
           <p>Gebruik Play om deelnemers actief te laten kiezen. Niet kijken of klikken, maar proberen, reageren, beslissen en leren van directe feedback.</p>
         </div>
         <div class="sp-hero-pillar">
-          <span class="sp-hero-pillar__num">03 — Motiveren</span>
+          <span class="sp-hero-pillar__num">03</span>
           <h3>Motiveren</h3>
           <p>Versterk de betrokkenheid en intrinsieke motivatie, zodat teams met meer vertrouwen handelen wanneer het er in de praktijk echt op aankomt.</p>
         </div>

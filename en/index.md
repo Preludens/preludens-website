@@ -565,17 +565,17 @@ permalink: /
       </div>
       <div class="sp-hero-pillars" aria-label="Challenge, activate, motivate">
         <div class="sp-hero-pillar">
-          <span class="sp-hero-pillar__num">01 — Challenge</span>
+          <span class="sp-hero-pillar__num">01</span>
           <h3>Challenge</h3>
           <p>Challenge teams to make choices in realistic situations, practise trade-offs and experience the consequences of their actions.</p>
         </div>
         <div class="sp-hero-pillar">
-          <span class="sp-hero-pillar__num">02 — Activate</span>
+          <span class="sp-hero-pillar__num">02</span>
           <h3>Activate</h3>
           <p>Use Play so participants choose actively. Not watching or clicking, but trying, responding, deciding and learning from immediate feedback.</p>
         </div>
         <div class="sp-hero-pillar">
-          <span class="sp-hero-pillar__num">03 — Motivate</span>
+          <span class="sp-hero-pillar__num">03</span>
           <h3>Motivate</h3>
           <p>Strengthen engagement and intrinsic motivation so teams act with more confidence when it truly matters in practice.</p>
         </div>
