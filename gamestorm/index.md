@@ -4,22 +4,22 @@ lang: nl
 title: GameStorm
 description: In één dagdeel brengen we samen jouw leeruitdaging, doelgroep en leerdoelen scherp in beeld — de eerste stap naar een speelbare leerervaring.
 permalink: /gamestorm/
+hero_preload: /assets/images/hero/gamestorm-hero.webp
 ---
 
 <section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/gamestorm-hero.jpg' | relative_url }}');">
   <div class="container">
     <div class="hero-banner__inner">
       <p class="hero-banner__eyebrow">GameStorm</p>
-      <h1>Verken de <span class="hl">mogelijkheden</span> van <span class="hl">game-based</span> leren</h1>
+      <h1>Verken de <span class="hl">mogelijkheden</span> van <span class="hl">game-based</span> leren.</h1>
       <hr class="hero-banner__accent">
       <p class="hero-banner__lead">
         Je hoeft nog niet te weten welke leeroplossing je nodig hebt. In één dagdeel brengen we samen het probleem, de
-        doelgroep en de belangrijkste leerdoelen in kaart — een duidelijke eerste richting, zonder je vast te leggen op
-        een volledig project.
+        doelgroep en de belangrijkste leerdoelen in kaart. Zo krijg je een duidelijke eerste richting, zonder je direct
+        vast te leggen op een volledig project.
       </p>
       <div class="hero-banner__actions">
-        <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Plan een GameStorm <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-        <a class="btn btn-secondary" href="{{ '/play/' | relative_url }}">Lees meer over Play</a>
+        <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Neem contact op <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </div>
@@ -32,29 +32,47 @@ permalink: /gamestorm/
       <span class="section-label">De eerste verkenning</span>
       <h2>Breng je leeropgave scherp in beeld</h2>
     </div>
-    <div class="split split--wide-text">
-      <div class="split__text">
-        <p>
-          Je weet dat basiskennis cruciaal is voor een effectief team. Maar welke kennis is echt belangrijk? In welke
-          situaties moeten mensen die kunnen toepassen? En is game-based leren daarvoor de juiste aanpak?
-        </p>
-        <p>
-          Een GameStorm helpt om die vragen te beantwoorden. Juist wanneer de leeropgave nog niet helder is, biedt de
-          sessie een gestructureerde eerste stap — je hoeft dus nog niet te weten welke leeroplossing je nodig hebt.
-        </p>
-      </div>
-      <div class="split__aside">
-        <ul class="checklist">
-          <li>Welk probleem wil je met de leerervaring oplossen?</li>
-          <li>Welke kennis, inzichten of vaardigheden heeft de doelgroep nodig?</li>
-          <li>In welke herkenbare praktijksituaties moet de doelgroep die toepassen?</li>
-        </ul>
-      </div>
+    <div class="prose">
+      <p>
+        Je weet dat basiskennis cruciaal is voor een effectief team. Maar welke kennis is echt belangrijk? In welke
+        situaties moeten zij die kunnen toepassen? En is game-based leren daarvoor de juiste aanpak?
+      </p>
+      <p>
+        Een GameStorm helpt om die vragen te beantwoorden. In één dagdeel onderzoeken we samen het probleem, de
+        doelgroep en de gewenste verandering.
+      </p>
+      <p>
+        Je hoeft dus nog niet precies te weten welke leeroplossing je nodig hebt. Juist wanneer de leeropgave nog niet
+        helder is, biedt de GameStorm een gestructureerde eerste stap.
+      </p>
     </div>
   </div>
 </section>
 
 <section class="section section--mist">
+  <div class="container">
+    <div class="block-head">
+      <h2>Van een vraagstuk naar duidelijke leerdoelen</h2>
+    </div>
+    <div class="prose">
+      <p>Tijdens de GameStorm onderzoeken we drie samenhangende vragen:</p>
+    </div>
+    <ul class="checklist">
+      <li>Welk probleem wil je met de leerervaring oplossen?</li>
+      <li>Welke kennis, inzichten of vaardigheden heeft de doelgroep nodig?</li>
+      <li>In welke herkenbare praktijksituaties moet de doelgroep deze kunnen toepassen?</li>
+    </ul>
+    <div class="prose">
+      <p>
+        Zo brengen we niet alleen de inhoud van de training in kaart, maar ook de context waarin die kennis betekenis
+        krijgt. We onderzoeken waar storytelling en spelprincipes het leren kunnen versterken — en welke vorm het beste
+        bij de leeropgave past.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
   <div class="container">
     <div class="media-block">
       <figure class="media-block__media">
@@ -67,14 +85,18 @@ permalink: /gamestorm/
         <span class="section-label">Van leerdoel naar verhaal</span>
         <h2>Een eerste verhaal dat richting geeft</h2>
         <p>
-          Als game-based leren bij jullie past, vertalen we de leeropgave naar een eerste verhaallijn. We gebruiken een
-          herkenbare verhaalstructuur waarin de deelnemer voor een uitdaging komt te staan, keuzes maakt en de gevolgen
-          daarvan ervaart.
+          Als game-based leren bij jullie past, vertalen we de leeropgave naar een eerste verhaallijn. Daarbij gebruiken
+          we een herkenbare verhaalstructuur waarin de deelnemer voor een uitdaging komt te staan, keuzes maakt en de
+          gevolgen daarvan ervaart.
         </p>
         <p>
           In deze verhaallijn verwerken we meestal vier of vijf centrale leerdoelen. Zo ontstaat een eerste concept dat
-          later kan uitgroeien tot MicroGames, een digitale leerervaring, een stripverhaal of een andere vorm van
+          later kan worden uitgewerkt tot MicroGames, een digitale leerervaring, een stripverhaal of een andere vorm van
           storytelling.
+        </p>
+        <p>
+          De uitkomst staat vooraf niet vast. De GameStorm is bedoeld om te ontdekken welke aanpak waarde toevoegt, niet
+          om je direct vast te leggen op één oplossing.
         </p>
       </div>
     </div>
@@ -84,17 +106,19 @@ permalink: /gamestorm/
 <section class="section section--navy">
   <div class="container">
     <div class="block-head">
-      <span class="section-label">Wat levert het op?</span>
-      <h2>Een stevig vertrekpunt, na één dagdeel</h2>
-      <p>Na de sessie heb je een concreet resultaat in handen — of je nu doorgaat of niet.</p>
+      <h2>Wat levert de GameStorm op?</h2>
+      <p>Na de sessie heb je:</p>
     </div>
     <ul class="checklist checklist--cols">
-      <li>een scherpere omschrijving van het probleem;</li>
-      <li>duidelijke en samenhangende leerdoelen;</li>
-      <li>inzicht in de relevante context en praktijksituaties;</li>
-      <li>een eerste verhaallijn of conceptuele richting;</li>
-      <li>advies over een passende vervolgstap.</li>
+      <li>Een scherpere omschrijving van het probleem;</li>
+      <li>Duidelijke en samenhangende leerdoelen;</li>
+      <li>Inzicht in de relevante context en praktijksituaties;</li>
+      <li>Een eerste verhaallijn of conceptuele richting;</li>
+      <li>Advies over een passende vervolgstap.</li>
     </ul>
+    <div class="prose">
+      <p>Daarmee heb je een stevig vertrekpunt voor de verdere ontwikkeling van de leerervaring.</p>
+    </div>
   </div>
 </section>
 
@@ -109,8 +133,9 @@ permalink: /gamestorm/
           te gaan, dan wordt dit bedrag volledig opgenomen in de projectkosten.
         </p>
         <p>
-          Ook zonder vervolgproject houd je een bruikbaar resultaat over: de aangescherpte leeropgave, leerdoelen en
-          eerste conceptuele richting kun je gebruiken om intern verder te werken of een andere stap te kiezen.
+          Ook wanneer je besluit geen vervolgproject te starten, houd je een bruikbaar resultaat over. De aangescherpte
+          leeropgave, leerdoelen en eerste conceptuele richting kun je gebruiken om intern verder te werken of om een
+          andere vervolgstap te kiezen.
         </p>
       </div>
       <div class="split__aside">
@@ -127,15 +152,9 @@ permalink: /gamestorm/
 <section class="cta-feature">
   <div class="container">
     <div class="cta-feature__inner">
-      <span class="section-label">Zet de eerste stap</span>
-      <h2>Ontdek welke <span class="hl">leerroute</span> bij jouw organisatie past</h2>
-      <p>
-        In een GameStorm onderzoeken we samen het probleem, de doelgroep en de gewenste verandering. Je krijgt een
-        concrete eerste richting, zonder je direct vast te leggen op een volledig project.
-      </p>
+      <h2>Ontdek welke <span class="hl">leerroute</span> bij jouw organisatie past.</h2>
       <div class="cta-feature__actions">
         <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Plan een GameStorm <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-        <a class="btn btn-secondary" href="{{ '/play/' | relative_url }}">Lees meer over Play</a>
       </div>
     </div>
   </div>

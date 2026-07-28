@@ -275,26 +275,6 @@ permalink: /
     opacity: 0.8;
   }
 
-  .sp-clients {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 0.75rem;
-    padding: 0;
-    margin: var(--space-md) 0 0;
-  }
-  .sp-clients li {
-    font-family: var(--font-display);
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: rgba(246, 249, 249, 0.9);
-    padding: 0.35rem 0.7rem;
-    border: 1px solid rgba(246, 249, 249, 0.22);
-    border-radius: var(--radius-pill);
-    background: rgba(246, 249, 249, 0.06);
-  }
-
   /* Warm (geel/koraal) paneel: koraal primaire knop valt weg tegen de achtergrond.
      Gebruik een blauwe knop voor voldoende contrast. */
   .sp-panel--warm .sp-actions .btn-primary {
@@ -572,7 +552,7 @@ permalink: /
   <!-- 1. Hero -->
   <section class="sp-panel sp-panel--hero" data-sp="0">
     <div class="sp-inner">
-      <p class="sp-eyebrow">Challenge · Activate · Motivate</p>
+      <p class="sp-eyebrow">Challenge – Activate – Motivate</p>
       <h1>Activate your team and challenge them to explore the <span class="hl">future</span>.</h1>
       <p class="sp-lead">
         Preludens uses storytelling and game-based learning to challenge teams, activate them and let them explore
@@ -610,29 +590,28 @@ permalink: /
       <span class="sp-eyebrow">Online focus</span>
       <h2>Interactive stories that challenge, activate and motivate teams</h2>
       <p class="sp-lead">
-        At Preludens we believe online learning only works when people become actively engaged. That is why we design
-        interactive learning experiences that connect to practice: visually built, recognisable and focused on knowledge
-        people truly need to apply.
+        At Preludens we believe online learning only works when people become actively engaged. That is why we design interactive learning experiences that connect to practice: visually built, recognisable and focused on knowledge people truly need to apply.
       </p>
       <p class="sp-lead">
-        Storytelling gives context and meaning. MicroGames create choices, repetition and immediate feedback. Data shows
-        where participants get stuck and where improvement is possible. So online learning is no longer a click-through
-        obligation, but a focused experience in which teams practise, discover and grow.
+        Storytelling gives context and meaning. MicroGames create choices, repetition and immediate feedback. Data shows where participants get stuck and where improvement is possible.
+      </p>
+      <p class="sp-lead">
+        So online learning is no longer a click-through obligation, but a focused experience in which teams practise, discover and grow.
       </p>
       <p class="sp-lead">
         So learning is no longer an obligation, but an inspiring journey.
       </p>
-      <ul class="sp-pain-points" aria-label="Three friction points we remove">
+      <ul class="sp-pain-points" aria-label="The three friction points we remove">
         <li>
-          <strong>Engagement</strong>
+          <strong>Increasing engagement and intrinsic motivation</strong>
           <span>Grow intrinsic motivation so people want to practise instead of click through.</span>
         </li>
         <li>
-          <strong>Knowledge retention</strong>
+          <strong>Strengthening insight and knowledge retention</strong>
           <span>Strengthen insight through repetition, context and choices that stick better.</span>
         </li>
         <li>
-          <strong>Safe practice space</strong>
+          <strong>Creating a safe space to explore</strong>
           <span>Create room to explore, make mistakes and act more strongly in practice.</span>
         </li>
       </ul>
@@ -646,21 +625,21 @@ permalink: /
       <h2>Learning experiences with story, play and impact</h2>
       <div class="sp-cards">
         <article class="card card--coral">
-          <span class="sp-card-icon" aria-hidden="true">📖</span>
+          <span class="sp-card-icon" aria-hidden="true">🎮</span>
           <h3>MicroGame Stories</h3>
-          <p>Short visual stories that link basic knowledge to recognisable work situations. People practise with short game mechanisms, make choices and get immediate feedback.</p>
+          <p>MicroGame Stories are short, visual stories that link basic knowledge to recognisable work situations. Employees practise with short game mechanisms, make choices and get immediate feedback on what they do. That is how knowledge gains context, meaning and repetition, so it sticks better and is easier to apply in practice.</p>
           <a href="{{ '/diensten/#microgame-stories' | relative_url }}">More about MicroGame Stories</a>
         </article>
         <article class="card card--gold">
-          <span class="sp-card-icon" aria-hidden="true">⚖️</span>
+          <span class="sp-card-icon" aria-hidden="true">🛣️</span>
           <h3>Dilemma Storytelling</h3>
-          <p>Realistic scenarios in which people make tough choices, experience consequences and learn to weigh options — linked to goals or KPIs from practice.</p>
+          <p>Realistic scenarios in which employees make tough choices, experience consequences and learn to weigh options. Every choice influences specific goals or KPIs, such as quality, safety, speed, customer satisfaction or collaboration. That is how choices gain context, meaning and measurable consequences, so teams learn to act more strongly in practice.</p>
           <a href="{{ '/diensten/#dilemma-storytelling' | relative_url }}">More about Dilemma Storytelling</a>
         </article>
         <article class="card card--mint">
-          <span class="sp-card-icon" aria-hidden="true">🎯</span>
+          <span class="sp-card-icon" aria-hidden="true">💡</span>
           <h3>Game Thinking</h3>
-          <p>Explore complex challenges as if they were a game — with workshops that make goals, behaviour, choices and feedback visible in a concrete blueprint.</p>
+          <p>Game Thinking helps teams explore complex challenges by looking at processes as if they were a game. In workshops we map goals, behaviour, choices, rules and feedback moments, so it becomes clear where movement is possible. That creates a concrete blueprint for learning goals, behaviour change and interventions that connect better to practice.</p>
           <a href="{{ '/diensten/#game-thinking' | relative_url }}">More about Game Thinking</a>
         </article>
       </div>
@@ -671,6 +650,7 @@ permalink: /
           choices? Dilemma Storytelling. Want grip on behaviour, learning goals and interventions first? We start with
           Game Thinking.
         </p>
+        <p>Together we determine which route best fits your team, content and desired change.</p>
         <a class="btn btn-secondary" href="{{ '/diensten/' | relative_url }}">Explore our services</a>
       </div>
     </div>
@@ -703,9 +683,16 @@ permalink: /
       <span class="sp-eyebrow">Proven in practice</span>
       <h2>From challenge to playable learning experience</h2>
       <p class="sp-lead">
-        From nautical supervision to the energy transition: every project starts with a challenge that asks for
-        movement. That is why Preludens offers an end-to-end approach to game-based learning: from first exploration
-        to implementation in your own learning environment.
+        From nautical supervision to the energy transition: every project starts with a challenge that asks for movement. Knowledge is partly present, but not yet naturally applicable. Employees need to learn to recognise situations, dare to make choices and understand what their actions mean.
+      </p>
+      <p class="sp-lead">
+        That is why Preludens offers an end-to-end approach to game-based learning: from first exploration to implementation in your own learning environment.
+      </p>
+      <p class="sp-lead">
+        We start with a GameStorm, in which we bring the learning need, audience and context into sharp focus. Then we translate learning goals into stories, choices and game mechanisms that fit practice. Next we develop and test the learning experience, so content, interaction and feedback align well.
+      </p>
+      <p class="sp-lead">
+        Finally we make sure the learning experience becomes available in the organisation’s existing learning environment. That is how a complex challenge is step by step turned into a playable experience in which teams learn, practise and grow.
       </p>
       <ol class="sp-steps" aria-label="The 7 steps of success">
         <li><span class="sp-steps__num">1</span> GameStorm</li>
@@ -716,13 +703,11 @@ permalink: /
         <li><span class="sp-steps__num">6</span> Production</li>
         <li><span class="sp-steps__num">7</span> Implementation</li>
       </ol>
-      <ul class="sp-clients" aria-label="A selection of clients">
-        <li>Amsterdam University of Applied Sciences</li>
-        <li>NNVO</li>
-        <li>21CC</li>
-        <li>Studium</li>
-        <li>Wijkz</li>
-        <li>onITnow</li>
+      <ul class="client-logos" aria-label="A selection of clients">
+        <li><span style="--logo: url('{{ '/assets/images/clients/nnvo.png' | relative_url }}'); --logo-width: 4.5rem;" role="img" aria-label="NNVO"></span></li>
+        <li><span style="--logo: url('{{ '/assets/images/clients/21cc.png' | relative_url }}'); --logo-width: 6.5rem;" role="img" aria-label="21CC"></span></li>
+        <li><span style="--logo: url('{{ '/assets/images/clients/studium.png' | relative_url }}'); --logo-width: 6.5rem;" role="img" aria-label="Studium"></span></li>
+        <li><span style="--logo: url('{{ '/assets/images/clients/maryland.svg' | relative_url }}'); --logo-width: 6rem;" role="img" aria-label="University of Maryland"></span></li>
       </ul>
       <div class="sp-actions">
         <a class="btn btn-primary" href="{{ '/verhalen/' | relative_url }}">Read the stories</a>
@@ -774,7 +759,11 @@ permalink: /
         didactics and technology. We are a compact team of makers, designers and developers that turns complex
         knowledge into learning experiences in which people actively discover, choose and practise.
       </p>
+      <p class="sp-lead">
+        From first idea to working learning experience we bring play, story and technology together — clearly designed, carefully built and always aimed at learning that sticks.
+      </p>
       <p><a href="{{ '/team/' | relative_url }}">Meet the team →</a></p>
+      <h3>We stand for:</h3>
       <ul class="sp-values" aria-label="What we stand for">
         <li>
           <strong>Robust</strong>
