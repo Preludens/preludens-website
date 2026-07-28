@@ -2217,6 +2217,89 @@ p { margin: 0 0 var(--space-sm); }
   }
 }
 
+/* Split hero: copy links, productbeeld rechts (Prepo) */
+.hero-banner--split {
+  color: var(--color-slate-teal);
+  background-color: var(--color-cloud-white);
+  background-image:
+    radial-gradient(circle at 90% 4%, var(--color-mist-blue) 0 26%, transparent 26.5%),
+    radial-gradient(circle at 99% 82%, var(--color-mist-blue) 0 15%, transparent 15.5%),
+    linear-gradient(140deg, var(--color-cloud-white) 0%, var(--color-mist-blue) 100%);
+
+  &::before { background: none; }
+
+  h1 { color: var(--color-deep-navy); }
+  .hero-banner__eyebrow { color: var(--color-harbor-teal); }
+  .hero-banner__lead { color: var(--color-slate-teal); max-width: none; }
+  .hero-banner__dots { color: var(--color-harbor-teal); }
+
+  .hero-banner__inner { max-width: 30rem; }
+}
+
+.hero-banner__split {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}
+
+/* Browservenster om een productscreenshot — volgt de visuele input van Prepo */
+.browser-mock {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.8rem;
+    background: var(--color-mist-blue);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  &__lights {
+    display: flex;
+    gap: 0.3rem;
+    flex: 0 0 auto;
+
+    span {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      background: var(--color-slate-teal);
+      opacity: 0.35;
+    }
+  }
+
+  &__url {
+    flex: 1 1 auto;
+    height: 1.15rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-border);
+    background: var(--color-white);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-banner--split {
+    background-image: linear-gradient(180deg, var(--color-cloud-white), var(--color-mist-blue));
+  }
+}
+
 /* Tekst + beeld naast elkaar */
 .media-block {
   display: grid;
@@ -2862,6 +2945,33 @@ p { margin: 0 0 var(--space-sm); }
     font-size: 0.75rem;
     font-weight: 800;
   }
+}
+
+/* Opdrachtgeverslogo's — klein en in één kleur. De logo's worden als masker
+   gebruikt, zodat elk merk in de kleur van het omliggende paneel verschijnt. */
+.client-logos {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(1.1rem, 3vw, 2.4rem);
+  padding: 0;
+  margin: var(--space-md) 0 0;
+
+  li { line-height: 0; }
+
+  span {
+    display: block;
+    width: var(--logo-width, 6rem);
+    height: 1.5rem;
+    background-color: currentColor;
+    opacity: 0.72;
+    -webkit-mask: var(--logo) center / contain no-repeat;
+    mask: var(--logo) center / contain no-repeat;
+    transition: opacity var(--transition);
+  }
+
+  li:hover span { opacity: 1; }
 }
 
 /* Quotes-carousel (homepage) */

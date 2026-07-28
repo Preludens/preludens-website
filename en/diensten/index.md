@@ -32,41 +32,36 @@ permalink: /diensten/
 <section class="section">
   <div class="container">
     <div class="block-head">
-      <span class="section-label">When knowledge sits unused</span>
+      <span class="section-label">When knowledge sits unused.</span>
       <h2>From knowledge transfer to applicable behaviour</h2>
     </div>
-    <div class="split split--wide-text">
-      <div class="split__text">
-        <p>
-          Many learning programmes get stuck at the same point: the content is right, but application falls behind.
-          People read theory, watch instructions or take a test. That can help transfer information, but it does not
-          always prepare them for the moments when they need to weigh options, respond or act.
-        </p>
-        <p>
-          That is exactly where the learning challenge arises.
-        </p>
-        <p>
-          When safety, quality, customer contact, collaboration or efficiency are at stake, explanation alone is often
-          not enough. Teams need to practise with recognisable situations. They need to experience which choices are
-          possible, what the consequences are and how they can adjust.
-        </p>
-        <p>
-          That is why we design learning experiences in which people actively discover, choose, practise and reflect.
-          With storytelling we give knowledge context. With MicroGames we make practice short, focused and active.
-          With feedback and data it becomes clear where participants are strong and where they need extra support.
-        </p>
-        <p>
-          That way, learning is no longer a click-through obligation, but a route in which people learn to act more confidently step by step.
-        </p>
-      </div>
-      <div class="split__aside">
-        <ul class="checklist">
-          <li>Knowledge gets context through storytelling.</li>
-          <li>MicroGames make practice short and active.</li>
-          <li>Feedback and data make growth visible.</li>
-          <li>Learning becomes a route, not a click-through obligation.</li>
-        </ul>
-      </div>
+    <div class="prose">
+      <p>
+        Many learning programmes get stuck at the same point: the content is right, but application falls behind.
+      </p>
+      <p>
+        People read theory, watch instructions or take a test. That can help transfer information, but it does not
+        always prepare them for the moments when they need to weigh options, respond or act.
+      </p>
+      <p>
+        That is exactly where the learning challenge arises.
+      </p>
+      <p>
+        When safety, quality, customer contact, collaboration or efficiency are at stake, explanation alone is often
+        not enough. Teams need to practise with recognisable situations. They need to experience which choices are
+        possible, what the consequences are and how they can adjust.
+      </p>
+      <p>
+        That is why we design learning experiences in which people actively discover, choose, practise and reflect.
+      </p>
+      <p>
+        With storytelling we give knowledge context. With MicroGames we make practice short, focused and active. With
+        feedback and data it becomes clear where participants are strong and where they need extra support.
+      </p>
+      <p>
+        That way, learning is no longer a click-through obligation, but a route in which people learn to act more
+        confidently step by step.
+      </p>
     </div>
   </div>
 </section>
@@ -79,7 +74,10 @@ permalink: /diensten/
       <p>
         Every learning challenge asks for a different form. Sometimes you want to train and embed basic knowledge.
         Sometimes people need to learn how to handle difficult choices. And sometimes you first need a sharp analysis
-        of behaviour, goals and tensions in practice. That is why Preludens works with three clear routes.
+        of behaviour, goals and tensions in practice.
+      </p>
+      <p>
+        That is why Preludens works with three clear routes.
       </p>
     </div>
   </div>
@@ -89,13 +87,17 @@ permalink: /diensten/
   <div class="container">
     <article class="service-block service-block--coral">
       <div class="service-block__intro">
-        <span class="section-label">Short learning experiences with story, play and repetition</span>
+        <span class="section-label">Short learning experiences with story, play and repetition.</span>
         <h2>MicroGame Stories</h2>
         <p>
           MicroGame Stories are short, visual online training modules in which basic knowledge is linked to
-          recognisable work situations. Participants follow a story, make choices and practise along the way with short
-          MicroGames. Each part targets a concrete learning goal. That gives knowledge context, repetition and
-          immediate feedback.
+          recognisable work situations.
+        </p>
+        <p>
+          Participants follow a story, make choices and practise along the way with short MicroGames.
+        </p>
+        <p>
+          Each part targets a concrete learning goal. That gives knowledge context, repetition and immediate feedback.
         </p>
         <p>
           A MicroGame Story is a good fit when you want to transfer important knowledge to a larger audience without
@@ -106,11 +108,11 @@ permalink: /diensten/
         <div>
           <h3>A good fit for</h3>
           <ul class="checklist">
-            <li>Training and embedding basic knowledge</li>
-            <li>Onboarding or introducing new processes</li>
-            <li>Repeating rules, agreements or ways of working</li>
-            <li>Linking theory to recognisable work situations</li>
-            <li>Online learning that needs to be short, visual and active</li>
+            <li>Training and embedding basic knowledge;</li>
+            <li>Onboarding or introducing new processes;</li>
+            <li>Repeating rules, agreements or ways of working;</li>
+            <li>Linking theory to recognisable work situations;</li>
+            <li>Online learning that needs to be short, visual and active.</li>
           </ul>
         </div>
         <div class="service-block__result">
@@ -130,13 +132,16 @@ permalink: /diensten/
   <div class="container">
     <article class="service-block service-block--gold">
       <div class="service-block__intro">
-        <span class="section-label">Practising with choices that have no simple answer</span>
+        <span class="section-label">Practising with choices that have no simple answer.</span>
         <h2>Dilemma Storytelling</h2>
         <p>
           Dilemma Storytelling helps teams explore difficult situations in which several interests play at once.
+        </p>
+        <p>
           Participants are presented with realistic scenarios and make choices that have consequences. Not every
           situation has one right answer. Sometimes safety asks for something different than speed. Sometimes customer
-          satisfaction rubs against quality. Sometimes a team needs to learn how to weigh what matters most in that moment.
+          satisfaction rubs against quality. Sometimes a team needs to learn how to weigh what matters most in that
+          moment.
         </p>
         <p>
           By making choices visible and linking them to consequences, participants learn to look more sharply at their
@@ -147,11 +152,11 @@ permalink: /diensten/
         <div>
           <h3>A good fit for</h3>
           <ul class="checklist">
-            <li>Decision-making in complex situations</li>
-            <li>Safety, quality, collaboration or customer contact</li>
-            <li>Situations where behaviour matters more than knowledge alone</li>
-            <li>Practising trade-offs between different goals</li>
-            <li>Teams that want to reflect better on choices and consequences</li>
+            <li>Decision-making in complex situations;</li>
+            <li>Safety, quality, collaboration or customer contact;</li>
+            <li>Situations where behaviour matters more than knowledge alone;</li>
+            <li>Practising trade-offs between different goals;</li>
+            <li>Teams that want to reflect better on choices and consequences.</li>
           </ul>
         </div>
         <div class="service-block__result">
@@ -174,25 +179,30 @@ permalink: /diensten/
         <span class="section-label">First get a grip on behaviour, goals and game mechanisms</span>
         <h2>Game Thinking</h2>
         <p>
-          Game Thinking is our design approach for complex learning and change challenges. We look at a question as if
-          it were a game — not to turn it into a game immediately, but to make visible which goals, rules, choices,
-          tensions, feedback moments and blockers are already present in practice.
+          Game Thinking is our design approach for complex learning and change challenges.
         </p>
         <p>
-          We call that Find the Game. Together we explore what people need to learn, which behaviour needs to change
-          and where movement is possible in practice. From that analysis a clear blueprint emerges for a learning
-          experience, intervention or serious game.
+          We look at a question as if it were a game. Not to turn it into a game immediately, but to make visible which
+          goals, rules, choices, tensions, feedback moments and blockers are already present in practice.
+        </p>
+        <p>
+          We call that Find the Game.
+        </p>
+        <p>
+          Together we explore what people need to learn, which behaviour needs to change and where movement is possible
+          in practice. From that analysis a clear blueprint emerges for a learning experience, intervention or serious
+          game.
         </p>
       </div>
       <div class="service-block__cols">
         <div>
           <h3>A good fit for</h3>
           <ul class="checklist">
-            <li>Complex questions where the solution is not yet sharp</li>
-            <li>Learning or change programmes that need to connect better to behaviour</li>
-            <li>Organisations that want to explore before production starts</li>
-            <li>Formulating learning goals and design principles</li>
-            <li>Discovering the game structure already hidden in practice</li>
+            <li>Complex questions where the solution is not yet sharp;</li>
+            <li>Learning or change programmes that need to connect better to behaviour;</li>
+            <li>Organisations that want to explore before production starts;</li>
+            <li>Formulating learning goals and design principles;</li>
+            <li>Discovering the game structure already hidden in practice.</li>
           </ul>
         </div>
         <div class="service-block__result">
@@ -223,37 +233,68 @@ permalink: /diensten/
       <article class="feature-item">
         <span class="feature-item__num">1</span>
         <h3>Explore</h3>
-        <p>We bring your learning challenge into sharp focus. In a first conversation or GameStorm we examine the problem, audience, context and key learning goals.</p>
+        <p><strong>We bring your learning challenge into sharp focus</strong></p>
+        <p>
+          In a first conversation or GameStorm we examine the problem, the audience, the context and the key learning
+          goals. That creates a clear direction before we start designing.
+        </p>
       </article>
       <article class="feature-item">
         <span class="feature-item__num">2</span>
         <h3>Sharpen</h3>
-        <p>We translate the learning challenge into clear goals and design choices. We make concrete what participants should understand, recognise, choose or apply afterwards.</p>
+        <p><strong>We translate the learning challenge into clear goals and design choices</strong></p>
+        <p>
+          We make concrete what participants should understand, recognise, choose or apply afterwards. Along the way we
+          map the key work situations, learning goals and success criteria.
+        </p>
       </article>
       <article class="feature-item">
         <span class="feature-item__num">3</span>
         <h3>Gather content</h3>
-        <p>You bring the practice knowledge; we make it playable. We collect training, processes, cases and expert knowledge and explore how that knowledge becomes playable.</p>
+        <p><strong>You bring the practice knowledge; we make it playable</strong></p>
+        <p>
+          We gather the necessary content: existing training, process descriptions, guidelines, examples, cases and
+          expert knowledge. You provide the content base; we explore how that knowledge can be translated into story,
+          choices, feedback and game mechanisms.
+        </p>
       </article>
       <article class="feature-item">
         <span class="feature-item__num">4</span>
         <h3>Choose the right form</h3>
-        <p>Want to train basic knowledge? A MicroGame Story. Want to strengthen decisiveness? Dilemma Storytelling. Solution not sharp yet? We start with Game Thinking.</p>
+        <p><strong>We determine which approach fits your challenge</strong></p>
+        <p>
+          If you want to train and embed basic knowledge, a MicroGame Story fits. If you want to strengthen decisiveness
+          around difficult choices, Dilemma Storytelling is the natural fit. If the solution is not yet sharp, we start
+          with Game Thinking.
+        </p>
       </article>
       <article class="feature-item">
         <span class="feature-item__num">5</span>
         <h3>Design</h3>
-        <p>We translate knowledge into story, choices and feedback. Together we work towards recognisable situations, fitting game mechanisms and a first storyline.</p>
+        <p><strong>We translate knowledge into story, choices and feedback</strong></p>
+        <p>
+          Together we work towards recognisable situations, clear learning goals, fitting game mechanisms and a first
+          storyline. That turns abstract knowledge into a learning route in which people can practise actively.
+        </p>
       </article>
       <article class="feature-item">
         <span class="feature-item__num">6</span>
         <h3>Develop and test</h3>
-        <p>We make the learning experience ready for use: develop, test and improve where needed — from MicroGame Story to blueprint or publishable module.</p>
+        <p><strong>We make the learning experience ready for use</strong></p>
+        <p>
+          We develop the chosen form, test the experience and improve where needed. Think of a MicroGame Story, Dilemma
+          Storytelling, prototype, Game Thinking blueprint or publishable module.
+        </p>
       </article>
       <article class="feature-item">
         <span class="feature-item__num">7</span>
         <h3>Deliver and manage</h3>
-        <p>You get a learning experience that stays available, findable and improvable — in your own learning environment or via Prepo.</p>
+        <p><strong>You get a learning experience that stays available, findable and open to further development</strong></p>
+        <p>
+          Depending on the chosen route we deliver files, modules, storylines, game mechanisms, feedback moments and,
+          where relevant, reporting insights. The learning experience can be used in your own learning environment or
+          managed, supported and developed further via <a href="{{ '/prepo/' | relative_url }}">Prepo</a>.
+        </p>
       </article>
     </div>
   </div>
@@ -266,8 +307,11 @@ permalink: /diensten/
       <h2>Take the <span class="hl">first step</span> tomorrow</h2>
       <p>
         Do you have knowledge that needs to stick better? Behaviour that needs to change? Or a complex challenge your
-        team needs to learn to handle? In a GameStorm we explore together where the learning challenge sits and which
-        form fits.
+        team needs to learn to handle?
+      </p>
+      <p>
+        In a GameStorm we explore together where the learning challenge sits and which form fits. We bring direction to
+        the content, make choices visible and discover how your challenge can be made playable.
       </p>
       <div class="cta-feature__actions">
         <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Start with a GameStorm <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>

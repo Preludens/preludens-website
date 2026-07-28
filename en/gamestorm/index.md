@@ -4,21 +4,22 @@ lang: en
 title: GameStorm
 description: In a single half-day we map your learning challenge, audience and learning goals together — the first step towards a playable learning experience.
 permalink: /gamestorm/
+hero_preload: /assets/images/hero/gamestorm-hero.webp
 ---
 
 <section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/gamestorm-hero.jpg' | relative_url }}');">
   <div class="container">
     <div class="hero-banner__inner">
       <p class="hero-banner__eyebrow">GameStorm</p>
-      <h1>Explore the <span class="hl">possibilities</span> of <span class="hl">game-based</span> learning</h1>
+      <h1>Explore the <span class="hl">possibilities</span> of <span class="hl">game-based</span> learning.</h1>
       <hr class="hero-banner__accent">
       <p class="hero-banner__lead">
-        You don't need to know which learning solution you need yet. In a single half-day we map the problem, the audience
-        and the key learning goals together — a clear first direction, without committing to a full project.
+        You don’t need to know which learning solution you need yet. In a single half-day we map the problem, the
+        audience and the key learning goals together. That gives you a clear first direction, without committing to a
+        full project right away.
       </p>
       <div class="hero-banner__actions">
-        <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Book a GameStorm <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-        <a class="btn btn-secondary" href="{{ '/play/' | relative_url }}">Read more about Play</a>
+        <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Get in touch <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </div>
@@ -31,29 +32,47 @@ permalink: /gamestorm/
       <span class="section-label">The first exploration</span>
       <h2>Bring your learning challenge into focus</h2>
     </div>
-    <div class="split split--wide-text">
-      <div class="split__text">
-        <p>
-          You know that foundational knowledge is crucial for an effective team. But which knowledge really matters? In
-          which situations do people need to apply it? And is game-based learning the right approach?
-        </p>
-        <p>
-          A GameStorm helps answer those questions. Precisely when the learning challenge isn't clear yet, the session
-          offers a structured first step — so you don't need to know which learning solution you need yet.
-        </p>
-      </div>
-      <div class="split__aside">
-        <ul class="checklist">
-          <li>What problem do you want the learning experience to solve?</li>
-          <li>What knowledge, insights or skills does the audience need?</li>
-          <li>In which recognisable real-world situations should they apply them?</li>
-        </ul>
-      </div>
+    <div class="prose">
+      <p>
+        You know that foundational knowledge is crucial for an effective team. But which knowledge really matters? In
+        which situations do they need to apply it? And is game-based learning the right approach for that?
+      </p>
+      <p>
+        A GameStorm helps answer those questions. In a single half-day we explore the problem, the audience and the
+        desired change together.
+      </p>
+      <p>
+        So you don’t need to know exactly which learning solution you need yet. Precisely when the learning challenge
+        isn’t clear yet, the GameStorm offers a structured first step.
+      </p>
     </div>
   </div>
 </section>
 
 <section class="section section--mist">
+  <div class="container">
+    <div class="block-head">
+      <h2>From a challenge to clear learning goals</h2>
+    </div>
+    <div class="prose">
+      <p>During the GameStorm we explore three connected questions:</p>
+    </div>
+    <ul class="checklist">
+      <li>What problem do you want the learning experience to solve?</li>
+      <li>What knowledge, insights or skills does the audience need?</li>
+      <li>In which recognisable real-world situations should the audience be able to apply them?</li>
+    </ul>
+    <div class="prose">
+      <p>
+        That way we map not only the content of the training, but also the context in which that knowledge gains
+        meaning. We explore where storytelling and game principles can strengthen learning — and which form best fits
+        the learning challenge.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
   <div class="container">
     <div class="media-block">
       <figure class="media-block__media">
@@ -72,7 +91,12 @@ permalink: /gamestorm/
         </p>
         <p>
           This storyline usually weaves in four or five central learning goals. That creates a first concept that can
-          later grow into MicroGames, a digital learning experience, a comic story or another form of storytelling.
+          later be developed into MicroGames, a digital learning experience, a comic story or another form of
+          storytelling.
+        </p>
+        <p>
+          The outcome is not fixed in advance. The GameStorm is meant to discover which approach adds value, not to
+          lock you into one solution right away.
         </p>
       </div>
     </div>
@@ -82,17 +106,19 @@ permalink: /gamestorm/
 <section class="section section--navy">
   <div class="container">
     <div class="block-head">
-      <span class="section-label">What does it deliver?</span>
-      <h2>A solid starting point, after one half-day</h2>
-      <p>After the session you hold a concrete result in your hands — whether you continue or not.</p>
+      <h2>What does the GameStorm deliver?</h2>
+      <p>After the session you have:</p>
     </div>
     <ul class="checklist checklist--cols">
-      <li>a sharper description of the problem;</li>
-      <li>clear and coherent learning goals;</li>
-      <li>insight into the relevant context and real-world situations;</li>
-      <li>a first storyline or conceptual direction;</li>
-      <li>advice on a fitting next step.</li>
+      <li>A sharper description of the problem;</li>
+      <li>Clear and coherent learning goals;</li>
+      <li>Insight into the relevant context and real-world situations;</li>
+      <li>A first storyline or conceptual direction;</li>
+      <li>Advice on a fitting next step.</li>
     </ul>
+    <div class="prose">
+      <p>That gives you a solid starting point for further developing the learning experience.</p>
+    </div>
   </div>
 </section>
 
@@ -107,8 +133,9 @@ permalink: /gamestorm/
           Preludens afterwards, this amount is fully included in the project costs.
         </p>
         <p>
-          Even without a follow-up project you keep a usable result: the sharpened learning challenge, learning goals and
-          first conceptual direction can be used to work on internally or to choose a different next step.
+          Even when you decide not to start a follow-up project, you keep a usable result. The sharpened learning
+          challenge, learning goals and first conceptual direction can be used to work on internally or to choose a
+          different next step.
         </p>
       </div>
       <div class="split__aside">
@@ -125,15 +152,9 @@ permalink: /gamestorm/
 <section class="cta-feature">
   <div class="container">
     <div class="cta-feature__inner">
-      <span class="section-label">Take the first step</span>
-      <h2>Discover which <span class="hl">learning route</span> fits your organisation</h2>
-      <p>
-        In a GameStorm we explore the problem, the audience and the desired change together. You get a concrete first
-        direction, without committing to a full project.
-      </p>
+      <h2>Discover which <span class="hl">learning route</span> fits your organisation.</h2>
       <div class="cta-feature__actions">
         <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Book a GameStorm <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-        <a class="btn btn-secondary" href="{{ '/play/' | relative_url }}">Read more about Play</a>
       </div>
     </div>
   </div>

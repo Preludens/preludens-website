@@ -285,27 +285,6 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     opacity: 0.8;
   }
 
-  /* Opdrachtgevers-strip (social proof / vertrouwen) */
-  .sp-clients {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 0.75rem;
-    padding: 0;
-    margin: var(--space-md) 0 0;
-  }
-  .sp-clients li {
-    font-family: var(--font-display);
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: rgba(246, 249, 249, 0.9);
-    padding: 0.35rem 0.7rem;
-    border: 1px solid rgba(246, 249, 249, 0.22);
-    border-radius: var(--radius-pill);
-    background: rgba(246, 249, 249, 0.06);
-  }
-
   /* Warm (geel/koraal) paneel: koraal primaire knop valt weg tegen de achtergrond.
      Gebruik een blauwe knop voor voldoende contrast. */
   .sp-panel--warm .sp-actions .btn-primary {
@@ -583,7 +562,7 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
   <!-- 1. Hero -->
   <section class="sp-panel sp-panel--hero" data-sp="0">
     <div class="sp-inner">
-      <p class="sp-eyebrow">Uitdagen · Activeren · Motiveren</p>
+      <p class="sp-eyebrow">Uitdagen – Activeren – Motiveren</p>
       <h1>Activeer je team en daag ze uit om de <span class="hl">toekomst</span> te verkennen.</h1>
       <p class="sp-lead">
         Preludens gebruikt storytelling en game-based leren om teams uit te dagen, te activeren en nieuwe situaties
@@ -596,17 +575,17 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
       </div>
       <div class="sp-hero-pillars" aria-label="Uitdagen, activeren, motiveren">
         <div class="sp-hero-pillar">
-          <span class="sp-hero-pillar__num">01 — Uitdagen</span>
+          <span class="sp-hero-pillar__num">01</span>
           <h3>Uitdagen</h3>
           <p>Daag teams uit om binnen realistische situaties keuzes te maken, afwegingen te oefenen en de gevolgen van hun handelen te ervaren.</p>
         </div>
         <div class="sp-hero-pillar">
-          <span class="sp-hero-pillar__num">02 — Activeren</span>
+          <span class="sp-hero-pillar__num">02</span>
           <h3>Activeren</h3>
           <p>Gebruik Play om deelnemers actief te laten kiezen. Niet kijken of klikken, maar proberen, reageren, beslissen en leren van directe feedback.</p>
         </div>
         <div class="sp-hero-pillar">
-          <span class="sp-hero-pillar__num">03 — Motiveren</span>
+          <span class="sp-hero-pillar__num">03</span>
           <h3>Motiveren</h3>
           <p>Versterk de betrokkenheid en intrinsieke motivatie, zodat teams met meer vertrouwen handelen wanneer het er in de praktijk echt op aankomt.</p>
         </div>
@@ -621,29 +600,28 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
       <span class="sp-eyebrow">Online focus</span>
       <h2>Interactieve stories die teams uitdagen, activeren en motiveren</h2>
       <p class="sp-lead">
-        Bij Preludens geloven we dat online leren pas werkt wanneer mensen actief betrokken raken. Daarom ontwerpen we
-        interactieve leerervaringen die aansluiten bij de praktijk: visueel opgebouwd, herkenbaar en gericht op kennis
-        die mensen echt moeten kunnen toepassen.
+        Bij Preludens geloven we dat online leren pas werkt wanneer mensen actief betrokken raken. Daarom ontwerpen we interactieve leerervaringen die aansluiten bij de praktijk: visueel opgebouwd, herkenbaar en gericht op kennis die mensen echt moeten kunnen toepassen.
       </p>
       <p class="sp-lead">
-        Storytelling geeft context en betekenis. MicroGames zorgen voor keuzes, herhaling en directe feedback. Data laat
-        zien waar deelnemers vastlopen en waar verbetering mogelijk is. Zo wordt online leren geen verplichting om
-        doorheen te klikken, maar een gerichte ervaring waarin teams oefenen, ontdekken en groeien.
+        Storytelling geeft context en betekenis. MicroGames zorgen voor keuzes, herhaling en directe feedback. Data laat zien waar deelnemers vastlopen en waar verbetering mogelijk is.
+      </p>
+      <p class="sp-lead">
+        Zo wordt online leren geen verplichting om doorheen te klikken, maar een gerichte ervaring waarin teams oefenen, ontdekken en groeien.
       </p>
       <p class="sp-lead">
         Zo wordt leren geen verplichting, maar een inspirerende reis.
       </p>
-      <ul class="sp-pain-points" aria-label="Drie pijnpunten die we wegwerken">
+      <ul class="sp-pain-points" aria-label="De drie pijnpunten die we wegwerken">
         <li>
-          <strong>Betrokkenheid</strong>
+          <strong>Vergroten van de betrokkenheid en intrinsieke motivatie</strong>
           <span>Vergroot intrinsieke motivatie, zodat mensen willen oefenen in plaats van door te klikken.</span>
         </li>
         <li>
-          <strong>Kennisretentie</strong>
+          <strong>Versterken van inzicht en kennisretentie</strong>
           <span>Versterk inzicht door herhaling, context en keuzes die beter blijven hangen.</span>
         </li>
         <li>
-          <strong>Veilige oefenruimte</strong>
+          <strong>Creëren van een veilige ruimte om te verkennen</strong>
           <span>Creëer ruimte om te verkennen, fouten te maken en sterker te handelen in de praktijk.</span>
         </li>
       </ul>
@@ -657,21 +635,21 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
       <h2>Leerervaringen met verhaal, spel en impact</h2>
       <div class="sp-cards">
         <article class="card card--coral">
-          <span class="sp-card-icon" aria-hidden="true">📖</span>
+          <span class="sp-card-icon" aria-hidden="true">🎮</span>
           <h3>MicroGame Stories</h3>
-          <p>Korte, visuele verhalen die basiskennis koppelen aan herkenbare praktijksituaties. Medewerkers oefenen met korte spelmechanismen, maken keuzes en krijgen directe feedback.</p>
+          <p>MicroGame Stories zijn korte, visuele verhalen die basiskennis koppelen aan herkenbare praktijksituaties. Medewerkers oefenen met korte spelmechanismen, maken keuzes en krijgen directe feedback op wat ze doen. Zo krijgt kennis context, betekenis en herhaling, waardoor ze beter blijft hangen en makkelijker wordt toegepast in de praktijk.</p>
           <a href="{{ '/diensten/#microgame-stories' | relative_url }}">Meer over MicroGame Stories</a>
         </article>
         <article class="card card--gold">
-          <span class="sp-card-icon" aria-hidden="true">⚖️</span>
+          <span class="sp-card-icon" aria-hidden="true">🛣️</span>
           <h3>Dilemma Storytelling</h3>
-          <p>Realistische scenario’s waarin medewerkers lastige keuzes maken, gevolgen ervaren en leren afwegen — gekoppeld aan doelen of KPI’s uit de praktijk.</p>
+          <p>Realistische scenario’s waarin medewerkers lastige keuzes maken, gevolgen ervaren en leren afwegen. Elke keuze beïnvloedt specifieke doelen of KPI’s, zoals kwaliteit, veiligheid, snelheid, klanttevredenheid of samenwerking. Zo krijgen keuzes context, betekenis en meetbare gevolgen, waardoor teams sterker leren handelen in de praktijk.</p>
           <a href="{{ '/diensten/#dilemma-storytelling' | relative_url }}">Meer over Dilemma Storytelling</a>
         </article>
         <article class="card card--mint">
-          <span class="sp-card-icon" aria-hidden="true">🎯</span>
+          <span class="sp-card-icon" aria-hidden="true">💡</span>
           <h3>Game Thinking</h3>
-          <p>Complexe vraagstukken onderzoeken alsof het een game is — met workshops die doelen, gedrag, keuzes en feedback zichtbaar maken in een concrete blauwdruk.</p>
+          <p>Game Thinking helpt teams om complexe vraagstukken te onderzoeken door processen te bekijken alsof het een game is. In workshops brengen we doelen, gedrag, keuzes, regels en feedbackmomenten in kaart, zodat zichtbaar wordt waar beweging mogelijk is. Zo ontstaat een concrete blauwdruk voor leerdoelen, gedragsverandering en interventies die beter aansluiten op de praktijk.</p>
           <a href="{{ '/diensten/#game-thinking' | relative_url }}">Meer over Game Thinking</a>
         </article>
       </div>
@@ -682,6 +660,7 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
           versterken rond lastige keuzes, dan past Dilemma Storytelling. Wil je eerst grip krijgen op gedrag,
           leerdoelen en interventies, dan starten we met Game Thinking.
         </p>
+        <p>Samen bepalen we welke route het beste aansluit op jouw team, inhoud en gewenste verandering.</p>
         <a class="btn btn-secondary" href="{{ '/diensten/' | relative_url }}">Ontdek onze diensten</a>
       </div>
     </div>
@@ -714,9 +693,16 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
       <span class="sp-eyebrow">Bewezen in de praktijk</span>
       <h2>Van vraagstuk naar spelbare leerervaring</h2>
       <p class="sp-lead">
-        Van nautisch toezicht tot energietransitie: elk project begint met een vraagstuk dat om beweging vraagt.
-        Daarom biedt Preludens een totaaloplossing voor game-based leren: van eerste verkenning tot implementatie
-        in de eigen leeromgeving.
+        Van nautisch toezicht tot energietransitie: elk project begint met een vraagstuk dat om beweging vraagt. Kennis is deels aanwezig, maar nog niet vanzelfsprekend toepasbaar. Medewerkers moeten situaties leren herkennen, keuzes durven maken en begrijpen wat hun handelen betekent.
+      </p>
+      <p class="sp-lead">
+        Daarom biedt Preludens een totaaloplossing voor game-based leren: van eerste verkenning tot implementatie in de eigen leeromgeving.
+      </p>
+      <p class="sp-lead">
+        We starten met een GameStorm, waarin we de leerbehoefte, doelgroep en context scherp in beeld brengen. Daarna vertalen we leerdoelen naar verhalen, keuzes en spelmechanismen die passen bij de praktijk. Vervolgens ontwikkelen en testen we de leerervaring, zodat inhoud, interactie en feedback goed op elkaar aansluiten.
+      </p>
+      <p class="sp-lead">
+        Tot slot zorgen we dat de leerervaring beschikbaar komt in de bestaande leeromgeving van de organisatie. Zo wordt een complex vraagstuk stap voor stap omgezet in een spelbare ervaring waarin teams leren, oefenen en groeien.
       </p>
       <ol class="sp-steps" aria-label="De 7 stappen van succes">
         <li><span class="sp-steps__num">1</span> GameStorm</li>
@@ -727,13 +713,11 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
         <li><span class="sp-steps__num">6</span> Productie</li>
         <li><span class="sp-steps__num">7</span> Implementatie</li>
       </ol>
-      <ul class="sp-clients" aria-label="Een selectie van opdrachtgevers">
-        <li>Hogeschool van Amsterdam</li>
-        <li>NNVO</li>
-        <li>21CC</li>
-        <li>Studium</li>
-        <li>Wijkz</li>
-        <li>onITnow</li>
+      <ul class="client-logos" aria-label="Een selectie van opdrachtgevers">
+        <li><span style="--logo: url('{{ '/assets/images/clients/nnvo.png' | relative_url }}'); --logo-width: 4.5rem;" role="img" aria-label="NNVO"></span></li>
+        <li><span style="--logo: url('{{ '/assets/images/clients/21cc.png' | relative_url }}'); --logo-width: 6.5rem;" role="img" aria-label="21CC"></span></li>
+        <li><span style="--logo: url('{{ '/assets/images/clients/studium.png' | relative_url }}'); --logo-width: 6.5rem;" role="img" aria-label="Studium"></span></li>
+        <li><span style="--logo: url('{{ '/assets/images/clients/maryland.svg' | relative_url }}'); --logo-width: 6rem;" role="img" aria-label="University of Maryland"></span></li>
       </ul>
       <div class="sp-actions">
         <a class="btn btn-primary" href="{{ '/verhalen/' | relative_url }}">Lees de verhalen</a>
@@ -786,7 +770,11 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
         ontwikkelaars dat complexe kennis vertaalt naar leerervaringen waarin mensen actief
         ontdekken, kiezen en oefenen.
       </p>
+      <p class="sp-lead">
+        Van eerste idee tot werkende leerervaring brengen we spel, verhaal en technologie samen — helder ontworpen, zorgvuldig gebouwd en altijd gericht op leren dat blijft hangen.
+      </p>
       <p><a href="{{ '/team/' | relative_url }}">Maak kennis met het team →</a></p>
+      <h3>Wij staan voor:</h3>
       <ul class="sp-values" aria-label="Wij staan voor">
         <li>
           <strong>Robuust</strong>

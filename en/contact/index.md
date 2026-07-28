@@ -4,19 +4,25 @@ lang: en
 title: Contact
 description: Get in touch with Preludens — from a GameStorm to a first chapter or a full playable learning experience.
 permalink: /contact/
+hero_preload: /assets/images/hero/contact-hero.webp
 ---
 
 <section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/contact-hero.jpg' | relative_url }}');">
   <div class="container">
     <div class="hero-banner__inner">
       <p class="hero-banner__eyebrow">Contact</p>
-      <h1>Turn your learning challenge into a story that actively <span class="hl">engages</span> people</h1>
+      <h1>Turn your <span class="hl">learning challenge</span> into a <span class="hl">story</span> that <span class="hl">actively</span> engages people</h1>
       <hr class="hero-banner__accent">
       <p class="hero-banner__lead">
-        Do you have knowledge that needs to stick better, behaviour that needs to change, or a skill people need to
-        practise? Tell us what you are running into. We are happy to think along about a fitting route: from GameStorm
-        to first chapter or a full playable learning experience.
+        Do you have knowledge that needs to stick better, behaviour that needs to change, or a skill people need to practise?
       </p>
+      <p class="hero-banner__lead">
+        Tell us what you are running into. We are happy to think along about a fitting route: from GameStorm to first chapter or a full playable learning experience.
+      </p>
+      <div class="hero-banner__actions">
+        <a class="btn btn-primary" href="mailto:info@preludens.nl">Get in touch <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-secondary" href="{{ '/gamestorm/' | relative_url }}">Book a GameStorm</a>
+      </div>
     </div>
   </div>
   <span class="hero-banner__dots" aria-hidden="true"></span>
@@ -25,7 +31,7 @@ permalink: /contact/
 <section class="section">
   <div class="container contact-layout">
     <div class="contact-card">
-      <span class="section-label">For anyone with a question or who wants to spar</span>
+      <span class="section-label">For anyone with a question or who wants to spar.</span>
       <h2>Start the conversation</h2>
       <p>
         Want to explore a learning challenge, ask a question or look together at which route fits your organisation?
@@ -52,10 +58,11 @@ permalink: /contact/
           By appointment only.
         </li>
       </ul>
+      <a class="btn btn-primary" href="mailto:info@preludens.nl">Get in touch <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
     </div>
 
     <div class="contact-card">
-      <span class="section-label">Preludens’ mission is to lower the barrier to game-based learning</span>
+      <span class="section-label">Preludens’ mission is to lower the barrier to game-based learning.</span>
       <h2>How can you start with a low barrier?</h2>
 
       <div class="contact-start-option">
@@ -77,13 +84,10 @@ permalink: /contact/
       </div>
 
       <div class="contact-mail-cta">
-        <h3>Tell us briefly what you are running into</h3>
         <p>
-          Send an email to
-          <a href="mailto:info@preludens.nl">info@preludens.nl</a>.
-          We will get in touch to look together at which next step makes sense.
+          Tell us briefly what you are running into. We will get in touch to look together at which next step makes sense.
         </p>
-        <a class="btn btn-primary" href="mailto:info@preludens.nl">Send an email to info@preludens.nl <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-primary" href="mailto:info@preludens.nl">Get in touch <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </div>
@@ -99,7 +103,7 @@ permalink: /contact/
         </picture>
       </figure>
       <div class="media-block__body">
-        <span class="section-label">For anyone who wants to explore a learning challenge and get direction</span>
+        <span class="section-label">For anyone who wants to explore a learning challenge and get direction.</span>
         <h2>What can you expect?</h2>
         <p>
           We start with an introduction. In that conversation we map your challenge, audience and knowledge need. You
@@ -124,15 +128,14 @@ permalink: /contact/
 <section class="section section--navy">
   <div class="container">
     <div class="block-head">
-      <span class="section-label">The route in short</span>
-      <h2>From introduction to manageable delivery</h2>
+      <h2>The route in short</h2>
     </div>
     <ul class="checklist checklist--cols">
       <li>We get acquainted and map your learning need.</li>
       <li>In a GameStorm we translate challenge, audience and learning goals into a first direction.</li>
       <li>We design a story, choices, feedback and game mechanisms that fit practice.</li>
       <li>We develop, test and improve the learning experience.</li>
-      <li>After delivery we support distribution, management and support via your LMS or via Prepo.</li>
+      <li>After delivery we provide distribution, management and support via your own LMS or via Prepo.</li>
     </ul>
   </div>
 </section>
@@ -141,11 +144,11 @@ permalink: /contact/
   <div class="container">
     <div class="split split--wide-text">
       <div class="split__text">
-        <span class="section-label">After delivery the learning experience stays manageable</span>
-        <h2>A strong learning experience does not stop at launch</h2>
+        <h2>After delivery the learning experience stays manageable</h2>
         <p>
-          Via Prepo, MicroGames and Stories stay available, findable and well managed. You keep grip on distribution,
-          feedback, versions, statistics, files and support from one environment.
+          A strong learning experience does not stop at launch. Via Prepo, MicroGames and Stories stay available,
+          findable and well managed. You keep grip on distribution, feedback, versions, statistics, files and
+          support from one environment.
         </p>
         <p>
           For new MicroGames and Stories, three months of Prepo access is included. In that period the learning
