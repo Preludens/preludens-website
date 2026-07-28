@@ -150,7 +150,7 @@ hero_preload: /assets/images/hero/team-hero-light.webp
       <figure class="media-block__media">
         <picture>
           <source srcset="{{ '/assets/images/team/missie.webp' | relative_url }}" type="image/webp">
-          <img src="{{ '/assets/images/team/missie.jpg' | relative_url }}" alt="Preludens maakt game-based leren toegankelijk voor iedere organisatie" width="1400" height="875" loading="lazy" decoding="async">
+          <img src="{{ '/assets/images/team/missie.jpg' | relative_url }}" alt="De editor van Preludens met een MicroGame Story-missie in bewerking, naast een voorbeeld van hoe die missie er voor de deelnemer uitziet" width="1400" height="875" loading="lazy" decoding="async">
         </picture>
       </figure>
       <div class="media-block__body">
