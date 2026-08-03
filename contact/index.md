@@ -4,25 +4,19 @@ lang: nl
 title: Contact
 description: Neem contact op met Preludens — van GameStorm tot eerste hoofdstuk of volledige speelbare leerervaring.
 permalink: /contact/
-hero_preload: /assets/images/hero/contact-hero.webp
 ---
 
 <section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/contact-hero.jpg' | relative_url }}');">
   <div class="container">
     <div class="hero-banner__inner">
       <p class="hero-banner__eyebrow">Contact</p>
-      <h1>Zet je <span class="hl">leeropgave</span> om in een <span class="hl">verhaal</span> dat mensen <span class="hl">actief</span> meeneemt</h1>
+      <h1>Zet je leeropgave om in een verhaal dat mensen actief <span class="hl">meeneemt</span></h1>
       <hr class="hero-banner__accent">
       <p class="hero-banner__lead">
-        Heb je kennis die beter moet blijven hangen, gedrag dat moet veranderen of een vaardigheid die mensen moeten oefenen?
+        Heb je kennis die beter moet blijven hangen, gedrag dat moet veranderen of een vaardigheid die mensen moeten
+        oefenen? Vertel ons waar je tegenaan loopt. We denken graag mee over een passende route: van GameStorm tot
+        eerste hoofdstuk of volledige speelbare leerervaring.
       </p>
-      <p class="hero-banner__lead">
-        Vertel ons waar je tegenaan loopt. We denken graag mee over een passende route: van GameStorm tot eerste hoofdstuk of volledige speelbare leerervaring.
-      </p>
-      <div class="hero-banner__actions">
-        <a class="btn btn-primary" href="mailto:info@preludens.nl">Neem contact op <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-        <a class="btn btn-secondary" href="{{ '/gamestorm/' | relative_url }}">Plan een GameStorm</a>
-      </div>
     </div>
   </div>
   <span class="hero-banner__dots" aria-hidden="true"></span>
@@ -31,7 +25,7 @@ hero_preload: /assets/images/hero/contact-hero.webp
 <section class="section">
   <div class="container contact-layout">
     <div class="contact-card">
-      <span class="section-label">Voor wie al een vraag heeft of wil sparren.</span>
+      <span class="section-label">Voor wie al een vraag heeft of wil sparren</span>
       <h2>Start het gesprek</h2>
       <p>
         Wil je een leeropgave verkennen, een vraag stellen of samen kijken welke route past bij jouw organisatie?
@@ -58,11 +52,10 @@ hero_preload: /assets/images/hero/contact-hero.webp
           Alleen op afspraak.
         </li>
       </ul>
-      <a class="btn btn-primary" href="mailto:info@preludens.nl">Neem contact op <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
     </div>
 
     <div class="contact-card">
-      <span class="section-label">De missie van Preludens is om de drempel naar game-based leren te verlagen.</span>
+      <span class="section-label">De missie van Preludens is om de drempel naar game-based leren te verlagen</span>
       <h2>Hoe kun je laagdrempelig starten?</h2>
 
       <div class="contact-start-option">
@@ -84,10 +77,13 @@ hero_preload: /assets/images/hero/contact-hero.webp
       </div>
 
       <div class="contact-mail-cta">
+        <h3>Laat kort weten waar je tegenaan loopt</h3>
         <p>
-          Laat kort weten waar je tegenaan loopt. We nemen contact met je op om samen te kijken welke vervolgstap logisch is.
+          Stuur een mail naar
+          <a href="mailto:info@preludens.nl">info@preludens.nl</a>.
+          We nemen contact met je op om samen te kijken welke vervolgstap logisch is.
         </p>
-        <a class="btn btn-primary" href="mailto:info@preludens.nl">Neem contact op <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-primary" href="mailto:info@preludens.nl">Stuur een mail naar info@preludens.nl <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </div>
@@ -103,7 +99,7 @@ hero_preload: /assets/images/hero/contact-hero.webp
         </picture>
       </figure>
       <div class="media-block__body">
-        <span class="section-label">Voor wie een leeropgave wil verkennen en richting wil krijgen.</span>
+        <span class="section-label">Voor wie een leeropgave wil verkennen en richting wil krijgen</span>
         <h2>Wat kun je verwachten?</h2>
         <p>
           We beginnen met een kennismaking. Daarin brengen we je vraagstuk, doelgroep en kennisbehoefte in kaart. Je
@@ -128,7 +124,8 @@ hero_preload: /assets/images/hero/contact-hero.webp
 <section class="section section--navy">
   <div class="container">
     <div class="block-head">
-      <h2>De route in het kort</h2>
+      <span class="section-label">De route in het kort</span>
+      <h2>Van kennismaking tot beheersbare oplevering</h2>
     </div>
     <ul class="checklist checklist--cols">
       <li>We maken kennis en brengen je leerbehoefte in kaart.</li>
@@ -144,11 +141,11 @@ hero_preload: /assets/images/hero/contact-hero.webp
   <div class="container">
     <div class="split split--wide-text">
       <div class="split__text">
-        <h2>Na oplevering blijft de leerervaring beheersbaar</h2>
+        <span class="section-label">Na oplevering blijft de leerervaring beheersbaar</span>
+        <h2>Een sterke leerervaring stopt niet bij de lancering</h2>
         <p>
-          Een sterke leerervaring stopt niet bij de lancering. Via Prepo blijven MicroGames en Stories beschikbaar,
-          vindbaar en goed te beheren. Je houdt grip op distributie, feedback, versies, statistieken, bestanden en
-          support vanuit één omgeving.
+          Via Prepo blijven MicroGames en Stories beschikbaar, vindbaar en goed te beheren. Je houdt grip op
+          distributie, feedback, versies, statistieken, bestanden en support vanuit één omgeving.
         </p>
         <p>
           Bij nieuwe MicroGames en Stories is drie maanden toegang tot Prepo inbegrepen. In die periode kan de
