@@ -17,6 +17,30 @@
   }
 })();
 
+/* Sticky header shrink on scroll (normale pagina's + homepage fixed header) */
+(function () {
+  var header = document.querySelector("[data-header]");
+  if (!header) return;
+
+  var threshold = 40;
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+    header.classList.toggle("is-shrunk", window.scrollY > threshold);
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
+  }
+
+  update();
+  window.addEventListener("scroll", onScroll, { passive: true });
+})();
+
 (function () {
   var root = document.querySelector("[data-verhalen-filters]");
   if (!root) return;
@@ -62,9 +86,9 @@
     if (empty) empty.hidden = true;
     if (grid) grid.hidden = false;
 
-    // Uitgelichte (project)verhalen alleen tonen bij "alle" of "projecten"
+    // Uitgelicht blijft altijd zichtbaar (highlight, onafhankelijk van filter)
     if (featured) {
-      featured.hidden = !(filter === "all" || filter === "projecten");
+      featured.hidden = false;
     }
 
     var visibleCount = 0;
@@ -87,7 +111,12 @@
 
   tabs.forEach(function (tab) {
     tab.addEventListener("click", function () {
+      // Behoud scrollpositie: layoutwissel mag de pagina niet laten springen
+      var scrollY = window.scrollY;
       applyFilter(tab.getAttribute("data-verhaal-filter"));
+      if (typeof window.scrollTo === "function") {
+        window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
+      }
     });
   });
 
@@ -100,4 +129,69 @@
   }
 
   applyFilter(initialFilter);
+})();
+
+/* Subtiele scroll-reveal op subpagina's (niet op homepage fullpage-scroll) */
+(function () {
+  if (document.body.classList.contains("page-scroll-preview")) return;
+  if (!("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  var STAGGER_STEP_MS = 90;
+  var STAGGER_CAP_MS = 270;
+  var CTA_EXTRA_MS = 200;
+  var CTA_SELECTOR =
+    ".btn, .cta-feature, .cta-feature__actions, .hero-banner__actions, .contact-mail-cta, .sp-actions";
+
+  var sections = document.querySelectorAll(".section, .cta-feature");
+  if (!sections.length) return;
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      rootMargin: "0px 0px -10% 0px",
+      threshold: 0.1
+    }
+  );
+
+  var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+  sections.forEach(function (section) {
+    var blocks = [];
+
+    Array.prototype.forEach.call(section.children, function (child) {
+      // Markup wrappen bijna altijd in .container; unwrappen zodat stagger/CTA-laatst
+      // per contentblok werkt i.p.v. één keer per sectie.
+      if (child.classList.contains("container")) {
+        Array.prototype.forEach.call(child.children, function (inner) {
+          blocks.push(inner);
+        });
+      } else {
+        blocks.push(child);
+      }
+    });
+
+    blocks.forEach(function (el, index) {
+      var rect = el.getBoundingClientRect();
+      // Above-the-fold blijft zichtbaar: geen .reveal → geen hide-then-show flikkering
+      if (rect.top < viewportHeight * 0.9 && rect.bottom > 0) return;
+
+      var delay = Math.min(index * STAGGER_STEP_MS, STAGGER_CAP_MS);
+      var isCta =
+        (el.matches && el.matches(CTA_SELECTOR)) ||
+        (el.querySelector && el.querySelector(CTA_SELECTOR));
+
+      if (isCta) delay += CTA_EXTRA_MS;
+
+      el.classList.add("reveal");
+      el.style.transitionDelay = delay + "ms";
+      observer.observe(el);
+    });
+  });
 })();

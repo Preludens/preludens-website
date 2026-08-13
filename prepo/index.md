@@ -28,9 +28,9 @@ permalink: /prepo/
 
 <section class="section">
   <div class="container">
-    <div class="block-head">
+    <div class="block-head block-head--full">
       <span class="section-label">Distributie · Beheer · Support</span>
-      <h2>Houd grip op je MicroGames en Stories</h2>
+      <h2>Houd grip op je MicroGames en Stories via de Preludens Portal (Prepo)</h2>
     </div>
     <div class="split split--wide-text">
       <div class="split__text">
@@ -44,6 +44,11 @@ permalink: /prepo/
           terechtkomen. Resultaten moeten inzicht geven, en wanneer er iets verandert moet de leerervaring kunnen
           meegroeien.
         </p>
+        <p>
+          Met Prepo pas je zelf de teksten in je SCORM-bestanden aan. Daarna download je de bijgewerkte SCORM-versie
+          en plaats je die eenvoudig in je eigen LMS. Zo houd je meer grip op je leercontent, zonder dat elke
+          tekstwijziging een nieuw ontwikkeltraject hoeft te worden.
+        </p>
       </div>
       <div class="split__aside">
         <ul class="checklist">
@@ -51,6 +56,7 @@ permalink: /prepo/
           <li>Distributie via centrale, publieke links.</li>
           <li>Feedback en support gestructureerd verzameld.</li>
           <li>Statistieken en versiebeheer op één plek.</li>
+          <li>SCORM files bewerken en downloaden.</li>
         </ul>
       </div>
     </div>
@@ -119,7 +125,7 @@ permalink: /prepo/
         meer grip op gebruik, voortgang, beheer en doorontwikkeling.
       </p>
     </div>
-    <div class="feature-grid">
+    <div class="feature-grid feature-grid--3x3">
       <article class="feature-item">
         <span class="feature-item__num">1</span>
         <h3>Overzicht van projecten en producten</h3>
@@ -206,8 +212,8 @@ permalink: /prepo/
         of eenmalige pilot. Bijvoorbeeld wanneer je:
       </p>
     </div>
-    <ul class="checklist checklist--cols">
-      <li>meerdere MicroGames of Stories inzet;</li>
+    <ul class="checklist checklist--cols checklist--lift">
+      <li>meerdere MicroGames of Stories tegelijk wilt inzetten en beheren;</li>
       <li>leerervaringen beschikbaar wilt houden voor nieuwe deelnemers;</li>
       <li>versies wilt beheren;</li>
       <li>feedback gestructureerd wilt verzamelen;</li>

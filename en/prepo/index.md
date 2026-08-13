@@ -28,9 +28,9 @@ permalink: /prepo/
 
 <section class="section">
   <div class="container">
-    <div class="block-head">
+    <div class="block-head block-head--full">
       <span class="section-label">Distribution · Management · Support</span>
-      <h2>Stay in control of your MicroGames and Stories</h2>
+      <h2>Stay in control of your MicroGames and Stories via the Preludens Portal (Prepo)</h2>
     </div>
     <div class="split split--wide-text">
       <div class="split__text">
@@ -44,6 +44,11 @@ permalink: /prepo/
           somewhere to go. Results need to provide insight, and when something changes the learning experience must be
           able to grow with it.
         </p>
+        <p>
+          With Prepo you edit the texts in your SCORM files yourself. You then download the updated SCORM version and
+          place it easily in your own LMS. That way you keep more control over your learning content, without every
+          text change needing a new development project.
+        </p>
       </div>
       <div class="split__aside">
         <ul class="checklist">
@@ -51,6 +56,7 @@ permalink: /prepo/
           <li>Distribution via central, public links.</li>
           <li>Feedback and support gathered in a structured way.</li>
           <li>Statistics and version control in one place.</li>
+          <li>Edit and download SCORM files.</li>
         </ul>
       </div>
     </div>
@@ -119,7 +125,7 @@ permalink: /prepo/
         control over use, progress, management and further development.
       </p>
     </div>
-    <div class="feature-grid">
+    <div class="feature-grid feature-grid--3x3">
       <article class="feature-item">
         <span class="feature-item__num">1</span>
         <h3>Overview of projects and products</h3>
@@ -206,8 +212,8 @@ permalink: /prepo/
         one-off pilot. For example, when you:
       </p>
     </div>
-    <ul class="checklist checklist--cols">
-      <li>deploy multiple MicroGames or Stories;</li>
+    <ul class="checklist checklist--cols checklist--lift">
+      <li>want to deploy and manage multiple MicroGames or Stories at once;</li>
       <li>want to keep learning experiences available to new participants;</li>
       <li>need to manage versions;</li>
       <li>want to gather feedback in a structured way;</li>

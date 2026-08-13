@@ -55,7 +55,7 @@ permalink: /gamestorm/
 
 <section class="section section--mist">
   <div class="container">
-    <div class="media-block">
+    <div class="media-block media-block--start">
       <figure class="media-block__media">
         <picture>
           <source srcset="{{ '/assets/images/gamestorm/sessie.webp' | relative_url }}" type="image/webp">

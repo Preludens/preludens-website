@@ -2,38 +2,28 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a class="logo logo-footer" href="{{ '/' | relative_url }}" aria-label="Preludens – naar home">
-        <img class="logo-img" src="{{ '/assets/images/logo/preludens-logo-inverse.png' | relative_url }}" alt="Preludens" width="180" height="53">
+      <a class="logo logo-footer" href="{{ '/' | relative_url }}" aria-label="Preludens – {% if locale == 'en' %}home{% else %}naar home{% endif %}">
+        <img class="logo-img" src="{{ '/assets/images/logo/preludens-logo-inverse.png' | relative_url }}" alt="Preludens" width="240" height="70">
       </a>
+    </div>
+
+    <div class="footer-about-block">
       <p class="footer-tagline">Challenge · activate · motivate</p>
       <p class="footer-about">{{ t.footer.about }}</p>
+    </div>
+
+    <div class="footer-contact-block">
       <p class="footer-contact">
         <strong>{{ t.footer.direct_contact }}</strong><br>
         <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
         <span class="footer-response">{{ t.footer.response_note }}</span>
       </p>
-    </div>
-
-    <div class="footer-links">
-      <h2>{{ t.footer.navigation }}</h2>
-      <ul>
-        <li><a href="{{ '/' | relative_url }}">{{ t.nav.home }}</a></li>
-        <li><a href="{{ '/play/' | relative_url }}">{{ t.nav.play }}</a></li>
-        <li><a href="{{ '/diensten/' | relative_url }}">{{ t.nav.diensten }}</a></li>
-        <li><a href="{{ '/prepo/' | relative_url }}">{{ t.nav.prepo }}</a></li>
-        <li><a href="{{ '/team/' | relative_url }}">{{ t.nav.team }}</a></li>
-        <li><a href="{{ '/ontwerpmethodiek/' | relative_url }}">{{ t.nav.ontwerpmethodiek }}</a></li>
-        <li><a href="{{ '/impact/' | relative_url }}">{{ t.nav.impact }}</a></li>
-        <li><a href="{{ '/verhalen/' | relative_url }}">{{ t.nav.verhalen }}</a></li>
-        <li><a href="{{ '/gamestorm/' | relative_url }}">{{ t.nav.gamestorm }}</a></li>
-        <li><a href="{{ '/contact/' | relative_url }}">{{ t.nav.contact }}</a></li>
+      <ul class="footer-nav-compact">
+        {% assign footer_nav_keys = "home,play,diensten,prepo,team,verhalen,contact,ontwerpmethodiek,impact,gamestorm" | split: "," %}
+        {% for key in footer_nav_keys %}
+          <li><a href="{{ t.nav_paths[key] | relative_url }}">{{ t.nav[key] }}</a></li>
+        {% endfor %}
       </ul>
-    </div>
-
-    <div class="footer-cta">
-      <h2>{{ t.footer.start_playing }}</h2>
-      <p>{{ t.footer.start_playing_text }}</p>
-      <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">{{ t.cta.contact }}</a>
     </div>
   </div>
 

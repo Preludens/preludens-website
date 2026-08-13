@@ -47,11 +47,16 @@ permalink: /contact/
           Email: <a href="mailto:support@preludens.nl">support@preludens.nl</a><br>
           Phone: <a href="tel:+31154042028">+31 15 404 202 8</a>
         </li>
-        <li>
+        <li class="contact-list__visit">
           <strong>Visit</strong><br>
           By appointment only.
         </li>
       </ul>
+      <p class="contact-card__footnote">
+        Send an email to
+        <a href="mailto:info@preludens.nl">info@preludens.nl</a>.
+        We will get in touch to look together at which next step makes sense.
+      </p>
     </div>
 
     <div class="contact-card">
@@ -78,11 +83,6 @@ permalink: /contact/
 
       <div class="contact-mail-cta">
         <h3>Tell us briefly what you are running into</h3>
-        <p>
-          Send an email to
-          <a href="mailto:info@preludens.nl">info@preludens.nl</a>.
-          We will get in touch to look together at which next step makes sense.
-        </p>
         <a class="btn btn-primary" href="mailto:info@preludens.nl">Send an email to info@preludens.nl <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
@@ -91,8 +91,9 @@ permalink: /contact/
 
 <section class="section section--mist">
   <div class="container">
-    <div class="media-block">
+    <div class="media-block media-block--start">
       <figure class="media-block__media">
+        <!-- TODO [WACHTEN OP FOTO]: replace gamestorm/sessie.* with a photo of you together (TU Twente project) -->
         <picture>
           <source srcset="{{ '/assets/images/gamestorm/sessie.webp' | relative_url }}" type="image/webp">
           <img src="{{ '/assets/images/gamestorm/sessie.jpg' | relative_url }}" alt="An introduction and exploration of a learning challenge" width="1400" height="933" loading="lazy" decoding="async">
@@ -139,10 +140,18 @@ permalink: /contact/
 
 <section class="section">
   <div class="container">
-    <div class="split split--wide-text">
-      <div class="split__text">
-        <span class="section-label">After delivery the learning experience stays manageable</span>
-        <h2>A strong learning experience does not stop at launch</h2>
+    <div class="block-head block-head--full">
+      <span class="section-label">After delivery the learning experience stays manageable</span>
+      <h2>A strong learning experience does not stop at launch</h2>
+    </div>
+    <div class="media-block media-block--start media-block--reverse">
+      <figure class="media-block__media">
+        <picture>
+          <source srcset="{{ '/assets/images/prepo/overzicht.webp' | relative_url }}" type="image/webp">
+          <img src="{{ '/assets/images/prepo/overzicht.jpg' | relative_url }}" alt="Prepo overview for management after delivery" width="1400" height="875" loading="lazy" decoding="async">
+        </picture>
+      </figure>
+      <div class="media-block__body">
         <p>
           Via Prepo, MicroGames and Stories stay available, findable and well managed. You keep grip on distribution,
           feedback, versions, statistics, files and support from one environment.
@@ -152,12 +161,6 @@ permalink: /contact/
           experience can be launched, tested, followed and improved where needed.
         </p>
         <a class="btn btn-primary" href="{{ '/prepo/' | relative_url }}">More about Prepo <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-      </div>
-      <div class="split__aside">
-        <picture>
-          <source srcset="{{ '/assets/images/prepo/overzicht.webp' | relative_url }}" type="image/webp">
-          <img class="split-media" src="{{ '/assets/images/prepo/overzicht.jpg' | relative_url }}" alt="Prepo overview for management after delivery" width="1400" height="875" loading="lazy" decoding="async" style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--color-border);box-shadow:var(--shadow-card);">
-        </picture>
       </div>
     </div>
   </div>

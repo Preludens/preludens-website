@@ -13,10 +13,6 @@ permalink: /diensten/
       <h1>From knowledge that sits unused to learning experiences that get people <span class="hl">moving</span></h1>
       <hr class="hero-banner__accent">
       <p class="hero-banner__lead">
-        In many organisations the knowledge is already there. Rules are written down, processes are explained and
-        training is ready. Yet in practice people do not always know what to do when the situation becomes complex.
-      </p>
-      <p class="hero-banner__lead">
         Preludens turns complex knowledge into interactive learning experiences with story, play and feedback. Teams
         are challenged to explore situations, activated to make choices and motivated to apply knowledge in practice.
       </p>
@@ -29,9 +25,9 @@ permalink: /diensten/
   <span class="hero-banner__dots" aria-hidden="true"></span>
 </section>
 
-<section class="section">
+<section class="section section--tight-below">
   <div class="container">
-    <div class="block-head">
+    <div class="block-head block-head--full">
       <span class="section-label">When knowledge sits unused</span>
       <h2>From knowledge transfer to applicable behaviour</h2>
     </div>
@@ -71,7 +67,7 @@ permalink: /diensten/
   </div>
 </section>
 
-<section class="section section--mist">
+<section class="section section--mist section--tight-below section--tight-above">
   <div class="container">
     <div class="block-head">
       <span class="section-label">Three routes to make knowledge playable and applicable</span>
@@ -85,7 +81,8 @@ permalink: /diensten/
   </div>
 </section>
 
-<section class="section" id="microgame-stories">
+<!-- TODO [WACHTEN OP FOTO]: add product images to the right of MicroGame Stories, Dilemma Storytelling and Game Thinking (praatplaten). -->
+<section class="section section--tight-above" id="microgame-stories">
   <div class="container">
     <article class="service-block service-block--coral">
       <div class="service-block__intro">
@@ -219,42 +216,60 @@ permalink: /diensten/
         which route fits: a MicroGame Story, Dilemma Storytelling, Game Thinking or a first GameStorm.
       </p>
     </div>
-    <div class="feature-grid">
-      <article class="feature-item">
-        <span class="feature-item__num">1</span>
-        <h3>Explore</h3>
-        <p>We bring your learning challenge into sharp focus. In a first conversation or GameStorm we examine the problem, audience, context and key learning goals.</p>
-      </article>
-      <article class="feature-item">
-        <span class="feature-item__num">2</span>
-        <h3>Sharpen</h3>
-        <p>We translate the learning challenge into clear goals and design choices. We make concrete what participants should understand, recognise, choose or apply afterwards.</p>
-      </article>
-      <article class="feature-item">
-        <span class="feature-item__num">3</span>
-        <h3>Gather content</h3>
-        <p>You bring the practice knowledge; we make it playable. We collect training, processes, cases and expert knowledge and explore how that knowledge becomes playable.</p>
-      </article>
-      <article class="feature-item">
-        <span class="feature-item__num">4</span>
-        <h3>Choose the right form</h3>
-        <p>Want to train basic knowledge? A MicroGame Story. Want to strengthen decisiveness? Dilemma Storytelling. Solution not sharp yet? We start with Game Thinking.</p>
-      </article>
-      <article class="feature-item">
-        <span class="feature-item__num">5</span>
-        <h3>Design</h3>
-        <p>We translate knowledge into story, choices and feedback. Together we work towards recognisable situations, fitting game mechanisms and a first storyline.</p>
-      </article>
-      <article class="feature-item">
-        <span class="feature-item__num">6</span>
-        <h3>Develop and test</h3>
-        <p>We make the learning experience ready for use: develop, test and improve where needed — from MicroGame Story to blueprint or publishable module.</p>
-      </article>
-      <article class="feature-item">
-        <span class="feature-item__num">7</span>
-        <h3>Deliver and manage</h3>
-        <p>You get a learning experience that stays available, findable and improvable — in your own learning environment or via Prepo.</p>
-      </article>
+    <div class="feature-grid feature-grid--pyramid">
+      <div class="feature-grid__row feature-grid__row--3">
+        <article class="feature-item">
+          <div class="feature-item__head">
+            <span class="feature-item__num">1</span>
+            <h3>Explore</h3>
+          </div>
+          <p>We bring your learning challenge into sharp focus. In a first conversation or GameStorm we examine the problem, audience, context and key learning goals.</p>
+        </article>
+        <article class="feature-item">
+          <div class="feature-item__head">
+            <span class="feature-item__num">2</span>
+            <h3>Sharpen</h3>
+          </div>
+          <p>We translate the learning challenge into clear goals and design choices. We make concrete what participants should understand, recognise, choose or apply afterwards.</p>
+        </article>
+        <article class="feature-item">
+          <div class="feature-item__head">
+            <span class="feature-item__num">3</span>
+            <h3>Gather content</h3>
+          </div>
+          <p>You bring the practice knowledge; we make it playable. We collect training, processes, cases and expert knowledge and explore how that knowledge becomes playable.</p>
+        </article>
+      </div>
+      <div class="feature-grid__row feature-grid__row--4">
+        <article class="feature-item">
+          <div class="feature-item__head">
+            <span class="feature-item__num">4</span>
+            <h3>Choose the right form</h3>
+          </div>
+          <p>Want to train basic knowledge? A MicroGame Story. Want to strengthen decisiveness? Dilemma Storytelling. Solution not sharp yet? We start with Game Thinking.</p>
+        </article>
+        <article class="feature-item">
+          <div class="feature-item__head">
+            <span class="feature-item__num">5</span>
+            <h3>Design</h3>
+          </div>
+          <p>We translate knowledge into story, choices and feedback. Together we work towards recognisable situations, fitting game mechanisms and a first storyline.</p>
+        </article>
+        <article class="feature-item">
+          <div class="feature-item__head">
+            <span class="feature-item__num">6</span>
+            <h3>Develop and test</h3>
+          </div>
+          <p>We make the learning experience ready for use: develop, test and improve where needed — from MicroGame Story to blueprint or publishable module.</p>
+        </article>
+        <article class="feature-item">
+          <div class="feature-item__head">
+            <span class="feature-item__num">7</span>
+            <h3>Deliver and manage</h3>
+          </div>
+          <p>You get a learning experience that stays available, findable and improvable — in your own learning environment or via Prepo.</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
