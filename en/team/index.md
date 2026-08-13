@@ -50,7 +50,9 @@ permalink: /team/
         </p>
       </div>
       <div class="split__aside">
-        <h3 style="margin-bottom:var(--space-sm)">From involvement to applicable knowledge</h3>
+        <div class="aside-lead">
+          <h3>From involvement to applicable knowledge</h3>
+        </div>
         <ul class="checklist">
           <li>Involvement activates people.</li>
           <li>Play and storytelling create that involvement.</li>
@@ -120,6 +122,7 @@ permalink: /team/
   <div class="container">
     <div class="media-block media-block--reverse">
       <figure class="media-block__media">
+        <!-- TODO [WACHTEN OP FOTO]: replace missie.* with a photo of Daan + Jan-Willem at the New Future Lab table -->
         <picture>
           <source srcset="{{ '/assets/images/team/missie.webp' | relative_url }}" type="image/webp">
           <img src="{{ '/assets/images/team/missie.jpg' | relative_url }}" alt="Preludens makes game-based learning accessible to every organisation" width="1400" height="875" loading="lazy" decoding="async">
@@ -145,9 +148,9 @@ permalink: /team/
 
 <section class="section section--navy">
   <div class="container">
-    <div class="block-head">
-      <span class="section-label">What we stand for</span>
-      <h2>Four principles that guide every design</h2>
+    <div class="block-head block-head--xl">
+      <h2>What we stand for</h2>
+      <p>Quality energizes us.</p>
     </div>
     <ul class="value-list">
       <li>

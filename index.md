@@ -59,7 +59,8 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     width: 100%;
     max-width: var(--max-width);
     margin-inline: auto;
-    padding: clamp(2rem, 6vw, 5rem) var(--space-lg);
+    /* B1: iets meer verticale ademruimte op hoge viewports; compact op klein */
+    padding: clamp(2.25rem, 7vh, 6rem) var(--space-lg);
   }
 
   /* Achtergrondlagen per paneel */
@@ -163,30 +164,20 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     align-items: start;
   }
 
-  .sp-footer-reveal .site-footer h2 {
-    margin-bottom: 0.45rem;
-  }
-
   .sp-footer-reveal .site-footer p {
     margin-bottom: 0.45rem;
     font-size: 0.92rem;
     line-height: 1.45;
   }
 
-  .sp-footer-reveal .footer-links li {
-    margin-bottom: 0.15rem;
-  }
-
-  .sp-footer-reveal .footer-cta .btn {
-    padding: 0.65rem 1rem;
-  }
-
-  .sp-footer-reveal .footer-cta p {
-    display: none;
+  .sp-footer-reveal .footer-nav-compact {
+    margin-top: 0.55rem;
+    gap: 0.25rem 0.75rem;
+    font-size: 0.8rem;
   }
 
   .sp-footer-reveal .logo-footer .logo-img {
-    height: 1.85rem;
+    height: 2.75rem;
   }
 
   .sp-footer-reveal .footer-bottom {
@@ -243,25 +234,28 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     font-size: clamp(1.9rem, 4.2vw, 3rem);
     font-weight: 800;
     line-height: 1.08;
-    margin: 0 0 var(--space-md);
+    margin: 0 0 clamp(var(--space-md), 2.5vh, var(--space-lg));
     max-width: 22ch;
     color: inherit;
+    letter-spacing: 0.015em;
   }
   .sp-panel--hero h1 {
     font-family: var(--font-display);
     font-size: clamp(2.4rem, 6vw, 4rem);
     font-weight: 800;
     line-height: 1.04;
-    margin: 0 0 var(--space-md);
+    margin: 0 0 clamp(var(--space-md), 2.5vh, var(--space-lg));
     max-width: 18ch;
     color: var(--color-white);
+    /* B2: globale h1 heeft negatieve letter-spacing; hier iets open zodat e+a niet raken */
+    letter-spacing: 0.015em;
   }
   .sp-panel--hero h1 .hl { color: var(--color-preludens-gold); }
   .sp-panel p.sp-lead {
     font-size: clamp(1.05rem, 1.6vw, 1.3rem);
     line-height: 1.6;
     max-width: 46ch;
-    margin: 0 0 var(--space-md);
+    margin: 0 0 clamp(var(--space-sm), 2vh, var(--space-md));
   }
   .sp-panel--hero p,
   .sp-panel--navy p,
@@ -271,7 +265,7 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
   .sp-panel--warm p { color: var(--color-deep-navy); }
   .sp-panel--cream p { color: var(--color-ink-soft); }
 
-  .sp-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-md); }
+  .sp-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: clamp(var(--space-md), 3vh, var(--space-lg)); }
   .sp-actions .btn { padding: 0.85rem 1.4rem; border-radius: var(--radius-md); font-weight: 600; }
 
   /* Geruststelling onder de CTA (risk reversal) */
@@ -285,36 +279,78 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     opacity: 0.8;
   }
 
-  /* Opdrachtgevers-strip (social proof / vertrouwen) */
+  /* Opdrachtgevers — gelijke pill-cards, wrappend grid, geen lateraal scrollen */
   .sp-clients {
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-sm);
     padding: 0;
-    margin: var(--space-md) 0 0;
+    margin: clamp(var(--space-md), 3vh, var(--space-lg)) 0 0;
+    max-width: 42rem;
+    justify-content: center;
   }
   .sp-clients li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 0;
+    width: 100%;
+    height: 4rem;
+    min-height: 4rem;
     font-family: var(--font-display);
-    font-size: 0.82rem;
+    font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.02em;
-    color: rgba(246, 249, 249, 0.9);
-    padding: 0.35rem 0.7rem;
+    line-height: 1.15;
+    text-align: center;
+    color: var(--color-cloud-white);
+    padding: 0.35rem 0.6rem;
     border: 1px solid rgba(246, 249, 249, 0.22);
     border-radius: var(--radius-pill);
     background: rgba(246, 249, 249, 0.06);
+    overflow: hidden;
+  }
+  .sp-clients__logo {
+    display: block;
+    max-width: 78%;
+    max-height: 1.7rem;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* Monochroom / lichte tint op donkere panel-achtergrond */
+    filter: grayscale(1) brightness(2.2) contrast(0.85);
+    opacity: 0.9;
+  }
+  @media (max-width: 600px) {
+    .sp-clients {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: none;
+    }
+    .sp-clients li {
+      height: 3.75rem;
+      min-height: 3.75rem;
+      font-size: 0.68rem;
+    }
   }
 
-  /* Warm (geel/koraal) paneel: koraal primaire knop valt weg tegen de achtergrond.
-     Gebruik een blauwe knop voor voldoende contrast. */
+  /* Warm paneel CTA: donkerblauw + wit (consistent met hero-banner CTA's).
+     Verberg decoratieve .btn-primary::after-boog (streep-artefact). */
   .sp-panel--warm .sp-actions .btn-primary {
-    background: var(--color-regal-navy);
+    background: var(--color-brand-navy);
     color: var(--color-white) !important;
+    border-color: rgba(246, 249, 249, 0.42);
+    box-shadow: var(--shadow-soft);
   }
   .sp-panel--warm .sp-actions .btn-primary:hover {
-    background: var(--color-prussian-blue);
+    background: var(--color-harbor-teal);
     color: var(--color-white) !important;
+    border-color: rgba(242, 196, 92, 0.45);
+    box-shadow: var(--shadow-soft);
+  }
+  .sp-panel--warm .sp-actions .btn-primary::after {
+    content: none;
   }
 
   .sp-hero-pillars {
@@ -388,6 +424,31 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
     color: var(--color-ink);
   }
   .sp-panel--testimonial .sp-eyebrow { color: var(--color-harbor-teal); }
+
+  /* B5: bloktitel boven carousel — h2 voor SEO, visueel als blok-H1 */
+  .sp-panel--testimonial > .sp-inner > h2 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: 0.015em;
+    max-width: 20ch;
+    margin: 0 0 clamp(var(--space-md), 3vh, var(--space-lg));
+    color: var(--color-ink);
+  }
+
+  /* Carousel: 1 slide tegelijk; active slide behoudt flex-layout van testimonial */
+  .sp-carousel__slide.is-active { display: flex; }
+  .sp-carousel__dots[hidden] { display: none; }
+  .sp-carousel__dot {
+    width: 0.85rem;
+    height: 0.85rem;
+    background: rgba(11, 42, 53, 0.22);
+    transition: background var(--transition), box-shadow var(--transition);
+  }
+  .sp-carousel__dot.is-active {
+    background: var(--color-preludens-gold);
+    box-shadow: 0 0 0 3px rgba(237, 167, 14, 0.18);
+  }
 
   .sp-testimonial {
     display: flex;
@@ -729,9 +790,39 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
       </ol>
       <ul class="sp-clients" aria-label="Een selectie van opdrachtgevers">
         <li>Hogeschool van Amsterdam</li>
-        <li>NNVO</li>
-        <li>21CC</li>
-        <li>Studium</li>
+        <li>
+          <img
+            class="sp-clients__logo"
+            src="{{ '/assets/images/clients/nnvo.png' | relative_url }}"
+            alt="NNVO"
+            width="160"
+            height="48"
+            loading="lazy"
+            decoding="async"
+          >
+        </li>
+        <li>
+          <img
+            class="sp-clients__logo"
+            src="{{ '/assets/images/clients/21cc.png' | relative_url }}"
+            alt="21CC"
+            width="160"
+            height="48"
+            loading="lazy"
+            decoding="async"
+          >
+        </li>
+        <li>
+          <img
+            class="sp-clients__logo"
+            src="{{ '/assets/images/clients/studium.png' | relative_url }}"
+            alt="Studium"
+            width="160"
+            height="48"
+            loading="lazy"
+            decoding="async"
+          >
+        </li>
         <li>Wijkz</li>
         <li>onITnow</li>
       </ul>
@@ -744,6 +835,7 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
   <!-- 6. Klant-testimonial -->
   <section class="sp-panel sp-panel--testimonial" data-sp="5" data-title="Wat klanten zeggen">
     <div class="sp-inner">
+      <h2>Ervaringen uit de praktijk</h2>
       <div class="sp-carousel" data-sp-carousel>
         <div class="sp-carousel__track">
           <figure class="sp-testimonial sp-carousel__slide is-active">
@@ -757,7 +849,6 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
               decoding="async"
             >
             <div class="sp-testimonial__body">
-              <span class="sp-eyebrow">Ervaringen uit de praktijk</span>
               <blockquote>
                 Daan heeft ons erg geholpen van een statische ontwerptool een game te maken waarin spelers op alle aspecten van hun keuzes uitgedaagd worden. Het werk van Daan zorgde ervoor dat alle stappen logisch en voor een breed publiek van professionals en studenten zijn neergezet in een prachtig kaartspel.
               </blockquote>
@@ -846,19 +937,58 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
   if (carousel) {
     var slides = Array.prototype.slice.call(carousel.querySelectorAll(".sp-carousel__slide"));
     var dots = Array.prototype.slice.call(carousel.querySelectorAll("[data-sp-carousel-dot]"));
+    var dotsWrap = carousel.querySelector(".sp-carousel__dots");
+    var slideIndex = 0;
+    var autoTimer = null;
+    var AUTO_MS = 6000;
+    var multiSlide = slides.length > 1;
+
+    if (dotsWrap && !multiSlide) {
+      dotsWrap.hidden = true;
+    }
+
     function showSlide(index) {
+      if (!slides.length) return;
+      slideIndex = ((index % slides.length) + slides.length) % slides.length;
       slides.forEach(function (slide, i) {
-        slide.classList.toggle("is-active", i === index);
+        slide.classList.toggle("is-active", i === slideIndex);
       });
       dots.forEach(function (dot, i) {
-        dot.classList.toggle("is-active", i === index);
+        dot.classList.toggle("is-active", i === slideIndex);
       });
     }
+
+    function stopCarouselAuto() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    function startCarouselAuto() {
+      stopCarouselAuto();
+      if (!multiSlide || reduced) return;
+      autoTimer = setInterval(function () {
+        showSlide(slideIndex + 1);
+      }, AUTO_MS);
+    }
+
     dots.forEach(function (dot) {
       dot.addEventListener("click", function () {
         showSlide(Number(dot.getAttribute("data-sp-carousel-dot")) || 0);
+        startCarouselAuto();
       });
     });
+
+    if (multiSlide && !reduced) {
+      carousel.addEventListener("mouseenter", stopCarouselAuto);
+      carousel.addEventListener("mouseleave", startCarouselAuto);
+      carousel.addEventListener("focusin", stopCarouselAuto);
+      carousel.addEventListener("focusout", function (e) {
+        if (!carousel.contains(e.relatedTarget)) startCarouselAuto();
+      });
+      startCarouselAuto();
+    }
   }
 
   // Programma-gestuurde snap: één gebaar = automatisch naar de volgende view

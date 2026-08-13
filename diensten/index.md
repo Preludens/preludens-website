@@ -13,11 +13,6 @@ permalink: /diensten/
       <h1>Van kennis die blijft liggen naar leerervaringen die mensen in <span class="hl">beweging</span> brengen</h1>
       <hr class="hero-banner__accent">
       <p class="hero-banner__lead">
-        In veel organisaties is de kennis er wel. De regels zijn beschreven, de processen zijn uitgelegd en de training
-        staat klaar. Toch blijkt in de praktijk dat mensen niet altijd weten wat ze moeten doen wanneer de situatie
-        complex wordt.
-      </p>
-      <p class="hero-banner__lead">
         Preludens vertaalt complexe kennis naar interactieve leerervaringen met verhaal, spel en feedback. Zo worden
         teams uitgedaagd om situaties te verkennen, geactiveerd om keuzes te maken en gemotiveerd om kennis toe te
         passen in de praktijk.
@@ -31,9 +26,9 @@ permalink: /diensten/
   <span class="hero-banner__dots" aria-hidden="true"></span>
 </section>
 
-<section class="section">
+<section class="section section--tight-below">
   <div class="container">
-    <div class="block-head">
+    <div class="block-head block-head--full">
       <span class="section-label">Als kennis blijft liggen</span>
       <h2>Van kennisoverdracht naar toepasbaar gedrag</h2>
     </div>
@@ -73,7 +68,7 @@ permalink: /diensten/
   </div>
 </section>
 
-<section class="section section--mist">
+<section class="section section--mist section--tight-below section--tight-above">
   <div class="container">
     <div class="block-head">
       <span class="section-label">Drie routes om kennis speelbaar en toepasbaar te maken</span>
@@ -87,7 +82,8 @@ permalink: /diensten/
   </div>
 </section>
 
-<section class="section" id="microgame-stories">
+<!-- TODO [WACHTEN OP FOTO]: plaats rechts van de tekst een productafbeelding bij MicroGame Stories, Dilemma Storytelling en Game Thinking (praatplaten). -->
+<section class="section section--tight-above" id="microgame-stories">
   <div class="container">
     <article class="service-block service-block--coral">
       <div class="service-block__intro">
@@ -220,42 +216,60 @@ permalink: /diensten/
         MicroGame Story, Dilemma Storytelling, Game Thinking of een eerste GameStorm.
       </p>
     </div>
-    <div class="feature-grid">
-      <article class="feature-item">
-        <span class="feature-item__num">1</span>
-        <h3>Verkennen</h3>
-        <p>We brengen je leeropgave scherp in beeld. In een eerste gesprek of GameStorm onderzoeken we het probleem, de doelgroep, de context en de belangrijkste leerdoelen.</p>
-      </article>
-      <article class="feature-item">
-        <span class="feature-item__num">2</span>
-        <h3>Scherpstellen</h3>
-        <p>We vertalen de leeropgave naar duidelijke doelen en ontwerpkeuzes. We maken concreet wat deelnemers na afloop moeten begrijpen, herkennen, kiezen of toepassen.</p>
-      </article>
-      <article class="feature-item">
-        <span class="feature-item__num">3</span>
-        <h3>Inhoud verzamelen</h3>
-        <p>Jullie brengen de praktijkkennis, wij maken die speelbaar. We verzamelen trainingen, processen, casussen en expertkennis en onderzoeken hoe die kennis speelbaar wordt.</p>
-      </article>
-      <article class="feature-item">
-        <span class="feature-item__num">4</span>
-        <h3>De juiste vorm kiezen</h3>
-        <p>Wil je basiskennis trainen, dan past een MicroGame Story. Wil je besluitvaardigheid versterken, dan Dilemma Storytelling. Is de oplossing nog niet scherp, dan starten we met Game Thinking.</p>
-      </article>
-      <article class="feature-item">
-        <span class="feature-item__num">5</span>
-        <h3>Ontwerpen</h3>
-        <p>We vertalen kennis naar verhaal, keuzes en feedback. Samen werken we toe naar herkenbare situaties, passende spelmechanismen en een eerste verhaallijn.</p>
-      </article>
-      <article class="feature-item">
-        <span class="feature-item__num">6</span>
-        <h3>Ontwikkelen en testen</h3>
-        <p>We maken de leerervaring klaar voor gebruik: ontwikkelen, testen en verbeteren waar nodig — van MicroGame Story tot blauwdruk of publiceerbare module.</p>
-      </article>
-      <article class="feature-item">
-        <span class="feature-item__num">7</span>
-        <h3>Opleveren en beheren</h3>
-        <p>Je krijgt een leerervaring die beschikbaar, vindbaar en doorontwikkelbaar blijft — in je eigen leeromgeving of via Prepo.</p>
-      </article>
+    <div class="feature-grid feature-grid--pyramid">
+      <div class="feature-grid__row feature-grid__row--3">
+        <article class="feature-item">
+          <div class="feature-item__head">
+            <span class="feature-item__num">1</span>
+            <h3>Verkennen</h3>
+          </div>
+          <p>We brengen je leeropgave scherp in beeld. In een eerste gesprek of GameStorm onderzoeken we het probleem, de doelgroep, de context en de belangrijkste leerdoelen.</p>
+        </article>
+        <article class="feature-item">
+          <div class="feature-item__head">
+            <span class="feature-item__num">2</span>
+            <h3>Scherpstellen</h3>
+          </div>
+          <p>We vertalen de leeropgave naar duidelijke doelen en ontwerpkeuzes. We maken concreet wat deelnemers na afloop moeten begrijpen, herkennen, kiezen of toepassen.</p>
+        </article>
+        <article class="feature-item">
+          <div class="feature-item__head">
+            <span class="feature-item__num">3</span>
+            <h3>Inhoud verzamelen</h3>
+          </div>
+          <p>Jullie brengen de praktijkkennis, wij maken die speelbaar. We verzamelen trainingen, processen, casussen en expertkennis en onderzoeken hoe die kennis speelbaar wordt.</p>
+        </article>
+      </div>
+      <div class="feature-grid__row feature-grid__row--4">
+        <article class="feature-item">
+          <div class="feature-item__head">
+            <span class="feature-item__num">4</span>
+            <h3>De juiste vorm kiezen</h3>
+          </div>
+          <p>Wil je basiskennis trainen, dan past een MicroGame Story. Wil je besluitvaardigheid versterken, dan Dilemma Storytelling. Is de oplossing nog niet scherp, dan starten we met Game Thinking.</p>
+        </article>
+        <article class="feature-item">
+          <div class="feature-item__head">
+            <span class="feature-item__num">5</span>
+            <h3>Ontwerpen</h3>
+          </div>
+          <p>We vertalen kennis naar verhaal, keuzes en feedback. Samen werken we toe naar herkenbare situaties, passende spelmechanismen en een eerste verhaallijn.</p>
+        </article>
+        <article class="feature-item">
+          <div class="feature-item__head">
+            <span class="feature-item__num">6</span>
+            <h3>Ontwikkelen en testen</h3>
+          </div>
+          <p>We maken de leerervaring klaar voor gebruik: ontwikkelen, testen en verbeteren waar nodig — van MicroGame Story tot blauwdruk of publiceerbare module.</p>
+        </article>
+        <article class="feature-item">
+          <div class="feature-item__head">
+            <span class="feature-item__num">7</span>
+            <h3>Opleveren en beheren</h3>
+          </div>
+          <p>Je krijgt een leerervaring die beschikbaar, vindbaar en doorontwikkelbaar blijft — in je eigen leeromgeving of via Prepo.</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>

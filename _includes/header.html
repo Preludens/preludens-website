@@ -36,7 +36,7 @@
             {% assign is_active = true %}
           {% endif %}
           <li>
-            <a href="{{ href }}"{% if is_active %} aria-current="page"{% endif %}>{{ label }}</a>
+            <a href="{{ href }}" data-text="{{ label }}"{% if is_active %} aria-current="page"{% endif %}>{{ label }}</a>
           </li>
         {% endfor %}
       </ul>
