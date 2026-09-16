@@ -195,3 +195,50 @@
     });
   });
 })();
+
+/* Lightbox voor verhaal-screenshots */
+(function () {
+  var dialog = document.getElementById("verhaal-lightbox");
+  if (!dialog || typeof dialog.showModal !== "function") return;
+
+  var image = dialog.querySelector(".lightbox__image");
+  var closeBtn = dialog.querySelector("[data-lightbox-close]");
+  var lastTrigger = null;
+
+  function openLightbox(trigger) {
+    if (!image) return;
+    lastTrigger = trigger;
+    image.src = trigger.getAttribute("data-lightbox-src") || "";
+    image.alt = trigger.getAttribute("data-lightbox-alt") || "";
+    dialog.showModal();
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeLightbox() {
+    if (!dialog.open) return;
+    dialog.close();
+  }
+
+  document.addEventListener("click", function (event) {
+    var trigger = event.target.closest("[data-lightbox-open]");
+    if (!trigger) return;
+    event.preventDefault();
+    openLightbox(trigger);
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeLightbox);
+  }
+
+  dialog.addEventListener("click", function (event) {
+    if (event.target === dialog) closeLightbox();
+  });
+
+  dialog.addEventListener("close", function () {
+    if (image) {
+      image.removeAttribute("src");
+      image.alt = "";
+    }
+    if (lastTrigger) lastTrigger.focus();
+  });
+})();

@@ -91,6 +91,10 @@ verhaal:
   summary_label: "In het kort"
   highlights_label: "Belangrijkste inzichten"
   facts_label: "Kerngegevens"
+  lightbox_title: "Afbeelding vergroten"
+  lightbox_open: "Vergroot afbeelding"
+  lightbox_close: "Sluiten"
+  lightbox_zoom: "Vergroot"
 
 play_blog:
   breadcrumb: "Blog"

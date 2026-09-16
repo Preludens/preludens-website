@@ -46,17 +46,24 @@ layout: default
       <div class="verhaal-layout">
         <div class="verhaal-main">
           {% assign figure_shown = false %}
+          {% assign has_figures = false %}
+          {% if page.figures %}
+            {% assign has_figures = true %}
+          {% endif %}
           {% if uitdaging %}
             <section class="verhaal-section">
               <h2>{{ t.verhaal.challenge }}</h2>
               <p>{{ uitdaging }}</p>
             </section>
-            {% if page.image %}
-              <figure class="verhaal-figure">
-                <img src="{{ '/assets/images/verhalen/' | append: page.image | relative_url }}" alt="" width="960" height="540" loading="lazy" decoding="async">
-              </figure>
-              {% assign figure_shown = true %}
-            {% endif %}
+            {% include verhaal-shot.html after="uitdaging" %}
+            {% unless has_figures %}
+              {% if page.image %}
+                <figure class="verhaal-figure">
+                  <img src="{{ '/assets/images/verhalen/' | append: page.image | relative_url }}" alt="" width="960" height="540" loading="lazy" decoding="async">
+                </figure>
+                {% assign figure_shown = true %}
+              {% endif %}
+            {% endunless %}
           {% endif %}
 
           {% if ontwerpvraag %}
@@ -64,6 +71,7 @@ layout: default
               <h2>{{ t.verhaal.design_question }}</h2>
               <p>{{ ontwerpvraag }}</p>
             </section>
+            {% include verhaal-shot.html after="ontwerpvraag" %}
           {% endif %}
 
           {% if aanpak %}
@@ -71,12 +79,15 @@ layout: default
               <h2>{{ t.verhaal.our_solution }}</h2>
               <p>{{ aanpak }}</p>
             </section>
-            {% unless figure_shown %}
-              {% if page.image %}
-                <figure class="verhaal-figure">
-                  <img src="{{ '/assets/images/verhalen/' | append: page.image | relative_url }}" alt="" width="960" height="540" loading="lazy" decoding="async">
-                </figure>
-              {% endif %}
+            {% include verhaal-shot.html after="aanpak" %}
+            {% unless has_figures %}
+              {% unless figure_shown %}
+                {% if page.image %}
+                  <figure class="verhaal-figure">
+                    <img src="{{ '/assets/images/verhalen/' | append: page.image | relative_url }}" alt="" width="960" height="540" loading="lazy" decoding="async">
+                  </figure>
+                {% endif %}
+              {% endunless %}
             {% endunless %}
           {% endif %}
 
@@ -85,6 +96,7 @@ layout: default
               <h2>{{ t.verhaal.route }}</h2>
               <p>{{ route }}</p>
             </section>
+            {% include verhaal-shot.html after="route" %}
           {% endif %}
 
           {% if ervaring %}
@@ -92,6 +104,7 @@ layout: default
               <h2>{{ t.verhaal.experience }}</h2>
               <p>{{ ervaring }}</p>
             </section>
+            {% include verhaal-shot.html after="ervaring" %}
           {% endif %}
 
           {% if resultaat %}
@@ -99,6 +112,7 @@ layout: default
               <h2>{{ t.verhaal.result }}</h2>
               <p>{{ resultaat }}</p>
             </section>
+            {% include verhaal-shot.html after="resultaat" %}
           {% endif %}
 
           {% if inzicht %}
@@ -106,11 +120,13 @@ layout: default
               <h2>{{ t.verhaal.insight }}</h2>
               <p>{{ inzicht }}</p>
             </section>
+            {% include verhaal-shot.html after="inzicht" %}
           {% endif %}
         </div>
 
         <aside class="verhaal-aside">
-          {% comment %} Quote met portret. Zonder eigen quote tonen we een placeholder-referentie. {% endcomment %}
+          {% comment %} Quote met portret. Zonder eigen quote tonen we een placeholder, tenzij quote: false. {% endcomment %}
+          {% unless page.quote == false %}
           {% assign q_text = page.quote %}
           {% assign q_author = page.quote_author %}
           {% assign q_role = page.quote_role %}
@@ -139,6 +155,7 @@ layout: default
               </figcaption>
             {% endif %}
           </figure>
+          {% endunless %}
 
           {% if page.highlights %}
             <div class="verhaal-aside-box">
@@ -180,3 +197,11 @@ layout: default
     </div>
   </div>
 </article>
+
+{% if page.figures %}
+<dialog class="lightbox" id="verhaal-lightbox" aria-labelledby="verhaal-lightbox-title">
+  <p class="sr-only" id="verhaal-lightbox-title">{{ t.verhaal.lightbox_title }}</p>
+  <button class="lightbox__close" type="button" data-lightbox-close>{{ t.verhaal.lightbox_close }}</button>
+  <img class="lightbox__image" alt="" width="1600" height="780">
+</dialog>
+{% endif %}
