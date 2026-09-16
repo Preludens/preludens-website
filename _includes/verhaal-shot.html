@@ -1,0 +1,44 @@
+{% comment %}
+  Compacte screenshot naast bijschrift. Pass: after (section key).
+  Zoekt page.figures met matching `after`.
+{% endcomment %}
+{% include locale.html %}
+{% assign shot = false %}
+{% for fig in page.figures %}
+  {% if fig.after == include.after %}
+    {% assign shot = fig %}
+  {% endif %}
+{% endfor %}
+{% if shot %}
+  {% assign shot_src = '/assets/images/verhalen/' | append: shot.file | relative_url %}
+  {% assign shot_alt = shot.caption | default: "" %}
+  {% assign info_left = false %}
+  {% if shot.side == "left" %}
+    {% assign info_left = true %}
+  {% endif %}
+  <figure class="verhaal-shot{% if info_left %} verhaal-shot--info-left{% endif %}">
+    <button
+      class="verhaal-shot__open"
+      type="button"
+      data-lightbox-open
+      data-lightbox-src="{{ shot_src }}"
+      data-lightbox-alt="{{ shot_alt | escape }}"
+      aria-haspopup="dialog"
+      aria-controls="verhaal-lightbox"
+      aria-label="{{ t.verhaal.lightbox_open }}: {{ shot_alt | escape }}"
+    >
+      <img
+        src="{{ shot_src }}"
+        alt=""
+        width="1024"
+        height="499"
+        loading="lazy"
+        decoding="async"
+      >
+      <span class="verhaal-shot__zoom" aria-hidden="true">{{ t.verhaal.lightbox_zoom }}</span>
+    </button>
+    {% if shot.caption %}
+      <figcaption class="verhaal-shot__info">{{ shot.caption }}</figcaption>
+    {% endif %}
+  </figure>
+{% endif %}

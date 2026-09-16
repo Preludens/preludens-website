@@ -10,7 +10,7 @@ permalink: /diensten/
   <div class="container">
     <div class="hero-banner__inner">
       <p class="hero-banner__eyebrow">Services</p>
-      <h1>From knowledge that sits unused to learning experiences that get people <span class="hl">moving</span></h1>
+      <h1>We <span class="hl">design</span> and <span class="hl">implement</span> learning experiences that get people moving</h1>
       <hr class="hero-banner__accent">
       <p class="hero-banner__lead">
         Preludens turns complex knowledge into interactive learning experiences with story, play and feedback. Teams

@@ -91,6 +91,10 @@ verhaal:
   summary_label: "In short"
   highlights_label: "Key insights"
   facts_label: "Key facts"
+  lightbox_title: "Enlarge image"
+  lightbox_open: "Enlarge image"
+  lightbox_close: "Close"
+  lightbox_zoom: "Enlarge"
 
 play_blog:
   breadcrumb: "Blog"

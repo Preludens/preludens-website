@@ -10,7 +10,7 @@ permalink: /diensten/
   <div class="container">
     <div class="hero-banner__inner">
       <p class="hero-banner__eyebrow">Diensten</p>
-      <h1>Van kennis die blijft liggen naar leerervaringen die mensen in <span class="hl">beweging</span> brengen</h1>
+      <h1>Wij <span class="hl">ontwerpen</span> en <span class="hl">implementeren</span> leerervaringen die mensen in beweging brengen</h1>
       <hr class="hero-banner__accent">
       <p class="hero-banner__lead">
         Preludens vertaalt complexe kennis naar interactieve leerervaringen met verhaal, spel en feedback. Zo worden
