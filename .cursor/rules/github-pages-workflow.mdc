@@ -1,5 +1,5 @@
 ---
-description: PR-merge naar main en GitHub Pages-links in elk eindverslag
+description: PR-merge naar main, live deploy via production, GitHub Pages-links in elk eindverslag
 alwaysApply: true
 ---
 
@@ -11,10 +11,13 @@ alwaysApply: true
 - Open een PR naar `main` indien nodig voor review/traceability.
 - **Merge de wijzigingen altijd naar `main`** zodra de taak klaar en getest is — laat geen afgeronde PR's ongemerged staan (tenzij de gebruiker expliciet vraagt om te wachten).
 - Na merge: `git checkout main && git pull origin main` en bevestig dat `main` op GitHub up-to-date is.
+- **Merge niet naar `production`** tenzij de gebruiker expliciet vraagt om live te zetten.
 
 ## Deploy
 
-- De site wordt via GitHub Actions gedeployed na push naar `main` (workflow: `.github/workflows/pages.yml`).
+- De live site wordt via GitHub Actions gedeployed na push naar **`production`** (workflow: `.github/workflows/pages.yml`).
+- `main` is de ontwikkelbranch: pushes daar publiceren de site niet.
+- Live zetten (alleen op verzoek): merge of push `main` → `production`.
 - **GitHub Pages-basis-URL:** https://preludens.github.io/preludens-website/
 - Bij actieve custom domain: https://preludens.nl/ (zelfde paden, zonder `/preludens-website` prefix).
 
@@ -40,7 +43,7 @@ Sluit **elk eindverslag** af met:
 
 3. **Optioneel:** link naar de laatste GitHub Actions run of PR, als relevant.
 
-Wacht na push op `main` kort (~1 min) op de deploy voordat je live links verifieert.
+De live URLs tonen **production**. Na merge naar `main` is de live site ongewijzigd tot iemand bewust naar `production` promoveert. Verifieer live links alleen na een production-deploy; anders vermeld dat de wijziging op `main` staat.
 
 ### Voorbeeld eindverslag
 

@@ -1,8 +1,9 @@
 name: Deploy Jekyll site to GitHub Pages
 
+# Live deploys only from `production`. `main` is the development branch.
 on:
   push:
-    branches: [main]
+    branches: [production]
   workflow_dispatch:
 
 permissions:
