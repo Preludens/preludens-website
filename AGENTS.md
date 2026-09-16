@@ -11,6 +11,14 @@ Centrale plek voor Cursor-agents die aan deze Jekyll-site werken.
 
 Live zetten naar `production` doe je **niet** uit jezelf — alleen als de gebruiker dat vraagt.
 
+## Tekst verbeteren
+
+Als de gebruiker vraagt om tekst te verbeteren, volg `.cursor/rules/tekst-verbeteren.mdc`:
+
+- Goede **SEO- en AI-vindbaarheid** in structuur (koppen, eerste alinea, front matter) — niet in de toon.
+- **Dikgedrukt** alleen op scanbare kernpunten, niet op hele zinnen of zoekwoorden.
+- **Tone of voice** van Preludens aanhouden: helder, onderzoekend, menselijk, professioneel. De tekst mag niet klinken alsof hij voor SEO of AI is geschreven.
+
 ## Projectregels
 
 Zie `.cursor/rules/`:
@@ -19,6 +27,7 @@ Zie `.cursor/rules/`:
 |-------|---------|
 | `agent-werkafspraken.mdc` | Altijd — schijf niet doorzoeken, op `main` werken, eerst pullen, lokale server checken |
 | `preludens-visual-style.mdc` | Altijd — huisstijl, tokens, tone of voice (`design.MD`) |
+| `tekst-verbeteren.mdc` | Altijd — bij tekstverbetering: SEO/AI in de structuur, spaarzaam vet, Preludens-toon |
 | `github-pages-workflow.mdc` | Altijd — werken op `main`, live deploy via `production`, live links in eindverslag |
 | `post-task-design-review.mdc` | Alleen bij expliciete visuele QA of browser-review |
 

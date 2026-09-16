@@ -61,6 +61,7 @@ Zie **`AGENTS.md`** voor agent-instructies (o.a. beeldgeneratie via `/Users/jw/p
 Projectregels in `.cursor/rules/`:
 
 - **`agent-werkafspraken.mdc`** — altijd: niet de schijf doorzoeken, op `main` werken, eerst pullen, lokale server checken
+- **`tekst-verbeteren.mdc`** — bij tekstverbetering: SEO/AI in de structuur, spaarzaam vet, Preludens-toon
 - **`github-pages-workflow.mdc`** — werken op `main`; live deploy alleen via `production`; elk eindverslag bevat live links
 - **`post-task-design-review.mdc`** — design/UX/UI-review bij expliciete visuele QA; verbeteringen binnen de Preludens-huisstijl (`assets/css/main.scss`)
 

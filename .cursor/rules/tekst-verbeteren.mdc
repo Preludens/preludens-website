@@ -1,0 +1,29 @@
+---
+description: Bij tekstverbetering — SEO/AI-optimaal, spaarzaam vet, Preludens tone of voice
+alwaysApply: true
+---
+
+# Tekst verbeteren
+
+Als de gebruiker vraagt om tekst te verbeteren of te herschrijven, volg deze richtlijnen. Schrijf alsof het voor een mens is; SEO en AI-vindbaarheid zitten in de structuur, niet in de toon.
+
+## Tone of voice eerst
+
+- Houd de Preludens-stem aan: helder, onderzoekend, menselijk, professioneel, rustig.
+- Zie `design.MD`, `content-structuur-en-copy.md` en `preludens-visual-style.mdc`.
+- De tekst mag **niet** klinken alsof hij voor zoekmachines of AI is geschreven. Geen keyword-stapeling, geen holle marketingclaims, geen “leading provider”-zinnen, geen FAQ-spam of geforceerde vraag-antwoordblokken.
+
+## SEO en AI-vindbaarheid (onzichtbaar goed)
+
+- Maak in koppen en de eerste alinea duidelijk **wat** het is, **voor wie**, en **waarom het ertoe doet**.
+- Gebruik kernbegrippen natuurlijk (zoals ze een lezer ook zou zeggen), niet herhaald tot ze opvallen.
+- Houd koppen specifiek en scanbaar; korte alinea’s; één idee per alinea.
+- Beantwoord de impliciete vraag van de pagina zonder meta-taal (“In dit artikel…”, “Ontdek hoe…”, “Leer alles over…”).
+- Behoud of verbeter `title` en `description` in front matter als die er zijn; schrijf die als een normale zin, niet als een zoekwoordenreeks.
+- Claims onderbouwen met aanpak, voorbeeld of effect — dat helpt zowel lezer als machine.
+
+## Dikgedrukt
+
+- Zet **vet** alleen op de woorden of korte zinsdelen die iemand bij scannen moet kunnen oppikken: kernbegrip, onderscheid, concrete belofte, vervolgstap.
+- Niet hele zinnen of alinea’s vet; niet elk zoekwoord vet; niet decoratief vet.
+- Als de brontekst al te veel vet heeft, dun het uit tot die scanpunten.

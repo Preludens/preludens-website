@@ -104,6 +104,8 @@ Aanbevolen blokken:
 - Gebruik tussenkoppen als routepunten, niet als labels.
 - Maak abstracte claims concreet met voorbeeld of effect.
 - Houd toon rustig, professioneel en menselijk.
+- Bij tekstverbetering: SEO- en AI-vindbaarheid in de structuur (duidelijke koppen, eerste alinea, front matter), niet in de toon. Geen keyword-stapeling of “voor zoekmachines geschreven” zinnen.
+- Zet **vet** spaarzaam op scanbare kernpunten, niet op hele zinnen of zoekwoorden.
 
 ### Vermijden
 
