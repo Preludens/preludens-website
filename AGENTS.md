@@ -9,7 +9,7 @@ Zie `.cursor/rules/`:
 | Regel | Wanneer |
 |-------|---------|
 | `preludens-visual-style.mdc` | Altijd — huisstijl, tokens, tone of voice (`design.MD`) |
-| `github-pages-workflow.mdc` | Altijd — PR/merge naar `main`, live links in eindverslag |
+| `github-pages-workflow.mdc` | Altijd — PR/merge naar `main`, live deploy via `production`, live links in eindverslag |
 | `post-task-design-review.mdc` | Alleen bij expliciete visuele QA of browser-review |
 
 Verder: `design.MD` (visueel), `content-structuur-en-copy.md` (copy), `README.md` (lokaal draaien & deploy).

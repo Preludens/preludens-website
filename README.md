@@ -18,7 +18,16 @@ De site staat op GitHub Pages onder **https://preludens.github.io/preludens-webs
 1. Push deze repository naar GitHub.
 2. Ga naar **Settings → Pages**.
 3. Kies **Source: GitHub Actions** (niet “Deploy from branch”).
-4. Merge naar `main` — de workflow `.github/workflows/pages.yml` bouwt en publiceert automatisch.
+4. Werk op `main` (ontwikkelbranch). Pushes naar `main` publiceren de site **niet**.
+5. Zet live door `main` naar `production` te mergen of te pushen — de workflow `.github/workflows/pages.yml` bouwt en publiceert dan automatisch.
+
+```bash
+git checkout production
+git pull origin production
+git merge main
+git push origin production
+```
+
 
 ### Custom domain
 
@@ -51,7 +60,7 @@ Zie **`AGENTS.md`** voor agent-instructies (o.a. beeldgeneratie via `/Users/jw/p
 
 Projectregels in `.cursor/rules/`:
 
-- **`github-pages-workflow.mdc`** — PR's na afronding **mergen naar `main`**; elk eindverslag bevat live links
+- **`github-pages-workflow.mdc`** — PR's na afronding **mergen naar `main`**; live deploy alleen via `production`; elk eindverslag bevat live links
 - **`post-task-design-review.mdc`** — design/UX/UI-review bij expliciete visuele QA; verbeteringen binnen de Preludens-huisstijl (`assets/css/main.scss`)
 
 ## Online Markdown editor (Decap CMS)
