@@ -1,17 +1,16 @@
 ---
-description: PR-merge naar main, live deploy via production, GitHub Pages-links in elk eindverslag
+description: Werken op main, live deploy via production, GitHub Pages-links in elk eindverslag
 alwaysApply: true
 ---
 
-# GitHub Pages & PR-workflow (Preludens)
+# GitHub Pages & git-workflow (Preludens)
 
-## PR's mergen naar main
+## Werken op main
 
-- Werk op een feature branch (`cursor/<beschrijving>-a370`), commit en push.
-- Open een PR naar `main` indien nodig voor review/traceability.
-- **Merge de wijzigingen altijd naar `main`** zodra de taak klaar en getest is — laat geen afgeronde PR's ongemerged staan (tenzij de gebruiker expliciet vraagt om te wachten).
-- Na merge: `git checkout main && git pull origin main` en bevestig dat `main` op GitHub up-to-date is.
-- **Merge niet naar `production`** tenzij de gebruiker expliciet vraagt om live te zetten.
+- Voor je begint: `git checkout main && git pull origin main`.
+- **Werk op `main`.** Geen feature branches, geen PR's — tenzij de gebruiker daar expliciet om vraagt.
+- Commit en push klaar werk naar `main` (tenzij de gebruiker vraagt om te wachten).
+- **Push of merge niet naar `production`** tenzij de gebruiker expliciet vraagt om live te zetten.
 
 ## Deploy
 
@@ -41,9 +40,9 @@ Sluit **elk eindverslag** af met:
 | `contact/index.md` | https://preludens.github.io/preludens-website/contact/ |
 | Alleen `_layouts/`, `_includes/`, `assets/` | basis-URL + alle pagina's die visueel geraakt worden (minimaal home) |
 
-3. **Optioneel:** link naar de laatste GitHub Actions run of PR, als relevant.
+3. **Optioneel:** link naar de laatste GitHub Actions run, als relevant.
 
-De live URLs tonen **production**. Na merge naar `main` is de live site ongewijzigd tot iemand bewust naar `production` promoveert. Verifieer live links alleen na een production-deploy; anders vermeld dat de wijziging op `main` staat.
+De live URLs tonen **production**. Na push naar `main` is de live site ongewijzigd tot iemand bewust naar `production` promoveert. Verifieer live links alleen na een production-deploy; anders vermeld dat de wijziging op `main` staat.
 
 ### Voorbeeld eindverslag
 

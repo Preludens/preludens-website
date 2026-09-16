@@ -97,7 +97,7 @@ Lees `assets/css/main.scss` en bestaande componenten in `_includes/` vóór je n
 
 Sluit een gevraagde design-reviewronde af volgens `.cursor/rules/github-pages-workflow.mdc`:
 
-- Merge naar `main` als er wijzigingen zijn.
+- Commit en push naar `main` als er wijzigingen zijn (geen feature branch).
 - Vermeld in het eindverslag expliciet **Design review:** korte samenvatting van bevindingen + doorgevoerde verbeteringen.
 - Bevestig welke viewport(s) visueel in de browser zijn gecontroleerd wanneer zo'n check is uitgevoerd.
 - Geef live links naar de aangepaste pagina('s).

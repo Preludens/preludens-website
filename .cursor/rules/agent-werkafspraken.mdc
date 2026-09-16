@@ -1,0 +1,11 @@
+---
+description: Altijd — niet de schijf doorzoeken, op main werken, eerst pullen, lokale server checken
+alwaysApply: true
+---
+
+# Werkafspraken (altijd)
+
+- **Doorzoek nooit de harde schijf.** Blijf in deze repository. Geen `find`/`grep`/`glob` vanaf `/`, `$HOME` of andere projecten. Gebruik alleen paden die de gebruiker of deze projectbestanden expliciet geven.
+- **Werk op `main`.** Geen feature branches, geen PR's — tenzij de gebruiker daar expliciet om vraagt.
+- **Pull eerst.** Voor je begint: `git checkout main && git pull origin main`.
+- **Check de lokale server.** Voor je begint: controleer of Jekyll draait op http://localhost:4000/preludens-website/. Staat hij uit, start hem (`bundle exec jekyll serve`) voordat je verder werkt.

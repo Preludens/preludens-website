@@ -2,14 +2,24 @@
 
 Centrale plek voor Cursor-agents die aan deze Jekyll-site werken.
 
+## Werkafspraken (altijd)
+
+- **Doorzoek nooit de harde schijf.** Blijf in deze repository. Zoek, scan of browse niet op `/`, `$HOME` of andere mappen op de machine. Gebruik alleen paden die de gebruiker of deze projectbestanden expliciet geven (zoals de image-generator hieronder).
+- **Werk op `main`.** Maak geen losse feature branches en open geen PR's, tenzij de gebruiker daar expliciet om vraagt. Commit en push klaar werk naar `main`.
+- **Pull eerst.** Voordat je begint: `git checkout main && git pull origin main`, zodat je de nieuwste versie hebt.
+- **Check de lokale server.** Voordat je begint: controleer of Jekyll draait op http://localhost:4000/preludens-website/. Staat hij uit, start hem (`bundle exec jekyll serve`) voordat je verder werkt.
+
+Live zetten naar `production` doe je **niet** uit jezelf — alleen als de gebruiker dat vraagt.
+
 ## Projectregels
 
 Zie `.cursor/rules/`:
 
 | Regel | Wanneer |
 |-------|---------|
+| `agent-werkafspraken.mdc` | Altijd — schijf niet doorzoeken, op `main` werken, eerst pullen, lokale server checken |
 | `preludens-visual-style.mdc` | Altijd — huisstijl, tokens, tone of voice (`design.MD`) |
-| `github-pages-workflow.mdc` | Altijd — PR/merge naar `main`, live deploy via `production`, live links in eindverslag |
+| `github-pages-workflow.mdc` | Altijd — werken op `main`, live deploy via `production`, live links in eindverslag |
 | `post-task-design-review.mdc` | Alleen bij expliciete visuele QA of browser-review |
 
 Verder: `design.MD` (visueel), `content-structuur-en-copy.md` (copy), `README.md` (lokaal draaien & deploy).
