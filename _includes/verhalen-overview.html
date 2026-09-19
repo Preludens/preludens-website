@@ -3,35 +3,43 @@
 
 {% assign verhalen = site.verhalen | sort: "order" %}
 
-{% comment %} Twee uitgelichte verhalen bovenaan (featured: true) {% endcomment %}
-{% capture featured_html %}
-{% assign featured_count = 0 %}
+{% comment %} Drie uitgelichte items: 1 project, 1 kennis, 1 demo {% endcomment %}
 {% for verhaal in verhalen %}
   {% assign item_lang = verhaal.lang | default: site.default_lang %}
   {% unless item_lang == current_lang %}{% continue %}{% endunless %}
   {% unless verhaal.featured %}{% continue %}{% endunless %}
-  {% if featured_count >= 2 %}{% continue %}{% endif %}
-    <a class="story-feature" href="{{ verhaal.url | relative_url }}" aria-label="{{ t.verhaal.read_story }}: {{ verhaal.title }}, {{ verhaal.client }}">
-      {% if verhaal.image %}
-        <div class="story-feature__media">
-          <img src="{{ '/assets/images/verhalen/' | append: verhaal.image | relative_url }}" alt="" width="720" height="450" loading="lazy" decoding="async">
-        </div>
-      {% endif %}
-      <div class="story-feature__body">
-        <span class="story-feature__flag">{{ t.verhalen.featured_label }} · {{ verhaal.project }}</span>
-        <p class="story-card__client">{{ verhaal.client }}</p>
-        <h2 class="story-feature__title">{{ verhaal.title }}</h2>
-        <p class="story-feature__excerpt">{{ verhaal.summary }}</p>
-        <span class="story-card__cta">{{ t.verhaal.read_story }} →</span>
-      </div>
-    </a>
-  {% assign featured_count = featured_count | plus: 1 %}
+  {% assign verhaal_type = verhaal.type | default: "projecten" %}
+  {% if verhaal_type == "projecten" %}
+    {% unless featured_project %}
+      {% assign featured_project = verhaal %}
+    {% endunless %}
+  {% elsif verhaal_type == "demos" %}
+    {% unless featured_demo %}
+      {% assign featured_demo = verhaal %}
+    {% endunless %}
+  {% endif %}
 {% endfor %}
-{% endcapture %}
-{% assign featured_trim = featured_html | strip %}
-{% if featured_trim != "" %}
+{% assign posts = site.play_blog | sort: "date" | reverse %}
+{% for post in posts %}
+  {% assign item_lang = post.lang | default: site.default_lang %}
+  {% unless item_lang == current_lang %}{% continue %}{% endunless %}
+  {% unless post.featured %}{% continue %}{% endunless %}
+  {% unless featured_kennis %}
+    {% assign featured_kennis = post %}
+  {% endunless %}
+{% endfor %}
+
+{% if featured_project or featured_kennis or featured_demo %}
 <div class="verhalen-featured" data-verhalen-featured>
-{{ featured_html }}
+  {% if featured_project %}
+    {% include story-feature.html item=featured_project kind="projecten" %}
+  {% endif %}
+  {% if featured_kennis %}
+    {% include story-feature.html item=featured_kennis kind="kennis" %}
+  {% endif %}
+  {% if featured_demo %}
+    {% include story-feature.html item=featured_demo kind="demos" %}
+  {% endif %}
 </div>
 {% endif %}
 
@@ -110,11 +118,11 @@
       {% assign project_index = project_index | plus: 1 %}
     {% endfor %}
 
-    {% assign posts = site.play_blog | sort: "date" | reverse %}
     {% assign kennis_index = 0 %}
     {% for post in posts %}
       {% assign item_lang = post.lang | default: site.default_lang %}
       {% unless item_lang == current_lang %}{% continue %}{% endunless %}
+      {% if post.featured %}{% continue %}{% endif %}
       <div role="listitem" data-verhaal-type="kennis">
         {% include kennis-card.html post=post index=kennis_index %}
       </div>

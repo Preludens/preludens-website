@@ -231,7 +231,7 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
 
   .sp-panel h2 {
     font-family: var(--font-display);
-    font-size: clamp(1.9rem, 4.2vw, 3rem);
+    font-size: clamp(1.9rem, 3.8vw, 3.1rem);
     font-weight: 800;
     line-height: 1.08;
     margin: 0 0 clamp(var(--space-md), 2.5vh, var(--space-lg));
@@ -241,7 +241,7 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
   }
   .sp-panel--hero h1 {
     font-family: var(--font-display);
-    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-size: clamp(2.35rem, 5vw, 3.75rem);
     font-weight: 800;
     line-height: 1.04;
     margin: 0 0 clamp(var(--space-md), 2.5vh, var(--space-lg));
@@ -252,7 +252,7 @@ hero_preload: /assets/images/hero/preludens-hero-bg.webp
   }
   .sp-panel--hero h1 .hl { color: var(--color-preludens-gold); }
   .sp-panel p.sp-lead {
-    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    font-size: 1.1rem;
     line-height: 1.6;
     max-width: 46ch;
     margin: 0 0 clamp(var(--space-sm), 2vh, var(--space-md));

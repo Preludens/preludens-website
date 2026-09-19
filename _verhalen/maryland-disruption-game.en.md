@@ -21,6 +21,5 @@ oplossing: >-
 resultaat: >-
   A powerful learning tool that builds insight into disruption and supports better decision-making.
 image: maryland-disruption-game.png
-featured: true
 order: 5
 ---

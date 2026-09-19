@@ -8,14 +8,20 @@ layout: default
 {% assign route = page.route %}
 {% assign ervaring = page.ervaring %}
 {% assign resultaat = page.resultaat %}
-{% assign inzicht = page.inzicht | default: page.reflectie %}
+{% assign local_image = "" %}
+{% if page.image %}
+  {% unless page.image contains "://" %}
+    {% assign local_image = page.image %}
+  {% endunless %}
+{% endif %}
+{% assign aside_image = local_image %}
 
 <article class="verhaal-a">
-  <header class="verhaal-hero{% unless page.image %} verhaal-hero--plain{% endunless %}">
-    {% if page.image %}
+  <header class="verhaal-hero{% if local_image == "" %} verhaal-hero--plain{% endif %}">
+    {% if local_image != "" %}
       <div class="verhaal-hero__media">
         <img
-          src="{{ '/assets/images/verhalen/' | append: page.image | relative_url }}"
+          src="{{ '/assets/images/verhalen/' | append: local_image | relative_url }}"
           alt=""
           width="1600"
           height="900"
@@ -25,45 +31,36 @@ layout: default
       </div>
     {% endif %}
     <div class="container verhaal-hero__inner">
-      <p class="hero-eyebrow"><a href="{{ '/verhalen/' | relative_url }}">{{ t.verhaal.breadcrumb }}</a></p>
+      {% if page.clients or page.client %}
       <div class="verhaal-hero__chips">
-        {% if page.client %}<span class="verhaal-chip">{{ page.client }}</span>{% endif %}
-        {% if page.project %}<span class="verhaal-chip">{{ page.project }}</span>{% endif %}
+        {% if page.clients %}
+          {% for stakeholder in page.clients %}
+            {% if stakeholder.url %}
+              <a class="verhaal-chip" href="{{ stakeholder.url }}" target="_blank" rel="noopener noreferrer">{{ stakeholder.name }}</a>
+            {% else %}
+              <span class="verhaal-chip">{{ stakeholder.name }}</span>
+            {% endif %}
+          {% endfor %}
+        {% elsif page.client_url %}
+          <a class="verhaal-chip" href="{{ page.client_url }}" target="_blank" rel="noopener noreferrer">{{ page.client }}</a>
+        {% else %}
+          <span class="verhaal-chip">{{ page.client }}</span>
+        {% endif %}
       </div>
-      <h1>{{ page.title }}</h1>
+      {% endif %}
+      <h1 class="verhaal-hero__title">{{ page.title }}</h1>
     </div>
   </header>
 
   <div class="section">
     <div class="container">
-      {% if page.summary %}
-        <div class="verhaal-tldr">
-          <p class="verhaal-tldr__label">{{ t.verhaal.summary_label }}</p>
-          <p>{{ page.summary }}</p>
-        </div>
-      {% endif %}
-
       <div class="verhaal-layout">
         <div class="verhaal-main">
-          {% assign figure_shown = false %}
-          {% assign has_figures = false %}
-          {% if page.figures %}
-            {% assign has_figures = true %}
-          {% endif %}
           {% if uitdaging %}
             <section class="verhaal-section">
               <h2>{{ t.verhaal.challenge }}</h2>
               <p>{{ uitdaging }}</p>
             </section>
-            {% include verhaal-shot.html after="uitdaging" %}
-            {% unless has_figures %}
-              {% if page.image %}
-                <figure class="verhaal-figure">
-                  <img src="{{ '/assets/images/verhalen/' | append: page.image | relative_url }}" alt="" width="960" height="540" loading="lazy" decoding="async">
-                </figure>
-                {% assign figure_shown = true %}
-              {% endif %}
-            {% endunless %}
           {% endif %}
 
           {% if ontwerpvraag %}
@@ -71,7 +68,6 @@ layout: default
               <h2>{{ t.verhaal.design_question }}</h2>
               <p>{{ ontwerpvraag }}</p>
             </section>
-            {% include verhaal-shot.html after="ontwerpvraag" %}
           {% endif %}
 
           {% if aanpak %}
@@ -79,16 +75,6 @@ layout: default
               <h2>{{ t.verhaal.our_solution }}</h2>
               <p>{{ aanpak }}</p>
             </section>
-            {% include verhaal-shot.html after="aanpak" %}
-            {% unless has_figures %}
-              {% unless figure_shown %}
-                {% if page.image %}
-                  <figure class="verhaal-figure">
-                    <img src="{{ '/assets/images/verhalen/' | append: page.image | relative_url }}" alt="" width="960" height="540" loading="lazy" decoding="async">
-                  </figure>
-                {% endif %}
-              {% endunless %}
-            {% endunless %}
           {% endif %}
 
           {% if route %}
@@ -96,7 +82,6 @@ layout: default
               <h2>{{ t.verhaal.route }}</h2>
               <p>{{ route }}</p>
             </section>
-            {% include verhaal-shot.html after="route" %}
           {% endif %}
 
           {% if ervaring %}
@@ -104,7 +89,6 @@ layout: default
               <h2>{{ t.verhaal.experience }}</h2>
               <p>{{ ervaring }}</p>
             </section>
-            {% include verhaal-shot.html after="ervaring" %}
           {% endif %}
 
           {% if resultaat %}
@@ -112,84 +96,85 @@ layout: default
               <h2>{{ t.verhaal.result }}</h2>
               <p>{{ resultaat }}</p>
             </section>
-            {% include verhaal-shot.html after="resultaat" %}
           {% endif %}
 
-          {% if inzicht %}
-            <section class="verhaal-section">
-              <h2>{{ t.verhaal.insight }}</h2>
-              <p>{{ inzicht }}</p>
+          {% assign has_project_details = false %}
+          {% if page.client or page.project or page.sector or page.jaar or page.oplossingstype or page.doelgroep or page.thema or page.vorm or page.rol %}
+            {% assign has_project_details = true %}
+          {% endif %}
+          {% if has_project_details %}
+            <section class="verhaal-facts-block">
+              <h2>{{ t.verhaal.facts_label }}</h2>
+              <dl class="verhaal-facts">
+                {% if page.client %}<div><dt>{{ t.verhaal.meta_client }}</dt><dd>{{ page.client }}</dd></div>{% endif %}
+                {% if page.project %}<div><dt>{{ t.verhaal.meta_project }}</dt><dd>{{ page.project }}</dd></div>{% endif %}
+                {% if page.sector %}<div><dt>{{ t.verhaal.meta_sector }}</dt><dd>{{ page.sector }}</dd></div>{% endif %}
+                {% if page.jaar %}<div><dt>{{ t.verhaal.meta_year }}</dt><dd>{{ page.jaar }}</dd></div>{% endif %}
+                {% if page.oplossingstype %}<div><dt>{{ t.verhaal.meta_solution_type }}</dt><dd>{{ page.oplossingstype }}</dd></div>{% endif %}
+                {% if page.doelgroep %}<div><dt>{{ t.verhaal.meta_audience }}</dt><dd>{{ page.doelgroep }}</dd></div>{% endif %}
+                {% if page.thema %}<div><dt>{{ t.verhaal.meta_theme }}</dt><dd>{{ page.thema }}</dd></div>{% endif %}
+                {% if page.vorm %}<div><dt>{{ t.verhaal.meta_format }}</dt><dd>{{ page.vorm }}</dd></div>{% endif %}
+                {% if page.rol %}<div><dt>{{ t.verhaal.meta_role }}</dt><dd>{{ page.rol }}</dd></div>{% endif %}
+              </dl>
             </section>
-            {% include verhaal-shot.html after="inzicht" %}
           {% endif %}
         </div>
 
         <aside class="verhaal-aside">
-          {% comment %} Quote met portret. Zonder eigen quote tonen we een placeholder, tenzij quote: false. {% endcomment %}
-          {% unless page.quote == false %}
-          {% assign q_text = page.quote %}
-          {% assign q_author = page.quote_author %}
-          {% assign q_role = page.quote_role %}
-          {% assign q_photo = page.quote_photo %}
-          {% unless q_text %}
-            {% if page.lang == 'en' %}
-              {% assign q_text = "We're very happy with Daan's client-focused approach. The game was delivered on time, on scope and on budget, with broad satisfaction across the board." %}
-              {% assign q_role = "Team lead CIVVV, Rijkswaterstaat" %}
-            {% else %}
-              {% assign q_text = "We zijn erg blij met het klantgerichte meedenken door Daan. Hierdoor is de game binnen tijd, scope en budget en naar breed gedragen tevredenheid opgeleverd." %}
-              {% assign q_role = "Teamleider CIVVV, Rijkswaterstaat" %}
-            {% endif %}
-            {% assign q_author = "Martijn Dorresteijn" %}
-            {% assign q_photo = "testimonials/martijn-dorrestijn.jpg" %}
-          {% endunless %}
-          <figure class="verhaal-quote{% if q_photo %} verhaal-quote--with-photo{% endif %}">
-            {% if q_photo %}
-              <img class="verhaal-quote__photo" src="{{ '/assets/images/' | append: q_photo | relative_url }}" alt="{{ q_author }}" width="800" height="800" loading="lazy" decoding="async">
-            {% endif %}
-            <span class="verhaal-quote__mark" aria-hidden="true">&ldquo;</span>
-            <blockquote>{{ q_text }}</blockquote>
-            {% if q_author %}
-              <figcaption class="verhaal-quote__cite">
-                <span class="verhaal-quote__name">{{ q_author }}</span>
-                {% if q_role %}<span class="verhaal-quote__role">{{ q_role }}</span>{% endif %}
-              </figcaption>
-            {% endif %}
-          </figure>
-          {% endunless %}
+          {% if page.summary %}
+            <div class="verhaal-tldr verhaal-tldr--aside">
+              <p class="verhaal-tldr__label">{{ t.verhaal.summary_label }}</p>
+              <p>{{ page.summary }}</p>
+            </div>
+          {% endif %}
 
-          {% if page.highlights %}
-            <div class="verhaal-aside-box">
-              <h2>{{ t.verhaal.highlights_label }}</h2>
-              <ul>
-                {% for point in page.highlights %}
-                  <li>{{ point }}</li>
-                {% endfor %}
-              </ul>
+          {% if page.figures %}
+            <div class="verhaal-aside-media">
+              {% for fig in page.figures %}
+                {% assign shot_src = '/assets/images/verhalen/' | append: fig.file | relative_url %}
+                {% assign shot_alt = fig.caption | default: "" %}
+                <figure class="verhaal-aside-figure">
+                  <button
+                    class="verhaal-shot__open"
+                    type="button"
+                    data-lightbox-open
+                    data-lightbox-src="{{ shot_src }}"
+                    data-lightbox-alt="{{ shot_alt | escape }}"
+                    aria-haspopup="dialog"
+                    aria-controls="verhaal-lightbox"
+                    aria-label="{{ t.verhaal.lightbox_open }}: {{ shot_alt | escape }}"
+                  >
+                    <img src="{{ shot_src }}" alt="" width="720" height="405" loading="lazy" decoding="async">
+                    <span class="verhaal-shot__zoom" aria-hidden="true">{{ t.verhaal.lightbox_zoom }}</span>
+                  </button>
+                  {% if fig.caption %}
+                    <figcaption>{{ fig.caption }}</figcaption>
+                  {% endif %}
+                </figure>
+              {% endfor %}
+            </div>
+          {% elsif aside_image != "" %}
+            <div class="verhaal-aside-media">
+              {% assign shot_src = '/assets/images/verhalen/' | append: aside_image | relative_url %}
+              <figure class="verhaal-aside-figure">
+                <button
+                  class="verhaal-shot__open"
+                  type="button"
+                  data-lightbox-open
+                  data-lightbox-src="{{ shot_src }}"
+                  data-lightbox-alt=""
+                  aria-haspopup="dialog"
+                  aria-controls="verhaal-lightbox"
+                  aria-label="{{ t.verhaal.lightbox_open }}"
+                >
+                  <img src="{{ shot_src }}" alt="" width="720" height="405" loading="lazy" decoding="async">
+                  <span class="verhaal-shot__zoom" aria-hidden="true">{{ t.verhaal.lightbox_zoom }}</span>
+                </button>
+              </figure>
             </div>
           {% endif %}
         </aside>
       </div>
-
-      {% assign has_project_details = false %}
-      {% if page.client or page.project or page.sector or page.jaar or page.oplossingstype or page.doelgroep or page.thema or page.vorm or page.rol %}
-        {% assign has_project_details = true %}
-      {% endif %}
-      {% if has_project_details %}
-        <section class="verhaal-facts-block">
-          <h2>{{ t.verhaal.facts_label }}</h2>
-          <dl class="verhaal-facts">
-            {% if page.client %}<div><dt>{{ t.verhaal.meta_client }}</dt><dd>{{ page.client }}</dd></div>{% endif %}
-            {% if page.project %}<div><dt>{{ t.verhaal.meta_project }}</dt><dd>{{ page.project }}</dd></div>{% endif %}
-            {% if page.sector %}<div><dt>{{ t.verhaal.meta_sector }}</dt><dd>{{ page.sector }}</dd></div>{% endif %}
-            {% if page.jaar %}<div><dt>{{ t.verhaal.meta_year }}</dt><dd>{{ page.jaar }}</dd></div>{% endif %}
-            {% if page.oplossingstype %}<div><dt>{{ t.verhaal.meta_solution_type }}</dt><dd>{{ page.oplossingstype }}</dd></div>{% endif %}
-            {% if page.doelgroep %}<div><dt>{{ t.verhaal.meta_audience }}</dt><dd>{{ page.doelgroep }}</dd></div>{% endif %}
-            {% if page.thema %}<div><dt>{{ t.verhaal.meta_theme }}</dt><dd>{{ page.thema }}</dd></div>{% endif %}
-            {% if page.vorm %}<div><dt>{{ t.verhaal.meta_format }}</dt><dd>{{ page.vorm }}</dd></div>{% endif %}
-            {% if page.rol %}<div><dt>{{ t.verhaal.meta_role }}</dt><dd>{{ page.rol }}</dd></div>{% endif %}
-          </dl>
-        </section>
-      {% endif %}
 
       <p class="verhaal-back">
         <a href="{{ '/verhalen/' | relative_url }}">{{ t.verhaal.all_stories }}</a>
@@ -198,7 +183,7 @@ layout: default
   </div>
 </article>
 
-{% if page.figures %}
+{% if page.figures or aside_image != "" %}
 <dialog class="lightbox" id="verhaal-lightbox" aria-labelledby="verhaal-lightbox-title">
   <p class="sr-only" id="verhaal-lightbox-title">{{ t.verhaal.lightbox_title }}</p>
   <button class="lightbox__close" type="button" data-lightbox-close>{{ t.verhaal.lightbox_close }}</button>

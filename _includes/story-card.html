@@ -5,24 +5,33 @@
 {% assign accent_index = include.index | modulo: 4 %}
 {% assign accents = "coral,gold,mint,lilac" | split: "," %}
 {% assign accent = accents[accent_index] %}
-{% assign hook = include.verhaal.highlights | first %}
-<article class="story-card story-card--{{ accent }}{% if include.verhaal.image %} story-card--media{% endif %}">
+{% assign card_src = "" %}
+{% if include.verhaal.image %}
+  {% unless include.verhaal.image contains "://" %}
+    {% if include.verhaal.image contains "/" %}
+      {% assign card_src = include.verhaal.image | relative_url %}
+    {% else %}
+      {% assign card_src = "/assets/images/verhalen/" | append: include.verhaal.image | relative_url %}
+    {% endif %}
+  {% endunless %}
+{% endif %}
+<article class="story-card story-card--{{ accent }}{% if card_src != "" %} story-card--media{% endif %}">
   <a
     class="story-card__link"
     href="{{ include.verhaal.url | relative_url }}"
     aria-label="{{ t.verhaal.read_story }}: {{ include.verhaal.title }}, {{ include.verhaal.client }}"
   >
-    {% if include.verhaal.image %}
+    {% if card_src != "" %}
       <div class="story-card__media">
         <img
-          src="{{ '/assets/images/verhalen/' | append: include.verhaal.image | relative_url }}"
+          src="{{ card_src }}"
           alt=""
           width="640"
           height="360"
           loading="lazy"
           decoding="async"
         >
-        <span class="story-card__badge story-card__badge--onmedia">{{ include.verhaal.project }}</span>
+        <span class="story-card__badge story-card__badge--onmedia">{{ t.verhalen.type_project }}</span>
       </div>
     {% else %}
       <div class="story-card__header">
@@ -37,15 +46,12 @@
             decoding="async"
           >
         {% endif %}
-        <span class="story-card__badge">{{ include.verhaal.project }}</span>
+        <span class="story-card__badge">{{ t.verhalen.type_project }}</span>
       </div>
     {% endif %}
     <div class="story-card__body">
       <p class="story-card__client">{{ include.verhaal.client }}</p>
       <h2 class="story-card__title">{{ include.verhaal.title }}</h2>
-      {% if hook %}
-        <p class="story-card__hook">{{ hook }}</p>
-      {% endif %}
       <p class="story-card__excerpt">{{ include.verhaal.summary }}</p>
     </div>
     <footer class="story-card__footer">

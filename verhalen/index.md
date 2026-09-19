@@ -24,14 +24,8 @@ body_class: page-verhalen
   <span class="hero-banner__dots" aria-hidden="true"></span>
 </section>
 
-<section class="section section--alt">
+<section class="section section--alt section--tight-above">
   <div class="container">
-    <div class="section-header">
-      <span class="section-label">{{ t.verhalen.section_label }}</span>
-      <h2>{{ t.verhalen.section_title }}</h2>
-      <p>{{ t.verhalen.section_intro }}</p>
-    </div>
-
     {% include verhalen-overview.html %}
   </div>
 </section>

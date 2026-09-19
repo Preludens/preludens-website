@@ -1,0 +1,56 @@
+{% comment %}
+  Uitgelichte teaser. Pass: item (verhaal of play_blog), kind (projecten|kennis|demos).
+{% endcomment %}
+{% include locale.html %}
+{% assign item = include.item %}
+{% assign kind = include.kind %}
+
+{% if kind == "projecten" %}
+  {% assign type_label = t.verhalen.type_project %}
+  {% assign cta_label = t.verhaal.read_story %}
+  {% assign aria_label = t.verhaal.read_story | append: ": " | append: item.title %}
+  {% if item.client %}
+    {% assign aria_label = aria_label | append: ", " | append: item.client %}
+  {% endif %}
+  {% assign meta = item.client %}
+{% elsif kind == "kennis" %}
+  {% assign type_label = t.verhalen.type_knowledge %}
+  {% assign cta_label = t.play_blog.read_post %}
+  {% assign aria_label = t.play_blog.read_post_aria | replace: "%s", item.title %}
+  {% assign meta = item.reading_time %}
+{% else %}
+  {% assign type_label = t.verhalen.type_demo %}
+  {% assign cta_label = t.verhalen.read_demo %}
+  {% assign aria_label = t.verhalen.read_demo_aria | replace: "%s", item.title %}
+  {% assign meta = item.project %}
+{% endif %}
+
+{% assign featured_src = "" %}
+{% if item.image %}
+  {% unless item.image contains "://" %}
+    {% if item.image contains "/" %}
+      {% assign featured_src = item.image | relative_url %}
+    {% else %}
+      {% assign featured_src = "/assets/images/verhalen/" | append: item.image | relative_url %}
+    {% endif %}
+  {% endunless %}
+{% endif %}
+
+<a class="story-feature" href="{{ item.url | relative_url }}" aria-label="{{ aria_label }}" data-verhaal-type="{{ kind }}">
+  {% if featured_src != "" %}
+    <div class="story-feature__media">
+      <img src="{{ featured_src }}" alt="" width="560" height="315" loading="lazy" decoding="async">
+    </div>
+  {% endif %}
+  <div class="story-feature__body">
+    <span class="story-feature__flag">{{ t.verhalen.featured_label }} · {{ type_label }}</span>
+    {% if meta %}
+      <p class="story-card__client">{{ meta }}</p>
+    {% endif %}
+    <h2 class="story-feature__title">{{ item.title }}</h2>
+    {% if item.summary %}
+      <p class="story-feature__excerpt">{{ item.summary }}</p>
+    {% endif %}
+    <span class="story-card__cta">{{ cta_label }} →</span>
+  </div>
+</a>

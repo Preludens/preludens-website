@@ -21,6 +21,5 @@ oplossing: >-
 resultaat: >-
   Een krachtig leerinstrument dat inzicht geeft in verstoringen en helpt bij betere besluitvorming.
 image: maryland-disruption-game.png
-featured: true
 order: 5
 ---

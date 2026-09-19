@@ -49,8 +49,12 @@ verhalen:
   filter_knowledge: "Kennis"
   filter_whitepapers: "Whitepapers"
   filter_demos: "Demo's"
+  type_project: "Project"
   type_knowledge: "Kennis"
+  type_demo: "Demo"
   featured_label: "Uitgelicht"
+  read_demo: "Bekijk de demo"
+  read_demo_aria: "Bekijk de demo: %s"
   section_label: "Overzicht"
   section_title: "Projecten, kennis en verdieping"
   section_intro: >-

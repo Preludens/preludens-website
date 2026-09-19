@@ -49,8 +49,12 @@ verhalen:
   filter_knowledge: "Knowledge"
   filter_whitepapers: "Whitepapers"
   filter_demos: "Demos"
+  type_project: "Project"
   type_knowledge: "Knowledge"
+  type_demo: "Demo"
   featured_label: "Featured"
+  read_demo: "View the demo"
+  read_demo_aria: "View the demo: %s"
   section_label: "Overview"
   section_title: "Projects, knowledge and depth"
   section_intro: >-

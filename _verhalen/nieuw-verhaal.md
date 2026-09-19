@@ -3,6 +3,13 @@ lang: nl
 permalink: /verhalen/nieuw-verhaal/
 title: Koeltechniek leren door te doen
 client: 21CC Education
+clients:
+  - name: 21CC Education
+    url: https://21cceducation.nl/
+  - name: Climatools
+    url: https://www.climatools.nl/
+  - name: Studium
+    url: https://www.studium.nl/
 project: Basis Koeltechniek
 sector: Installatietechniek en vakopleiding
 jaar: 2026

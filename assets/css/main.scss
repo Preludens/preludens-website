@@ -58,6 +58,7 @@
   --space-lg: 2.5rem;
   --space-xl: 4rem;
   --space-2xl: 6rem;
+  --space-3xl: 8rem;
 
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -581,16 +582,16 @@ p { margin: 0 0 var(--space-sm); }
 
 /* Sections */
 .section {
-  padding: clamp(3.5rem, 7vw, 6rem) 0;
+  padding: clamp(var(--space-xl), 9vw, var(--space-3xl)) 0;
 }
 
 /* Strakkere aansluiting tussen opeenvolgende secties (bijv. diensten-kop → service-blokken) */
 .section--tight-below {
-  padding-bottom: var(--space-md);
+  padding-bottom: var(--space-lg);
 }
 
 .section--tight-above {
-  padding-top: var(--space-md);
+  padding-top: var(--space-lg);
 }
 
 /* Sectieritme: wit / mist-blauw / navy — geeft ritme zonder banners */
@@ -627,7 +628,7 @@ p { margin: 0 0 var(--space-sm); }
 
 .section-header {
   max-width: 40rem;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-xl);
 
   p {
     font-size: 1.1rem;
@@ -702,7 +703,7 @@ p { margin: 0 0 var(--space-sm); }
 /* Cards */
 .card-grid {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-lg);
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
@@ -865,7 +866,7 @@ p { margin: 0 0 var(--space-sm); }
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   text-align: center;
-  margin: var(--space-lg) 0;
+  margin: var(--space-xl) 0;
 
   h2, p { color: var(--color-white); }
 
@@ -1510,6 +1511,11 @@ p { margin: 0 0 var(--space-sm); }
     transition: transform var(--transition), background var(--transition);
   }
 
+  &:not(.story-card--kennis) &__cta,
+  &:not(.story-card--kennis) &__arrow {
+    color: var(--color-preludens-gold);
+  }
+
   &:hover &__arrow {
     transform: translateX(3px);
     background: rgba(237, 167, 14, 0.22);
@@ -1666,6 +1672,10 @@ p { margin: 0 0 var(--space-sm); }
 /* ============================================================
    Verhalen overzicht — Variant D (uitgelicht + filterbaar raster)
    ============================================================ */
+.page-verhalen .section--tight-above {
+  padding-top: 5rem;
+}
+
 .page-verhalen .verhalen-featured {
   display: grid;
   grid-template-columns: 1fr;
@@ -1674,15 +1684,16 @@ p { margin: 0 0 var(--space-sm); }
 
   &[hidden] { display: none; }
 
-  @media (min-width: 720px) {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-lg);
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 .story-feature {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  min-width: 0;
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -1704,7 +1715,7 @@ p { margin: 0 0 var(--space-sm); }
   }
 
   &__media {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
   }
 
@@ -1717,8 +1728,8 @@ p { margin: 0 0 var(--space-sm); }
   &__body {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
-    padding: var(--space-lg);
+    gap: 0.35rem;
+    padding: var(--space-md);
     flex: 1;
   }
 
@@ -1737,8 +1748,8 @@ p { margin: 0 0 var(--space-sm); }
   }
 
   &__title {
-    font-size: clamp(1.3rem, 2.2vw, 1.7rem);
-    line-height: 1.2;
+    font-size: clamp(1.05rem, 1.5vw, 1.28rem);
+    line-height: 1.25;
     margin: 0;
     color: var(--color-ink);
   }
@@ -1746,10 +1757,18 @@ p { margin: 0 0 var(--space-sm); }
   &__excerpt {
     margin: 0;
     color: var(--color-ink-soft);
-    line-height: 1.55;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
   }
 
-  .story-card__cta { margin-top: var(--space-xs); }
+  .story-card__cta { margin-top: auto; padding-top: var(--space-xs); }
+
+  &[data-verhaal-type="projecten"] .story-card__cta {
+    color: var(--color-preludens-gold);
+  }
 }
 
 /* Beeld-kaart variant van .story-card */
@@ -1809,44 +1828,74 @@ p { margin: 0 0 var(--space-sm); }
 .verhaal-hero__inner {
   position: relative;
   z-index: 2;
-  padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+  padding: 5rem 0 clamp(2.5rem, 5vw, 4rem);
 }
 
 .verhaal-hero--plain .verhaal-hero__inner {
-  padding-top: var(--space-lg);
+  padding-top: 5rem;
 }
 
-.verhaal-hero .hero-eyebrow a {
-  color: rgba(246, 249, 249, 0.92);
-  text-decoration: none;
-
-  &:hover { color: var(--color-gold); }
+.verhaal-hero__type {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-preludens-gold);
 }
 
-.verhaal-hero h1 {
+.verhaal-hero__title {
   color: var(--color-white);
   max-width: 22ch;
   margin: 0;
+  font-size: clamp(2.5rem, 5.6vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
 }
 
 .verhaal-hero__chips {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: var(--space-xs);
-  margin: var(--space-sm) 0;
+  margin: 0 0 var(--space-sm);
 }
 
 .verhaal-chip {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  padding: 0.3rem 0.8rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  padding: 0.35em 0.8em;
   border-radius: var(--radius-pill);
-  background: rgba(246, 249, 249, 0.16);
-  color: var(--color-white);
-  border: 1px solid rgba(246, 249, 249, 0.28);
+  background: var(--color-white);
+  color: var(--color-ink);
+  border: 1px solid var(--color-white);
+  text-decoration: none;
+}
+
+a.verhaal-chip {
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+
+  &:hover {
+    background: var(--color-preludens-gold);
+    border-color: var(--color-preludens-gold);
+    color: var(--color-deep-navy);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-preludens-gold);
+    outline-offset: 3px;
+  }
 }
 
 .verhaal-tldr {
@@ -1857,10 +1906,14 @@ p { margin: 0 0 var(--space-sm); }
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   box-shadow: var(--shadow-card);
-  margin-top: -3.5rem;
-  margin-bottom: var(--space-lg);
   position: relative;
   z-index: 3;
+
+  &--aside {
+    max-width: none;
+    margin: 0;
+    padding: var(--space-md) var(--space-lg);
+  }
 
   &__label {
     margin: 0 0 var(--space-xs);
@@ -1887,21 +1940,25 @@ p { margin: 0 0 var(--space-sm); }
   align-items: start;
 
   @media (min-width: 900px) {
-    grid-template-columns: minmax(0, 1fr) 320px;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.7fr);
     gap: var(--space-xl);
   }
 }
 
 .verhaal-main {
   min-width: 0;
-  max-width: 44rem;
+}
+
+.verhaal-a > .section {
+  padding-top: 2.5rem;
 }
 
 .verhaal-section {
-  margin-bottom: var(--space-lg);
+  margin-bottom: 1.25rem;
 
   h2 {
     font-size: 1.4rem;
+    margin-top: 0;
     margin-bottom: var(--space-xs);
   }
 
@@ -2136,9 +2193,25 @@ p { margin: 0 0 var(--space-sm); }
   }
 }
 
+.verhaal-aside-media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.verhaal-aside-figure {
+  margin: 0;
+
+  figcaption {
+    margin-top: var(--space-xs);
+    color: var(--color-ink-soft);
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
 .verhaal-facts-block {
-  max-width: 44rem;
-  margin-top: var(--space-xl);
+  margin-top: 0;
 
   h2 {
     font-size: 1.4rem;
@@ -2621,7 +2694,7 @@ p { margin: 0 0 var(--space-sm); }
 /* Genummerde functie-grid (Prepo / Diensten) */
 .feature-grid {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-lg);
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
@@ -3078,7 +3151,7 @@ p { margin: 0 0 var(--space-sm); }
 /* Kop met introtekst binnen een sectie */
 .block-head {
   max-width: 48rem;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-xl);
 
   .section-label {
     display: block;
@@ -3131,7 +3204,7 @@ p { margin: 0 0 var(--space-sm); }
 .cta-feature {
   position: relative;
   overflow: hidden;
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(var(--space-xl), 9vw, var(--space-3xl)) 0;
   text-align: center;
   color: var(--color-white);
   background:

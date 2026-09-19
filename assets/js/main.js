@@ -101,11 +101,14 @@
     });
 
     if ((filter === "whitepapers" || filter === "demos") && visibleCount === 0) {
+      var featuredHasType = featured && featured.querySelector('[data-verhaal-type="' + filter + '"]');
       if (grid) grid.hidden = true;
-      if (empty) empty.hidden = false;
-      var copy = emptyCopy[filter];
-      if (copy && emptyTitle) emptyTitle.textContent = copy.title;
-      if (copy && emptyText) emptyText.textContent = copy.text;
+      if (!featuredHasType && empty) {
+        empty.hidden = false;
+        var copy = emptyCopy[filter];
+        if (copy && emptyTitle) emptyTitle.textContent = copy.title;
+        if (copy && emptyText) emptyText.textContent = copy.text;
+      }
     }
   }
 

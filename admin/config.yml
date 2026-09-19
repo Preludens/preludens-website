@@ -132,6 +132,15 @@ collections:
       - { label: Permalink, name: permalink, widget: string, hint: "/verhalen/slug/" }
       - { label: Titel, name: title, widget: string }
       - { label: Client, name: client, widget: string, required: false }
+      - { label: Client URL, name: client_url, widget: string, required: false, hint: "Opent in een nieuw tabblad" }
+      - label: Extra klanten
+        name: clients
+        widget: list
+        required: false
+        hint: "Meerdere klanten/stakeholders. Als dit veld is gevuld, vervangt het Client + Client URL."
+        fields:
+          - { label: Naam, name: name, widget: string }
+          - { label: URL, name: url, widget: string, required: false }
       - { label: Client logo, name: client_logo, widget: image, required: false }
       - { label: Project, name: project, widget: string, required: false }
       - { label: Samenvatting, name: summary, widget: text, required: false }

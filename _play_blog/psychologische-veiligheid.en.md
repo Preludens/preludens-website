@@ -7,6 +7,8 @@ summary: >-
   Psychological safety is not a soft culture topic — it is the foundation on which play,
   experimentation, and real behaviour change rest. Here is how to design that space deliberately.
 reading_time: 6 min
+featured: true
+image: /assets/images/play/magische-cirkel.jpg
 ---
 
 In many organisations, psychological safety is still treated as something extra: a nice conversation about culture, a trust workshop, a poster on the wall. But anyone who designs learning programmes — especially those who use **Play** as a technique — knows that safety is not a side condition. It *is* the work.

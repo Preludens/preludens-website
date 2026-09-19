@@ -7,6 +7,8 @@ summary: >-
   Psychologische veiligheid is geen soft culture-topic — het is de basis waarop spel,
   experimenteren en echte gedragsverandering rusten. Zo ontwerp je die ruimte bewust.
 reading_time: 6 min
+featured: true
+image: /assets/images/play/magische-cirkel.jpg
 ---
 
 In veel organisaties wordt psychologische veiligheid nog steeds gezien als iets extra's: een mooi gesprek over cultuur, een workshop over vertrouwen, een poster op de muur. Maar wie leertrajecten ontwerpt — en zeker wie **Play** inzet als techniek — weet dat veiligheid geen randvoorwaarde is. Het *is* het werk.
