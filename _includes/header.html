@@ -2,7 +2,7 @@
 <header class="site-header" data-header>
   <div class="container header-inner">
     <a class="logo" href="{{ '/' | relative_url }}" aria-label="Preludens – {% if locale == 'en' %}home{% else %}naar home{% endif %}">
-      <img class="logo-img" src="{{ '/assets/images/logo/preludens-logo.png' | relative_url }}" alt="Preludens" width="180" height="53">
+      <img class="logo-img" src="{{ '/assets/images/logo/preludens-logo.svg' | relative_url }}" alt="Preludens" width="402" height="119">
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
@@ -36,7 +36,7 @@
             {% assign is_active = true %}
           {% endif %}
           <li>
-            <a href="{{ href }}" data-text="{{ label }}"{% if is_active %} aria-current="page"{% endif %}>{{ label }}</a>
+            <a href="{{ href }}"{% if is_active %} aria-current="page"{% endif %}>{{ label }}</a>
           </li>
         {% endfor %}
       </ul>
