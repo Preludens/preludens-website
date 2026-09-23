@@ -6,13 +6,13 @@ lang_switch_aria_en: "Switch to English"
 
 nav:
   home: "Home"
-  play: "Knowledge"
+  play: "Method"
   diensten: "Services"
   prepo: "Prepo"
   team: "Team"
   ontwerpmethodiek: "Design methodology"
   impact: "Impact"
-  verhalen: "Projects"
+  verhalen: "Inspiration"
   gamestorm: "GameStorm"
   contact: "Contact"
 
@@ -35,9 +35,11 @@ cta:
 footer:
   navigation: "Navigation"
   about_heading: "About Preludens"
-  about: "Preludens is a Dutch learning- and game-design studio that prepares teams for the future with storytelling, MicroGames and interactive learning experiences."
+  about_paragraphs:
+    - "Preludens is a Learning & Development company that helps organisations embed knowledge so it lasts."
+    - "We believe learning becomes stronger when people actively work with the material, experience its meaning, and are themselves motivated to apply that knowledge."
+    - "That is why we combine game-based learning with storytelling. We create online learning experiences in which participants explore recognisable situations, make choices and discover the consequences."
   direct_contact: "Direct contact"
-  response_note: "We usually reply within one business day."
   start_playing: "Start playing"
   start_playing_text: "Ready to turn online learning into a story that resonates? Book a GameStorm."
   rights: "All rights reserved."

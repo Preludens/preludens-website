@@ -5,26 +5,29 @@
       <a class="logo logo-footer" href="{{ '/' | relative_url }}" aria-label="Preludens – {% if locale == 'en' %}home{% else %}naar home{% endif %}">
         <img class="logo-img" src="{{ '/assets/images/logo/preludens-logo-inverse.png' | relative_url }}" alt="Preludens" width="240" height="70">
       </a>
+      <p class="footer-contact">
+        <strong>{{ t.footer.direct_contact }}</strong><br>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+        <a href="tel:+31154042027">+31 15 404 202 7</a>
+      </p>
     </div>
 
     <div class="footer-about-block">
       <p class="footer-tagline">Challenge · activate · motivate</p>
-      <p class="footer-about">{{ t.footer.about }}</p>
+      {% for paragraph in t.footer.about_paragraphs %}
+        <p class="footer-about">{{ paragraph }}</p>
+      {% endfor %}
     </div>
 
-    <div class="footer-contact-block">
-      <p class="footer-contact">
-        <strong>{{ t.footer.direct_contact }}</strong><br>
-        <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
-        <span class="footer-response">{{ t.footer.response_note }}</span>
-      </p>
-      <ul class="footer-nav-compact">
-        {% assign footer_nav_keys = "home,play,diensten,prepo,team,verhalen,contact,ontwerpmethodiek,impact,gamestorm" | split: "," %}
+    <nav class="footer-menu" aria-label="{{ t.footer.navigation }}">
+      <ul>
+        {% assign footer_nav_keys = "home,play,diensten,prepo,team,verhalen,contact" | split: "," %}
         {% for key in footer_nav_keys %}
           <li><a href="{{ t.nav_paths[key] | relative_url }}">{{ t.nav[key] }}</a></li>
         {% endfor %}
       </ul>
-    </div>
+    </nav>
+
   </div>
 
   <div class="container footer-bottom">

@@ -1,0 +1,98 @@
+{% include locale.html %}
+{% assign current_lang = site.active_lang | default: site.default_lang %}
+
+{% assign verhalen = site.verhalen | sort: "order" %}
+{% assign posts = site.play_blog | sort: "date" | reverse %}
+
+<div class="verhalen-panel" id="verhalen-panel" role="tabpanel" aria-labelledby="verhalen-filter-all">
+  <div class="strip-grid" data-verhalen-grid role="list">
+    {% for verhaal in verhalen %}
+      {% assign item_lang = verhaal.lang | default: site.default_lang %}
+      {% unless item_lang == current_lang %}{% continue %}{% endunless %}
+      {% assign verhaal_type = verhaal.type | default: "projecten" %}
+      {% if verhaal_type == "demos" %}
+        {% assign tile_cta = "Speel de demo" %}
+        {% assign tile_aria = "Speel de demo: " | append: verhaal.title %}
+      {% else %}
+        {% assign tile_cta = "Bekijk het project" %}
+        {% assign tile_aria = "Bekijk het project: " | append: verhaal.title %}
+        {% if verhaal.client %}
+          {% assign tile_aria = tile_aria | append: ", " | append: verhaal.client %}
+        {% endif %}
+      {% endif %}
+      <div role="listitem" data-verhaal-type="{{ verhaal_type }}">
+          {% if verhaal_type == "projecten" %}
+            {% assign mix = verhaal.title.size | plus: verhaal.summary.size %}
+            {% if verhaal.client %}
+              {% assign mix = mix | plus: verhaal.client.size %}
+            {% endif %}
+            {% assign frame_slot = mix | modulo: 4 %}
+            {% if frame_slot == 1 %}
+              {% assign tile_frame = "tablet" %}
+            {% elsif frame_slot == 2 %}
+              {% assign tile_frame = "laptop-dark" %}
+            {% elsif frame_slot == 3 %}
+              {% assign tile_frame = "laptop-light" %}
+            {% else %}
+              {% assign tile_frame = "hands" %}
+            {% endif %}
+          {% elsif verhaal_type == "demos" %}
+            {% assign mix = verhaal.title.size | plus: verhaal.summary.size %}
+            {% assign frame_slot = mix | modulo: 2 %}
+            {% if frame_slot == 1 %}
+              {% assign tile_frame = "phone-dark" %}
+            {% else %}
+              {% assign tile_frame = "phone-light" %}
+            {% endif %}
+          {% else %}
+            {% assign tile_frame = "" %}
+          {% endif %}
+          {% include strip-tile.html
+          title=verhaal.title
+          summary=verhaal.summary
+          url=verhaal.url
+          cta=tile_cta
+          aria=tile_aria
+          kind=verhaal_type
+          image=verhaal.image
+          frame=tile_frame
+        %}
+      </div>
+    {% endfor %}
+
+    {% for post in posts %}
+      {% assign item_lang = post.lang | default: site.default_lang %}
+      {% unless item_lang == current_lang %}{% continue %}{% endunless %}
+      {% assign kennis_aria = t.play_blog.read_post_aria | replace: "%s", post.title %}
+      <div role="listitem" data-verhaal-type="kennis">
+        {% include strip-tile.html
+          title=post.title
+          summary=post.summary
+          url=post.url
+          cta="Lees het artikel"
+          aria=kennis_aria
+          kind="kennis"
+        %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <p class="strip-search-empty" data-verhalen-search-empty hidden>Geen inspiratie.</p>
+
+  <div class="verhalen-empty" data-verhalen-empty hidden>
+    <p class="verhalen-empty__title" data-whitepapers-title="{{ t.verhalen.empty_whitepapers_title }}" data-demos-title="{{ t.verhalen.empty_demos_title }}">{{ t.verhalen.empty_whitepapers_title }}</p>
+    <p class="verhalen-empty__text" data-whitepapers-text="{{ t.verhalen.empty_whitepapers_text }}" data-demos-text="{{ t.verhalen.empty_demos_text }}">{{ t.verhalen.empty_whitepapers_text }}</p>
+  </div>
+</div>
+
+<div class="strip-pager" data-verhalen-pager>
+  <p class="strip-pager__title">Kies meer inspiratie.</p>
+  <div class="strip-pager__dots" data-verhalen-dots role="tablist" aria-label="Pagina's"></div>
+</div>
+<script>
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll(".page-verhalen-test .strip-tile").forEach(function (tile) {
+      tile.classList.add("strip-tile--enter");
+    });
+  }
+</script>

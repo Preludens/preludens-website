@@ -24,8 +24,10 @@
             {% if page.url == "/" or page.url == "/index.html" or page.url == "/en/" or page.url == "/en/index.html" %}
               {% assign is_active = true %}
             {% endif %}
-          {% elsif path == "/verhalen/" and page.url contains "/verhalen/" %}
-            {% assign is_active = true %}
+          {% elsif key == "verhalen" %}
+            {% if page.url contains "/verhalen/" or page.url contains "/inspiratie/" %}
+              {% assign is_active = true %}
+            {% endif %}
           {% elsif path == "/play/" and page.url contains "/play/" %}
             {% assign is_active = true %}
           {% elsif path == "/prepo/" and page.url contains "/prepo/" %}

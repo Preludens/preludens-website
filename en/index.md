@@ -161,9 +161,8 @@ permalink: /
     line-height: 1.45;
   }
 
-  .sp-footer-reveal .footer-nav-compact {
-    margin-top: 0.55rem;
-    gap: 0.25rem 0.75rem;
+  .sp-footer-reveal .footer-menu ul {
+    gap: 0.2rem;
     font-size: 0.8rem;
   }
 

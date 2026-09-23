@@ -1,0 +1,51 @@
+{% comment %}
+  Testtegel voor /verhalen-test/.
+  Pass: title, summary, url, cta, aria, kind (projecten|kennis|demos), image.
+{% endcomment %}
+{% assign tile_src = "" %}
+{% if include.image %}
+  {% unless include.image contains "://" %}
+    {% if include.image contains "/" %}
+      {% assign tile_src = include.image | relative_url %}
+    {% else %}
+      {% assign tile_src = "/assets/images/verhalen/" | append: include.image | relative_url %}
+    {% endif %}
+  {% endunless %}
+{% endif %}
+{% assign tile_kind = include.kind | default: "projecten" %}
+{% assign tile_frame = include.frame | default: "hands" %}
+{% if tile_frame == "tablet" %}
+  {% assign frame_file = "device-tablet-02.png" %}
+{% elsif tile_frame == "laptop-dark" %}
+  {% assign frame_file = "device-laptop-dark.png" %}
+{% elsif tile_frame == "laptop-light" %}
+  {% assign frame_file = "device-laptop-light.png" %}
+{% elsif tile_frame == "phone-light" %}
+  {% assign frame_file = "device-phone-light.png" %}
+{% elsif tile_frame == "phone-dark" %}
+  {% assign frame_file = "device-phone-dark.png" %}
+{% else %}
+  {% assign tile_frame = "hands" %}
+  {% assign frame_file = "tablet-hands.png" %}
+{% endif %}
+<article class="strip-tile{% if tile_kind == 'projecten' or tile_kind == 'demos' %} strip-tile--photo{% endif %}{% if tile_kind == 'demos' %} strip-tile--demo{% endif %}{% if tile_kind == 'kennis' %} strip-tile--kennis{% endif %}">
+  <a class="strip-tile__link" href="{{ include.url | relative_url }}" aria-label="{{ include.aria }}">
+    <span class="strip-tile__copy">
+      <h2 class="strip-tile__title">{{ include.title }}</h2>
+      {% if include.summary %}
+        <p class="strip-tile__excerpt">{{ include.summary }}</p>
+      {% endif %}
+      <span class="strip-tile__more">{{ include.cta }}</span>
+    </span>
+    {% if tile_kind == "projecten" or tile_kind == "demos" %}
+      <span class="strip-tile__stage" aria-hidden="true">
+        <span class="tablet-shot tablet-shot--{{ tile_frame }}">
+          {% if tile_src != "" %}
+            <img class="tablet-shot__screen" src="{{ tile_src }}" alt="" loading="lazy" decoding="async">
+          {% endif %}
+          <img class="tablet-shot__frame" src="{{ '/assets/images/verhalen/' | append: frame_file | relative_url }}" alt="" loading="lazy" decoding="async">
+        </span>
+      </span>
+    {% endif %}
+  </a>
+</article>

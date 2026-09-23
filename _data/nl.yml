@@ -6,13 +6,13 @@ lang_switch_aria_en: "Schakel naar Engels"
 
 nav:
   home: "Home"
-  play: "Kennis"
+  play: "Methode"
   diensten: "Diensten"
   prepo: "Prepo"
   team: "Team"
   ontwerpmethodiek: "Ontwerpmethodiek"
   impact: "Impact"
-  verhalen: "Projecten"
+  verhalen: "Inspiratie"
   gamestorm: "GameStorm"
   contact: "Contact"
 
@@ -24,7 +24,7 @@ nav_paths:
   team: "/team/"
   ontwerpmethodiek: "/ontwerpmethodiek/"
   impact: "/impact/"
-  verhalen: "/verhalen/"
+  verhalen: "/inspiratie/"
   gamestorm: "/gamestorm/"
   contact: "/contact/"
 
@@ -35,9 +35,11 @@ cta:
 footer:
   navigation: "Navigatie"
   about_heading: "Over Preludens"
-  about: "Preludens is een Nederlands leer- en spelontwerpstudio die teams voorbereidt op de toekomst met storytelling, MicroGames en interactieve leerervaringen."
+  about_paragraphs:
+    - "Preludens is een Learning & Development-bedrijf dat organisaties helpt om kennis duurzaam te verankeren."
+    - "Wij geloven dat leren sterker wordt wanneer mensen actief met de leerstof aan de slag gaan, de betekenis ervan ervaren en zélf gemotiveerd zijn om die kennis toe te passen."
+    - "Daarom combineren we game-based learning met storytelling. We maken online leerervaringen waarin deelnemers herkenbare situaties verkennen, keuzes maken en de gevolgen ontdekken."
   direct_contact: "Direct contact"
-  response_note: "We reageren doorgaans binnen één werkdag."
   start_playing: "Start met spelen"
   start_playing_text: "Wil je online leren omzetten in een verhaal dat raakt? Plan een GameStorm."
   rights: "Alle rechten voorbehouden."
