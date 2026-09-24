@@ -1,4 +1,5 @@
 ---
+published: false
 lang: en
 permalink: /verhalen/21cc-koeltechniek/
 title: Learning technology by experiencing it

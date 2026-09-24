@@ -47,6 +47,31 @@
 
   var tabs = root.querySelectorAll("[data-verhaal-filter]");
   var grid = document.querySelector("[data-verhalen-grid]");
+
+  // Op "Alle" staan projecten, kennis en demo's door elkaar, niet per soort achter elkaar.
+  if (grid) {
+    var buckets = { projecten: [], kennis: [], demos: [], whitepapers: [] };
+    Array.prototype.forEach.call(grid.querySelectorAll("[data-verhaal-type]"), function (node) {
+      var type = node.getAttribute("data-verhaal-type") || "projecten";
+      if (!buckets[type]) buckets[type] = [];
+      buckets[type].push(node);
+    });
+    var mixOrder = ["projecten", "kennis", "demos", "whitepapers"];
+    var mixed = [];
+    var left = true;
+    while (left) {
+      left = false;
+      mixOrder.forEach(function (type) {
+        if (buckets[type] && buckets[type].length) {
+          mixed.push(buckets[type].shift());
+          left = true;
+        }
+      });
+    }
+    mixed.forEach(function (node) {
+      grid.appendChild(node);
+    });
+  }
   var empty = document.querySelector("[data-verhalen-empty]");
   var featured = document.querySelector("[data-verhalen-featured]");
   var pager = document.querySelector("[data-verhalen-pager]");

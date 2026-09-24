@@ -1,4 +1,5 @@
 ---
+published: false
 lang: en
 permalink: /verhalen/nnvo-it-veiligheid/
 title: IT security people understand — and actually use

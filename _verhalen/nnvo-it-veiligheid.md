@@ -1,4 +1,5 @@
 ---
+published: false
 lang: nl
 permalink: /verhalen/nnvo-it-veiligheid/
 title: IT-veiligheid die mensen begrijpen én toepassen

@@ -49,6 +49,9 @@ layout: default
       </div>
       {% endif %}
       <h1 class="verhaal-hero__title">{{ page.title }}</h1>
+      {% if page.lead %}
+        <p class="verhaal-hero__lead">{{ page.lead }}</p>
+      {% endif %}
     </div>
   </header>
 
@@ -56,6 +59,46 @@ layout: default
     <div class="container">
       <div class="verhaal-layout">
         <div class="verhaal-main">
+          {% if page.blokken %}
+            {% if page.inleiding %}
+              <section class="verhaal-section">
+                {% for alinea in page.inleiding %}
+                  {{ alinea | markdownify }}
+                {% endfor %}
+              </section>
+            {% elsif page.intro %}
+              <section class="verhaal-section">
+                <p>{{ page.intro }}</p>
+              </section>
+            {% endif %}
+            {% if page.feiten_eerst and page.feiten %}
+              <section class="verhaal-facts-block">
+                <h2>{{ page.feiten_kop | default: t.verhaal.facts_label }}</h2>
+                <dl class="verhaal-facts">
+                  {% for feit in page.feiten %}
+                    <div><dt>{{ feit.label }}</dt><dd>{{ feit.waarde }}</dd></div>
+                  {% endfor %}
+                </dl>
+              </section>
+            {% endif %}
+            {% for blok in page.blokken %}
+              <section class="verhaal-section{% if blok.slot %} verhaal-section--slot{% endif %}">
+                {% if blok.kop %}<h2>{{ blok.kop }}</h2>{% endif %}
+                {% if blok.subkop %}<h3>{{ blok.subkop }}</h3>{% endif %}
+                {% for alinea in blok.alineas %}
+                  {% if alinea.punten %}
+                    <ul>
+                      {% for punt in alinea.punten %}
+                        <li>{{ punt }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% else %}
+                    {{ alinea | markdownify }}
+                  {% endif %}
+                {% endfor %}
+              </section>
+            {% endfor %}
+          {% else %}
           {% if uitdaging %}
             <section class="verhaal-section">
               <h2>{{ t.verhaal.challenge }}</h2>
@@ -97,12 +140,23 @@ layout: default
               <p>{{ resultaat }}</p>
             </section>
           {% endif %}
+          {% endif %}
 
           {% assign has_project_details = false %}
           {% if page.client or page.project or page.sector or page.jaar or page.oplossingstype or page.doelgroep or page.thema or page.vorm or page.rol %}
             {% assign has_project_details = true %}
           {% endif %}
-          {% if has_project_details %}
+          {% if page.feiten_eerst %}
+          {% elsif page.feiten %}
+            <section class="verhaal-facts-block">
+              <h2>{{ page.feiten_kop | default: t.verhaal.facts_label }}</h2>
+              <dl class="verhaal-facts">
+                {% for feit in page.feiten %}
+                  <div><dt>{{ feit.label }}</dt><dd>{{ feit.waarde }}</dd></div>
+                {% endfor %}
+              </dl>
+            </section>
+          {% elsif has_project_details %}
             <section class="verhaal-facts-block">
               <h2>{{ t.verhaal.facts_label }}</h2>
               <dl class="verhaal-facts">

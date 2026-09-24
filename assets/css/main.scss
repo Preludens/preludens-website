@@ -1879,9 +1879,17 @@ p { margin: 0 0 var(--space-sm); }
   color: var(--color-preludens-gold);
 }
 
+.verhaal-hero__lead {
+  max-width: 36rem;
+  margin: var(--space-sm) 0 0;
+  color: rgba(246, 249, 249, 0.92);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.45;
+}
+
 .verhaal-hero__title {
   color: var(--color-white);
-  max-width: 22ch;
+  max-width: 18ch;
   margin: 0;
   font-size: clamp(2.5rem, 5.6vw, 4.5rem);
   font-weight: 600;
@@ -2001,7 +2009,27 @@ a.verhaal-chip {
     margin-bottom: var(--space-xs);
   }
 
+  h3 {
+    font-size: 1.15rem;
+    margin: 0 0 var(--space-xs);
+  }
+
   p:last-child { margin-bottom: 0; }
+
+  p + p,
+  p + ul,
+  ul + p {
+    margin-top: 0.85rem;
+  }
+
+  ul {
+    margin: 0.85rem 0 0;
+    padding-left: 1.15rem;
+  }
+
+  li + li {
+    margin-top: 0.35rem;
+  }
 }
 
 .verhaal-figure {
