@@ -1,9 +1,11 @@
 ---
 layout: default
-lang: nl
+lang: en
 title: Homepage concept
-description: Activeer je team en bereid ze voor op de toekomst met storytelling en MicroGames.
+description: We strengthen knowledge retention in organisations with storytelling and MicroGames.
 permalink: /homepage-concept/
+permalink_lang:
+  nl: /homepage-concept/
 permalink_lang:
   en: /homepage-concept/
 body_class: page-scroll-preview
@@ -96,7 +98,7 @@ robots: noindex, nofollow
     );
   }
   .sp-panel--cream .sp-inner {
-    padding-top: calc(var(--sp-jump) + 60px);
+    padding-top: calc(var(--sp-jump) + clamp(1.25rem, 4vh, 2.75rem));
     padding-bottom: calc(40px + var(--sp-jump));
   }
   .sp-focus-copy {
@@ -1034,7 +1036,7 @@ robots: noindex, nofollow
   }
 </style>
 
-<aside class="sp-rail" aria-label="Paneel-navigatie"></aside>
+<aside class="sp-rail" aria-label="Panel navigation"></aside>
 
 <div class="sp-stack">
 
@@ -1042,20 +1044,20 @@ robots: noindex, nofollow
   <section class="sp-panel sp-panel--hero" data-sp="0">
     <div class="sp-inner">
       <div class="sp-hero-copy">
-        <h3>Leren door te doen</h3>
-        <h1>Wij versterken <span class="hl">kennisretentie</span> <span class="sp-nowrap">binnen organisaties.</span></h1>
+        <h3>Learning by doing</h3>
+        <h1>We strengthen <span class="hl">knowledge retention</span> <span class="sp-nowrap">in organisations.</span></h1>
         <p class="sp-lead">
-          Preludens ontwerpt en ontwikkelt online trainingen waarin medewerkers oefenen met situaties uit de praktijk. Met storytelling en game-based leren dagen we deelnemers uit om zelf keuzes te maken. Gerichte feedback en herhaling helpen de kennis beter te onthouden en toe te passen in hun werk.
+          Preludens designs and develops online training in which employees practise with situations from their work. With storytelling and game-based learning we invite participants to make their own choices. Focused feedback and repetition help them remember the knowledge and apply it in their work.
         </p>
         <div class="sp-actions">
           <span class="sp-hero-cta">
-            <a class="btn btn-primary" href="{{ '/diensten/' | relative_url }}">Ontdek onze aanpak →</a>
+            <a class="btn btn-primary" href="{{ '/diensten/' | relative_url }}">Discover our approach →</a>
           </span>
           <a class="sp-hero-play" href="{{ '/play/' | relative_url }}">
             <span class="sp-hero-play__icon" aria-hidden="true">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M3.2 1.4v9.2L10.4 6 3.2 1.4z"/></svg>
             </span>
-            Bekijk een MicroGame
+            View a MicroGame
           </a>
         </div>
       </div>
@@ -1073,25 +1075,25 @@ robots: noindex, nofollow
         <a class="sp-hero-scene__link" href="{{ '/play/' | relative_url }}">
           <div class="sp-hero-shadow">
             <div class="sp-hero-frame">
-              <img src="{{ '/assets/images/hero/homepage-concept-route.jpg' | relative_url }}" alt="Een persoon op een pad dat naar een vlag op de horizon leidt">
+              <img src="{{ '/assets/images/hero/homepage-concept-route.jpg' | relative_url }}" alt="A person on a path leading towards a flag on the horizon">
             </div>
           </div>
         </a>
-        <figcaption>Van informatie naar kennis.</figcaption>
+        <figcaption>From information to knowledge.</figcaption>
       </figure>
     </div>
     <div class="sp-hero-steps">
       <article>
-        <h3><span>01</span> Uitdagen</h3>
-        <p>Daag teams uit om binnen realistische situaties keuzes te maken, afwegingen te oefenen en de gevolgen van hun handelen te ervaren.</p>
+        <h3><span>01</span> Challenge</h3>
+        <p>Invite teams to make choices in realistic situations, practise weighing options and experience the consequences of what they do.</p>
       </article>
       <article>
-        <h3><span>02</span> Activeren</h3>
-        <p>Gebruik Play om deelnemers actief te laten kiezen. Niet kijken of klikken, maar proberen, reageren, beslissen en leren van directe feedback.</p>
+        <h3><span>02</span> Activate</h3>
+        <p>Use Play so participants actively choose. Trying, responding, deciding and learning from direct feedback.</p>
       </article>
       <article>
-        <h3><span>03</span> Motiveren</h3>
-        <p>Versterk de betrokkenheid en intrinsieke motivatie, zodat teams met meer vertrouwen handelen wanneer het er in de praktijk echt op aankomt.</p>
+        <h3><span>03</span> Motivate</h3>
+        <p>Strengthen engagement and intrinsic motivation, so teams act with more confidence when it really matters in practice.</p>
       </article>
     </div>
   </section>
@@ -1099,20 +1101,20 @@ robots: noindex, nofollow
   <!-- 2. Online focus -->
   <section class="sp-panel sp-panel--cream" data-sp="1">
     <div class="sp-inner">
-      <h2>Interactieve scenario's die teams<br><span class="hl">uitdagen</span>, <span class="hl">activeren</span> en <span class="hl">motiveren</span>.</h2>
+      <h2>Interactive scenarios that<br><span class="hl">challenge</span>, <span class="hl">activate</span> and <span class="hl">motivate</span> teams.</h2>
       <div class="sp-focus-copy">
         <p class="sp-lead">
-          Bij Preludens geloven we dat online leren pas werkt wanneer mensen actief betrokken raken. Daarom ontwerpen we
-          interactieve leerervaringen die aansluiten bij de praktijk: visueel opgebouwd, herkenbaar en gericht op kennis
-          die mensen echt moeten kunnen toepassen.
+          At Preludens we believe online learning works when people become actively involved. That is why we design
+          interactive learning experiences that fit practice: visually built, recognisable and aimed at knowledge
+          people need to be able to apply.
         </p>
         <p class="sp-lead">
-          Storytelling geeft context en betekenis. MicroGames zorgen voor keuzes, herhaling en directe feedback. Data laat
-          zien waar deelnemers vastlopen en waar verbetering mogelijk is. Zo wordt online leren geen verplichting om
-          doorheen te klikken, maar een gerichte ervaring waarin teams oefenen, ontdekken en groeien.
+          Storytelling gives context and meaning. MicroGames create choices, repetition and direct feedback. Data shows
+          where participants get stuck and where improvement is possible. Online learning then becomes a focused
+          experience in which teams practise, discover and grow.
         </p>
       </div>
-      <ul class="sp-focus-clients" aria-label="Een selectie van klanten">
+      <ul class="sp-focus-clients" aria-label="A selection of clients">
         <li>
           <img src="{{ '/assets/images/clients/focus-nnvo.png' | relative_url }}" alt="NNVO, Nationale Nautische Verkeersdienst Opleiding" width="190" height="80" loading="lazy" decoding="async">
         </li>
@@ -1135,19 +1137,19 @@ robots: noindex, nofollow
   <!-- 3. Diensten -->
   <section class="sp-panel sp-panel--navy" data-sp="2">
     <div class="sp-inner">
-      <h3>Wat we doen</h3>
-      <h2><span class="hl">Kennistrajecten</span> met verhaal, spel en impact.</h2>
+      <h3>What we do</h3>
+      <h2><span class="hl">Knowledge journeys</span> with story, play and impact.</h2>
       <p class="sp-lead">
-        <strong>Welke vorm past bij jouw uitdaging?</strong>
-        Wil je basiskennis trainen en borgen, dan ligt een MicroGame Story voor de hand. Wil je besluitvaardigheid versterken rond lastige keuzes, dan past Dilemma Storytelling. Wil je eerst grip krijgen op gedrag, leerdoelen en interventies, dan starten we met Game Thinking.
+        <strong>Which form fits your challenge?</strong>
+        If you want to train and secure basic knowledge, a MicroGame Story is the natural choice. If you want to strengthen decision-making around difficult choices, Dilemma Storytelling fits. If you first want a grip on behaviour, learning goals and interventions, we start with Game Thinking.
       </p>
       <div class="sp-tracks">
         <article class="sp-track">
           <a class="sp-track__link" href="{{ '/diensten/' | relative_url }}">
             <span class="sp-track__copy">
               <h3>E-learning</h3>
-              <p>Online trainingen waarin medewerkers oefenen met situaties uit hun werk, keuzes maken en directe feedback krijgen.</p>
-              <span class="sp-track__more">Informatie</span>
+              <p>Online training in which employees practise with situations from their work, make choices and receive direct feedback.</p>
+              <span class="sp-track__more">Information</span>
             </span>
             <span class="sp-track__stage" aria-hidden="true">
               <span class="sp-device sp-device--laptop-light">
@@ -1161,8 +1163,8 @@ robots: noindex, nofollow
           <a class="sp-track__link" href="{{ '/prepo/' | relative_url }}">
             <span class="sp-track__copy">
               <h3>Preludens Portal</h3>
-              <p>Eén omgeving om MicroGames en Stories te gebruiken, te beheren en door te ontwikkelen, ook na de oplevering.</p>
-              <span class="sp-track__more">Informatie</span>
+              <p>One environment to use, manage and keep developing MicroGames and Stories, also after delivery.</p>
+              <span class="sp-track__more">Information</span>
             </span>
             <span class="sp-track__stage" aria-hidden="true">
               <span class="sp-device sp-device--laptop-dark">
@@ -1176,8 +1178,8 @@ robots: noindex, nofollow
           <a class="sp-track__link" href="{{ '/diensten/#microgame-stories' | relative_url }}">
             <span class="sp-track__copy">
               <h3>MicroGame Stories</h3>
-              <p>Korte, visuele verhalen die basiskennis koppelen aan herkenbare praktijksituaties, met spel en herhaling.</p>
-              <span class="sp-track__more">Informatie</span>
+              <p>Short, visual stories that connect basic knowledge to recognisable work situations, with play and repetition.</p>
+              <span class="sp-track__more">Information</span>
             </span>
             <span class="sp-track__stage" aria-hidden="true">
               <span class="sp-device sp-device--tablet">
@@ -1191,8 +1193,8 @@ robots: noindex, nofollow
           <a class="sp-track__link" href="{{ '/diensten/#dilemma-storytelling' | relative_url }}">
             <span class="sp-track__copy">
               <h3>Dilemma short Stories</h3>
-              <p>Korte scenario’s waarin teams lastige keuzes maken, gevolgen ervaren en leren afwegen.</p>
-              <span class="sp-track__more">Informatie</span>
+              <p>Short scenarios in which teams make difficult choices, experience the consequences and learn to weigh their options.</p>
+              <span class="sp-track__more">Information</span>
             </span>
             <span class="sp-track__stage" aria-hidden="true">
               <span class="sp-device sp-device--hands">
@@ -1209,47 +1211,47 @@ robots: noindex, nofollow
   <!-- 4. CTA -->
   <section class="sp-panel sp-panel--warm" data-sp="3">
     <div class="sp-inner">
-      <h3>Vrijblijvend · geen verplichtingen · reactie binnen één werkdag</h3>
-      <h2>Zet morgen de eerste stap</h2>
+      <h3>No obligation · no commitments · a reply within one working day</h3>
+      <h2>Take the first step tomorrow</h2>
       <div class="sp-warm-copy">
         <p class="sp-lead">
-          In een GameStorm verkennen we samen jouw leeruitdaging. In één dagdeel brengen we de doelgroep, context en
-          belangrijkste leerdoelen scherp in beeld. Daarna vertalen we die inzichten naar een eerste verhaallijn,
-          passende keuzes en korte spelmechanismen.
+          In a GameStorm we explore your learning challenge together. In one half-day we bring the audience, context and
+          key learning goals into sharp focus. Then we translate those insights into a first storyline, fitting choices
+          and short game mechanisms.
         </p>
         <p class="sp-lead">
-          Je gaat naar huis met een helder concept en een concrete richting voor je leerervaring. Ook los van een
-          vervolgtraject geeft de sessie waardevolle houvast voor betere e-learning, training of kennisoverdracht.
+          You leave with a clear concept and a concrete direction for your learning experience. Even without a follow-up
+          project, the session gives valuable footing for better e-learning, training or knowledge transfer.
         </p>
       </div>
       <div class="sp-actions">
-        <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Plan een GameStorm</a>
-        <a class="btn btn-secondary" href="{{ '/play/' | relative_url }}">Ontdek Play</a>
+        <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Plan a GameStorm</a>
+        <a class="btn btn-secondary" href="{{ '/play/' | relative_url }}">Discover Play</a>
       </div>
     </div>
   </section>
 
   <!-- 5. Verhalen — bewijs uit de praktijk -->
-  <section class="sp-panel sp-panel--verhalen" data-sp="4" data-title="Verhalen uit de praktijk">
+  <section class="sp-panel sp-panel--verhalen" data-sp="4" data-title="Stories from practice">
     <div class="sp-inner">
-      <span class="sp-eyebrow">Bewezen in de praktijk</span>
-      <h2>Van vraagstuk naar spelbare leerervaring</h2>
+      <span class="sp-eyebrow">Proven in practice</span>
+      <h2>From challenge to playable learning experience</h2>
       <p class="sp-lead">
-        Van nautisch toezicht tot energietransitie: elk project begint met een vraagstuk dat om beweging vraagt.
-        Daarom biedt Preludens een totaaloplossing voor game-based leren: van eerste verkenning tot implementatie
-        in de eigen leeromgeving.
+        From nautical supervision to the energy transition: every project starts with a challenge that asks for
+        movement. That is why Preludens offers an end-to-end approach to game-based learning: from first exploration
+        to implementation in your own learning environment.
       </p>
-      <ol class="sp-steps" aria-label="De 7 stappen van succes">
+      <ol class="sp-steps" aria-label="The 7 steps of success">
         <li><span class="sp-steps__num">1</span> GameStorm</li>
         <li><span class="sp-steps__num">2</span> Storytelling</li>
-        <li><span class="sp-steps__num">3</span> Visualisatie</li>
-        <li><span class="sp-steps__num">4</span> Leerdoelen</li>
+        <li><span class="sp-steps__num">3</span> Visualisation</li>
+        <li><span class="sp-steps__num">4</span> Learning goals</li>
         <li><span class="sp-steps__num">5</span> Design</li>
-        <li><span class="sp-steps__num">6</span> Productie</li>
-        <li><span class="sp-steps__num">7</span> Implementatie</li>
+        <li><span class="sp-steps__num">6</span> Production</li>
+        <li><span class="sp-steps__num">7</span> Implementation</li>
       </ol>
-      <ul class="sp-clients" aria-label="Een selectie van opdrachtgevers">
-        <li>Hogeschool van Amsterdam</li>
+      <ul class="sp-clients" aria-label="A selection of clients">
+        <li>Amsterdam University of Applied Sciences</li>
         <li>
           <img
             class="sp-clients__logo"
@@ -1287,15 +1289,15 @@ robots: noindex, nofollow
         <li>onITnow</li>
       </ul>
       <div class="sp-actions">
-        <a class="btn btn-primary" href="{{ '/verhalen/' | relative_url }}">Lees de verhalen</a>
+        <a class="btn btn-primary" href="{{ '/verhalen/' | relative_url }}">Read the stories</a>
       </div>
     </div>
   </section>
 
   <!-- 6. Klant-testimonial -->
-  <section class="sp-panel sp-panel--testimonial" data-sp="5" data-title="Wat klanten zeggen">
+  <section class="sp-panel sp-panel--testimonial" data-sp="5" data-title="What clients say">
     <div class="sp-inner">
-      <h2>Ervaringen uit de praktijk</h2>
+      <h2>Experiences from practice</h2>
       <div class="sp-carousel" data-sp-carousel>
         <div class="sp-carousel__track">
           <figure class="sp-testimonial sp-carousel__slide is-active">
@@ -1310,11 +1312,11 @@ robots: noindex, nofollow
             >
             <div class="sp-testimonial__body">
               <blockquote>
-                Daan heeft ons erg geholpen van een statische ontwerptool een game te maken waarin spelers op alle aspecten van hun keuzes uitgedaagd worden. Het werk van Daan zorgde ervoor dat alle stappen logisch en voor een breed publiek van professionals en studenten zijn neergezet in een prachtig kaartspel.
+                Daan helped us turn a static design tool into a game that challenges players on every aspect of their choices. His work made sure every step was set out logically, for a broad audience of professionals and students, in a beautiful card game.
               </blockquote>
               <figcaption class="sp-testimonial__cite">
                 <span class="sp-testimonial__name">Renée Heller</span>
-                <span class="sp-testimonial__role">Professor Energy &amp; Innovation, Hogeschool van Amsterdam</span>
+                <span class="sp-testimonial__role">Professor Energy &amp; Innovation, Amsterdam University of Applied Sciences</span>
               </figcaption>
             </div>
           </figure>
@@ -1327,29 +1329,29 @@ robots: noindex, nofollow
   </section>
 
   <!-- 7. Team — de makers (E-E-A-T) -->
-  <section class="sp-panel sp-panel--team" data-sp="6" data-title="Het team">
+  <section class="sp-panel sp-panel--team" data-sp="6" data-title="The team">
     <div class="sp-inner">
-      <span class="sp-eyebrow">Het team</span>
-      <h2>De mensen achter Preludens</h2>
+      <span class="sp-eyebrow">The team</span>
+      <h2>The people behind Preludens</h2>
       <p class="sp-lead">
-        Preludens combineert meer dan vijftien jaar ervaring in serious games met storytelling,
-        game design, didactiek en techniek. We zijn een compact team van makers, ontwerpers en
-        ontwikkelaars dat complexe kennis vertaalt naar leerervaringen waarin mensen actief
-        ontdekken, kiezen en oefenen.
+        Preludens combines more than fifteen years of experience in serious games with storytelling,
+        game design, didactics and technology. We are a compact team of makers, designers and
+        developers that turns complex knowledge into learning experiences in which people actively
+        discover, choose and practise.
       </p>
-      <p><a href="{{ '/team/' | relative_url }}">Maak kennis met het team →</a></p>
-      <ul class="sp-values" aria-label="Wij staan voor">
+      <p><a href="{{ '/team/' | relative_url }}">Meet the team →</a></p>
+      <ul class="sp-values" aria-label="What we stand for">
         <li>
-          <strong>Robuust</strong>
-          <span>Leerervaringen die stabiel werken, logisch aanvoelen en vertrouwen geven.</span>
+          <strong>Robust</strong>
+          <span>Learning experiences that work reliably, feel logical and build trust.</span>
         </li>
         <li>
-          <strong>Gericht</strong>
-          <span>Ontwerpkeuzes die altijd terug te voeren zijn op leerdoelen, gedrag en toepassing.</span>
+          <strong>Purposeful</strong>
+          <span>Design choices that always trace back to learning goals, behaviour and application.</span>
         </li>
         <li>
-          <strong>Toegankelijk</strong>
-          <span>Complexe kennis wordt helder, herkenbaar en speelbaar voor de mensen die ermee moeten werken.</span>
+          <strong>Accessible</strong>
+          <span>Complex knowledge becomes clear, recognisable and playable for the people who need to use it.</span>
         </li>
       </ul>
     </div>
@@ -1509,7 +1511,7 @@ robots: noindex, nofollow
     if (explicit) return explicit;
     if (heading) return heading.textContent.trim();
     if (quote) return "Homo Ludens";
-    return "Paneel " + (index + 1);
+    return "Panel " + (index + 1);
   }
 
   // Voortgangsrail opbouwen
@@ -1518,7 +1520,7 @@ robots: noindex, nofollow
       var b = document.createElement("button");
       b.type = "button";
       var title = panelTitle(p, i);
-      b.setAttribute("aria-label", "Ga naar " + title);
+      b.setAttribute("aria-label", "Go to " + title);
       b.setAttribute("title", title);
       var label = document.createElement("span");
       label.className = "sp-rail-label";

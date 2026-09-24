@@ -17,7 +17,7 @@ nav:
   contact: "Contact"
 
 nav_paths:
-  home: "/"
+  home: "/homepage-concept/"
   play: "/play/"
   diensten: "/diensten/"
   prepo: "/prepo/"

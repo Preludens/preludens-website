@@ -1,7 +1,7 @@
 {% include locale.html %}
 <header class="site-header" data-header>
   <div class="container header-inner">
-    <a class="logo" href="{{ '/' | relative_url }}" aria-label="Preludens – {% if locale == 'en' %}home{% else %}naar home{% endif %}">
+    <a class="logo" href="{{ t.nav_paths.home | relative_url }}" aria-label="Preludens – {% if locale == 'en' %}home{% else %}naar home{% endif %}">
       <img class="logo-img" src="{{ '/assets/images/logo/preludens-logo.svg' | relative_url }}" alt="Preludens" width="402" height="119">
     </a>
 
@@ -14,7 +14,7 @@
 
     <nav id="site-nav" class="site-nav" data-nav>
       <ul>
-        {% assign nav_keys = "home,play,diensten,prepo,team,verhalen,contact" | split: "," %}
+        {% assign nav_keys = "home,play,diensten,team,verhalen,contact" | split: "," %}
         {% for key in nav_keys %}
           {% assign label = t.nav[key] %}
           {% assign path = t.nav_paths[key] %}

@@ -287,15 +287,16 @@ p { margin: 0 0 var(--space-sm); }
 .lang-switch__more .lang-switch__option {
   padding-top: 1.05rem;
   padding-bottom: 0.9rem;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-preludens-gold);
+  }
 }
 
 .lang-switch__option {
   color: #000;
   transition: color var(--transition);
-
-  &:hover {
-    color: var(--color-preludens-gold);
-  }
 
   &:focus-visible {
     outline: 2px solid var(--color-preludens-gold);
