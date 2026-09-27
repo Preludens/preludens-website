@@ -1,0 +1,12 @@
+<article class="sp-track">
+  <a class="sp-track__link" href="{{ include.href | relative_url }}">
+    <span class="sp-track__copy">
+      <h3>{{ include.title }}</h3>
+      <p>{{ include.text }}</p>
+      <span class="sp-track__more">{{ include.more }}</span>
+    </span>
+    <span class="sp-track__stage" aria-hidden="true">
+      {% include panels/device.html kind=include.device screen=include.screen %}
+    </span>
+  </a>
+</article>

@@ -1,0 +1,25 @@
+<section class="panel panel--hero">
+  <div class="panel__inner">
+    <div class="sp-hero-copy">
+      {% if include.kicker %}<h3>{{ include.kicker }}</h3>{% endif %}
+      <h1>{{ include.title }}</h1>
+      <p class="sp-lead">{{ include.lead }}</p>
+      {{ include.actions }}
+    </div>
+    {% if include.figure_src %}
+    <figure class="sp-hero-scene">
+      <a class="sp-hero-scene__link" href="{{ include.figure_href | relative_url }}">
+        <div class="sp-hero-shadow">
+          <div class="sp-hero-frame">
+            <img src="{{ include.figure_src | relative_url }}" alt="{{ include.figure_alt }}">
+          </div>
+        </div>
+      </a>
+      {% if include.figure_caption %}
+      <figcaption>{{ include.figure_caption }}</figcaption>
+      {% endif %}
+    </figure>
+    {% endif %}
+  </div>
+  {{ include.steps }}
+</section>

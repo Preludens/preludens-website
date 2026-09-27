@@ -1,0 +1,206 @@
+.sp-tracks {
+  --sp-track-gap: 120px;
+  --sp-track-shift: 40px;
+  --sp-track-drop: -80px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-track-gap);
+  margin-top: clamp(var(--space-lg), 5vh, 3.5rem);
+}
+
+@media (min-width: 800px) {
+  .sp-tracks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sp-track:nth-child(odd) { --sp-shift-x: var(--sp-track-shift); }
+  .sp-track:nth-child(even) { --sp-shift-x: calc(var(--sp-track-shift) * -1); }
+  .sp-track:nth-child(n + 3) { --sp-shift-y: var(--sp-track-drop); }
+}
+
+.sp-track {
+  --sp-shift-x: 0px;
+  --sp-shift-y: 0px;
+  position: relative;
+  display: flex;
+  aspect-ratio: 1 / 1;
+  background: var(--color-mist-blue);
+  transform: translate(var(--sp-shift-x), var(--sp-shift-y));
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.sp-track::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: transparent;
+  pointer-events: none;
+  transition: background var(--transition);
+}
+
+.sp-track:hover,
+.sp-track:focus-within {
+  transform: translate(var(--sp-shift-x), calc(var(--sp-shift-y) - 8px));
+  box-shadow: var(--shadow-soft);
+}
+
+.sp-track:hover::after,
+.sp-track:focus-within::after {
+  /* wash of --color-deep-navy */
+  background: rgba(11, 42, 53, 0.14);
+}
+
+.sp-track__link {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+.sp-track__copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 1.5rem 1.35rem 0;
+}
+
+.sp-track__link:hover,
+.sp-track__link:focus-visible {
+  color: var(--color-ink);
+}
+
+.sp-track__link:focus-visible {
+  outline: 3px solid var(--color-coral);
+  outline-offset: -3px;
+}
+
+.sp-track h3 {
+  margin: 0;
+  max-width: 18em;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: var(--color-ink);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.sp-track p {
+  margin: 0.7rem 0 0;
+  max-width: 34em;
+  color: var(--color-ink-soft);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.sp-track__more {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1.1rem;
+  padding: 0.55rem 1.15rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-brand-navy);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.sp-track__link:hover .sp-track__more,
+.sp-track__link:focus-visible .sp-track__more {
+  background: var(--color-deep-navy);
+  color: var(--color-white);
+}
+
+.sp-track__stage {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex: 1 1 auto;
+  min-height: 42%;
+  margin-top: 0.75rem;
+}
+
+.sp-device {
+  position: relative;
+  height: 72%;
+  width: fit-content;
+  max-width: 78%;
+}
+
+.sp-device__frame {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+}
+
+.sp-device__screen {
+  position: absolute;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.sp-device--hands .sp-device__screen {
+  left: 17.3%;
+  top: 14.1%;
+  width: 65.4%;
+  height: 60.9%;
+}
+
+.sp-device--tablet .sp-device__screen {
+  left: 17.7%;
+  top: 12.8%;
+  width: 65%;
+  height: 57.5%;
+}
+
+.sp-device--laptop-dark .sp-device__screen {
+  left: 16.5%;
+  top: 10%;
+  width: 67%;
+  height: 57.1%;
+}
+
+.sp-device--laptop-light .sp-device__screen {
+  left: 16.7%;
+  top: 10.3%;
+  width: 66.6%;
+  height: 56.5%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-track {
+    transition: none;
+  }
+
+  .sp-track:hover,
+  .sp-track:focus-within {
+    transform: translate(var(--sp-shift-x), var(--sp-shift-y));
+  }
+}

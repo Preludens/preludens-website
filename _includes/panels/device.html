@@ -1,0 +1,14 @@
+{% case include.kind %}
+  {% when "hands" %}
+    {% assign frame = "/assets/images/verhalen/tablet-hands.png" %}
+  {% when "tablet" %}
+    {% assign frame = "/assets/images/verhalen/device-tablet-02.png" %}
+  {% when "laptop-dark" %}
+    {% assign frame = "/assets/images/verhalen/device-laptop-dark.png" %}
+  {% when "laptop-light" %}
+    {% assign frame = "/assets/images/verhalen/device-laptop-light.png" %}
+{% endcase %}
+<span class="sp-device sp-device--{{ include.kind }}">
+  <img class="sp-device__screen" src="{{ include.screen | relative_url }}" alt="" loading="lazy" decoding="async">
+  <img class="sp-device__frame" src="{{ frame | relative_url }}" alt="" loading="lazy" decoding="async">
+</span>

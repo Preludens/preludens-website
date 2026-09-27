@@ -1,0 +1,18 @@
+{% if page.lang and page.lang != site.default_lang %}
+  {% capture redirect_href %}{{ site.baseurl }}/{{ page.lang }}{{ page.redirect_to }}{% endcapture %}
+{% else %}
+  {% capture redirect_href %}{{ site.baseurl }}{{ page.redirect_to }}{% endcapture %}
+{% endif %}
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.default_lang | default: 'nl' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="{{ redirect_href }}">
+  <meta http-equiv="refresh" content="0; url={{ redirect_href }}">
+  <title>{{ page.title | escape }}</title>
+</head>
+<body>
+  <p><a href="{{ redirect_href }}">{{ page.title | escape }}</a></p>
+</body>
+</html>

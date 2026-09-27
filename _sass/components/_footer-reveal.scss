@@ -1,0 +1,44 @@
+/* Compact footer inside the reveal wrapper. The layout still prints
+   footer.html; hide that copy when this wrapper is on the page. */
+
+body:has(.sp-footer-reveal) > .site-footer {
+  display: none !important;
+}
+
+.sp-footer-reveal {
+  position: relative;
+  z-index: 10;
+}
+
+.sp-footer-reveal .site-footer {
+  width: 100%;
+  margin: 0;
+  padding: var(--space-lg) 0 var(--space-sm);
+  border-radius: 0;
+}
+
+.sp-footer-reveal .footer-grid {
+  gap: var(--space-sm);
+  align-items: start;
+}
+
+.sp-footer-reveal .site-footer p {
+  margin-bottom: 0.45rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.sp-footer-reveal .footer-menu ul {
+  gap: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.sp-footer-reveal .logo-footer .logo-img {
+  height: 2.75rem;
+}
+
+.sp-footer-reveal .footer-bottom {
+  margin-top: 0.45rem;
+  padding-top: 0.45rem;
+  font-size: 0.78rem;
+}

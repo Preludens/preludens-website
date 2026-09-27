@@ -171,7 +171,7 @@ p { margin: 0 0 var(--space-sm); }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #fff;
+  background: var(--color-white);
   border-bottom: 1px solid var(--color-border);
   box-shadow: 0 6px 18px rgba(17, 56, 71, 0.07);
 }
@@ -345,7 +345,7 @@ p { margin: 0 0 var(--space-sm); }
     position: relative;
     display: inline-block;
     text-decoration: none;
-    color: #000;
+    color: var(--color-ink);
     font-weight: 500;
     font-size: 0.95rem;
     padding: 0.65rem 0;
@@ -387,7 +387,7 @@ p { margin: 0 0 var(--space-sm); }
     display: block;
     width: 22px;
     height: 2px;
-    background: #000;
+    background: var(--color-ink);
     border-radius: 2px;
     transition: transform var(--transition), opacity var(--transition);
   }
@@ -2576,7 +2576,7 @@ a.verhaal-chip {
 /* Banner-/hero-CTA's: donkerblauw i.p.v. standaard goud (andere .btn-primary blijft goud).
    Extra border + soft shadow zodat de knop leesbaar blijft op donkere hero-scrims. */
 .hero-banner .btn-primary,
-.sp-panel--hero .btn-primary {
+body.page-scroll-preview .sp-panel--hero .btn-primary {
   background: var(--color-brand-navy);
   color: var(--color-white) !important;
   border-color: rgba(246, 249, 249, 0.42);
@@ -4146,4 +4146,9 @@ a.verhaal-chip {
   width: 49.8%;
   height: 67.1%;
 }
+
+@import "components/panel";
+@import "components/hero";
+@import "components/tracks";
+@import "components/footer-reveal";
 

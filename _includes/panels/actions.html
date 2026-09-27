@@ -1,0 +1,22 @@
+<div class="sp-actions">
+  {% if include.primary_label %}
+    {% if include.hero_cta %}
+    <span class="sp-hero-cta">
+      <a class="btn btn-primary" href="{{ include.primary_href | relative_url }}">{{ include.primary_label }}</a>
+    </span>
+    {% else %}
+    <a class="btn btn-primary" href="{{ include.primary_href | relative_url }}">{{ include.primary_label }}</a>
+    {% endif %}
+  {% endif %}
+  {% if include.secondary_label %}
+  <a class="btn btn-secondary" href="{{ include.secondary_href | relative_url }}">{{ include.secondary_label }}</a>
+  {% endif %}
+  {% if include.play_label %}
+  <a class="sp-hero-play" href="{{ include.play_href | relative_url }}">
+    <span class="sp-hero-play__icon" aria-hidden="true">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M3.2 1.4v9.2L10.4 6 3.2 1.4z"/></svg>
+    </span>
+    {{ include.play_label }}
+  </a>
+  {% endif %}
+</div>

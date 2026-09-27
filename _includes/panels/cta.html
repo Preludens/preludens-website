@@ -1,0 +1,7 @@
+{% capture cta_body %}
+<h3>{{ include.kicker }}</h3>
+<h2>{{ include.title }}</h2>
+{% include panels/split.html variant="warm" left=include.left right=include.right %}
+{% include panels/actions.html primary_label=include.primary_label primary_href=include.primary_href secondary_label=include.secondary_label secondary_href=include.secondary_href %}
+{% endcapture %}
+{% include panels/panel.html variant="warm" body=cta_body %}

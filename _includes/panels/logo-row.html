@@ -1,0 +1,27 @@
+<ul class="sp-focus-clients" aria-label="{{ include.label }}">
+  {% if include.src1 %}
+  <li>
+    <img src="{{ include.src1 | relative_url }}" alt="{{ include.alt1 }}" width="{{ include.w1 | default: 190 }}" height="{{ include.h1 | default: 80 }}" loading="lazy" decoding="async">
+  </li>
+  {% endif %}
+  {% if include.src2 %}
+  <li>
+    <img src="{{ include.src2 | relative_url }}" alt="{{ include.alt2 }}" width="{{ include.w2 | default: 190 }}" height="{{ include.h2 | default: 80 }}" loading="lazy" decoding="async">
+  </li>
+  {% endif %}
+  {% if include.src3 %}
+  <li>
+    <img src="{{ include.src3 | relative_url }}" alt="{{ include.alt3 }}" width="{{ include.w3 | default: 190 }}" height="{{ include.h3 | default: 80 }}" loading="lazy" decoding="async">
+  </li>
+  {% endif %}
+  {% if include.src4 %}
+  <li>
+    <img src="{{ include.src4 | relative_url }}" alt="{{ include.alt4 }}" width="{{ include.w4 | default: 190 }}" height="{{ include.h4 | default: 80 }}" loading="lazy" decoding="async">
+  </li>
+  {% endif %}
+  {% if include.src5 %}
+  <li>
+    <img src="{{ include.src5 | relative_url }}" alt="{{ include.alt5 }}" width="{{ include.w5 | default: 190 }}" height="{{ include.h5 | default: 80 }}" loading="lazy" decoding="async">
+  </li>
+  {% endif %}
+</ul>
