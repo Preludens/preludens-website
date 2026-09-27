@@ -8,7 +8,14 @@ html:has(body.page-home) {
 body.page-home {
   --sp-jump: 50px;
   --sp-run: 59.6px;
+  /* Air at every angled cut. Mist and warm carry it; paper stays flush. */
+  --sp-gap: var(--space-md);
   background: var(--color-white);
+
+  .panel--mist,
+  .panel--warm {
+    margin-block: var(--sp-gap);
+  }
 
   main {
     display: block;
