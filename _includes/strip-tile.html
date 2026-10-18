@@ -6,8 +6,8 @@
   (_includes/cinema-shot.html): een uitgeknipt kader met handen en een toestel,
   met de screenshot in het vlak van het glas. Welk van de vier kaders een tegel
   krijgt bepaalt `frame` (de foto-tegels lopen om beurten door de vier). Het
-  podium (__stage) blijft onder de tekst; de deeltjes die uit het scherm naar de
-  houder toe drijven zitten in __burst.
+  podium (__stage) blijft onder de tekst; de deeltjes die loodrecht uit het glas
+  naar de kijker toe komen zitten in __burst.
 {% endcomment %}
 {% assign tile_src = "" %}
 {% assign tile_shot = "" %}
@@ -55,9 +55,7 @@
         {% include cinema-shot.html shot=tile_shot frame=include.frame %}
       </span>
       <span class="strip-tile__burst" aria-hidden="true">
-        <span class="tablet-shot tablet-shot--cinema tablet-shot--burst tablet-shot--frame-{{ include.frame | default: 1 }}">
-          <span class="tablet-shot__sparks"><i></i><i></i><i></i><i></i><i></i></span>
-        </span>
+        {% include cinema-sparks.html frame=include.frame %}
       </span>
     {% endif %}
   </a>

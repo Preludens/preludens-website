@@ -241,16 +241,26 @@
   color: var(--color-deep-navy);
 }
 
-/* Het podium is louter decor: nooit klikgebied, en het wordt door de kaartrand
-   bijgesneden. */
-.sp-track--cinema .sp-track__stage {
+/* Podium en deeltjeslaag zijn louter decor: nooit klikgebied, en ze worden
+   door de kaartrand bijgesneden, zodat een arm op de rand eindigt en nooit
+   halverwege in de lucht. Het podium blijft onder de tekst, de deeltjes die uit
+   het glas komen zitten ertussenin. */
+.sp-track--cinema .sp-track__stage,
+.sp-track--cinema .sp-track__burst {
   position: absolute;
   inset: 0;
-  z-index: 1;
   display: block;
   min-height: 0;
   margin: 0;
   overflow: hidden;
   border-radius: var(--radius-sm);
   pointer-events: none;
+}
+
+.sp-track--cinema .sp-track__stage {
+  z-index: 1;
+}
+
+.sp-track--cinema .sp-track__burst {
+  z-index: 5;
 }

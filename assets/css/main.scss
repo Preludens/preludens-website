@@ -4113,21 +4113,11 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 /* ---------------------------------------------------------------------------
    Cinematische foto-tegel: het beeld breekt uit het kader.
 
-   Vier kaders (hands-tablet, hands-tablet-staand, hands-telefoon,
-   hands-laptop): uitgeknipte handen met een toestel, transparante achtergrond
-   en een gat waar het glas zit. Elke tegel krijgt via nth-child een ander
-   kader, met de bijbehorende glas-fit.
-
-   De maatvoering binnen .tablet-shot is uitgedrukt in cqw: 100cqw = de breedte
-   van het kaderbeeld (alle kaders zijn 1500 x 1046). Per kader is het glasvlak
-   gemeten (vier hoeken in cqw) en daaruit is --glass-t afgeleid: de keten
-   translate / perspective / rotateZ / rotateY / rotateX / scale / translate die
-   een rechthoek van --glass-w bij --glass-h precies op die vier hoeken legt.
-   --glass-x en --glass-y zijn het midden van het glas; daar komen de deeltjes
-   vandaan. --arm-ux / --arm-uy is de eenheidsvector van dat midden naar de plek
-   waar de onderarmen het beeld binnenkomen (gemeten als het zwaartepunt van de
-   ondoorzichtige pixels op de rand van het kaderbeeld). Daarlangs drijven de
-   deeltjes: altijd uit het scherm naar de houder toe.
+   Hieronder staat alleen wat de tegel zelf doet: de donkere ondergrond, de
+   tekst op het verloop en het podium dat door de tegelrand wordt bijgesneden.
+   Het podium zelf — de vier gemeten kaders, de glas-fit en de deeltjes die
+   eruit naar de kijker komen — is gedeeld met de homepage en staat in
+   _sass/components/_cinema-shot.scss.
 --------------------------------------------------------------------------- */
 
 .page-verhalen-test .verhalen-panel {
