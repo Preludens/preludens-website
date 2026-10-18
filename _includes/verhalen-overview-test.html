@@ -21,32 +21,6 @@
         {% endif %}
       {% endif %}
       <div role="listitem" data-verhaal-type="{{ verhaal_type }}">
-          {% if verhaal_type == "projecten" %}
-            {% assign mix = verhaal.title.size | plus: verhaal.summary.size %}
-            {% if verhaal.client %}
-              {% assign mix = mix | plus: verhaal.client.size %}
-            {% endif %}
-            {% assign frame_slot = mix | modulo: 4 %}
-            {% if frame_slot == 1 %}
-              {% assign tile_frame = "tablet" %}
-            {% elsif frame_slot == 2 %}
-              {% assign tile_frame = "laptop-dark" %}
-            {% elsif frame_slot == 3 %}
-              {% assign tile_frame = "laptop-light" %}
-            {% else %}
-              {% assign tile_frame = "hands" %}
-            {% endif %}
-          {% elsif verhaal_type == "demos" %}
-            {% assign mix = verhaal.title.size | plus: verhaal.summary.size %}
-            {% assign frame_slot = mix | modulo: 2 %}
-            {% if frame_slot == 1 %}
-              {% assign tile_frame = "phone-dark" %}
-            {% else %}
-              {% assign tile_frame = "phone-light" %}
-            {% endif %}
-          {% else %}
-            {% assign tile_frame = "" %}
-          {% endif %}
           {% include strip-tile.html
           title=verhaal.title
           summary=verhaal.summary
@@ -55,7 +29,6 @@
           aria=tile_aria
           kind=verhaal_type
           image=verhaal.image
-          frame=tile_frame
         %}
       </div>
     {% endfor %}

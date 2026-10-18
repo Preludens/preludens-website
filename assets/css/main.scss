@@ -4068,83 +4068,412 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   color: #fff;
 }
 
-.page-verhalen-test .strip-tile--photo .strip-tile__stage {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  flex: 1 1 auto;
-  min-height: 42%;
-  margin-top: 0.75rem;
+/* ---------------------------------------------------------------------------
+   Cinematische foto-tegel: het beeld breekt uit het kader.
+
+   Eén kader voor alle foto-tegels (hands-cinema.webp): uitgeknipte handen met
+   een tablet, transparante achtergrond en een doorzichtig scherm. De screenshot
+   ligt erachter en wordt met een 3D-transform op het glas gelegd; de bezel
+   maskeert de randen. Bij hover ontsnapt een kaart aan het glas, schiet een
+   lichtbundel naar buiten en groeit het toestel buiten de tegelgrens.
+
+   De maatvoering binnen .tablet-shot is uitgedrukt in cqw: 100cqw = de breedte
+   van het kaderbeeld (1500 x 1046). Het glas zit op
+   A 57.9/0  B 96.9/10.0  C 66.3/41.0  D 37.1/28.0 cqw, midden ~64.5/19.8.
+--------------------------------------------------------------------------- */
+
+.page-verhalen-test .verhalen-panel {
+  /* uitstekende lagen mogen zichtbaar blijven, maar nooit de pagina laten
+     meescrollen */
+  overflow: clip visible;
+  overflow-clip-margin: 140px;
 }
 
-.page-verhalen-test .tablet-shot {
+.page-verhalen-test .strip-tile--cinema {
+  overflow: visible;
+  background:
+    radial-gradient(90% 70% at 64% 62%, rgba(42, 124, 134, 0.38), rgba(42, 124, 134, 0) 62%),
+    radial-gradient(130% 110% at 50% 108%, #10394a 0%, var(--color-deep-navy) 48%, #05161d 100%);
+  box-shadow: 0 10px 26px rgba(5, 22, 29, 0.28);
+}
+
+.page-verhalen-test .strip-tile--cinema::after {
+  border-radius: inherit;
+}
+
+.page-verhalen-test .strip-tile--cinema .strip-tile__link {
   position: relative;
-  height: 100%;
-  width: fit-content;
-  max-width: 100%;
-  background: #E7EEF0;
+  color: var(--color-cloud-white);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-cloud-white);
+  }
 }
 
-.page-verhalen-test .tablet-shot__frame {
-  position: relative;
-  z-index: 1;
-  display: block;
-  height: 100%;
-  width: auto;
-  max-width: 100%;
+.page-verhalen-test .strip-tile--cinema .strip-tile__copy {
+  z-index: 4;
+  padding-bottom: 3rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 22, 29, 0.94) 0%,
+    rgba(5, 22, 29, 0.86) 46%,
+    rgba(5, 22, 29, 0.6) 76%,
+    rgba(5, 22, 29, 0) 100%
+  );
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 }
 
-.page-verhalen-test .tablet-shot__screen {
+.page-verhalen-test .strip-tile--cinema .strip-tile__title {
+  color: var(--color-cloud-white);
+  text-shadow: 0 2px 14px rgba(3, 16, 22, 0.55);
+}
+
+.page-verhalen-test .strip-tile--cinema .strip-tile__excerpt {
+  color: rgba(246, 249, 249, 0.76);
+}
+
+.page-verhalen-test .strip-tile--cinema .strip-tile__more {
+  background: var(--color-preludens-gold);
+  color: var(--color-deep-navy);
+  box-shadow: 0 6px 18px rgba(237, 167, 14, 0.28);
+}
+
+.page-verhalen-test .strip-tile--cinema .strip-tile__link:hover .strip-tile__more,
+.page-verhalen-test .strip-tile--cinema .strip-tile__link:focus-visible .strip-tile__more {
+  background: var(--color-soft-gold);
+  color: var(--color-deep-navy);
+}
+
+/* De tegel krijgt bij hover geen grijs waas meer: het licht doet het werk. */
+.page-verhalen-test .strip-grid > [role="listitem"]:hover .strip-tile--cinema::after,
+.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .strip-tile--cinema::after {
+  background: transparent;
+}
+
+/* Het podium is louter decor: nooit klikgebied, nooit boven de buurtegel.
+   __stage blijft onder de tekst, __burst (wat uit het glas komt) erboven. */
+.page-verhalen-test .strip-tile--cinema .strip-tile__stage,
+.page-verhalen-test .strip-tile--cinema .strip-tile__burst {
   position: absolute;
+  inset: 0;
+  display: block;
+  margin: 0;
+  pointer-events: none;
+}
+
+.page-verhalen-test .strip-tile--cinema .strip-tile__stage {
+  z-index: 1;
+}
+
+.page-verhalen-test .strip-tile--cinema .strip-tile__burst {
+  z-index: 5;
+}
+
+.page-verhalen-test .tablet-shot--cinema {
+  position: absolute;
+  left: 50%;
+  bottom: -4%;
+  width: 108%;
+  aspect-ratio: 1500 / 1046;
+  background: none;
+  container-type: inline-size;
+  --frame-mask: url("../images/verhalen/hands-cinema.webp");
+  --tilt: 0deg;
+  --nudge: 0%;
+  --lift: 0%;
+  --grow: 1;
+  transform-origin: 50% 78%;
+  transform: translateX(-50%) translate(var(--nudge), var(--lift)) rotate(var(--tilt)) scale(var(--grow));
+  transition: transform 0.45s cubic-bezier(0.22, 0.8, 0.3, 1);
+}
+
+/* Hetzelfde kader in elke tegel, maar net niet dezelfde stand. */
+.page-verhalen-test .strip-grid > [role="listitem"]:nth-child(4n + 2) .tablet-shot--cinema {
+  --tilt: -2.6deg;
+  --nudge: -2.5%;
+}
+
+.page-verhalen-test .strip-grid > [role="listitem"]:nth-child(4n + 3) .tablet-shot--cinema {
+  --tilt: 1.8deg;
+  --nudge: 2%;
+}
+
+.page-verhalen-test .strip-grid > [role="listitem"]:nth-child(4n) .tablet-shot--cinema {
+  --tilt: -1.2deg;
+  --nudge: 1.6%;
+}
+
+/* Omgevingslicht: het scherm kleurt de tegel achter de handen. */
+.page-verhalen-test .tablet-shot--burst {
+  background: none;
+}
+
+.page-verhalen-test .tablet-shot__halo {
+  position: absolute;
+  inset: -26% -22% -18%;
   z-index: 0;
+  background:
+    radial-gradient(38% 34% at 64.5% 28%, rgba(126, 206, 224, 0.5), rgba(42, 124, 134, 0) 72%),
+    radial-gradient(52% 46% at 70% 44%, rgba(237, 167, 14, 0.16), rgba(237, 167, 14, 0) 70%);
+  filter: blur(6px);
+  opacity: 0.85;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+/* Contactschaduw tegen de achterwand, zodat het toestel ergens staat. */
+.page-verhalen-test .tablet-shot__ground {
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 2%;
+  height: 22%;
+  z-index: 0;
+  background: radial-gradient(54% 46% at 50% 58%, rgba(2, 12, 17, 0.66), rgba(2, 12, 17, 0) 70%);
+  filter: blur(10px);
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+/* De screenshot ligt achter het kader, in het vlak van het glas. */
+.page-verhalen-test .tablet-shot--cinema .tablet-shot__screen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100cqw;
+  height: 30.07cqw;
   object-fit: cover;
+  transform-origin: 0 0;
+  transform:
+    translate(59.06cqw, 1.03cqw)
+    perspective(551.1cqw)
+    rotateZ(12.46deg)
+    rotateY(-74.9deg)
+    rotateX(30.08deg)
+    scale(1.1549)
+    translate(-2cqw, -0.6cqw)
+    scale(1.04);
+  filter: saturate(1.05) brightness(1.02);
 }
 
-.page-verhalen-test .tablet-shot--hands .tablet-shot__screen {
-  left: 17.3%;
-  top: 14.1%;
-  width: 65.4%;
-  height: 60.9%;
+.page-verhalen-test .tablet-shot--cinema .tablet-shot__frame {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: auto;
+  filter:
+    drop-shadow(14px 20px 16px rgba(2, 12, 17, 0.55))
+    drop-shadow(34px 54px 54px rgba(2, 12, 17, 0.5));
+  transition: filter 0.45s ease;
 }
 
-.page-verhalen-test .tablet-shot--tablet .tablet-shot__screen {
-  left: 17.7%;
-  top: 12.8%;
-  width: 65%;
-  height: 57.5%;
+/* Schermlicht dat precies op de handen en het toestel valt: het kader zelf is
+   het masker. */
+.page-verhalen-test .tablet-shot__spill {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: radial-gradient(
+    46% 42% at 64.5% 22%,
+    rgba(186, 232, 245, 0.42),
+    rgba(122, 196, 216, 0.16) 46%,
+    rgba(0, 0, 0, 0) 74%
+  );
+  mix-blend-mode: screen;
+  -webkit-mask-image: var(--frame-mask);
+  mask-image: var(--frame-mask);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  opacity: 0.9;
+  transition: opacity 0.45s ease;
 }
 
-.page-verhalen-test .tablet-shot--laptop-dark .tablet-shot__screen {
-  left: 16.5%;
-  top: 10%;
-  width: 67%;
-  height: 57.1%;
+/* Lichtbundel die uit het glas naar buiten slaat. */
+.page-verhalen-test .tablet-shot__beam {
+  position: absolute;
+  left: 64.5cqw;
+  top: 19.8cqw;
+  width: 26cqw;
+  height: 58cqw;
+  z-index: 4;
+  background: linear-gradient(
+    to top,
+    rgba(186, 232, 245, 0.5),
+    rgba(126, 206, 224, 0.16) 46%,
+    rgba(126, 206, 224, 0) 86%
+  );
+  clip-path: polygon(44% 100%, 56% 100%, 94% 0%, 6% 0%);
+  transform-origin: 50% 100%;
+  transform: translate(-50%, -100%) rotate(49deg) scaleY(0.2);
+  mix-blend-mode: screen;
+  opacity: 0;
+  filter: blur(16px);
+  transition: transform 0.5s cubic-bezier(0.22, 0.8, 0.3, 1), opacity 0.4s ease;
 }
 
-.page-verhalen-test .tablet-shot--laptop-light .tablet-shot__screen {
-  left: 16.7%;
-  top: 10.3%;
-  width: 66.6%;
-  height: 56.5%;
+/* De clou: een stuk schermcontent komt door het glas heen naar buiten. */
+.page-verhalen-test .tablet-shot__escape {
+  position: absolute;
+  left: 64.5cqw;
+  top: 19.8cqw;
+  width: 24cqw;
+  height: 15.5cqw;
+  z-index: 5;
+  margin: -7.75cqw 0 0 -12cqw;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(242, 196, 92, 0.6);
+  background-image: var(--shot);
+  background-size: 190% auto;
+  background-position: 26% 22%;
+  background-color: var(--color-deep-navy);
+  box-shadow:
+    0 18px 38px rgba(2, 12, 17, 0.6),
+    0 0 0 1px rgba(5, 22, 29, 0.4),
+    0 0 36px rgba(126, 206, 224, 0.35);
+  transform:
+    perspective(551.1cqw)
+    rotateZ(12.46deg)
+    rotateY(-74.9deg)
+    rotateX(30.08deg)
+    scale(0.86);
+  opacity: 0;
+  transition: transform 0.55s cubic-bezier(0.22, 0.86, 0.26, 1), opacity 0.35s ease;
 }
 
-.page-verhalen-test .tablet-shot--phone-light,
-.page-verhalen-test .tablet-shot--phone-dark {
-  background: var(--color-pale-gold);
+/* Deeltjes die met de content mee naar buiten drijven. */
+.page-verhalen-test .tablet-shot__sparks {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+
+  i {
+    position: absolute;
+    left: 64.5cqw;
+    top: 19.8cqw;
+    width: 0.9cqw;
+    height: 0.9cqw;
+    border-radius: 50%;
+    background: var(--color-soft-gold);
+    box-shadow: 0 0 10px rgba(242, 196, 92, 0.9);
+    opacity: 0;
+    transform: translate(0, 0) scale(0.4);
+    transition: transform 0.6s cubic-bezier(0.22, 0.8, 0.3, 1), opacity 0.5s ease;
+  }
+
+  i:nth-child(1) { --dx: 22cqw; --dy: -16cqw; transition-delay: 0.02s; }
+  i:nth-child(2) { --dx: 38cqw; --dy: -9cqw; width: 0.6cqw; height: 0.6cqw; transition-delay: 0.08s; }
+  i:nth-child(3) { --dx: 12cqw; --dy: -26cqw; width: 1.2cqw; height: 1.2cqw; transition-delay: 0.14s; }
+  i:nth-child(4) { --dx: 31cqw; --dy: -34cqw; width: 0.8cqw; height: 0.8cqw; transition-delay: 0.2s; }
+  i:nth-child(5) { --dx: 44cqw; --dy: -24cqw; width: 0.5cqw; height: 0.5cqw; transition-delay: 0.26s; }
 }
 
-.page-verhalen-test .tablet-shot--phone-light .tablet-shot__screen {
-  left: 25.4%;
-  top: 7.4%;
-  width: 49.3%;
-  height: 66.2%;
+/* --- hover / focus: alles breekt uit ------------------------------------- */
+
+.page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot--cinema,
+.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot--cinema {
+  --grow: 1.12;
+  --lift: 1.5%;
 }
 
-.page-verhalen-test .tablet-shot--phone-dark .tablet-shot__screen {
-  left: 21.6%;
-  top: 7.2%;
-  width: 49.8%;
-  height: 67.1%;
+.page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__halo,
+.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__halo {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__spill,
+.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__spill {
+  opacity: 1;
+}
+
+.page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__frame,
+.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__frame {
+  filter:
+    drop-shadow(18px 26px 18px rgba(2, 12, 17, 0.6))
+    drop-shadow(44px 70px 64px rgba(2, 12, 17, 0.55));
+}
+
+.page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__beam,
+.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__beam {
+  opacity: 0.7;
+  transform: translate(-50%, -100%) rotate(49deg) scaleY(1);
+}
+
+.page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__escape,
+.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__escape {
+  opacity: 1;
+  transform: translate(44cqw, -40cqw) rotate(-5deg) scale(1);
+}
+
+.page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__sparks i,
+.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__sparks i {
+  opacity: 0.95;
+  transform: translate(var(--dx), var(--dy)) scale(1);
+}
+
+/* --- smalle schermen: wel cinema, getemperd uitbreken --------------------- */
+
+@media (max-width: 799px) {
+  .page-verhalen-test .tablet-shot--cinema {
+    width: 102%;
+    bottom: -2%;
+  }
+
+  .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot--cinema,
+  .page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot--cinema {
+    --grow: 1.04;
+    --lift: 0%;
+  }
+
+  .page-verhalen-test .tablet-shot__escape {
+    width: 26cqw;
+    height: 17cqw;
+    margin: -8.5cqw 0 0 -13cqw;
+  }
+
+  .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__escape,
+  .page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__escape {
+    transform: translate(24cqw, -26cqw) rotate(-4deg) scale(1);
+  }
+}
+
+/* --- zonder beweging: het uitbreken staat er gewoon, stil ----------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .page-verhalen-test .tablet-shot--cinema,
+  .page-verhalen-test .tablet-shot__halo,
+  .page-verhalen-test .tablet-shot__ground,
+  .page-verhalen-test .tablet-shot__frame,
+  .page-verhalen-test .tablet-shot__spill,
+  .page-verhalen-test .tablet-shot__beam,
+  .page-verhalen-test .tablet-shot__escape,
+  .page-verhalen-test .tablet-shot__sparks i {
+    transition: none;
+  }
+
+  .page-verhalen-test .tablet-shot__escape {
+    opacity: 1;
+    transform: translate(19cqw, -21cqw) rotate(-4deg) scale(1);
+  }
+
+  .page-verhalen-test .tablet-shot__beam {
+    opacity: 0.5;
+    transform: translate(-50%, -100%) rotate(49deg) scaleY(1);
+  }
+
+  .page-verhalen-test .tablet-shot__sparks i {
+    opacity: 0.9;
+    transform: translate(var(--dx), var(--dy)) scale(1);
+  }
+
+  .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot--cinema,
+  .page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot--cinema {
+    --grow: 1;
+    --lift: 0%;
+  }
 }
 
 @import "components/panel";
