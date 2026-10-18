@@ -4123,8 +4123,11 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
    gemeten (vier hoeken in cqw) en daaruit is --glass-t afgeleid: de keten
    translate / perspective / rotateZ / rotateY / rotateX / scale / translate die
    een rechthoek van --glass-w bij --glass-h precies op die vier hoeken legt.
-   --glass-x en --glass-y zijn het midden van het glas; daar begint alles wat
-   naar buiten komt.
+   --glass-x en --glass-y zijn het midden van het glas; daar komen de deeltjes
+   vandaan. --arm-ux / --arm-uy is de eenheidsvector van dat midden naar de plek
+   waar de onderarmen het beeld binnenkomen (gemeten als het zwaartepunt van de
+   ondoorzichtige pixels op de rand van het kaderbeeld). Daarlangs drijven de
+   deeltjes: altijd uit het scherm naar de houder toe.
 --------------------------------------------------------------------------- */
 
 .page-verhalen-test .verhalen-panel {
@@ -4226,7 +4229,8 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   pointer-events: none;
 }
 
-/* Het podium wordt door de tegelrand bijgesneden, net als een gewone foto.
+/* Podium én deeltjeslaag worden door de tegelrand bijgesneden, net als een
+   gewone foto.
    De compositie mag dus ruim buiten de tegel doorlopen — een arm eindigt altijd
    op de rand van de kaart en nooit halverwege in de lucht. Alleen het podium
    wordt geknipt; __burst (de ontsnappende kaart) blijft vrij. */
@@ -4238,6 +4242,8 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 
 .page-verhalen-test .strip-tile--cinema .strip-tile__burst {
   z-index: 5;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
 }
 
 .page-verhalen-test .tablet-shot--cinema {
@@ -4258,74 +4264,75 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 
 /* --- vier kaders, vier gemeten glasvlakken ------------------------------- */
 
-/* 1 — tablet liggend, van rechtsboven gezien.
-   Glas: 19.6/23.0  46.6/11.1  65.3/32.8  47.6/42.1 cqw */
+/* 1 — tablet liggend in twee handen, van rechtsboven gezien.
+   Glas: 19.6/23.0  46.6/11.1  65.3/32.8  47.6/42.1 cqw (16:10)
+   Armen komen binnen op 99.2/45.4 cqw: rechts, iets onder het glas. */
 .page-verhalen-test .strip-tile--cinema,
 .page-verhalen-test .strip-tile--cinema.strip-tile--frame-1 {
   --frame-img: url("../images/verhalen/hands-tablet.webp");
   --glass-w: 100cqw;
-  --glass-h: 75cqw;
+  --glass-h: 62.5cqw;
   --glass-x: 44.77cqw;
   --glass-y: 27.25cqw;
   --glass-t:
-    translate(90.428cqw, 49.998cqw)
-    perspective(25cqw)
-    rotateZ(-31.647deg) rotateY(3.701deg) rotateX(-32.466deg)
-    scale(0.10569)
-    translate(-173.672cqw, -254.208cqw);
-  --escape-from: perspective(260cqw) rotateZ(-14deg) rotateY(-46deg) rotateX(16deg) scale(0.74);
-  --escape-x: 38cqw;
-  --escape-y: 3cqw;
+    translate(92.488cqw, 55.55cqw)
+    perspective(19.812cqw)
+    rotateZ(-32.569deg) rotateY(2.949deg) rotateX(-30.64deg)
+    scale(0.09036)
+    translate(-163.674cqw, -275.729cqw);
+  --arm-ux: 0.95;
+  --arm-uy: 0.32;
   --tilt: 0deg;
   --nudge: 4%;
   --lift: 0%;
   --grow: 1;
 }
 
-/* 2 — tablet staand, licht van onderen.
-   Glas: 53.1/10.7  75.3/14.7  50.8/52.7  33.3/46.4 cqw */
+/* 2 — tablet plat op tafel, van linksboven, met een wijzende vinger.
+   Glas: 39.0/15.3  74.1/22.5  64.7/47.1  27.9/36.2 cqw (16:10)
+   Armen komen binnen op 48.7/57.0 cqw: recht van onderen. */
 .page-verhalen-test .strip-tile--cinema.strip-tile--frame-2 {
-  --frame-img: url("../images/verhalen/hands-tablet-staand.webp");
+  --frame-img: url("../images/verhalen/hands-tablet-tafel.webp");
   --glass-w: 100cqw;
-  --glass-h: 133.333cqw;
-  --glass-x: 53.15cqw;
-  --glass-y: 31.13cqw;
+  --glass-h: 62.5cqw;
+  --glass-x: 51.42cqw;
+  --glass-y: 30.3cqw;
   --glass-t:
-    translate(-33.478cqw, 142.169cqw)
-    perspective(120.707cqw)
-    rotateZ(48.795deg) rotateY(-27.482deg) rotateX(-44.283deg)
-    scale(0.10079)
-    translate(134.442cqw, -955.206cqw);
-  --escape-from: perspective(260cqw) rotateZ(10deg) rotateY(-44deg) rotateX(-14deg) scale(0.74);
-  --escape-x: 36cqw;
-  --escape-y: 0cqw;
-  --tilt: -1.6deg;
-  --nudge: -2%;
+    translate(55.405cqw, 6.268cqw)
+    perspective(148.58cqw)
+    rotateZ(9.125deg) rotateY(-27.81deg) rotateX(32.687deg)
+    scale(0.37479)
+    translate(-33.957cqw, 36.476cqw);
+  --arm-ux: -0.1;
+  --arm-uy: 0.99;
+  --tilt: -1.2deg;
+  --nudge: -1%;
 }
 
-/* 3 — telefoon, met een wijzende vinger erbij.
-   Glas: 18.1/17.3  30.3/12.9  49.5/42.1  38.9/49.3 cqw */
+/* 3 — breedbeeldmonitor op een bureau, handen op het toetsenbord ervoor.
+   Glas: 8.5/6.1  55.1/11.8  57.2/39.7  11.9/47.5 cqw (16:9)
+   Armen komen binnen op 53.1/65.2 cqw: rechtsonder, bij het toetsenbord. */
 .page-verhalen-test .strip-tile--cinema.strip-tile--frame-3 {
-  --frame-img: url("../images/verhalen/hands-telefoon.webp");
+  --frame-img: url("../images/verhalen/hands-monitor.webp");
   --glass-w: 100cqw;
-  --glass-h: 212.766cqw;
-  --glass-x: 34.2cqw;
-  --glass-y: 30.42cqw;
+  --glass-h: 56.243cqw;
+  --glass-x: 33.15cqw;
+  --glass-y: 26.27cqw;
   --glass-t:
-    translate(44.933cqw, 30.516cqw)
-    perspective(137.928cqw)
-    rotateZ(-29.339deg) rotateY(46.315deg) rotateX(5.69deg)
-    scale(0.16207)
-    translate(-122.583cqw, -138.474cqw);
-  --escape-from: perspective(260cqw) rotateZ(-12deg) rotateY(44deg) rotateX(6deg) scale(0.74);
-  --escape-x: 43cqw;
-  --escape-y: -1cqw;
-  --tilt: 1.4deg;
-  --nudge: 10%;
+    translate(42.082cqw, 33.628cqw)
+    perspective(106.501cqw)
+    rotateZ(-5.21deg) rotateY(44.123deg) rotateX(-1.06deg)
+    scale(0.57364)
+    translate(-59.075cqw, -41.24cqw);
+  --arm-ux: 0.46;
+  --arm-uy: 0.89;
+  --tilt: 1deg;
+  --nudge: 6%;
 }
 
 /* 4 — laptop, van boven en rechts.
-   Glas: 54.3/5.9  90.6/19.6  78.1/47.7  45.8/28.9 cqw */
+   Glas: 54.3/5.9  90.6/19.6  78.1/47.7  45.8/28.9 cqw (16:10)
+   Armen komen binnen op 7.8/59.1 cqw: linksonder. */
 .page-verhalen-test .strip-tile--cinema.strip-tile--frame-4 {
   --frame-img: url("../images/verhalen/hands-laptop.webp");
   --glass-w: 100cqw;
@@ -4338,9 +4345,8 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
     rotateZ(30.11deg) rotateY(-39.019deg) rotateX(-15.354deg)
     scale(0.38579)
     translate(-0.022cqw, -62.661cqw);
-  --escape-from: perspective(260cqw) rotateZ(12deg) rotateY(-40deg) rotateX(-10deg) scale(0.74);
-  --escape-x: 32cqw;
-  --escape-y: 4cqw;
+  --arm-ux: -0.87;
+  --arm-uy: 0.49;
   --tilt: -1deg;
   --nudge: -12%;
 }
@@ -4378,7 +4384,12 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   transition: transform 0.45s ease, opacity 0.45s ease;
 }
 
-/* De screenshot ligt achter het kader, in het vlak van het glas. */
+/* De screenshot ligt achter het kader, in het vlak van het glas. Het vlak heeft
+   de verhouding van het schérm, de screenshot wordt daar passend in gelegd
+   (object-fit: contain). Zo wordt de game-UI nooit uitgerekt en nooit tot een
+   strook teruggesneden; wat overblijft is de donkere schermachtergrond. De
+   bronbeelden lopen van 1.33 tot 2.67 breed, dus één vaste uitsnede zou altijd
+   ergens fout zitten. */
 .page-verhalen-test .tablet-shot--cinema .tablet-shot__screen {
   position: absolute;
   left: 0;
@@ -4386,11 +4397,19 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   z-index: 1;
   width: var(--glass-w);
   height: var(--glass-h);
-  object-fit: cover;
-  object-position: 14% 0%;
+  overflow: hidden;
+  background: #07141A;
   transform-origin: 0 0;
   transform: var(--glass-t);
-  filter: saturate(1.05) brightness(1.02);
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    filter: saturate(1.05) brightness(1.02);
+  }
 }
 
 .page-verhalen-test .tablet-shot--cinema .tablet-shot__frame {
@@ -4429,84 +4448,39 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   transition: opacity 0.45s ease;
 }
 
-/* Lichtbundel die uit het glas naar buiten slaat — kort gehouden, hij wijst
-   alleen de weg die de kaart neemt. */
-.page-verhalen-test .tablet-shot__beam {
-  position: absolute;
-  left: var(--glass-x);
-  top: var(--glass-y);
-  width: 18cqw;
-  height: 30cqw;
-  z-index: 4;
-  background: linear-gradient(
-    to top,
-    rgba(186, 232, 245, 0.42),
-    rgba(126, 206, 224, 0.12) 52%,
-    rgba(126, 206, 224, 0) 88%
-  );
-  clip-path: polygon(44% 100%, 56% 100%, 92% 0%, 8% 0%);
-  transform-origin: 50% 100%;
-  transform: translate(-50%, -100%) rotate(74deg) scaleY(0.2);
-  mix-blend-mode: screen;
-  opacity: 0;
-  filter: blur(12px);
-  transition: transform 0.45s cubic-bezier(0.22, 0.8, 0.3, 1), opacity 0.35s ease;
-}
-
-/* De clou: een stuk schermcontent komt door het glas heen naar buiten. Hij
-   komt los van het glas, kantelt recht en legt zich langs de rechterrand —
-   een korte reis, laag in de tegel, waar geen tekst zit. Hij steekt maar een
-   paar procent buiten de tegel uit en loopt altijd ónder de kop door. */
-.page-verhalen-test .tablet-shot__escape {
-  position: absolute;
-  left: var(--glass-x);
-  top: var(--glass-y);
-  width: 26cqw;
-  height: 17cqw;
-  z-index: 5;
-  margin: -8.5cqw 0 0 -13cqw;
-  border-radius: calc(var(--radius-sm) * 0.75);
-  background-image: var(--shot);
-  background-size: 265% auto;
-  background-position: 28% 24%;
-  background-color: var(--color-deep-navy);
-  box-shadow:
-    inset 0 0 0 1px rgba(242, 196, 92, 0.5),
-    0 14px 30px -8px rgba(2, 12, 17, 0.75),
-    0 0 26px -4px rgba(126, 206, 224, 0.3);
-  transform: var(--escape-from);
-  transform-origin: 50% 50%;
-  opacity: 0;
-  transition:
-    transform 0.5s cubic-bezier(0.22, 0.9, 0.25, 1.02),
-    opacity 0.28s ease;
-}
-
-/* Deeltjes die met de kaart mee naar buiten drijven: vier stuks, kort traject,
-   netjes in de slipstream van de kaart. */
+/* Deeltjes die uit het scherm komen en naar de houder toe drijven. De richting
+   staat per kader vast als --arm-ux / --arm-uy: de gemeten vector van het
+   midden van het glas naar de plek waar de onderarmen het beeld binnenkomen.
+   --t is hoe ver een deeltje langs die lijn komt, --j hoe ver het er haaks op
+   afdwaalt. Zo gaan ze bij elk kader de goede kant op. */
 .page-verhalen-test .tablet-shot__sparks {
+  --spark-reach: 26cqw;
+  --spark-spread: 7cqw;
   position: absolute;
   inset: 0;
-  z-index: 6;
+  z-index: 4;
 
   i {
     position: absolute;
     left: var(--glass-x);
     top: var(--glass-y);
-    width: 0.8cqw;
-    height: 0.8cqw;
+    width: 1.05cqw;
+    height: 1.05cqw;
     border-radius: 50%;
     background: var(--color-soft-gold);
-    box-shadow: 0 0 8px rgba(242, 196, 92, 0.85);
+    box-shadow:
+      0 0 8px rgba(242, 196, 92, 0.9),
+      0 0 20px rgba(237, 167, 14, 0.45);
     opacity: 0;
     transform: translate(0, 0) scale(0.4);
-    transition: transform 0.55s cubic-bezier(0.22, 0.8, 0.3, 1), opacity 0.4s ease;
+    transition: transform 0.6s cubic-bezier(0.22, 0.8, 0.3, 1), opacity 0.4s ease;
   }
 
-  i:nth-child(1) { --dx: 14cqw; --dy: -6cqw; transition-delay: 0.14s; }
-  i:nth-child(2) { --dx: 23cqw; --dy: -2cqw; width: 0.55cqw; height: 0.55cqw; transition-delay: 0.2s; }
-  i:nth-child(3) { --dx: 10cqw; --dy: -10cqw; width: 1cqw; height: 1cqw; transition-delay: 0.26s; }
-  i:nth-child(4) { --dx: 29cqw; --dy: -7cqw; width: 0.5cqw; height: 0.5cqw; transition-delay: 0.32s; }
+  i:nth-child(1) { --t: 0.42; --j: 0.5; transition-delay: 0.04s; }
+  i:nth-child(2) { --t: 0.66; --j: -0.68; width: 0.72cqw; height: 0.72cqw; transition-delay: 0.11s; }
+  i:nth-child(3) { --t: 0.84; --j: 0.26; width: 1.35cqw; height: 1.35cqw; transition-delay: 0.18s; }
+  i:nth-child(4) { --t: 1; --j: -0.3; width: 0.66cqw; height: 0.66cqw; transition-delay: 0.25s; }
+  i:nth-child(5) { --t: 0.56; --j: 0.95; width: 0.58cqw; height: 0.58cqw; transition-delay: 0.31s; }
 }
 
 /* --- hover / focus: alles breekt uit ------------------------------------- */
@@ -4533,22 +4507,14 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   filter: drop-shadow(14px 20px 16px rgba(2, 12, 17, 0.58));
 }
 
-.page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__beam,
-.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__beam {
-  opacity: 0.55;
-  transform: translate(-50%, -100%) rotate(74deg) scaleY(1);
-}
-
-.page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__escape,
-.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__escape {
-  opacity: 1;
-  transform: translate(var(--escape-x), var(--escape-y)) rotate(-3deg) scale(1);
-}
-
 .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__sparks i,
 .page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__sparks i {
-  opacity: 0.9;
-  transform: translate(var(--dx), var(--dy)) scale(1);
+  opacity: 0.95;
+  transform: translate(
+      calc(var(--arm-ux) * var(--t) * var(--spark-reach) - var(--arm-uy) * var(--j) * var(--spark-spread)),
+      calc(var(--arm-uy) * var(--t) * var(--spark-reach) + var(--arm-ux) * var(--j) * var(--spark-spread))
+    )
+    scale(1);
 }
 
 /* --- smalle schermen: wel cinema, getemperd uitbreken --------------------- */
@@ -4565,9 +4531,9 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
     --lift: 0%;
   }
 
-  .page-verhalen-test .strip-tile--cinema {
-    --escape-x: 22cqw;
-    --escape-y: 7cqw;
+  .page-verhalen-test .tablet-shot__sparks {
+    --spark-reach: 19cqw;
+    --spark-spread: 5cqw;
   }
 }
 
@@ -4579,25 +4545,14 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   .page-verhalen-test .tablet-shot__ground,
   .page-verhalen-test .tablet-shot__frame,
   .page-verhalen-test .tablet-shot__spill,
-  .page-verhalen-test .tablet-shot__beam,
-  .page-verhalen-test .tablet-shot__escape,
   .page-verhalen-test .tablet-shot__sparks i {
     transition: none;
-  }
-
-  .page-verhalen-test .tablet-shot__escape {
-    opacity: 1;
-    transform: translate(var(--escape-x), var(--escape-y)) rotate(-3deg) scale(1);
-  }
-
-  .page-verhalen-test .tablet-shot__beam {
-    opacity: 0.4;
-    transform: translate(-50%, -100%) rotate(74deg) scaleY(1);
-  }
-
-  .page-verhalen-test .tablet-shot__sparks i {
-    opacity: 0.85;
-    transform: translate(var(--dx), var(--dy)) scale(1);
+    opacity: 0.9;
+    transform: translate(
+        calc(var(--arm-ux) * var(--t) * var(--spark-reach) - var(--arm-uy) * var(--j) * var(--spark-spread)),
+        calc(var(--arm-uy) * var(--t) * var(--spark-reach) + var(--arm-ux) * var(--j) * var(--spark-spread))
+      )
+      scale(1);
   }
 
   .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot--cinema,

@@ -4,11 +4,13 @@
 
   Foto-tegels gebruiken vier cinematische kaders (hands-*.webp): uitgeknipte
   handen met een toestel, transparante achtergrond en een gat waar het glas zit.
-  Welk kader een tegel krijgt, bepaalt strip-tile--frame-1..4 (de foto-tegels
-  lopen om beurten door de vier kaders); de bijbehorende glas-fit staat bij
-  diezelfde klasse in main.scss. De screenshot ligt erachter en
-  wordt met een 3D-transform op het glasvlak gelegd. Het podium (__stage) blijft
-  onder de tekst; wat bij hover door het glas naar buiten komt zit in __burst.
+  Alle vier de glasvlakken liggen liggend, zodat de screenshots er onvervormd en
+  onbesneden in passen. Welk kader een tegel krijgt, bepaalt
+  strip-tile--frame-1..4 (de foto-tegels lopen om beurten door de vier kaders);
+  de bijbehorende glas-fit staat bij diezelfde klasse in main.scss. De screenshot
+  ligt erachter en wordt met een 3D-transform op het glasvlak gelegd. Het podium
+  (__stage) blijft onder de tekst; de deeltjes die uit het scherm naar de houder
+  toe drijven zitten in __burst.
 {% endcomment %}
 {% assign tile_src = "" %}
 {% if include.image %}
@@ -44,7 +46,9 @@
           <span class="tablet-shot__halo"></span>
           <span class="tablet-shot__ground"></span>
           {% if tile_src != "" %}
-            <img class="tablet-shot__screen" src="{{ tile_src }}" alt="" loading="lazy" decoding="async">
+            <span class="tablet-shot__screen">
+              <img src="{{ tile_src }}" alt="" loading="lazy" decoding="async">
+            </span>
           {% endif %}
           <span class="tablet-shot__frame"></span>
           <span class="tablet-shot__spill"></span>
@@ -52,11 +56,7 @@
       </span>
       <span class="strip-tile__burst" aria-hidden="true">
         <span class="tablet-shot tablet-shot--cinema tablet-shot--burst">
-          <span class="tablet-shot__beam"></span>
-          {% if tile_src != "" %}
-            <span class="tablet-shot__escape"></span>
-          {% endif %}
-          <span class="tablet-shot__sparks"><i></i><i></i><i></i><i></i></span>
+          <span class="tablet-shot__sparks"><i></i><i></i><i></i><i></i><i></i></span>
         </span>
       </span>
     {% endif %}
