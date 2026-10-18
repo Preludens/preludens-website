@@ -9,8 +9,8 @@
   strip-tile--frame-1..4 (de foto-tegels lopen om beurten door de vier kaders);
   de bijbehorende glas-fit staat bij diezelfde klasse in main.scss. De screenshot
   ligt erachter en wordt met een 3D-transform op het glasvlak gelegd. Het podium
-  (__stage) blijft onder de tekst; de deeltjes die uit het scherm naar de houder
-  toe drijven zitten in __burst.
+  (__stage) blijft onder de tekst; de deeltjes die loodrecht uit het glas naar
+  de kijker toe komen zitten in __burst.
 {% endcomment %}
 {% assign tile_src = "" %}
 {% if include.image %}
@@ -56,7 +56,7 @@
       </span>
       <span class="strip-tile__burst" aria-hidden="true">
         <span class="tablet-shot tablet-shot--cinema tablet-shot--burst">
-          <span class="tablet-shot__sparks"><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="tablet-shot__sparks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
         </span>
       </span>
     {% endif %}
