@@ -5,11 +5,36 @@ Jekyll-site voor [preludens.nl](https://preludens.nl), gebouwd voor deploy via *
 ## Lokaal draaien
 
 ```bash
+./bin/serve
+```
+
+Open [http://localhost:4000/preludens-website/](http://localhost:4000/preludens-website/).
+
+Dit is het enige commando dat je nodig hebt: `bin/serve` zet de juiste Ruby in PATH, doet zo nodig `bundle install` en start daarna `jekyll serve`. Extra argumenten gaan door naar Jekyll, bijvoorbeeld `./bin/serve --livereload`.
+
+### Ruby-versie
+
+`Gemfile.lock` is gemaakt met **bundler 4.0.12** en vraagt dus een moderne Ruby (zie `.ruby-version`: 4.0.5). De systeem-Ruby van macOS is 2.6 en staat vooraan in PATH, dus een kaal `bundle exec jekyll serve` faalt met:
+
+```
+Could not find 'bundler' (4.0.12) required by your Gemfile.lock
+```
+
+Installeer eenmalig een moderne Ruby:
+
+```bash
+brew install ruby
+```
+
+Homebrew-Ruby is keg-only en komt niet automatisch in PATH. Wil je toch handmatig werken in plaats van via `bin/serve`, zet hem dan eerst voor je PATH:
+
+```bash
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 bundle install
 bundle exec jekyll serve
 ```
 
-Open [http://localhost:4000/preludens-website/](http://localhost:4000/preludens-website/).
+Raak `Gemfile.lock` niet aan om dit te omzeilen — die hoort bij de CI- en Cloud-omgeving; downgraden geeft daar problemen.
 
 De site staat op GitHub Pages onder **https://preludens.github.io/preludens-website/** (`baseurl: /preludens-website`). Bij een custom domain (`preludens.nl`) zet de deploy-workflow `baseurl` automatisch leeg.
 

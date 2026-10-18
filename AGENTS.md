@@ -7,7 +7,16 @@ Centrale plek voor Cursor-agents die aan deze Jekyll-site werken.
 - **Doorzoek nooit de harde schijf.** Blijf in deze repository. Zoek, scan of browse niet op `/`, `$HOME` of andere mappen op de machine. Gebruik alleen paden die de gebruiker of deze projectbestanden expliciet geven (zoals de image-generator hieronder).
 - **Werk op `main`.** Maak geen losse feature branches en open geen PR's, tenzij de gebruiker daar expliciet om vraagt. Commit en push klaar werk naar `main`.
 - **Pull eerst.** Voordat je begint: `git checkout main && git pull origin main`, zodat je de nieuwste versie hebt.
-- **Check de lokale server.** Voordat je begint: controleer of Jekyll draait op http://localhost:4000/preludens-website/. Staat hij uit, start hem (`bundle exec jekyll serve`) voordat je verder werkt.
+- **Check de lokale server.** Voordat je begint: controleer of Jekyll draait op http://localhost:4000/preludens-website/. Staat hij uit, start hem met **`./bin/serve`** vanuit de repository-root.
+
+  Gebruik **niet** een kaal `bundle exec jekyll serve`: `Gemfile.lock` vraagt bundler 4.0.12 en de systeem-Ruby van macOS (2.6) heeft die niet, dus dat faalt met *"Could not find 'bundler' (4.0.12) required by your Gemfile.lock"*. `bin/serve` zet de Homebrew-Ruby (keg-only, dus niet in PATH) er zelf voor en doet zo nodig `bundle install`. Handmatig equivalent:
+
+  ```bash
+  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+  bundle exec jekyll serve
+  ```
+
+  Pas `Gemfile.lock` niet aan om dit op te lossen — die hoort bij de CI/Cloud-omgeving.
 
 Live zetten naar `production` doe je **niet** uit jezelf — alleen als de gebruiker dat vraagt.
 

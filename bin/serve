@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#
+# Start de lokale Jekyll-server op http://localhost:4000/preludens-website/.
+#
+# Waarom dit script bestaat: Gemfile.lock vraagt bundler 4.0.12, en de
+# systeem-Ruby van macOS (2.6 in /usr/bin) heeft die niet — `bundle exec jekyll
+# serve` faalt daarop meteen. De Homebrew-Ruby heeft de juiste bundler wel, maar
+# is keg-only en staat dus niet in PATH. Dit script zet hem er zelf voor.
+#
+# Gebruik:  ./bin/serve            of  ./bin/serve --livereload
+# Extra argumenten gaan ongewijzigd door naar `jekyll serve`.
+
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+# Homebrew-Ruby vooraan in PATH (Apple Silicon, dan Intel).
+for ruby_bin in /opt/homebrew/opt/ruby/bin /usr/local/opt/ruby/bin; do
+  if [ -x "$ruby_bin/ruby" ]; then
+    export PATH="$ruby_bin:$PATH"
+    break
+  fi
+done
+
+if [ "$(ruby -e 'print RUBY_VERSION.split(".").first')" -lt 3 ]; then
+  echo "bin/serve: geen moderne Ruby gevonden — nu actief: $(ruby -v)" >&2
+  echo "bin/serve: installeer die eerst met: brew install ruby" >&2
+  exit 1
+fi
+
+bundle check >/dev/null 2>&1 || bundle install
+
+exec bundle exec jekyll serve "$@"
