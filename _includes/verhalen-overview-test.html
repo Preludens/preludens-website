@@ -2,6 +2,7 @@
 {% assign current_lang = site.active_lang | default: site.default_lang %}
 
 {% assign verhalen = site.verhalen | sort: "order" %}
+{% assign frame_count = 0 %}
 {% assign posts = site.play_blog | sort: "date" | reverse %}
 
 <div class="verhalen-panel" id="verhalen-panel" role="tabpanel" aria-labelledby="verhalen-filter-all">
@@ -20,8 +21,11 @@
           {% assign tile_aria = tile_aria | append: ", " | append: verhaal.client %}
         {% endif %}
       {% endif %}
+      {% assign frame_no = frame_count | modulo: 4 | plus: 1 %}
+      {% assign frame_count = frame_count | plus: 1 %}
       <div role="listitem" data-verhaal-type="{{ verhaal_type }}">
           {% include strip-tile.html
+          frame=frame_no
           title=verhaal.title
           summary=verhaal.summary
           url=verhaal.url

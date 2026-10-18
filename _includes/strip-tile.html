@@ -1,12 +1,14 @@
 {% comment %}
-  Testtegel voor /verhalen-test/.
+  Tegel voor /inspiratie/.
   Pass: title, summary, url, cta, aria, kind (projecten|kennis|demos), image.
 
-  Foto-tegels gebruiken één cinematisch kader (hands-cinema.webp): handen die een
-  tablet vasthouden, uitgeknipt met transparante achtergrond en een doorzichtig
-  scherm. De screenshot ligt erachter en is met een 3D-transform op het glas
-  gelegd. Het podium (__stage) blijft onder de tekst; wat bij hover door het glas
-  heen naar buiten komt zit in __burst en ligt juist boven alles.
+  Foto-tegels gebruiken vier cinematische kaders (hands-*.webp): uitgeknipte
+  handen met een toestel, transparante achtergrond en een gat waar het glas zit.
+  Welk kader een tegel krijgt, bepaalt strip-tile--frame-1..4 (de foto-tegels
+  lopen om beurten door de vier kaders); de bijbehorende glas-fit staat bij
+  diezelfde klasse in main.scss. De screenshot ligt erachter en
+  wordt met een 3D-transform op het glasvlak gelegd. Het podium (__stage) blijft
+  onder de tekst; wat bij hover door het glas naar buiten komt zit in __burst.
 {% endcomment %}
 {% assign tile_src = "" %}
 {% if include.image %}
@@ -19,15 +21,22 @@
   {% endunless %}
 {% endif %}
 {% assign tile_kind = include.kind | default: "projecten" %}
-{% assign frame_src = "/assets/images/verhalen/hands-cinema.webp" | relative_url %}
-<article class="strip-tile{% if tile_kind == 'projecten' or tile_kind == 'demos' %} strip-tile--photo strip-tile--cinema{% endif %}{% if tile_kind == 'demos' %} strip-tile--demo{% endif %}{% if tile_kind == 'kennis' %} strip-tile--kennis{% endif %}"{% if tile_src != "" %} style="--shot: url('{{ tile_src }}');"{% endif %}>
+{% if tile_kind == "demos" %}
+  {% assign tile_label = "Demo" %}
+{% elsif tile_kind == "kennis" %}
+  {% assign tile_label = "Kennis" %}
+{% else %}
+  {% assign tile_label = "Project" %}
+{% endif %}
+<article class="strip-tile{% if tile_kind == 'projecten' or tile_kind == 'demos' %} strip-tile--photo strip-tile--cinema{% endif %}{% if tile_kind == 'demos' %} strip-tile--demo{% endif %}{% if tile_kind == 'kennis' %} strip-tile--kennis{% else %} strip-tile--frame-{{ include.frame | default: 1 }}{% endif %}"{% if tile_src != "" %} style="--shot: url('{{ tile_src }}');"{% endif %}>
   <a class="strip-tile__link" href="{{ include.url | relative_url }}" aria-label="{{ include.aria }}">
     <span class="strip-tile__copy">
+      <span class="strip-tile__label">{{ tile_label }}</span>
       <h2 class="strip-tile__title">{{ include.title }}</h2>
       {% if include.summary %}
         <p class="strip-tile__excerpt">{{ include.summary }}</p>
       {% endif %}
-      <span class="strip-tile__more">{{ include.cta }}</span>
+      <span class="strip-tile__more">{{ include.cta }}<i class="strip-tile__arrow" aria-hidden="true"></i></span>
     </span>
     {% if tile_kind == "projecten" or tile_kind == "demos" %}
       <span class="strip-tile__stage" aria-hidden="true">
@@ -37,7 +46,7 @@
           {% if tile_src != "" %}
             <img class="tablet-shot__screen" src="{{ tile_src }}" alt="" loading="lazy" decoding="async">
           {% endif %}
-          <img class="tablet-shot__frame" src="{{ frame_src }}" alt="" loading="lazy" decoding="async" width="1500" height="1046">
+          <span class="tablet-shot__frame"></span>
           <span class="tablet-shot__spill"></span>
         </span>
       </span>
@@ -47,7 +56,7 @@
           {% if tile_src != "" %}
             <span class="tablet-shot__escape"></span>
           {% endif %}
-          <span class="tablet-shot__sparks"><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="tablet-shot__sparks"><i></i><i></i><i></i><i></i></span>
         </span>
       </span>
     {% endif %}

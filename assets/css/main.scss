@@ -3861,13 +3861,15 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 .page-verhalen-test .strip-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
+  gap: 26px;
   margin: 0;
   padding: 0;
   list-style: none;
 
   @media (min-width: 800px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 30px;
+    row-gap: 34px;
   }
 
   > [role="listitem"] {
@@ -3876,11 +3878,19 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
     &:hover,
     &:focus-within {
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     &[hidden] {
       display: none;
+    }
+  }
+
+  /* Ritme: de rechterkolom zakt een halve stap weg, zodat het raster leest als
+     een verspringend metselverband in plaats van een tabel. */
+  @media (min-width: 800px) {
+    > [role="listitem"]:nth-child(even) {
+      margin-top: 38px;
     }
   }
 }
@@ -3892,7 +3902,9 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   border-radius: var(--radius-sm);
   background: #E7EEF0;
   overflow: hidden;
-  box-shadow: 0 8px 18px rgba(11, 42, 53, 0.08);
+  box-shadow:
+    inset 0 0 0 1px rgba(11, 42, 53, 0.06),
+    0 10px 24px -12px rgba(11, 42, 53, 0.4);
   transition: transform var(--transition), box-shadow var(--transition);
 
   &::after {
@@ -3937,13 +3949,12 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 
 .page-verhalen-test .strip-grid > [role="listitem"]:hover .strip-tile.is-settled,
 .page-verhalen-test .strip-grid > [role="listitem"]:focus-within .strip-tile.is-settled {
-  transform: translateY(-8px);
-  box-shadow: 0 14px 24px rgba(11, 42, 53, 0.12);
+  transform: translateY(-6px);
 }
 
-.page-verhalen-test .strip-grid > [role="listitem"]:hover .strip-tile::after,
-.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .strip-tile::after {
-  background: rgba(11, 42, 53, 0.14);
+.page-verhalen-test .strip-grid > [role="listitem"]:hover .strip-tile--kennis::after,
+.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .strip-tile--kennis::after {
+  background: rgba(11, 42, 53, 0.06);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3986,7 +3997,7 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 }
 
 .page-verhalen-test .strip-tile--kennis .strip-tile__copy {
-  padding: 1.5rem 1.35rem;
+  padding: 1.5rem 1.6rem;
 }
 
 .page-verhalen-test .strip-tile__link {
@@ -4016,18 +4027,31 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   text-align: center;
   flex: 0 0 auto;
   min-height: 0;
-  padding: 1.5rem 1.35rem 0;
+  padding: 1.6rem 1.6rem 0;
+}
+
+/* Soort-label: de kleinste stap in de hiërarchie, puur om de tegel te duiden. */
+.page-verhalen-test .strip-tile__label {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
 }
 
 .page-verhalen-test .strip-tile__title {
   margin: 0;
-  max-width: 18em;
+  max-width: 15em;
   font-family: var(--font-display);
-  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
   font-weight: 600;
-  line-height: 1.15;
+  line-height: 1.14;
   letter-spacing: -0.02em;
   color: var(--color-ink);
+  text-wrap: balance;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
@@ -4035,70 +4059,109 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 }
 
 .page-verhalen-test .strip-tile__excerpt {
-  margin: 0.7rem 0 0;
-  max-width: 34em;
+  margin: 0.65rem 0 0;
+  max-width: 30em;
   font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.45;
+  font-size: 0.935rem;
+  line-height: 1.5;
   color: var(--color-ink-soft);
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   overflow: hidden;
 }
 
 .page-verhalen-test .strip-tile__more {
   display: inline-flex;
   align-items: center;
-  margin-top: 1.1rem;
-  padding: 0.55rem 1.15rem;
-  border: 0;
+  gap: 0.5rem;
+  margin-top: 1.05rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--color-brand-navy);
   border-radius: var(--radius-pill);
-  background: var(--color-brand-navy);
-  color: #fff;
+  background: transparent;
+  color: var(--color-brand-navy);
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 600;
   line-height: 1.2;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.page-verhalen-test .strip-tile__arrow {
+  display: block;
+  width: 0.62em;
+  height: 0.62em;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg) translate(-0.06em, 0.06em);
+  transition: transform var(--transition);
 }
 
 .page-verhalen-test .strip-tile__link:hover .strip-tile__more,
 .page-verhalen-test .strip-tile__link:focus-visible .strip-tile__more {
-  background: var(--color-deep-navy);
+  background: var(--color-brand-navy);
+  border-color: var(--color-brand-navy);
   color: #fff;
+}
+
+.page-verhalen-test .strip-tile__link:hover .strip-tile__arrow,
+.page-verhalen-test .strip-tile__link:focus-visible .strip-tile__arrow {
+  transform: rotate(45deg) translate(0.06em, -0.06em);
 }
 
 /* ---------------------------------------------------------------------------
    Cinematische foto-tegel: het beeld breekt uit het kader.
 
-   Eén kader voor alle foto-tegels (hands-cinema.webp): uitgeknipte handen met
-   een tablet, transparante achtergrond en een doorzichtig scherm. De screenshot
-   ligt erachter en wordt met een 3D-transform op het glas gelegd; de bezel
-   maskeert de randen. Bij hover ontsnapt een kaart aan het glas, schiet een
-   lichtbundel naar buiten en groeit het toestel buiten de tegelgrens.
+   Vier kaders (hands-tablet, hands-tablet-staand, hands-telefoon,
+   hands-laptop): uitgeknipte handen met een toestel, transparante achtergrond
+   en een gat waar het glas zit. Elke tegel krijgt via nth-child een ander
+   kader, met de bijbehorende glas-fit.
 
    De maatvoering binnen .tablet-shot is uitgedrukt in cqw: 100cqw = de breedte
-   van het kaderbeeld (1500 x 1046). Het glas zit op
-   A 57.9/0  B 96.9/10.0  C 66.3/41.0  D 37.1/28.0 cqw, midden ~64.5/19.8.
+   van het kaderbeeld (alle kaders zijn 1500 x 1046). Per kader is het glasvlak
+   gemeten (vier hoeken in cqw) en daaruit is --glass-t afgeleid: de keten
+   translate / perspective / rotateZ / rotateY / rotateX / scale / translate die
+   een rechthoek van --glass-w bij --glass-h precies op die vier hoeken legt.
+   --glass-x en --glass-y zijn het midden van het glas; daar begint alles wat
+   naar buiten komt.
 --------------------------------------------------------------------------- */
 
 .page-verhalen-test .verhalen-panel {
   /* uitstekende lagen mogen zichtbaar blijven, maar nooit de pagina laten
      meescrollen */
   overflow: clip visible;
-  overflow-clip-margin: 140px;
+  overflow-clip-margin: 90px;
 }
 
 .page-verhalen-test .strip-tile--cinema {
   overflow: visible;
   background:
-    radial-gradient(90% 70% at 64% 62%, rgba(42, 124, 134, 0.38), rgba(42, 124, 134, 0) 62%),
+    radial-gradient(86% 66% at 62% 64%, rgba(42, 124, 134, 0.34), rgba(42, 124, 134, 0) 62%),
     radial-gradient(130% 110% at 50% 108%, #10394a 0%, var(--color-deep-navy) 48%, #05161d 100%);
-  box-shadow: 0 10px 26px rgba(5, 22, 29, 0.28);
+  box-shadow:
+    inset 0 0 0 1px rgba(246, 249, 249, 0.08),
+    0 16px 36px -18px rgba(2, 12, 17, 0.9);
 }
 
 .page-verhalen-test .strip-tile--cinema::after {
   border-radius: inherit;
+  /* dunne gouden haarlijn die bij hover oplicht langs de rand */
+  box-shadow: inset 0 0 0 1px rgba(237, 167, 14, 0);
+  transition: box-shadow var(--transition);
+}
+
+.page-verhalen-test .strip-grid > [role="listitem"]:hover .strip-tile--cinema,
+.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .strip-tile--cinema {
+  box-shadow:
+    inset 0 0 0 1px rgba(246, 249, 249, 0.12),
+    0 26px 48px -22px rgba(2, 12, 17, 0.95);
+}
+
+.page-verhalen-test .strip-grid > [role="listitem"]:hover .strip-tile--cinema::after,
+.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .strip-tile--cinema::after {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgba(237, 167, 14, 0.4);
 }
 
 .page-verhalen-test .strip-tile--cinema .strip-tile__link {
@@ -4111,17 +4174,23 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   }
 }
 
+/* De tekst staat bovenaan en blijft altijd bovenop: wat uit het glas ontsnapt
+   schuift eronderdoor in plaats van eroverheen. */
 .page-verhalen-test .strip-tile--cinema .strip-tile__copy {
-  z-index: 4;
-  padding-bottom: 3rem;
+  z-index: 6;
+  padding: 1.75rem 1.7rem 3.25rem;
   background: linear-gradient(
     to bottom,
-    rgba(5, 22, 29, 0.94) 0%,
-    rgba(5, 22, 29, 0.86) 46%,
-    rgba(5, 22, 29, 0.6) 76%,
+    rgba(5, 22, 29, 0.93) 0%,
+    rgba(5, 22, 29, 0.84) 42%,
+    rgba(5, 22, 29, 0.52) 72%,
     rgba(5, 22, 29, 0) 100%
   );
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.page-verhalen-test .strip-tile--cinema .strip-tile__label {
+  color: var(--color-soft-gold);
 }
 
 .page-verhalen-test .strip-tile--cinema .strip-tile__title {
@@ -4130,29 +4199,24 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 }
 
 .page-verhalen-test .strip-tile--cinema .strip-tile__excerpt {
-  color: rgba(246, 249, 249, 0.76);
+  color: rgba(246, 249, 249, 0.72);
 }
 
 .page-verhalen-test .strip-tile--cinema .strip-tile__more {
-  background: var(--color-preludens-gold);
-  color: var(--color-deep-navy);
-  box-shadow: 0 6px 18px rgba(237, 167, 14, 0.28);
+  border-color: rgba(237, 167, 14, 0.55);
+  background: rgba(5, 22, 29, 0.35);
+  color: var(--color-soft-gold);
 }
 
 .page-verhalen-test .strip-tile--cinema .strip-tile__link:hover .strip-tile__more,
 .page-verhalen-test .strip-tile--cinema .strip-tile__link:focus-visible .strip-tile__more {
-  background: var(--color-soft-gold);
+  background: var(--color-preludens-gold);
+  border-color: var(--color-preludens-gold);
   color: var(--color-deep-navy);
 }
 
-/* De tegel krijgt bij hover geen grijs waas meer: het licht doet het werk. */
-.page-verhalen-test .strip-grid > [role="listitem"]:hover .strip-tile--cinema::after,
-.page-verhalen-test .strip-grid > [role="listitem"]:focus-within .strip-tile--cinema::after {
-  background: transparent;
-}
-
 /* Het podium is louter decor: nooit klikgebied, nooit boven de buurtegel.
-   __stage blijft onder de tekst, __burst (wat uit het glas komt) erboven. */
+   __stage blijft onder de tekst, __burst (wat uit het glas komt) ertussenin. */
 .page-verhalen-test .strip-tile--cinema .strip-tile__stage,
 .page-verhalen-test .strip-tile--cinema .strip-tile__burst {
   position: absolute;
@@ -4178,59 +4242,130 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   aspect-ratio: 1500 / 1046;
   background: none;
   container-type: inline-size;
-  --frame-mask: url("../images/verhalen/hands-cinema.webp");
-  --tilt: 0deg;
-  --nudge: 0%;
-  --lift: 0%;
-  --grow: 1;
   transform-origin: 50% 78%;
   transform: translateX(-50%) translate(var(--nudge), var(--lift)) rotate(var(--tilt)) scale(var(--grow));
   transition: transform 0.45s cubic-bezier(0.22, 0.8, 0.3, 1);
 }
 
-/* Hetzelfde kader in elke tegel, maar net niet dezelfde stand. */
-.page-verhalen-test .strip-grid > [role="listitem"]:nth-child(4n + 2) .tablet-shot--cinema {
-  --tilt: -2.6deg;
-  --nudge: -2.5%;
+/* --- vier kaders, vier gemeten glasvlakken ------------------------------- */
+
+/* 1 — tablet liggend, van rechtsboven gezien.
+   Glas: 19.6/23.0  46.6/11.1  65.3/32.8  47.6/42.1 cqw */
+.page-verhalen-test .strip-tile--cinema,
+.page-verhalen-test .strip-tile--cinema.strip-tile--frame-1 {
+  --frame-img: url("../images/verhalen/hands-tablet.webp");
+  --glass-w: 100cqw;
+  --glass-h: 75cqw;
+  --glass-x: 44.77cqw;
+  --glass-y: 27.25cqw;
+  --glass-t:
+    translate(90.428cqw, 49.998cqw)
+    perspective(25cqw)
+    rotateZ(-31.647deg) rotateY(3.701deg) rotateX(-32.466deg)
+    scale(0.10569)
+    translate(-173.672cqw, -254.208cqw);
+  --escape-from: perspective(260cqw) rotateZ(-14deg) rotateY(-46deg) rotateX(16deg) scale(0.74);
+  --escape-x: 38cqw;
+  --escape-y: 3cqw;
+  --tilt: 0deg;
+  --nudge: 4%;
+  --lift: 0%;
+  --grow: 1;
 }
 
-.page-verhalen-test .strip-grid > [role="listitem"]:nth-child(4n + 3) .tablet-shot--cinema {
-  --tilt: 1.8deg;
-  --nudge: 2%;
+/* 2 — tablet staand, licht van onderen.
+   Glas: 53.1/10.7  75.3/14.7  50.8/52.7  33.3/46.4 cqw */
+.page-verhalen-test .strip-tile--cinema.strip-tile--frame-2 {
+  --frame-img: url("../images/verhalen/hands-tablet-staand.webp");
+  --glass-w: 100cqw;
+  --glass-h: 133.333cqw;
+  --glass-x: 53.15cqw;
+  --glass-y: 31.13cqw;
+  --glass-t:
+    translate(-33.478cqw, 142.169cqw)
+    perspective(120.707cqw)
+    rotateZ(48.795deg) rotateY(-27.482deg) rotateX(-44.283deg)
+    scale(0.10079)
+    translate(134.442cqw, -955.206cqw);
+  --escape-from: perspective(260cqw) rotateZ(10deg) rotateY(-44deg) rotateX(-14deg) scale(0.74);
+  --escape-x: 36cqw;
+  --escape-y: 0cqw;
+  --tilt: -1.6deg;
+  --nudge: -2%;
 }
 
-.page-verhalen-test .strip-grid > [role="listitem"]:nth-child(4n) .tablet-shot--cinema {
-  --tilt: -1.2deg;
-  --nudge: 1.6%;
+/* 3 — telefoon, met een wijzende vinger erbij.
+   Glas: 18.1/17.3  30.3/12.9  49.5/42.1  38.9/49.3 cqw */
+.page-verhalen-test .strip-tile--cinema.strip-tile--frame-3 {
+  --frame-img: url("../images/verhalen/hands-telefoon.webp");
+  --glass-w: 100cqw;
+  --glass-h: 212.766cqw;
+  --glass-x: 34.2cqw;
+  --glass-y: 30.42cqw;
+  --glass-t:
+    translate(44.933cqw, 30.516cqw)
+    perspective(137.928cqw)
+    rotateZ(-29.339deg) rotateY(46.315deg) rotateX(5.69deg)
+    scale(0.16207)
+    translate(-122.583cqw, -138.474cqw);
+  --escape-from: perspective(260cqw) rotateZ(-12deg) rotateY(44deg) rotateX(6deg) scale(0.74);
+  --escape-x: 43cqw;
+  --escape-y: -1cqw;
+  --tilt: 1.4deg;
+  --nudge: 10%;
 }
 
-/* Omgevingslicht: het scherm kleurt de tegel achter de handen. */
+/* 4 — laptop, van boven en rechts.
+   Glas: 54.3/5.9  90.6/19.6  78.1/47.7  45.8/28.9 cqw */
+.page-verhalen-test .strip-tile--cinema.strip-tile--frame-4 {
+  --frame-img: url("../images/verhalen/hands-laptop.webp");
+  --glass-w: 100cqw;
+  --glass-h: 62.5cqw;
+  --glass-x: 67.22cqw;
+  --glass-y: 25.52cqw;
+  --glass-t:
+    translate(45.785cqw, 28.994cqw)
+    perspective(122.726cqw)
+    rotateZ(30.11deg) rotateY(-39.019deg) rotateX(-15.354deg)
+    scale(0.38579)
+    translate(-0.022cqw, -62.661cqw);
+  --escape-from: perspective(260cqw) rotateZ(12deg) rotateY(-40deg) rotateX(-10deg) scale(0.74);
+  --escape-x: 32cqw;
+  --escape-y: 4cqw;
+  --tilt: -1deg;
+  --nudge: -12%;
+}
+
 .page-verhalen-test .tablet-shot--burst {
   background: none;
 }
 
+/* Omgevingslicht: het scherm kleurt de tegel achter de handen. */
 .page-verhalen-test .tablet-shot__halo {
   position: absolute;
-  inset: -26% -22% -18%;
+  left: calc(var(--glass-x) - 34cqw);
+  top: calc(var(--glass-y) - 30cqw);
+  width: 68cqw;
+  height: 60cqw;
   z-index: 0;
   background:
-    radial-gradient(38% 34% at 64.5% 28%, rgba(126, 206, 224, 0.5), rgba(42, 124, 134, 0) 72%),
-    radial-gradient(52% 46% at 70% 44%, rgba(237, 167, 14, 0.16), rgba(237, 167, 14, 0) 70%);
-  filter: blur(6px);
+    radial-gradient(50% 50% at 50% 50%, rgba(126, 206, 224, 0.44), rgba(42, 124, 134, 0) 72%),
+    radial-gradient(64% 60% at 56% 62%, rgba(237, 167, 14, 0.14), rgba(237, 167, 14, 0) 70%);
   opacity: 0.85;
   transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
-/* Contactschaduw tegen de achterwand, zodat het toestel ergens staat. */
+/* Contactschaduw tegen de achterwand, zodat het toestel ergens staat. Dit doet
+   het zware, zachte schaduwwerk — de drop-shadow op het kader blijft daardoor
+   klein genoeg om negen tegels soepel te houden. */
 .page-verhalen-test .tablet-shot__ground {
   position: absolute;
-  left: 12%;
-  right: 12%;
-  bottom: 2%;
-  height: 22%;
+  left: 8%;
+  right: 8%;
+  bottom: 0%;
+  height: 34%;
   z-index: 0;
-  background: radial-gradient(54% 46% at 50% 58%, rgba(2, 12, 17, 0.66), rgba(2, 12, 17, 0) 70%);
-  filter: blur(10px);
+  background: radial-gradient(52% 50% at 50% 56%, rgba(2, 12, 17, 0.7), rgba(2, 12, 17, 0) 72%);
   transition: transform 0.45s ease, opacity 0.45s ease;
 }
 
@@ -4240,19 +4375,12 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   left: 0;
   top: 0;
   z-index: 1;
-  width: 100cqw;
-  height: 30.07cqw;
+  width: var(--glass-w);
+  height: var(--glass-h);
   object-fit: cover;
+  object-position: 14% 0%;
   transform-origin: 0 0;
-  transform:
-    translate(59.06cqw, 1.03cqw)
-    perspective(551.1cqw)
-    rotateZ(12.46deg)
-    rotateY(-74.9deg)
-    rotateX(30.08deg)
-    scale(1.1549)
-    translate(-2cqw, -0.6cqw)
-    scale(1.04);
+  transform: var(--glass-t);
   filter: saturate(1.05) brightness(1.02);
 }
 
@@ -4261,10 +4389,11 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   z-index: 2;
   display: block;
   width: 100%;
-  height: auto;
-  filter:
-    drop-shadow(14px 20px 16px rgba(2, 12, 17, 0.55))
-    drop-shadow(34px 54px 54px rgba(2, 12, 17, 0.5));
+  aspect-ratio: 1500 / 1046;
+  background-image: var(--frame-img);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  filter: drop-shadow(10px 14px 12px rgba(2, 12, 17, 0.5));
   transition: filter 0.45s ease;
 }
 
@@ -4275,14 +4404,14 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   inset: 0;
   z-index: 3;
   background: radial-gradient(
-    46% 42% at 64.5% 22%,
-    rgba(186, 232, 245, 0.42),
-    rgba(122, 196, 216, 0.16) 46%,
+    40% 38% at var(--glass-x) var(--glass-y),
+    rgba(186, 232, 245, 0.4),
+    rgba(122, 196, 216, 0.15) 46%,
     rgba(0, 0, 0, 0) 74%
   );
   mix-blend-mode: screen;
-  -webkit-mask-image: var(--frame-mask);
-  mask-image: var(--frame-mask);
+  -webkit-mask-image: var(--frame-img);
+  mask-image: var(--frame-img);
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
@@ -4291,59 +4420,61 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   transition: opacity 0.45s ease;
 }
 
-/* Lichtbundel die uit het glas naar buiten slaat. */
+/* Lichtbundel die uit het glas naar buiten slaat — kort gehouden, hij wijst
+   alleen de weg die de kaart neemt. */
 .page-verhalen-test .tablet-shot__beam {
   position: absolute;
-  left: 64.5cqw;
-  top: 19.8cqw;
-  width: 26cqw;
-  height: 58cqw;
+  left: var(--glass-x);
+  top: var(--glass-y);
+  width: 18cqw;
+  height: 30cqw;
   z-index: 4;
   background: linear-gradient(
     to top,
-    rgba(186, 232, 245, 0.5),
-    rgba(126, 206, 224, 0.16) 46%,
-    rgba(126, 206, 224, 0) 86%
+    rgba(186, 232, 245, 0.42),
+    rgba(126, 206, 224, 0.12) 52%,
+    rgba(126, 206, 224, 0) 88%
   );
-  clip-path: polygon(44% 100%, 56% 100%, 94% 0%, 6% 0%);
+  clip-path: polygon(44% 100%, 56% 100%, 92% 0%, 8% 0%);
   transform-origin: 50% 100%;
-  transform: translate(-50%, -100%) rotate(49deg) scaleY(0.2);
+  transform: translate(-50%, -100%) rotate(74deg) scaleY(0.2);
   mix-blend-mode: screen;
   opacity: 0;
-  filter: blur(16px);
-  transition: transform 0.5s cubic-bezier(0.22, 0.8, 0.3, 1), opacity 0.4s ease;
+  filter: blur(12px);
+  transition: transform 0.45s cubic-bezier(0.22, 0.8, 0.3, 1), opacity 0.35s ease;
 }
 
-/* De clou: een stuk schermcontent komt door het glas heen naar buiten. */
+/* De clou: een stuk schermcontent komt door het glas heen naar buiten. Hij
+   komt los van het glas, kantelt recht en legt zich langs de rechterrand —
+   een korte reis, laag in de tegel, waar geen tekst zit. Hij steekt maar een
+   paar procent buiten de tegel uit en loopt altijd ónder de kop door. */
 .page-verhalen-test .tablet-shot__escape {
   position: absolute;
-  left: 64.5cqw;
-  top: 19.8cqw;
-  width: 24cqw;
-  height: 15.5cqw;
+  left: var(--glass-x);
+  top: var(--glass-y);
+  width: 26cqw;
+  height: 17cqw;
   z-index: 5;
-  margin: -7.75cqw 0 0 -12cqw;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(242, 196, 92, 0.6);
+  margin: -8.5cqw 0 0 -13cqw;
+  border-radius: calc(var(--radius-sm) * 0.75);
   background-image: var(--shot);
-  background-size: 190% auto;
-  background-position: 26% 22%;
+  background-size: 265% auto;
+  background-position: 28% 24%;
   background-color: var(--color-deep-navy);
   box-shadow:
-    0 18px 38px rgba(2, 12, 17, 0.6),
-    0 0 0 1px rgba(5, 22, 29, 0.4),
-    0 0 36px rgba(126, 206, 224, 0.35);
-  transform:
-    perspective(551.1cqw)
-    rotateZ(12.46deg)
-    rotateY(-74.9deg)
-    rotateX(30.08deg)
-    scale(0.86);
+    inset 0 0 0 1px rgba(242, 196, 92, 0.5),
+    0 14px 30px -8px rgba(2, 12, 17, 0.75),
+    0 0 26px -4px rgba(126, 206, 224, 0.3);
+  transform: var(--escape-from);
+  transform-origin: 50% 50%;
   opacity: 0;
-  transition: transform 0.55s cubic-bezier(0.22, 0.86, 0.26, 1), opacity 0.35s ease;
+  transition:
+    transform 0.5s cubic-bezier(0.22, 0.9, 0.25, 1.02),
+    opacity 0.28s ease;
 }
 
-/* Deeltjes die met de content mee naar buiten drijven. */
+/* Deeltjes die met de kaart mee naar buiten drijven: vier stuks, kort traject,
+   netjes in de slipstream van de kaart. */
 .page-verhalen-test .tablet-shot__sparks {
   position: absolute;
   inset: 0;
@@ -4351,37 +4482,36 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 
   i {
     position: absolute;
-    left: 64.5cqw;
-    top: 19.8cqw;
-    width: 0.9cqw;
-    height: 0.9cqw;
+    left: var(--glass-x);
+    top: var(--glass-y);
+    width: 0.8cqw;
+    height: 0.8cqw;
     border-radius: 50%;
     background: var(--color-soft-gold);
-    box-shadow: 0 0 10px rgba(242, 196, 92, 0.9);
+    box-shadow: 0 0 8px rgba(242, 196, 92, 0.85);
     opacity: 0;
     transform: translate(0, 0) scale(0.4);
-    transition: transform 0.6s cubic-bezier(0.22, 0.8, 0.3, 1), opacity 0.5s ease;
+    transition: transform 0.55s cubic-bezier(0.22, 0.8, 0.3, 1), opacity 0.4s ease;
   }
 
-  i:nth-child(1) { --dx: 22cqw; --dy: -16cqw; transition-delay: 0.02s; }
-  i:nth-child(2) { --dx: 38cqw; --dy: -9cqw; width: 0.6cqw; height: 0.6cqw; transition-delay: 0.08s; }
-  i:nth-child(3) { --dx: 12cqw; --dy: -26cqw; width: 1.2cqw; height: 1.2cqw; transition-delay: 0.14s; }
-  i:nth-child(4) { --dx: 31cqw; --dy: -34cqw; width: 0.8cqw; height: 0.8cqw; transition-delay: 0.2s; }
-  i:nth-child(5) { --dx: 44cqw; --dy: -24cqw; width: 0.5cqw; height: 0.5cqw; transition-delay: 0.26s; }
+  i:nth-child(1) { --dx: 14cqw; --dy: -6cqw; transition-delay: 0.14s; }
+  i:nth-child(2) { --dx: 23cqw; --dy: -2cqw; width: 0.55cqw; height: 0.55cqw; transition-delay: 0.2s; }
+  i:nth-child(3) { --dx: 10cqw; --dy: -10cqw; width: 1cqw; height: 1cqw; transition-delay: 0.26s; }
+  i:nth-child(4) { --dx: 29cqw; --dy: -7cqw; width: 0.5cqw; height: 0.5cqw; transition-delay: 0.32s; }
 }
 
 /* --- hover / focus: alles breekt uit ------------------------------------- */
 
 .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot--cinema,
 .page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot--cinema {
-  --grow: 1.12;
-  --lift: 1.5%;
+  --grow: 1.07;
+  --lift: 1%;
 }
 
 .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__halo,
 .page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__halo {
   opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__spill,
@@ -4391,26 +4521,24 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 
 .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__frame,
 .page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__frame {
-  filter:
-    drop-shadow(18px 26px 18px rgba(2, 12, 17, 0.6))
-    drop-shadow(44px 70px 64px rgba(2, 12, 17, 0.55));
+  filter: drop-shadow(14px 20px 16px rgba(2, 12, 17, 0.58));
 }
 
 .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__beam,
 .page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__beam {
-  opacity: 0.7;
-  transform: translate(-50%, -100%) rotate(49deg) scaleY(1);
+  opacity: 0.55;
+  transform: translate(-50%, -100%) rotate(74deg) scaleY(1);
 }
 
 .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__escape,
 .page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__escape {
   opacity: 1;
-  transform: translate(44cqw, -40cqw) rotate(-5deg) scale(1);
+  transform: translate(var(--escape-x), var(--escape-y)) rotate(-3deg) scale(1);
 }
 
 .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__sparks i,
 .page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__sparks i {
-  opacity: 0.95;
+  opacity: 0.9;
   transform: translate(var(--dx), var(--dy)) scale(1);
 }
 
@@ -4424,19 +4552,13 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 
   .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot--cinema,
   .page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot--cinema {
-    --grow: 1.04;
+    --grow: 1.03;
     --lift: 0%;
   }
 
-  .page-verhalen-test .tablet-shot__escape {
-    width: 26cqw;
-    height: 17cqw;
-    margin: -8.5cqw 0 0 -13cqw;
-  }
-
-  .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot__escape,
-  .page-verhalen-test .strip-grid > [role="listitem"]:focus-within .tablet-shot__escape {
-    transform: translate(24cqw, -26cqw) rotate(-4deg) scale(1);
+  .page-verhalen-test .strip-tile--cinema {
+    --escape-x: 22cqw;
+    --escape-y: 7cqw;
   }
 }
 
@@ -4456,16 +4578,16 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 
   .page-verhalen-test .tablet-shot__escape {
     opacity: 1;
-    transform: translate(19cqw, -21cqw) rotate(-4deg) scale(1);
+    transform: translate(var(--escape-x), var(--escape-y)) rotate(-3deg) scale(1);
   }
 
   .page-verhalen-test .tablet-shot__beam {
-    opacity: 0.5;
-    transform: translate(-50%, -100%) rotate(49deg) scaleY(1);
+    opacity: 0.4;
+    transform: translate(-50%, -100%) rotate(74deg) scaleY(1);
   }
 
   .page-verhalen-test .tablet-shot__sparks i {
-    opacity: 0.9;
+    opacity: 0.85;
     transform: translate(var(--dx), var(--dy)) scale(1);
   }
 
