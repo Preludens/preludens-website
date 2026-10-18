@@ -2,16 +2,12 @@
   Tegel voor /inspiratie/.
   Pass: title, summary, url, cta, aria, kind (projecten|kennis|demos), image.
 
-  Foto-tegels gebruiken vier cinematische kaders (hands-*.webp): uitgeknipte
-  handen met een toestel, transparante achtergrond en een gat waar het glas zit.
-  Alle vier de glasvlakken zijn 16:9, net als de tegelversies van de
-  screenshots, zodat het scherm helemaal gevuld is zonder uitrekken of
-  wegsnijden. Welk kader een tegel krijgt, bepaalt
-  strip-tile--frame-1..4 (de foto-tegels lopen om beurten door de vier kaders);
-  de bijbehorende glas-fit staat bij diezelfde klasse in main.scss. De screenshot
-  ligt erachter en wordt met een 3D-transform op het glasvlak gelegd. Het podium
-  (__stage) blijft onder de tekst; de deeltjes die loodrecht uit het glas naar
-  de kijker toe komen zitten in __burst.
+  Foto-tegels zetten het beeld op het gedeelde cinematische podium
+  (_includes/cinema-shot.html): een uitgeknipt kader met handen en een toestel,
+  met de screenshot in het vlak van het glas. Welk van de vier kaders een tegel
+  krijgt bepaalt `frame` (de foto-tegels lopen om beurten door de vier). Het
+  podium (__stage) blijft onder de tekst; de deeltjes die loodrecht uit het glas
+  naar de kijker toe komen zitten in __burst.
 {% endcomment %}
 {% assign tile_src = "" %}
 {% assign tile_shot = "" %}
@@ -44,7 +40,7 @@
 {% else %}
   {% assign tile_label = "Project" %}
 {% endif %}
-<article class="strip-tile{% if tile_kind == 'projecten' or tile_kind == 'demos' %} strip-tile--photo strip-tile--cinema{% endif %}{% if tile_kind == 'demos' %} strip-tile--demo{% endif %}{% if tile_kind == 'kennis' %} strip-tile--kennis{% else %} strip-tile--frame-{{ include.frame | default: 1 }}{% endif %}"{% if tile_src != "" %} style="--shot: url('{{ tile_src }}');"{% endif %}>
+<article class="strip-tile{% if tile_kind == 'projecten' or tile_kind == 'demos' %} strip-tile--photo strip-tile--cinema{% endif %}{% if tile_kind == 'demos' %} strip-tile--demo{% endif %}{% if tile_kind == 'kennis' %} strip-tile--kennis{% endif %}"{% if tile_src != "" %} style="--shot: url('{{ tile_src }}');"{% endif %}>
   <a class="strip-tile__link" href="{{ include.url | relative_url }}" aria-label="{{ include.aria }}">
     <span class="strip-tile__copy">
       <span class="strip-tile__label">{{ tile_label }}</span>
@@ -56,22 +52,10 @@
     </span>
     {% if tile_kind == "projecten" or tile_kind == "demos" %}
       <span class="strip-tile__stage" aria-hidden="true">
-        <span class="tablet-shot tablet-shot--cinema">
-          <span class="tablet-shot__halo"></span>
-          <span class="tablet-shot__ground"></span>
-          {% if tile_src != "" %}
-            <span class="tablet-shot__screen">
-              <img src="{{ tile_shot }}" alt="" loading="lazy" decoding="async">
-            </span>
-          {% endif %}
-          <span class="tablet-shot__frame"></span>
-          <span class="tablet-shot__spill"></span>
-        </span>
+        {% include cinema-shot.html shot=tile_shot frame=include.frame %}
       </span>
       <span class="strip-tile__burst" aria-hidden="true">
-        <span class="tablet-shot tablet-shot--cinema tablet-shot--burst">
-          <span class="tablet-shot__sparks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-        </span>
+        {% include cinema-sparks.html frame=include.frame %}
       </span>
     {% endif %}
   </a>

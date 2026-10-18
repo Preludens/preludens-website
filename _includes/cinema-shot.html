@@ -1,0 +1,23 @@
+{% comment %}
+  Cinematisch podium: een uitgeknipt kader met handen en een toestel, met de
+  screenshot in het vlak van het glas. Gedeeld door de tegels op /inspiratie/
+  (_includes/strip-tile.html) en de kaarten op de homepage
+  (_includes/panels/track.html). De maatvoering en het meetrecept staan in
+  _sass/components/_cinema-shot.scss.
+
+  Pass:
+    shot  — url van de screenshot (de 16:9 tegelversie; mag leeg blijven)
+    frame — 1 tablet in twee handen, 2 tablet plat op tafel,
+            3 breedbeeldmonitor met toetsenbord, 4 laptop
+{% endcomment %}
+<span class="tablet-shot tablet-shot--cinema tablet-shot--frame-{{ include.frame | default: 1 }}">
+  <span class="tablet-shot__halo"></span>
+  <span class="tablet-shot__ground"></span>
+  {% if include.shot and include.shot != "" %}
+    <span class="tablet-shot__screen">
+      <img src="{{ include.shot }}" alt="" loading="lazy" decoding="async">
+    </span>
+  {% endif %}
+  <span class="tablet-shot__frame"></span>
+  <span class="tablet-shot__spill"></span>
+</span>

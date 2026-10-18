@@ -1,0 +1,12 @@
+{% comment %}
+  De deeltjes die loodrecht uit het glas naar de kijker komen. Ze horen bij het
+  podium uit _includes/cinema-shot.html en zitten in een eigen laag, zodat ze
+  boven de rest van het podium uit kunnen komen. Twaalf plekken verspreid over
+  het glasvlak; waar ze ontstaan en hoe ze naar voren komen staat in
+  _sass/components/_cinema-shot.scss.
+
+  Pass: frame — hetzelfde kadernummer als het podium eronder (1..4).
+{% endcomment %}
+<span class="tablet-shot tablet-shot--cinema tablet-shot--burst tablet-shot--frame-{{ include.frame | default: 1 }}">
+  <span class="tablet-shot__sparks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+</span>

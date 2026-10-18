@@ -144,56 +144,6 @@
   margin-top: 0.75rem;
 }
 
-.sp-device {
-  position: relative;
-  height: 72%;
-  width: fit-content;
-  max-width: 78%;
-}
-
-.sp-device__frame {
-  position: relative;
-  z-index: 1;
-  display: block;
-  height: 100%;
-  width: auto;
-  max-width: 100%;
-}
-
-.sp-device__screen {
-  position: absolute;
-  z-index: 0;
-  object-fit: cover;
-}
-
-.sp-device--hands .sp-device__screen {
-  left: 17.3%;
-  top: 14.1%;
-  width: 65.4%;
-  height: 60.9%;
-}
-
-.sp-device--tablet .sp-device__screen {
-  left: 17.7%;
-  top: 12.8%;
-  width: 65%;
-  height: 57.5%;
-}
-
-.sp-device--laptop-dark .sp-device__screen {
-  left: 16.5%;
-  top: 10%;
-  width: 67%;
-  height: 57.1%;
-}
-
-.sp-device--laptop-light .sp-device__screen {
-  left: 16.7%;
-  top: 10.3%;
-  width: 66.6%;
-  height: 56.5%;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .sp-track {
     transition: none;
@@ -203,4 +153,114 @@
   .sp-track:focus-within {
     transform: translate(var(--sp-shift-x), var(--sp-shift-y));
   }
+}
+
+/* ---------------------------------------------------------------------------
+   Cinematische kaart: hetzelfde podium als de tegels op /inspiratie/.
+
+   De kaders zijn belicht voor een donkere ondergrond, dus de kaart zelf wordt
+   donker — net als daar. De tekst staat bovenaan op een verloop en blijft
+   altijd bovenop; het podium wordt door de kaartrand bijgesneden, zodat een arm
+   op de rand eindigt en nooit halverwege in de lucht.
+
+   De maatvoering van het podium staat in _sass/components/_cinema-shot.scss;
+   hier staat alleen wat de kaart zelf anders maakt.
+--------------------------------------------------------------------------- */
+
+.sp-track--cinema {
+  background:
+    radial-gradient(86% 66% at 62% 64%, rgba(42, 124, 134, 0.34), rgba(42, 124, 134, 0) 62%),
+    radial-gradient(130% 110% at 50% 108%, #10394a 0%, var(--color-deep-navy) 48%, #05161d 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(246, 249, 249, 0.08),
+    0 16px 36px -18px rgba(2, 12, 17, 0.9);
+}
+
+/* dunne gouden haarlijn die bij hover oplicht langs de rand, in plaats van de
+   navy wash van de lichte kaart */
+.sp-track--cinema::after {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgba(237, 167, 14, 0);
+  transition: box-shadow var(--transition);
+}
+
+.sp-track--cinema:hover,
+.sp-track--cinema:focus-within {
+  box-shadow:
+    inset 0 0 0 1px rgba(246, 249, 249, 0.12),
+    0 26px 48px -22px rgba(2, 12, 17, 0.95);
+}
+
+.sp-track--cinema:hover::after,
+.sp-track--cinema:focus-within::after {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgba(237, 167, 14, 0.4);
+}
+
+.sp-track--cinema .sp-track__link {
+  position: relative;
+  color: var(--color-cloud-white);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-cloud-white);
+  }
+}
+
+.sp-track--cinema .sp-track__copy {
+  z-index: 6;
+  padding: 1.6rem 1.5rem 3rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 22, 29, 0.93) 0%,
+    rgba(5, 22, 29, 0.84) 42%,
+    rgba(5, 22, 29, 0.52) 72%,
+    rgba(5, 22, 29, 0) 100%
+  );
+}
+
+.sp-track--cinema h3 {
+  color: var(--color-cloud-white);
+  text-shadow: 0 2px 14px rgba(3, 16, 22, 0.55);
+}
+
+.sp-track--cinema p {
+  color: rgba(246, 249, 249, 0.72);
+}
+
+.sp-track--cinema .sp-track__more {
+  border: 1px solid rgba(237, 167, 14, 0.55);
+  background: rgba(5, 22, 29, 0.35);
+  color: var(--color-soft-gold);
+}
+
+.sp-track--cinema .sp-track__link:hover .sp-track__more,
+.sp-track--cinema .sp-track__link:focus-visible .sp-track__more {
+  background: var(--color-preludens-gold);
+  border-color: var(--color-preludens-gold);
+  color: var(--color-deep-navy);
+}
+
+/* Podium en deeltjeslaag zijn louter decor: nooit klikgebied, en ze worden
+   door de kaartrand bijgesneden, zodat een arm op de rand eindigt en nooit
+   halverwege in de lucht. Het podium blijft onder de tekst, de deeltjes die uit
+   het glas komen zitten ertussenin. */
+.sp-track--cinema .sp-track__stage,
+.sp-track--cinema .sp-track__burst {
+  position: absolute;
+  inset: 0;
+  display: block;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  pointer-events: none;
+}
+
+.sp-track--cinema .sp-track__stage {
+  z-index: 1;
+}
+
+.sp-track--cinema .sp-track__burst {
+  z-index: 5;
 }
