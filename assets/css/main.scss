@@ -4147,6 +4147,8 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
    (n_x, n_y) is de schaduw van die normaal op het beeld: de kant waar het
    deeltje heen schuift. n_z is de diepte: hoeveel van de beweging recht op de
    kijker af gaat en dus niet in verplaatsing maar in groei zichtbaar wordt.
+   --emerge-side (standaard 1) weegt alleen die zijwaartse schaduw, voor een
+   kader waar de normaal toevallig richting de handen wijst.
 
    De perspectieven van de glas-fits zijn geen gedeelde scenecamera - ze lopen
    van perspective(19,8cqw) tot perspective(148,6cqw), elk los opgelost. De
@@ -4298,25 +4300,25 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 /* --- vier kaders, vier gemeten glasvlakken ------------------------------- */
 
 /* 1 — tablet liggend in twee handen, van rechtsboven gezien.
-   Glas: 19.6/23.0  46.6/11.1  65.3/32.8  47.6/42.1 cqw (16:10) */
+   Glas: 19.6/23.0  46.6/11.1  65.3/32.8  47.6/42.1 cqw (16:9) */
 .page-verhalen-test .strip-tile--cinema,
 .page-verhalen-test .strip-tile--cinema.strip-tile--frame-1 {
   --frame-img: url("../images/verhalen/hands-tablet.webp");
   --glass-w: 100cqw;
-  --glass-h: 62.5cqw;
+  --glass-h: 56.25cqw;
   --glass-x: 44.77cqw;
   --glass-y: 27.25cqw;
   --glass-t:
-    translate(92.488cqw, 55.55cqw)
-    perspective(19.812cqw)
-    rotateZ(-32.569deg) rotateY(2.949deg) rotateX(-30.64deg)
-    scale(0.09036)
-    translate(-163.674cqw, -275.729cqw);
+    translate(92.605cqw, 56.914cqw)
+    perspective(13.698cqw)
+    rotateZ(-32.75deg) rotateY(2.037deg) rotateX(-23.009deg)
+    scale(0.08731)
+    translate(-156.806cqw, -262.7cqw);
   /* schermnormaal uit de rotatieketen hierboven: (n-x, n-y) is de kant
      waar een deeltje heen schuift, n-z de diepte die groei wordt */
-  --n-x: +0.312;
-  --n-y: +0.406;
-  --n-z: 0.859;
+  --n-x: +0.239;
+  --n-y: +0.311;
+  --n-z: 0.920;
   /* vorm van een rond deeltje in dit glasvlak */
   --plane-rot: 22.0deg;
   --plane-squash: 0.628;
@@ -4336,24 +4338,24 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 }
 
 /* 2 — tablet plat op tafel, van linksboven, met een wijzende vinger.
-   Glas: 39.0/15.3  74.1/22.5  64.7/47.1  27.9/36.2 cqw (16:10) */
+   Glas: 39.0/15.3  74.1/22.5  64.7/47.1  27.9/36.2 cqw (16:9) */
 .page-verhalen-test .strip-tile--cinema.strip-tile--frame-2 {
   --frame-img: url("../images/verhalen/hands-tablet-tafel.webp");
   --glass-w: 100cqw;
-  --glass-h: 62.5cqw;
+  --glass-h: 56.25cqw;
   --glass-x: 51.42cqw;
   --glass-y: 30.3cqw;
   --glass-t:
-    translate(55.405cqw, 6.268cqw)
-    perspective(148.58cqw)
-    rotateZ(9.125deg) rotateY(-27.81deg) rotateX(32.687deg)
-    scale(0.37479)
-    translate(-33.957cqw, 36.476cqw);
+    translate(74.84cqw, -6.918cqw)
+    perspective(149.209cqw)
+    rotateZ(6.04deg) rotateY(-26.504deg) rotateX(34.562deg)
+    scale(0.38643)
+    translate(-71.667cqw, 79.607cqw);
   /* schermnormaal uit de rotatieketen hierboven: (n-x, n-y) is de kant
      waar een deeltje heen schuift, n-z de diepte die groei wordt */
-  --n-x: -0.302;
-  --n-y: -0.595;
-  --n-z: 0.744;
+  --n-x: -0.306;
+  --n-y: -0.603;
+  --n-z: 0.737;
   /* vorm van een rond deeltje in dit glasvlak */
   --plane-rot: 5.9deg;
   --plane-squash: 0.644;
@@ -4406,24 +4408,24 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 }
 
 /* 4 — laptop, van boven en rechts.
-   Glas: 54.3/5.9  90.6/19.6  78.1/47.7  45.8/28.9 cqw (16:10) */
+   Glas: 54.3/5.9  90.6/19.6  78.1/47.7  45.8/28.9 cqw (16:9) */
 .page-verhalen-test .strip-tile--cinema.strip-tile--frame-4 {
   --frame-img: url("../images/verhalen/hands-laptop.webp");
   --glass-w: 100cqw;
-  --glass-h: 62.5cqw;
+  --glass-h: 56.25cqw;
   --glass-x: 67.22cqw;
   --glass-y: 25.52cqw;
   --glass-t:
-    translate(45.785cqw, 28.994cqw)
-    perspective(122.726cqw)
-    rotateZ(30.11deg) rotateY(-39.019deg) rotateX(-15.354deg)
-    scale(0.38579)
-    translate(-0.022cqw, -62.661cqw);
+    translate(51.66cqw, 42.299cqw)
+    perspective(138.437cqw)
+    rotateZ(33.113deg) rotateY(-40.267deg) rotateX(-17.911deg)
+    scale(0.44635)
+    translate(-32.584cqw, -76.067cqw);
   /* schermnormaal uit de rotatieketen hierboven: (n-x, n-y) is de kant
      waar een deeltje heen schuift, n-z de diepte die groei wordt */
-  --n-x: -0.658;
-  --n-y: -0.076;
-  --n-z: 0.749;
+  --n-x: -0.683;
+  --n-y: -0.078;
+  --n-z: 0.726;
   /* vorm van een rond deeltje in dit glasvlak */
   --plane-rot: 29.6deg;
   --plane-squash: 0.724;
@@ -4438,6 +4440,16 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   --glass-dy: 28.9cqw;
   --tilt: -1deg;
   --nudge: -12%;
+}
+
+/* Kader 1 apart, want het blok hierboven is met zijn kale .strip-tile--cinema
+   ook de terugval voor alle kaders. Bij dit kader valt de schaduw van de
+   normaal richting de onderarmen, en juist daar moet het ondubbelzinnig naar
+   voren lezen. Het glas staat hier het frontaalst van de vier (n-z 0,920), dus
+   de beweging hoort er ook vooral diepte te zijn: de zijwaartse component telt
+   half mee, groei en uiteenlopen dragen de rest. */
+.page-verhalen-test .strip-tile--cinema.strip-tile--frame-1 {
+  --emerge-side: 0.5;
 }
 
 .page-verhalen-test .tablet-shot--burst {
@@ -4473,12 +4485,12 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   transition: transform 0.45s ease, opacity 0.45s ease;
 }
 
-/* De screenshot ligt achter het kader, in het vlak van het glas. Het vlak heeft
-   de verhouding van het schérm, de screenshot wordt daar passend in gelegd
-   (object-fit: contain). Zo wordt de game-UI nooit uitgerekt en nooit tot een
-   strook teruggesneden; wat overblijft is de donkere schermachtergrond. De
-   bronbeelden lopen van 1.33 tot 2.67 breed, dus één vaste uitsnede zou altijd
-   ergens fout zitten. */
+/* De screenshot ligt achter het kader, in het vlak van het glas. Alle vier de
+   glasvlakken zijn 16:9, en elke tegel toont een tegelversie van de screenshot
+   die óók precies 16:9 is (zie bin/maak-tegelbeelden). Het glas is daardoor
+   helemaal gevuld: niets uitgerekt, niets weggesneden, geen zwarte balk. De
+   achtergrondkleur is alleen nog een vangnet voor een beeld zonder
+   tegelversie. */
 .page-verhalen-test .tablet-shot--cinema .tablet-shot__screen {
   position: absolute;
   left: 0;
@@ -4495,7 +4507,7 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     filter: saturate(1.05) brightness(1.02);
   }
@@ -4580,13 +4592,15 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
       var(--u) * var(--v) * var(--glass-cy) +
       (1 - var(--u)) * var(--v) * var(--glass-dy)
     );
-    /* langs de normaal naar voren, plus het uiteenlopen van het vlak */
+    /* langs de normaal naar voren, plus het uiteenlopen van het vlak.
+       --emerge-side staat per kader op de tegel en is standaard 1; een kader
+       mag zijn zijwaartse component temperen zonder de diepte te raken. */
     --ex: calc(
-      var(--t) * var(--n-x) * var(--emerge-reach) +
+      var(--t) * var(--n-x) * var(--emerge-side, 1) * var(--emerge-reach) +
       var(--t) * var(--emerge-fan) * (var(--px) - var(--glass-x))
     );
     --ey: calc(
-      var(--t) * var(--n-y) * var(--emerge-reach) +
+      var(--t) * var(--n-y) * var(--emerge-side, 1) * var(--emerge-reach) +
       var(--t) * var(--emerge-fan) * (var(--py) - var(--glass-y))
     );
     --egrow: calc(1 + var(--t) * var(--n-z) * var(--emerge-grow));

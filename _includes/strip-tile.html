@@ -4,8 +4,9 @@
 
   Foto-tegels gebruiken vier cinematische kaders (hands-*.webp): uitgeknipte
   handen met een toestel, transparante achtergrond en een gat waar het glas zit.
-  Alle vier de glasvlakken liggen liggend, zodat de screenshots er onvervormd en
-  onbesneden in passen. Welk kader een tegel krijgt, bepaalt
+  Alle vier de glasvlakken zijn 16:9, net als de tegelversies van de
+  screenshots, zodat het scherm helemaal gevuld is zonder uitrekken of
+  wegsnijden. Welk kader een tegel krijgt, bepaalt
   strip-tile--frame-1..4 (de foto-tegels lopen om beurten door de vier kaders);
   de bijbehorende glas-fit staat bij diezelfde klasse in main.scss. De screenshot
   ligt erachter en wordt met een 3D-transform op het glasvlak gelegd. Het podium
@@ -13,15 +14,28 @@
   de kijker toe komen zitten in __burst.
 {% endcomment %}
 {% assign tile_src = "" %}
+{% assign tile_shot = "" %}
 {% if include.image %}
   {% unless include.image contains "://" %}
     {% if include.image contains "/" %}
       {% assign tile_src = include.image | relative_url %}
     {% else %}
       {% assign tile_src = "/assets/images/verhalen/" | append: include.image | relative_url %}
+      {% comment %}
+        Op het glas gaat de tegelversie van het beeld: precies 16:9, gemaakt met
+        bin/maak-tegelbeelden. Staat die er niet, dan valt het terug op het
+        origineel.
+      {% endcomment %}
+      {% assign tile_base = include.image | split: "." | first %}
+      {% assign tegel_path = "/assets/images/verhalen/" | append: tile_base | append: "-tegel.jpg" %}
+      {% assign tegel_hits = site.static_files | where: "path", tegel_path | size %}
+      {% if tegel_hits > 0 %}
+        {% assign tile_shot = tegel_path | relative_url %}
+      {% endif %}
     {% endif %}
   {% endunless %}
 {% endif %}
+{% if tile_shot == "" %}{% assign tile_shot = tile_src %}{% endif %}
 {% assign tile_kind = include.kind | default: "projecten" %}
 {% if tile_kind == "demos" %}
   {% assign tile_label = "Demo" %}
@@ -47,7 +61,7 @@
           <span class="tablet-shot__ground"></span>
           {% if tile_src != "" %}
             <span class="tablet-shot__screen">
-              <img src="{{ tile_src }}" alt="" loading="lazy" decoding="async">
+              <img src="{{ tile_shot }}" alt="" loading="lazy" decoding="async">
             </span>
           {% endif %}
           <span class="tablet-shot__frame"></span>
