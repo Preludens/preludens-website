@@ -4226,8 +4226,14 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   pointer-events: none;
 }
 
+/* Het podium wordt door de tegelrand bijgesneden, net als een gewone foto.
+   De compositie mag dus ruim buiten de tegel doorlopen — een arm eindigt altijd
+   op de rand van de kaart en nooit halverwege in de lucht. Alleen het podium
+   wordt geknipt; __burst (de ontsnappende kaart) blijft vrij. */
 .page-verhalen-test .strip-tile--cinema .strip-tile__stage {
   z-index: 1;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
 }
 
 .page-verhalen-test .strip-tile--cinema .strip-tile__burst {
@@ -4237,7 +4243,10 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 .page-verhalen-test .tablet-shot--cinema {
   position: absolute;
   left: 50%;
-  bottom: -4%;
+  /* Ruim onder de tegelrand doorlopen: het podium wordt toch geknipt, en zo
+     valt de onderkant van elke foto — waar de mouwen ophouden — altijd buiten
+     beeld. */
+  bottom: -8%;
   width: 108%;
   aspect-ratio: 1500 / 1046;
   background: none;
@@ -4547,7 +4556,7 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 @media (max-width: 799px) {
   .page-verhalen-test .tablet-shot--cinema {
     width: 102%;
-    bottom: -2%;
+    bottom: -8%;
   }
 
   .page-verhalen-test .strip-grid > [role="listitem"]:hover .tablet-shot--cinema,
