@@ -34,10 +34,10 @@ body_class: page-home
 {% include panels/panel.html variant="mist" line="online-focus" body=focus_body %}
 
 {% capture track_items %}
-{% include panels/track.html href="/diensten/" title="E-learning" text="Online training in which employees practise with situations from their work, make choices and receive direct feedback." more="Information" device="laptop-light" screen="/assets/images/verhalen/basis-koeltechniek-onderdelen.jpg" %}
-{% include panels/track.html href="/prepo/" title="Preludens Portal" text="One environment to use, manage and keep developing MicroGames and Stories, also after delivery." more="Information" device="laptop-dark" screen="/assets/images/prepo/overzicht.jpg" %}
-{% include panels/track.html href="/diensten/#microgame-stories" title="MicroGame Stories" text="Short, visual stories that connect basic knowledge to recognisable work situations, with play and repetition." more="Information" device="tablet" screen="/assets/images/verhalen/studium-co-wijzer.jpg" %}
-{% include panels/track.html href="/diensten/#dilemma-storytelling" title="Dilemma short Stories" text="Short scenarios in which teams make difficult choices, experience the consequences and learn to weigh their options." more="Information" device="hands" screen="/assets/images/verhalen/disruption-game.jpg" %}
+{% include panels/track.html href="/diensten/" title="E-learning" text="Online training in which employees practise with situations from their work, make choices and receive direct feedback." more="Information" frame="4" screen="/assets/images/verhalen/basis-koeltechniek-onderdelen.jpg" %}
+{% include panels/track.html href="/prepo/" title="Preludens Portal" text="One environment to use, manage and keep developing MicroGames and Stories, also after delivery." more="Information" frame="3" screen="/assets/images/prepo/overzicht.jpg" %}
+{% include panels/track.html href="/diensten/#microgame-stories" title="MicroGame Stories" text="Short, visual stories that connect basic knowledge to recognisable work situations, with play and repetition." more="Information" frame="2" screen="/assets/images/verhalen/studium-co-wijzer.jpg" %}
+{% include panels/track.html href="/diensten/#dilemma-storytelling" title="Dilemma short Stories" text="Short scenarios in which teams make difficult choices, experience the consequences and learn to weigh their options." more="Information" frame="1" screen="/assets/images/verhalen/disruption-game.jpg" %}
 {% endcapture %}
 {% capture paper_lead %}<strong>Which form fits your challenge?</strong> If you want to train and secure basic knowledge, a MicroGame Story is the natural choice. If you want to strengthen decision-making around difficult choices, Dilemma Storytelling fits. If you first want a grip on behaviour, learning goals and interventions, we start with Game Thinking.{% endcapture %}
 {% capture paper_title %}<span class="hl">Knowledge journeys</span> with story, play and impact.{% endcapture %}

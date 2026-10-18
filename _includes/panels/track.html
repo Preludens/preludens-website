@@ -1,4 +1,30 @@
-<article class="sp-track">
+{% comment %}
+  Kaart in de kennistrajecten-band op de homepage.
+
+  Pass: href, title, text, more, frame, screen.
+
+  Het beeld staat op hetzelfde cinematische podium als de tegels op
+  /inspiratie/ (_includes/cinema-shot.html): een uitgeknipt kader met handen en
+  een toestel, met de screenshot in het vlak van het glas. `frame` kiest het
+  kader dat bij de inhoud past: 1 tablet in twee handen, 2 tablet plat op
+  tafel, 3 breedbeeldmonitor met toetsenbord, 4 laptop.
+
+  Op het glas gaat de tegelversie van de screenshot (<naam>-tegel.jpg, precies
+  16:9, gemaakt met bin/maak-tegelbeelden), zodat het scherm rand tot rand
+  gevuld is. Staat die er niet, dan valt het terug op het origineel.
+{% endcomment %}
+{% assign track_shot = "" %}
+{% if include.screen %}
+  {% assign track_base = include.screen | split: "." | first %}
+  {% assign track_tegel = track_base | append: "-tegel.jpg" %}
+  {% assign track_tegel_hits = site.static_files | where: "path", track_tegel | size %}
+  {% if track_tegel_hits > 0 %}
+    {% assign track_shot = track_tegel | relative_url %}
+  {% else %}
+    {% assign track_shot = include.screen | relative_url %}
+  {% endif %}
+{% endif %}
+<article class="sp-track sp-track--cinema">
   <a class="sp-track__link" href="{{ include.href | relative_url }}">
     <span class="sp-track__copy">
       <h3>{{ include.title }}</h3>
@@ -6,7 +32,7 @@
       <span class="sp-track__more">{{ include.more }}</span>
     </span>
     <span class="sp-track__stage" aria-hidden="true">
-      {% include panels/device.html kind=include.device screen=include.screen %}
+      {% include cinema-shot.html shot=track_shot frame=include.frame %}
     </span>
   </a>
 </article>
