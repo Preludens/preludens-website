@@ -4,5 +4,5 @@
 {% endcomment %}
 <article>
   <h3>{% if include.num %}<span>{{ include.num }}</span> {% endif %}{{ include.title }}</h3>
-  <p>{{ include.text }}</p>
+  {% if include.text and include.text != '' %}<p>{{ include.text }}</p>{% endif %}
 </article>

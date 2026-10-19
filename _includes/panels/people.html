@@ -1,0 +1,8 @@
+{% comment %}
+  Portrettenband: ronde foto met naam, rol en een korte tekst, opgebouwd uit
+  panels/person.html. De foto krijgt dezelfde behandeling als het portret bij
+  een quote op de homepage. Pass: items, label.
+{% endcomment %}
+<div class="sp-people" role="list" aria-label="{{ include.label }}">
+  {{ include.items }}
+</div>

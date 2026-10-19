@@ -301,7 +301,9 @@ body.page-panels .sp-actions .btn {
 }
 
 .sp-aside-split__main p.sp-lead {
-  max-width: none;
+  /* Niet `none`: de kolom komt nu toevallig op 70ch uit, maar wordt
+     --max-width ooit ruimer, dan schiet lopende tekst er stil overheen. */
+  max-width: 70ch;
   margin: 0 0 var(--space-md);
 }
 
@@ -329,7 +331,7 @@ body.page-panels .sp-actions .btn {
 
 .sp-media__frame {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: var(--sp-media-ratio, 16 / 9);
   padding: 5px;
   background: var(--color-white);
   clip-path: url("#sp-hero-clip");
@@ -348,7 +350,7 @@ body.page-panels .sp-actions .btn {
 }
 
 .sp-media__body p.sp-lead {
-  max-width: none;
+  max-width: 70ch;
   margin: 0 0 var(--space-md);
 }
 
@@ -376,6 +378,59 @@ body.page-panels .sp-actions .btn {
 .sp-focus-copy + p.sp-lead--center,
 .sp-warm-copy + p.sp-lead--center {
   margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
+}
+
+/* Portretten (panels/people.html). De foto krijgt dezelfde ronde behandeling
+   als het portret bij een quote op de homepage. */
+.sp-people {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
+}
+
+.sp-person__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.sp-person__photo {
+  flex: 0 0 auto;
+  width: clamp(5rem, 9vw, 7rem);
+  height: clamp(5rem, 9vw, 7rem);
+  object-fit: cover;
+  border: 3px solid var(--color-white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-card);
+}
+
+.panel .sp-person__name {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.panel .sp-person__role {
+  margin: 0.15rem 0 0;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-ink-gold);
+}
+
+.sp-person__body {
+  margin-top: var(--space-md);
+}
+
+.sp-person__body p.sp-lead {
+  max-width: 70ch;
+  margin: 0 0 var(--space-sm);
+}
+
+.sp-person__body p.sp-lead:last-child {
+  margin-bottom: 0;
 }
 
 /* Korte checklist in een smalle kolom (panels/checklist.html). */
@@ -428,7 +483,8 @@ body.page-panels .sp-actions .btn {
 
 @media (max-width: 900px) {
   .sp-aside-split,
-  .sp-media {
+  .sp-media,
+  .sp-people {
     grid-template-columns: 1fr;
   }
 
