@@ -260,6 +260,22 @@ body.page-panels .sp-actions .btn {
   }
 }
 
+/* Staat er maar een korte tweede zin, dan valt er naast de eerste een gat.
+   Gestapeld leest dat rustiger, en links uitlijnen voorkomt rekbare spaties
+   in een smalle kolom. */
+.sp-copy--stack {
+  grid-template-columns: 1fr;
+  /* De kolomafstand werkt gestapeld als regelafstand en is dan veel te ruim. */
+  gap: 0.6rem;
+}
+
+.sp-warm-copy.sp-copy--stack p.sp-lead,
+.sp-focus-copy.sp-copy--stack p.sp-lead {
+  text-align: left;
+  hyphens: manual;
+  max-width: 46rem;
+}
+
 @media (max-width: 600px) {
   .panel__inner {
     padding-inline: var(--space-md);

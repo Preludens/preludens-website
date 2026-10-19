@@ -45,7 +45,7 @@ permalink: /ontwerpmethodiek/
 
 {% capture cta_left %}In a single half-day we translate your learning challenge into a first concept — with these principles as the foundation.{% endcapture %}
 {% capture cta_right %}You'll see straight away how our methodology works in practice.{% endcapture %}
-{% include panels/cta.html kicker="Curious how this works for you?" title="Take the first step with a GameStorm" left=cta_left right=cta_right primary_label="Book a GameStorm" primary_href="/gamestorm/" secondary_label="Get in touch" secondary_href="/contact/" %}
+{% include panels/cta.html kicker="Curious how this works for you?" title="Take the first step with a GameStorm" left=cta_left right=cta_right stack=true primary_label="Book a GameStorm" primary_href="/gamestorm/" secondary_label="Get in touch" secondary_href="/contact/" %}
 
 {% include panels/footer-reveal.html %}
 

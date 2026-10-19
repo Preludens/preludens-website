@@ -45,7 +45,7 @@ permalink: /ontwerpmethodiek/
 
 {% capture cta_left %}In één dagdeel vertalen we jouw leeropgave naar een eerste concept — met deze principes als fundament.{% endcapture %}
 {% capture cta_right %}Zo zie je meteen hoe onze methodiek in de praktijk werkt.{% endcapture %}
-{% include panels/cta.html kicker="Benieuwd hoe dit voor jou uitpakt?" title="Zet de eerste stap met een GameStorm" left=cta_left right=cta_right primary_label="Plan een GameStorm" primary_href="/gamestorm/" secondary_label="Neem contact op" secondary_href="/contact/" %}
+{% include panels/cta.html kicker="Benieuwd hoe dit voor jou uitpakt?" title="Zet de eerste stap met een GameStorm" left=cta_left right=cta_right stack=true primary_label="Plan een GameStorm" primary_href="/gamestorm/" secondary_label="Neem contact op" secondary_href="/contact/" %}
 
 {% include panels/footer-reveal.html %}
 
