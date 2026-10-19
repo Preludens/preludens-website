@@ -1,11 +1,12 @@
-/* Homepage shell: flowing panels, 40° cut, mist and warm bands.
+/* Paneelsysteem: doorlopende panelen, 40° snede, mist- en warme banden.
+   Gebruikt door elke pagina met body-class page-panels (home, ontwerpmethodiek).
    --sp-jump / --sp-run are the single definition of that cut (tan 40° ≈ 0.839). */
 
-html:has(body.page-home) {
+html:has(body.page-panels) {
   overflow-x: clip;
 }
 
-body.page-home {
+body.page-panels {
   --sp-jump: 50px;
   --sp-run: 59.6px;
   /* Air at every angled cut. Mist and warm carry it; paper stays flush. */
@@ -63,7 +64,7 @@ body.page-home {
 }
 
 .panel h2 .hl,
-body.page-home .hl {
+body.page-panels .hl {
   color: var(--color-preludens-gold);
 }
 
@@ -84,7 +85,14 @@ body.page-home .hl {
   margin: 0 0 clamp(var(--space-sm), 2vh, var(--space-md));
 }
 
-body.page-home .sp-actions {
+/* Inleidende lead onder een gecentreerde kop (mistband). */
+.panel p.sp-lead--center {
+  max-width: 62ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+body.page-panels .sp-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -92,7 +100,7 @@ body.page-home .sp-actions {
   margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
 }
 
-body.page-home .sp-actions .btn {
+body.page-panels .sp-actions .btn {
   padding: 0.85rem 1.4rem;
   font-weight: 600;
 }

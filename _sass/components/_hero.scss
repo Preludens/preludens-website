@@ -211,7 +211,33 @@
   margin-right: var(--sp-jump, 50px);
 }
 
-.panel--hero .sp-hero-steps h3 {
+/* Stappenband binnen een paneel (bijv. de zeven principes): twee kolommen,
+   geen hero-marges, en een losse laatste kop die de volle breedte pakt. */
+.sp-hero-steps--flow {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.75rem, 4vw, 3.25rem);
+  width: 100%;
+  margin: clamp(var(--space-lg), 5vh, 3.5rem) 0 0;
+  padding: 0;
+}
+
+.sp-hero-steps--flow article:first-child,
+.sp-hero-steps--flow article:last-child {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.sp-hero-steps--flow article:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+/* In een lichte paneelband staat het nummer op wit; daar is het heldere goud
+   te licht voor tekst. --color-ink-gold is het AA-veilige goud op licht. */
+.sp-hero-steps.sp-hero-steps--flow h3 span {
+  color: var(--color-ink-gold);
+}
+
+.sp-hero-steps h3 {
   display: flex;
   align-items: baseline;
   gap: 0.65rem;
@@ -227,7 +253,7 @@
   color: var(--color-ink);
 }
 
-.panel--hero .sp-hero-steps h3::after {
+.sp-hero-steps h3::after {
   content: "";
   position: absolute;
   left: 0;
@@ -240,11 +266,11 @@
   animation: sp-title-line 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.panel--hero .sp-hero-steps article:nth-child(2) h3::after {
+.sp-hero-steps article:nth-child(2) h3::after {
   animation-delay: 0.12s;
 }
 
-.panel--hero .sp-hero-steps article:nth-child(3) h3::after {
+.sp-hero-steps article:nth-child(3) h3::after {
   animation-delay: 0.24s;
 }
 
@@ -252,13 +278,13 @@
   to { transform: scaleX(1); }
 }
 
-.panel--hero .sp-hero-steps h3 span {
+.sp-hero-steps h3 span {
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--color-preludens-gold);
 }
 
-.panel--hero .sp-hero-steps p {
+.sp-hero-steps p {
   margin: 0;
   font-family: var(--font-body);
   font-weight: 400;
@@ -300,7 +326,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .panel--hero .sp-hero-steps h3::after {
+  .sp-hero-steps h3::after {
     animation: none;
     transform: none;
   }
