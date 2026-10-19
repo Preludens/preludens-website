@@ -230,6 +230,23 @@
   grid-column: 1 / -1;
 }
 
+/* Stappenband als raster: drie gelijke kolommen binnen een paneel, zonder de
+   hero-marges. Voor een reeks die geen piramide is (bijvoorbeeld negen
+   functies in 3x3). */
+.sp-hero-steps--grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.75rem, 3.5vw, 3rem);
+  width: 100%;
+  margin: clamp(var(--space-lg), 5vh, 3.5rem) 0 0;
+  padding: 0;
+}
+
+.sp-hero-steps--grid article:first-child,
+.sp-hero-steps--grid article:last-child {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* Stappenband als piramide: drie brede stappen boven, vier smallere eronder.
    Twaalf kolommen, zodat 3x4 en 4x3 allebei precies vol lopen. */
 .sp-hero-steps--pyramid {
@@ -282,14 +299,6 @@
 
 .sp-hero-steps.sp-hero-steps--list h3::after {
   content: none;
-}
-
-/* In een lichte paneelband staat het nummer op wit; daar is het heldere goud
-   te licht voor tekst. --color-ink-gold is het AA-veilige goud op licht. */
-.sp-hero-steps.sp-hero-steps--flow h3 span,
-.sp-hero-steps.sp-hero-steps--pyramid h3 span,
-.sp-hero-steps.sp-hero-steps--list h3 span {
-  color: var(--color-ink-gold);
 }
 
 .sp-hero-steps h3 {
