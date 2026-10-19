@@ -1,0 +1,26 @@
+{% comment %}
+  Eén aanklikbare kaart in een overzicht (panels/posts.html): een metaregel,
+  een titel, een korte tekst en een leeslink. De hele kaart is de link.
+
+  Pass: href, title, text, cta, aria, meta, datetime, label.
+
+  `meta` is de regel boven de titel. Staat er ook een `datetime` bij, dan komt
+  die regel in een <time>-element; anders is het gewone tekst. Zo kan dezelfde
+  kaart een publicatiedatum dragen of bijvoorbeeld een opdrachtgever.
+  `label` is een optioneel soort-label boven de meta.
+{% endcomment %}
+<article class="sp-post">
+  <a class="sp-post__link" href="{{ include.href | relative_url }}"{% if include.aria %} aria-label="{{ include.aria }}"{% endif %}>
+    {% if include.label %}<span class="sp-post__label">{{ include.label }}</span>{% endif %}
+    {% if include.meta %}
+      {% if include.datetime %}
+        <time class="sp-post__meta" datetime="{{ include.datetime }}">{{ include.meta }}</time>
+      {% else %}
+        <span class="sp-post__meta">{{ include.meta }}</span>
+      {% endif %}
+    {% endif %}
+    <h2 class="sp-post__title">{{ include.title }}</h2>
+    {% if include.text %}<p class="sp-post__text">{{ include.text }}</p>{% endif %}
+    {% if include.cta %}<span class="sp-post__cta">{{ include.cta }} <span aria-hidden="true">&rarr;</span></span>{% endif %}
+  </a>
+</article>
