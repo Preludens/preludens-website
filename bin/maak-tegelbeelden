@@ -1,52 +1,75 @@
 #!/usr/bin/env bash
 #
-# Maakt voor elk screenshot in assets/images/verhalen/ dat als `image:` in een
-# verhaal staat een tegelversie van precies 16:9: <naam>-tegel.jpg.
+# Maakt voor elk screenshot dat op het cinematische podium terechtkomt vier
+# tegelversies: één per kader, in de beeldverhouding van dát glasvlak.
 #
-# Waarom: de glasvlakken van de vier cinematische kaders op /inspiratie/ zijn
-# allemaal 16:9, maar de bronbeelden lopen van 1,33 tot 2,67 breed. Bijsnijden
-# tot 16:9 zou UI kosten, en contain laat een zwarte balk achter. Dit script
-# vult het beeld daarom op tot 16:9 door de randrij of -kolom door te trekken en
-# zacht te laten uitlopen naar de gemiddelde randkleur — bij een UI met een
-# vlakke balk boven en onder is dat niet te zien. Alleen als die band breder dan
-# 22% zou worden, wordt er eerst bijgesneden, en dan op de plek met de minste
-# beeldinformatie.
+#   <naam>-tegel-k1.jpg   16:9    tablet in twee handen
+#   <naam>-tegel-k2.jpg   1,474   tablet plat op tafel
+#   <naam>-tegel-k3.jpg   2,171   breedbeeldmonitor
+#   <naam>-tegel-k4.jpg   1,685   laptop
 #
-# Het origineel blijft staan; alleen de -tegel.jpg wordt (opnieuw) gemaakt. De
-# tegel wordt vanzelf gebruikt zodra hij bestaat (zie _includes/strip-tile.html).
+# Waarom per kader: de vier toestellen hebben echt verschillende schermen, en
+# de bronbeelden lopen van 1,33 tot 2,67 breed. Eén gedeelde 16:9-versie zou op
+# twee van de vier kaders de UI ~20% uitrekken; het glas op de werkelijke
+# verhouding zetten en met cover bijsnijden zou UI kosten. Met een beeld per
+# kader hoeft geen van beide: niets vervormt en niets valt weg.
 #
-# Gebruik:  ./bin/maak-tegelbeelden [bestandsnaam ...]
-# Zonder argumenten worden alle `image:`-beelden uit _verhalen/ gedaan.
+# Het beeld wordt niet bijgesneden maar opgevuld — de randrij of -kolom wordt
+# doorgetrokken en loopt zacht uit naar de gemiddelde randkleur. Bij een UI met
+# een vlakke balk aan de rand is dat niet te zien. De verhoudingen staan hier en
+# in _sass/components/_cinema-shot.scss; verandert een glas-fit, dan moeten ze
+# allebei mee.
+#
+# Het origineel blijft staan; alleen de -tegel-k*.jpg worden (opnieuw) gemaakt.
+# Een tegel pakt de versie van zijn eigen kader zodra die bestaat en valt anders
+# terug op het origineel (_includes/strip-tile.html, _includes/panels/track.html).
+#
+# Gebruik:  ./bin/maak-tegelbeelden [pad ...]
+# Zonder argumenten: alle `image:`-beelden uit _verhalen/ plus alle `screen=`
+# beelden van de homepagepanelen.
 
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
 ROOT="$PWD"
-DIR="$ROOT/assets/images/verhalen"
 HELPER="$ROOT/bin/lib/tegelbeeld.js"
+
+# breedte, hoogte en kadernummer per glasvlak
+KADERS=("1600 900 1" "1600 1086 2" "1600 737 3" "1600 950 4")
 
 for cmd in ffmpeg ffprobe node; do
   command -v "$cmd" >/dev/null 2>&1 || { echo "maak-tegelbeelden: $cmd ontbreekt" >&2; exit 1; }
 done
 
+uniq_files=()
 if [ "$#" -gt 0 ]; then
   files=("$@")
 else
   files=()
   while IFS= read -r naam; do
-    [ -n "$naam" ] && files+=("$naam")
+    [ -n "$naam" ] && files+=("assets/images/verhalen/$naam")
   done < <(grep -h '^image:' "$ROOT"/_verhalen/*.md | sed 's/^image:[[:space:]]*//' | tr -d '"' | sort -u)
+  while IFS= read -r pad; do
+    [ -n "$pad" ] && files+=("${pad#/}")
+  done < <(grep -ho 'screen="[^"]*"' "$ROOT"/index.md "$ROOT"/en/index.md 2>/dev/null \
+           | sed 's/screen="//; s/"$//' | sort -u)
+  # de homepage gebruikt deels dezelfde beelden als de verhalen
+  while IFS= read -r uniek; do uniq_files+=("$uniek"); done < <(printf '%s\n' "${files[@]}" \
+    | sed 's#^assets/images/verhalen/\([^/]*\)$#assets/images/verhalen/\1#' | sort -u)
+  files=("${uniq_files[@]}")
 fi
 
 tmp="$(mktemp -d)"
 trap 'rm -rf "$tmp"' EXIT
 
 for file in "${files[@]}"; do
-  case "$file" in */*|*://*) echo "overgeslagen (geen los bestand): $file"; continue;; esac
-  [ -f "$DIR/$file" ] || { echo "overgeslagen (niet gevonden): $file"; continue; }
-  base="${file%.*}"
+  case "$file" in *://*) echo "overgeslagen (geen lokaal bestand): $file"; continue;; esac
+  # een kale bestandsnaam hoort bij de verhalen-map
+  case "$file" in */*) pad="$ROOT/$file";; *) pad="$ROOT/assets/images/verhalen/$file";; esac
+  [ -f "$pad" ] || { echo "overgeslagen (niet gevonden): $file"; continue; }
+  base="${pad%.*}"
 
-  dims="$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv "$DIR/$file")"
+  dims="$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv "$pad")"
   w="$(echo "$dims" | cut -d, -f2)"
   h="$(echo "$dims" | cut -d, -f3)"
   tw="$w"; th="$h"
@@ -54,11 +77,15 @@ for file in "${files[@]}"; do
     tw=1800
     th=$(( (h * 1800 + w / 2) / w ))
   fi
+  ffmpeg -y -v error -i "$pad" -vf "scale=$tw:$th" -f rawvideo -pix_fmt rgba "$tmp/in.rgba"
 
-  ffmpeg -y -v error -i "$DIR/$file" -vf "scale=$tw:$th" -f rawvideo -pix_fmt rgba "$tmp/in.rgba"
-  printf '%-36s ' "$base"
-  node "$HELPER" "$tmp/in.rgba" "$tw" "$th" "$tmp/uit.rgba" 1600 900
-  ffmpeg -y -v error -f rawvideo -pix_fmt rgba -s 1600x900 -i "$tmp/uit.rgba" -q:v 4 "$DIR/$base-tegel.jpg"
+  for kader in "${KADERS[@]}"; do
+    set -- $kader
+    ow="$1"; oh="$2"; nr="$3"
+    printf '%-40s k%s ' "$(basename "$base")" "$nr"
+    node "$HELPER" "$tmp/in.rgba" "$tw" "$th" "$tmp/uit.rgba" "$ow" "$oh"
+    ffmpeg -y -v error -f rawvideo -pix_fmt rgba -s "${ow}x${oh}" -i "$tmp/uit.rgba" -q:v 4 "$base-tegel-k$nr.jpg"
+  done
 done
 
 echo "klaar"
