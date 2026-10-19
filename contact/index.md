@@ -3,165 +3,90 @@ layout: default
 lang: nl
 title: Contact
 description: Neem contact op met Preludens — van GameStorm tot eerste hoofdstuk of volledige speelbare leerervaring.
+body_class: page-panels
 permalink: /contact/
 ---
 
-<section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/contact-hero.jpg' | relative_url }}');">
-  <div class="container">
-    <div class="hero-banner__inner">
-      <p class="hero-banner__eyebrow">Contact</p>
-      <h1>Zet je leeropgave om in een verhaal dat mensen actief <span class="hl">meeneemt</span></h1>
-      <hr class="hero-banner__accent">
-      <p class="hero-banner__lead">
-        Heb je kennis die beter moet blijven hangen, gedrag dat moet veranderen of een vaardigheid die mensen moeten
-        oefenen? Vertel ons waar je tegenaan loopt. We denken graag mee over een passende route: van GameStorm tot
-        eerste hoofdstuk of volledige speelbare leerervaring.
-      </p>
-    </div>
-  </div>
-  <span class="hero-banner__dots" aria-hidden="true"></span>
-</section>
+<div class="panel-stack">
+{% include panels/clips.html %}
 
-<section class="section">
-  <div class="container contact-layout">
-    <div class="contact-card">
-      <span class="section-label">Voor wie al een vraag heeft of wil sparren</span>
-      <h2>Start het gesprek</h2>
-      <p>
-        Wil je een leeropgave verkennen, een vraag stellen of samen kijken welke route past bij jouw organisatie?
-        Neem gerust contact op. We denken graag met je mee.
-      </p>
-      <ul class="contact-list">
-        <li>
-          <strong>Preludens B.V.</strong><br>
-          KVK: 99042827<br>
-          Btw-id: NL868763664B01
-        </li>
-        <li>
-          <strong>Algemeen</strong><br>
-          E-mail: <a href="mailto:info@preludens.nl">info@preludens.nl</a><br>
-          Telefoon: <a href="tel:+31154042027">+31 15 404 202 7</a>
-        </li>
-        <li>
-          <strong>Support</strong><br>
-          E-mail: <a href="mailto:support@preludens.nl">support@preludens.nl</a><br>
-          Telefoon: <a href="tel:+31154042028">+31 15 404 202 8</a>
-        </li>
-        <li class="contact-list__visit">
-          <strong>Bezoek</strong><br>
-          Alleen op afspraak.
-        </li>
-      </ul>
-      <p class="contact-card__footnote">
-        Stuur een mail naar
-        <a href="mailto:info@preludens.nl">info@preludens.nl</a>.
-        We nemen contact met je op om samen te kijken welke vervolgstap logisch is.
-      </p>
-    </div>
+{% capture hero_title %}Zet je leeropgave om in een verhaal dat mensen actief meeneemt{% endcapture %}
+{% capture hero_lead %}Heb je kennis die beter moet blijven hangen, gedrag dat moet veranderen of een vaardigheid die mensen moeten oefenen? Vertel ons waar je tegenaan loopt. We denken graag mee over een passende route: van GameStorm tot eerste hoofdstuk of volledige speelbare leerervaring.{% endcapture %}
+{% include panels/hero.html kicker="Contact" title=hero_title lead=hero_lead figure_src="/assets/images/hero/contact-hero.jpg" figure_alt="Een open landschap met een route naar de horizon" figure_href="/gamestorm/" figure_caption="Vertel ons waar je tegenaan loopt." %}
 
-    <div class="contact-card">
-      <span class="section-label">De missie van Preludens is om de drempel naar game-based leren te verlagen</span>
-      <h2>Hoe kun je laagdrempelig starten?</h2>
+{% capture contact_items %}
+{% include panels/value.html title="Preludens B.V." text="KVK: 99042827<br>Btw-id: NL868763664B01" %}
+{% include panels/value.html title="Algemeen" text="E-mail: <a href=\"mailto:info@preludens.nl\">info@preludens.nl</a><br>Telefoon: <a href=\"tel:+31154042027\">+31 15 404 202 7</a>" %}
+{% include panels/value.html title="Support" text="E-mail: <a href=\"mailto:support@preludens.nl\">support@preludens.nl</a><br>Telefoon: <a href=\"tel:+31154042028\">+31 15 404 202 8</a>" %}
+{% include panels/value.html title="Bezoek" text="Alleen op afspraak." %}
+{% endcapture %}
+{% capture talk_body %}
+<h3>Voor wie al een vraag heeft of wil sparren</h3>
+<h2>Start het gesprek</h2>
+<p class="sp-lead">Wil je een leeropgave verkennen, een vraag stellen of samen kijken welke route past bij jouw organisatie? Neem gerust contact op. We denken graag met je mee.</p>
+{% include panels/values.html label="Contactgegevens van Preludens" columns="two" items=contact_items %}
+<p class="sp-lead">Stuur een mail naar <a href="mailto:info@preludens.nl">info@preludens.nl</a>. We nemen contact met je op om samen te kijken welke vervolgstap logisch is.</p>
+{% endcapture %}
+{% include panels/panel.html variant="mist" align="left" body=talk_body %}
 
-      <div class="contact-start-option">
-        <h3>Start met een GameStorm</h3>
-        <p>
-          Een creatieve workshop van een dagdeel waarin we jouw leeropgave verkennen en vertalen naar een eerste
-          richting. Je krijgt meer grip op doelgroep, leerdoelen, verhaal en mogelijke spelmechanismen.
-        </p>
-        <a class="btn btn-secondary btn-sm" href="{{ '/gamestorm/' | relative_url }}">Meer over GameStorm</a>
-      </div>
+{% capture start_main %}
+<h3>Start met een GameStorm</h3>
+<p class="sp-lead">Een creatieve workshop van een dagdeel waarin we jouw leeropgave verkennen en vertalen naar een eerste richting. Je krijgt meer grip op doelgroep, leerdoelen, verhaal en mogelijke spelmechanismen.</p>
+{% include panels/actions.html secondary_label="Meer over GameStorm" secondary_href="/gamestorm/" %}
+{% endcapture %}
+{% capture start_aside %}
+<h3>Of begin klein met één hoofdstuk</h3>
+<p class="sp-lead">Ontwikkel in één maand een eerste MicroGame Story-hoofdstuk rond één vaardigheid of leerdoelcluster. Zo ervaar je snel hoe verhaal, keuzes en feedback jouw inhoud speelbaar maken.</p>
+{% include panels/actions.html secondary_label="Meer over één hoofdstuk" secondary_href="/diensten/#microgame-stories" %}
+{% endcapture %}
+{% capture start_body %}
+<h3>De missie van Preludens is om de drempel naar game-based leren te verlagen</h3>
+<h2>Hoe kun je laagdrempelig starten?</h2>
+{% include panels/aside.html variant="even" main=start_main aside=start_aside %}
+<h3>Laat kort weten waar je tegenaan loopt</h3>
+{% include panels/actions.html primary_label="Stuur een mail naar info@preludens.nl →" primary_href="mailto:info@preludens.nl" %}
+{% endcapture %}
+{% include panels/panel.html variant="paper" body=start_body %}
 
-      <div class="contact-start-option">
-        <h3>Of begin klein met één hoofdstuk</h3>
-        <p>
-          Ontwikkel in één maand een eerste MicroGame Story-hoofdstuk rond één vaardigheid of leerdoelcluster. Zo
-          ervaar je snel hoe verhaal, keuzes en feedback jouw inhoud speelbaar maken.
-        </p>
-        <a class="btn btn-secondary btn-sm" href="{{ '/diensten/#microgame-stories' | relative_url }}">Meer over één hoofdstuk</a>
-      </div>
+<!-- TODO [WACHTEN OP FOTO]: vervang gamestorm/sessie.* door een foto van jullie samen (TU Twente-project) -->
+{% capture expect_copy %}
+<h3>Voor wie een leeropgave wil verkennen en richting wil krijgen</h3>
+<h2>Wat kun je verwachten?</h2>
+<p class="sp-lead">We beginnen met een kennismaking. Daarin brengen we je vraagstuk, doelgroep en kennisbehoefte in kaart. Je hoeft nog geen uitgewerkt plan te hebben; juist de eerste verkenning helpt om scherp te krijgen waar de leerervaring op moet aansluiten.</p>
+<p class="sp-lead">Daarna kunnen we in een GameStorm de belangrijkste verhalen, vaardigheden en leerdoelen samen ontwerpen. Vanuit die richting werken we toe naar een leerervaring met herkenbare situaties, keuzes, feedback en spelmechanismen die passen bij de praktijk.</p>
+<p class="sp-lead">Als de richting staat, ontwerpen en ontwikkelen we de leerervaring. We testen, verbeteren en bereiden de oplevering voor. Afhankelijk van de gekozen route kan de leerervaring daarna worden gebruikt in je eigen LMS of beschikbaar worden gemaakt via Prepo.</p>
+{% endcapture %}
+{% capture expect_body %}
+{% include panels/media.html src="/assets/images/gamestorm/sessie.jpg" webp="/assets/images/gamestorm/sessie.webp" alt="Kennismaking en verkenning van een leeropgave" ratio="1400 / 933" body=expect_copy %}
+{% endcapture %}
+{% include panels/panel.html variant="mist" body=expect_body %}
 
-      <div class="contact-mail-cta">
-        <h3>Laat kort weten waar je tegenaan loopt</h3>
-        <a class="btn btn-primary" href="mailto:info@preludens.nl">Stuur een mail naar info@preludens.nl <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-      </div>
-    </div>
-  </div>
-</section>
+{% capture route_checks %}
+{% include panels/check.html text="We maken kennis en brengen je leerbehoefte in kaart." %}
+{% include panels/check.html text="In een GameStorm vertalen we vraagstuk, doelgroep en leerdoelen naar een eerste richting." %}
+{% include panels/check.html text="We ontwerpen een verhaal, keuzes, feedback en spelmechanismen die passen bij de praktijk." %}
+{% include panels/check.html text="We ontwikkelen, testen en verbeteren de leerervaring." %}
+{% include panels/check.html text="Na oplevering zorgen we voor distributie, beheer en support via je eigen LMS of via Prepo." %}
+{% endcapture %}
+{% capture route_body %}
+<h3>De route in het kort</h3>
+<h2>Van kennismaking tot beheersbare oplevering</h2>
+{% include panels/checklist.html label="De route in het kort" columns="two" items=route_checks %}
+{% endcapture %}
+{% include panels/panel.html variant="paper" body=route_body %}
 
-<section class="section section--mist">
-  <div class="container">
-    <div class="media-block media-block--start">
-      <figure class="media-block__media">
-        <!-- TODO [WACHTEN OP FOTO]: vervang gamestorm/sessie.* door een foto van jullie samen (TU Twente-project) -->
-        <picture>
-          <source srcset="{{ '/assets/images/gamestorm/sessie.webp' | relative_url }}" type="image/webp">
-          <img src="{{ '/assets/images/gamestorm/sessie.jpg' | relative_url }}" alt="Kennismaking en verkenning van een leeropgave" width="1400" height="933" loading="lazy" decoding="async">
-        </picture>
-      </figure>
-      <div class="media-block__body">
-        <span class="section-label">Voor wie een leeropgave wil verkennen en richting wil krijgen</span>
-        <h2>Wat kun je verwachten?</h2>
-        <p>
-          We beginnen met een kennismaking. Daarin brengen we je vraagstuk, doelgroep en kennisbehoefte in kaart. Je
-          hoeft nog geen uitgewerkt plan te hebben; juist de eerste verkenning helpt om scherp te krijgen waar de
-          leerervaring op moet aansluiten.
-        </p>
-        <p>
-          Daarna kunnen we in een GameStorm de belangrijkste verhalen, vaardigheden en leerdoelen samen ontwerpen.
-          Vanuit die richting werken we toe naar een leerervaring met herkenbare situaties, keuzes, feedback en
-          spelmechanismen die passen bij de praktijk.
-        </p>
-        <p>
-          Als de richting staat, ontwerpen en ontwikkelen we de leerervaring. We testen, verbeteren en bereiden de
-          oplevering voor. Afhankelijk van de gekozen route kan de leerervaring daarna worden gebruikt in je eigen LMS
-          of beschikbaar worden gemaakt via Prepo.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+{% capture prepo_copy %}
+<p class="sp-lead">Via Prepo blijven MicroGames en Stories beschikbaar, vindbaar en goed te beheren. Je houdt grip op distributie, feedback, versies, statistieken, bestanden en support vanuit één omgeving.</p>
+<p class="sp-lead">Bij nieuwe MicroGames en Stories is drie maanden toegang tot Prepo inbegrepen. In die periode kan de leerervaring rustig worden gelanceerd, getest, gevolgd en waar nodig verbeterd.</p>
+{% include panels/actions.html primary_label="Meer over Prepo →" primary_href="/prepo/" %}
+{% endcapture %}
+{% capture prepo_body %}
+<h3>Na oplevering blijft de leerervaring beheersbaar</h3>
+<h2>Een sterke leerervaring stopt niet bij de lancering</h2>
+{% include panels/media.html src="/assets/images/prepo/overzicht.jpg" webp="/assets/images/prepo/overzicht.webp" alt="Prepo-overzicht voor beheer na oplevering" ratio="1400 / 875" reverse=true body=prepo_copy %}
+{% endcapture %}
+{% include panels/panel.html variant="mist" body=prepo_body %}
 
-<section class="section section--navy">
-  <div class="container">
-    <div class="block-head">
-      <span class="section-label">De route in het kort</span>
-      <h2>Van kennismaking tot beheersbare oplevering</h2>
-    </div>
-    <ul class="checklist checklist--cols">
-      <li>We maken kennis en brengen je leerbehoefte in kaart.</li>
-      <li>In een GameStorm vertalen we vraagstuk, doelgroep en leerdoelen naar een eerste richting.</li>
-      <li>We ontwerpen een verhaal, keuzes, feedback en spelmechanismen die passen bij de praktijk.</li>
-      <li>We ontwikkelen, testen en verbeteren de leerervaring.</li>
-      <li>Na oplevering zorgen we voor distributie, beheer en support via je eigen LMS of via Prepo.</li>
-    </ul>
-  </div>
-</section>
+{% include panels/footer-reveal.html %}
 
-<section class="section">
-  <div class="container">
-    <div class="block-head block-head--full">
-      <span class="section-label">Na oplevering blijft de leerervaring beheersbaar</span>
-      <h2>Een sterke leerervaring stopt niet bij de lancering</h2>
-    </div>
-    <div class="media-block media-block--start media-block--reverse">
-      <figure class="media-block__media">
-        <picture>
-          <source srcset="{{ '/assets/images/prepo/overzicht.webp' | relative_url }}" type="image/webp">
-          <img src="{{ '/assets/images/prepo/overzicht.jpg' | relative_url }}" alt="Prepo-overzicht voor beheer na oplevering" width="1400" height="875" loading="lazy" decoding="async">
-        </picture>
-      </figure>
-      <div class="media-block__body">
-        <p>
-          Via Prepo blijven MicroGames en Stories beschikbaar, vindbaar en goed te beheren. Je houdt grip op
-          distributie, feedback, versies, statistieken, bestanden en support vanuit één omgeving.
-        </p>
-        <p>
-          Bij nieuwe MicroGames en Stories is drie maanden toegang tot Prepo inbegrepen. In die periode kan de
-          leerervaring rustig worden gelanceerd, getest, gevolgd en waar nodig verbeterd.
-        </p>
-        <a class="btn btn-primary" href="{{ '/prepo/' | relative_url }}">Meer over Prepo <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
