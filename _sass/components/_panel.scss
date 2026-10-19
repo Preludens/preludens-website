@@ -483,6 +483,30 @@ body.page-panels .sp-actions .btn {
   background: var(--color-white);
 }
 
+/* Een kop die op een blok volgt heeft lucht nodig: .panel h3 zet zelf geen
+   bovenmarge, dus anders plakt hij tegen de knop of het kaartje erboven. */
+.panel .sp-aside-split + h3,
+.panel .sp-values + h3,
+.panel .sp-checklist + h3,
+.panel .sp-people + h3 {
+  margin-top: clamp(var(--space-lg), 5vh, 3rem);
+}
+
+/* Een checklist van vijf of meer regels wordt in een volle band een erg lange
+   kolom; twee kolommen leest dan rustiger. */
+@media (min-width: 720px) {
+  .sp-checklist.sp-checklist--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Contactgegevens in een waardekaartje: de links moeten er als links uitzien
+   en AA-leesbaar blijven op wit en op mist. */
+.panel .sp-values li span a {
+  color: var(--color-ink-gold);
+  font-weight: 600;
+}
+
 /* Waardenband met vier kaartjes leest beter als 2x2 dan als 3+1. */
 @media (min-width: 720px) {
   .sp-values.sp-values--two {
