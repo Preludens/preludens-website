@@ -231,9 +231,34 @@
   grid-column: 1 / -1;
 }
 
+/* Stappenband als piramide: drie brede stappen boven, vier smallere eronder.
+   Twaalf kolommen, zodat 3x4 en 4x3 allebei precies vol lopen. */
+.sp-hero-steps--pyramid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  width: 100%;
+  margin: clamp(var(--space-lg), 5vh, 3.5rem) 0 0;
+  padding: 0;
+}
+
+.sp-hero-steps--pyramid article {
+  grid-column: span 4;
+}
+
+.sp-hero-steps--pyramid article:nth-child(n + 4) {
+  grid-column: span 3;
+}
+
+.sp-hero-steps--pyramid article:first-child,
+.sp-hero-steps--pyramid article:last-child {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* In een lichte paneelband staat het nummer op wit; daar is het heldere goud
    te licht voor tekst. --color-ink-gold is het AA-veilige goud op licht. */
-.sp-hero-steps.sp-hero-steps--flow h3 span {
+.sp-hero-steps.sp-hero-steps--flow h3 span,
+.sp-hero-steps.sp-hero-steps--pyramid h3 span {
   color: var(--color-ink-gold);
 }
 
@@ -322,6 +347,12 @@
   .sp-hero-steps article:last-child {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  /* De piramide valt uiteen tot een enkele kolom; de spans moeten dan los. */
+  .sp-hero-steps--pyramid article,
+  .sp-hero-steps--pyramid article:nth-child(n + 4) {
+    grid-column: auto;
   }
 
   .sp-nowrap {

@@ -294,6 +294,12 @@ body.page-panels .sp-actions .btn {
   margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
 }
 
+/* Twee gelijke kolommen, als beide kanten evenveel gewicht hebben
+   (bijvoorbeeld "geschikt voor" naast "wat deelnemers ervaren"). */
+.sp-aside-split--even {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
 .sp-aside-split__main p.sp-lead {
   max-width: none;
   margin: 0 0 var(--space-md);
