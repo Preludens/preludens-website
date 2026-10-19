@@ -71,7 +71,7 @@ permalink: /diensten/
 <p class="sp-lead">Een MicroGame Story is geschikt wanneer je belangrijke kennis wilt overdragen aan een grotere doelgroep, zonder mensen te belasten met lange, passieve modules.</p>
 {% include panels/aside.html variant="even" main=mgs_main aside=mgs_aside %}
 {% endcapture %}
-{% include panels/panel.html variant="mist" id="microgame-stories" body=mgs_body %}
+{% include panels/panel.html variant="mist" align="left" id="microgame-stories" body=mgs_body %}
 
 {% capture dil_checks %}
 {% include panels/check.html text="Besluitvorming in complexe situaties" %}
@@ -121,7 +121,7 @@ permalink: /diensten/
 <p class="sp-lead">Dat noemen we Find the Game. Samen onderzoeken we wat mensen moeten leren, welk gedrag moet veranderen en waar in de praktijk beweging mogelijk is. Vanuit die analyse ontstaat een duidelijke blauwdruk voor een leerervaring, interventie of serious game.</p>
 {% include panels/aside.html variant="even" main=gt_main aside=gt_aside %}
 {% endcapture %}
-{% include panels/panel.html variant="mist" id="game-thinking" body=gt_body %}
+{% include panels/panel.html variant="mist" align="left" id="game-thinking" body=gt_body %}
 
 {% capture route_steps %}
 {% include panels/step.html num="1" title="Verkennen" text="We brengen je leeropgave scherp in beeld. In een eerste gesprek of GameStorm onderzoeken we het probleem, de doelgroep, de context en de belangrijkste leerdoelen." %}

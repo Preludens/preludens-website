@@ -71,7 +71,7 @@ permalink: /diensten/
 <p class="sp-lead">A MicroGame Story is a good fit when you want to transfer important knowledge to a larger audience without burdening people with long, passive modules.</p>
 {% include panels/aside.html variant="even" main=mgs_main aside=mgs_aside %}
 {% endcapture %}
-{% include panels/panel.html variant="mist" id="microgame-stories" body=mgs_body %}
+{% include panels/panel.html variant="mist" align="left" id="microgame-stories" body=mgs_body %}
 
 {% capture dil_checks %}
 {% include panels/check.html text="Decision-making in complex situations" %}
@@ -121,7 +121,7 @@ permalink: /diensten/
 <p class="sp-lead">We call that Find the Game. Together we explore what people need to learn, which behaviour needs to change and where movement is possible in practice. From that analysis a clear blueprint emerges for a learning experience, intervention or serious game.</p>
 {% include panels/aside.html variant="even" main=gt_main aside=gt_aside %}
 {% endcapture %}
-{% include panels/panel.html variant="mist" id="game-thinking" body=gt_body %}
+{% include panels/panel.html variant="mist" align="left" id="game-thinking" body=gt_body %}
 
 {% capture route_steps %}
 {% include panels/step.html num="1" title="Explore" text="We bring your learning challenge into sharp focus. In a first conversation or GameStorm we examine the problem, audience, context and key learning goals." %}

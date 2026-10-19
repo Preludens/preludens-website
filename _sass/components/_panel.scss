@@ -92,6 +92,15 @@ body.page-panels .hl {
   text-align: center;
 }
 
+/* De mistband centreert zijn kop. Staan er meerdere banden als gelijkwaardige
+   zusjes naast elkaar, dan oogt wisselende uitlijning willekeurig; hiermee kan
+   een paneel zijn band overrulen. */
+.panel.panel--align-left h2,
+.panel.panel--align-left p.sp-lead--center {
+  text-align: left;
+  margin-inline: 0;
+}
+
 body.page-panels .sp-actions {
   display: flex;
   flex-wrap: wrap;
