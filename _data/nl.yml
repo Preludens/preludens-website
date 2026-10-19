@@ -102,6 +102,22 @@ verhaal:
   lightbox_close: "Sluiten"
   lightbox_zoom: "Vergroot"
 
+# Maandnamen voor datums in de eigen taal; de `date`-filter van Jekyll
+# kent alleen Engelse maanden.
+months:
+  - "januari"
+  - "februari"
+  - "maart"
+  - "april"
+  - "mei"
+  - "juni"
+  - "juli"
+  - "augustus"
+  - "september"
+  - "oktober"
+  - "november"
+  - "december"
+
 play_blog:
   breadcrumb: "Blog"
   all_posts: "← Alle Play-artikelen"

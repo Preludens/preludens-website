@@ -552,6 +552,107 @@ body.page-panels .sp-actions .btn {
   line-height: 1;
 }
 
+/* Overzichtskaarten (panels/posts.html). De hele kaart is een link, dus de
+   focusring staat naar binnen gekeerd. Mistblauw op een paperband, wit in een
+   mistband — dezelfde regel als de waarde- en prijskaartjes. */
+.sp-posts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
+}
+
+@media (min-width: 800px) {
+  .sp-posts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.sp-post {
+  display: flex;
+  background: var(--color-mist-blue);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.panel.panel--mist .sp-post {
+  background: var(--color-white);
+}
+
+.sp-post:hover,
+.sp-post:focus-within {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.sp-post__link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: clamp(1.35rem, 2.5vw, 1.85rem);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.sp-post__link:focus-visible {
+  @include focus-ring-inset;
+}
+
+.panel .sp-post__label,
+.panel .sp-post__meta {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ink-gold);
+}
+
+.panel .sp-post__title {
+  margin: 0.5rem 0 0;
+  max-width: none;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-align: left;
+  color: var(--color-ink);
+}
+
+.panel .sp-post__text {
+  margin: 0.7rem 0 0;
+  max-width: 70ch;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--color-harbor-teal);
+}
+
+.panel .sp-post__cta {
+  margin-top: auto;
+  padding-top: var(--space-md);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-ink-gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-post {
+    transition: none;
+  }
+
+  .sp-post:hover,
+  .sp-post:focus-within {
+    transform: none;
+  }
+}
+
 /* Een checklist van vijf of meer regels wordt in een volle band een erg lange
    kolom; twee kolommen leest dan rustiger. */
 @media (min-width: 720px) {
