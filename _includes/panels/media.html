@@ -1,0 +1,20 @@
+{% comment %}
+  Beeld naast tekst, in hetzelfde uitgeknipte kader als het herobeeld.
+  Pass: src, webp (optioneel), alt, width, height, body, reverse.
+
+  Het kader gebruikt #sp-hero-clip, dus panels/clips.html moet op de pagina
+  staan.
+{% endcomment %}
+<div class="sp-media{% if include.reverse %} sp-media--reverse{% endif %}">
+  <figure class="sp-media__figure">
+    <div class="sp-hero-shadow">
+      <div class="sp-media__frame">
+        <picture>
+          {% if include.webp %}<source srcset="{{ include.webp | relative_url }}" type="image/webp">{% endif %}
+          <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" width="{{ include.width | default: 1600 }}" height="{{ include.height | default: 900 }}" loading="lazy" decoding="async">
+        </picture>
+      </div>
+    </div>
+  </figure>
+  <div class="sp-media__body">{{ include.body }}</div>
+</div>

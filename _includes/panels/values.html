@@ -1,0 +1,8 @@
+{% comment %}
+  Waardenband: kaartjes met een kop en een korte toelichting, opgebouwd uit
+  panels/value.html — dezelfde vorm als het waardenrijtje op de homepage.
+  Pass: items, label, columns ("two" voor een 2×2-raster).
+{% endcomment %}
+<ul class="sp-values{% if include.columns %} sp-values--{{ include.columns }}{% endif %}" aria-label="{{ include.label }}">
+  {{ include.items }}
+</ul>

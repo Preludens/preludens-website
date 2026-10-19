@@ -276,6 +276,156 @@ body.page-panels .sp-actions .btn {
   max-width: 46rem;
 }
 
+/* ---------------------------------------------------------------------------
+   Bouwstenen binnen een paneel
+--------------------------------------------------------------------------- */
+
+/* Lopende tekst met een smalle kolom ernaast (panels/aside.html). */
+.sp-aside-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: start;
+  margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
+}
+
+.sp-aside-split__main p.sp-lead {
+  max-width: none;
+  margin: 0 0 var(--space-md);
+}
+
+.sp-aside-split__main p.sp-lead:last-child {
+  margin-bottom: 0;
+}
+
+/* Beeld naast tekst (panels/media.html), in het uitgeknipte herokader. */
+.sp-media {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: center;
+  margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
+}
+
+.sp-media--reverse .sp-media__figure {
+  order: 2;
+}
+
+.sp-media__figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.sp-media__frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  padding: 5px;
+  background: var(--color-white);
+  clip-path: url("#sp-hero-clip");
+}
+
+.sp-media__frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: url("#sp-hero-clip");
+}
+
+.sp-media__body > h2 {
+  text-align: left;
+}
+
+.sp-media__body p.sp-lead {
+  max-width: none;
+  margin: 0 0 var(--space-md);
+}
+
+.sp-media__body p.sp-lead:last-child {
+  margin-bottom: 0;
+}
+
+/* Citaat: .sp-quote is de brede, gecentreerde vorm (zie _home-below.scss).
+   --aside is de smalle pull-quote naast lopende tekst. Drie klassen, zodat
+   hij het wint van `body.page-panels .sp-quote`. */
+.panel .sp-quote.sp-quote--aside {
+  max-width: none;
+  margin-inline: 0;
+  padding-left: clamp(1rem, 2vw, 1.5rem);
+  border-left: 3px solid var(--color-preludens-gold);
+  text-align: left;
+}
+
+.panel .sp-quote.sp-quote--aside blockquote {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  line-height: 1.4;
+}
+
+/* Een afsluitende regel onder een tweekolomsblok houdt zijn eigen lucht. */
+.sp-focus-copy + p.sp-lead--center,
+.sp-warm-copy + p.sp-lead--center {
+  margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
+}
+
+/* Korte checklist in een smalle kolom (panels/checklist.html). */
+.sp-checklist {
+  list-style: none;
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+}
+
+.panel .sp-checklist li {
+  position: relative;
+  padding: 0.9rem 1.1rem 0.9rem 2.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.panel .sp-checklist li::before {
+  content: "";
+  position: absolute;
+  left: 1.05rem;
+  top: 1.3rem;
+  width: 0.8rem;
+  height: 0.45rem;
+  border-left: 2.5px solid var(--color-ink-gold);
+  border-bottom: 2.5px solid var(--color-ink-gold);
+  transform: rotate(-45deg);
+}
+
+/* In een mistband is een mistblauw kaartje onzichtbaar; daar wordt het wit,
+   net als de checklist. Op de homepage staan de waarden in een paper-paneel,
+   dus die blijven zoals ze zijn. */
+.panel.panel--mist .sp-values li {
+  background: var(--color-white);
+}
+
+/* Waardenband met vier kaartjes leest beter als 2x2 dan als 3+1. */
+@media (min-width: 720px) {
+  .sp-values.sp-values--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .sp-aside-split,
+  .sp-media {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-media--reverse .sp-media__figure {
+    order: 0;
+  }
+}
+
 @media (max-width: 600px) {
   .panel__inner {
     padding-inline: var(--space-md);

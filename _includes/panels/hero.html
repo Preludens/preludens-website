@@ -4,6 +4,7 @@
       {% if include.kicker %}<h3>{{ include.kicker }}</h3>{% endif %}
       <h1>{{ include.title }}</h1>
       <p class="sp-lead">{{ include.lead }}</p>
+      {% if include.lead2 %}<p class="sp-lead">{{ include.lead2 }}</p>{% endif %}
       {{ include.actions }}
     </div>
     {% if include.figure_src %}

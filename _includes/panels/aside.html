@@ -1,0 +1,8 @@
+{% comment %}
+  Lopende tekst met een smalle kolom ernaast (checklist, citaat, kaartje).
+  Pass: main, aside. Onder 900px schuift de smalle kolom onder de tekst.
+{% endcomment %}
+<div class="sp-aside-split">
+  <div class="sp-aside-split__main">{{ include.main }}</div>
+  {% if include.aside %}<div class="sp-aside-split__aside">{{ include.aside }}</div>{% endif %}
+</div>
