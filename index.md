@@ -3,7 +3,7 @@ layout: default
 lang: nl
 title: Home
 description: Activeer je team en bereid ze voor op de toekomst met storytelling en MicroGames.
-body_class: page-home
+body_class: page-home page-panels
 permalink_lang:
   en: /
 ---
