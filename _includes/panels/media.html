@@ -4,19 +4,10 @@
   `ratio` (bijv. "1400 / 499") zet de beeldverhouding van het kader; zonder
   die opgave is het 16/9 en snijdt een afwijkend beeld aan de zijkanten weg.
 
-  Het kader gebruikt #sp-hero-clip, dus panels/clips.html moet op de pagina
-  staan.
+  Het kader zelf staat in panels/figure.html, zodat een los beeld in een
+  smalle kolom dezelfde vorm krijgt.
 {% endcomment %}
 <div class="sp-media{% if include.reverse %} sp-media--reverse{% endif %}">
-  <figure class="sp-media__figure">
-    <div class="sp-hero-shadow">
-      <div class="sp-media__frame"{% if include.ratio %} style="--sp-media-ratio: {{ include.ratio }};"{% endif %}>
-        <picture>
-          {% if include.webp %}<source srcset="{{ include.webp | relative_url }}" type="image/webp">{% endif %}
-          <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" width="{{ include.width | default: 1600 }}" height="{{ include.height | default: 900 }}" loading="lazy" decoding="async">
-        </picture>
-      </div>
-    </div>
-  </figure>
+  {% include panels/figure.html src=include.src webp=include.webp alt=include.alt width=include.width height=include.height ratio=include.ratio %}
   <div class="sp-media__body">{{ include.body }}</div>
 </div>

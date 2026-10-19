@@ -1,0 +1,18 @@
+{% comment %}
+  Eén beeld in het uitgeknipte kader, zonder tekst ernaast. Dit is de
+  beeldhelft van panels/media.html, apart bruikbaar in een smalle kolom.
+  Pass: src, webp (optioneel), alt, width, height, ratio.
+
+  Het kader gebruikt #sp-hero-clip, dus panels/clips.html moet op de pagina
+  staan.
+{% endcomment %}
+<figure class="sp-media__figure">
+  <div class="sp-hero-shadow">
+    <div class="sp-media__frame"{% if include.ratio %} style="--sp-media-ratio: {{ include.ratio }};"{% endif %}>
+      <picture>
+        {% if include.webp %}<source srcset="{{ include.webp | relative_url }}" type="image/webp">{% endif %}
+        <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" width="{{ include.width | default: 1600 }}" height="{{ include.height | default: 900 }}" loading="lazy" decoding="async">
+      </picture>
+    </div>
+  </div>
+</figure>
