@@ -1,7 +1,7 @@
 {% comment %}
   Korte checklist voor een smalle kolom, opgebouwd uit panels/check.html.
-  Pass: items, label.
+  Pass: items, label, columns ("two" voor twee kolommen in een volle band).
 {% endcomment %}
-<ul class="sp-checklist" aria-label="{{ include.label }}">
+<ul class="sp-checklist{% if include.columns %} sp-checklist--{{ include.columns }}{% endif %}" aria-label="{{ include.label }}">
   {{ include.items }}
 </ul>
