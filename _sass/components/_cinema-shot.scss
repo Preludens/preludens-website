@@ -83,39 +83,45 @@ $cinema-wake: '.strip-grid > [role="listitem"]:hover, .strip-grid > [role="listi
 /* --- vier kaders, vier gemeten glasvlakken ------------------------------- */
 
 /* 1 — tablet liggend in twee handen, van rechtsboven gezien.
-   Glas: 19.6/23.0  46.6/11.1  65.3/32.8  47.6/42.1 cqw (16:9) */
+   Glas: 29.2/19.4  55.8/12.7  69.0/30.6  48.3/40.2 cqw (16:9)
+   De handen pakken dit toestel alleen bij de korte zijden beet, zodat alle vier
+   de schermhoeken vrij liggen. Het vorige kaderbeeld had de linkeronderhoek
+   achter een duim, en de hoek die de meting daar vond lag binnen het scherm:
+   het glasvlak was daardoor geen beeld van een rechthoek meer, de oplossing
+   dook naar perspective(13.7cqw) en het beeld kwam gedraaid en met zwarte
+   wiggen in het glas te liggen. */
 .tablet-shot--cinema,
 .tablet-shot--cinema.tablet-shot--frame-1 {
   --frame-img: url("../images/verhalen/hands-tablet.webp");
   --glass-w: 100cqw;
   --glass-h: 56.25cqw;
-  --glass-x: 44.77cqw;
-  --glass-y: 27.25cqw;
+  --glass-x: 50.57cqw;
+  --glass-y: 25.73cqw;
   --glass-t:
-    translate(92.605cqw, 56.914cqw)
-    perspective(13.698cqw)
-    rotateZ(-32.75deg) rotateY(2.037deg) rotateX(-23.009deg)
-    scale(0.08731)
-    translate(-156.806cqw, -262.7cqw);
+    translate(121.405cqw, 97.248cqw)
+    perspective(88.826cqw)
+    rotateZ(-67.256deg) rotateY(35.986deg) rotateX(-46.758deg)
+    scale(0.14793)
+    translate(-124.172cqw, -471.83cqw);
   /* schermnormaal uit de rotatieketen hierboven: (n-x, n-y) is de kant
      waar een deeltje heen schuift, n-z de diepte die groei wordt */
-  --n-x: +0.239;
-  --n-y: +0.311;
-  --n-z: 0.920;
+  --n-x: +0.827;
+  --n-y: -0.090;
+  --n-z: 0.554;
   /* vorm van een rond deeltje in dit glasvlak */
-  --plane-rot: 22.0deg;
-  --plane-squash: 0.628;
+  --plane-rot: 14.3deg;
+  --plane-squash: 0.502;
   /* de vier gemeten hoeken, voor de geboorteplek over het hele vlak */
-  --glass-ax: 19.6cqw;
-  --glass-ay: 23.0cqw;
-  --glass-bx: 46.6cqw;
-  --glass-by: 11.1cqw;
-  --glass-cx: 65.3cqw;
-  --glass-cy: 32.8cqw;
-  --glass-dx: 47.6cqw;
-  --glass-dy: 42.1cqw;
+  --glass-ax: 29.2cqw;
+  --glass-ay: 19.4cqw;
+  --glass-bx: 55.8cqw;
+  --glass-by: 12.7cqw;
+  --glass-cx: 69.0cqw;
+  --glass-cy: 30.6cqw;
+  --glass-dx: 48.3cqw;
+  --glass-dy: 40.2cqw;
   --tilt: 0deg;
-  --nudge: 4%;
+  --nudge: 0%;
   --lift: 0%;
   --grow: 1;
 }
