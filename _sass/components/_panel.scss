@@ -109,9 +109,14 @@ body.page-panels .sp-actions .btn {
   background: var(--color-white);
   color: var(--color-ink);
 
-  h2,
-  p.sp-lead {
+  h2 {
     max-width: none;
+  }
+
+  /* Lopende tekst blijft op leesmaat; een regel van 90 tekens is te lang om
+     comfortabel terug te vinden waar de volgende begint. */
+  p.sp-lead {
+    max-width: 70ch;
   }
 
   h2,

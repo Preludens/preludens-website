@@ -293,6 +293,9 @@
   /* Zie _panel.scss: nergens meer uitvullen. */
   text-align: left;
   hyphens: manual;
+  /* Het laatste principe loopt over beide kolommen; zonder deze grens haalt
+     die regel 90 tekens. In de smalle kolommen bijt hij niet. */
+  max-width: 70ch;
   color: var(--color-ink-soft);
 }
 
