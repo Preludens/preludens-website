@@ -501,6 +501,47 @@ body.page-panels .sp-actions .btn {
   margin-top: clamp(var(--space-lg), 5vh, 3rem);
 }
 
+/* Prijskaart (panels/price.html): het bedrag draagt de kaart, de voorwaarde
+   staat eronder. Mistblauw op een paperband, wit in een mistband — dezelfde
+   regel als de waardekaartjes. */
+.sp-price {
+  display: grid;
+  gap: 0.4rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-mist-blue);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.panel.panel--mist .sp-price {
+  background: var(--color-white);
+}
+
+.panel .sp-price__amount {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: var(--color-ink);
+}
+
+.panel .sp-price__meta {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-ink-gold);
+}
+
+.panel .sp-price__note {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-harbor-teal);
+}
+
 /* Een checklist van vijf of meer regels wordt in een volle band een erg lange
    kolom; twee kolommen leest dan rustiger. */
 @media (min-width: 720px) {

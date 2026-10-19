@@ -3,140 +3,83 @@ layout: default
 lang: nl
 title: GameStorm
 description: In één dagdeel brengen we samen jouw leeruitdaging, doelgroep en leerdoelen scherp in beeld — de eerste stap naar een speelbare leerervaring.
+body_class: page-panels
 permalink: /gamestorm/
 ---
 
-<section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/gamestorm-hero.jpg' | relative_url }}');">
-  <div class="container">
-    <div class="hero-banner__inner">
-      <p class="hero-banner__eyebrow">GameStorm</p>
-      <h1>Verken de <span class="hl">mogelijkheden</span> van <span class="hl">game-based</span> leren</h1>
-      <hr class="hero-banner__accent">
-      <p class="hero-banner__lead">
-        Je hoeft nog niet te weten welke leeroplossing je nodig hebt. In één dagdeel brengen we samen het probleem, de
-        doelgroep en de belangrijkste leerdoelen in kaart — een duidelijke eerste richting, zonder je vast te leggen op
-        een volledig project.
-      </p>
-      <div class="hero-banner__actions">
-        <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Plan een GameStorm <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-        <a class="btn btn-secondary" href="{{ '/play/' | relative_url }}">Lees meer over Play</a>
-      </div>
-    </div>
-  </div>
-  <span class="hero-banner__dots" aria-hidden="true"></span>
-</section>
+<div class="panel-stack">
+{% include panels/clips.html %}
 
-<section class="section">
-  <div class="container">
-    <div class="block-head">
-      <span class="section-label">De eerste verkenning</span>
-      <h2>Breng je leeropgave scherp in beeld</h2>
-    </div>
-    <div class="split split--wide-text">
-      <div class="split__text">
-        <p>
-          Je weet dat basiskennis cruciaal is voor een effectief team. Maar welke kennis is echt belangrijk? In welke
-          situaties moeten mensen die kunnen toepassen? En is game-based leren daarvoor de juiste aanpak?
-        </p>
-        <p>
-          Een GameStorm helpt om die vragen te beantwoorden. Juist wanneer de leeropgave nog niet helder is, biedt de
-          sessie een gestructureerde eerste stap — je hoeft dus nog niet te weten welke leeroplossing je nodig hebt.
-        </p>
-      </div>
-      <div class="split__aside">
-        <ul class="checklist">
-          <li>Welk probleem wil je met de leerervaring oplossen?</li>
-          <li>Welke kennis, inzichten of vaardigheden heeft de doelgroep nodig?</li>
-          <li>In welke herkenbare praktijksituaties moet de doelgroep die toepassen?</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+{% capture hero_title %}Verken de mogelijkheden van game-based leren{% endcapture %}
+{% capture hero_lead %}Je hoeft nog niet te weten welke leeroplossing je nodig hebt. In één dagdeel brengen we samen het probleem, de doelgroep en de belangrijkste leerdoelen in kaart — een duidelijke eerste richting, zonder je vast te leggen op een volledig project.{% endcapture %}
+{% capture hero_actions %}
+{% include panels/actions.html hero_cta=true primary_label="Plan een GameStorm →" primary_href="/contact/" secondary_label="Lees meer over Play" secondary_href="/play/" %}
+{% endcapture %}
+{% include panels/hero.html kicker="GameStorm" title=hero_title lead=hero_lead actions=hero_actions figure_src="/assets/images/hero/gamestorm-hero.jpg" figure_alt="Een sessie waarin een leeropgave samen scherp wordt gemaakt" figure_href="/contact/" figure_caption="Samen de leeropgave scherp maken." %}
 
-<section class="section section--mist">
-  <div class="container">
-    <div class="media-block media-block--start">
-      <figure class="media-block__media">
-        <picture>
-          <source srcset="{{ '/assets/images/gamestorm/sessie.webp' | relative_url }}" type="image/webp">
-          <img src="{{ '/assets/images/gamestorm/sessie.jpg' | relative_url }}" alt="Een GameStorm-sessie waarin we samen de leeropgave verkennen" width="1400" height="933" loading="lazy" decoding="async">
-        </picture>
-      </figure>
-      <div class="media-block__body">
-        <span class="section-label">Van leerdoel naar verhaal</span>
-        <h2>Een eerste verhaal dat richting geeft</h2>
-        <p>
-          Als game-based leren bij jullie past, vertalen we de leeropgave naar een eerste verhaallijn. We gebruiken een
-          herkenbare verhaalstructuur waarin de deelnemer voor een uitdaging komt te staan, keuzes maakt en de gevolgen
-          daarvan ervaart.
-        </p>
-        <p>
-          In deze verhaallijn verwerken we meestal vier of vijf centrale leerdoelen. Zo ontstaat een eerste concept dat
-          later kan uitgroeien tot MicroGames, een digitale leerervaring, een stripverhaal of een andere vorm van
-          storytelling.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+{% capture scope_main %}
+<p class="sp-lead">Je weet dat basiskennis cruciaal is voor een effectief team. Maar welke kennis is echt belangrijk? In welke situaties moeten mensen die kunnen toepassen? En is game-based leren daarvoor de juiste aanpak?</p>
+<p class="sp-lead">Een GameStorm helpt om die vragen te beantwoorden. Juist wanneer de leeropgave nog niet helder is, biedt de sessie een gestructureerde eerste stap — je hoeft dus nog niet te weten welke leeroplossing je nodig hebt.</p>
+{% endcapture %}
+{% capture scope_checks %}
+{% include panels/check.html text="Welk probleem wil je met de leerervaring oplossen?" %}
+{% include panels/check.html text="Welke kennis, inzichten of vaardigheden heeft de doelgroep nodig?" %}
+{% include panels/check.html text="In welke herkenbare praktijksituaties moet de doelgroep die toepassen?" %}
+{% endcapture %}
+{% capture scope_aside %}
+{% include panels/checklist.html label="Wat we in de sessie scherp maken" items=scope_checks %}
+{% endcapture %}
+{% capture scope_body %}
+<h3>De eerste verkenning</h3>
+<h2>Breng je leeropgave scherp in beeld</h2>
+{% include panels/aside.html main=scope_main aside=scope_aside %}
+{% endcapture %}
+{% include panels/panel.html variant="mist" body=scope_body %}
 
-<section class="section section--navy">
-  <div class="container">
-    <div class="block-head">
-      <span class="section-label">Wat levert het op?</span>
-      <h2>Een stevig vertrekpunt, na één dagdeel</h2>
-      <p>Na de sessie heb je een concreet resultaat in handen — of je nu doorgaat of niet.</p>
-    </div>
-    <ul class="checklist checklist--cols">
-      <li>een scherpere omschrijving van het probleem;</li>
-      <li>duidelijke en samenhangende leerdoelen;</li>
-      <li>inzicht in de relevante context en praktijksituaties;</li>
-      <li>een eerste verhaallijn of conceptuele richting;</li>
-      <li>advies over een passende vervolgstap.</li>
-    </ul>
-  </div>
-</section>
+{% capture story_copy %}
+<h3>Van leerdoel naar verhaal</h3>
+<h2>Een eerste verhaal dat richting geeft</h2>
+<p class="sp-lead">Als game-based leren bij jullie past, vertalen we de leeropgave naar een eerste verhaallijn. We gebruiken een herkenbare verhaalstructuur waarin de deelnemer voor een uitdaging komt te staan, keuzes maakt en de gevolgen daarvan ervaart.</p>
+<p class="sp-lead">In deze verhaallijn verwerken we meestal vier of vijf centrale leerdoelen. Zo ontstaat een eerste concept dat later kan uitgroeien tot MicroGames, een digitale leerervaring, een stripverhaal of een andere vorm van storytelling.</p>
+{% endcapture %}
+{% capture story_body %}
+{% include panels/media.html src="/assets/images/gamestorm/sessie.jpg" webp="/assets/images/gamestorm/sessie.webp" alt="Een GameStorm-sessie waarin we samen de leeropgave verkennen" ratio="1400 / 933" body=story_copy %}
+{% endcapture %}
+{% include panels/panel.html variant="paper" body=story_body %}
 
-<section class="section">
-  <div class="container">
-    <div class="split split--wide-text">
-      <div class="split__text">
-        <span class="section-label">Laagdrempelig beginnen</span>
-        <h2>Een overzichtelijke eerste investering</h2>
-        <p>
-          Een GameStorm duurt één dagdeel, vindt plaats op locatie en kost €500. Besluit je daarna met Preludens verder
-          te gaan, dan wordt dit bedrag volledig opgenomen in de projectkosten.
-        </p>
-        <p>
-          Ook zonder vervolgproject houd je een bruikbaar resultaat over: de aangescherpte leeropgave, leerdoelen en
-          eerste conceptuele richting kun je gebruiken om intern verder te werken of een andere stap te kiezen.
-        </p>
-      </div>
-      <div class="split__aside">
-        <div class="price-card">
-          <span class="price-card__amount">€500</span>
-          <span class="price-card__meta">één dagdeel · op locatie</span>
-          <span class="price-card__note">Volledig verrekend bij een vervolgtraject.</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{% capture result_checks %}
+{% include panels/check.html text="een scherpere omschrijving van het probleem;" %}
+{% include panels/check.html text="duidelijke en samenhangende leerdoelen;" %}
+{% include panels/check.html text="inzicht in de relevante context en praktijksituaties;" %}
+{% include panels/check.html text="een eerste verhaallijn of conceptuele richting;" %}
+{% include panels/check.html text="advies over een passende vervolgstap." %}
+{% endcapture %}
+{% capture result_body %}
+<h3>Wat levert het op?</h3>
+<h2>Een stevig vertrekpunt, na één dagdeel</h2>
+<p class="sp-lead sp-lead--center">Na de sessie heb je een concreet resultaat in handen — of je nu doorgaat of niet.</p>
+{% include panels/checklist.html label="Wat je na de sessie in handen hebt" columns="two" items=result_checks %}
+{% endcapture %}
+{% include panels/panel.html variant="mist" body=result_body %}
 
-<section class="cta-feature">
-  <div class="container">
-    <div class="cta-feature__inner">
-      <span class="section-label">Zet de eerste stap</span>
-      <h2>Ontdek welke <span class="hl">leerroute</span> bij jouw organisatie past</h2>
-      <p>
-        In een GameStorm onderzoeken we samen het probleem, de doelgroep en de gewenste verandering. Je krijgt een
-        concrete eerste richting, zonder je direct vast te leggen op een volledig project.
-      </p>
-      <div class="cta-feature__actions">
-        <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Plan een GameStorm <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-        <a class="btn btn-secondary" href="{{ '/play/' | relative_url }}">Lees meer over Play</a>
-      </div>
-    </div>
-  </div>
-</section>
+{% capture price_main %}
+<p class="sp-lead">Een GameStorm duurt één dagdeel, vindt plaats op locatie en kost €500. Besluit je daarna met Preludens verder te gaan, dan wordt dit bedrag volledig opgenomen in de projectkosten.</p>
+<p class="sp-lead">Ook zonder vervolgproject houd je een bruikbaar resultaat over: de aangescherpte leeropgave, leerdoelen en eerste conceptuele richting kun je gebruiken om intern verder te werken of een andere stap te kiezen.</p>
+{% endcapture %}
+{% capture price_aside %}
+{% include panels/price.html amount="€500" meta="één dagdeel · op locatie" note="Volledig verrekend bij een vervolgtraject." %}
+{% endcapture %}
+{% capture price_body %}
+<h3>Laagdrempelig beginnen</h3>
+<h2>Een overzichtelijke eerste investering</h2>
+{% include panels/aside.html main=price_main aside=price_aside %}
+{% endcapture %}
+{% include panels/panel.html variant="paper" body=price_body %}
+
+{% capture cta_left %}In een GameStorm onderzoeken we samen het probleem, de doelgroep en de gewenste verandering.{% endcapture %}
+{% capture cta_right %}Je krijgt een concrete eerste richting, zonder je direct vast te leggen op een volledig project.{% endcapture %}
+{% include panels/cta.html kicker="Zet de eerste stap" title="Ontdek welke leerroute bij jouw organisatie past" left=cta_left right=cta_right stack=true primary_label="Plan een GameStorm" primary_href="/contact/" secondary_label="Lees meer over Play" secondary_href="/play/" %}
+
+{% include panels/footer-reveal.html %}
+
+</div>
