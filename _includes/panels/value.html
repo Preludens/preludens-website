@@ -1,7 +1,11 @@
 {% comment %}
-  Eén kaartje in de waardenband (panels/values.html). Pass: title, text.
+  Eén kaartje in de waardenband (panels/values.html). Pass: title, text, icon.
+
+  `icon` is decoratief (bijvoorbeeld een emoji) en staat daarom op
+  aria-hidden: de kop ernaast draagt de betekenis al.
 {% endcomment %}
 <li>
+  {% if include.icon %}<span class="sp-values__icon" aria-hidden="true">{{ include.icon }}</span>{% endif %}
   <strong>{{ include.title }}</strong>
   <span>{{ include.text }}</span>
 </li>
