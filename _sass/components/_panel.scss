@@ -221,8 +221,10 @@ body.page-panels .sp-actions .btn {
   p.sp-lead {
     margin: 0;
     max-width: none;
-    text-align: justify;
-    hyphens: auto;
+    /* Uitvullen geeft in deze smalle kolommen rekbare spaties en lelijke
+       afbreekstreepjes; links uitlijnen leest rustiger. */
+    text-align: left;
+    hyphens: manual;
   }
 }
 
@@ -271,8 +273,6 @@ body.page-panels .sp-actions .btn {
 
 .sp-warm-copy.sp-copy--stack p.sp-lead,
 .sp-focus-copy.sp-copy--stack p.sp-lead {
-  text-align: left;
-  hyphens: manual;
   max-width: 46rem;
 }
 
