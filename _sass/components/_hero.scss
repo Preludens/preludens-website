@@ -255,10 +255,41 @@
   margin-right: 0;
 }
 
+/* Stappenband als kolomlijst: alleen genummerde koppen, geen tekst eronder.
+   Past in een smalle kolom naast lopende tekst. */
+.sp-hero-steps--list {
+  grid-template-columns: 1fr;
+  gap: 0.35rem;
+  width: 100%;
+  margin: clamp(var(--space-sm), 2vh, var(--space-md)) 0 0;
+  padding: 0;
+}
+
+.sp-hero-steps--list article:first-child,
+.sp-hero-steps--list article:last-child {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.sp-hero-steps.sp-hero-steps--list h3 {
+  width: 100%;
+  margin: 0;
+  padding: 0.55rem 0 0.55rem;
+  font-size: 1.0625rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sp-hero-steps.sp-hero-steps--list h3::after {
+  content: none;
+}
+
 /* In een lichte paneelband staat het nummer op wit; daar is het heldere goud
    te licht voor tekst. --color-ink-gold is het AA-veilige goud op licht. */
 .sp-hero-steps.sp-hero-steps--flow h3 span,
-.sp-hero-steps.sp-hero-steps--pyramid h3 span {
+.sp-hero-steps.sp-hero-steps--pyramid h3 span,
+.sp-hero-steps.sp-hero-steps--list h3 span {
   color: var(--color-ink-gold);
 }
 
