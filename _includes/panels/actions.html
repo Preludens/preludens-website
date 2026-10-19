@@ -11,6 +11,9 @@
   {% if include.secondary_label %}
   <a class="btn btn-secondary" href="{{ include.secondary_href | relative_url }}">{{ include.secondary_label }}</a>
   {% endif %}
+  {% if include.secondary2_label %}
+  <a class="btn btn-secondary" href="{{ include.secondary2_href | relative_url }}">{{ include.secondary2_label }}</a>
+  {% endif %}
   {% if include.play_label %}
   <a class="sp-hero-play" href="{{ include.play_href | relative_url }}">
     <span class="sp-hero-play__icon" aria-hidden="true">
