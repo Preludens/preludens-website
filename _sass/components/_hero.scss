@@ -231,6 +231,14 @@
   grid-column: 1 / -1;
 }
 
+/* In twee smalle kolommen breekt uitgevulde tekst met afbreekstreepjes lelijk
+   af ("toegankelij-ker"); in de brede hero viel dat niet op. Daar links
+   uitlijnen zonder afbreken. */
+.sp-hero-steps.sp-hero-steps--flow p {
+  text-align: left;
+  hyphens: manual;
+}
+
 /* In een lichte paneelband staat het nummer op wit; daar is het heldere goud
    te licht voor tekst. --color-ink-gold is het AA-veilige goud op licht. */
 .sp-hero-steps.sp-hero-steps--flow h3 span {
