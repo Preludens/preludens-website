@@ -1,0 +1,12 @@
+{% comment %}
+  Prijskaart: het bedrag is de kern, met eronder waar het voor staat en de
+  voorwaarde. Pass: amount, meta, note.
+
+  Harde commerciele feiten, dus de tekst gaat ongewijzigd door; hier staat
+  alleen de vorm.
+{% endcomment %}
+<div class="sp-price">
+  <span class="sp-price__amount">{{ include.amount }}</span>
+  {% if include.meta %}<span class="sp-price__meta">{{ include.meta }}</span>{% endif %}
+  {% if include.note %}<span class="sp-price__note">{{ include.note }}</span>{% endif %}
+</div>
