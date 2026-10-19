@@ -62,9 +62,12 @@ body.page-home {
   letter-spacing: 0.015em;
 }
 
+/* Oplichtwoord op de lichte panelen: het heldere goud haalt daar maar
+   1,7–2,0:1, ook als grote kop. --color-ink-gold is dezelfde accentkleur in de
+   tekst-op-licht variant en haalt 5,0:1 of meer. */
 .panel h2 .hl,
 body.page-home .hl {
-  color: var(--color-preludens-gold);
+  color: var(--color-ink-gold);
 }
 
 .panel h3 {
@@ -144,8 +147,10 @@ body.page-home .sp-actions .btn {
     text-align: center;
   }
 
+  /* Over de decoratieve panel-SVG loopt dit vlak op tot #CCD3D6; daar haalde
+     --color-ink-soft 4,43:1. --color-harbor-teal houdt het overal boven 5:1. */
   p {
-    color: var(--color-ink-soft);
+    color: var(--color-harbor-teal);
   }
 }
 

@@ -38,7 +38,7 @@
   }
 
   h1 .hl {
-    color: var(--color-preludens-gold);
+    color: var(--color-ink-gold);
   }
 
   p {
@@ -181,8 +181,7 @@
 }
 
 .sp-hero-scene__link:focus-visible {
-  outline: 2px solid var(--color-preludens-gold);
-  outline-offset: 4px;
+  @include focus-ring(4px);
 }
 
 .sp-hero-scene figcaption {
@@ -255,7 +254,8 @@
 .panel--hero .sp-hero-steps h3 span {
   font-size: 1.15rem;
   font-weight: 600;
-  color: var(--color-preludens-gold);
+  /* 18,4px/600 telt als gewone tekst (4,5:1); helder goud haalde 1,96:1. */
+  color: var(--color-ink-gold);
 }
 
 .panel--hero .sp-hero-steps p {

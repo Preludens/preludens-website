@@ -81,8 +81,7 @@
 }
 
 .sp-track__link:focus-visible {
-  outline: 3px solid var(--color-coral);
-  outline-offset: -3px;
+  @include focus-ring-inset(3px);
 }
 
 .sp-track h3 {
@@ -207,25 +206,31 @@
   }
 }
 
+/* De uitfade zit vast aan de onderste padding in plaats van aan een percentage.
+   Met de oude verlooptrap liep de knoptekst op 390px de doorzichtige staart in
+   en zakte naar 3,96:1; nu blijft de scrim dekkend tot voorbij de laatste
+   regel, op elke breedte. */
 .sp-track--cinema .sp-track__copy {
   z-index: 6;
   padding: 1.6rem 1.5rem 3rem;
   background: linear-gradient(
     to bottom,
-    rgba(5, 22, 29, 0.93) 0%,
-    rgba(5, 22, 29, 0.84) 42%,
-    rgba(5, 22, 29, 0.52) 72%,
+    rgba(5, 22, 29, 0.95) 0%,
+    rgba(5, 22, 29, 0.9) calc(100% - 3rem),
     rgba(5, 22, 29, 0) 100%
   );
 }
 
-.sp-track--cinema h3 {
+.sp-track--cinema .sp-track__copy h3 {
   color: var(--color-cloud-white);
   text-shadow: 0 2px 14px rgba(3, 16, 22, 0.55);
 }
 
-.sp-track--cinema p {
-  color: rgba(246, 249, 249, 0.72);
+/* De donkere tegel staat in een `.panel--paper`, en `.panel--paper .sp-track p`
+   weegt zwaarder dan `.sp-track--cinema p`. Zonder `__copy` erbij kreeg deze
+   tekst dus de grijze body-kleur op bijna zwart (3,3:1). */
+.sp-track--cinema .sp-track__copy p {
+  color: rgba(246, 249, 249, 0.82);
 }
 
 .sp-track--cinema .sp-track__more {
