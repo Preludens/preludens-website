@@ -1,4 +1,19 @@
-<div class="sp-hero-steps">
+{% comment %}
+  Stappenband onder een paneel: genummerde koppen met een gouden haarlijn.
+
+  Twee vormen, net als tracks.html/track.html:
+  - drie vaste stappen via i1/t1/p1 … i3/t3/p3 (de homepage-hero);
+  - een vrij aantal via `items`, opgebouwd uit panels/step.html.
+
+  `variant="flow"` zet de band in twee kolommen binnen een paneel, in plaats
+  van de drie kolommen met hero-marges. `variant="pyramid"` zet drie brede
+  stappen boven vier smallere. `variant="list"` maakt er een kolomlijst van
+  genummerde koppen van, zonder tekst eronder.
+{% endcomment %}
+<div class="sp-hero-steps{% if include.variant %} sp-hero-steps--{{ include.variant }}{% endif %}">
+  {% if include.items %}
+  {{ include.items }}
+  {% else %}
   {% if include.t1 %}
   <article>
     <h3><span>{{ include.i1 }}</span> {{ include.t1 }}</h3>
@@ -16,5 +31,6 @@
     <h3><span>{{ include.i3 }}</span> {{ include.t3 }}</h3>
     <p>{{ include.p3 }}</p>
   </article>
+  {% endif %}
   {% endif %}
 </div>

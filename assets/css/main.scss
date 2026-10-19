@@ -940,6 +940,12 @@ p { margin: 0 0 var(--space-sm); }
 
   h2, p { color: var(--color-white); }
 
+  /* Leesmaat, met automatische marges zodat de band gecentreerd blijft. */
+  p {
+    max-width: 70ch;
+    margin-inline: auto;
+  }
+
   .btn-primary {
     background: var(--color-white);
     color: var(--color-ink) !important;
@@ -1178,7 +1184,7 @@ p { margin: 0 0 var(--space-sm); }
 
 .footer-about {
   margin: 0 0 var(--space-sm);
-  max-width: 46rem;
+  max-width: 70ch;
   font-size: 0.95rem;
   line-height: 1.55;
   color: rgba(246, 249, 249, 0.72);

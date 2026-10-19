@@ -1,4 +1,4 @@
-<div class="{% if include.variant == 'warm' %}sp-warm-copy{% else %}sp-focus-copy{% endif %}">
+<div class="{% if include.variant == 'warm' %}sp-warm-copy{% else %}sp-focus-copy{% endif %}{% if include.stack %} sp-copy--stack{% endif %}">
   <p class="sp-lead">{{ include.left }}</p>
-  <p class="sp-lead">{{ include.right }}</p>
+  {% if include.right and include.right != '' %}<p class="sp-lead">{{ include.right }}</p>{% endif %}
 </div>

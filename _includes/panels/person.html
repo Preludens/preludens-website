@@ -1,0 +1,16 @@
+{% comment %}
+  Eén portret in de teamband (panels/people.html).
+  Pass: name, role, photo, alt, body.
+{% endcomment %}
+<article class="sp-person">
+  <div class="sp-person__head">
+    {% if include.photo %}
+    <img class="sp-person__photo" src="{{ include.photo | relative_url }}" alt="{{ include.alt | default: include.name }}" width="220" height="220" loading="lazy" decoding="async">
+    {% endif %}
+    <div class="sp-person__id">
+      <h3 class="sp-person__name">{{ include.name }}</h3>
+      <p class="sp-person__role">{{ include.role }}</p>
+    </div>
+  </div>
+  <div class="sp-person__body">{{ include.body }}</div>
+</article>

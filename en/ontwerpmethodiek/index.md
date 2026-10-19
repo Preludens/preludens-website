@@ -3,85 +3,50 @@ layout: default
 lang: en
 title: Design methodology
 description: The seven principles behind every Preludens design — sharp in content, solid in technology and always aimed at learning that becomes applicable.
+body_class: page-panels
 permalink: /ontwerpmethodiek/
 ---
 
-<section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/ontwerpmethodiek-hero.jpg' | relative_url }}');">
-  <div class="container">
-    <div class="hero-banner__inner">
-      <p class="hero-banner__eyebrow">Design methodology</p>
-      <h1>Seven principles behind <span class="hl">every</span> design</h1>
-      <hr class="hero-banner__accent">
-      <p class="hero-banner__lead">
-        These principles shape how Daan and Jan-Willem design together: sharp in content, solid in technology and always
-        aimed at learning that becomes applicable in practice.
-      </p>
-      <div class="hero-banner__actions">
-        <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Book a GameStorm <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-        <a class="btn btn-secondary" href="{{ '/team/' | relative_url }}">Back to the team</a>
-      </div>
-    </div>
-  </div>
-  <span class="hero-banner__dots" aria-hidden="true"></span>
-</section>
+<div class="panel-stack">
+{% include panels/clips.html %}
 
-<section class="section">
-  <div class="container">
-    <div class="block-head">
-      <span class="section-label">Why a methodology</span>
-      <h2>From learning goal to an experience that sticks</h2>
-      <p>
-        A good learning experience doesn't happen by chance. We work from a fixed set of principles that ensure every
-        story, choice and MicroGame traces back to a clear learning goal — and that the technology strengthens the
-        experience rather than getting in the way.
-      </p>
-    </div>
-    <ol class="principle-list">
-      <li>
-        <h3>Use clear and achievable objectives</h3>
-        <p>Every successful design starts with a solid goal. Decide what you want to achieve, make sure it's attainable and set a way to measure progress. We turn well-defined learning goals into challenges for maximum intrinsic motivation.</p>
-      </li>
-      <li>
-        <h3>Balance knowledge with skill and luck</h3>
-        <p>Gameplay focuses on growing knowledge, and success comes from applying it. While skill and luck are part of gameplay, the player should strongly feel that progress is based on knowledge.</p>
-      </li>
-      <li>
-        <h3>Use mechanics drawn from reality</h3>
-        <p>Knowledge grows when you recognise and understand the context. The closer we stay to reality, the higher the retention. Recognisable mechanics also make the gameplay more accessible and understandable.</p>
-      </li>
-      <li>
-        <h3>Focus on positive, human emotions</h3>
-        <p>Intrinsic motivation only arises when the player is emotionally involved with the material. It's about the desire to learn and to finish and achieve — and that emotion doesn't even have to be tied directly to the learning goals.</p>
-      </li>
-      <li>
-        <h3>Make controls robust</h3>
-        <p>A training should be robust and as bug-free as possible. Interaction is logical and the player can get started right away without getting lost. Robust also means moving through the object at the right pace.</p>
-      </li>
-      <li>
-        <h3>Give clear feedback, without distraction</h3>
-        <p>Every action — right or wrong — is followed by immediate feedback, with no delay. The feedback is clear and to the point, so the player knows exactly what's expected now and in future.</p>
-      </li>
-      <li>
-        <h3>Always make the next step clear</h3>
-        <p>The player always knows what's expected, how to make progress and what they can do to improve it. The object feels logical and naturally gives a sense of accomplishment throughout the training.</p>
-      </li>
-    </ol>
-  </div>
-</section>
+{% capture hero_title %}Seven principles behind every design{% endcapture %}
+{% capture hero_lead %}These principles shape how Daan and Jan-Willem design together: sharp in content, solid in technology and always aimed at learning that becomes applicable in practice.{% endcapture %}
+{% capture hero_actions %}
+{% include panels/actions.html hero_cta=true primary_label="Book a GameStorm →" primary_href="/gamestorm/" secondary_label="Back to the team" secondary_href="/team/" %}
+{% endcapture %}
+{% include panels/hero.html kicker="Design methodology" title=hero_title lead=hero_lead actions=hero_actions figure_src="/assets/images/hero/ontwerpmethodiek-hero.jpg" figure_alt="Designers working together on a learning experience" figure_href="/gamestorm/" figure_caption="From learning goal to playable experience." %}
 
-<section class="cta-feature">
-  <div class="container">
-    <div class="cta-feature__inner">
-      <span class="section-label">Curious how this works for you?</span>
-      <h2>Take the first step with a <span class="hl">GameStorm</span></h2>
-      <p>
-        In a single half-day we translate your learning challenge into a first concept — with these principles as the
-        foundation. You'll see straight away how our methodology works in practice.
-      </p>
-      <div class="cta-feature__actions">
-        <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Book a GameStorm <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-        <a class="btn btn-secondary" href="{{ '/contact/' | relative_url }}">Get in touch</a>
-      </div>
-    </div>
-  </div>
-</section>
+{% capture why_body %}
+<h3>Why a methodology</h3>
+<h2>From learning goal to an experience that sticks</h2>
+<p class="sp-lead sp-lead--center">
+  A good learning experience doesn't happen by chance. We work from a fixed set of principles that ensure every
+  story, choice and MicroGame traces back to a clear learning goal — and that the technology strengthens the
+  experience rather than getting in the way.
+</p>
+{% endcapture %}
+{% include panels/panel.html variant="mist" body=why_body %}
+
+{% capture principle_items %}
+{% include panels/step.html num="01" title="Use clear and achievable objectives" text="Every successful design starts with a solid goal. Decide what you want to achieve, make sure it's attainable and set a way to measure progress. We turn well-defined learning goals into challenges for maximum intrinsic motivation." %}
+{% include panels/step.html num="02" title="Balance knowledge with skill and luck" text="Gameplay focuses on growing knowledge, and success comes from applying it. While skill and luck are part of gameplay, the player should strongly feel that progress is based on knowledge." %}
+{% include panels/step.html num="03" title="Use mechanics drawn from reality" text="Knowledge grows when you recognise and understand the context. The closer we stay to reality, the higher the retention. Recognisable mechanics also make the gameplay more accessible and understandable." %}
+{% include panels/step.html num="04" title="Focus on positive, human emotions" text="Intrinsic motivation only arises when the player is emotionally involved with the material. It's about the desire to learn and to finish and achieve — and that emotion doesn't even have to be tied directly to the learning goals." %}
+{% include panels/step.html num="05" title="Make controls robust" text="A training should be robust and as bug-free as possible. Interaction is logical and the player can get started right away without getting lost. Robust also means moving through the object at the right pace." %}
+{% include panels/step.html num="06" title="Give clear feedback, without distraction" text="Every action — right or wrong — is followed by immediate feedback, with no delay. The feedback is clear and to the point, so the player knows exactly what's expected now and in future." %}
+{% include panels/step.html num="07" title="Always make the next step clear" text="The player always knows what's expected, how to make progress and what they can do to improve it. The object feels logical and naturally gives a sense of accomplishment throughout the training." %}
+{% endcapture %}
+{% capture principles_body %}
+<h2>The seven principles</h2>
+{% include panels/steps.html variant="flow" items=principle_items %}
+{% endcapture %}
+{% include panels/panel.html variant="paper" body=principles_body %}
+
+{% capture cta_left %}In a single half-day we translate your learning challenge into a first concept — with these principles as the foundation.{% endcapture %}
+{% capture cta_right %}You'll see straight away how our methodology works in practice.{% endcapture %}
+{% include panels/cta.html kicker="Curious how this works for you?" title="Take the first step with a GameStorm" left=cta_left right=cta_right stack=true primary_label="Book a GameStorm" primary_href="/gamestorm/" secondary_label="Get in touch" secondary_href="/contact/" %}
+
+{% include panels/footer-reveal.html %}
+
+</div>

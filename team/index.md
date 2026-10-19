@@ -3,219 +3,114 @@ layout: default
 lang: nl
 title: Team
 description: De mensen achter Preludens — storytelling, game design, didactiek en techniek, samengebracht in leerervaringen die blijven hangen.
+body_class: page-panels
 permalink: /team/
 ---
 
-<section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/team-hero.jpg' | relative_url }}');">
-  <div class="container">
-    <div class="hero-banner__inner">
-      <p class="hero-banner__eyebrow">Team</p>
-      <h1>Wij geloven dat mensen beter leren wanneer ze actief <span class="hl">betrokken</span> zijn</h1>
-      <hr class="hero-banner__accent">
-      <p class="hero-banner__lead">
-        Daarom ontwerpen we leerervaringen waarin mensen niet alleen informatie ontvangen, maar zelf keuzes maken, de
-        gevolgen van hun handelen ervaren en gerichte feedback krijgen. Door kennis in een herkenbare context toe te
-        passen, wordt die beter begrepen, onthouden en gebruikt wanneer het ertoe doet.
-      </p>
-      <div class="hero-banner__actions">
-        <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Neem contact op <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-        <a class="btn btn-secondary" href="{{ '/diensten/' | relative_url }}">Onze diensten <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-      </div>
-    </div>
-  </div>
-  <span class="hero-banner__dots" aria-hidden="true"></span>
-</section>
+<div class="panel-stack">
+{% include panels/clips.html %}
 
-<section class="section">
-  <div class="container">
-    <div class="block-head">
-      <span class="section-label">Kennis komt niet automatisch</span>
-      <h2>Wij zien dagelijks de kracht van het spel binnen complexe vraagstukken</h2>
-    </div>
-    <div class="split split--wide-text">
-      <div class="split__text">
-        <p>
-          Preludens wordt gevormd door Daan Groen en Jan-Willem Manenschijn, aangevuld met specialisten wanneer een
-          project daarom vraagt. We combineren expertise in storytelling, game design en learning &amp; development om
-          teams voor te bereiden op situaties waarin kennis en handelen samenkomen.
-        </p>
-        <p>
-          We werken in kleine, betrokken teams en houden de lijnen kort. Klanten werken rechtstreeks met de ontwerpers
-          en ontwikkelaars die het project uitvoeren. Daardoor kunnen we snel schakelen, kritisch doorvragen en ideeën
-          vroeg testen.
-        </p>
-        <p>
-          Preludens maakt complexe kennis speelbaar, verhalend en toepasbaar. Met MicroGames, storytelling en
-          spelprincipes creëren we leerervaringen die nieuwsgierigheid oproepen, actieve betrokkenheid stimuleren en
-          mensen motiveren om verder te leren.
-        </p>
-      </div>
-      <div class="split__aside">
-        <div class="aside-lead">
-          <h3>Van betrokkenheid naar toepasbare kennis</h3>
-        </div>
-        <ul class="checklist">
-          <li>Betrokkenheid activeert mensen.</li>
-          <li>Spel en storytelling creëren die betrokkenheid.</li>
-          <li>Daardoor gaan mensen ontdekken, kiezen, oefenen en feedback verwerken.</li>
-          <li>Zo wordt complexe kennis begrijpelijker, beter onthouden en toepasbaar in de praktijk.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+{% capture hero_title %}Wij geloven dat mensen beter leren wanneer ze actief betrokken zijn{% endcapture %}
+{% capture hero_lead %}Daarom ontwerpen we leerervaringen waarin mensen niet alleen informatie ontvangen, maar zelf keuzes maken, de gevolgen van hun handelen ervaren en gerichte feedback krijgen. Door kennis in een herkenbare context toe te passen, wordt die beter begrepen, onthouden en gebruikt wanneer het ertoe doet.{% endcapture %}
+{% capture hero_actions %}
+{% include panels/actions.html hero_cta=true primary_label="Neem contact op →" primary_href="/contact/" secondary_label="Onze diensten" secondary_href="/diensten/" %}
+{% endcapture %}
+{% include panels/hero.html kicker="Team" title=hero_title lead=hero_lead actions=hero_actions figure_src="/assets/images/hero/team-hero.jpg" figure_alt="Twee ontwerpers die samen aan een vraagstuk werken" figure_href="/gamestorm/" figure_caption="Ontwerp en techniek aan dezelfde tafel." %}
 
-<section class="section section--mist">
-  <div class="container">
-    <div class="block-head">
-      <span class="section-label">Maak kennis met het team</span>
-      <h2>Ontwerp en techniek, in één compact team</h2>
-      <p>
-        Waar Daan leerproblemen ontrafelt en spelmechanismen zichtbaar maakt, vertaalt Jan-Willem ideeën naar heldere,
-        werkende ervaringen. Samen brengen we serious games, storytelling, didactisch ontwerp en techniek bij elkaar.
-      </p>
-    </div>
-    <div class="persona-grid">
-      <article class="persona">
-        <div class="persona__top">
-          <img class="persona__photo" src="{{ '/assets/images/team/daan-groen.jpg' | relative_url }}" alt="Daan Groen" width="220" height="220" loading="lazy" decoding="async">
-          <div>
-            <h3 class="persona__name">Daan Groen</h3>
-            <p class="persona__role">Oprichter en ontwerper</p>
-          </div>
-        </div>
-        <div class="persona__body">
-          <p>
-            Daan grijpt zelden de eerste oplossing. Hij graaft dieper naar creatieve antwoorden op procesvraagstukken,
-            met spelmechanismen en win-win denken als kompas. Met meer dan vijftien jaar ervaring in MicroGaming
-            begeleidt hij organisaties die spel en verhaal doordachter willen inzetten voor leren en veranderen.
-          </p>
-          <p>
-            Zijn kracht ligt in het zichtbaar maken van de game die vaak al in de werkelijkheid verborgen zit — niet door
-            spelelementen los toe te voegen, maar door te onderzoeken welke spanning, keuzes en gedragspatronen al
-            aanwezig zijn.
-          </p>
-        </div>
-      </article>
-      <article class="persona">
-        <div class="persona__top">
-          <img class="persona__photo" src="{{ '/assets/images/team/jan-willem-manenschijn.jpg' | relative_url }}" alt="Jan-Willem Manenschijn" width="220" height="220" loading="lazy" decoding="async">
-          <div>
-            <h3 class="persona__name">Jan-Willem Manenschijn</h3>
-            <p class="persona__role">Vernieuwer en ontwikkelaar</p>
-          </div>
-        </div>
-        <div class="persona__body">
-          <p>
-            Jan-Willem is een enthousiaste creatieveling met een passie voor onderwijs, techniek en puzzels. Hij maakt
-            vage ideeën concreet met snelle prototypes en zet mensen in beweging, van escape rooms tot serious games.
-          </p>
-          <p>
-            Zijn kracht ligt in het verbinden van concept en uitvoering. Waar een leeridee nog abstract is, brengt hij
-            structuur aan. Waar een ervaring technisch complex kan worden, zoekt hij naar eenvoud.
-          </p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+{% capture intro_main %}
+<p class="sp-lead">Preludens wordt gevormd door Daan Groen en Jan-Willem Manenschijn, aangevuld met specialisten wanneer een project daarom vraagt. We combineren expertise in storytelling, game design en learning &amp; development om teams voor te bereiden op situaties waarin kennis en handelen samenkomen.</p>
+<p class="sp-lead">We werken in kleine, betrokken teams en houden de lijnen kort. Klanten werken rechtstreeks met de ontwerpers en ontwikkelaars die het project uitvoeren. Daardoor kunnen we snel schakelen, kritisch doorvragen en ideeën vroeg testen.</p>
+<p class="sp-lead">Preludens maakt complexe kennis speelbaar, verhalend en toepasbaar. Met MicroGames, storytelling en spelprincipes creëren we leerervaringen die nieuwsgierigheid oproepen, actieve betrokkenheid stimuleren en mensen motiveren om verder te leren.</p>
+{% endcapture %}
+{% capture intro_checks %}
+{% include panels/check.html text="Betrokkenheid activeert mensen." %}
+{% include panels/check.html text="Spel en storytelling creëren die betrokkenheid." %}
+{% include panels/check.html text="Daardoor gaan mensen ontdekken, kiezen, oefenen en feedback verwerken." %}
+{% include panels/check.html text="Zo wordt complexe kennis begrijpelijker, beter onthouden en toepasbaar in de praktijk." %}
+{% endcapture %}
+{% capture intro_aside %}
+<h3>Van betrokkenheid naar toepasbare kennis</h3>
+{% include panels/checklist.html label="Van betrokkenheid naar toepasbare kennis" items=intro_checks %}
+{% endcapture %}
+{% capture intro_body %}
+<h3>Kennis komt niet automatisch</h3>
+<h2>Wij zien dagelijks de kracht van het spel binnen complexe vraagstukken</h2>
+{% include panels/aside.html main=intro_main aside=intro_aside %}
+{% endcapture %}
+{% include panels/panel.html variant="mist" body=intro_body %}
 
-<section class="section">
-  <div class="container">
-    <div class="media-block media-block--reverse">
-      <figure class="media-block__media">
-        <!-- TODO [WACHTEN OP FOTO]: vervang missie.* door foto van Daan + Jan-Willem in het New Future Lab, aan tafel -->
-        <picture>
-          <source srcset="{{ '/assets/images/team/missie.webp' | relative_url }}" type="image/webp">
-          <img src="{{ '/assets/images/team/missie.jpg' | relative_url }}" alt="Preludens maakt game-based leren toegankelijk voor iedere organisatie" width="1400" height="875" loading="lazy" decoding="async">
-        </picture>
-      </figure>
-      <div class="media-block__body">
-        <span class="section-label">Waarom we Preludens zijn gestart</span>
-        <h2>Game-based leren moet voor iedereen toegankelijk zijn</h2>
-        <p>
-          Onze missie is om game-based leren toegankelijk te maken voor iedere organisatie — groot én klein. Na jaren
-          ervaring met serious games zagen we hoeveel sterker leren wordt wanneer mensen actief kunnen kiezen, oefenen en
-          ervaren wat hun handelen betekent.
-        </p>
-        <p>
-          Daarom ontwikkelen we leerervaringen die betaalbaar, schaalbaar en tastbaar zijn: beheersbare
-          ontwikkelkosten, modulaire oplossingen en producten die klanten zonder onnodige technische drempels binnen hun
-          bestaande leeromgeving kunnen inzetten.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+{% capture daan_body %}
+<p class="sp-lead">Daan grijpt zelden de eerste oplossing. Hij graaft dieper naar creatieve antwoorden op procesvraagstukken, met spelmechanismen en win-win denken als kompas. Met meer dan vijftien jaar ervaring in MicroGaming begeleidt hij organisaties die spel en verhaal doordachter willen inzetten voor leren en veranderen.</p>
+<p class="sp-lead">Zijn kracht ligt in het zichtbaar maken van de game die vaak al in de werkelijkheid verborgen zit — niet door spelelementen los toe te voegen, maar door te onderzoeken welke spanning, keuzes en gedragspatronen al aanwezig zijn.</p>
+{% endcapture %}
+{% capture jw_body %}
+<p class="sp-lead">Jan-Willem is een enthousiaste creatieveling met een passie voor onderwijs, techniek en puzzels. Hij maakt vage ideeën concreet met snelle prototypes en zet mensen in beweging, van escape rooms tot serious games.</p>
+<p class="sp-lead">Zijn kracht ligt in het verbinden van concept en uitvoering. Waar een leeridee nog abstract is, brengt hij structuur aan. Waar een ervaring technisch complex kan worden, zoekt hij naar eenvoud.</p>
+{% endcapture %}
+{% capture people_items %}
+{% include panels/person.html name="Daan Groen" role="Oprichter en ontwerper" photo="/assets/images/team/daan-groen.jpg" alt="Daan Groen" body=daan_body %}
+{% include panels/person.html name="Jan-Willem Manenschijn" role="Vernieuwer en ontwikkelaar" photo="/assets/images/team/jan-willem-manenschijn.jpg" alt="Jan-Willem Manenschijn" body=jw_body %}
+{% endcapture %}
+{% capture team_body %}
+<h3>Maak kennis met het team</h3>
+<h2>Ontwerp en techniek, in één compact team</h2>
+<p class="sp-lead">Waar Daan leerproblemen ontrafelt en spelmechanismen zichtbaar maakt, vertaalt Jan-Willem ideeën naar heldere, werkende ervaringen. Samen brengen we serious games, storytelling, didactisch ontwerp en techniek bij elkaar.</p>
+{% include panels/people.html label="Het team van Preludens" items=people_items %}
+{% endcapture %}
+{% include panels/panel.html variant="paper" body=team_body %}
 
-<section class="section section--navy">
-  <div class="container">
-    <div class="block-head block-head--xl">
-      <h2>Waar wij voor staan</h2>
-      <p>Kwaliteit geeft ons energie.</p>
-    </div>
-    <ul class="value-list">
-      <li>
-        <strong>Robuust</strong>
-        <span>Een leerervaring moet vertrouwen geven. We ontwerpen oplossingen die logisch aanvoelen, stabiel werken en helder zijn. De techniek mag nooit in de weg staan van de ervaring.</span>
-      </li>
-      <li>
-        <strong>Doelgericht</strong>
-        <span>We maken ontwerpkeuzes niet omdat ze leuk zijn, maar omdat ze bijdragen aan het leren. Elk verhaal, iedere keuze en elke MicroGame is terug te voeren op duidelijke leerdoelen.</span>
-      </li>
-      <li>
-        <strong>Toegankelijk</strong>
-        <span>Complexe kennis hoeft niet ingewikkeld te voelen. We vertalen inhoud naar herkenbare situaties, duidelijke keuzes en concrete feedback, zodat mensen kunnen ontdekken en groeien.</span>
-      </li>
-      <li>
-        <strong>Nieuwsgierig</strong>
-        <span>We nemen de eerste oplossing niet zomaar over. We onderzoeken de praktijk, stellen vragen en zoeken de route die kennis, gedrag en ervaring met elkaar verbindt.</span>
-      </li>
-    </ul>
-  </div>
-</section>
+<!-- TODO [WACHTEN OP FOTO]: vervang missie.* door foto van Daan + Jan-Willem in het New Future Lab, aan tafel -->
+{% capture missie_copy %}
+<h3>Waarom we Preludens zijn gestart</h3>
+<h2>Game-based leren moet voor iedereen toegankelijk zijn</h2>
+<p class="sp-lead">Onze missie is om game-based leren toegankelijk te maken voor iedere organisatie — groot én klein. Na jaren ervaring met serious games zagen we hoeveel sterker leren wordt wanneer mensen actief kunnen kiezen, oefenen en ervaren wat hun handelen betekent.</p>
+<p class="sp-lead">Daarom ontwikkelen we leerervaringen die betaalbaar, schaalbaar en tastbaar zijn: beheersbare ontwikkelkosten, modulaire oplossingen en producten die klanten zonder onnodige technische drempels binnen hun bestaande leeromgeving kunnen inzetten.</p>
+{% endcapture %}
+{% capture missie_body %}
+{% include panels/media.html src="/assets/images/team/missie.jpg" webp="/assets/images/team/missie.webp" alt="Preludens maakt game-based leren toegankelijk voor iedere organisatie" ratio="1400 / 499" reverse=true body=missie_copy %}
+{% endcapture %}
+{% include panels/panel.html variant="mist" body=missie_body %}
 
-<section class="section">
-  <div class="container">
-    <div class="split split--wide-text">
-      <div class="split__text">
-        <span class="section-label">Zo ontwerpen wij leerervaringen</span>
-        <h2>Zeven principes achter ons ontwerp</h2>
-        <p>
-          Elk ontwerp is inhoudelijk scherp, technisch stevig en gericht op leren dat in de praktijk toepasbaar wordt.
-          In onze ontwerpmethodiek lees je precies hoe we dat doen — van heldere doelstellingen tot duidelijke feedback
-          en een altijd zichtbare volgende stap.
-        </p>
-        <a class="btn btn-primary" href="{{ '/ontwerpmethodiek/' | relative_url }}">Bekijk onze ontwerpmethodiek <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-      </div>
-      <div class="split__aside">
-        <ol class="principle-list principle-list--compact">
-          <li><h3>Heldere en haalbare doelstellingen</h3></li>
-          <li><h3>Balans tussen kennis, skills en geluk</h3></li>
-          <li><h3>Mechanismen uit de realiteit</h3></li>
-          <li><h3>Focus op positieve, menselijke emoties</h3></li>
-          <li><h3>Robuuste, logische besturing</h3></li>
-          <li><h3>Duidelijke feedback, zonder afleiding</h3></li>
-          <li><h3>De volgende stap altijd duidelijk</h3></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</section>
+{% capture value_items %}
+{% include panels/value.html title="Robuust" text="Een leerervaring moet vertrouwen geven. We ontwerpen oplossingen die logisch aanvoelen, stabiel werken en helder zijn. De techniek mag nooit in de weg staan van de ervaring." %}
+{% include panels/value.html title="Doelgericht" text="We maken ontwerpkeuzes niet omdat ze leuk zijn, maar omdat ze bijdragen aan het leren. Elk verhaal, iedere keuze en elke MicroGame is terug te voeren op duidelijke leerdoelen." %}
+{% include panels/value.html title="Toegankelijk" text="Complexe kennis hoeft niet ingewikkeld te voelen. We vertalen inhoud naar herkenbare situaties, duidelijke keuzes en concrete feedback, zodat mensen kunnen ontdekken en groeien." %}
+{% include panels/value.html title="Nieuwsgierig" text="We nemen de eerste oplossing niet zomaar over. We onderzoeken de praktijk, stellen vragen en zoeken de route die kennis, gedrag en ervaring met elkaar verbindt." %}
+{% endcapture %}
+{% capture values_body %}
+<h2>Waar wij voor staan</h2>
+<p class="sp-lead">Kwaliteit geeft ons energie.</p>
+{% include panels/values.html label="Waar wij voor staan" columns="two" items=value_items %}
+{% endcapture %}
+{% include panels/panel.html variant="paper" body=values_body %}
 
-<section class="cta-feature">
-  <div class="container">
-    <div class="cta-feature__inner">
-      <span class="section-label">Zet de eerste stap</span>
-      <h2>Begin met een <span class="hl">GameStorm</span></h2>
-      <p>
-        In één dagdeel onderzoeken we samen het probleem, de doelgroep en de gewenste verandering. Je krijgt een
-        concrete eerste richting, zonder je direct vast te leggen op een volledig project.
-      </p>
-      <div class="cta-feature__actions">
-        <a class="btn btn-primary" href="{{ '/gamestorm/' | relative_url }}">Plan een GameStorm <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
-        <a class="btn btn-secondary" href="{{ '/contact/' | relative_url }}">Neem contact op</a>
-      </div>
-    </div>
-  </div>
-</section>
+{% capture principle_steps %}
+{% include panels/step.html num="1" title="Heldere en haalbare doelstellingen" %}
+{% include panels/step.html num="2" title="Balans tussen kennis, skills en geluk" %}
+{% include panels/step.html num="3" title="Mechanismen uit de realiteit" %}
+{% include panels/step.html num="4" title="Focus op positieve, menselijke emoties" %}
+{% include panels/step.html num="5" title="Robuuste, logische besturing" %}
+{% include panels/step.html num="6" title="Duidelijke feedback, zonder afleiding" %}
+{% include panels/step.html num="7" title="De volgende stap altijd duidelijk" %}
+{% endcapture %}
+{% capture principles_main %}
+<p class="sp-lead">Elk ontwerp is inhoudelijk scherp, technisch stevig en gericht op leren dat in de praktijk toepasbaar wordt. In onze ontwerpmethodiek lees je precies hoe we dat doen — van heldere doelstellingen tot duidelijke feedback en een altijd zichtbare volgende stap.</p>
+{% include panels/actions.html primary_label="Bekijk onze ontwerpmethodiek →" primary_href="/ontwerpmethodiek/" %}
+{% endcapture %}
+{% capture principles_aside %}
+{% include panels/steps.html variant="list" items=principle_steps %}
+{% endcapture %}
+{% capture principles_body %}
+<h3>Zo ontwerpen wij leerervaringen</h3>
+<h2>Zeven principes achter ons ontwerp</h2>
+{% include panels/aside.html main=principles_main aside=principles_aside %}
+{% endcapture %}
+{% include panels/panel.html variant="mist" body=principles_body %}
+
+{% capture cta_left %}In één dagdeel onderzoeken we samen het probleem, de doelgroep en de gewenste verandering.{% endcapture %}
+{% capture cta_right %}Je krijgt een concrete eerste richting, zonder je direct vast te leggen op een volledig project.{% endcapture %}
+{% include panels/cta.html kicker="Zet de eerste stap" title="Begin met een GameStorm" left=cta_left right=cta_right stack=true primary_label="Plan een GameStorm" primary_href="/gamestorm/" secondary_label="Neem contact op" secondary_href="/contact/" %}
+
+{% include panels/footer-reveal.html %}
+
+</div>

@@ -1,0 +1,8 @@
+{% comment %}
+  Eén genummerd principe/stap in de stappenband (panels/steps.html).
+  Pass: num, title, text.
+{% endcomment %}
+<article>
+  <h3>{% if include.num %}<span>{{ include.num }}</span> {% endif %}{{ include.title }}</h3>
+  {% if include.text and include.text != '' %}<p>{{ include.text }}</p>{% endif %}
+</article>

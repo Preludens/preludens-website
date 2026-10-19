@@ -6,7 +6,7 @@ description: We strengthen knowledge retention in organisations with storytellin
 permalink: /
 permalink_lang:
   nl: /
-body_class: page-home
+body_class: page-home page-panels
 ---
 
 

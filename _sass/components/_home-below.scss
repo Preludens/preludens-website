@@ -1,7 +1,7 @@
-/* Homepage sections under the warm band.
+/* Paneelinhoud onder de warme band (page-panels).
    Light paper and mist only. Scoped so the snap page keeps its own inline rules. */
 
-body.page-home {
+body.page-panels {
   .sp-eyebrow {
     display: inline-block;
     margin: 0 0 var(--space-sm);
@@ -185,27 +185,27 @@ body.page-home {
 }
 
 @media (max-width: 640px) {
-  body.page-home .sp-testimonial {
+  body.page-panels .sp-testimonial {
     flex-direction: column;
     text-align: center;
   }
 
-  body.page-home .sp-testimonial__cite {
+  body.page-panels .sp-testimonial__cite {
     align-items: center;
   }
 
-  body.page-home .sp-testimonial blockquote {
+  body.page-panels .sp-testimonial blockquote {
     max-width: none;
   }
 }
 
 @media (max-width: 600px) {
-  body.page-home .sp-clients {
+  body.page-panels .sp-clients {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: none;
   }
 
-  body.page-home .sp-clients li {
+  body.page-panels .sp-clients li {
     height: 3.75rem;
     min-height: 3.75rem;
     font-size: 0.68rem;

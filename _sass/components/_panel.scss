@@ -1,11 +1,12 @@
-/* Homepage shell: flowing panels, 40° cut, mist and warm bands.
+/* Paneelsysteem: doorlopende panelen, 40° snede, mist- en warme banden.
+   Gebruikt door elke pagina met body-class page-panels (home, ontwerpmethodiek).
    --sp-jump / --sp-run are the single definition of that cut (tan 40° ≈ 0.839). */
 
-html:has(body.page-home) {
+html:has(body.page-panels) {
   overflow-x: clip;
 }
 
-body.page-home {
+body.page-panels {
   --sp-jump: 50px;
   --sp-run: 59.6px;
   /* Air at every angled cut. Mist and warm carry it; paper stays flush. */
@@ -66,7 +67,7 @@ body.page-home {
    1,7–2,0:1, ook als grote kop. --color-ink-gold is dezelfde accentkleur in de
    tekst-op-licht variant en haalt 5,0:1 of meer. */
 .panel h2 .hl,
-body.page-home .hl {
+body.page-panels .hl {
   color: var(--color-ink-gold);
 }
 
@@ -87,7 +88,23 @@ body.page-home .hl {
   margin: 0 0 clamp(var(--space-sm), 2vh, var(--space-md));
 }
 
-body.page-home .sp-actions {
+/* Inleidende lead onder een gecentreerde kop (mistband). */
+.panel p.sp-lead--center {
+  max-width: 62ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* De mistband centreert zijn kop. Staan er meerdere banden als gelijkwaardige
+   zusjes naast elkaar, dan oogt wisselende uitlijning willekeurig; hiermee kan
+   een paneel zijn band overrulen. */
+.panel.panel--align-left h2,
+.panel.panel--align-left p.sp-lead--center {
+  text-align: left;
+  margin-inline: 0;
+}
+
+body.page-panels .sp-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -95,7 +112,7 @@ body.page-home .sp-actions {
   margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
 }
 
-body.page-home .sp-actions .btn {
+body.page-panels .sp-actions .btn {
   padding: 0.85rem 1.4rem;
   font-weight: 600;
 }
@@ -104,9 +121,14 @@ body.page-home .sp-actions .btn {
   background: var(--color-white);
   color: var(--color-ink);
 
-  h2,
-  p.sp-lead {
+  h2 {
     max-width: none;
+  }
+
+  /* Lopende tekst blijft op leesmaat; een regel van 90 tekens is te lang om
+     comfortabel terug te vinden waar de volgende begint. */
+  p.sp-lead {
+    max-width: 70ch;
   }
 
   h2,
@@ -218,8 +240,10 @@ body.page-home .sp-actions .btn {
   p.sp-lead {
     margin: 0;
     max-width: none;
-    text-align: justify;
-    hyphens: auto;
+    /* Uitvullen geeft in deze smalle kolommen rekbare spaties en lelijke
+       afbreekstreepjes; links uitlijnen leest rustiger. */
+    text-align: left;
+    hyphens: manual;
   }
 }
 
@@ -254,6 +278,232 @@ body.page-home .sp-actions .btn {
   .sp-focus-copy,
   .sp-warm-copy {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Staat er maar een korte tweede zin, dan valt er naast de eerste een gat.
+   Gestapeld leest dat rustiger, en links uitlijnen voorkomt rekbare spaties
+   in een smalle kolom. */
+.sp-copy--stack {
+  grid-template-columns: 1fr;
+  /* De kolomafstand werkt gestapeld als regelafstand en is dan veel te ruim. */
+  gap: 0.6rem;
+}
+
+.sp-warm-copy.sp-copy--stack p.sp-lead,
+.sp-focus-copy.sp-copy--stack p.sp-lead {
+  max-width: 46rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Bouwstenen binnen een paneel
+--------------------------------------------------------------------------- */
+
+/* Lopende tekst met een smalle kolom ernaast (panels/aside.html). */
+.sp-aside-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: start;
+  margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
+}
+
+/* Twee gelijke kolommen, als beide kanten evenveel gewicht hebben
+   (bijvoorbeeld "geschikt voor" naast "wat deelnemers ervaren"). */
+.sp-aside-split--even {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.sp-aside-split__main p.sp-lead {
+  /* Niet `none`: de kolom komt nu toevallig op 70ch uit, maar wordt
+     --max-width ooit ruimer, dan schiet lopende tekst er stil overheen. */
+  max-width: 70ch;
+  margin: 0 0 var(--space-md);
+}
+
+.sp-aside-split__main p.sp-lead:last-child {
+  margin-bottom: 0;
+}
+
+/* Beeld naast tekst (panels/media.html), in het uitgeknipte herokader. */
+.sp-media {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: center;
+  margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
+}
+
+.sp-media--reverse .sp-media__figure {
+  order: 2;
+}
+
+.sp-media__figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.sp-media__frame {
+  position: relative;
+  aspect-ratio: var(--sp-media-ratio, 16 / 9);
+  padding: 5px;
+  background: var(--color-white);
+  clip-path: url("#sp-hero-clip");
+}
+
+.sp-media__frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: url("#sp-hero-clip");
+}
+
+.sp-media__body > h2 {
+  text-align: left;
+}
+
+.sp-media__body p.sp-lead {
+  max-width: 70ch;
+  margin: 0 0 var(--space-md);
+}
+
+.sp-media__body p.sp-lead:last-child {
+  margin-bottom: 0;
+}
+
+/* Citaat: .sp-quote is de brede, gecentreerde vorm (zie _home-below.scss).
+   --aside is de smalle pull-quote naast lopende tekst. Drie klassen, zodat
+   hij het wint van `body.page-panels .sp-quote`. */
+.panel .sp-quote.sp-quote--aside {
+  max-width: none;
+  margin-inline: 0;
+  padding-left: clamp(1rem, 2vw, 1.5rem);
+  border-left: 3px solid var(--color-preludens-gold);
+  text-align: left;
+}
+
+.panel .sp-quote.sp-quote--aside blockquote {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  line-height: 1.4;
+}
+
+/* Een afsluitende regel onder een tweekolomsblok houdt zijn eigen lucht. */
+.sp-focus-copy + p.sp-lead--center,
+.sp-warm-copy + p.sp-lead--center {
+  margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
+}
+
+/* Portretten (panels/people.html). De foto krijgt dezelfde ronde behandeling
+   als het portret bij een quote op de homepage. */
+.sp-people {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
+}
+
+.sp-person__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.sp-person__photo {
+  flex: 0 0 auto;
+  width: clamp(5rem, 9vw, 7rem);
+  height: clamp(5rem, 9vw, 7rem);
+  object-fit: cover;
+  border: 3px solid var(--color-white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-card);
+}
+
+.panel .sp-person__name {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.panel .sp-person__role {
+  margin: 0.15rem 0 0;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-ink-gold);
+}
+
+.sp-person__body {
+  margin-top: var(--space-md);
+}
+
+.sp-person__body p.sp-lead {
+  max-width: 70ch;
+  margin: 0 0 var(--space-sm);
+}
+
+.sp-person__body p.sp-lead:last-child {
+  margin-bottom: 0;
+}
+
+/* Korte checklist in een smalle kolom (panels/checklist.html). */
+.sp-checklist {
+  list-style: none;
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+}
+
+.panel .sp-checklist li {
+  position: relative;
+  padding: 0.9rem 1.1rem 0.9rem 2.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.panel .sp-checklist li::before {
+  content: "";
+  position: absolute;
+  left: 1.05rem;
+  top: 1.3rem;
+  width: 0.8rem;
+  height: 0.45rem;
+  border-left: 2.5px solid var(--color-ink-gold);
+  border-bottom: 2.5px solid var(--color-ink-gold);
+  transform: rotate(-45deg);
+}
+
+/* In een mistband is een mistblauw kaartje onzichtbaar; daar wordt het wit,
+   net als de checklist. Op de homepage staan de waarden in een paper-paneel,
+   dus die blijven zoals ze zijn. */
+.panel.panel--mist .sp-values li {
+  background: var(--color-white);
+}
+
+/* Waardenband met vier kaartjes leest beter als 2x2 dan als 3+1. */
+@media (min-width: 720px) {
+  .sp-values.sp-values--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .sp-aside-split,
+  .sp-media,
+  .sp-people {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-media--reverse .sp-media__figure {
+    order: 0;
   }
 }
 
