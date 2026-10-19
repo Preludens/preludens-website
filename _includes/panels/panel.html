@@ -1,4 +1,4 @@
-<section class="panel panel--{{ include.variant }}{% if include.line %} panel--line{% endif %}">
+<section class="panel panel--{{ include.variant }}{% if include.line %} panel--line{% endif %}"{% if include.id %} id="{{ include.id }}"{% endif %}>
   <div class="panel__inner">
     {{ include.body }}
   </div>

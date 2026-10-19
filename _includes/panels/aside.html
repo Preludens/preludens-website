@@ -1,8 +1,9 @@
 {% comment %}
   Lopende tekst met een smalle kolom ernaast (checklist, citaat, kaartje).
-  Pass: main, aside. Onder 900px schuift de smalle kolom onder de tekst.
+  Pass: main, aside, variant. Onder 900px schuift de tweede kolom onder de
+  eerste. `variant="even"` geeft twee gelijke kolommen.
 {% endcomment %}
-<div class="sp-aside-split">
+<div class="sp-aside-split{% if include.variant %} sp-aside-split--{{ include.variant }}{% endif %}">
   <div class="sp-aside-split__main">{{ include.main }}</div>
   {% if include.aside %}<div class="sp-aside-split__aside">{{ include.aside }}</div>{% endif %}
 </div>
