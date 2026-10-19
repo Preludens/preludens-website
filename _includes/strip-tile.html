@@ -18,14 +18,23 @@
     {% else %}
       {% assign tile_src = "/assets/images/verhalen/" | append: include.image | relative_url %}
       {% comment %}
-        Op het glas gaat de tegelversie van het beeld: precies 16:9, gemaakt met
-        bin/maak-tegelbeelden. Staat die er niet, dan valt het terug op het
-        origineel.
+        Op het glas gaat de tegelversie voor dít kader: elk van de vier
+        glasvlakken heeft zijn eigen beeldverhouding, en bin/maak-tegelbeelden
+        maakt per screenshot een versie per kader. Staat die er niet, dan valt
+        het terug op het origineel.
       {% endcomment %}
       {% assign tile_base = include.image | split: "." | first %}
-      {% assign tegel_path = "/assets/images/verhalen/" | append: tile_base | append: "-tegel.jpg" %}
+      {% assign tile_frame = include.frame | default: 1 %}
+      {% assign tegel_path = "/assets/images/verhalen/" | append: tile_base | append: "-tegel-k" | append: tile_frame | append: ".jpg" %}
       {% assign tegel_hits = site.static_files | where: "path", tegel_path | size %}
-      {% if tegel_hits > 0 %}
+      {% assign assets_bekend = site.static_files | where_exp: "f", "f.path contains '/assets/'" | size %}
+      {% comment %}
+        Bestaat de tegelversie? Op de Engelse site kan dat niet aan site.static_files
+        gevraagd worden: `assets` staat in exclude_from_localization, dus die lijst
+        kent de beelden daar niet en zou altijd nee zeggen. Weet de lijst niets van
+        /assets/, dan vertrouwen we het pad; anders telt het antwoord gewoon.
+      {% endcomment %}
+      {% if tegel_hits > 0 or assets_bekend == 0 %}
         {% assign tile_shot = tegel_path | relative_url %}
       {% endif %}
     {% endif %}

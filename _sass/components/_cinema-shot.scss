@@ -18,8 +18,14 @@
    zijn de vier gemeten hoeken (TL, TR, BR, BL), waarmee een deeltje via
    bilineaire interpolatie van (--u, --v) ergens op het hele glasvlak ontstaat.
 
-   De screenshot op het glas is de tegelversie (<naam>-tegel.jpg, precies 16:9,
-   gemaakt met bin/maak-tegelbeelden), zodat het glas rand tot rand gevuld is.
+   De vier glasvlakken hebben elk hun eigen beeldverhouding, teruggerekend uit
+   de gemeten hoeken: kader 1 16:9 (dat vlak is bijna affien, dus daar is de
+   werkelijke verhouding niet te bepalen), kader 2 1,474, kader 3 2,171 en
+   kader 4 1,685. De screenshot op het glas is de tegelversie voor dát kader
+   (<naam>-tegel-k<nummer>.jpg, gemaakt met bin/maak-tegelbeelden), die precies
+   die verhouding heeft. Zo is het glas rand tot rand gevuld zonder dat er iets
+   uitgerekt of weggesneden wordt. Verandert hier een verhouding, dan moet
+   bin/maak-tegelbeelden mee.
 
    RUIMTELIJKE EMERGENTIE - de deeltjes komen loodrecht uit het glas naar de
    kijker, niet naar de handen en niet uit een punt.
@@ -128,24 +134,24 @@ $cinema-wake: '.strip-grid > [role="listitem"]:hover, .strip-grid > [role="listi
 }
 
 /* 2 — tablet plat op tafel, van linksboven, met een wijzende vinger.
-   Glas: 39.0/15.3  74.1/22.5  64.7/47.1  27.9/36.2 cqw (16:9) */
+   Glas: 39.0/15.3  74.1/22.5  64.7/47.1  27.9/36.2 cqw (1,474) */
 .tablet-shot--cinema.tablet-shot--frame-2 {
   --frame-img: url("../images/verhalen/hands-tablet-tafel.webp");
   --glass-w: 100cqw;
-  --glass-h: 56.25cqw;
+  --glass-h: 67.843cqw;
   --glass-x: 51.42cqw;
   --glass-y: 30.3cqw;
   --glass-t:
-    translate(74.84cqw, -6.918cqw)
-    perspective(149.209cqw)
-    rotateZ(6.04deg) rotateY(-26.504deg) rotateX(34.562deg)
-    scale(0.38643)
-    translate(-71.667cqw, 79.607cqw);
+    translate(39.303cqw, 14.848cqw)
+    perspective(147.69cqw)
+    rotateZ(11.488deg) rotateY(-28.915deg) rotateX(31.4deg)
+    scale(0.36027)
+    translate(-0.134cqw, 1.739cqw);
   /* schermnormaal uit de rotatieketen hierboven: (n-x, n-y) is de kant
      waar een deeltje heen schuift, n-z de diepte die groei wordt */
-  --n-x: -0.306;
-  --n-y: -0.603;
-  --n-z: 0.737;
+  --n-x: -0.301;
+  --n-y: -0.593;
+  --n-z: 0.747;
   /* de vier gemeten hoeken, voor de geboorteplek over het hele vlak */
   --glass-ax: 39.0cqw;
   --glass-ay: 15.3cqw;
@@ -160,24 +166,24 @@ $cinema-wake: '.strip-grid > [role="listitem"]:hover, .strip-grid > [role="listi
 }
 
 /* 3 — breedbeeldmonitor op een bureau, handen op het toetsenbord ervoor.
-   Glas: 8.5/6.1  55.1/11.8  57.2/39.7  11.9/47.5 cqw (16:9) */
+   Glas: 8.5/6.1  55.1/11.8  57.2/39.7  11.9/47.5 cqw (2,171) */
 .tablet-shot--cinema.tablet-shot--frame-3 {
   --frame-img: url("../images/verhalen/hands-monitor.webp");
   --glass-w: 100cqw;
-  --glass-h: 56.243cqw;
+  --glass-h: 46.062cqw;
   --glass-x: 33.15cqw;
   --glass-y: 26.27cqw;
   --glass-t:
-    translate(42.082cqw, 33.628cqw)
-    perspective(106.501cqw)
-    rotateZ(-5.21deg) rotateY(44.123deg) rotateX(-1.06deg)
-    scale(0.57364)
-    translate(-59.075cqw, -41.24cqw);
+    translate(44.612cqw, 34.899cqw)
+    perspective(152.789cqw)
+    rotateZ(-6.007deg) rotateY(54.891deg) rotateX(-1.898deg)
+    scale(0.68479)
+    translate(-65.093cqw, -35.959cqw);
   /* schermnormaal uit de rotatieketen hierboven: (n-x, n-y) is de kant
      waar een deeltje heen schuift, n-z de diepte die groei wordt */
-  --n-x: +0.695;
-  --n-y: -0.045;
-  --n-z: 0.718;
+  --n-x: +0.817;
+  --n-y: -0.053;
+  --n-z: 0.575;
   /* de vier gemeten hoeken, voor de geboorteplek over het hele vlak */
   --glass-ax: 8.5cqw;
   --glass-ay: 6.1cqw;
@@ -192,24 +198,24 @@ $cinema-wake: '.strip-grid > [role="listitem"]:hover, .strip-grid > [role="listi
 }
 
 /* 4 — laptop, van boven en rechts.
-   Glas: 54.3/5.9  90.6/19.6  78.1/47.7  45.8/28.9 cqw (16:9) */
+   Glas: 54.3/5.9  90.6/19.6  78.1/47.7  45.8/28.9 cqw (1,685) */
 .tablet-shot--cinema.tablet-shot--frame-4 {
   --frame-img: url("../images/verhalen/hands-laptop.webp");
   --glass-w: 100cqw;
-  --glass-h: 56.25cqw;
+  --glass-h: 59.347cqw;
   --glass-x: 67.22cqw;
   --glass-y: 25.52cqw;
   --glass-t:
-    translate(51.66cqw, 42.299cqw)
-    perspective(138.437cqw)
-    rotateZ(33.113deg) rotateY(-40.267deg) rotateX(-17.911deg)
-    scale(0.44635)
-    translate(-32.584cqw, -76.067cqw);
+    translate(52.242cqw, 35.678cqw)
+    perspective(126.386cqw)
+    rotateZ(31.018deg) rotateY(-38.235deg) rotateX(-15.731deg)
+    scale(0.42507)
+    translate(-26.985cqw, -65.672cqw);
   /* schermnormaal uit de rotatieketen hierboven: (n-x, n-y) is de kant
      waar een deeltje heen schuift, n-z de diepte die groei wordt */
-  --n-x: -0.683;
-  --n-y: -0.078;
-  --n-z: 0.726;
+  --n-x: -0.650;
+  --n-y: -0.075;
+  --n-z: 0.756;
   /* de vier gemeten hoeken, voor de geboorteplek over het hele vlak */
   --glass-ax: 54.3cqw;
   --glass-ay: 5.9cqw;

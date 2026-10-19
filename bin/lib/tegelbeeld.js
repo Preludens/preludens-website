@@ -1,18 +1,18 @@
-// Maakt van een screenshot een tegelversie van precies 16:9.
-// Eerst bewust bijsnijden (maximaal MAXCROP, op de plek met de meeste
-// beeldinformatie), daarna de rest opvullen door de randrij/-kolom door te
-// trekken en zacht te laten uitlopen naar de gemiddelde randkleur. Zo valt er
+// Maakt van een screenshot een tegelversie in een gevraagde beeldverhouding.
+// Het beeld wordt niet bijgesneden maar opgevuld: de randrij of -kolom wordt
+// doorgetrokken en loopt zacht uit naar de gemiddelde randkleur. Zo valt er
 // geen UI weg en blijft er geen zwart gat over.
-// node tegel.js <in.rgba> <W> <H> <out.rgba> <outW> <outH>
+// node tegelbeeld.js <in.rgba> <W> <H> <out.rgba> <outW> <outH>
 const fs = require('fs');
 const [, , inPath, Ws, Hs, outPath, OWs, OHs] = process.argv;
 const W = +Ws, H = +Hs, OW = +OWs, OH = +OHs;
-// Niet bijsnijden tenzij het moet: wegsnijden kost UI, opvullen niet. Pas als
-// de op te vullen band groter zou worden dan MAXPAD wordt er zoveel
-// bijgesneden als nodig is om daaronder te blijven.
-const MAXPAD = 0.22;
+// Niet bijsnijden tenzij het echt moet: wegsnijden kost UI, opvullen niet.
+// MAXPAD staat ruim genoeg om voor alle bestaande beelden en alle vier de
+// kaders bij opvullen te blijven; pas als de band breder zou worden wordt er
+// zoveel bijgesneden als nodig is om eronder te blijven.
+const MAXPAD = Number(process.env.MAXPAD || 0.46);
 const src = fs.readFileSync(inPath);
-const AR = 16 / 9;
+const AR = OW / OH;
 
 const at = (x, y) => (y * W + x) * 4;
 
@@ -98,7 +98,10 @@ function fillBand(fromX, fromY, toX, toY, edge, depthMax) {
     const depth = edge === 'top' ? dy - y : edge === 'bottom' ? y - (dy + dh - 1)
                 : edge === 'left' ? dx - x : x - (dx + dw - 1);
     const t = Math.min(1, Math.max(0, depth / Math.max(1, depthMax)));
-    const k = t * t * 0.85;
+    // Vlak bij de rand telt de doorgetrokken rij zwaar, verderop wint de
+    // gemiddelde randkleur het helemaal. Zonder dat laatste gaat een drukke
+    // rand strepen over een brede band.
+    const k = Math.pow(t, 1.2);
     const d = (y * OW + x) * 4;
     out[d] = Math.round(out[e] * (1 - k) + mean[0] * k);
     out[d + 1] = Math.round(out[e + 1] * (1 - k) + mean[1] * k);
