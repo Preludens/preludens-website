@@ -74,6 +74,26 @@
   --lineplay-opacity-strong: 0.55;
 }
 
+/* Focusring — WCAG 1.4.11 vraagt 3:1 voor niet-tekstuele elementen.
+
+   Eén kleur redt dat hier niet: tegen #F6F9F9 moet de ring donker zijn, tegen
+   #113847 juist licht, en geen enkele tint uit het palet haalt allebei. Daarom
+   twee ringen uit het bestaande palet — een gouden binnenring en een
+   donkerblauwe buitenring. Ze verschillen onderling 9,3:1, dus op elke
+   ondergrond springt minstens één van de twee eruit. */
+@mixin focus-ring($offset: 3px) {
+  outline: 3px solid var(--color-deep-navy);
+  outline-offset: $offset;
+  box-shadow: 0 0 0 $offset var(--color-soft-gold);
+}
+
+/* Zelfde idee, maar naar binnen gekeerd: voor links die de hele kaart vullen. */
+@mixin focus-ring-inset($width: 3px) {
+  outline: $width solid var(--color-deep-navy);
+  outline-offset: -($width * 2);
+  box-shadow: inset 0 0 0 $width var(--color-soft-gold);
+}
+
 *,
 *::before,
 *::after {
@@ -290,7 +310,7 @@ p { margin: 0 0 var(--space-sm); }
 
   &:hover,
   &:focus-visible {
-    color: var(--color-preludens-gold);
+    color: var(--color-ink-gold);
   }
 }
 
@@ -299,12 +319,11 @@ p { margin: 0 0 var(--space-sm); }
   transition: color var(--transition);
 
   &:focus-visible {
-    outline: 2px solid var(--color-preludens-gold);
-    outline-offset: -2px;
+    @include focus-ring-inset(2px);
   }
 
   &.is-active {
-    color: var(--color-preludens-gold);
+    color: var(--color-ink-gold);
   }
 }
 
@@ -362,9 +381,11 @@ p { margin: 0 0 var(--space-sm); }
       transition: width 0.28s ease;
     }
 
+    /* Op de lichte header haalt het heldere goud maar 1,96:1; --color-ink-gold
+       is de tekst-op-licht variant van dezelfde accentkleur (5,57:1). */
     &:hover,
     &[aria-current="page"] {
-      color: var(--color-preludens-gold);
+      color: var(--color-ink-gold);
     }
 
     &:hover::after,
@@ -455,6 +476,13 @@ p { margin: 0 0 var(--space-sm); }
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-soft);
+}
+
+/* Knoppen leunden op de standaardring van de browser. Die is op de donkere
+   banden niet betrouwbaar meetbaar; met dezelfde ring als de rest van de site
+   haalt hij overal 3:1. */
+.btn:focus-visible {
+  @include focus-ring(3px);
 }
 
 .btn-primary {
@@ -1335,8 +1363,7 @@ p { margin: 0 0 var(--space-sm); }
   }
 
   &:focus-visible {
-    outline: 3px solid var(--color-coral);
-    outline-offset: 3px;
+    @include focus-ring(3px);
   }
 
   &.is-active {
@@ -1431,8 +1458,7 @@ p { margin: 0 0 var(--space-sm); }
     }
 
     &:focus-visible {
-      outline: 3px solid var(--color-coral);
-      outline-offset: 3px;
+      @include focus-ring(3px);
     }
   }
 
@@ -1756,8 +1782,7 @@ p { margin: 0 0 var(--space-sm); }
   }
 
   &:focus-visible {
-    outline: 3px solid var(--color-coral);
-    outline-offset: 3px;
+    @include focus-ring(3px);
   }
 
   &__media {
@@ -1867,7 +1892,9 @@ p { margin: 0 0 var(--space-sm); }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(11, 42, 53, 0.55) 0%, rgba(11, 42, 53, 0.4) 40%, rgba(11, 42, 53, 0.9) 100%);
+  /* Zwaarder in het midden: op de lichtste herobeelden zakte de titel daar naar
+     2,36:1 en de lead naar 4,26:1. */
+  background: linear-gradient(180deg, rgba(11, 42, 53, 0.72) 0%, rgba(11, 42, 53, 0.68) 40%, rgba(11, 42, 53, 0.94) 100%);
   pointer-events: none;
 }
 
@@ -1947,8 +1974,7 @@ a.verhaal-chip {
   }
 
   &:focus-visible {
-    outline: 3px solid var(--color-preludens-gold);
-    outline-offset: 3px;
+    @include focus-ring(3px);
   }
 }
 
@@ -2094,8 +2120,7 @@ a.verhaal-chip {
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-gold);
-    outline-offset: 3px;
+    @include focus-ring(3px);
   }
 }
 
@@ -2278,7 +2303,9 @@ a.verhaal-chip {
 
   figcaption {
     margin-top: var(--space-xs);
-    color: var(--color-ink-soft);
+    /* 14,4px op het licht getinte asidevlak haalde met --color-ink-soft 4,35:1;
+       --color-harbor-teal is de volgende stap in dezelfde koele reeks. */
+    color: var(--color-harbor-teal);
     font-size: 0.9rem;
     line-height: 1.4;
   }
@@ -2373,8 +2400,7 @@ a.verhaal-chip {
   }
 
   &:focus-visible {
-    outline: 3px solid var(--color-coral);
-    outline-offset: 3px;
+    @include focus-ring(3px);
   }
 }
 
@@ -3674,11 +3700,13 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
     color: #000;
   }
 
+  /* Wit op goud haalde 2,07:1. Donkerblauw op goud is dezelfde combinatie die
+     .btn-primary al gebruikt en haalt 7,4:1. */
   &.is-active,
   &.is-active:hover {
     background: var(--color-preludens-gold);
     border: 0;
-    color: #fff;
+    color: var(--color-deep-navy);
   }
 }
 
@@ -3714,8 +3742,7 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   }
 
   &:focus {
-    outline: 3px solid var(--color-coral);
-    outline-offset: 3px;
+    @include focus-ring(3px);
     background: #fff;
   }
 }
@@ -3841,8 +3868,7 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   }
 
   &:focus-visible {
-    outline: 3px solid var(--color-coral);
-    outline-offset: 3px;
+    @include focus-ring(3px);
   }
 }
 
@@ -4019,8 +4045,7 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   }
 
   &:focus-visible {
-    outline: 3px solid var(--color-coral);
-    outline-offset: -3px;
+    @include focus-ring-inset(3px);
   }
 }
 
@@ -4175,14 +4200,18 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 
 /* De tekst staat bovenaan en blijft altijd bovenop: wat uit het glas ontsnapt
    schuift eronderdoor in plaats van eroverheen. */
+/* De uitfade zit vast aan de onderste padding in plaats van aan een percentage.
+   Zo blijft de scrim dekkend tot voorbij de laatste tekstregel, ook als de
+   tegel smaller wordt en de tekst meer regels nodig heeft — dezelfde ingreep
+   als bij .sp-track--cinema, waar de oude verlooptrap op 390px de knoptekst
+   naar 3,96:1 duwde. */
 .page-verhalen-test .strip-tile--cinema .strip-tile__copy {
   z-index: 6;
   padding: 1.75rem 1.7rem 3.25rem;
   background: linear-gradient(
     to bottom,
-    rgba(5, 22, 29, 0.93) 0%,
-    rgba(5, 22, 29, 0.84) 42%,
-    rgba(5, 22, 29, 0.52) 72%,
+    rgba(5, 22, 29, 0.95) 0%,
+    rgba(5, 22, 29, 0.9) calc(100% - 3.25rem),
     rgba(5, 22, 29, 0) 100%
   );
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;

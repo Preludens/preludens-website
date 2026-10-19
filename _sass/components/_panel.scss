@@ -63,9 +63,12 @@ body.page-panels {
   letter-spacing: 0.015em;
 }
 
+/* Oplichtwoord op de lichte panelen: het heldere goud haalt daar maar
+   1,7–2,0:1, ook als grote kop. --color-ink-gold is dezelfde accentkleur in de
+   tekst-op-licht variant en haalt 5,0:1 of meer. */
 .panel h2 .hl,
 body.page-panels .hl {
-  color: var(--color-preludens-gold);
+  color: var(--color-ink-gold);
 }
 
 .panel h3 {
@@ -166,8 +169,14 @@ body.page-panels .sp-actions .btn {
     text-align: center;
   }
 
+  /* Elk mistpaneel heeft de gouden radial wash hierboven, en de --line-variant
+     legt er ook nog een decoratieve SVG overheen. Waar die het dichtst zijn
+     zakt het vlak van #E7EEF0 naar #E7E6D9 / #CCD3D6 en haalde
+     --color-ink-soft nog 4,29–4,48:1 — op 390px het vaakst, omdat de wash daar
+     een groter deel van het paneel beslaat. --color-harbor-teal is de volgende
+     stap in dezelfde koele reeks en houdt het overal boven 5:1. */
   p {
-    color: var(--color-ink-soft);
+    color: var(--color-harbor-teal);
   }
 }
 
