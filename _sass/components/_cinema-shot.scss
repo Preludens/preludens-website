@@ -27,6 +27,40 @@
    uitgerekt of weggesneden wordt. Verandert hier een verhouding, dan moet
    bin/maak-tegelbeelden mee.
 
+   HOE DE GLAS-FIT GECONTROLEERD WORDT - twee kanten op, en niet op dekking.
+
+   De eerdere controle was een dekkingsmaat: hoeveel van het schermgat ligt
+   binnen de quad? Die vangt een quad die te klein is, maar een quad die te
+   groot is haalt juist 1,0 en glipt er dus doorheen. De controle die hier
+   hoort kijkt daarom beide kanten op, en wel in de glasruimte zelf: met de
+   keten van --glass-t wordt het kaderbeeld teruggeklapt naar de rechthoek van
+   --glass-w bij --glass-h, waarin het scherm recht ligt. Per zijde gaat er een
+   bundel stralen van binnen naar buiten en wordt gekeken waar de dekking van
+   het kaderbeeld omslaat van doorzichtig (het gat) naar ondoorzichtig.
+
+     rand    de plek van die omslag, gerekend vanaf de zijde. Positief = het
+             gat houdt al binnen de rechthoek op, dus de quad is te groot;
+             negatief = het gat loopt door buiten de rechthoek, dus te klein.
+             Eén getal dat allebei de fouten vangt. Een vinger of duim over het
+             glas slaat veel te vroeg om en zit in de hoge percentielen; de
+             mediaan is daar ongevoelig voor.
+     bezel   hoe ver het ondoorzichtige beeld daarachter doorloopt. Dit zegt of
+             er na de rand nog iets van het toestel te zien is. Let op: staat
+             het toestel op een ondoorzichtige ondergrond, zoals de tafel bij
+             kader 2, dan loopt die band de omgeving in en loopt de meting vast
+             op haar bovengrens. Daar blijft alleen kijken over.
+
+   Gemeten stand, mediaan van de rand per zijde (boven/rechts/onder/links, in
+   honderdsten van de schermbreedte): kader 1  0,08 / 0,12 / 0,12 / 0,20 —
+   kader 2  0,24 / 0,08 / 0,20 / -0,12 — kader 3  0,04 / 0,10 / 0,04 / 0,02 —
+   kader 4  0,08 / 0,08 / 0,08 / 0,12. Alle vier de quads liggen dus binnen een
+   kwart honderdste op het gat; de hoeken hoeven niet bijgesteld.
+
+   Wat de dekkingsmaat én de randmaat allebei niet zien: of er bezel ís. Bij
+   kader 1 en 2 loopt het uitgeknipte gat tot aan de omtrek van het toestel, en
+   dan raakt een quad die precies klopt de buitenwereld. Die rand wordt daarom
+   zelf gezet, met --glass-bezel bij .tablet-shot__screen.
+
    RUIMTELIJKE EMERGENTIE - de deeltjes komen loodrecht uit het glas naar de
    kijker, niet naar de handen en niet uit een punt.
 
@@ -127,6 +161,13 @@ $cinema-wake: '.strip-grid > [role="listitem"]:hover, .strip-grid > [role="listi
   --glass-cy: 31.49cqw;
   --glass-dx: 42.22cqw;
   --glass-dy: 42.34cqw;
+  /* Dit kaderbeeld heeft zelf bijna geen bezel: het gat loopt tot aan de
+     omtrek van het toestel. Band buiten het gat op zijn dunst (5e percentiel,
+     in honderdsten van de schermbreedte): boven 0,08  rechts 0,16  onder 0,68
+     links 1,64. Alleen links, waar de zijkant van het toestel meekijkt, is het
+     genoeg. De rand komt dus hiervandaan, op de maat die de monitor en de
+     laptop zelf al hebben. */
+  --glass-bezel: 0.02;
   --tilt: 0deg;
   --nudge: 0%;
   --lift: 0%;
@@ -161,6 +202,14 @@ $cinema-wake: '.strip-grid > [role="listitem"]:hover, .strip-grid > [role="listi
   --glass-cy: 48.07cqw;
   --glass-dx: 27.19cqw;
   --glass-dy: 35.87cqw;
+  /* Ook hier loopt het gat tot aan de omtrek van het toestel. De maat van de
+     band buiten het gat zegt bij dit kader niets: het toestel ligt op een
+     ondoorzichtige tafel, dus die band loopt gewoon door en de meting loopt
+     vast op zijn bovengrens. Wat er wél te zien is, is dat de content langs de
+     bovenrand en de rechterrand tot tegen de tafel komt. De rand komt dus
+     hiervandaan; alleen links heeft het toestel een eigen zijkant die al
+     meetelt. */
+  --glass-bezel: 0.02;
   --tilt: -1.2deg;
   --nudge: -1%;
 }
@@ -193,6 +242,9 @@ $cinema-wake: '.strip-grid > [role="listitem"]:hover, .strip-grid > [role="listi
   --glass-cy: 39.55cqw;
   --glass-dx: 12.30cqw;
   --glass-dy: 47.35cqw;
+  /* Deze monitor heeft een echte bezel in het beeld zelf (mediaan boven 1,12
+     rechts 1,72 onder 2,48 links 2,40), dus er hoeft er geen bij. */
+  --glass-bezel: 0;
   --tilt: 1deg;
   --nudge: 6%;
 }
@@ -224,6 +276,10 @@ $cinema-wake: '.strip-grid > [role="listitem"]:hover, .strip-grid > [role="listi
   --glass-cy: 47.83cqw;
   --glass-dx: 45.77cqw;
   --glass-dy: 28.85cqw;
+  /* De laptop heeft de ruimste eigen bezel van de vier (mediaan boven 5,04
+     rechts 3,44 links 2,44, onder tot aan het scharnier), dus er hoeft er geen
+     bij. */
+  --glass-bezel: 0;
   --tilt: -1deg;
   --nudge: -12%;
 }
@@ -271,19 +327,39 @@ $cinema-wake: '.strip-grid > [role="listitem"]:hover, .strip-grid > [role="listi
   transition: transform 0.45s ease, opacity 0.45s ease;
 }
 
-/* De screenshot ligt achter het kader, in het vlak van het glas. Alle vier de
-   glasvlakken zijn 16:9, en elke tegel toont een tegelversie van de screenshot
-   die óók precies 16:9 is (zie bin/maak-tegelbeelden). Het glas is daardoor
-   helemaal gevuld: niets uitgerekt, niets weggesneden, geen zwarte balk. De
-   achtergrondkleur is alleen nog een vangnet voor een beeld zonder
-   tegelversie. */
+/* De screenshot ligt achter het kader, in het vlak van het glas. Elk glasvlak
+   heeft zijn eigen beeldverhouding en elke tegel toont de tegelversie van de
+   screenshot die precies díe verhouding heeft (zie bin/maak-tegelbeelden).
+
+   DE BEZEL KOMT HIERVANDAAN. Dit vlak is zo groot als het gemeten schermgat,
+   maar de screenshot staat er met --glass-bezel binnen de rand. Wat overblijft
+   is een donkere rand in het vlak van het glas, die dus netjes met het scherm
+   mee kantelt. Dat is nodig omdat twee van de vier kaderbeelden zelf geen
+   bezel hebben: bij hands-tablet en hands-tablet-tafel loopt het uitgeknipte
+   gat tot aan de omtrek van het toestel. Bij hands-tablet houdt over de hele
+   bovenzijde minder dan 0,6 van de schermbreedte aan toestel over (mediaan
+   0,20) en over 42% van de rechterzijde net zo, tegen 1,1 tot 5,0 bij de
+   monitor en de laptop. Zonder die rand raakt de content de buitenwereld en is
+   er van de bezel niets meer te zien.
+
+   De inzet is evenredig — --glass-bezel maal de breedte én maal de hoogte —
+   zodat het binnenvlak exact dezelfde verhouding houdt als het glas zelf. De
+   tegelversie past er daardoor nog steeds rand tot rand in: niets uitgerekt,
+   niets weggesneden, en bin/maak-tegelbeelden hoeft niet mee te veranderen.
+   Een kader dat --glass-bezel niet zelf zet erft de 0,02 van het basisblok —
+   dat is de kant waar het fout gaan mag.
+
+   De achtergrondkleur is behalve de bezel ook nog het vangnet voor een beeld
+   zonder tegelversie. */
 .tablet-shot--cinema .tablet-shot__screen {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 1;
+  box-sizing: border-box;
   width: var(--glass-w);
   height: var(--glass-h);
+  padding: calc(var(--glass-h) * var(--glass-bezel, 0)) calc(var(--glass-w) * var(--glass-bezel, 0));
   overflow: hidden;
   background: #07141A;
   transform-origin: 0 0;
