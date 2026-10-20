@@ -108,6 +108,9 @@
       var isActive = tab.getAttribute("data-verhaal-filter") === activeFilter;
       tab.classList.toggle("is-active", isActive);
       tab.setAttribute("aria-selected", isActive ? "true" : "false");
+      // Rollende tabindex: alleen de actieve tab staat in de tabvolgorde, de
+      // rest bereik je met de pijltjes. Dat hoort bij role="tablist".
+      tab.setAttribute("tabindex", isActive ? "0" : "-1");
       if (isActive && panel) {
         panel.setAttribute("aria-labelledby", tab.id);
       }
@@ -338,14 +341,47 @@
     });
   }
 
-  tabs.forEach(function (tab) {
+  function selectTab(tab, moveFocus) {
+    // Behoud scrollpositie: layoutwissel mag de pagina niet laten springen
+    var scrollY = window.scrollY;
+    applyFilter(tab.getAttribute("data-verhaal-filter"), true);
+    if (moveFocus) tab.focus();
+    if (typeof window.scrollTo === "function") {
+      window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
+    }
+  }
+
+  tabs.forEach(function (tab, index) {
     tab.addEventListener("click", function () {
-      // Behoud scrollpositie: layoutwissel mag de pagina niet laten springen
-      var scrollY = window.scrollY;
-      applyFilter(tab.getAttribute("data-verhaal-filter"), true);
-      if (typeof window.scrollTo === "function") {
-        window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
+      selectTab(tab, false);
+    });
+
+    // Pijltjes lopen door de tabs, Home en End springen naar de eerste en
+    // laatste. De selectie volgt de focus, zoals bij een tablist gebruikelijk.
+    tab.addEventListener("keydown", function (event) {
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      var last = tabs.length - 1;
+      var next;
+      switch (event.key) {
+        case "ArrowRight":
+        case "ArrowDown":
+          next = index === last ? 0 : index + 1;
+          break;
+        case "ArrowLeft":
+        case "ArrowUp":
+          next = index === 0 ? last : index - 1;
+          break;
+        case "Home":
+          next = 0;
+          break;
+        case "End":
+          next = last;
+          break;
+        default:
+          return;
       }
+      event.preventDefault();
+      selectTab(tabs[next], true);
     });
   });
 

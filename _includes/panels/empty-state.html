@@ -1,0 +1,21 @@
+{% comment %}
+  Lege staat onder een gefilterd overzicht. main.js toont hem en wisselt de
+  tekst op basis van de data-attributen, dus die namen moeten exact blijven:
+  data-verhalen-empty op de wrapper en data-<soort>-title / data-<soort>-text
+  op de twee alinea's.
+
+  Pass: title, text (de getoonde tekst) en de attribuutteksten per soort:
+  whitepapers_title, whitepapers_text, demos_title, demos_text.
+{% endcomment %}
+<div class="sp-empty" data-verhalen-empty hidden>
+  <p
+    class="verhalen-empty__title sp-empty__title"
+    data-whitepapers-title="{{ include.whitepapers_title }}"
+    data-demos-title="{{ include.demos_title }}"
+  >{{ include.title }}</p>
+  <p
+    class="verhalen-empty__text sp-empty__text"
+    data-whitepapers-text="{{ include.whitepapers_text }}"
+    data-demos-text="{{ include.demos_text }}"
+  >{{ include.text }}</p>
+</div>

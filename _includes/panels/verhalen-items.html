@@ -1,0 +1,104 @@
+{% comment %}
+  Bouwt de kaarten voor het verhalenoverzicht op uit panels/post.html.
+  Pass: scope ("featured" of "grid").
+
+  De selectie is dezelfde als voorheen: uitgelicht is één project, één
+  kennisartikel en één demo; het raster bevat alles wat niet uitgelicht is.
+  Elk item in het raster houdt zijn wrapper met data-verhaal-type, want daar
+  hangt het filter in assets/js/main.js aan.
+{% endcomment %}
+{% include locale.html %}
+{% assign current_lang = site.active_lang | default: site.default_lang %}
+{% assign verhalen = site.verhalen | sort: "order" %}
+{% assign posts = site.play_blog | sort: "date" | reverse %}
+
+{% if include.scope == "featured" %}
+  {% for verhaal in verhalen %}
+    {% assign item_lang = verhaal.lang | default: site.default_lang %}
+    {% unless item_lang == current_lang %}{% continue %}{% endunless %}
+    {% unless verhaal.featured %}{% continue %}{% endunless %}
+    {% assign verhaal_type = verhaal.type | default: "projecten" %}
+    {% if verhaal_type == "projecten" and featured_project == nil %}
+      {% assign featured_project = verhaal %}
+    {% elsif verhaal_type == "demos" and featured_demo == nil %}
+      {% assign featured_demo = verhaal %}
+    {% endif %}
+  {% endfor %}
+  {% for post in posts %}
+    {% assign item_lang = post.lang | default: site.default_lang %}
+    {% unless item_lang == current_lang %}{% continue %}{% endunless %}
+    {% unless post.featured %}{% continue %}{% endunless %}
+    {% unless featured_kennis %}{% assign featured_kennis = post %}{% endunless %}
+  {% endfor %}
+
+  {% if featured_project %}
+    {% assign img = "" %}
+    {% if featured_project.image %}{% unless featured_project.image contains "://" %}
+      {% if featured_project.image contains "/" %}{% assign img = featured_project.image %}
+      {% else %}{% assign img = "/assets/images/verhalen/" | append: featured_project.image %}{% endif %}
+    {% endunless %}{% endif %}
+    {% assign aria = t.verhaal.read_story | append: ": " | append: featured_project.title %}
+    {% if featured_project.client %}{% assign aria = aria | append: ", " | append: featured_project.client %}{% endif %}
+    {% capture flag %}{{ t.verhalen.featured_label }} · {{ t.verhalen.type_project }}{% endcapture %}
+    {% include panels/post.html variant="featured" type="projecten" href=featured_project.url title=featured_project.title text=featured_project.summary cta=t.verhaal.read_story aria=aria label=flag meta=featured_project.client image=img alt="" ratio="16 / 9" %}
+  {% endif %}
+  {% if featured_kennis %}
+    {% assign aria = t.play_blog.read_post_aria | replace: "%s", featured_kennis.title %}
+    {% capture flag %}{{ t.verhalen.featured_label }} · {{ t.verhalen.type_knowledge }}{% endcapture %}
+    {% assign month_index = featured_kennis.date | date: "%-m" | minus: 1 %}
+    {% capture kennis_date %}{{ featured_kennis.date | date: "%-d" }} {{ t.months[month_index] }} {{ featured_kennis.date | date: "%Y" }}{% endcapture %}
+    {% assign kennis_stamp = featured_kennis.date | date: "%Y-%m-%d" %}
+    {% include panels/post.html variant="featured" type="kennis" href=featured_kennis.url title=featured_kennis.title text=featured_kennis.summary cta=t.play_blog.read_post aria=aria label=flag meta=kennis_date datetime=kennis_stamp meta2=featured_kennis.reading_time %}
+  {% endif %}
+  {% if featured_demo %}
+    {% assign img = "" %}
+    {% if featured_demo.image %}{% unless featured_demo.image contains "://" %}
+      {% if featured_demo.image contains "/" %}{% assign img = featured_demo.image %}
+      {% else %}{% assign img = "/assets/images/verhalen/" | append: featured_demo.image %}{% endif %}
+    {% endunless %}{% endif %}
+    {% assign aria = t.verhalen.read_demo_aria | replace: "%s", featured_demo.title %}
+    {% capture flag %}{{ t.verhalen.featured_label }} · {{ t.verhalen.type_demo }}{% endcapture %}
+    {% include panels/post.html variant="featured" type="demos" href=featured_demo.url title=featured_demo.title text=featured_demo.summary cta=t.verhalen.read_demo aria=aria label=flag meta=featured_demo.project image=img alt="" ratio="16 / 9" %}
+  {% endif %}
+
+{% else %}
+  {% for verhaal in verhalen %}
+    {% assign item_lang = verhaal.lang | default: site.default_lang %}
+    {% unless item_lang == current_lang %}{% continue %}{% endunless %}
+    {% if verhaal.featured %}{% continue %}{% endif %}
+    {% assign verhaal_type = verhaal.type | default: "projecten" %}
+    {% assign img = "" %}
+    {% if verhaal.image %}{% unless verhaal.image contains "://" %}
+      {% if verhaal.image contains "/" %}{% assign img = verhaal.image %}
+      {% else %}{% assign img = "/assets/images/verhalen/" | append: verhaal.image %}{% endif %}
+    {% endunless %}{% endif %}
+    {% if verhaal_type == "demos" %}
+      {% assign aria = t.verhalen.read_demo_aria | replace: "%s", verhaal.title %}
+      {% assign cta = t.verhalen.read_demo %}
+      {% assign type_label = t.verhalen.type_demo %}
+      {% assign meta = verhaal.project %}
+    {% else %}
+      {% assign aria = t.verhaal.read_story | append: ": " | append: verhaal.title %}
+      {% if verhaal.client %}{% assign aria = aria | append: ", " | append: verhaal.client %}{% endif %}
+      {% assign cta = t.verhaal.read_story %}
+      {% assign type_label = t.verhalen.type_project %}
+      {% assign meta = verhaal.client %}
+    {% endif %}
+    <div role="listitem" data-verhaal-type="{{ verhaal_type }}">
+      {% include panels/post.html href=verhaal.url title=verhaal.title text=verhaal.summary cta=cta aria=aria label=type_label meta=meta image=img alt="" ratio="16 / 9" %}
+    </div>
+  {% endfor %}
+
+  {% for post in posts %}
+    {% assign item_lang = post.lang | default: site.default_lang %}
+    {% unless item_lang == current_lang %}{% continue %}{% endunless %}
+    {% if post.featured %}{% continue %}{% endif %}
+    {% assign aria = t.play_blog.read_post_aria | replace: "%s", post.title %}
+    {% assign month_index = post.date | date: "%-m" | minus: 1 %}
+    {% capture post_date %}{{ post.date | date: "%-d" }} {{ t.months[month_index] }} {{ post.date | date: "%Y" }}{% endcapture %}
+    {% assign post_stamp = post.date | date: "%Y-%m-%d" %}
+    <div role="listitem" data-verhaal-type="kennis">
+      {% include panels/post.html href=post.url title=post.title text=post.summary cta=t.play_blog.read_post aria=aria label=t.verhalen.type_knowledge meta=post_date datetime=post_stamp meta2=post.reading_time %}
+    </div>
+  {% endfor %}
+{% endif %}
