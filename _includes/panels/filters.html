@@ -1,0 +1,22 @@
+{% comment %}
+  Filterbalk boven een overzicht. De haken waar assets/js/main.js aan hangt
+  moeten exact blijven: [data-verhalen-filters] op de balk, [data-verhaal-filter]
+  op elke knop met de waarden all/projecten/kennis/whitepapers/demos, en de
+  id's verhalen-filter-<waarde> waar het paneel via aria-labelledby naar wijst.
+
+  Toetsenbord: de knoppen vormen een tablist, dus main.js zet pijltjes, Home en
+  End op en houdt via tabindex alleen de actieve tab in de tabvolgorde.
+
+  Pass: label, all, projects, knowledge, whitepapers, demos (de knoplabels).
+{% endcomment %}
+{% include locale.html %}
+<div class="sp-filters" data-verhalen-filters>
+  <p class="sp-filters__label" id="verhalen-filter-label">{{ include.label }}</p>
+  <div class="sp-filters__list" role="tablist" aria-labelledby="verhalen-filter-label">
+    <button class="sp-filters__btn is-active" type="button" role="tab" id="verhalen-filter-all" aria-selected="true" aria-controls="verhalen-panel" data-verhaal-filter="all">{{ include.all }}</button>
+    <button class="sp-filters__btn" type="button" role="tab" id="verhalen-filter-projecten" aria-selected="false" aria-controls="verhalen-panel" data-verhaal-filter="projecten">{{ include.projects }}</button>
+    <button class="sp-filters__btn" type="button" role="tab" id="verhalen-filter-kennis" aria-selected="false" aria-controls="verhalen-panel" data-verhaal-filter="kennis">{{ include.knowledge }}</button>
+    <button class="sp-filters__btn" type="button" role="tab" id="verhalen-filter-whitepapers" aria-selected="false" aria-controls="verhalen-panel" data-verhaal-filter="whitepapers">{{ include.whitepapers }}</button>
+    <button class="sp-filters__btn" type="button" role="tab" id="verhalen-filter-demos" aria-selected="false" aria-controls="verhalen-panel" data-verhaal-filter="demos">{{ include.demos }}</button>
+  </div>
+</div>

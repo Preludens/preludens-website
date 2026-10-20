@@ -653,6 +653,149 @@ body.page-panels .sp-actions .btn {
   }
 }
 
+/* Kaart met beeld bovenin, en de uitgelichte variant die twee kolommen pakt. */
+.sp-post__media {
+  margin: calc(clamp(1.35rem, 2.5vw, 1.85rem) * -1);
+  margin-bottom: clamp(1rem, 2vw, 1.35rem);
+}
+
+.sp-post__media .sp-media__figure {
+  margin: 0;
+}
+
+.sp-post__copy {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.sp-post__metas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+}
+
+.sp-post__label + .sp-post__metas {
+  margin-top: 0.3rem;
+}
+
+@media (min-width: 800px) {
+  .sp-posts .sp-post--featured {
+    grid-column: 1 / -1;
+  }
+
+  .sp-post--featured .sp-post__link {
+    flex-direction: row;
+    align-items: stretch;
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+  }
+
+  .sp-post--featured .sp-post__media {
+    flex: 0 0 38%;
+    margin: calc(clamp(1.35rem, 2.5vw, 1.85rem) * -1) 0 calc(clamp(1.35rem, 2.5vw, 1.85rem) * -1) calc(clamp(1.35rem, 2.5vw, 1.85rem) * -1);
+  }
+
+  .sp-post--featured .sp-post__media .sp-media__frame {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .sp-post--featured .sp-post__media img {
+    height: 100%;
+  }
+
+  .panel .sp-post--featured .sp-post__title {
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+  }
+}
+
+/* Filterbalk boven een overzicht (panels/filters.html). */
+.sp-filters {
+  margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
+}
+
+.panel .sp-filters__label {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ink-gold);
+}
+
+.sp-filters__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.sp-filters__btn {
+  padding: 0.6rem 1.15rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.sp-filters__btn:hover {
+  border-color: var(--color-harbor-teal);
+  background: var(--color-mist-blue);
+}
+
+.sp-filters__btn.is-active {
+  background: var(--color-brand-navy);
+  border-color: var(--color-brand-navy);
+  color: var(--color-white);
+}
+
+.sp-filters__btn:focus-visible {
+  @include focus-ring(2px);
+}
+
+/* Lege staat onder een gefilterd overzicht (panels/empty-state.html). */
+.sp-empty {
+  margin-top: clamp(var(--space-md), 3vh, var(--space-lg));
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  text-align: center;
+}
+
+.sp-empty[hidden] {
+  display: none;
+}
+
+.panel .sp-empty__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.panel .sp-empty__text {
+  margin: 0.5rem auto 0;
+  max-width: 60ch;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--color-harbor-teal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-filters__btn {
+    transition: none;
+  }
+}
+
 /* Een checklist van vijf of meer regels wordt in een volle band een erg lange
    kolom; twee kolommen leest dan rustiger. */
 @media (min-width: 720px) {

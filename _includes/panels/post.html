@@ -1,26 +1,43 @@
 {% comment %}
-  Eén aanklikbare kaart in een overzicht (panels/posts.html): een metaregel,
-  een titel, een korte tekst en een leeslink. De hele kaart is de link.
+  Eén aanklikbare kaart in een overzicht (panels/posts.html): eventueel een
+  beeld, een soort-label, een metaregel, een titel, een korte tekst en een
+  leeslink. De hele kaart is de link.
 
-  Pass: href, title, text, cta, aria, meta, datetime, label.
+  Pass: href, title, text, cta, aria, label, meta, meta2, datetime,
+        image, webp, alt, ratio, variant, type.
 
   `meta` is de regel boven de titel. Staat er ook een `datetime` bij, dan komt
-  die regel in een <time>-element; anders is het gewone tekst. Zo kan dezelfde
-  kaart een publicatiedatum dragen of bijvoorbeeld een opdrachtgever.
-  `label` is een optioneel soort-label boven de meta.
+  die in een <time>-element; anders is het gewone tekst. Zo draagt dezelfde
+  kaart een publicatiedatum of bijvoorbeeld een opdrachtgever. `meta2` is een
+  tweede gegeven op diezelfde regel (bijvoorbeeld de leestijd).
+
+  `variant="featured"` maakt er een bredere uitgelichte teaser van.
+  `type` zet data-verhaal-type op de kaart, voor het filter op /verhalen/.
 {% endcomment %}
-<article class="sp-post">
+<article class="sp-post{% if include.variant %} sp-post--{{ include.variant }}{% endif %}{% if include.image %} sp-post--media{% endif %}"{% if include.type %} data-verhaal-type="{{ include.type }}"{% endif %}>
   <a class="sp-post__link" href="{{ include.href | relative_url }}"{% if include.aria %} aria-label="{{ include.aria }}"{% endif %}>
-    {% if include.label %}<span class="sp-post__label">{{ include.label }}</span>{% endif %}
-    {% if include.meta %}
-      {% if include.datetime %}
-        <time class="sp-post__meta" datetime="{{ include.datetime }}">{{ include.meta }}</time>
-      {% else %}
-        <span class="sp-post__meta">{{ include.meta }}</span>
-      {% endif %}
+    {% if include.image %}
+      <div class="sp-post__media">
+        {% include panels/figure.html src=include.image webp=include.webp alt=include.alt ratio=include.ratio %}
+      </div>
     {% endif %}
-    <h2 class="sp-post__title">{{ include.title }}</h2>
-    {% if include.text %}<p class="sp-post__text">{{ include.text }}</p>{% endif %}
-    {% if include.cta %}<span class="sp-post__cta">{{ include.cta }} <span aria-hidden="true">&rarr;</span></span>{% endif %}
+    <div class="sp-post__copy">
+      {% if include.label %}<span class="sp-post__label">{{ include.label }}</span>{% endif %}
+      {% if include.meta or include.meta2 %}
+      <span class="sp-post__metas">
+        {% if include.meta %}
+          {% if include.datetime %}
+            <time class="sp-post__meta" datetime="{{ include.datetime }}">{{ include.meta }}</time>
+          {% else %}
+            <span class="sp-post__meta">{{ include.meta }}</span>
+          {% endif %}
+        {% endif %}
+        {% if include.meta2 %}<span class="sp-post__meta">{{ include.meta2 }}</span>{% endif %}
+      </span>
+      {% endif %}
+      <h2 class="sp-post__title">{{ include.title }}</h2>
+      {% if include.text %}<p class="sp-post__text">{{ include.text }}</p>{% endif %}
+      {% if include.cta %}<span class="sp-post__cta">{{ include.cta }} <span aria-hidden="true">&rarr;</span></span>{% endif %}
+    </div>
   </a>
 </article>
