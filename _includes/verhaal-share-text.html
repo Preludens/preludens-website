@@ -1,0 +1,31 @@
+{%- comment -%}
+  Eerste alinea, als platte tekst.
+  Gebruikt door de LinkedIn-deelknop en de social preview.
+{%- endcomment -%}
+{%- if page.layout == "play-blog" -%}
+  {%- assign share_lead = page.excerpt | strip_html | strip -%}
+  {%- if share_lead != "" -%}
+    {{- share_lead -}}
+  {%- else -%}
+    {{- page.summary | strip -}}
+  {%- endif -%}
+{%- elsif page.intro -%}
+  {{- page.intro | strip -}}
+{%- elsif page.inleiding -%}
+  {%- assign share_lead = page.inleiding | first -%}
+  {%- if share_lead.punten -%}
+    {{- page.summary | default: page.lead | strip -}}
+  {%- else -%}
+    {{- share_lead | strip -}}
+  {%- endif -%}
+{%- elsif page.blokken -%}
+  {%- assign share_blok = page.blokken | first -%}
+  {%- assign share_lead = share_blok.alineas | first -%}
+  {%- if share_lead.punten -%}
+    {{- page.summary | default: page.lead | strip -}}
+  {%- else -%}
+    {{- share_lead | strip -}}
+  {%- endif -%}
+{%- else -%}
+  {{- page.summary | default: page.lead | strip -}}
+{%- endif -%}

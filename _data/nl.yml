@@ -91,7 +91,7 @@ verhaal:
   meta_format: "Vorm"
   meta_role: "Rol Preludens"
   meta_project: "Project"
-  all_stories: "← Alle verhalen"
+  all_stories: "Alle verhalen"
   read_story: "Lees het verhaal"
   read_story_aria: "Lees het verhaal: %s, %s"
   summary_label: "In het kort"
@@ -101,6 +101,7 @@ verhaal:
   lightbox_open: "Vergroot afbeelding"
   lightbox_close: "Sluiten"
   lightbox_zoom: "Vergroot"
+  share_linkedin: "Deel op LinkedIn"
 
 # Maandnamen voor datums in de eigen taal; de `date`-filter van Jekyll
 # kent alleen Engelse maanden.
@@ -120,7 +121,7 @@ months:
 
 play_blog:
   breadcrumb: "Blog"
-  all_posts: "← Alle Play-artikelen"
+  all_posts: "Alle artikelen"
   back_to_play: "← Terug naar Play"
   read_post: "Lees het artikel"
   read_post_aria: "Lees het artikel: %s"

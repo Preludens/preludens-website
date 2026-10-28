@@ -8,8 +8,8 @@ layout: default
 {% assign route = page.route %}
 {% assign ervaring = page.ervaring %}
 {% assign resultaat = page.resultaat %}
-{% assign local_image = "" %}
-{% if page.image %}
+{% assign local_image = page.banner | default: "" %}
+{% if local_image == "" and page.image %}
   {% unless page.image contains "://" %}
     {% assign local_image = page.image %}
   {% endunless %}
@@ -31,23 +31,6 @@ layout: default
       </div>
     {% endif %}
     <div class="container verhaal-hero__inner">
-      {% if page.clients or page.client %}
-      <div class="verhaal-hero__chips">
-        {% if page.clients %}
-          {% for stakeholder in page.clients %}
-            {% if stakeholder.url %}
-              <a class="verhaal-chip" href="{{ stakeholder.url }}" target="_blank" rel="noopener noreferrer">{{ stakeholder.name }}</a>
-            {% else %}
-              <span class="verhaal-chip">{{ stakeholder.name }}</span>
-            {% endif %}
-          {% endfor %}
-        {% elsif page.client_url %}
-          <a class="verhaal-chip" href="{{ page.client_url }}" target="_blank" rel="noopener noreferrer">{{ page.client }}</a>
-        {% else %}
-          <span class="verhaal-chip">{{ page.client }}</span>
-        {% endif %}
-      </div>
-      {% endif %}
       <h1 class="verhaal-hero__title">{{ page.title }}</h1>
       {% if page.lead %}
         <p class="verhaal-hero__lead">{{ page.lead }}</p>
@@ -230,9 +213,9 @@ layout: default
         </aside>
       </div>
 
-      <p class="verhaal-back">
-        <a href="{{ '/verhalen/' | relative_url }}">{{ t.verhaal.all_stories }}</a>
-      </p>
+      {% assign back_href = "/verhalen/" | relative_url %}
+      {% assign back_label = t.verhaal.all_stories %}
+      {% include share-actions.html back_href=back_href back_label=back_label %}
     </div>
   </div>
 </article>

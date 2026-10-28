@@ -1737,8 +1737,23 @@ p { margin: 0 0 var(--space-sm); }
   }
 }
 
-.verhaal-back {
-  margin-top: var(--space-lg);
+.verhaal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+.verhaal-share__btn {
+  gap: 0.65rem;
+}
+
+.verhaal-share__icon {
+  display: block;
+  width: 1.05rem;
+  height: 1.05rem;
+  flex-shrink: 0;
 }
 
 /* ============================================================
@@ -1931,53 +1946,6 @@ p { margin: 0 0 var(--space-sm); }
   line-height: 1.05;
 }
 
-.verhaal-hero__chips {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-xs);
-  margin: 0 0 var(--space-sm);
-}
-
-.verhaal-chip {
-  display: inline-flex;
-  align-items: center;
-  flex-shrink: 0;
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  padding: 0.35em 0.8em;
-  border-radius: var(--radius-pill);
-  background: var(--color-white);
-  color: var(--color-ink);
-  border: 1px solid var(--color-white);
-  text-decoration: none;
-}
-
-a.verhaal-chip {
-  cursor: pointer;
-  transition:
-    background var(--transition),
-    color var(--transition),
-    border-color var(--transition),
-    transform var(--transition),
-    box-shadow var(--transition);
-
-  &:hover {
-    background: var(--color-preludens-gold);
-    border-color: var(--color-preludens-gold);
-    color: var(--color-deep-navy);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-card);
-  }
-
-  &:focus-visible {
-    @include focus-ring(3px);
-  }
-}
-
 .verhaal-tldr {
   max-width: 44rem;
   background: var(--color-white);
@@ -2030,11 +1998,20 @@ a.verhaal-chip {
 }
 
 .verhaal-a > .section {
-  padding-top: 2.5rem;
+  padding-top: clamp(4rem, 7vw, 5.5rem);
+}
+
+.verhaal-main .verhaal-section p {
+  text-align: justify;
+  hyphens: auto;
 }
 
 .verhaal-section {
   margin-bottom: 1.25rem;
+
+  & + & {
+    margin-top: var(--space-xl);
+  }
 
   h2 {
     font-size: 1.4rem;
@@ -2312,7 +2289,7 @@ a.verhaal-chip {
 }
 
 .verhaal-facts-block {
-  margin-top: 0;
+  margin-top: var(--space-xl);
 
   h2 {
     font-size: 1.4rem;
@@ -2435,13 +2412,21 @@ a.verhaal-chip {
   max-width: 42rem;
 }
 
-.play-blog-header {
-  margin-bottom: var(--space-lg);
+.play-blog-hero {
+  h1,
+  .play-blog-lead {
+    color: var(--color-white);
+  }
+
+  .play-blog-lead {
+    max-width: 36rem;
+    margin-inline: auto;
+  }
 }
 
 .play-blog-date {
   display: block;
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-ink-soft);
@@ -2449,12 +2434,42 @@ a.verhaal-chip {
 
 .play-blog-lead {
   margin: var(--space-sm) 0 0;
-  font-size: 1.15rem;
-  line-height: 1.55;
-  color: var(--color-ink-soft);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.45;
+}
+
+.play-blog-article {
+  padding-top: clamp(4rem, 7vw, 5.5rem);
 }
 
 .play-blog-body {
+  p {
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xs);
+    line-height: 1.1;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    margin: var(--space-lg) 0 var(--space-xs);
+  }
+
+  p + p,
+  p + ul,
+  ul + p {
+    margin-top: 0.85rem;
+  }
+
+  blockquote p {
+    text-align: start;
+  }
+
   blockquote {
     margin: var(--space-md) 0;
     padding: var(--space-sm) var(--space-md);
@@ -3917,14 +3932,12 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
       display: none;
     }
   }
+}
 
-  /* Ritme: de rechterkolom zakt een halve stap weg, zodat het raster leest als
-     een verspringend metselverband in plaats van een tabel. */
-  @media (min-width: 800px) {
-    > [role="listitem"]:nth-child(even) {
-      margin-top: 38px;
-    }
-  }
+.page-verhalen-test .strip-tile-clip-def {
+  position: absolute;
+  width: 0;
+  height: 0;
 }
 
 .page-verhalen-test .strip-tile {
@@ -3934,10 +3947,11 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   border-radius: var(--radius-sm);
   background: #E7EEF0;
   overflow: hidden;
-  box-shadow:
-    inset 0 0 0 1px rgba(11, 42, 53, 0.06),
-    0 10px 24px -12px rgba(11, 42, 53, 0.4);
-  transition: transform var(--transition), box-shadow var(--transition);
+  /* Zelfde schuine hoek als het beeldkader op de voorpagina, alleen linksonder. */
+  clip-path: url("#strip-tile-clip");
+  box-shadow: inset 0 0 0 1px rgba(11, 42, 53, 0.06);
+  filter: drop-shadow(0 10px 14px rgba(11, 42, 53, 0.22));
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
 
   &::after {
     content: "";
@@ -4163,9 +4177,8 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   background:
     radial-gradient(86% 66% at 62% 64%, rgba(42, 124, 134, 0.34), rgba(42, 124, 134, 0) 62%),
     radial-gradient(130% 110% at 50% 108%, #10394a 0%, var(--color-deep-navy) 48%, #05161d 100%);
-  box-shadow:
-    inset 0 0 0 1px rgba(246, 249, 249, 0.08),
-    0 16px 36px -18px rgba(2, 12, 17, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(246, 249, 249, 0.08);
+  filter: drop-shadow(0 16px 18px rgba(2, 12, 17, 0.45));
 }
 
 .page-verhalen-test .strip-tile--cinema::after {
@@ -4177,9 +4190,8 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
 
 .page-verhalen-test .strip-grid > [role="listitem"]:hover .strip-tile--cinema,
 .page-verhalen-test .strip-grid > [role="listitem"]:focus-within .strip-tile--cinema {
-  box-shadow:
-    inset 0 0 0 1px rgba(246, 249, 249, 0.12),
-    0 26px 48px -22px rgba(2, 12, 17, 0.95);
+  box-shadow: inset 0 0 0 1px rgba(246, 249, 249, 0.12);
+  filter: drop-shadow(0 22px 22px rgba(2, 12, 17, 0.5));
 }
 
 .page-verhalen-test .strip-grid > [role="listitem"]:hover .strip-tile--cinema::after,

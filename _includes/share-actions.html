@@ -1,0 +1,20 @@
+{% capture share_text %}{% include verhaal-share-text.html %}{% endcapture %}
+{% assign share_text = share_text | strip %}
+{% assign share_url = site.prod_url | append: page.url %}
+{% capture share_body %}{{ share_text }}
+
+{{ share_url }}{% endcapture %}
+<div class="verhaal-actions">
+  <a class="btn btn-secondary verhaal-share__btn" href="{{ include.back_href }}">
+    <svg class="verhaal-share__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M11 6l-6 6 6 6"/>
+    </svg>
+    {{ include.back_label }}
+  </a>
+  <a class="btn btn-secondary verhaal-share__btn" href="https://www.linkedin.com/feed/?shareActive=true&amp;text={{ share_body | uri_escape }}" target="_blank" rel="noopener noreferrer">
+    <svg class="verhaal-share__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.8v2.1h.1c.5-1 1.8-2.1 3.8-2.1 4 0 4.8 2.6 4.8 6.1V24h-4v-7.7c0-1.8 0-4.1-2.5-4.1s-2.9 2-2.9 4V24h-4V8.5z"/>
+    </svg>
+    {{ t.verhaal.share_linkedin }}
+  </a>
+</div>

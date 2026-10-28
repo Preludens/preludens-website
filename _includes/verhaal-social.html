@@ -1,0 +1,23 @@
+{%- comment -%}
+  Open Graph vóór de SEO-tag, zodat LinkedIn de banner en de eerste alinea
+  van het project gebruikt. LinkedIn neemt de eerste og:image en description.
+{%- endcomment -%}
+{%- if page.layout == "verhaal" or page.layout == "play-blog" -%}
+  {%- capture share_text -%}{% include verhaal-share-text.html %}{%- endcapture -%}
+  {%- assign share_text = share_text | strip -%}
+  {%- if share_text != "" -%}
+    <meta name="description" content="{{ share_text | escape }}">
+    <meta property="og:description" content="{{ share_text | escape }}">
+  {%- endif -%}
+  {%- if page.image and page.image != "" -%}
+    {%- if page.image contains "://" -%}
+      {%- assign share_image = page.image -%}
+    {%- elsif page.image contains "/" -%}
+      {%- assign share_image = site.prod_url | append: page.image -%}
+    {%- else -%}
+      {%- assign share_image = site.prod_url | append: "/assets/images/verhalen/" | append: page.image -%}
+    {%- endif -%}
+    <meta property="og:image" content="{{ share_image }}">
+    <meta name="twitter:image" content="{{ share_image }}">
+  {%- endif -%}
+{%- endif -%}

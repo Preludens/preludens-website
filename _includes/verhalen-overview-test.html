@@ -5,6 +5,14 @@
 {% assign frame_count = 0 %}
 {% assign posts = site.play_blog | sort: "date" | reverse %}
 
+<svg class="strip-tile-clip-def" width="0" height="0" aria-hidden="true">
+  <defs>
+    <clipPath id="strip-tile-clip" clipPathUnits="objectBoundingBox">
+      <path d="M0 0 L0.9 0 Q0.92 0 0.934 0.014 L0.986 0.066 Q1 0.08 1 0.1 L1 1 L0.2 1 Q0.16 1 0.132 0.972 L0.028 0.868 Q0 0.84 0 0.8 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
 <div class="verhalen-panel" id="verhalen-panel" role="tabpanel" aria-labelledby="verhalen-filter-all">
   <div class="strip-grid" data-verhalen-grid role="list">
     {% for verhaal in verhalen %}
