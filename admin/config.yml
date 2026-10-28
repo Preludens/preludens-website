@@ -100,8 +100,8 @@ collections:
         file: en/play/in-de-praktijk/index.md
         fields: *page_fields_en
       - name: diensten_en
-        label: Services (EN)
-        file: en/diensten/index.md
+        label: Diensten oud (EN)
+        file: en/diensten-oud/index.md
         fields: *page_fields_en
       - name: team_en
         label: Team (EN)

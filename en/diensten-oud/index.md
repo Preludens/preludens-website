@@ -1,10 +1,12 @@
 ---
 layout: default
 lang: en
-title: Services
-description: MicroGame Stories, Dilemma Storytelling and Game Thinking — three routes to make complex knowledge playable and applicable.
+title: Services (previous)
+description: Previous version of the services page.
 body_class: page-panels
-permalink: /diensten/
+permalink: /diensten-oud/
+sitemap: false
+robots: noindex, nofollow
 ---
 
 <div class="panel-stack">
