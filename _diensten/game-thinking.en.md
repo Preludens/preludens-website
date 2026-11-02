@@ -17,7 +17,7 @@ body_class: page-panels
 
 {% capture hero_actions %}
 <p class="sp-lead">With Game Thinking, Preludens helps organisations explore complex learning and change challenges before the solution is designed.</p>
-<p class="sp-lead">We map goals, rules, behaviour, choices, tensions and moments of feedback. Then we look at which game principles are already present in practice, and how they can help people learn actively.</p>
+<p class="sp-lead">We look at which game principles are already present in practice, and how they can help people learn actively.</p>
 {% include panels/actions.html primary_label="Plan a GameStorm" primary_href="/gamestorm/" secondary_label="Explore our approach" secondary_href="#find-the-game" %}
 {% endcapture %}
 {% capture hero_title %}Game Thinking: from a learning challenge to <span class="hl">active learning</span>{% endcapture %}
@@ -37,8 +37,8 @@ body_class: page-panels
 
 {% capture what_body %}
 <h2>What is Game Thinking?</h2>
-<p class="sp-lead">Game Thinking is the design approach with which we look at a learning or behaviour challenge through the structure of a game. Not because every challenge has to become a game, but because game principles help make behaviour, choices and connections visible. More about how we use game-based learning is on <a href="{{ '/play/' | relative_url }}">our method</a> page.</p>
-<p class="sp-lead">In a game there are goals, rules, challenges, possibilities, limits and feedback. Those elements also appear in organisations. Employees work towards goals. They act within rules and agreements. They make choices, experience consequences and try to overcome obstacles.</p>
+<p class="sp-lead">Game Thinking is the design approach with which we look at a learning or behaviour challenge through the structure of a game. Game principles make visible how behaviour and choices hang together in practice. A challenge does not have to turn into a game for that. More about how we use game-based learning is on <a href="{{ '/play/' | relative_url }}">our method</a> page.</p>
+<p class="sp-lead">In a game there are goals, rules, choices, challenges, feedback and progress. Those elements also appear in organisations. Employees work towards goals. They act within rules and agreements. They make choices, experience consequences and try to overcome obstacles.</p>
 <p class="sp-lead">By making that existing structure visible, we get a clearer view of how people act and where change is possible. From that insight we design a learning experience in which people actively explore, choose, practise and reflect.</p>
 <p class="sp-lead">Game Thinking is therefore not a product chosen in advance. <a href="{{ '/diensten/microgame-stories/' | relative_url }}">MicroGame Stories</a> and <a href="{{ '/diensten/dilemma-storytelling/' | relative_url }}">Dilemma Storytelling</a> are concrete learning formats. Game Thinking is the way to decide first which approach fits the challenge.</p>
 {% endcapture %}
@@ -75,7 +75,7 @@ body_class: page-panels
 {% capture route_steps %}
 {% include panels/step.html num="1" title="We explore the challenge" text="What does the organisation want to achieve, which behaviour needs to change, and why is that not working well enough yet?" %}
 {% include panels/step.html num="2" title="We map the situation" text="Processes, responsibilities, goals and recurring situations from practice. Where do choices appear, and where do people get stuck?" %}
-{% include panels/step.html num="3" title="We look for hidden game mechanisms" text="With Find the Game we make visible how goals, rules, challenges and feedback influence each other." %}
+{% include panels/step.html num="3" title="We look for hidden game mechanisms" text="With Find the Game we make visible how the game principles influence each other in practice." %}
 {% include panels/step.html num="4" title="We set learning goals and design principles" text="What do participants need to understand, recognise, practise or start doing differently? Knowledge, skill and context stay distinct." %}
 {% include panels/step.html num="5" title="We explore fitting interventions" text="A MicroGame Story, a Dilemma Story, a serious game or another form. The form follows from the learning goals and from practice." %}
 {% include panels/step.html num="6" title="We work towards a blueprint" text="Insights, learning goals, game mechanisms and design choices become the starting point for development. Where it fits, we explore choices with a first concept." %}
@@ -90,7 +90,7 @@ body_class: page-panels
 {% capture yield_items %}
 {% include panels/value.html title="A clearer picture of the audience" text="Insight into the situations in which people act, the choices they make and the factors that influence their behaviour." %}
 {% include panels/value.html title="Concrete learning and change goals" text="What people need to know, be able to do or start doing differently. That keeps the design focused." %}
-{% include panels/value.html title="Insight into existing game mechanisms" text="Goals, rules, challenges and feedback that are already part of practice, and what of that can be strengthened." %}
+{% include panels/value.html title="Insight into existing game mechanisms" text="The game principles that are already part of practice, and what of that can be strengthened." %}
 {% include panels/value.html title="A fitting design approach" text="Which form matches the learning challenge, so a solution chosen in advance does not start defining the problem." %}
 {% include panels/value.html title="A blueprint for further development" text="Design principles and a concrete direction for the next phase: development, testing and implementation." %}
 {% endcapture %}
@@ -103,7 +103,7 @@ body_class: page-panels
 
 {% capture fit_items %}
 {% include panels/value.html title="Organisational change and transitions" text="Make visible which choices and circumstances influence new behaviour when processes or responsibilities shift." %}
-{% include panels/value.html title="Behaviour change" text="People know what is intended, but act differently. We look at goals, rules, incentives and feedback." %}
+{% include panels/value.html title="Behaviour change" text="People know what is intended, but act differently. We look at which goals, rules and feedback steer their choices." %}
 {% include panels/value.html title="Complex knowledge transfer" text="Translate abstract or extensive knowledge into recognisable situations and focused learning activities." %}
 {% include panels/value.html title="Collaboration between teams" text="Make differences in goals, expectations and responsibilities visible, and look for where better alignment is possible." %}
 {% include panels/value.html title="Decision-making and problem-solving" text="Explore how people choose when there are several interests and routes, and how they can practise safely." %}
@@ -121,15 +121,15 @@ body_class: page-panels
 <p class="sp-lead">Suppose an organisation has introduced a new way of working. The instructions are available. Employees have been given an explanation and know which steps they should follow. Still, teams regularly fall back on the old way of working.</p>
 <p class="sp-lead">The first response can be to develop extra training. Game Thinking starts with other questions. Why do employees choose the old way of working? Which goals are they trying to reach? Which obstacles do they experience? What feedback do they get on what they do?</p>
 <p class="sp-lead">Maybe the new procedure takes more time, while employees are mainly judged on speed. Or responsibilities are unclear, so people look for their own solutions.</p>
-<p class="sp-lead">By looking at the challenge as a game, goals, rules, choices and tensions become visible. From that analysis an interactive training course may turn out to be valuable. Clearer feedback, adjusted working agreements or another intervention may also be needed.</p>
-<p class="sp-lead">Game Thinking helps address not only the visible behaviour, but also <strong>the structure in which that behaviour appears</strong>.</p>
+<p class="sp-lead">By looking at the challenge as a game, the goals, rules and choices behind that behaviour become visible. From that analysis an interactive training course may turn out to be valuable. Clearer feedback, adjusted working agreements or another intervention may also be needed.</p>
+<p class="sp-lead">Game Thinking helps address <strong>the structure in which that behaviour appears</strong>, and not just the behaviour itself.</p>
 <p class="sp-lead"><em>This is an illustrative example, not a description of a completed Preludens project.</em></p>
 {% endcapture %}
 {% include panels/panel.html variant="mist" align="left" id="voorbeeld" body=example_body %}
 
 {% capture formats_body %}
 <h2>From Game Thinking to a fitting learning experience</h2>
-<p class="sp-lead">Game Thinking does not stand apart from the other services. It helps decide which approach fits the learning challenge. The aim is not always to develop a game, but an approach that fits the people, the situation and the change you want.</p>
+<p class="sp-lead">Game Thinking does not stand apart from the other services. It helps decide which approach fits the learning challenge. The aim is an approach that fits the people, the situation and the change you want; a game is one possible outcome of that.</p>
 <h3 class="sp-sub">MicroGame Stories: when knowledge needs to be practised actively</h3>
 <p class="sp-lead">When the challenge is understanding, applying and repeating concrete knowledge, a <a href="{{ '/diensten/microgame-stories/' | relative_url }}">MicroGame Story</a> can fit. Visual storytelling and short game forms in which participants practise with focus.</p>
 {% include panels/actions.html secondary_label="Explore MicroGame Stories" secondary_href="/diensten/microgame-stories/" %}
@@ -159,7 +159,7 @@ body_class: page-panels
 <h3 class="sp-sub">What is Find the Game?</h3>
 <p class="sp-lead">Preludens' design approach in which we look for game structures that are already inside existing processes. Instead of designing new mechanisms straight away, we look at how practice itself offers starting points. More about that is in the article <a href="{{ '/play/blog/find-the-game/' | relative_url }}">Find the Game</a>.</p>
 <h3 class="sp-sub">Is Game Thinking the same as Design Thinking?</h3>
-<p class="sp-lead">No. Both approaches start from people and their context, but they emphasise different things. With Game Thinking we use game principles to make goals, behaviour, rules, choices, challenges and feedback visible.</p>
+<p class="sp-lead">No. Both approaches start from people and their context, but they emphasise different things. With Game Thinking we use game principles to make goals, rules, choices, challenges and feedback visible.</p>
 <h3 class="sp-sub">Does Game Thinking always lead to a serious game?</h3>
 <p class="sp-lead">No. A serious game can fit, but the analysis can also lead to a MicroGame Story, Dilemma Storytelling, a change in an existing learning programme or another intervention.</p>
 <h3 class="sp-sub">When does Game Thinking fit?</h3>
@@ -176,7 +176,7 @@ body_class: page-panels
 {% include panels/panel.html variant="paper" id="vragen" body=faq_body %}
 
 {% capture cta_left %}Do you have a learning or change challenge for which the solution is not yet clear? Do you want to understand better why people act as they do, which choices matter and how you can create movement?{% endcapture %}
-{% capture cta_right %}With Game Thinking we bring structure to complex challenges. We look for the goals, rules, challenges and feedback that are already present in practice, and translate them into a fitting design approach. That creates direction before you start developing.{% endcapture %}
+{% capture cta_right %}With Game Thinking we bring structure to complex challenges. We look for the game principles that are already present in practice, and translate them into a fitting design approach. That creates direction before you start developing.{% endcapture %}
 {% include panels/cta.html kicker="Game Thinking" title="Discover the game in your challenge" left=cta_left right=cta_right stack=true primary_label="Plan a GameStorm" primary_href="/gamestorm/" secondary_label="Get in touch" secondary_href="/contact/" %}
 
 {% include panels/footer-reveal.html %}
@@ -190,7 +190,7 @@ body_class: page-panels
     {"@type": "Question", "name": "What is Game Thinking?", "acceptedAnswer": {"@type": "Answer", "text": "A design approach in which Preludens looks at a learning or change challenge through game principles: goals, rules, choices, challenges and feedback that are already present in practice."}},
     {"@type": "Question", "name": "What is the difference between Game Thinking and gamification?", "acceptedAnswer": {"@type": "Answer", "text": "Gamification adds game elements to an existing activity. Game Thinking first explores how a situation works and which mechanisms are already present."}},
     {"@type": "Question", "name": "What is Find the Game?", "acceptedAnswer": {"@type": "Answer", "text": "Preludens' design approach in which we look for game structures that are already present in existing processes."}},
-    {"@type": "Question", "name": "Is Game Thinking the same as Design Thinking?", "acceptedAnswer": {"@type": "Answer", "text": "No. Both start from people and their context. Game Thinking specifically uses game principles to make goals, behaviour, rules, choices, challenges and feedback visible."}},
+    {"@type": "Question", "name": "Is Game Thinking the same as Design Thinking?", "acceptedAnswer": {"@type": "Answer", "text": "No. Both start from people and their context. Game Thinking specifically uses game principles to make goals, rules, choices, challenges and feedback visible."}},
     {"@type": "Question", "name": "Does Game Thinking always lead to a serious game?", "acceptedAnswer": {"@type": "Answer", "text": "No. The analysis can also lead to a MicroGame Story, Dilemma Storytelling, a change in a learning programme or another intervention."}},
     {"@type": "Question", "name": "When does Game Thinking fit?", "acceptedAnswer": {"@type": "Answer", "text": "When the learning challenge is complex, the change you want is not yet clear enough, or the solution is not yet fixed."}},
     {"@type": "Question", "name": "What does a Game Thinking programme deliver in practice?", "acceptedAnswer": {"@type": "Answer", "text": "A sharper picture of the audience, the change you want, the relevant game mechanisms and the design principles, as a blueprint for a learning experience or intervention."}},

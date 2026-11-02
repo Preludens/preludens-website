@@ -17,20 +17,20 @@ body_class: page-panels
 
 {% capture hero_actions %}
 <p class="sp-lead">Met Dilemma Storytelling ontwikkelt Preludens interactieve verhalen waarin medewerkers oefenen met dit soort afwegingen. Ze stappen in een herkenbare situatie, maken keuzes en ontdekken welke gevolgen hun beslissingen hebben voor verschillende doelen en betrokkenen.</p>
-<p class="sp-lead">Zo ontstaat een veilige leeromgeving waarin teams kunnen verkennen, oefenen en reflecteren voordat vergelijkbare situaties zich in de praktijk voordoen.</p>
+<p class="sp-lead">Zo ontstaat een veilige leeromgeving waarin teams kunnen oefenen en reflecteren voordat vergelijkbare situaties zich in de praktijk voordoen.</p>
 {% include panels/actions.html primary_label="Plan een GameStorm" primary_href="/gamestorm/" secondary_label="Ontdek een interactief dilemma" secondary_href="#ervaringsblok" %}
 {% endcapture %}
 {% capture hero_title %}Dilemma Storytelling: leer betere <span class="hl">keuzes</span> maken{% endcapture %}
 {% capture hero_lead %}Interactieve scenario's waarin medewerkers lastige beslissingen oefenen en de gevolgen van hun keuzes ervaren.{% endcapture %}
-{% capture hero_lead2 %}In de praktijk is niet iedere beslissing eenvoudig. Medewerkers moeten regelmatig kiezen tussen belangen die met elkaar botsen. Veiligheid of snelheid? Kwaliteit of kosten? Klanttevredenheid of het volgen van een procedure? Vaak bestaat er niet één antwoord dat in iedere situatie juist is.{% endcapture %}
+{% capture hero_lead2 %}In de praktijk is niet iedere beslissing eenvoudig. Medewerkers moeten regelmatig kiezen tussen belangen die met elkaar botsen. Veiligheid of snelheid? Klanttevredenheid of het volgen van een procedure? Vaak bestaat er niet één antwoord dat in iedere situatie juist is.{% endcapture %}
 {% include panels/hero.html kicker="Diensten" title=hero_title lead=hero_lead lead2=hero_lead2 actions=hero_actions figure_src="/assets/images/hero/diensten-hero.jpg" figure_alt="Een team dat samen een route uitzet" figure_href="#ervaringsblok" figure_caption="Van weten naar afwegen." %}
 
 {% capture recognize_body %}
 <h2>Weten wat je moet doen, is niet hetzelfde als kunnen beslissen</h2>
-<p class="sp-lead">Veel organisaties investeren in kennisoverdracht. Medewerkers leren procedures, richtlijnen en werkwijzen. Ze volgen trainingen en krijgen uitleg over de verantwoordelijkheden die bij hun functie horen.</p>
+<p class="sp-lead">Veel organisaties investeren in kennisoverdracht. Medewerkers leren procedures en werkwijzen. Ze volgen trainingen en krijgen uitleg over de verantwoordelijkheden die bij hun functie horen.</p>
 <p class="sp-lead">Maar de dagelijkse praktijk is zelden zo overzichtelijk als een instructie. Wat doe je wanneer een klant een uitzondering vraagt? Wanneer een veiligheidsmaatregel vertraging veroorzaakt? Of wanneer twee belangrijke doelen niet tegelijkertijd haalbaar zijn?</p>
 <p class="sp-lead">Op zulke momenten moeten medewerkers meer doen dan kennis reproduceren. Ze moeten de situatie begrijpen, belangen herkennen, gevolgen inschatten en een beslissing nemen.</p>
-<p class="sp-lead">De uitdaging zit niet altijd in het kennen van de regels, maar in het maken van een <strong>goede afweging wanneer belangen botsen</strong>. Juist die vaardigheid is lastig te trainen met alleen uitleg of een traditionele kennistoets.</p>
+<p class="sp-lead">De uitdaging zit vooral in het maken van een <strong>goede afweging wanneer belangen botsen</strong>. De regels kennen is daarvoor niet genoeg. Juist die vaardigheid is lastig te trainen met alleen uitleg of een traditionele kennistoets.</p>
 <p class="sp-lead">Daarom ontwikkelt Preludens leerervaringen waarin deelnemers kunnen oefenen met de complexiteit van echte beslissingen. Een MicroGame kan helpen om een procedure correct uit te voeren. Dilemma Storytelling laat ervaren wat er gebeurt wanneer die procedure botst met tijdsdruk, klantbelangen, veiligheid of andere verantwoordelijkheden.</p>
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="kunnen-beslissen" body=recognize_body %}
@@ -70,7 +70,7 @@ body_class: page-panels
 {% capture what_body %}
 <h2>Wat is Dilemma Storytelling?</h2>
 <p class="sp-lead">Dilemma Storytelling is een vorm van scenario-based learning. Deelnemers doorlopen realistische scenario's en nemen beslissingen die het verdere verloop van het verhaal beïnvloeden. Meer over hoe wij leren en spel combineren, lees je bij <a href="{{ '/play/' | relative_url }}">onze methode</a>.</p>
-<p class="sp-lead">De deelnemer krijgt een herkenbare rol in een situatie waarin meerdere belangen spelen. Er ontstaat een probleem dat om een keuze vraagt. Iedere beslissing heeft gevolgen voor het verhaal, de betrokken personen en de doelen die binnen de situatie belangrijk zijn. Denk aan veiligheid, kwaliteit, snelheid, kosten, samenwerking of klanttevredenheid.</p>
+<p class="sp-lead">De deelnemer krijgt een herkenbare rol in een situatie waarin meerdere belangen spelen. Er ontstaat een probleem dat om een keuze vraagt. Iedere beslissing heeft gevolgen voor het verhaal, de betrokken personen en de doelen die binnen de situatie belangrijk zijn. Denk aan veiligheid, kwaliteit, snelheid, klanttevredenheid en samenwerking.</p>
 <p class="sp-lead">Niet iedere keuze is eenvoudig goed of fout. Soms verbetert een beslissing het ene resultaat, terwijl een ander doel onder druk komt te staan. Door die gevolgen zichtbaar te maken, ontdekken deelnemers hoe belangen samenhangen en waarom professioneel handelen om zorgvuldige afwegingen vraagt.</p>
 {% include panels/values.html label="Drie onderdelen van Dilemma Storytelling" items=parts %}
 {% endcapture %}
@@ -100,8 +100,8 @@ body_class: page-panels
 {% endcapture %}
 {% capture goals_body %}
 <h2>Maak de gevolgen van keuzes inzichtelijk</h2>
-<p class="sp-lead">In de praktijk hebben keuzes vaak invloed op meerdere doelen tegelijk. Een organisatie wil veilig werken, goede kwaliteit leveren, klanten tevreden houden en efficiënt omgaan met tijd en middelen. Die doelen kunnen botsen.</p>
-<p class="sp-lead">Daarom koppelen we beslissingen binnen een Dilemma Story aan specifieke doelen. Het gaat niet om het behalen van een hoge score, maar om het begrijpen van de samenhang tussen keuzes en gevolgen.</p>
+<p class="sp-lead">In de praktijk hebben keuzes vaak invloed op meerdere doelen tegelijk. Een organisatie wil veilig en zorgvuldig werken, en tegelijk op tijd opleveren. Die doelen kunnen botsen.</p>
+<p class="sp-lead">Daarom koppelen we beslissingen binnen een Dilemma Story aan specifieke doelen. Deelnemers zien zo hoe keuzes en gevolgen samenhangen. Een hoge score is niet het doel.</p>
 {% include panels/values.html label="Doelen waarop een keuze kan doorwerken" items=goal_items %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="gevolgen" body=goals_body %}
@@ -177,7 +177,7 @@ body_class: page-panels
 <h2>Dilemma Storytelling als onderdeel van een leertraject</h2>
 <p class="sp-lead">Dilemma Storytelling kan een zelfstandige leerervaring zijn, of een onderdeel van een breder trainings- of verandertraject. Bijvoorbeeld als voorbereiding op een workshop, als oefening in een leiderschapsprogramma, of als verdieping na een bestaande e-learningmodule.</p>
 <p class="sp-lead">Deelnemers kunnen vooraf zelfstandig een situatie verkennen. In een gezamenlijke bijeenkomst worden de gemaakte keuzes besproken. Waarom koos iemand voor een bepaalde aanpak? Welke belangen kregen prioriteit? Hoe zou een collega dezelfde situatie beoordelen?</p>
-<p class="sp-lead">Zo wordt het interactieve verhaal niet alleen een individuele leerervaring, maar ook een vertrekpunt voor dialoog en gezamenlijke reflectie. Distributie en beheer kunnen via een bestaande leeromgeving of via <a href="{{ '/prepo/' | relative_url }}">Prepo</a>.</p>
+<p class="sp-lead">Zo wordt het interactieve verhaal ook een vertrekpunt voor dialoog en gezamenlijke reflectie. Distributie en beheer kunnen via een bestaande leeromgeving of via <a href="{{ '/prepo/' | relative_url }}">Prepo</a>.</p>
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="leertraject" body=wider_body %}
 
@@ -196,7 +196,7 @@ body_class: page-panels
 <h3 class="sp-sub">Kunnen we Dilemma Storytelling inzetten voor teams?</h3>
 <p class="sp-lead">Ja. De leerervaring kan individueel worden doorlopen en daarna de basis zijn voor gezamenlijke reflectie. Zo worden verschillende perspectieven binnen een team bespreekbaar.</p>
 <h3 class="sp-sub">Kunnen keuzes en resultaten inzichtelijk worden gemaakt?</h3>
-<p class="sp-lead">Keuzes kunnen worden gekoppeld aan doelen zoals veiligheid, kwaliteit, snelheid en klanttevredenheid. Welke informatie wordt geregistreerd, hangt af van de technische oplossing en de afspraken over gegevensgebruik.</p>
+<p class="sp-lead">Keuzes kunnen worden gekoppeld aan de doelen uit het scenario, bijvoorbeeld veiligheid of klanttevredenheid. Welke informatie wordt geregistreerd, hangt af van de technische oplossing en de afspraken over gegevensgebruik.</p>
 <h3 class="sp-sub">Wat kost het ontwikkelen van Dilemma Storytelling?</h3>
 <p class="sp-lead">De kosten hangen af van het aantal scenario's, de complexiteit van de keuzes, het aantal verhaallijnen en de gewenste vormgeving. In een eerste verkenning onderzoeken we welke omvang past bij de leerdoelen en de middelen.</p>
 <h3 class="sp-sub">Kunnen we klein beginnen?</h3>
@@ -277,7 +277,7 @@ body_class: page-panels
     {"@type": "Question", "name": "Kunnen deelnemers verschillende uitkomsten ervaren?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Verschillende keuzes kunnen leiden tot andere reacties, gevolgen of vervolgsituaties."}},
     {"@type": "Question", "name": "Kunnen we onze eigen praktijksituaties gebruiken?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Herkenbare situaties uit de organisatie zijn het vertrekpunt."}},
     {"@type": "Question", "name": "Kunnen we Dilemma Storytelling inzetten voor teams?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. De leerervaring kan individueel worden doorlopen en daarna de basis zijn voor gezamenlijke reflectie."}},
-    {"@type": "Question", "name": "Kunnen keuzes en resultaten inzichtelijk worden gemaakt?", "acceptedAnswer": {"@type": "Answer", "text": "Keuzes kunnen worden gekoppeld aan doelen zoals veiligheid, kwaliteit, snelheid en klanttevredenheid. Wat wordt geregistreerd, hangt af van de technische oplossing en de afspraken over gegevensgebruik."}},
+    {"@type": "Question", "name": "Kunnen keuzes en resultaten inzichtelijk worden gemaakt?", "acceptedAnswer": {"@type": "Answer", "text": "Keuzes kunnen worden gekoppeld aan de doelen uit het scenario, bijvoorbeeld veiligheid of klanttevredenheid. Wat wordt geregistreerd, hangt af van de technische oplossing en de afspraken over gegevensgebruik."}},
     {"@type": "Question", "name": "Wat kost het ontwikkelen van Dilemma Storytelling?", "acceptedAnswer": {"@type": "Answer", "text": "De kosten hangen af van het aantal scenario's, de complexiteit van de keuzes, het aantal verhaallijnen en de vormgeving."}},
     {"@type": "Question", "name": "Kunnen we klein beginnen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Eén afgebakend dilemma kan een eerste verkenning zijn."}}
   ]

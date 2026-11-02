@@ -11,8 +11,8 @@ permalink: /prepo/
 {% include panels/clips.html %}
 
 {% capture hero_actions %}
-<p class="sp-lead">Met <strong>Prepo, de Preludens Portal</strong>, breng je gebruik, beheer en doorontwikkeling samen in één omgeving.</p>
-<p class="sp-lead">Je beheert je MicroGames en Stories, verzamelt feedback, volgt gebruik en houdt grip op bestanden, versies en support. Zo stopt een leerervaring niet bij oplevering, maar blijft ze beschikbaar, vindbaar en beheersbaar.</p>
+<p class="sp-lead">Met <strong>Prepo, de Preludens Portal</strong>, houd je grip op je leerproducten nadat ze zijn opgeleverd.</p>
+<p class="sp-lead">Je beheert je MicroGames en Stories, verzamelt feedback en volgt het gebruik. Zo blijft een leerervaring ook maanden na de oplevering vindbaar en bruikbaar.</p>
 {% include panels/actions.html primary_label="Vraag een demo aan" primary_href="/contact/" secondary_label="Ontdek de mogelijkheden" secondary_href="#mogelijkheden" %}
 {% endcapture %}
 {% capture hero_title %}Prepo: jouw leerervaringen op <span class="hl">één plek</span>{% endcapture %}
@@ -26,7 +26,7 @@ permalink: /prepo/
 <p class="sp-lead">Na verloop van tijd verandert er iets. Er komt nieuwe inhoud. Een procedure wordt aangepast. Een deelnemer meldt een probleem. Er ontstaat behoefte aan statistieken, of een nieuwe groep medewerkers moet toegang krijgen.</p>
 <p class="sp-lead">Langzaam raken bestanden, links en feedback verspreid. De nieuwste versie staat ergens anders dan de vorige. Vragen komen binnen via verschillende kanalen. En het is niet altijd duidelijk welke versie daadwerkelijk wordt gebruikt.</p>
 <p class="sp-lead">Een goede leerervaring verdient ook aandacht <strong>tijdens het gebruik</strong>.</p>
-<p class="sp-lead">Daarom ontwikkelde Preludens Prepo: een centrale omgeving waarin je grip houdt op de producten die je hebt laten ontwikkelen, en op de manier waarop ze worden gebruikt, beheerd en verbeterd.</p>
+<p class="sp-lead">Daarom ontwikkelde Preludens Prepo: een centrale omgeving waarin je grip houdt op de producten die je hebt laten ontwikkelen, en op de manier waarop ze worden gebruikt en beheerd.</p>
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="na-oplevering" body=recognize_body %}
 
@@ -44,8 +44,8 @@ permalink: /prepo/
 {% endcapture %}
 {% capture what_body %}
 <h2>Wat is Prepo?</h2>
-<p class="sp-lead">Prepo staat voor <strong>Preludens Portal</strong>. Het is de beheer- en distributieomgeving voor MicroGames, Stories en andere interactieve leerproducten van Preludens. Geen algemeen leeradministratiesysteem, maar de plek waarop die producten beschikbaar, beheersbaar en bruikbaar blijven.</p>
-<p class="sp-lead">Daardoor hoef je niet voor iedere vraag, wijziging of nieuwe publicatie opnieuw te zoeken naar de juiste bestanden of contactpersoon. Voor deelnemers blijven leerervaringen toegankelijk. Voor organisaties ontstaat overzicht over gebruik, beheer en verdere ontwikkeling.</p>
+<p class="sp-lead">Prepo staat voor <strong>Preludens Portal</strong>. Het is de beheer- en distributieomgeving voor MicroGames, Stories en andere interactieve leerproducten van Preludens. Het is de plek waarop die producten beschikbaar en bruikbaar blijven. Een algemeen leeradministratiesysteem is het niet.</p>
+<p class="sp-lead">Daardoor hoef je niet voor iedere vraag, wijziging of nieuwe publicatie opnieuw te zoeken naar de juiste bestanden of contactpersoon. Voor deelnemers blijven leerervaringen toegankelijk. Voor organisaties ontstaat overzicht over gebruik en beheer.</p>
 {% include panels/media.html src="/assets/images/prepo/overzicht.jpg" webp="/assets/images/prepo/overzicht.webp" alt="Het Prepo-overzicht: projectstatus, games, live spelers, tickets en versies" width="1400" height="875" ratio="1400 / 875" body=what_copy %}
 {% endcapture %}
 {% include panels/panel.html variant="mist" align="left" id="overzicht" body=what_body %}
@@ -57,13 +57,13 @@ permalink: /prepo/
 {% include panels/step.html num="4" title="Maak voortgang zichtbaar, waar dat past" text="Een leaderboard kan scores of voortgang tonen. Alleen wanneer dat aansluit op de doelgroep en het leerdoel." %}
 {% include panels/step.html num="5" title="Verzamel feedback en beheer supportvragen" text="Het ticketsysteem houdt opmerkingen, meldingen en vragen bij het product, in plaats van in losse mails en documenten." %}
 {% include panels/step.html num="6" title="Beheer MicroGames, Stories en versies" text="Duidelijk welke versie actueel is en welke wijzigingen zijn doorgevoerd, ook als procedures of regels veranderen." %}
-{% include panels/step.html num="7" title="Krijg inzicht in statistieken en gebruik" text="Deelname, voortgang, scores en activiteit laten zien waar deelnemers goed doorheen gaan en waar extra uitleg nodig kan zijn." %}
+{% include panels/step.html num="7" title="Krijg inzicht in statistieken en gebruik" text="Cijfers over deelname en voortgang laten zien waar deelnemers goed doorheen gaan en waar extra uitleg nodig kan zijn." %}
 {% include panels/step.html num="8" title="Houd bestanden en documentatie bij elkaar" text="Exports, rapportages en projectmateriaal blijven vindbaar en gekoppeld aan het juiste product." %}
 {% include panels/step.html num="9" title="Houd support verbonden aan het product" text="Vragen horen bij het product, de organisatie en de gebruikte versie, zodat ondersteuning gerichter kan." %}
 {% endcapture %}
 {% capture feature_body %}
 <h2>Wat kun je met Prepo?</h2>
-<p class="sp-lead sp-lead--center">Prepo ondersteunt het beschikbaar maken, gebruiken en beheren van interactieve leerervaringen. Van de eerste publicatie tot de versie die maanden later nog in gebruik is.</p>
+<p class="sp-lead sp-lead--center">Prepo ondersteunt het beschikbaar maken en beheren van interactieve leerervaringen. Van de eerste publicatie tot de versie die maanden later nog in gebruik is.</p>
 {% include panels/steps.html variant="grid" items=feature_items %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="mogelijkheden" body=feature_body %}
@@ -89,7 +89,7 @@ permalink: /prepo/
 {% include panels/panel.html variant="paper" id="lms" body=lms_body %}
 
 {% capture life_steps %}
-{% include panels/step.html num="1" title="Testen" text="Betrokkenen controleren inhoud, interactie en techniek. Opmerkingen worden verzameld en verwerkt waar nodig." %}
+{% include panels/step.html num="1" title="Testen" text="Betrokkenen lopen de versie na en melden wat er nog niet klopt. Opmerkingen worden verzameld en verwerkt waar nodig." %}
 {% include panels/step.html num="2" title="Publiceren" text="Via een publieke Prepo-link, of via een SCORM-bestand voor een bestaande leeromgeving." %}
 {% include panels/step.html num="3" title="Gebruiken en volgen" text="Deelnemers gaan aan de slag. Statistieken geven inzicht in gebruik, activiteit en voortgang." %}
 {% include panels/step.html num="4" title="Feedback verzamelen" text="Vragen, opmerkingen en verbeterpunten komen gestructureerd binnen, bij het juiste product." %}
@@ -104,7 +104,7 @@ permalink: /prepo/
 {% include panels/panel.html variant="mist" id="levensloop" body=life_body %}
 
 {% capture months_copy %}
-<p class="sp-lead">Bij nieuwe MicroGames en Stories is standaard <strong>drie maanden toegang tot Prepo</strong> na oplevering inbegrepen. In die periode lanceer, test, gebruik en volg je de leerervaring. Er is ruimte om feedback te verzamelen, de eerste inzichten te bekijken en vragen over gebruik of distributie op te vangen.</p>
+<p class="sp-lead">Bij nieuwe MicroGames en Stories is standaard <strong>drie maanden toegang tot Prepo</strong> na oplevering inbegrepen. In die periode test en lanceer je de leerervaring, en volg je hoe ze wordt gebruikt. Er is ruimte om feedback te verzamelen, de eerste inzichten te bekijken en vragen over gebruik of distributie op te vangen.</p>
 <h3 class="sp-sub">Daarna flexibel verlengen</h3>
 <p class="sp-lead">Na die periode bepaal je of Prepo actief blijft. Met een licentie behoud je toegang tot de beheeromgeving. Afhankelijk van de afspraken kan dat worden uitgebreid met verlengde support, versiebeheer, updates, rapportages of doorontwikkeling.</p>
 {% include panels/actions.html secondary_label="Bespreek de mogelijkheden" secondary_href="/contact/" %}
@@ -164,7 +164,7 @@ permalink: /prepo/
 {% endcapture %}
 {% include panels/panel.html variant="mist" id="vragen" body=faq_body %}
 
-{% capture cta_left %}Een sterke leerervaring stopt niet bij de lancering. Met Prepo blijven je MicroGames en Stories beschikbaar, vindbaar en beheersbaar, met grip op distributie, inhoud, versies, feedback, statistieken en support.{% endcapture %}
+{% capture cta_left %}Een sterke leerervaring stopt niet bij de lancering. Met Prepo blijven je MicroGames en Stories vindbaar en bruikbaar, met grip op distributie, versies, feedback en support.{% endcapture %}
 {% capture cta_right %}We laten je graag zien hoe je leerproducten beheert, teksten aanpast, nieuwe versies publiceert en inzicht houdt in gebruik.{% endcapture %}
 {% include panels/cta.html kicker="Prepo" title="Geef je leerervaring ruimte om verder te groeien" left=cta_left right=cta_right stack=true primary_label="Vraag een demo aan" primary_href="/contact/" secondary_label="Neem contact op" secondary_href="/contact/" %}
 

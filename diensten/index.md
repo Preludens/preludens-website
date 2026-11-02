@@ -273,7 +273,7 @@ permalink_lang:
 {% capture gap_main %}
 <p class="sp-lead">Veel leertrajecten lopen vast op hetzelfde punt: medewerkers krijgen de juiste informatie aangeboden, maar vergeten die na verloop van tijd of weten niet hoe ze deze moeten toepassen. Theorie lezen, instructies bekijken of een toets maken helpt bij kennisoverdracht, maar zorgt er niet vanzelf voor dat kennis beklijft. Daarvoor moeten mensen de informatie actief verwerken, herkennen in hun eigen praktijk en er herhaaldelijk mee oefenen.</p>
 <p class="sp-lead">Met MicroGame Stories versterken we kennisretentie door storytelling, actieve uitdagingen, herhaling en directe feedback te combineren. Herkenbare verhalen geven kennis context en betekenis. Korte MicroGames dagen deelnemers uit om die kennis toe te passen, keuzes te maken en van fouten te leren.</p>
-<p class="sp-lead">Door oefeningen te herhalen en de moeilijkheid geleidelijk op te bouwen, wordt kennis steeds verder versterkt. Zo ontstaat een leerervaring waarin medewerkers niet alleen begrijpen en onthouden wat belangrijk is, maar ook leren hoe ze die kennis op het juiste moment gebruiken.</p>
+<p class="sp-lead">Door oefeningen te herhalen en de moeilijkheid geleidelijk op te bouwen, wordt kennis steeds verder versterkt. Zo ontstaat een leerervaring waarin medewerkers onthouden wat belangrijk is én leren hoe ze die kennis op het juiste moment gebruiken.</p>
 {% endcapture %}
 {% capture gap_checks %}
 {% include panels/check.html text="Storytelling geeft kennis context en betekenis." %}
@@ -295,7 +295,7 @@ permalink_lang:
 {% capture routes_body %}
 <h3>Vier routes om kennis speelbaar en toepasbaar te maken</h3>
 <h2>Onze diensten</h2>
-<p class="sp-lead">Elke leeruitdaging vraagt om een andere vorm. Soms wil je basiskennis trainen en borgen. Soms moeten mensen leren omgaan met lastige keuzes. En soms is eerst een scherpe analyse nodig van gedrag, doelen en spanningen in de praktijk. Daarom werkt Preludens met vier duidelijke routes.</p>
+<p class="sp-lead">Elke leeruitdaging vraagt om een andere vorm. Soms wil je basiskennis trainen en borgen. Soms moeten mensen leren omgaan met lastige keuzes. En soms is eerst een scherpe analyse nodig van het gedrag in de praktijk en de doelen die daarachter zitten. Daarom werkt Preludens met vier duidelijke routes.</p>
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="onze-diensten" body=routes_body %}
 
@@ -330,9 +330,9 @@ permalink_lang:
   </article>
   <article class="diensten-slot" id="game-thinking">
     <div>
-      <h3>Eerst grip krijgen op gedrag, doelen en spelmechanismen</h3>
+      <h3>Eerst grip krijgen op het gedrag achter de leeropgave</h3>
       <h2>Game Thinking</h2>
-      <p class="sp-lead">Game Thinking is onze ontwerpaanpak voor complexe leer- en veranderopgaven. We bekijken een vraagstuk alsof het een game is. Niet om er direct een spel van te maken, maar om zichtbaar te krijgen welke doelen, regels, keuzes, spanningen, feedbackmomenten en blokkades al in de praktijk aanwezig zijn.</p>
+      <p class="sp-lead">Game Thinking is onze ontwerpaanpak voor complexe leer- en veranderopgaven. We bekijken een vraagstuk alsof het een game is, om zichtbaar te krijgen welke doelen, regels, keuzes, uitdagingen en feedback er al in de praktijk liggen. Er hoeft daarvoor geen spel van gemaakt te worden.</p>
       <p class="sp-lead">Dat noemen we Find the Game. Samen onderzoeken we wat mensen moeten leren, welk gedrag moet veranderen en waar in de praktijk beweging mogelijk is. Vanuit die analyse ontstaat een duidelijke blauwdruk voor een leerervaring, interventie of serious game.</p>
     </div>
     {% include panels/actions.html primary_label="Meer over Game Thinking →" primary_href="/diensten/game-thinking/" %}
@@ -348,12 +348,12 @@ permalink_lang:
 <article><div class="sp-step-face"><h3><span>4</span> De juiste vorm kiezen</h3><p>Wil je basiskennis trainen, dan past een MicroGame Story. Wil je besluitvaardigheid versterken, dan Dilemma Storytelling. Is de oplossing nog niet scherp, dan starten we met Game Thinking.</p></div></article>
 <article><div class="sp-step-face"><h3><span>5</span> Ontwerpen</h3><p>We vertalen kennis naar verhaal, keuzes en feedback. Samen werken we toe naar herkenbare situaties, passende spelmechanismen en een eerste verhaallijn.</p></div></article>
 <article><div class="sp-step-face"><h3><span>6</span> Ontwikkelen en testen</h3><p>We maken de leerervaring klaar voor gebruik: ontwikkelen, testen en verbeteren waar nodig — van MicroGame Story tot blauwdruk of publiceerbare module.</p></div></article>
-<article><div class="sp-step-face"><h3><span>7</span> Opleveren en beheren</h3><p>Je krijgt een leerervaring die beschikbaar, vindbaar en doorontwikkelbaar blijft — in je eigen leeromgeving of via Prepo.</p></div></article>
+<article><div class="sp-step-face"><h3><span>7</span> Opleveren en beheren</h3><p>Je krijgt een leerervaring die vindbaar en doorontwikkelbaar blijft — in je eigen leeromgeving of via Prepo.</p></div></article>
 {% endcapture %}
 {% capture route_body %}
 <h3>Welke route past bij jouw uitdaging?</h3>
 <h2>Van eerste vraag naar speelbare leerervaring</h2>
-<p class="sp-lead">Niet elk vraagstuk vraagt om dezelfde oplossing. Daarom beginnen we niet bij de vorm, maar bij de leeropgave. Wat moeten mensen begrijpen, oefenen of anders gaan doen? Vanuit die vraag bepalen we welke route past: een MicroGame Story, Dilemma Storytelling, Game Thinking of een eerste GameStorm.</p>
+<p class="sp-lead">Niet elk vraagstuk vraagt om dezelfde oplossing. Daarom beginnen we bij de leeropgave. Wat moeten mensen begrijpen, oefenen of anders gaan doen? Vanuit die vraag bepalen we welke route past: een MicroGame Story, Dilemma Storytelling, Game Thinking of een eerste GameStorm.</p>
 {% include panels/steps.html variant="pyramid" items=route_steps %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="route" body=route_body %}

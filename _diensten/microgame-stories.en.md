@@ -16,18 +16,18 @@ body_class: page-panels
 {% include panels/clips.html %}
 
 {% capture hero_actions %}
-<p class="sp-lead">With MicroGame Stories, Preludens turns that knowledge into an active learning experience. We combine short, visual stories with focused forms of play in which participants discover, choose, practise and receive feedback themselves.</p>
-<p class="sp-lead">Online learning then stops being a series of screens to click through, and becomes a meaningful learning route in which people develop new knowledge and skills step by step.</p>
+<p class="sp-lead">With MicroGame Stories, Preludens turns that knowledge into an active learning experience. We combine short, visual stories with focused forms of play in which participants make choices and get direct feedback themselves.</p>
+<p class="sp-lead">Online learning then becomes a learning route in which people develop new knowledge and skills step by step.</p>
 {% include panels/actions.html primary_label="Plan a GameStorm" primary_href="/gamestorm/" secondary_label="Experience a MicroGame Story" secondary_href="/verhalen/microgame-demo/" %}
 {% endcapture %}
 {% capture hero_title %}MicroGame Stories: make complex knowledge <span class="hl">playable</span>{% endcapture %}
 {% capture hero_lead %}Interactive e-learning in which storytelling and MicroGames come together.{% endcapture %}
-{% capture hero_lead2 %}You want to pass important knowledge on to your employees. Knowledge they should not only understand, but also remember and apply when it matters.{% endcapture %}
+{% capture hero_lead2 %}You want to pass important knowledge on to your employees. Knowledge they need to understand, remember and apply when it matters.{% endcapture %}
 {% include panels/hero.html kicker="Services" title=hero_title lead=hero_lead lead2=hero_lead2 actions=hero_actions figure_src="/assets/images/hero/diensten-hero.jpg" figure_alt="A team setting out a route together" figure_href="/verhalen/microgame-demo/" figure_caption="From knowing to practising." %}
 
 {% capture transfer_body %}
 <h2>From knowledge transfer to active learning</h2>
-<p class="sp-lead">In many organisations, important knowledge is already available. Handbooks, instructions, presentations, process descriptions and existing e-learning modules describe exactly what employees need to know.</p>
+<p class="sp-lead">In many organisations, important knowledge is already available. Handbooks, work instructions and existing e-learning modules describe exactly what employees need to know.</p>
 <p class="sp-lead">Available information does not automatically mean people can apply that knowledge. An employee can know a procedure and still struggle to carry it out in an unexpected situation. Or understand a technical explanation without recognising the key principles when they are needed in practice.</p>
 <p class="sp-lead">That is the challenge in many forms of online learning. The content is right, but the participant gets little chance to practise with it actively.</p>
 <p class="sp-lead">Knowledge only gains meaning when people understand <strong>what they need it for</strong> and can work with it. That is why we develop MicroGame Stories: short, visual learning experiences in which knowledge is connected to recognisable situations, concrete challenges and direct feedback.</p>
@@ -35,13 +35,13 @@ body_class: page-panels
 {% include panels/panel.html variant="paper" id="actief-leren" body=transfer_body %}
 
 {% capture parts %}
-{% include panels/value.html title="Storytelling gives context" text="A recognisable story makes clear where the knowledge is needed, which problem it solves and why it is relevant for the participant." %}
-{% include panels/value.html title="MicroGames create practice" text="Short, focused challenges let participants recognise, apply, order or judge knowledge. They learn by doing something themselves." %}
+{% include panels/value.html title="Storytelling gives context" text="A recognisable story makes clear where the knowledge is needed and which problem it solves." %}
+{% include panels/value.html title="MicroGames create practice" text="Short, focused challenges let participants recognise and apply knowledge. They learn by doing something themselves." %}
 {% include panels/value.html title="Feedback and repetition" text="Participants discover why a choice works or does not, and get room to improve their approach." %}
 {% endcapture %}
 {% capture what_media %}
 <p class="sp-lead">MicroGame Stories are short, interactive online training programmes that combine storytelling and <a href="{{ '/play/' | relative_url }}">game-based learning</a>.</p>
-<p class="sp-lead">The participant follows a visual story around a recognisable work situation. Inside that story a problem, a question or a challenge arises that needs specific knowledge. That knowledge is then offered and actively practised in a MicroGame: a short form of play aimed at a concrete learning goal.</p>
+<p class="sp-lead">The participant follows a visual story around a recognisable work situation. Inside that story a problem arises that needs specific knowledge. That knowledge is then offered and actively practised in a MicroGame: a short form of play aimed at a concrete learning goal.</p>
 <p class="sp-lead">The participant makes choices, carries out tasks and gets direct feedback. After the MicroGame the story continues. It becomes clear why the knowledge matters and how it can be applied in practice.</p>
 {% endcapture %}
 {% capture what_body %}
@@ -58,20 +58,20 @@ body_class: page-panels
 {% include panels/step.html num="1" title="Recognise the situation" text="The participant meets a character, a workplace or a recognisable problem from practice. The story gives context and sparks curiosity." %}
 {% include panels/step.html num="2" title="Discover the challenge" text="Inside the story a problem arises that calls for knowledge or a skill. The participant discovers what is at stake." %}
 {% include panels/step.html num="3" title="Explore the knowledge that is needed" text="The material is offered at the moment it is relevant. Information immediately gains meaning inside the situation." %}
-{% include panels/step.html num="4" title="Practise with a MicroGame" text="The participant gets to work. For example by recognising parts, ordering a process, making connections or making a choice." %}
+{% include panels/step.html num="4" title="Practise with a MicroGame" text="The participant gets to work. For example by recognising parts or ordering a process." %}
 {% include panels/step.html num="5" title="Receive feedback and try again" text="The participant sees what is going well and where improvement is possible. Feedback explains why a choice works or does not." %}
 {% include panels/step.html num="6" title="Close and reflect" text="The participant returns to the story. What did you learn, why does it matter, and how do you use that knowledge in a similar situation?" %}
 {% endcapture %}
 {% capture route_body %}
 <h2>How does a MicroGame Story work?</h2>
-<p class="sp-lead sp-lead--center">A MicroGame Story takes the participant along a recognisable learning route. Not by offering all the information up front, but by giving the knowledge meaning step by step.</p>
+<p class="sp-lead sp-lead--center">A MicroGame Story takes the participant along a recognisable learning route, in which the knowledge gains meaning step by step.</p>
 {% include panels/steps.html variant="flow" items=route_steps %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="hoe-het-werkt" body=route_body %}
 
 {% capture benefit_items %}
 {% include panels/value.html title="More engagement with the material" text="A recognisable story and a concrete challenge give participants a reason to work actively with the knowledge. They have to make choices and carry out tasks themselves." %}
-{% include panels/value.html title="Better understanding through recognisable context" text="Knowledge is linked to situations in which employees will need it later. It becomes clear why rules, principles or ways of working matter." %}
+{% include panels/value.html title="Better understanding through recognisable context" text="Knowledge is linked to situations in which employees will need it later. It becomes clear why rules and ways of working matter." %}
 {% include panels/value.html title="Room to practise safely" text="A MicroGame is an environment in which participants may make mistakes. Through feedback and repetition they improve their approach without consequences for daily practice." %}
 {% include panels/value.html title="Short, focused learning activities" text="MicroGame Stories are built around concrete learning goals. Participants work step by step on specific topics and skills." %}
 {% endcapture %}
@@ -83,7 +83,7 @@ body_class: page-panels
 {% include panels/panel.html variant="mist" id="waarom" body=why_body %}
 
 {% capture fit_items %}
-{% include panels/value.html title="Technical knowledge and professional skills" text="Participants explore processes, recognise connections and apply knowledge in visual tasks." %}
+{% include panels/value.html title="Technical knowledge and professional skills" text="Participants explore processes and apply knowledge in visual tasks." %}
 {% include panels/value.html title="Safety and procedures" text="Employees practise recognising risks and applying procedures in recognisable situations." %}
 {% include panels/value.html title="Onboarding" text="New employees discover processes, agreements and ways of working through situations from the organisation." %}
 {% include panels/value.html title="Laws and regulations" text="Complex rules become concrete tasks: when does a rule apply, and how do you use it?" %}
@@ -112,7 +112,7 @@ body_class: page-panels
 {% include panels/panel.html variant="mist" align="left" id="basis-koeltechniek" body=case_body %}
 
 {% capture build_steps %}
-{% include panels/step.html num="1" title="We map the learning challenge" text="What do participants need to know, which skills should they develop, and which problems do they meet in practice? Together we explore the audience, the context and the learning needs." %}
+{% include panels/step.html num="1" title="We map the learning challenge" text="What do participants need to know, which skills should they develop, and which problems do they meet in practice? Together we explore the audience and the learning needs." %}
 {% include panels/step.html num="2" title="We formulate concrete learning goals" text="We make clear what participants should be able to recognise, understand, choose or apply." %}
 {% include panels/step.html num="3" title="We develop a recognisable storyline" text="The participant gets a recognisable situation, discovers a problem and gets a reason to use the material." %}
 {% include panels/step.html num="4" title="We design fitting MicroGames" text="For each learning goal we choose a game mechanism that fits the learning activity: recognise, order, combine, judge or apply. Including feedback and repetition." %}
@@ -121,7 +121,7 @@ body_class: page-panels
 {% endcapture %}
 {% capture build_body %}
 <h2>How do we develop a MicroGame Story?</h2>
-<p class="sp-lead sp-lead--center">A strong MicroGame Story does not start with a game idea. We start with the knowledge that matters, the people who need to learn it and the situations in which that knowledge is used.</p>
+<p class="sp-lead sp-lead--center">We start with the knowledge that matters, the people who need to learn it and the situations in which that knowledge is used. A game idea comes after that.</p>
 {% include panels/steps.html variant="flow" items=build_steps %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="ontwikkeling" body=build_body %}
@@ -130,15 +130,15 @@ body_class: page-panels
 <h2>MicroGame Stories inside your existing e-learning</h2>
 <p class="sp-lead">You do not have to develop a completely new learning programme straight away to use game-based learning. Many organisations already have lesson material, existing <a href="{{ '/e-learning/' | relative_url }}">e-learning</a> and clear learning goals. That content is often a good starting point.</p>
 <p class="sp-lead">Preludens helps turn existing knowledge into recognisable stories, short challenges and focused game mechanisms. An existing module can be extended with a MicroGame. Or one chapter becomes a MicroGame Story in which participants actively practise the most important knowledge.</p>
-<p class="sp-lead">Game-based learning then becomes an addition to existing e-learning, rather than a completely new and large programme. Our mission is to make this way of learning accessible for organisations that want to strengthen their online training.</p>
+<p class="sp-lead">Game-based learning then becomes an addition to existing e-learning. Our mission is to make this way of learning accessible for organisations that want to strengthen their online training.</p>
 {% endcapture %}
 {% include panels/panel.html variant="mist" align="left" id="bestaande-e-learning" body=existing_body %}
 
 {% capture prepo_body %}
 <h2>Easy to offer and manage via Prepo</h2>
-<p class="sp-lead">A good learning experience should not only be pleasant to use, but also stay easy to make available. That is why we help with the distribution and management of MicroGames and Stories.</p>
+<p class="sp-lead">A good learning experience is pleasant to use and stays easy to make available. That is why we help with the distribution and management of MicroGames and Stories.</p>
 <p class="sp-lead">Through <a href="{{ '/prepo/' | relative_url }}">Prepo</a>, the Preludens Portal, organisations can manage learning experiences, collect feedback, keep versions and see use and progress. MicroGames and Stories can also be offered through an existing learning environment.</p>
-<p class="sp-lead">For new MicroGames and Stories, three months of access to Prepo is included. After delivery there is room to launch the learning experience, follow it and improve it where needed.</p>
+<p class="sp-lead">For new MicroGames and Stories, three months of access to Prepo is included. After delivery there is room to follow the learning experience and improve it where needed.</p>
 {% include panels/actions.html secondary_label="Discover Prepo" secondary_href="/prepo/" %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="prepo" body=prepo_body %}
@@ -159,7 +159,7 @@ body_class: page-panels
 <p class="sp-lead">A MicroGame Story combines one or more MicroGames with a visual story. The story gives the knowledge context, while the MicroGames provide active application, feedback and repetition.</p>
 <h3 class="sp-sub">What is the difference between MicroGame Stories and traditional e-learning?</h3>
 <p class="sp-lead">Traditional e-learning often focuses on offering information through text, image, video and tests.</p>
-<p class="sp-lead">MicroGame Stories add a narrative context and active forms of play. Participants do not only get an explanation; they practise the knowledge inside recognisable situations.</p>
+<p class="sp-lead">MicroGame Stories add a narrative context and active forms of play. Participants practise the knowledge inside recognisable situations.</p>
 <h3 class="sp-sub">Are MicroGame Stories the same as serious games?</h3>
 <p class="sp-lead">MicroGame Stories use principles from serious gaming, but they are built to be more compact and more focused. Instead of one extensive game environment, we work with short stories and MicroGames around specific learning goals.</p>
 <p class="sp-lead">That means they can connect well to existing e-learning and smaller learning challenges.</p>
@@ -177,7 +177,7 @@ body_class: page-panels
 {% include panels/panel.html variant="paper" id="vragen" body=faq_body %}
 
 {% capture cta_left %}Do you have important knowledge that employees need to understand, remember or apply better? With MicroGame Stories we turn that content into an active learning experience in which storytelling and MicroGames come together.{% endcapture %}
-{% capture cta_right %}You do not yet need to know exactly what that learning experience should look like. In a GameStorm we explore the learning challenge, the audience and the learning goals, and we look for a first direction.{% endcapture %}
+{% capture cta_right %}You do not yet need to know exactly what that learning experience should look like. In a GameStorm we explore the learning challenge and the learning goals, and we look for a first direction.{% endcapture %}
 {% include panels/cta.html kicker="MicroGame Stories" title="Make your knowledge playable" left=cta_left right=cta_right stack=true primary_label="Plan a GameStorm" primary_href="/gamestorm/" secondary_label="Start with one chapter" secondary_href="/contact/#een-hoofdstuk" %}
 
 {% include panels/footer-reveal.html %}

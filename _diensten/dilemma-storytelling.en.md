@@ -17,20 +17,20 @@ body_class: page-panels
 
 {% capture hero_actions %}
 <p class="sp-lead">With Dilemma Storytelling, Preludens develops interactive stories in which employees practise this kind of trade-off. They step into a recognisable situation, make choices and discover what their decisions mean for different goals and the people involved.</p>
-<p class="sp-lead">That creates a safe learning environment in which teams can explore, practise and reflect before similar situations happen in practice.</p>
+<p class="sp-lead">That creates a safe learning environment in which teams can practise and reflect before similar situations happen in practice.</p>
 {% include panels/actions.html primary_label="Plan a GameStorm" primary_href="/gamestorm/" secondary_label="Try an interactive dilemma" secondary_href="#ervaringsblok" %}
 {% endcapture %}
 {% capture hero_title %}Dilemma Storytelling: learn to make better <span class="hl">choices</span>{% endcapture %}
 {% capture hero_lead %}Interactive scenarios in which employees practise difficult decisions and experience the consequences of their choices.{% endcapture %}
-{% capture hero_lead2 %}In practice, not every decision is simple. Employees regularly have to choose between interests that collide. Safety or speed? Quality or cost? Customer satisfaction or following a procedure? Often there is no single answer that is right in every situation.{% endcapture %}
+{% capture hero_lead2 %}In practice, not every decision is simple. Employees regularly have to choose between interests that collide. Safety or speed? Customer satisfaction or following a procedure? Often there is no single answer that is right in every situation.{% endcapture %}
 {% include panels/hero.html kicker="Services" title=hero_title lead=hero_lead lead2=hero_lead2 actions=hero_actions figure_src="/assets/images/hero/diensten-hero.jpg" figure_alt="A team setting out a route together" figure_href="#ervaringsblok" figure_caption="From knowing to weighing." %}
 
 {% capture recognize_body %}
 <h2>Knowing what to do is not the same as being able to decide</h2>
-<p class="sp-lead">Many organisations invest in knowledge transfer. Employees learn procedures, guidelines and ways of working. They follow training and get an explanation of the responsibilities that come with their role.</p>
+<p class="sp-lead">Many organisations invest in knowledge transfer. Employees learn procedures and ways of working. They follow training and get an explanation of the responsibilities that come with their role.</p>
 <p class="sp-lead">But daily practice is rarely as tidy as an instruction. What do you do when a customer asks for an exception? When a safety measure causes delay? Or when two important goals cannot be met at the same time?</p>
 <p class="sp-lead">In those moments employees have to do more than reproduce knowledge. They have to understand the situation, recognise interests, estimate consequences and make a decision.</p>
-<p class="sp-lead">The challenge is not always knowing the rules, but making a <strong>sound trade-off when interests collide</strong>. That skill is hard to train with explanation alone, or with a traditional knowledge test.</p>
+<p class="sp-lead">The challenge lies mainly in making a <strong>sound trade-off when interests collide</strong>. Knowing the rules is not enough for that. That skill is hard to train with explanation alone, or with a traditional knowledge test.</p>
 <p class="sp-lead">That is why Preludens develops learning experiences in which participants can practise the complexity of real decisions. A MicroGame can help someone carry out a procedure correctly. Dilemma Storytelling lets them experience what happens when that procedure collides with time pressure, customer interests, safety or other responsibilities.</p>
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="kunnen-beslissen" body=recognize_body %}
@@ -70,7 +70,7 @@ body_class: page-panels
 {% capture what_body %}
 <h2>What is Dilemma Storytelling?</h2>
 <p class="sp-lead">Dilemma Storytelling is a form of scenario-based learning. Participants move through realistic scenarios and make decisions that change how the story continues. More about how we combine learning and play is on <a href="{{ '/play/' | relative_url }}">our method</a> page.</p>
-<p class="sp-lead">The participant gets a recognisable role in a situation where several interests are at play. A problem arises that asks for a choice. Every decision has consequences for the story, the people involved and the goals that matter in that situation. Think of safety, quality, speed, cost, collaboration or customer satisfaction.</p>
+<p class="sp-lead">The participant gets a recognisable role in a situation where several interests are at play. A problem arises that asks for a choice. Every decision has consequences for the story, the people involved and the goals that matter in that situation. Think of safety, quality, speed, customer satisfaction and collaboration.</p>
 <p class="sp-lead">Not every choice is simply right or wrong. Sometimes a decision improves one result while another goal comes under pressure. By making those consequences visible, participants discover how interests connect and why professional action asks for careful trade-offs.</p>
 {% include panels/values.html label="Three parts of Dilemma Storytelling" items=parts %}
 {% endcapture %}
@@ -100,8 +100,8 @@ body_class: page-panels
 {% endcapture %}
 {% capture goals_body %}
 <h2>Make the consequences of choices visible</h2>
-<p class="sp-lead">In practice, choices often affect several goals at once. An organisation wants to work safely, deliver good quality, keep customers satisfied and use time and resources efficiently. Those goals can collide.</p>
-<p class="sp-lead">That is why we link decisions inside a Dilemma Story to specific goals. The point is not to reach a high score, but to understand how choices and consequences connect.</p>
+<p class="sp-lead">In practice, choices often affect several goals at once. An organisation wants to work safely and carefully, and still deliver on time. Those goals can collide.</p>
+<p class="sp-lead">That is why we link decisions inside a Dilemma Story to specific goals. Participants see how choices and consequences connect. A high score is not the goal.</p>
 {% include panels/values.html label="Goals a choice can affect" items=goal_items %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="gevolgen" body=goals_body %}
@@ -177,7 +177,7 @@ body_class: page-panels
 <h2>Dilemma Storytelling as part of a learning programme</h2>
 <p class="sp-lead">Dilemma Storytelling can be a standalone learning experience, or part of a wider training or change programme. For example as preparation for a workshop, as practice in a leadership programme, or as a deeper step after an existing e-learning module.</p>
 <p class="sp-lead">Participants can explore a situation on their own beforehand. In a shared session the choices they made are discussed. Why did someone choose a particular approach? Which interests were given priority? How would a colleague judge the same situation?</p>
-<p class="sp-lead">That way the interactive story is not only an individual learning experience, but also a starting point for dialogue and shared reflection. Distribution and management can run through an existing learning environment or through <a href="{{ '/prepo/' | relative_url }}">Prepo</a>.</p>
+<p class="sp-lead">That way the interactive story also becomes a starting point for dialogue and shared reflection. Distribution and management can run through an existing learning environment or through <a href="{{ '/prepo/' | relative_url }}">Prepo</a>.</p>
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="leertraject" body=wider_body %}
 
@@ -196,7 +196,7 @@ body_class: page-panels
 <h3 class="sp-sub">Can we use Dilemma Storytelling for teams?</h3>
 <p class="sp-lead">Yes. The learning experience can be done individually and then become the basis for shared reflection. That makes different perspectives inside a team discussable.</p>
 <h3 class="sp-sub">Can choices and results be made visible?</h3>
-<p class="sp-lead">Choices can be linked to goals such as safety, quality, speed and customer satisfaction. Which information is recorded depends on the technical solution and the agreements about data use.</p>
+<p class="sp-lead">Choices can be linked to the goals in the scenario, for example safety or customer satisfaction. Which information is recorded depends on the technical solution and the agreements about data use.</p>
 <h3 class="sp-sub">What does developing Dilemma Storytelling cost?</h3>
 <p class="sp-lead">The cost depends on the number of scenarios, the complexity of the choices, the number of storylines and the desired design. In a first exploration we look at which scale fits the learning goals and the resources.</p>
 <h3 class="sp-sub">Can we start small?</h3>
@@ -277,7 +277,7 @@ body_class: page-panels
     {"@type": "Question", "name": "Can participants experience different outcomes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Different choices can lead to other reactions, consequences or follow-up situations."}},
     {"@type": "Question", "name": "Can we use our own situations from practice?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Recognisable situations from the organisation are the starting point."}},
     {"@type": "Question", "name": "Can we use Dilemma Storytelling for teams?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The learning experience can be done individually and then become the basis for shared reflection."}},
-    {"@type": "Question", "name": "Can choices and results be made visible?", "acceptedAnswer": {"@type": "Answer", "text": "Choices can be linked to goals such as safety, quality, speed and customer satisfaction. What is recorded depends on the technical solution and the agreements about data use."}},
+    {"@type": "Question", "name": "Can choices and results be made visible?", "acceptedAnswer": {"@type": "Answer", "text": "Choices can be linked to the goals in the scenario, for example safety or customer satisfaction. What is recorded depends on the technical solution and the agreements about data use."}},
     {"@type": "Question", "name": "What does developing Dilemma Storytelling cost?", "acceptedAnswer": {"@type": "Answer", "text": "The cost depends on the number of scenarios, the complexity of the choices, the number of storylines and the design."}},
     {"@type": "Question", "name": "Can we start small?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. One bounded dilemma can be a first exploration."}}
   ]

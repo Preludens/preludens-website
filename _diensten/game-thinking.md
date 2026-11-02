@@ -17,7 +17,7 @@ body_class: page-panels
 
 {% capture hero_actions %}
 <p class="sp-lead">Met Game Thinking helpt Preludens organisaties om complexe leer- en veranderopgaven te onderzoeken voordat de oplossing wordt ontworpen.</p>
-<p class="sp-lead">We brengen doelen, regels, gedrag, keuzes, spanningen en feedbackmomenten in kaart. Daarna kijken we welke spelprincipes al in de praktijk aanwezig zijn, en hoe die kunnen helpen om mensen actief te laten leren.</p>
+<p class="sp-lead">We kijken welke spelprincipes al in de praktijk aanwezig zijn, en hoe die kunnen helpen om mensen actief te laten leren.</p>
 {% include panels/actions.html primary_label="Plan een GameStorm" primary_href="/gamestorm/" secondary_label="Ontdek onze aanpak" secondary_href="#find-the-game" %}
 {% endcapture %}
 {% capture hero_title %}Game Thinking: van leeruitdaging naar <span class="hl">actief leren</span>{% endcapture %}
@@ -37,8 +37,8 @@ body_class: page-panels
 
 {% capture what_body %}
 <h2>Wat is Game Thinking?</h2>
-<p class="sp-lead">Game Thinking is de ontwerpaanpak waarmee we een leer- of gedragsvraagstuk bekijken vanuit de structuur van een game. Niet omdat iedere uitdaging een spel moet worden, maar omdat spelprincipes helpen om gedrag, keuzes en onderlinge verbanden zichtbaar te maken. Meer over hoe wij game-based leren inzetten, lees je bij <a href="{{ '/play/' | relative_url }}">onze methode</a>.</p>
-<p class="sp-lead">In een game zijn er doelen, regels, uitdagingen, mogelijkheden, beperkingen en feedback. Die elementen komen ook voor in organisaties. Medewerkers werken naar doelen toe. Ze handelen binnen regels en afspraken. Ze maken keuzes, ervaren gevolgen en proberen obstakels te overwinnen.</p>
+<p class="sp-lead">Game Thinking is de ontwerpaanpak waarmee we een leer- of gedragsvraagstuk bekijken vanuit de structuur van een game. Spelprincipes maken zichtbaar hoe gedrag en keuzes in de praktijk samenhangen. Een uitdaging hoeft daarvoor niet in een spel te veranderen. Meer over hoe wij game-based leren inzetten, lees je bij <a href="{{ '/play/' | relative_url }}">onze methode</a>.</p>
+<p class="sp-lead">In een game zijn er doelen, regels, keuzes, uitdagingen, feedback en voortgang. Die elementen komen ook voor in organisaties. Medewerkers werken naar doelen toe. Ze handelen binnen regels en afspraken. Ze maken keuzes, ervaren gevolgen en proberen obstakels te overwinnen.</p>
 <p class="sp-lead">Door die bestaande structuur zichtbaar te maken, krijgen we beter inzicht in hoe mensen handelen en waar verandering mogelijk is. Vanuit dat inzicht ontwerpen we een leerervaring waarin mensen actief onderzoeken, kiezen, oefenen en reflecteren.</p>
 <p class="sp-lead">Game Thinking is daarmee geen vooraf gekozen eindproduct. <a href="{{ '/diensten/microgame-stories/' | relative_url }}">MicroGame Stories</a> en <a href="{{ '/diensten/dilemma-storytelling/' | relative_url }}">Dilemma Storytelling</a> zijn concrete leerformats. Game Thinking is de manier om eerst te bepalen welke aanpak bij het vraagstuk past.</p>
 {% endcapture %}
@@ -75,7 +75,7 @@ body_class: page-panels
 {% capture route_steps %}
 {% include panels/step.html num="1" title="We verkennen de uitdaging" text="Wat wil de organisatie bereiken, welk gedrag moet veranderen, en waarom lukt dat nu nog niet voldoende?" %}
 {% include panels/step.html num="2" title="We brengen de situatie in kaart" text="Processen, verantwoordelijkheden, doelen en terugkerende praktijksituaties. Waar ontstaan keuzes, en waar lopen mensen vast?" %}
-{% include panels/step.html num="3" title="We zoeken verborgen spelmechanismen" text="Met Find the Game maken we zichtbaar hoe doelen, regels, uitdagingen en feedback elkaar beïnvloeden." %}
+{% include panels/step.html num="3" title="We zoeken verborgen spelmechanismen" text="Met Find the Game maken we zichtbaar hoe de spelprincipes elkaar in de praktijk beïnvloeden." %}
 {% include panels/step.html num="4" title="We formuleren leerdoelen en ontwerpprincipes" text="Wat moeten deelnemers begrijpen, herkennen, oefenen of anders gaan doen? Kennis, vaardigheid en context blijven daarbij uit elkaar." %}
 {% include panels/step.html num="5" title="We verkennen passende interventies" text="Een MicroGame Story, een Dilemma Story, een serious game of een andere vorm. De vorm volgt uit de leerdoelen en de praktijk." %}
 {% include panels/step.html num="6" title="We werken toe naar een blauwdruk" text="Inzichten, leerdoelen, spelmechanismen en ontwerpkeuzes worden het vertrekpunt voor ontwikkeling. Waar dat past, verkennen we keuzes met een eerste concept." %}
@@ -90,7 +90,7 @@ body_class: page-panels
 {% capture yield_items %}
 {% include panels/value.html title="Een duidelijker beeld van de doelgroep" text="Inzicht in de situaties waarin mensen handelen, de keuzes die ze maken en de factoren die hun gedrag beïnvloeden." %}
 {% include panels/value.html title="Concrete leer- en veranderdoelen" text="Wat mensen moeten weten, kunnen of anders gaan doen. Zo blijft het ontwerp gericht." %}
-{% include panels/value.html title="Inzicht in bestaande spelmechanismen" text="Doelen, regels, uitdagingen en feedback die al onderdeel zijn van de praktijk, en wat daarvan te versterken is." %}
+{% include panels/value.html title="Inzicht in bestaande spelmechanismen" text="De spelprincipes die al onderdeel zijn van de praktijk, en wat daarvan te versterken is." %}
 {% include panels/value.html title="Een passende ontwerpaanpak" text="Welke vorm aansluit op de leeruitdaging, zodat een vooraf gekozen oplossing het vraagstuk niet gaat bepalen." %}
 {% include panels/value.html title="Een blauwdruk voor verdere ontwikkeling" text="Ontwerpprincipes en een concrete richting voor de volgende fase: ontwikkeling, testen en implementatie." %}
 {% endcapture %}
@@ -103,7 +103,7 @@ body_class: page-panels
 
 {% capture fit_items %}
 {% include panels/value.html title="Organisatieverandering en transities" text="Zichtbaar maken welke keuzes en omstandigheden nieuw gedrag beïnvloeden wanneer processen of verantwoordelijkheden verschuiven." %}
-{% include panels/value.html title="Gedragsverandering" text="Mensen weten wat de bedoeling is, maar handelen anders. We kijken naar doelen, regels, prikkels en feedback." %}
+{% include panels/value.html title="Gedragsverandering" text="Mensen weten wat de bedoeling is, maar handelen anders. We kijken naar welke doelen, regels en feedback hun keuzes sturen." %}
 {% include panels/value.html title="Complexe kennisoverdracht" text="Abstracte of omvangrijke kennis vertalen naar herkenbare situaties en gerichte leeractiviteiten." %}
 {% include panels/value.html title="Samenwerking tussen teams" text="Verschillen in doelen, verwachtingen en verantwoordelijkheden zichtbaar maken, en zoeken waar betere afstemming mogelijk is." %}
 {% include panels/value.html title="Besluitvorming en probleemoplossing" text="Onderzoeken hoe mensen kiezen wanneer er meerdere belangen en routes zijn, en hoe ze veilig kunnen oefenen." %}
@@ -121,15 +121,15 @@ body_class: page-panels
 <p class="sp-lead">Stel dat een organisatie een nieuwe werkwijze heeft ingevoerd. De instructies zijn beschikbaar. Medewerkers hebben uitleg gekregen en weten welke stappen ze moeten volgen. Toch vallen teams regelmatig terug op de oude manier van werken.</p>
 <p class="sp-lead">De eerste reactie kan zijn om extra training te ontwikkelen. Game Thinking begint met andere vragen. Waarom kiezen medewerkers voor de oude werkwijze? Welke doelen proberen ze te bereiken? Welke obstakels ervaren ze? Welke feedback krijgen ze op hun handelen?</p>
 <p class="sp-lead">Misschien vraagt de nieuwe procedure meer tijd, terwijl medewerkers vooral worden aangesproken op snelheid. Of zijn verantwoordelijkheden onduidelijk, waardoor mensen zelf oplossingen zoeken.</p>
-<p class="sp-lead">Door het vraagstuk als een game te bekijken, worden doelen, regels, keuzes en spanningen zichtbaar. Vanuit die analyse kan een interactieve training waardevol blijken. Misschien zijn ook duidelijkere feedback, aangepaste werkafspraken of een andere interventie nodig.</p>
-<p class="sp-lead">Game Thinking helpt om niet alleen het zichtbare gedrag aan te pakken, maar ook <strong>de structuur waarin dat gedrag ontstaat</strong>.</p>
+<p class="sp-lead">Door het vraagstuk als een game te bekijken, worden de doelen, regels en keuzes achter dat gedrag zichtbaar. Vanuit die analyse kan een interactieve training waardevol blijken. Misschien zijn ook duidelijkere feedback, aangepaste werkafspraken of een andere interventie nodig.</p>
+<p class="sp-lead">Game Thinking helpt om <strong>de structuur waarin dat gedrag ontstaat</strong> aan te pakken, en niet alleen het gedrag zelf.</p>
 <p class="sp-lead"><em>Dit is een illustratief voorbeeld, geen beschrijving van een uitgevoerd Preludens-project.</em></p>
 {% endcapture %}
 {% include panels/panel.html variant="mist" align="left" id="voorbeeld" body=example_body %}
 
 {% capture formats_body %}
 <h2>Van Game Thinking naar een passende leerervaring</h2>
-<p class="sp-lead">Game Thinking staat niet los van de andere diensten. Het helpt om te bepalen welke aanpak bij de leeruitdaging past. Het doel is niet om altijd een game te ontwikkelen, maar een aanpak die past bij de mensen, de situatie en de gewenste verandering.</p>
+<p class="sp-lead">Game Thinking staat niet los van de andere diensten. Het helpt om te bepalen welke aanpak bij de leeruitdaging past. Het doel is een aanpak die past bij de mensen, de situatie en de gewenste verandering; een game is daarvan één mogelijke uitkomst.</p>
 <h3 class="sp-sub">MicroGame Stories: wanneer kennis actief geoefend moet worden</h3>
 <p class="sp-lead">Ligt de uitdaging bij het begrijpen, toepassen en herhalen van concrete kennis, dan kan een <a href="{{ '/diensten/microgame-stories/' | relative_url }}">MicroGame Story</a> passen. Visuele storytelling en korte spelvormen waarin deelnemers gericht oefenen.</p>
 {% include panels/actions.html secondary_label="Ontdek MicroGame Stories" secondary_href="/diensten/microgame-stories/" %}
@@ -159,7 +159,7 @@ body_class: page-panels
 <h3 class="sp-sub">Wat is Find the Game?</h3>
 <p class="sp-lead">De ontwerpbenadering van Preludens waarbij we zoeken naar spelstructuren die al in bestaande processen zitten. In plaats van direct nieuwe mechanismen te ontwerpen, kijken we hoe de praktijk zelf aanknopingspunten biedt. Meer daarover staat in het artikel <a href="{{ '/play/blog/find-the-game/' | relative_url }}">Find the Game</a>.</p>
 <h3 class="sp-sub">Is Game Thinking hetzelfde als Design Thinking?</h3>
-<p class="sp-lead">Nee. Beide benaderingen vertrekken vanuit mensen en hun context, maar leggen andere accenten. Bij Game Thinking gebruiken we spelprincipes om doelen, gedrag, regels, keuzes, uitdagingen en feedback zichtbaar te maken.</p>
+<p class="sp-lead">Nee. Beide benaderingen vertrekken vanuit mensen en hun context, maar leggen andere accenten. Bij Game Thinking gebruiken we spelprincipes om doelen, regels, keuzes, uitdagingen en feedback zichtbaar te maken.</p>
 <h3 class="sp-sub">Leidt Game Thinking altijd tot een serious game?</h3>
 <p class="sp-lead">Nee. Een serious game kan passen, maar de analyse kan ook leiden tot een MicroGame Story, Dilemma Storytelling, een aanpassing in een bestaand leertraject of een andere interventie.</p>
 <h3 class="sp-sub">Wanneer is Game Thinking geschikt?</h3>
@@ -176,7 +176,7 @@ body_class: page-panels
 {% include panels/panel.html variant="paper" id="vragen" body=faq_body %}
 
 {% capture cta_left %}Heb je een leer- of veranderopgave waarvoor de oplossing nog niet duidelijk is? Wil je beter begrijpen waarom mensen handelen zoals ze doen, welke keuzes ertoe doen en hoe je beweging kunt creëren?{% endcapture %}
-{% capture cta_right %}Met Game Thinking brengen we structuur in complexe vraagstukken. We zoeken naar de doelen, regels, uitdagingen en feedback die al in de praktijk aanwezig zijn, en vertalen die naar een passende ontwerpaanpak. Zo ontstaat richting voordat je gaat ontwikkelen.{% endcapture %}
+{% capture cta_right %}Met Game Thinking brengen we structuur in complexe vraagstukken. We zoeken naar de spelprincipes die al in de praktijk aanwezig zijn, en vertalen die naar een passende ontwerpaanpak. Zo ontstaat richting voordat je gaat ontwikkelen.{% endcapture %}
 {% include panels/cta.html kicker="Game Thinking" title="Ontdek het spel in jouw vraagstuk" left=cta_left right=cta_right stack=true primary_label="Plan een GameStorm" primary_href="/gamestorm/" secondary_label="Neem contact op" secondary_href="/contact/" %}
 
 {% include panels/footer-reveal.html %}
@@ -190,7 +190,7 @@ body_class: page-panels
     {"@type": "Question", "name": "Wat is Game Thinking?", "acceptedAnswer": {"@type": "Answer", "text": "Een ontwerpaanpak waarbij Preludens een leer- of veranderopgave bekijkt vanuit spelprincipes: doelen, regels, keuzes, uitdagingen en feedback die al in de praktijk aanwezig zijn."}},
     {"@type": "Question", "name": "Wat is het verschil tussen Game Thinking en gamification?", "acceptedAnswer": {"@type": "Answer", "text": "Gamification voegt spelelementen toe aan een bestaande activiteit. Game Thinking onderzoekt eerst hoe een situatie werkt en welke mechanismen al aanwezig zijn."}},
     {"@type": "Question", "name": "Wat is Find the Game?", "acceptedAnswer": {"@type": "Answer", "text": "De ontwerpbenadering van Preludens waarbij we zoeken naar spelstructuren die al in bestaande processen aanwezig zijn."}},
-    {"@type": "Question", "name": "Is Game Thinking hetzelfde als Design Thinking?", "acceptedAnswer": {"@type": "Answer", "text": "Nee. Beide vertrekken vanuit mensen en hun context. Game Thinking gebruikt specifiek spelprincipes om doelen, gedrag, regels, keuzes, uitdagingen en feedback zichtbaar te maken."}},
+    {"@type": "Question", "name": "Is Game Thinking hetzelfde als Design Thinking?", "acceptedAnswer": {"@type": "Answer", "text": "Nee. Beide vertrekken vanuit mensen en hun context. Game Thinking gebruikt specifiek spelprincipes om doelen, regels, keuzes, uitdagingen en feedback zichtbaar te maken."}},
     {"@type": "Question", "name": "Leidt Game Thinking altijd tot een serious game?", "acceptedAnswer": {"@type": "Answer", "text": "Nee. De analyse kan ook leiden tot een MicroGame Story, Dilemma Storytelling, een aanpassing in een leertraject of een andere interventie."}},
     {"@type": "Question", "name": "Wanneer is Game Thinking geschikt?", "acceptedAnswer": {"@type": "Answer", "text": "Wanneer de leeruitdaging complex is, de gewenste verandering nog onvoldoende duidelijk is, of de oplossing nog niet vaststaat."}},
     {"@type": "Question", "name": "Wat levert een Game Thinking-traject concreet op?", "acceptedAnswer": {"@type": "Answer", "text": "Een scherper beeld van de doelgroep, de gewenste verandering, de relevante spelmechanismen en de ontwerpprincipes, als blauwdruk voor een leerervaring of interventie."}},
