@@ -212,13 +212,11 @@ body.page-panels {
   }
 }
 
-/* Homepage-accenten in het merkgoud (#EDA70E).
-   Een donkerder band loopt van links naar rechts en begint daarna opnieuw. */
-@keyframes gold-wave {
-  0% { background-position: 100% 50%; }
-  100% { background-position: -100% 50%; }
-}
-
+/* Homepage-accenten in het merkgoud (#EDA70E). Solide, niet als verloop:
+   de vorige versie veegde elke 3,6 seconden --color-deep-gold (#C88405) over
+   de letters, waardoor het goud als bruin las. Een verloop in tekst en een
+   oneindige animatie op iets dat niet leeft staan allebei in
+   .claude/skills/unslop-ui/references/signs.md. */
 body.page-home {
   .hl,
   .panel--hero h1 .hl,
@@ -228,56 +226,8 @@ body.page-home {
     color: var(--color-preludens-gold);
   }
 
-  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-    .hl,
-    .panel--hero h1 .hl,
-    .sp-hero-steps h3 span,
-    .panel--paper > .panel__inner > p a,
-    .sp-quote cite {
-      background-image: linear-gradient(
-        90deg,
-        var(--color-preludens-gold) 0%,
-        var(--color-preludens-gold) 38%,
-        var(--color-deep-gold) 50%,
-        var(--color-preludens-gold) 62%,
-        var(--color-preludens-gold) 100%
-      );
-      background-size: 200% 100%;
-      background-repeat: repeat;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-      animation: gold-wave 3.6s linear infinite;
-    }
-
-    .sp-hero-steps article:nth-child(2) h3 span { animation-delay: 0.6s; }
-    .sp-hero-steps article:nth-child(3) h3 span { animation-delay: 1.2s; }
-
-    h2 .hl:nth-of-type(2) { animation-delay: 0.45s; }
-    h2 .hl:nth-of-type(3) { animation-delay: 0.9s; }
-
-    .panel--paper > .panel__inner > p a:hover,
-    .panel--paper > .panel__inner > p a:focus-visible {
-      animation: none;
-      background-image: none;
-      -webkit-text-fill-color: var(--color-ink);
-      color: var(--color-ink);
-    }
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body.page-home {
-    .hl,
-    .panel--hero h1 .hl,
-    .sp-hero-steps h3 span,
-    .panel--paper > .panel__inner > p a,
-    .sp-quote cite {
-      animation: none;
-      background-image: none;
-      -webkit-text-fill-color: var(--color-preludens-gold);
-      color: var(--color-preludens-gold);
-    }
+  .panel--paper > .panel__inner > p a:hover,
+  .panel--paper > .panel__inner > p a:focus-visible {
+    color: var(--color-ink);
   }
 }
