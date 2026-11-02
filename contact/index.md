@@ -10,7 +10,7 @@ permalink: /contact/
 <div class="panel-stack">
 {% include panels/clips.html %}
 
-{% capture hero_title %}Zet je leeropgave om in een verhaal dat mensen actief meeneemt{% endcapture %}
+{% capture hero_title %}Zet je leeropgave om in een <span class="hl">verhaal</span> dat mensen actief meeneemt{% endcapture %}
 {% capture hero_lead %}Heb je kennis die beter moet blijven hangen, gedrag dat moet veranderen of een vaardigheid die mensen moeten oefenen? Vertel ons waar je tegenaan loopt. We denken graag mee over een passende route: van GameStorm tot eerste hoofdstuk of volledige speelbare leerervaring.{% endcapture %}
 {% include panels/hero.html kicker="Contact" title=hero_title lead=hero_lead figure_src="/assets/images/hero/contact-hero.jpg" figure_alt="Een open landschap met een route naar de horizon" figure_href="/gamestorm/" figure_caption="Vertel ons waar je tegenaan loopt." %}
 

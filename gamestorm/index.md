@@ -10,7 +10,7 @@ permalink: /gamestorm/
 <div class="panel-stack">
 {% include panels/clips.html %}
 
-{% capture hero_title %}Verken de mogelijkheden van game-based leren{% endcapture %}
+{% capture hero_title %}Verken de mogelijkheden van <span class="hl">game-based</span> leren{% endcapture %}
 {% capture hero_lead %}Je hoeft nog niet te weten welke leeroplossing je nodig hebt. In één dagdeel brengen we samen het probleem, de doelgroep en de belangrijkste leerdoelen in kaart — een duidelijke eerste richting, zonder je vast te leggen op een volledig project.{% endcapture %}
 {% capture hero_actions %}
 {% include panels/actions.html hero_cta=true primary_label="Plan een GameStorm →" primary_href="/contact/" secondary_label="Lees meer over Play" secondary_href="/play/" %}

@@ -10,7 +10,7 @@ permalink: /team/
 <div class="panel-stack">
 {% include panels/clips.html %}
 
-{% capture hero_title %}Mensen leren beter wanneer ze actief betrokken zijn{% endcapture %}
+{% capture hero_title %}Mensen leren beter wanneer ze actief <span class="hl">betrokken</span> zijn{% endcapture %}
 {% capture hero_lead %}Daarom ontwerpen we leerervaringen waarin mensen zelf keuzes maken, de gevolgen van hun handelen ervaren en gerichte feedback krijgen. Door kennis in een herkenbare context toe te passen, wordt die beter onthouden en gebruikt wanneer het ertoe doet.{% endcapture %}
 {% capture hero_actions %}
 {% include panels/actions.html hero_cta=true primary_label="Neem contact op →" primary_href="/contact/" secondary_label="Onze diensten" secondary_href="/diensten/" %}

@@ -10,7 +10,7 @@ permalink: /team/
 <div class="panel-stack">
 {% include panels/clips.html %}
 
-{% capture hero_title %}People learn better when they're actively involved{% endcapture %}
+{% capture hero_title %}People learn better when they're actively <span class="hl">involved</span>{% endcapture %}
 {% capture hero_lead %}That's why we design learning experiences where people make their own choices, experience the consequences of their actions and get targeted feedback. By applying knowledge in a recognisable context, it is better remembered and used when it matters.{% endcapture %}
 {% capture hero_actions %}
 {% include panels/actions.html hero_cta=true primary_label="Get in touch →" primary_href="/contact/" secondary_label="Our services" secondary_href="/diensten/" %}

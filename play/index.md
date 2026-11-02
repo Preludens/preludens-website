@@ -10,7 +10,7 @@ permalink: /play/
 <div class="panel-stack">
 {% include panels/clips.html %}
 
-{% capture hero_title %}Play creëert de ruimte om te leren{% endcapture %}
+{% capture hero_title %}<span class="hl">Play</span> creëert de ruimte om te leren{% endcapture %}
 {% capture hero_lead %}Wanneer mensen vooral bezig zijn met fouten vermijden en risico’s beperken, ontstaat er weinig ruimte om nieuw gedrag te oefenen. Play doorbreekt dat patroon.{% endcapture %}
 {% capture hero_lead2 %}Preludens creëert veilige leerervaringen waarin teams mogen onderzoeken, proberen en opnieuw kiezen. Met duidelijke regels en directe feedback groeien de betrokkenheid en het vertrouwen om in de praktijk sterker te handelen.{% endcapture %}
 {% capture hero_actions %}

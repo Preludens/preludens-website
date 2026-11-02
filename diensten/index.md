@@ -263,7 +263,7 @@ permalink_lang:
   }
 </style>
 
-{% capture hero_title %}Wij ontwikkelen trainingen die mensen activeren.{% endcapture %}
+{% capture hero_title %}Wij ontwikkelen trainingen die mensen <span class="hl">activeren</span>.{% endcapture %}
 {% capture hero_lead %}Preludens vertaalt complexe kennis naar interactieve leerervaringen met verhaal, spel en feedback. Zo worden teams uitgedaagd om situaties te verkennen, geactiveerd om keuzes te maken en gemotiveerd om kennis toe te passen in de praktijk.{% endcapture %}
 {% capture hero_actions %}
 {% include panels/actions.html hero_cta=true primary_label="Neem contact op →" primary_href="/contact/" secondary_label="Start met een GameStorm" secondary_href="/gamestorm/" %}

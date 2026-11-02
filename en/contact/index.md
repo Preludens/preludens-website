@@ -10,7 +10,7 @@ permalink: /contact/
 <div class="panel-stack">
 {% include panels/clips.html %}
 
-{% capture hero_title %}Turn your learning challenge into a story that actively engages people{% endcapture %}
+{% capture hero_title %}Turn your learning challenge into a <span class="hl">story</span> that actively engages people{% endcapture %}
 {% capture hero_lead %}Do you have knowledge that needs to stick better, behaviour that needs to change, or a skill people need to practise? Tell us what you are running into. We are happy to think along about a fitting route: from GameStorm to first chapter or a full playable learning experience.{% endcapture %}
 {% include panels/hero.html kicker="Contact" title=hero_title lead=hero_lead figure_src="/assets/images/hero/contact-hero.jpg" figure_alt="An open landscape with a route towards the horizon" figure_href="/gamestorm/" figure_caption="Tell us what you are running into." %}
 

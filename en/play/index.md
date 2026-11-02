@@ -10,7 +10,7 @@ permalink: /play/
 <div class="panel-stack">
 {% include panels/clips.html %}
 
-{% capture hero_title %}Play creates the space to learn{% endcapture %}
+{% capture hero_title %}<span class="hl">Play</span> creates the space to learn{% endcapture %}
 {% capture hero_lead %}When people are mostly focused on avoiding mistakes and limiting risk, there is little room to practise new behaviour. Play breaks that pattern.{% endcapture %}
 {% capture hero_lead2 %}Preludens creates safe learning experiences where teams can explore, try and choose again. With clear rules and immediate feedback, engagement and the confidence to act more strongly in practice grow.{% endcapture %}
 {% capture hero_actions %}

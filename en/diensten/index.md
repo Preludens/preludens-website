@@ -263,7 +263,7 @@ permalink_lang:
   }
 </style>
 
-{% capture hero_title %}We develop training that activates people.{% endcapture %}
+{% capture hero_title %}We develop training that <span class="hl">activates</span> people.{% endcapture %}
 {% capture hero_lead %}Preludens turns complex knowledge into interactive learning experiences with story, play and feedback. Teams are challenged to explore situations, activated to make choices and motivated to apply knowledge in practice.{% endcapture %}
 {% capture hero_actions %}
 {% include panels/actions.html hero_cta=true primary_label="Get in touch →" primary_href="/contact/" secondary_label="Start with a GameStorm" secondary_href="/gamestorm/" %}
