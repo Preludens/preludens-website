@@ -11,3 +11,6 @@ vendor/
 node_modules/
 .wrangler/
 .dev.vars
+
+# Claude Code: door de app beheerde worktrees
+.claude/worktrees/
