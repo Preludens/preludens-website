@@ -18,12 +18,12 @@ permalink_lang:
 {% include panels/actions.html hero_cta=true primary_label="Ontdek onze aanpak →" primary_href="/diensten/" play_label="Bekijk een MicroGame" play_href="/play/" %}
 {% endcapture %}
 {% capture hero_steps %}
-{% include panels/steps.html i1="01" t1="Uitdagen" p1="Daag teams uit om binnen realistische situaties keuzes te maken, afwegingen te oefenen en de gevolgen van hun handelen te ervaren." i2="02" t2="Activeren" p2="Gebruik Play om deelnemers actief te laten kiezen. Niet kijken of klikken, maar proberen, reageren, beslissen en leren van directe feedback." i3="03" t3="Motiveren" p3="Versterk de betrokkenheid en intrinsieke motivatie, zodat teams met meer vertrouwen handelen wanneer het er in de praktijk echt op aankomt." %}
+{% include panels/steps.html i1="01" t1="Uitdagen" p1="Daag teams uit om binnen realistische situaties keuzes te maken en te ervaren wat die keuzes opleveren." i2="02" t2="Activeren" p2="Gebruik Play om deelnemers actief te laten kiezen. Ze proberen iets en krijgen meteen te zien wat het oplevert." i3="03" t3="Motiveren" p3="Versterk de betrokkenheid en intrinsieke motivatie, zodat teams met meer vertrouwen handelen wanneer het er in de praktijk echt op aankomt." %}
 {% endcapture %}
 {% include panels/hero.html kicker="Leren door te doen" title=hero_title lead=hero_lead actions=hero_actions steps=hero_steps figure_src="/assets/images/hero/homepage-concept-route.jpg" figure_alt="Een persoon op een pad dat naar een vlag op de horizon leidt" figure_href="/play/" figure_caption="Van informatie naar kennis." %}
 
-{% capture focus_left %}Bij Preludens geloven we dat online leren pas werkt wanneer mensen actief betrokken raken. Daarom ontwerpen we interactieve leerervaringen die aansluiten bij de praktijk: visueel opgebouwd, herkenbaar en gericht op kennis die mensen echt moeten kunnen toepassen.{% endcapture %}
-{% capture focus_right %}Storytelling geeft context en betekenis. MicroGames zorgen voor keuzes, herhaling en directe feedback. Data laat zien waar deelnemers vastlopen en waar verbetering mogelijk is. Zo wordt online leren geen verplichting om doorheen te klikken, maar een gerichte ervaring waarin teams oefenen, ontdekken en groeien.{% endcapture %}
+{% capture focus_left %}Online leren werkt pas wanneer mensen er actief bij betrokken raken. Daarom ontwerpen we leerervaringen die herkenbaar zijn en gericht op kennis die mensen echt moeten kunnen toepassen.{% endcapture %}
+{% capture focus_right %}Storytelling geeft context en betekenis. MicroGames zorgen voor keuzes en directe feedback. Data laat zien waar deelnemers vastlopen. Zo wordt online leren een gerichte oefening waarin teams hun aanpak bijstellen.{% endcapture %}
 {% capture focus_title %}Interactieve scenario's die teams<br><span class="hl">uitdagen</span>, <span class="hl">activeren</span> en <span class="hl">motiveren</span>.{% endcapture %}
 {% capture focus_body %}
 <h2>{{ focus_title }}</h2>
@@ -33,13 +33,13 @@ permalink_lang:
 {% include panels/panel.html variant="mist" line="online-focus" body=focus_body %}
 
 {% capture track_items %}
-{% include panels/track.html href="/diensten/" title="E-learning" text="Online trainingen waarin medewerkers oefenen met situaties uit hun werk, keuzes maken en directe feedback krijgen." more="Informatie" frame="4" screen="/assets/images/verhalen/basis-koeltechniek-onderdelen.jpg" %}
-{% include panels/track.html href="/prepo/" title="Preludens Portal" text="Eén omgeving om MicroGames en Stories te gebruiken, te beheren en door te ontwikkelen, ook na de oplevering." more="Informatie" frame="3" screen="/assets/images/prepo/overzicht.jpg" %}
-{% include panels/track.html href="/diensten/#microgame-stories" title="MicroGame Stories" text="Korte, visuele verhalen die basiskennis koppelen aan herkenbare praktijksituaties, met spel en herhaling." more="Informatie" frame="2" screen="/assets/images/verhalen/studium-co-wijzer.jpg" %}
-{% include panels/track.html href="/diensten/#dilemma-storytelling" title="Dilemma short Stories" text="Korte scenario’s waarin teams lastige keuzes maken, gevolgen ervaren en leren afwegen." more="Informatie" frame="1" screen="/assets/images/verhalen/disruption-game.jpg" %}
+{% include panels/track.html href="/diensten/" title="E-learning" text="Online trainingen waarin medewerkers oefenen met situaties uit hun werk en meteen zien wat hun keuzes opleveren." more="Naar e-learning" frame="4" screen="/assets/images/verhalen/basis-koeltechniek-onderdelen.jpg" %}
+{% include panels/track.html href="/prepo/" title="Preludens Portal" text="Eén omgeving om MicroGames en Stories te gebruiken en door te ontwikkelen, ook na de oplevering." more="Naar de Portal" frame="3" screen="/assets/images/prepo/overzicht.jpg" %}
+{% include panels/track.html href="/diensten/#microgame-stories" title="MicroGame Stories" text="Korte, visuele verhalen die basiskennis koppelen aan herkenbare praktijksituaties, met spel en herhaling." more="Naar MicroGame Stories" frame="2" screen="/assets/images/verhalen/studium-co-wijzer.jpg" %}
+{% include panels/track.html href="/diensten/#dilemma-storytelling" title="Dilemma Storytelling" text="Korte scenario’s waarin teams lastige keuzes maken en de gevolgen daarvan ervaren." more="Naar Dilemma Storytelling" frame="1" screen="/assets/images/verhalen/disruption-game.jpg" %}
 {% endcapture %}
-{% capture paper_lead %}<strong>Welke vorm past bij jouw uitdaging?</strong> Wil je basiskennis trainen en borgen, dan ligt een MicroGame Story voor de hand. Wil je besluitvaardigheid versterken rond lastige keuzes, dan past Dilemma Storytelling. Wil je eerst grip krijgen op gedrag, leerdoelen en interventies, dan starten we met Game Thinking.{% endcapture %}
-{% capture paper_title %}<span class="hl">Kennistrajecten</span> met verhaal, spel en impact.{% endcapture %}
+{% capture paper_lead %}<strong>Welke vorm past bij jouw uitdaging?</strong> Voor basiskennis die moet beklijven ligt een MicroGame Story voor de hand. Gaat het om besluitvaardigheid bij lastige keuzes, dan past Dilemma Storytelling. En wil je eerst grip krijgen op gedrag en leerdoelen, dan starten we met Game Thinking.{% endcapture %}
+{% capture paper_title %}<span class="hl">Kennistrajecten</span> met verhaal en spel.{% endcapture %}
 {% capture paper_body %}
 <h3>Wat we doen</h3>
 <h2>{{ paper_title }}</h2>
@@ -48,9 +48,9 @@ permalink_lang:
 {% endcapture %}
 {% include panels/panel.html variant="paper" body=paper_body %}
 
-{% capture warm_left %}In een GameStorm verkennen we samen jouw leeruitdaging. In één dagdeel brengen we de doelgroep, context en belangrijkste leerdoelen scherp in beeld. Daarna vertalen we die inzichten naar een eerste verhaallijn, passende keuzes en korte spelmechanismen.{% endcapture %}
-{% capture warm_right %}Je gaat naar huis met een helder concept en een concrete richting voor je leerervaring. Ook los van een vervolgtraject geeft de sessie waardevolle houvast voor betere e-learning, training of kennisoverdracht.{% endcapture %}
-{% include panels/cta.html kicker="Vrijblijvend · geen verplichtingen · reactie binnen één werkdag" title="Zet morgen de eerste stap" left=warm_left right=warm_right primary_label="Plan een GameStorm" primary_href="/gamestorm/" secondary_label="Ontdek Play" secondary_href="/play/" %}
+{% capture warm_left %}In een GameStorm verkennen we samen jouw leeruitdaging. In één dagdeel brengen we de doelgroep en de belangrijkste leerdoelen scherp in beeld. Daarna vertalen we die inzichten naar een eerste verhaallijn met passende keuzes.{% endcapture %}
+{% capture warm_right %}Je gaat naar huis met een helder concept en een concrete richting voor je leerervaring. Ook los van een vervolgtraject geeft de sessie waardevolle houvast voor betere e-learning of training.{% endcapture %}
+{% include panels/cta.html kicker="Reactie binnen één werkdag" title="Zet morgen de eerste stap" left=warm_left right=warm_right primary_label="Plan een GameStorm" primary_href="/gamestorm/" secondary_label="Ontdek Play" secondary_href="/play/" %}
 
 {% capture proof_body %}
 <span class="sp-eyebrow">Bewezen in de praktijk</span>
@@ -148,23 +148,22 @@ permalink_lang:
 <h2>De mensen achter Preludens</h2>
 <p class="sp-lead">
   Preludens combineert meer dan vijftien jaar ervaring in serious games met storytelling,
-  game design, didactiek en techniek. We zijn een compact team van makers, ontwerpers en
-  ontwikkelaars dat complexe kennis vertaalt naar leerervaringen waarin mensen actief
-  ontdekken, kiezen en oefenen.
+  game design en didactiek. We zijn een compact team van makers en ontwikkelaars dat
+  complexe kennis vertaalt naar leerervaringen waarin mensen zelf kiezen en oefenen.
 </p>
 <p><a href="{{ '/team/' | relative_url }}">Maak kennis met het team →</a></p>
 <ul class="sp-values" aria-label="Wij staan voor">
   <li>
     <strong>Robuust</strong>
-    <span>Leerervaringen die stabiel werken, logisch aanvoelen en vertrouwen geven.</span>
+    <span>Leerervaringen die stabiel werken en logisch aanvoelen.</span>
   </li>
   <li>
     <strong>Gericht</strong>
-    <span>Ontwerpkeuzes die altijd terug te voeren zijn op leerdoelen, gedrag en toepassing.</span>
+    <span>Ontwerpkeuzes die altijd terug te voeren zijn op een leerdoel.</span>
   </li>
   <li>
     <strong>Toegankelijk</strong>
-    <span>Complexe kennis wordt helder, herkenbaar en speelbaar voor de mensen die ermee moeten werken.</span>
+    <span>Complexe kennis wordt speelbaar voor de mensen die ermee moeten werken.</span>
   </li>
 </ul>
 {% endcapture %}
