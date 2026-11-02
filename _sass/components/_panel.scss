@@ -52,10 +52,13 @@ body.page-panels {
   padding: clamp(2.25rem, 7vh, 6rem) var(--space-lg);
 }
 
+/* Extrabold, niet bold. design.MD schrijft bold voor, maar het oplichtwoord
+   in de kop staat in --color-ink-gold (#8B5A04, donker genoeg voor AA op
+   licht) en dat leest in dunnere letters als bruin in plaats van goud. */
 .panel h2 {
   font-family: var(--font-display);
   font-size: clamp(1.9rem, 3.8vw, 3.1rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.08;
   margin: 0 0 clamp(var(--space-md), 2.5vh, var(--space-lg));
   max-width: 22ch;
