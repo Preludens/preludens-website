@@ -30,6 +30,7 @@ body_class: page-verhalen-test
         <button class="verhalen-filters__btn is-active" type="button" role="tab" id="verhalen-filter-all" aria-selected="true" aria-controls="verhalen-panel" data-verhaal-filter="all">{{ t.verhalen.filter_all }}</button>
         <button class="verhalen-filters__btn" type="button" role="tab" id="verhalen-filter-projecten" aria-selected="false" aria-controls="verhalen-panel" data-verhaal-filter="projecten">{{ t.verhalen.filter_projects }}</button>
         <button class="verhalen-filters__btn" type="button" role="tab" id="verhalen-filter-kennis" aria-selected="false" aria-controls="verhalen-panel" data-verhaal-filter="kennis">{{ t.verhalen.filter_knowledge }}</button>
+        <button class="verhalen-filters__btn" type="button" role="tab" id="verhalen-filter-diensten" aria-selected="false" aria-controls="verhalen-panel" data-verhaal-filter="diensten">{{ t.verhalen.filter_services }}</button>
         <button class="verhalen-filters__btn" type="button" role="tab" id="verhalen-filter-demos" aria-selected="false" aria-controls="verhalen-panel" data-verhaal-filter="demos">{{ t.verhalen.filter_demos }}</button>
       </div>
       <form class="hero-search" role="search">

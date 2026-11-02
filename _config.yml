@@ -59,6 +59,9 @@ collections:
   play_blog:
     output: true
     permalink: /play/blog/:name/
+  diensten:
+    output: true
+    permalink: /diensten/:name/
 
 defaults:
   - scope:
@@ -80,6 +83,11 @@ defaults:
       type: "play_blog"
     values:
       layout: play-blog
+  - scope:
+      path: ""
+      type: "diensten"
+    values:
+      layout: dienst
 
 social:
   email: info@preludens.nl

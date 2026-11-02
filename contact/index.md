@@ -37,7 +37,7 @@ permalink: /contact/
 {% capture start_aside %}
 <h3>Of begin klein met één hoofdstuk</h3>
 <p class="sp-lead">Ontwikkel in één maand een eerste MicroGame Story-hoofdstuk rond één vaardigheid of leerdoelcluster. Zo ervaar je snel hoe verhaal, keuzes en feedback jouw inhoud speelbaar maken.</p>
-{% include panels/actions.html secondary_label="Meer over één hoofdstuk" secondary_href="/diensten/#microgame-stories" %}
+{% include panels/actions.html secondary_label="Meer over één hoofdstuk" secondary_href="/diensten/microgame-stories/#begin-klein" %}
 {% endcapture %}
 {% capture start_body %}
 <h3>De missie van Preludens is om de drempel naar game-based leren te verlagen</h3>
@@ -46,7 +46,7 @@ permalink: /contact/
 <h3>Laat kort weten waar je tegenaan loopt</h3>
 {% include panels/actions.html primary_label="Stuur een mail naar info@preludens.nl →" primary_href="mailto:info@preludens.nl" %}
 {% endcapture %}
-{% include panels/panel.html variant="paper" body=start_body %}
+{% include panels/panel.html variant="paper" id="een-hoofdstuk" body=start_body %}
 
 <!-- TODO [WACHTEN OP FOTO]: vervang gamestorm/sessie.* door een foto van jullie samen (TU Twente-project) -->
 {% capture expect_copy %}

@@ -32,8 +32,10 @@
             {% assign is_active = true %}
           {% elsif path == "/prepo/" and page.url contains "/prepo/" %}
             {% assign is_active = true %}
-          {% elsif path == "/diensten/" and page.url contains "/diensten/" %}
-            {% assign is_active = true %}
+          {% elsif path == "/diensten/" %}
+            {% if page.url contains "/diensten/" or page.url contains "/e-learning/" %}
+              {% assign is_active = true %}
+            {% endif %}
           {% elsif page.url == path or page.url == path | append: "index.html" %}
             {% assign is_active = true %}
           {% endif %}

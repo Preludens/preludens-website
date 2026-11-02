@@ -48,15 +48,15 @@
   var tabs = root.querySelectorAll("[data-verhaal-filter]");
   var grid = document.querySelector("[data-verhalen-grid]");
 
-  // Op "Alle" staan projecten, kennis en demo's door elkaar, niet per soort achter elkaar.
+  // Op "Alle" staan de soorten door elkaar, niet per soort achter elkaar.
   if (grid) {
-    var buckets = { projecten: [], kennis: [], demos: [], whitepapers: [] };
+    var buckets = { projecten: [], kennis: [], diensten: [], demos: [], whitepapers: [] };
     Array.prototype.forEach.call(grid.querySelectorAll("[data-verhaal-type]"), function (node) {
       var type = node.getAttribute("data-verhaal-type") || "projecten";
       if (!buckets[type]) buckets[type] = [];
       buckets[type].push(node);
     });
-    var mixOrder = ["projecten", "kennis", "demos", "whitepapers"];
+    var mixOrder = ["projecten", "kennis", "diensten", "demos", "whitepapers"];
     var mixed = [];
     var left = true;
     while (left) {
@@ -89,7 +89,7 @@
   var tilesBooted = false;
   var tileObserver = null;
   var panel = document.getElementById("verhalen-panel");
-  var validFilters = ["all", "projecten", "kennis", "whitepapers", "demos"];
+  var validFilters = ["all", "projecten", "kennis", "diensten", "whitepapers", "demos"];
   var emptyTitle = empty ? empty.querySelector(".verhalen-empty__title") : null;
   var emptyText = empty ? empty.querySelector(".verhalen-empty__text") : null;
   var emptyCopy = {

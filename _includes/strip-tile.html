@@ -1,6 +1,6 @@
 {% comment %}
   Tegel voor /inspiratie/.
-  Pass: title, summary, url, cta, aria, kind (projecten|kennis|demos), image.
+  Pass: title, summary, url, cta, aria, kind (projecten|kennis|diensten|demos), image.
 
   Foto-tegels zetten het beeld op het gedeelde cinematische podium
   (_includes/cinema-shot.html): een uitgeknipt kader met handen en een toestel,
@@ -46,10 +46,12 @@
   {% assign tile_label = "Demo" %}
 {% elsif tile_kind == "kennis" %}
   {% assign tile_label = "Kennis" %}
+{% elsif tile_kind == "diensten" %}
+  {% assign tile_label = t.verhalen.type_service %}
 {% else %}
   {% assign tile_label = "Project" %}
 {% endif %}
-<article class="strip-tile{% if tile_kind == 'projecten' or tile_kind == 'demos' %} strip-tile--photo strip-tile--cinema{% endif %}{% if tile_kind == 'demos' %} strip-tile--demo{% endif %}{% if tile_kind == 'kennis' %} strip-tile--kennis{% endif %}"{% if tile_src != "" %} style="--shot: url('{{ tile_src }}');"{% endif %}>
+<article class="strip-tile{% if tile_kind == 'projecten' or tile_kind == 'demos' %} strip-tile--photo strip-tile--cinema{% endif %}{% if tile_kind == 'demos' %} strip-tile--demo{% endif %}{% if tile_kind == 'kennis' %} strip-tile--kennis{% endif %}{% if tile_kind == 'diensten' %} strip-tile--dienst{% endif %}"{% if tile_src != "" %} style="--shot: url('{{ tile_src }}');"{% endif %}>
   <a class="strip-tile__link" href="{{ include.url | relative_url }}" aria-label="{{ include.aria }}">
     <span class="strip-tile__copy">
       <span class="strip-tile__label">{{ tile_label }}</span>

@@ -1,21 +1,25 @@
 <div class="sp-actions">
   {% if include.primary_label %}
+    {% assign action_href = include.primary_href %}
     {% if include.hero_cta %}
     <span class="sp-hero-cta">
-      <a class="btn btn-primary" href="{{ include.primary_href | relative_url }}">{{ include.primary_label }}</a>
+      <a class="btn btn-primary" href="{% include panels/href.html href=action_href %}">{{ include.primary_label }}</a>
     </span>
     {% else %}
-    <a class="btn btn-primary" href="{{ include.primary_href | relative_url }}">{{ include.primary_label }}</a>
+    <a class="btn btn-primary" href="{% include panels/href.html href=action_href %}">{{ include.primary_label }}</a>
     {% endif %}
   {% endif %}
   {% if include.secondary_label %}
-  <a class="btn btn-secondary" href="{{ include.secondary_href | relative_url }}">{{ include.secondary_label }}</a>
+  {% assign action_href = include.secondary_href %}
+  <a class="btn btn-secondary" href="{% include panels/href.html href=action_href %}">{{ include.secondary_label }}</a>
   {% endif %}
   {% if include.secondary2_label %}
-  <a class="btn btn-secondary" href="{{ include.secondary2_href | relative_url }}">{{ include.secondary2_label }}</a>
+  {% assign action_href = include.secondary2_href %}
+  <a class="btn btn-secondary" href="{% include panels/href.html href=action_href %}">{{ include.secondary2_label }}</a>
   {% endif %}
   {% if include.play_label %}
-  <a class="sp-hero-play" href="{{ include.play_href | relative_url }}">
+  {% assign action_href = include.play_href %}
+  <a class="sp-hero-play" href="{% include panels/href.html href=action_href %}">
     <span class="sp-hero-play__icon" aria-hidden="true">
       <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M3.2 1.4v9.2L10.4 6 3.2 1.4z"/></svg>
     </span>

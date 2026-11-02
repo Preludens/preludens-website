@@ -1,0 +1,4 @@
+{%- comment -%}Sitepad via relative_url. Een anker (#sectie) blijft op de huidige pagina.{%- endcomment -%}
+{%- assign href_raw = include.href -%}
+{%- assign href_start = href_raw | slice: 0, 1 -%}
+{%- if href_start == "#" or href_raw contains "://" -%}{{ href_raw }}{%- else -%}{{ href_raw | relative_url }}{%- endif -%}

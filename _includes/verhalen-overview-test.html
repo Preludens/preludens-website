@@ -4,6 +4,7 @@
 {% assign verhalen = site.verhalen | sort: "order" %}
 {% assign frame_count = 0 %}
 {% assign posts = site.play_blog | sort: "date" | reverse %}
+{% assign diensten = site.diensten | sort: "order" %}
 
 <svg class="strip-tile-clip-def" width="0" height="0" aria-hidden="true">
   <defs>
@@ -41,6 +42,24 @@
           aria=tile_aria
           kind=verhaal_type
           image=verhaal.image
+        %}
+      </div>
+    {% endfor %}
+
+    {% for dienst in diensten %}
+      {% assign item_lang = dienst.lang | default: site.default_lang %}
+      {% unless item_lang == current_lang %}{% continue %}{% endunless %}
+      {% assign dienst_title = dienst.tile_title | default: dienst.title %}
+      {% assign dienst_cta = t.verhalen.more_about | replace: "%s", dienst_title %}
+      {% assign dienst_aria = t.verhalen.more_about_aria | replace: "%s", dienst_title %}
+      <div role="listitem" data-verhaal-type="diensten">
+        {% include strip-tile.html
+          title=dienst_title
+          summary=dienst.summary
+          url=dienst.url
+          cta=dienst_cta
+          aria=dienst_aria
+          kind="diensten"
         %}
       </div>
     {% endfor %}

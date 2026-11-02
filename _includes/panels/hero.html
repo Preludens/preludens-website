@@ -9,7 +9,8 @@
     </div>
     {% if include.figure_src %}
     <figure class="sp-hero-scene">
-      <a class="sp-hero-scene__link" href="{{ include.figure_href | relative_url }}">
+      {% assign figure_href = include.figure_href %}
+      <a class="sp-hero-scene__link" href="{% include panels/href.html href=figure_href %}">
         <div class="sp-hero-shadow">
           <div class="sp-hero-frame">
             <img src="{{ include.figure_src | relative_url }}" alt="{{ include.figure_alt }}">

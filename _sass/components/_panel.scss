@@ -80,6 +80,105 @@ body.page-panels .hl {
   line-height: 1.25;
 }
 
+.panel h3.sp-sub {
+  text-transform: none;
+  letter-spacing: -0.015em;
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  font-weight: 700;
+  max-width: 36ch;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.dilemma-play {
+  margin-top: var(--space-md);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: var(--radius-md);
+  background: var(--color-deep-navy);
+  color: var(--color-cloud-white);
+}
+
+.dilemma-play__kicker {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-soft-gold);
+}
+
+.panel .dilemma-play h3.sp-sub {
+  margin-top: 0;
+  max-width: 22ch;
+  color: var(--color-cloud-white);
+}
+
+.panel .dilemma-play p {
+  max-width: 62ch;
+  color: color-mix(in srgb, var(--color-cloud-white) 86%, transparent);
+}
+
+.dilemma-play__choices[hidden] {
+  display: none;
+}
+
+.dilemma-play__choices,
+.dilemma-play__kpis {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 800px) {
+  .dilemma-play__choices {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.dilemma-play__choices button,
+.dilemma-play__reset {
+  padding: 0.9rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--color-soft-gold) 70%, transparent);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-cloud-white);
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dilemma-play__choices button:hover,
+.dilemma-play__choices button:focus-visible,
+.dilemma-play__reset:hover,
+.dilemma-play__reset:focus-visible {
+  background: var(--color-preludens-gold);
+  border-color: var(--color-preludens-gold);
+  color: var(--color-deep-navy);
+}
+
+.dilemma-play__kpis li {
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-cloud-white) 8%, transparent);
+}
+
+.dilemma-play__kpis strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--color-soft-gold);
+  font-family: var(--font-display);
+}
+
+.dilemma-play__reset {
+  margin-top: 1rem;
+}
+
 .panel p.sp-lead {
   font-family: var(--font-body);
   font-size: 1.0625rem;

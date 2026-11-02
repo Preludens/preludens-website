@@ -306,16 +306,16 @@ permalink: /diensten/
       <p class="sp-lead">Niet iedere leeruitdaging vraagt om een game. Soms is een heldere, goed gestructureerde e-learning precies wat nodig is om medewerkers nieuwe kennis bij te brengen, processen uit te leggen of bestaande vaardigheden op te frissen.</p>
       <p class="sp-lead">Met Articulate Rise ontwikkelen we toegankelijke, interactieve e-learningmodules waarin informatie overzichtelijk wordt aangeboden en deelnemers in hun eigen tempo leren.</p>
     </div>
-    {% include panels/actions.html primary_label="Meer over E-learning →" primary_href="/contact/" %}
+    {% include panels/actions.html primary_label="Meer over E-learning →" primary_href="/e-learning/" %}
   </article>
-  <article class="diensten-slot">
+  <article class="diensten-slot" id="microgame-stories">
     <div>
       <h3>Korte leerervaringen met verhaal, spel en herhaling</h3>
       <h2>MicroGame Stories</h2>
       <p class="sp-lead">MicroGame Stories zijn korte, visuele online trainingen waarin basiskennis wordt gekoppeld aan herkenbare praktijksituaties. Deelnemers volgen een verhaal, maken keuzes en oefenen tussendoor met korte MicroGames. Elk onderdeel is gericht op een concreet leerdoel. Zo krijgt kennis context, herhaling en directe feedback.</p>
       <p class="sp-lead">Een MicroGame Story is geschikt wanneer je belangrijke kennis wilt overdragen aan een grotere doelgroep, zonder mensen te belasten met lange, passieve modules.</p>
     </div>
-    {% include panels/actions.html primary_label="Meer over MicroGame Stories →" primary_href="/contact/" %}
+    {% include panels/actions.html primary_label="Meer over MicroGame Stories →" primary_href="/diensten/microgame-stories/" %}
   </article>
   <article class="diensten-slot">
     <div>
@@ -324,7 +324,7 @@ permalink: /diensten/
       <p class="sp-lead">Dilemma Storytelling helpt teams om lastige situaties te verkennen waarin meerdere belangen tegelijk spelen. Deelnemers krijgen realistische scenario’s voorgelegd en maken keuzes die gevolgen hebben. Niet elke situatie heeft één goed antwoord. Soms vraagt veiligheid om iets anders dan snelheid. Soms schuurt klanttevredenheid met kwaliteit. Soms moet een team leren afwegen wat op dat moment het zwaarst weegt.</p>
       <p class="sp-lead">Door keuzes zichtbaar te maken en te koppelen aan gevolgen, leren deelnemers scherper kijken naar hun eigen afwegingen.</p>
     </div>
-    {% include panels/actions.html primary_label="Meer over Dilemma Storytelling →" primary_href="/contact/" %}
+    {% include panels/actions.html primary_label="Meer over Dilemma Storytelling →" primary_href="/diensten/dilemma-storytelling/" %}
   </article>
   <article class="diensten-slot">
     <div>
@@ -333,7 +333,7 @@ permalink: /diensten/
       <p class="sp-lead">Game Thinking is onze ontwerpaanpak voor complexe leer- en veranderopgaven. We bekijken een vraagstuk alsof het een game is. Niet om er direct een spel van te maken, maar om zichtbaar te krijgen welke doelen, regels, keuzes, spanningen, feedbackmomenten en blokkades al in de praktijk aanwezig zijn.</p>
       <p class="sp-lead">Dat noemen we Find the Game. Samen onderzoeken we wat mensen moeten leren, welk gedrag moet veranderen en waar in de praktijk beweging mogelijk is. Vanuit die analyse ontstaat een duidelijke blauwdruk voor een leerervaring, interventie of serious game.</p>
     </div>
-    {% include panels/actions.html primary_label="Meer over Game Thinking →" primary_href="/contact/" %}
+    {% include panels/actions.html primary_label="Meer over Game Thinking →" primary_href="/diensten/game-thinking/" %}
   </article>
 </div>
 {% endcapture %}
