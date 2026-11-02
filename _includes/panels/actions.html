@@ -5,6 +5,14 @@
     <span class="sp-hero-cta">
       <a class="btn btn-primary" href="{% include panels/href.html href=action_href %}">{{ include.primary_label }}</a>
     </span>
+    {% comment %}
+      primary_fixed: wijs naar het pad zoals het is, zonder dat polyglot er de
+      taal voor zet. Nodig als een Engelse pagina naar een pagina linkt die
+      alleen in het Nederlands bestaat; zonder dit landt de bezoeker op een
+      Engelse URL met Nederlandse inhoud.
+    {% endcomment %}
+    {% elsif include.primary_fixed %}
+    <a class="btn btn-primary" {% static_href %}href="{{ site.baseurl }}{{ include.primary_href }}"{% endstatic_href %}>{{ include.primary_label }}</a>
     {% else %}
     <a class="btn btn-primary" href="{% include panels/href.html href=action_href %}">{{ include.primary_label }}</a>
     {% endif %}

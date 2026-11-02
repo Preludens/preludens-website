@@ -52,6 +52,9 @@ body.page-panels {
   padding: clamp(2.25rem, 7vh, 6rem) var(--space-lg);
 }
 
+/* Extrabold, niet bold. design.MD schrijft bold voor, maar het oplichtwoord
+   in de kop staat in --color-ink-gold (#8B5A04, donker genoeg voor AA op
+   licht) en dat leest in dunnere letters als bruin in plaats van goud. */
 .panel h2 {
   font-family: var(--font-display);
   font-size: clamp(1.9rem, 3.8vw, 3.1rem);
@@ -460,6 +463,56 @@ body.page-panels .sp-actions .btn {
   height: 100%;
   object-fit: cover;
   clip-path: url("#sp-hero-clip");
+}
+
+/* Video in hetzelfde witte kader als .sp-media__frame, maar met ronde in
+   plaats van schuine hoeken: de snede van #sp-hero-clip loopt rechtsonder
+   dwars door de bedieningsbalk van de speler heen. */
+.sp-video {
+  margin: clamp(var(--space-md), 3vh, var(--space-lg)) 0 0;
+}
+
+.sp-video__frame {
+  position: relative;
+  aspect-ratio: var(--sp-media-ratio, 16 / 9);
+  padding: 5px;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+}
+
+.sp-video__player {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(var(--radius-lg) - 5px);
+  background: var(--color-prussian-blue);
+  object-fit: cover;
+}
+
+.panel .sp-video__caption {
+  max-width: 70ch;
+  margin: var(--space-sm) 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+/* Bronvermelding onder een rij cijfers: kleiner en zachter dan lopende tekst,
+   met dezelfde maximale regellengte. */
+.panel p.sp-source {
+  max-width: 70ch;
+  margin: 0 0 clamp(var(--space-sm), 2vh, var(--space-md));
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+}
+
+/* Over een mistband ligt een gouden wassing. Daar haalt --color-ink-soft in
+   de kern van die wassing nog 4,3:1, net onder AA, dus kleinere tekst op zo'n
+   band gaat naar --color-ink. Op een paperband blijft ink-soft ruim genoeg. */
+.panel--mist .sp-video__caption,
+.panel--mist p.sp-source,
+.panel--mist .sp-hero-steps p {
+  color: var(--color-ink);
 }
 
 .sp-media__body > h2 {

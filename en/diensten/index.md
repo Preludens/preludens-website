@@ -2,7 +2,7 @@
 layout: default
 lang: en
 title: Services
-description: E-learning, MicroGame Stories, Dilemma Storytelling and Game Thinking — four routes to make knowledge playable and usable.
+description: E-learning, MicroGame Stories, Dilemma Storytelling and Game Thinking — four routes to make knowledge playable and applicable.
 body_class: page-panels
 permalink: /diensten/
 permalink_lang:
@@ -268,99 +268,99 @@ permalink_lang:
 {% capture hero_actions %}
 {% include panels/actions.html hero_cta=true primary_label="Get in touch →" primary_href="/contact/" secondary_label="Start with a GameStorm" secondary_href="/gamestorm/" %}
 {% endcapture %}
-{% include panels/hero.html kicker="Services" title=hero_title lead=hero_lead actions=hero_actions figure_src="/assets/images/hero/diensten-hero.jpg" figure_alt="A team setting out a route together" figure_href="/gamestorm/" figure_caption="From knowledge to usable behaviour." %}
+{% include panels/hero.html kicker="Services" title=hero_title lead=hero_lead actions=hero_actions figure_src="/assets/images/hero/diensten-hero.jpg" figure_alt="A team mapping out a route together" figure_href="/gamestorm/" figure_caption="From knowledge to applicable behaviour." %}
 
 {% capture gap_main %}
-<p class="sp-lead">Many learning programmes get stuck at the same point: employees are given the right information, but forget it over time or do not know how to apply it. Reading theory, watching instructions or taking a test helps transfer knowledge, but does not by itself make that knowledge stick. People need to work with the information, recognise it in their own practice and practise it repeatedly.</p>
-<p class="sp-lead">With MicroGame Stories we strengthen knowledge retention by combining storytelling, active challenges, repetition and direct feedback. Recognisable stories give knowledge context and meaning. Short MicroGames invite participants to apply that knowledge, make choices and learn from mistakes.</p>
-<p class="sp-lead">By repeating exercises and building the difficulty step by step, knowledge grows stronger. The result is a learning experience in which employees not only understand and remember what matters, but also learn how to use that knowledge at the right moment.</p>
+<p class="sp-lead">Many learning programmes get stuck at the same point: employees are offered the right information, but forget it over time or do not know how to apply it. Reading theory, watching instructions or taking a test helps transfer knowledge, but it does not by itself make that knowledge stick. For that, people need to process the information actively, recognise it in their own practice and practise with it repeatedly.</p>
+<p class="sp-lead">With MicroGame Stories we strengthen knowledge retention by combining storytelling, active challenges, repetition and immediate feedback. Recognisable stories give knowledge context and meaning. Short MicroGames challenge participants to apply that knowledge, make choices and learn from mistakes.</p>
+<p class="sp-lead">By repeating exercises and building up the difficulty step by step, knowledge is reinforced further and further. That creates a learning experience in which employees not only understand and remember what matters, but also learn how to use that knowledge at the right moment.</p>
 {% endcapture %}
 {% capture gap_checks %}
 {% include panels/check.html text="Storytelling gives knowledge context and meaning." %}
 {% include panels/check.html text="MicroGames make learning active and challenging." %}
-{% include panels/check.html text="Direct feedback strengthens insight and understanding." %}
-{% include panels/check.html text="Repetition and variation help knowledge stick." %}
+{% include panels/check.html text="Immediate feedback strengthens insight and understanding." %}
+{% include panels/check.html text="Repetition and variation help knowledge stick better." %}
 {% include panels/check.html text="Data makes progress and development visible." %}
-{% include panels/check.html text="Reflection connects what was learned to practice." %}
+{% include panels/check.html text="Reflection connects what is learned to practice." %}
 {% endcapture %}
 {% capture gap_aside %}
 {% include panels/checklist.html label="What our approach adds" items=gap_checks %}
 {% endcapture %}
 {% capture gap_body %}
-<h2>Knowledge that is applied, and that sticks</h2>
+<h2>Knowledge that gets applied and that sticks</h2>
 {% include panels/aside.html main=gap_main aside=gap_aside %}
 {% endcapture %}
 {% include panels/panel.html variant="mist" align="left" id="kennis-hangen" body=gap_body %}
 
 {% capture routes_body %}
-<h3>Four routes to make knowledge playable and usable</h3>
+<h3>Four routes to make knowledge playable and applicable</h3>
 <h2>Our services</h2>
-<p class="sp-lead">Every learning challenge asks for a different form. Sometimes you want to train basic knowledge and make it stick. Sometimes people need to learn how to handle difficult choices. And sometimes you first need a sharp look at behaviour, goals and tensions in practice. That is why Preludens works with four clear routes.</p>
+<p class="sp-lead">Every learning challenge asks for a different form. Sometimes you want to train and embed basic knowledge. Sometimes people need to learn how to handle difficult choices. And sometimes you first need a sharp analysis of behaviour, goals and tensions in practice. That is why Preludens works with four clear routes.</p>
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="onze-diensten" body=routes_body %}
 
 {% capture slots_body %}
 <div class="diensten-slots">
-  <article class="diensten-slot">
+  <article class="diensten-slot" id="e-learning">
     <div>
-      <h3>Offer knowledge clearly and accessibly</h3>
+      <h3>Offering knowledge clearly and accessibly</h3>
       <h2>E-learning</h2>
-      <p class="sp-lead">Not every learning challenge calls for a game. Sometimes a clear, well-structured e-learning module is exactly what is needed to give employees new knowledge, explain processes or refresh existing skills.</p>
+      <p class="sp-lead">Not every learning challenge asks for a game. Sometimes a clear, well-structured e-learning module is exactly what is needed to teach employees new knowledge, explain processes or refresh existing skills.</p>
       <p class="sp-lead">With Articulate Rise we develop accessible, interactive e-learning modules in which information is presented clearly and participants learn at their own pace.</p>
     </div>
-    {% include panels/actions.html primary_label="More about e-learning →" primary_href="/e-learning/" %}
+    {% include panels/actions.html primary_label="More about E-learning →" primary_href="/e-learning/" primary_fixed=true %}
   </article>
   <article class="diensten-slot" id="microgame-stories">
     <div>
       <h3>Short learning experiences with story, play and repetition</h3>
       <h2>MicroGame Stories</h2>
-      <p class="sp-lead">MicroGame Stories are short, visual online training programmes in which basic knowledge is connected to recognisable work situations. Participants follow a story, make choices and practise along the way with short MicroGames. Each part aims at a concrete learning goal. Knowledge gains context, repetition and direct feedback.</p>
-      <p class="sp-lead">A MicroGame Story fits when you want to pass on important knowledge to a larger audience, without burdening people with long, passive modules.</p>
+      <p class="sp-lead">MicroGame Stories are short, visual online training modules in which basic knowledge is linked to recognisable work situations. Participants follow a story, make choices and practise along the way with short MicroGames. Each part targets a concrete learning goal. That gives knowledge context, repetition and immediate feedback.</p>
+      <p class="sp-lead">A MicroGame Story is a good fit when you want to transfer important knowledge to a larger audience without burdening people with long, passive modules.</p>
     </div>
-    {% include panels/actions.html primary_label="More about MicroGame Stories →" primary_href="/diensten/microgame-stories/" %}
+    {% include panels/actions.html primary_label="More about MicroGame Stories →" primary_href="/diensten/microgame-stories/" primary_fixed=true %}
   </article>
-  <article class="diensten-slot">
+  <article class="diensten-slot" id="dilemma-storytelling">
     <div>
-      <h3>Practise choices that have no simple answer</h3>
+      <h3>Practising with choices that have no simple answer</h3>
       <h2>Dilemma Storytelling</h2>
-      <p class="sp-lead">Dilemma Storytelling helps teams explore difficult situations in which several interests are at play at once. Participants are given realistic scenarios and make choices that have consequences. Not every situation has one right answer. Sometimes safety asks for something other than speed. Sometimes customer satisfaction rubs against quality. Sometimes a team has to learn to weigh what matters most in that moment.</p>
+      <p class="sp-lead">Dilemma Storytelling helps teams explore difficult situations in which several interests play at once. Participants are presented with realistic scenarios and make choices that have consequences. Not every situation has one right answer. Sometimes safety asks for something different than speed. Sometimes customer satisfaction rubs against quality. Sometimes a team needs to learn how to weigh what matters most in that moment.</p>
       <p class="sp-lead">By making choices visible and linking them to consequences, participants learn to look more sharply at their own trade-offs.</p>
     </div>
-    {% include panels/actions.html primary_label="More about Dilemma Storytelling →" primary_href="/diensten/dilemma-storytelling/" %}
+    {% include panels/actions.html primary_label="More about Dilemma Storytelling →" primary_href="/diensten/dilemma-storytelling/" primary_fixed=true %}
   </article>
-  <article class="diensten-slot">
+  <article class="diensten-slot" id="game-thinking">
     <div>
-      <h3>First get a clear view of behaviour, goals and game mechanisms</h3>
+      <h3>First get a grip on behaviour, goals and game mechanisms</h3>
       <h2>Game Thinking</h2>
-      <p class="sp-lead">Game Thinking is our design approach for complex learning and change challenges. We look at a question as if it were a game. Not to turn it into a game straight away, but to make visible which goals, rules, choices, tensions, feedback moments and blockers are already present in practice.</p>
-      <p class="sp-lead">We call that Find the Game. Together we explore what people need to learn, which behaviour has to change and where movement is possible in practice. That analysis becomes a clear blueprint for a learning experience, an intervention or a serious game.</p>
+      <p class="sp-lead">Game Thinking is our design approach for complex learning and change challenges. We look at a question as if it were a game — not to turn it into a game immediately, but to make visible which goals, rules, choices, tensions, feedback moments and blockers are already present in practice.</p>
+      <p class="sp-lead">We call that Find the Game. Together we explore what people need to learn, which behaviour needs to change and where movement is possible in practice. From that analysis a clear blueprint emerges for a learning experience, intervention or serious game.</p>
     </div>
-    {% include panels/actions.html primary_label="More about Game Thinking →" primary_href="/diensten/game-thinking/" %}
+    {% include panels/actions.html primary_label="More about Game Thinking →" primary_href="/diensten/game-thinking/" primary_fixed=true %}
   </article>
 </div>
 {% endcapture %}
 {% include panels/panel.html variant="mist" id="diensten-slots" body=slots_body %}
 
 {% capture route_steps %}
-<article><div class="sp-step-face"><h3><span>1</span> Explore</h3><p>We bring your learning challenge into sharp focus. In a first conversation or GameStorm we look at the problem, the audience, the context and the key learning goals.</p></div></article>
+<article><div class="sp-step-face"><h3><span>1</span> Explore</h3><p>We bring your learning challenge into sharp focus. In a first conversation or GameStorm we examine the problem, audience, context and key learning goals.</p></div></article>
 <article><div class="sp-step-face"><h3><span>2</span> Sharpen</h3><p>We translate the learning challenge into clear goals and design choices. We make concrete what participants should understand, recognise, choose or apply afterwards.</p></div></article>
-<article><div class="sp-step-face"><h3><span>3</span> Gather the content</h3><p>You bring the knowledge from practice, we make it playable. We collect training, processes, cases and expert knowledge and explore how that knowledge becomes playable.</p></div></article>
-<article><div class="sp-step-face"><h3><span>4</span> Choose the right form</h3><p>If you want to train basic knowledge, a MicroGame Story fits. If you want to strengthen decision-making, Dilemma Storytelling fits. If the solution is not yet clear, we start with Game Thinking.</p></div></article>
+<article><div class="sp-step-face"><h3><span>3</span> Gather content</h3><p>You bring the practice knowledge; we make it playable. We collect training, processes, cases and expert knowledge and explore how that knowledge becomes playable.</p></div></article>
+<article><div class="sp-step-face"><h3><span>4</span> Choose the right form</h3><p>Want to train basic knowledge? A MicroGame Story. Want to strengthen decisiveness? Dilemma Storytelling. Solution not sharp yet? We start with Game Thinking.</p></div></article>
 <article><div class="sp-step-face"><h3><span>5</span> Design</h3><p>We translate knowledge into story, choices and feedback. Together we work towards recognisable situations, fitting game mechanisms and a first storyline.</p></div></article>
-<article><div class="sp-step-face"><h3><span>6</span> Develop and test</h3><p>We prepare the learning experience for use: develop, test and improve where needed — from a MicroGame Story to a blueprint or a publishable module.</p></div></article>
-<article><div class="sp-step-face"><h3><span>7</span> Deliver and manage</h3><p>You receive a learning experience that stays available, findable and open to further development — in your own learning environment or via Prepo.</p></div></article>
+<article><div class="sp-step-face"><h3><span>6</span> Develop and test</h3><p>We make the learning experience ready for use: develop, test and improve where needed — from MicroGame Story to blueprint or publishable module.</p></div></article>
+<article><div class="sp-step-face"><h3><span>7</span> Deliver and manage</h3><p>You get a learning experience that stays available, findable and improvable — in your own learning environment or via Prepo.</p></div></article>
 {% endcapture %}
 {% capture route_body %}
 <h3>Which route fits your challenge?</h3>
-<h2>From the first question to a playable learning experience</h2>
-<p class="sp-lead">Not every challenge asks for the same solution. That is why we do not start with the form, but with the learning challenge. What do people need to understand, practise or start doing differently? From that question we decide which route fits: a MicroGame Story, Dilemma Storytelling, Game Thinking or a first GameStorm.</p>
+<h2>From first question to playable learning experience</h2>
+<p class="sp-lead">Not every challenge asks for the same solution. That is why we do not start with the form, but with the learning task. What do people need to understand, practise or do differently? From that question we determine which route fits: a MicroGame Story, Dilemma Storytelling, Game Thinking or a first GameStorm.</p>
 {% include panels/steps.html variant="pyramid" items=route_steps %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="route" body=route_body %}
 
-{% capture cta_left %}Do you have knowledge that needs to stick better? Behaviour that needs to change? Or a complex challenge your team has to learn to handle?{% endcapture %}
-{% capture cta_right %}In a GameStorm we look together at where the learning challenge sits and which form fits it.{% endcapture %}
-{% include panels/cta.html kicker="Find which learning route fits your team" title="Take the first step tomorrow" left=cta_left right=cta_right stack=true primary_label="Start with a GameStorm" primary_href="/gamestorm/" secondary_label="Get in touch" secondary_href="/contact/" %}
+{% capture cta_left %}Do you have knowledge that needs to stick better? Behaviour that needs to change? Or a complex challenge your team needs to learn to handle?{% endcapture %}
+{% capture cta_right %}In a GameStorm we explore together where the learning challenge sits and which form fits.{% endcapture %}
+{% include panels/cta.html kicker="Discover which learning route fits your team" title="Take the first step tomorrow" left=cta_left right=cta_right stack=true primary_label="Start with a GameStorm" primary_href="/gamestorm/" secondary_label="Get in touch" secondary_href="/contact/" %}
 
 {% include panels/footer-reveal.html %}
 

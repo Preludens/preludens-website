@@ -20,6 +20,36 @@ Centrale plek voor Cursor-agents die aan deze Jekyll-site werken.
 
 Live zetten naar `production` doe je **niet** uit jezelf — alleen als de gebruiker dat vraagt.
 
+## Unslop-check voor elke commit
+
+Deze repo heeft twee unslop-skills onder `.claude/skills/`. **Loop de relevante
+check langs voordat je commit** — de hook `.claude/hooks/precommit-unslop.sh`
+herinnert je eraan zodra er een `git commit` aankomt met UI- of tekstbestanden
+in de staging.
+
+| Skill | Waarvoor | Wanneer |
+|-------|----------|---------|
+| `unslop-ui` | Hoe het eruitziet: kleur, ruimte, type, iconen, detail, beweging | Je wijzigt `_sass/`, `assets/css/`, `_includes/`, `_layouts/` of `assets/js/` |
+| `unslop` | Hoe het leest: AI-tells in proza | Je schrijft of wijzigt kopij in `.md`-bestanden of `_data/` |
+
+Bij UI is `.claude/skills/unslop-ui/references/signs.md` de korte lijst met tells;
+die lezen is meestal genoeg. Roep de hele skill alleen op als je echt een scherm
+wilt herontwerpen — hij stelt een richting voor en herschrijft in passes, en dit
+project heeft al een vastgelegd ontwerp (`design.MD`,
+`.cursor/rules/preludens-visual-style.mdc`). Wat daar is afgewogen — het koraal-goud
+verloop van `panel--warm`, de gouden wassing van de mistband, de halo onder het
+cinematische podium — is een keuze, geen slop.
+
+Bij tekst: gebruik de audit, niet de herschrijving. De Python-scanners onder
+`.claude/skills/unslop/scripts/` zijn **Engelstalig** (`_lang.py` kijkt eerst of de
+tekst Engels is), dus op Nederlandse kopij zeggen ze niets. Lees daar
+`.claude/skills/unslop/references/taboo-phrases.md` en beoordeel zelf, naast
+`.cursor/rules/tekst-verbeteren.mdc`.
+
+Krediet hoort bij beide skills te blijven staan: `unslop-ui` is van Damir
+Sokolovsky (CC BY 4.0), `unslop` van Clayton Kim (MIT,
+<https://github.com/theclaymethod/unslop>).
+
 ## Tekst verbeteren
 
 Als de gebruiker vraagt om tekst te verbeteren, volg `.cursor/rules/tekst-verbeteren.mdc`:

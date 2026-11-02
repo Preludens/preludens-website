@@ -1,0 +1,20 @@
+{% comment %}
+  Video in hetzelfde witte kader als panels/figure.html, maar met ronde in
+  plaats van schuine hoeken: de snede van #sp-hero-clip loopt rechtsonder
+  dwars door de bedieningsbalk van de speler heen.
+  Pass: src, poster, label, caption, ratio, download_label.
+
+  `preload="none"` houdt de pagina licht: pas bij een klik op afspelen haalt
+  de browser de video op. De posterafbeelding staat er tot die tijd.
+{% endcomment %}
+<figure class="sp-video">
+  <div class="sp-hero-shadow">
+    <div class="sp-video__frame"{% if include.ratio %} style="--sp-media-ratio: {{ include.ratio }};"{% endif %}>
+      <video class="sp-video__player" controls playsinline preload="none" poster="{{ include.poster | relative_url }}"{% if include.label %} aria-label="{{ include.label }}"{% endif %}>
+        <source src="{{ include.src | relative_url }}" type="video/mp4">
+        <p>Je browser kan deze video niet afspelen. <a href="{{ include.src | relative_url }}">{{ include.download_label | default: "Download de video (mp4)" }}</a>.</p>
+      </video>
+    </div>
+  </div>
+  {% if include.caption %}<figcaption class="sp-video__caption">{{ include.caption }}</figcaption>{% endif %}
+</figure>

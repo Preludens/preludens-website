@@ -295,13 +295,13 @@ permalink_lang:
 {% capture routes_body %}
 <h3>Vier routes om kennis speelbaar en toepasbaar te maken</h3>
 <h2>Onze diensten</h2>
-<p class="sp-lead">Elke leeruitdaging vraagt om een andere vorm. Soms wil je basiskennis trainen en borgen. Soms moeten mensen leren omgaan met lastige keuzes. En soms is eerst een scherpe analyse nodig van gedrag, doelen en spanningen in de praktijk. Daarom werkt Preludens met drie duidelijke routes.</p>
+<p class="sp-lead">Elke leeruitdaging vraagt om een andere vorm. Soms wil je basiskennis trainen en borgen. Soms moeten mensen leren omgaan met lastige keuzes. En soms is eerst een scherpe analyse nodig van gedrag, doelen en spanningen in de praktijk. Daarom werkt Preludens met vier duidelijke routes.</p>
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="onze-diensten" body=routes_body %}
 
 {% capture slots_body %}
 <div class="diensten-slots">
-  <article class="diensten-slot">
+  <article class="diensten-slot" id="e-learning">
     <div>
       <h3>Kennis helder en toegankelijk aanbieden</h3>
       <h2>E-learning</h2>
@@ -319,7 +319,7 @@ permalink_lang:
     </div>
     {% include panels/actions.html primary_label="Meer over MicroGame Stories →" primary_href="/diensten/microgame-stories/" %}
   </article>
-  <article class="diensten-slot">
+  <article class="diensten-slot" id="dilemma-storytelling">
     <div>
       <h3>Oefenen met keuzes waar geen simpel antwoord op is</h3>
       <h2>Dilemma Storytelling</h2>
@@ -328,7 +328,7 @@ permalink_lang:
     </div>
     {% include panels/actions.html primary_label="Meer over Dilemma Storytelling →" primary_href="/diensten/dilemma-storytelling/" %}
   </article>
-  <article class="diensten-slot">
+  <article class="diensten-slot" id="game-thinking">
     <div>
       <h3>Eerst grip krijgen op gedrag, doelen en spelmechanismen</h3>
       <h2>Game Thinking</h2>

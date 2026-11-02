@@ -22,8 +22,7 @@
     grid-template-columns: minmax(0, 1fr) minmax(18rem, 28rem);
     gap: clamp(1.5rem, 4vw, 3.5rem);
     align-items: center;
-    width: min(100% - 2rem, var(--max-width));
-    padding: 0;
+    padding-block: 0;
   }
 
   h1 {
@@ -48,6 +47,17 @@
 
 .sp-hero-copy {
   justify-self: start;
+}
+
+/* Eventpagina: de hero heeft geen beeld naast de tekst, dus de tweede kolom
+   hoeft geen ruimte te reserveren. De kolom houdt wel de breedte die hij
+   naast een beeld ook heeft, zodat kop en inleiding niet uitlopen. */
+body.page-event .panel--hero .panel__inner {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+body.page-event .panel--hero .sp-hero-copy {
+  max-width: 46rem;
 }
 
 .sp-nowrap {
@@ -197,17 +207,16 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(1.25rem, 3vw, 2.5rem);
-  width: min(100% - 2rem, var(--max-width));
+  width: 100%;
+  max-width: var(--max-width);
   margin: var(--sp-hero-steps-gap) auto 0;
-  padding: 0 0 2.5rem;
+  padding: 0 var(--space-lg) 2.5rem;
 }
 
-.sp-hero-steps article:first-child {
-  margin-left: var(--sp-jump, 50px);
-}
-
-.sp-hero-steps article:last-child {
-  margin-right: var(--sp-jump, 50px);
+@media (max-width: 600px) {
+  .sp-hero-steps {
+    padding-inline: var(--space-md);
+  }
 }
 
 /* Stappenband binnen een paneel (bijv. de zeven principes): twee kolommen,
@@ -218,12 +227,6 @@
   width: 100%;
   margin: clamp(var(--space-lg), 5vh, 3.5rem) 0 0;
   padding: 0;
-}
-
-.sp-hero-steps--flow article:first-child,
-.sp-hero-steps--flow article:last-child {
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .sp-hero-steps--flow article:last-child:nth-child(odd) {
@@ -239,12 +242,6 @@
   width: 100%;
   margin: clamp(var(--space-lg), 5vh, 3.5rem) 0 0;
   padding: 0;
-}
-
-.sp-hero-steps--grid article:first-child,
-.sp-hero-steps--grid article:last-child {
-  margin-left: 0;
-  margin-right: 0;
 }
 
 /* Stappenband als piramide: drie brede stappen boven, vier smallere eronder.
@@ -265,12 +262,6 @@
   grid-column: span 3;
 }
 
-.sp-hero-steps--pyramid article:first-child,
-.sp-hero-steps--pyramid article:last-child {
-  margin-left: 0;
-  margin-right: 0;
-}
-
 /* Stappenband als kolomlijst: alleen genummerde koppen, geen tekst eronder.
    Past in een smalle kolom naast lopende tekst. */
 .sp-hero-steps--list {
@@ -279,12 +270,6 @@
   width: 100%;
   margin: clamp(var(--space-sm), 2vh, var(--space-md)) 0 0;
   padding: 0;
-}
-
-.sp-hero-steps--list article:first-child,
-.sp-hero-steps--list article:last-child {
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .sp-hero-steps.sp-hero-steps--list h3 {
@@ -381,12 +366,6 @@
 
   .sp-hero-steps {
     grid-template-columns: 1fr;
-  }
-
-  .sp-hero-steps article:first-child,
-  .sp-hero-steps article:last-child {
-    margin-left: 0;
-    margin-right: 0;
   }
 
   /* De piramide valt uiteen tot een enkele kolom; de spans moeten dan los. */

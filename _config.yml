@@ -45,6 +45,12 @@ exclude:
   - .bundle
   - node_modules
   - cloudflare
+  # Interne documentatie. design.MD heeft front matter, dus Jekyll maakte er
+  # een pagina van (/design/ en /en/design/); de andere twee werden als los
+  # bestand meegekopieerd. Alle drie stonden publiek op preludens.nl.
+  - design.MD
+  - AGENTS.md
+  - content-structuur-en-copy.md
 
 plugins:
   - jekyll-polyglot
