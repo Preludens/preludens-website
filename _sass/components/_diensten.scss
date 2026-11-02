@@ -51,7 +51,13 @@
   padding-bottom: calc(40px + var(--sp-jump) + 3rem);
 }
 
+/* Een raster met gelijke rijen in plaats van vier losse regels: alle banden
+   krijgen de hoogte van de langste. De vier teksten zijn op lengte gebracht,
+   zodat daar weinig lucht in zit, en wordt er later een regel bij geschreven
+   dan schuiven de vier mee in plaats van uiteen te lopen. */
 #diensten-slots .diensten-lijst {
+  display: grid;
+  grid-auto-rows: 1fr;
   border-top: 1px solid var(--color-border);
 }
 

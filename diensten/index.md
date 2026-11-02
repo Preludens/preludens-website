@@ -60,7 +60,7 @@ permalink_lang:
   <a class="diensten-regel" id="e-learning" href="{% include panels/href.html href='/e-learning/' %}">
     <h3 class="diensten-regel__naam">E-learning</h3>
     <div class="diensten-regel__tekst">
-      <p class="sp-lead">Heldere modules in Articulate Rise, waarin deelnemers in hun eigen tempo door de stof gaan.</p>
+      <p class="sp-lead">Heldere modules in Articulate Rise, waarin deelnemers in eigen tempo leren.</p>
       <p class="sp-lead diensten-regel__keuze"><b>Kies dit als</b> je kennis wilt overdragen of een proces wilt uitleggen.</p>
     </div>
     <span class="diensten-regel__pijl" aria-hidden="true">&rarr;</span>
@@ -68,7 +68,7 @@ permalink_lang:
   <a class="diensten-regel" id="microgame-stories" href="{% include panels/href.html href='/diensten/microgame-stories/' %}">
     <h3 class="diensten-regel__naam">MicroGame Stories</h3>
     <div class="diensten-regel__tekst">
-      <p class="sp-lead">Een verhaal uit de eigen praktijk met korte MicroGames ertussen, zodat kennis meteen geoefend wordt.</p>
+      <p class="sp-lead">Een verhaal uit de praktijk met korte MicroGames om kennis te oefenen.</p>
       <p class="sp-lead diensten-regel__keuze"><b>Kies dit als</b> je een grote groep mee wilt krijgen zonder lange modules.</p>
     </div>
     <span class="diensten-regel__pijl" aria-hidden="true">&rarr;</span>
@@ -76,15 +76,15 @@ permalink_lang:
   <a class="diensten-regel" id="dilemma-storytelling" href="{% include panels/href.html href='/diensten/dilemma-storytelling/' %}">
     <h3 class="diensten-regel__naam">Dilemma Storytelling</h3>
     <div class="diensten-regel__tekst">
-      <p class="sp-lead">Realistische scenario&rsquo;s waarin elke keuze gevolgen heeft die deelnemers zelf zien.</p>
-      <p class="sp-lead diensten-regel__keuze"><b>Kies dit als</b> er meerdere belangen tegelijk spelen en er geen simpel antwoord is.</p>
+      <p class="sp-lead">Realistische scenario&rsquo;s waarin de keuzes van deelnemers gevolgen hebben.</p>
+      <p class="sp-lead diensten-regel__keuze"><b>Kies dit als</b> meerdere belangen tegelijk spelen en er geen simpel antwoord is.</p>
     </div>
     <span class="diensten-regel__pijl" aria-hidden="true">&rarr;</span>
   </a>
   <a class="diensten-regel" id="game-thinking" href="{% include panels/href.html href='/diensten/game-thinking/' %}">
     <h3 class="diensten-regel__naam">Game Thinking</h3>
     <div class="diensten-regel__tekst">
-      <p class="sp-lead">Find the Game: we halen de doelen, regels en keuzes op die al in de praktijk liggen.</p>
+      <p class="sp-lead">Find the Game: we halen doelen, regels en keuzes uit de praktijk.</p>
       <p class="sp-lead diensten-regel__keuze"><b>Kies dit als</b> nog niet vastligt welke vorm bij je vraagstuk past.</p>
     </div>
     <span class="diensten-regel__pijl" aria-hidden="true">&rarr;</span>

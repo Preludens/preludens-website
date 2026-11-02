@@ -60,7 +60,7 @@ permalink_lang:
   <a class="diensten-regel" id="e-learning" {% static_href %}href="{{ site.baseurl }}/e-learning/"{% endstatic_href %}>
     <h3 class="diensten-regel__naam">E-learning</h3>
     <div class="diensten-regel__tekst">
-      <p class="sp-lead">Clear modules in Articulate Rise, where participants work through the material at their own pace.</p>
+      <p class="sp-lead">Clear modules in Articulate Rise, where participants learn at their own pace.</p>
       <p class="sp-lead diensten-regel__keuze"><b>Choose this when</b> you want to transfer knowledge or explain a process.</p>
     </div>
     <span class="diensten-regel__pijl" aria-hidden="true">&rarr;</span>
@@ -68,7 +68,7 @@ permalink_lang:
   <a class="diensten-regel" id="microgame-stories" {% static_href %}href="{{ site.baseurl }}/diensten/microgame-stories/"{% endstatic_href %}>
     <h3 class="diensten-regel__naam">MicroGame Stories</h3>
     <div class="diensten-regel__tekst">
-      <p class="sp-lead">A story from your own practice with short MicroGames in between, so knowledge is practised right away.</p>
+      <p class="sp-lead">A story from practice, with short MicroGames to practise the knowledge.</p>
       <p class="sp-lead diensten-regel__keuze"><b>Choose this when</b> you want to reach a large group without long modules.</p>
     </div>
     <span class="diensten-regel__pijl" aria-hidden="true">&rarr;</span>
@@ -76,16 +76,16 @@ permalink_lang:
   <a class="diensten-regel" id="dilemma-storytelling" {% static_href %}href="{{ site.baseurl }}/diensten/dilemma-storytelling/"{% endstatic_href %}>
     <h3 class="diensten-regel__naam">Dilemma Storytelling</h3>
     <div class="diensten-regel__tekst">
-      <p class="sp-lead">Realistic scenarios in which every choice has consequences that participants see for themselves.</p>
-      <p class="sp-lead diensten-regel__keuze"><b>Choose this when</b> several interests play at once and there is no simple answer.</p>
+      <p class="sp-lead">Realistic scenarios where the choices participants make have consequences.</p>
+      <p class="sp-lead diensten-regel__keuze"><b>Choose this when</b> several interests play at once with no simple answer.</p>
     </div>
     <span class="diensten-regel__pijl" aria-hidden="true">&rarr;</span>
   </a>
   <a class="diensten-regel" id="game-thinking" {% static_href %}href="{{ site.baseurl }}/diensten/game-thinking/"{% endstatic_href %}>
     <h3 class="diensten-regel__naam">Game Thinking</h3>
     <div class="diensten-regel__tekst">
-      <p class="sp-lead">Find the Game: we draw out the goals, rules and choices that are already there in practice.</p>
-      <p class="sp-lead diensten-regel__keuze"><b>Choose this when</b> the form that fits your question is not settled yet.</p>
+      <p class="sp-lead">Find the Game: we draw goals, rules and choices out of practice.</p>
+      <p class="sp-lead diensten-regel__keuze"><b>Choose this when</b> the form that fits is not settled yet.</p>
     </div>
     <span class="diensten-regel__pijl" aria-hidden="true">&rarr;</span>
   </a>
