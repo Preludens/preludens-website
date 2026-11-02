@@ -306,7 +306,7 @@ permalink: /diensten/
       <p class="sp-lead">Not every learning challenge asks for a game. Sometimes a clear, well-structured e-learning module is exactly what is needed to teach employees new knowledge, explain processes or refresh existing skills.</p>
       <p class="sp-lead">With Articulate Rise we develop accessible, interactive e-learning modules in which information is presented clearly and participants learn at their own pace.</p>
     </div>
-    {% include panels/actions.html primary_label="More about E-learning →" primary_href="/contact/" %}
+    {% include panels/actions.html primary_label="More about E-learning →" primary_href="/e-learning/" primary_fixed=true %}
   </article>
   <article class="diensten-slot" id="microgame-stories">
     <div>
@@ -315,7 +315,7 @@ permalink: /diensten/
       <p class="sp-lead">MicroGame Stories are short, visual online training modules in which basic knowledge is linked to recognisable work situations. Participants follow a story, make choices and practise along the way with short MicroGames. Each part targets a concrete learning goal. That gives knowledge context, repetition and immediate feedback.</p>
       <p class="sp-lead">A MicroGame Story is a good fit when you want to transfer important knowledge to a larger audience without burdening people with long, passive modules.</p>
     </div>
-    {% include panels/actions.html primary_label="More about MicroGame Stories →" primary_href="/contact/" %}
+    {% include panels/actions.html primary_label="More about MicroGame Stories →" primary_href="/diensten/microgame-stories/" primary_fixed=true %}
   </article>
   <article class="diensten-slot" id="dilemma-storytelling">
     <div>
@@ -324,7 +324,7 @@ permalink: /diensten/
       <p class="sp-lead">Dilemma Storytelling helps teams explore difficult situations in which several interests play at once. Participants are presented with realistic scenarios and make choices that have consequences. Not every situation has one right answer. Sometimes safety asks for something different than speed. Sometimes customer satisfaction rubs against quality. Sometimes a team needs to learn how to weigh what matters most in that moment.</p>
       <p class="sp-lead">By making choices visible and linking them to consequences, participants learn to look more sharply at their own trade-offs.</p>
     </div>
-    {% include panels/actions.html primary_label="More about Dilemma Storytelling →" primary_href="/contact/" %}
+    {% include panels/actions.html primary_label="More about Dilemma Storytelling →" primary_href="/diensten/dilemma-storytelling/" primary_fixed=true %}
   </article>
   <article class="diensten-slot" id="game-thinking">
     <div>
@@ -333,7 +333,7 @@ permalink: /diensten/
       <p class="sp-lead">Game Thinking is our design approach for complex learning and change challenges. We look at a question as if it were a game — not to turn it into a game immediately, but to make visible which goals, rules, choices, tensions, feedback moments and blockers are already present in practice.</p>
       <p class="sp-lead">We call that Find the Game. Together we explore what people need to learn, which behaviour needs to change and where movement is possible in practice. From that analysis a clear blueprint emerges for a learning experience, intervention or serious game.</p>
     </div>
-    {% include panels/actions.html primary_label="More about Game Thinking →" primary_href="/contact/" %}
+    {% include panels/actions.html primary_label="More about Game Thinking →" primary_href="/diensten/game-thinking/" primary_fixed=true %}
   </article>
 </div>
 {% endcapture %}
