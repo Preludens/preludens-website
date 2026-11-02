@@ -2,12 +2,9 @@
    Stond eerder als <style>-blok in zowel diensten/index.md als
    en/diensten/index.md, dus elke wijziging moest twee keer. */
 
-/* Kennis blijft hangen: kop en alinea's op de linkerkant van de hero. */
-#kennis-hangen .panel__inner {
-  width: min(100% - 2rem, var(--max-width));
-  padding-inline: 0;
-}
-
+/* Kennis blijft hangen: kop en alinea's op de linkerkant van de hero.
+   Geen eigen goot hier: .panel__inner heeft er al een van --space-lg, en een
+   tweede breedte ernaast zette dit paneel 40px links van de rest van de site. */
 #kennis-hangen h2,
 #kennis-hangen .sp-aside-split__main {
   text-align: left;
