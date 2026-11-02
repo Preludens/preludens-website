@@ -65,7 +65,7 @@
     {
       "@type": "Service",
       "name": "MicroGame Stories",
-      "serviceType": "Interactieve online training",
+      "serviceType": "{% if is_en %}Interactive online training{% else %}Interactieve online training{% endif %}",
       "url": "{{ prod }}{{ svc_prefix }}/diensten/#microgame-stories",
       "provider": { "@id": "{{ prod }}/#organization" },
       "description": {{ svc1 | jsonify }}

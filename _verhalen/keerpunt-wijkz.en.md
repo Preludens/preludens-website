@@ -2,6 +2,7 @@
 lang: en
 permalink: /verhalen/keerpunt-wijkz/
 title: Keerpunt
+description: With Keerpunt we developed a card game that lets players experience what financial and emotional pressure can do to people.
 lead: What happens to your choices when money worries take up more and more room?
 client: Wijkz
 clients:

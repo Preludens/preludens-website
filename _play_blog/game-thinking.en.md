@@ -2,6 +2,7 @@
 lang: en
 permalink: /play/blog/game-thinking/
 title: Game Thinking — game design as a method for designing solutions
+description: Play triggers behaviour change, and that is crucial for any successful transition. Game Thinking helps organisations stay close to the human scale.
 date: 2023-04-17
 summary: >-
   Play triggers behaviour change, and that is crucial for any successful transition. Game Thinking

@@ -5,7 +5,7 @@ title: Inspiratie
 description: Projecten, kennisartikelen en demo’s van teams die met Preludens leren door te spelen.
 permalink: /inspiratie/
 permalink_lang:
-  en: /verhalen/
+  en: /inspiratie/
 body_class: page-verhalen-test
 ---
 

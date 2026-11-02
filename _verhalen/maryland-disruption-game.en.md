@@ -2,6 +2,7 @@
 lang: en
 permalink: /verhalen/maryland-disruption-game/
 title: The Disruption Game
+description: For TU Delft we developed The Disruption Game, an interactive Dilemma Story in which participants experience how decisions ripple through a logistics disruption.
 lead: Practising decisions when the situation suddenly changes
 client: TU Delft
 clients:

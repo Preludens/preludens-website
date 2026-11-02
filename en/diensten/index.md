@@ -5,6 +5,8 @@ title: Services
 description: E-learning, MicroGame Stories, Dilemma Storytelling and Game Thinking — four routes to make knowledge playable and applicable.
 body_class: page-panels
 permalink: /diensten/
+permalink_lang:
+  nl: /diensten/
 ---
 
 <div class="panel-stack">
@@ -293,7 +295,7 @@ permalink: /diensten/
 {% capture routes_body %}
 <h3>Four routes to make knowledge playable and applicable</h3>
 <h2>Our services</h2>
-<p class="sp-lead">Every learning challenge asks for a different form. Sometimes you want to train and embed basic knowledge. Sometimes people need to learn how to handle difficult choices. And sometimes you first need a sharp analysis of behaviour, goals and tensions in practice. That is why Preludens works with three clear routes.</p>
+<p class="sp-lead">Every learning challenge asks for a different form. Sometimes you want to train and embed basic knowledge. Sometimes people need to learn how to handle difficult choices. And sometimes you first need a sharp analysis of behaviour, goals and tensions in practice. That is why Preludens works with four clear routes.</p>
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="onze-diensten" body=routes_body %}
 

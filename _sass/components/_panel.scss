@@ -971,6 +971,20 @@ body.page-panels .sp-actions .btn {
   font-weight: 600;
 }
 
+/* Op de contactpagina zijn die links het merkgoud, en worden ze donkerder
+   onder de muis. */
+body.page-contact .panel a:not(.btn),
+body.page-contact .panel .sp-values li span a {
+  color: var(--color-preludens-gold);
+}
+
+body.page-contact .panel a:not(.btn):hover,
+body.page-contact .panel a:not(.btn):focus-visible,
+body.page-contact .panel .sp-values li span a:hover,
+body.page-contact .panel .sp-values li span a:focus-visible {
+  color: var(--color-deep-gold);
+}
+
 /* Waardenband met vier kaartjes leest beter als 2x2 dan als 3+1. */
 @media (min-width: 720px) {
   .sp-values.sp-values--two {

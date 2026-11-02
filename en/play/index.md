@@ -87,7 +87,6 @@ permalink: /play/
 <h2>How Preludens uses Play</h2>
 {% include panels/split.html left=find_left right=find_right %}
 <p class="sp-lead sp-lead--center">Not a loose game. Not a trick to make learning more fun. But a carefully designed learning route in which people practise with choices, knowledge and behaviour that matter.</p>
-{% include panels/actions.html secondary_label="Read the Play blog" secondary_href="/play/blog/" secondary2_label="Play in practice" secondary2_href="/play/in-de-praktijk/" %}
 {% endcapture %}
 {% include panels/panel.html variant="mist" body=find_body %}
 

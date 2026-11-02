@@ -2,6 +2,7 @@
 lang: en
 permalink: /verhalen/microgame-demo/
 title: How a MicroGame feels
+description: In a few minutes you experience how a MicroGame makes abstract knowledge practiseable. You make a choice and immediately see what it does.
 project: MicroGame
 type: demos
 featured: true

@@ -33,10 +33,10 @@ permalink_lang:
 {% include panels/panel.html variant="mist" line="online-focus" body=focus_body %}
 
 {% capture track_items %}
-{% include panels/track.html href="/diensten/" title="E-learning" text="Online trainingen waarin medewerkers oefenen met situaties uit hun werk en meteen zien wat hun keuzes opleveren." more="Naar e-learning" frame="4" screen="/assets/images/verhalen/basis-koeltechniek-onderdelen.jpg" %}
+{% include panels/track.html href="/e-learning/" title="E-learning" text="Online trainingen waarin medewerkers oefenen met situaties uit hun werk en meteen zien wat hun keuzes opleveren." more="Naar e-learning" frame="4" screen="/assets/images/verhalen/basis-koeltechniek-onderdelen.jpg" %}
 {% include panels/track.html href="/prepo/" title="Preludens Portal" text="Eén omgeving om MicroGames en Stories te gebruiken en door te ontwikkelen, ook na de oplevering." more="Naar de Portal" frame="3" screen="/assets/images/prepo/overzicht.jpg" %}
-{% include panels/track.html href="/diensten/#microgame-stories" title="MicroGame Stories" text="Korte, visuele verhalen die basiskennis koppelen aan herkenbare praktijksituaties, met spel en herhaling." more="Naar MicroGame Stories" frame="2" screen="/assets/images/verhalen/studium-co-wijzer.jpg" %}
-{% include panels/track.html href="/diensten/#dilemma-storytelling" title="Dilemma Storytelling" text="Korte scenario’s waarin teams lastige keuzes maken en de gevolgen daarvan ervaren." more="Naar Dilemma Storytelling" frame="1" screen="/assets/images/verhalen/disruption-game.jpg" %}
+{% include panels/track.html href="/diensten/microgame-stories/" title="MicroGame Stories" text="Korte, visuele verhalen die basiskennis koppelen aan herkenbare praktijksituaties, met spel en herhaling." more="Naar MicroGame Stories" frame="2" screen="/assets/images/verhalen/studium-co-wijzer.jpg" %}
+{% include panels/track.html href="/diensten/dilemma-storytelling/" title="Dilemma Storytelling" text="Korte scenario’s waarin teams lastige keuzes maken en de gevolgen daarvan ervaren." more="Naar Dilemma Storytelling" frame="1" screen="/assets/images/verhalen/disruption-game.jpg" %}
 {% endcapture %}
 {% capture paper_lead %}<strong>Welke vorm past bij jouw uitdaging?</strong> Voor basiskennis die moet beklijven ligt een MicroGame Story voor de hand. Gaat het om besluitvaardigheid bij lastige keuzes, dan past Dilemma Storytelling. En wil je eerst grip krijgen op gedrag en leerdoelen, dan starten we met Game Thinking.{% endcapture %}
 {% capture paper_title %}<span class="hl">Kennistrajecten</span> met verhaal en spel.{% endcapture %}
@@ -69,44 +69,6 @@ permalink_lang:
   <li><span class="sp-steps__num">6</span> Productie</li>
   <li><span class="sp-steps__num">7</span> Implementatie</li>
 </ol>
-<ul class="sp-clients" aria-label="Een selectie van opdrachtgevers">
-  <li>Hogeschool van Amsterdam</li>
-  <li>
-    <img
-      class="sp-clients__logo"
-      src="{{ '/assets/images/clients/nnvo.png' | relative_url }}"
-      alt="NNVO"
-      width="160"
-      height="48"
-      loading="lazy"
-      decoding="async"
-    >
-  </li>
-  <li>
-    <img
-      class="sp-clients__logo"
-      src="{{ '/assets/images/clients/21cc.png' | relative_url }}"
-      alt="21CC"
-      width="160"
-      height="48"
-      loading="lazy"
-      decoding="async"
-    >
-  </li>
-  <li>
-    <img
-      class="sp-clients__logo"
-      src="{{ '/assets/images/clients/studium.png' | relative_url }}"
-      alt="Studium"
-      width="160"
-      height="48"
-      loading="lazy"
-      decoding="async"
-    >
-  </li>
-  <li>Wijkz</li>
-  <li>onITnow</li>
-</ul>
 {% include panels/actions.html primary_label="Lees de verhalen" primary_href="/verhalen/" %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" body=proof_body %}

@@ -321,7 +321,7 @@ p { margin: 0 0 var(--space-sm); }
 
   &:hover,
   &:focus-visible {
-    color: var(--color-ink-gold);
+    color: var(--color-preludens-gold);
   }
 }
 
@@ -334,7 +334,7 @@ p { margin: 0 0 var(--space-sm); }
   }
 
   &.is-active {
-    color: var(--color-ink-gold);
+    color: var(--color-preludens-gold);
   }
 }
 
@@ -392,11 +392,9 @@ p { margin: 0 0 var(--space-sm); }
       transition: width 0.28s ease;
     }
 
-    /* Op de lichte header haalt het heldere goud maar 1,96:1; --color-ink-gold
-       is de tekst-op-licht variant van dezelfde accentkleur (5,57:1). */
     &:hover,
     &[aria-current="page"] {
-      color: var(--color-ink-gold);
+      color: var(--color-preludens-gold);
     }
 
     &:hover::after,

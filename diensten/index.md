@@ -5,6 +5,8 @@ title: Diensten
 description: E-learning, MicroGame Stories, Dilemma Storytelling en Game Thinking — vier routes om kennis speelbaar en toepasbaar te maken.
 body_class: page-panels
 permalink: /diensten/
+permalink_lang:
+  en: /diensten/
 ---
 
 <div class="panel-stack">
