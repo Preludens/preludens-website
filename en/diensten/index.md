@@ -57,7 +57,7 @@ permalink_lang:
 
 {% capture slots_body %}
 <div class="diensten-lijst">
-  <a class="diensten-regel" id="e-learning" {% static_href %}href="{{ site.baseurl }}/e-learning/"{% endstatic_href %}>
+  <a class="diensten-regel" id="e-learning" href="{% include panels/href.html href='/e-learning/' %}">
     <h3 class="diensten-regel__naam">E-learning</h3>
     <div class="diensten-regel__tekst">
       <p class="sp-lead">Clear modules in Articulate Rise, where participants learn at their own pace.</p>
@@ -65,7 +65,7 @@ permalink_lang:
     </div>
     <span class="diensten-regel__pijl" aria-hidden="true">&rarr;</span>
   </a>
-  <a class="diensten-regel" id="microgame-stories" {% static_href %}href="{{ site.baseurl }}/diensten/microgame-stories/"{% endstatic_href %}>
+  <a class="diensten-regel" id="microgame-stories" href="{% include panels/href.html href='/diensten/microgame-stories/' %}">
     <h3 class="diensten-regel__naam">MicroGame Stories</h3>
     <div class="diensten-regel__tekst">
       <p class="sp-lead">A story from practice, with short MicroGames to practise the knowledge.</p>
@@ -73,7 +73,7 @@ permalink_lang:
     </div>
     <span class="diensten-regel__pijl" aria-hidden="true">&rarr;</span>
   </a>
-  <a class="diensten-regel" id="dilemma-storytelling" {% static_href %}href="{{ site.baseurl }}/diensten/dilemma-storytelling/"{% endstatic_href %}>
+  <a class="diensten-regel" id="dilemma-storytelling" href="{% include panels/href.html href='/diensten/dilemma-storytelling/' %}">
     <h3 class="diensten-regel__naam">Dilemma Storytelling</h3>
     <div class="diensten-regel__tekst">
       <p class="sp-lead">Realistic scenarios where the choices participants make have consequences.</p>
@@ -81,7 +81,7 @@ permalink_lang:
     </div>
     <span class="diensten-regel__pijl" aria-hidden="true">&rarr;</span>
   </a>
-  <a class="diensten-regel" id="game-thinking" {% static_href %}href="{{ site.baseurl }}/diensten/game-thinking/"{% endstatic_href %}>
+  <a class="diensten-regel" id="game-thinking" href="{% include panels/href.html href='/diensten/game-thinking/' %}">
     <h3 class="diensten-regel__naam">Game Thinking</h3>
     <div class="diensten-regel__tekst">
       <p class="sp-lead">Find the Game: we draw goals, rules and choices out of practice.</p>
