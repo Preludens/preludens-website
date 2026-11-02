@@ -41,19 +41,17 @@ blokken:
     alineas:
       - >-
         Carbon monoxide cannot be seen, smelled or tasted. That is why it matters that
-        professionals do not only know the rules, but also learn to recognise when a
-        situation may be unsafe.
+        professionals know the rules and learn to recognise when a situation may be
+        unsafe.
       - That was the challenge for CO Wijzer.
       - >-
         The audience often already has technical knowledge. Offering still more information
-        is then not automatically the solution. In practice, technicians need to assess
-        situations, recognise signals, make connections and make the right safety choice
-        at the right moment.
+        is then not automatically the solution. In practice, technicians need to recognise
+        signals, make connections and make the right safety choice at the right moment.
       - That calls for a different way of learning.
       - >-
-        Not only explaining what someone needs to know, but letting participants practise
-        with situations in which that knowledge is needed. Not clicking passively through
-        information, but looking, investigating, choosing and receiving feedback.
+        Participants practise with situations in which that knowledge is needed and receive
+        feedback on their choices. Clicking passively through information does not achieve that.
       - "The design question therefore became:"
       - >-
         How do we turn a safety training programme into a learning experience in which
@@ -79,20 +77,20 @@ blokken:
       - >-
         The stories give context. They place technical knowledge in recognisable situations
         with characters, problems and consequences. The MicroGames make the participant active.
-        There the knowledge has to be used to recognise something, assess it or make a choice.
+        There the knowledge has to be used to recognise something or make a choice.
       - That creates a route from understanding to application.
   - kop: First understand the situation. Then get to work yourself.
     alineas:
       - >-
-        In CO Wijzer the participant does not only receive an explanation of the knowledge.
-        The subject matter is linked to situations in which that knowledge gains meaning.
+        In CO Wijzer the subject matter is linked to situations in which that knowledge
+        gains meaning.
       - >-
         Stories help to set up such a situation. What is going on? Where is the risk? Which
         information matters? And what does that ask of the professional?
       - From the story, the participant steps into a MicroGame.
       - >-
-        There the knowledge is used actively. The participant investigates situations,
-        interprets signals, makes safety trade-offs and gets immediate feedback on the choices made.
+        There the knowledge is used actively. The participant interprets signals, makes
+        safety trade-offs and gets immediate feedback on the choices made.
       - "The same movement keeps returning:"
       - discover → understand → choose → feedback → apply again
       - >-
@@ -113,7 +111,7 @@ blokken:
           - several learning lines around technical and safety-related topics
           - a didactic structure that new parts can build on
       - >-
-        Safety information is therefore not only offered, but made usable to practise with.
+        Safety information is therefore made usable to practise with.
       - >-
         The participant is asked again and again: what do you see here, what does it mean,
         and what do you do next?
@@ -130,8 +128,8 @@ blokken:
         that knowledge at the right moment.
       - >-
         Storytelling helps to make that context visible. MicroGames then create a safe setting
-        in which participants can practise, make choices and receive immediate feedback.
-      - With MicroGames and stories we make complex knowledge playable, recognisable and applicable.
+        in which participants make choices and receive immediate feedback.
+      - With MicroGames and stories we make complex knowledge playable and applicable.
       - In safety, knowing what the rule is is ultimately not enough.
       - You have to recognise a risk situation, understand what is happening and know how to act.
       - CO Wijzer is designed to practise exactly that.
@@ -139,8 +137,8 @@ blokken:
     slot: true
     alineas:
       - >-
-        Do you have technical knowledge, safety procedures or other content that people should
-        not only know, but above all be able to apply?
+        Do you have technical knowledge, safety procedures or other content that people need
+        to be able to apply in practice?
       - >-
         Then we are glad to explore which situations, choices and skills are central — and how
         we can turn them into an active learning experience.

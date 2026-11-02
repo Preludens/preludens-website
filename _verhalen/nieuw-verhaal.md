@@ -30,16 +30,16 @@ figures:
     caption: Theorie toepassen in een herkenbaar gesprek
 summary: >-
   Voor Basis Koeltechniek ontwikkelden we samen met Climatools BV, 21CC Learning en Studium
-  een digitale leerervaring waarin installatiemonteurs koeltechnische theorie niet alleen
-  aangeboden krijgen, maar er actief mee aan de slag gaan.
+  een digitale leerervaring waarin installatiemonteurs actief met koeltechnische theorie
+  aan de slag gaan.
 highlights:
   - Negen MicroGames, getest en aangescherpt met vakexperts
   - Twee verhaallijnen, visueel uitgewerkt door 21CC Learning
   - Een leerroute van vakinhoud naar toepassing
 intro: >-
   Voor Basis Koeltechniek ontwikkelden we samen met Climatools BV, 21CC Learning en Studium
-  een digitale leerervaring waarin installatiemonteurs koeltechnische theorie niet alleen
-  aangeboden krijgen, maar er actief mee aan de slag gaan.
+  een digitale leerervaring waarin installatiemonteurs actief met koeltechnische theorie
+  aan de slag gaan.
 blokken:
   - kop: Van theorie kennen naar herkennen in de praktijk
     alineas:
@@ -51,14 +51,14 @@ blokken:
         h-log-P-diagram zijn essentieel, maar kunnen abstract blijven wanneer deelnemers
         ze vooral uit een boek, presentatie of traditionele e-learning leren.
       - >-
-        Terwijl een installatiemonteur uiteindelijk meer moet kunnen dan de theorie
-        reproduceren. Deelnemers moeten onderdelen herkennen, verbanden begrijpen,
-        informatie interpreteren en de kennis kunnen verbinden aan situaties uit hun werk.
+        Een installatiemonteur moet uiteindelijk meer kunnen dan de theorie reproduceren.
+        Deelnemers moeten onderdelen herkennen, verbanden begrijpen en de kennis kunnen
+        verbinden aan situaties uit hun werk.
       - "Daarom draaide het project om één centrale ontwerpvraag:"
       - >-
         Hoe maken we complexe koeltechnische kennis toegankelijk, interactief en toepasbaar,
-        zodat deelnemers niet alleen begrijpen hoe het koudeproces werkt, maar het ook
-        leren herkennen in hun werk?
+        zodat deelnemers begrijpen hoe het koudeproces werkt en het leren herkennen in hun
+        werk?
   - kop: Eerst bepalen wat iemand moet kunnen, daarna pas ontwerpen
     alineas:
       - We begonnen niet met het bouwen van games.
@@ -89,13 +89,13 @@ blokken:
         De verhalen geven context aan de koeltechnische kennis. De MicroGames zijn de momenten
         waarop deelnemers zelf aan zet zijn.
       - >-
-        Ze krijgen uitleg, maar moeten vervolgens ook kijken, analyseren, verbanden leggen en
-        keuzes maken. Op die keuzes krijgen ze direct feedback.
+        Ze krijgen uitleg, maar moeten vervolgens ook kijken, verbanden leggen en keuzes
+        maken. Op die keuzes krijgen ze direct feedback.
       - >-
-        Zo wordt bijvoorbeeld een begrip als oververhitting niet alleen uitgelegd. De deelnemer
-        moet de kennis gebruiken binnen een concrete uitdaging en krijgt inzicht in wat een
-        keuze betekent.
-      - De leerervaring is daarmee ingericht als oefenen, niet alleen als theorie doornemen.
+        Zo wordt een begrip als oververhitting eerst uitgelegd en daarna gebruikt. De deelnemer
+        past de kennis toe binnen een concrete uitdaging en krijgt inzicht in wat een keuze
+        betekent.
+      - De leerervaring is daarmee ingericht als oefenen.
       - >-
         Verhalen geven betekenis en samenhang. MicroGames creëren een veilige omgeving om
         kennis toe te passen, keuzes te maken en opnieuw te proberen.
@@ -112,18 +112,18 @@ blokken:
         De verhalen, MicroGames en overige leerinhoud zijn vervolgens samengebracht in het
         leerplatform van 21CC Learning.
       - >-
-        Zo is de oorspronkelijke vakinhoud vertaald naar een leerroute waarin deelnemers niet
-        alleen informatie krijgen, maar er steeds opnieuw iets mee moeten doen.
+        Zo is de oorspronkelijke vakinhoud vertaald naar een leerroute waarin deelnemers de
+        informatie steeds opnieuw moeten gebruiken.
   - kop: Welke kennis moeten mensen bij jullie leren toepassen?
     slot: true
     alineas:
       - >-
         Veel organisaties beschikken al over de inhoud. De kennis zit in opleidingen,
-        documenten, procedures of in de hoofden van experts.
+        procedures of in de hoofden van experts.
       - Maar weten is nog niet hetzelfde als kunnen toepassen.
       - >-
         Daarom beginnen we bij Preludens niet met de vraag welke game we kunnen maken.
-        We onderzoeken eerst wat mensen in hun werk moeten herkennen, begrijpen, kiezen of doen.
+        We onderzoeken eerst wat mensen in hun werk moeten herkennen, kiezen of doen.
       - >-
         Van daaruit ontwerpen we een leerroute waarin verhalen context geven en MicroGames
         mensen uitnodigen om actief met de kennis te oefenen.

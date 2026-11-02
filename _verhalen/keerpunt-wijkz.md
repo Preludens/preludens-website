@@ -49,9 +49,8 @@ inleiding:
     ervaart om vooruit te kijken?
   - >-
     Met <strong>Keerpunt</strong> ontwikkelden we een kaartspel dat spelers laat ervaren wat financiële
-    en emotionele druk met mensen kan doen. Niet om te vertellen hoe armoede voelt, maar om een
-    situatie te creëren waarin deelnemers zelf merken wat er gebeurt wanneer inkomen, energie en
-    focus onder druk komen te staan.
+    en emotionele druk met mensen kan doen. In het spel merken deelnemers zelf wat er gebeurt
+    wanneer inkomen, energie en focus onder druk komen te staan.
 feiten_kop: Projectdetails
 feiten:
   - label: Project
@@ -88,8 +87,9 @@ blokken:
     subkop: Kun je begrip creëren door iemand zelf te laten ervaren?
     alineas:
       - >-
-        We wilden geen spel maken dat deelnemers vooral meer informatie over bestaanszekerheid geeft.
-      - "De ambitie was om iets anders op gang te brengen: bewustwording en gesprek."
+        We wilden een spel maken dat meer doet dan deelnemers informatie over bestaanszekerheid
+        geven.
+      - De ambitie was om bewustwording en gesprek op gang te brengen.
       - Daarvoor moest de speler zelf iets ervaren.
       - >-
         Hoe voelt het als problemen zich beginnen op te stapelen? Wat doe je wanneer je niet genoeg
@@ -114,7 +114,7 @@ blokken:
         staan, wordt het weer moeilijker om het financiële probleem op te lossen.
       - Zo kan een negatieve spiraal ontstaan.
   - kop: De route
-    subkop: Niet vertellen wat er gebeurt, maar het laten gebeuren
+    subkop: Van vertellen naar laten gebeuren
     alineas:
       - Keerpunt is bewust een laagdrempelig kaartspel.
       - >-
@@ -133,8 +133,8 @@ blokken:
     subkop: Wanneer een openstaande rekening ineens spanning geeft
     alineas:
       - >-
-        Tijdens workshops zagen we wat er gebeurt wanneer deelnemers niet alleen over financiële
-        problemen praten, maar ermee gaan spelen.
+        Tijdens workshops zagen we wat er gebeurt wanneer deelnemers die druk zelf in een spel
+        ervaren.
       - >-
         Spelers merkten hoe lastig het wordt om overzicht te houden wanneer meerdere problemen
         tegelijkertijd aandacht vragen. Ze ontdekten hoe lang je kunt blijven denken dat het vanzelf
@@ -177,19 +177,19 @@ blokken:
         bepaalt hoeveel ruimte je hebt om overzicht te houden en vooruit te kijken.
       - Wanneer één onderdeel onder druk staat, heeft dat gevolgen voor de andere.
       - Een spel kan zo een systeem zichtbaar maken dat in een gesprek moeilijk uit te leggen is.
-      - Niet door meer informatie toe te voegen, maar door deelnemers er middenin te zetten.
+      - Het zet deelnemers middenin dat systeem.
   - kop: Eerst ervaren, dan het gesprek voeren
     slot: true
     alineas:
       - >-
-        Sommige onderwerpen vragen niet om nóg een presentatie, uitleg of stappenplan.
+        Sommige onderwerpen vragen niet om nóg een presentatie of stappenplan.
       - Ze vragen om een ervaring die mensen helpt om vanuit een ander perspectief te kijken.
       - Keerpunt laat zien wat spel daarin kan betekenen.
       - >-
         Door deelnemers keuzes te laten maken, gevolgen te laten ervaren en daarna samen te
         reflecteren, ontstaat een ander vertrekpunt voor het gesprek over bestaanszekerheid.
       - >-
-        <strong>Niet alleen begrijpen wat er speelt, maar even ervaren wat het betekent als iedere
-        keuze telt.</strong>
+        <strong>Begrijpen wat er speelt en even ervaren wat het betekent als iedere keuze
+        telt.</strong>
 order: 6
 ---

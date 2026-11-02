@@ -49,8 +49,8 @@ inleiding:
     keuze die voor de ene partij logisch is, kan voor een andere partij nieuwe problemen veroorzaken.
   - >-
     Voor de TU Delft ontwikkelden we <strong>The Disruption Game</strong>: een interactieve Dilemma Story waarin
-    deelnemers worden meegenomen in een logistieke verstoring. Niet om één juist antwoord te vinden,
-    maar om te ervaren hoe beslissingen doorwerken in een complex systeem.
+    deelnemers worden meegenomen in een logistieke verstoring en ervaren hoe beslissingen doorwerken
+    in een complex systeem.
 feiten_kop: Projectdetails
 feiten:
   - label: Opdrachtgever
@@ -94,8 +94,8 @@ blokken:
         gebeurt er wanneer andere partijen ondertussen hun eigen keuzes maken?
       - Precies daar lag de leeruitdaging.
       - >-
-        De ervaring moest deelnemers niet vertellen wat ze moesten denken, maar ze in een situatie
-        plaatsen waarin ze <strong>zelf moesten afwegen, kiezen en reageren op de gevolgen</strong>.
+        De ervaring moest deelnemers in een situatie plaatsen waarin ze <strong>zelf moesten afwegen,
+        kiezen en reageren op de gevolgen</strong>. Vertellen wat ze moesten denken hoorde daar niet bij.
   - kop: De ontwerpvraag
     subkop: Kunnen we besluitvorming speelbaar maken?
     alineas:
@@ -104,10 +104,9 @@ blokken:
         <strong>Hoe creëren we een realistisch logistiek scenario waarin deelnemers onder druk keuzes maken,
         verschillende belangen afwegen en ervaren hoe hun beslissingen doorwerken in het systeem?</strong>
       - Daarmee verschoof de aandacht van kennisoverdracht naar besluitvorming.
-      - Niet eerst uitleggen en daarna toetsen.
       - >-
-        Maar eerst een situatie creëren waarin kennis, inzicht en afweging noodzakelijk worden om
-        verder te komen.
+        Het scenario moest een situatie creëren waarin kennis en afweging nodig zijn om verder
+        te komen.
   - kop: De route
     subkop: Van logistiek proces naar interactief verhaal
     alineas:
@@ -138,9 +137,9 @@ blokken:
         situatie en eerdere keuzes werken door in het vervolg van het scenario.
       - De deelnemer moet daardoor voortdurend een eigen koers bepalen.
       - >-
-        Dat maakt de ervaring anders dan een traditionele kennistoets. De deelnemer reproduceert geen
-        antwoord, maar oefent met het proces achter een beslissing: informatie interpreteren, belangen
-        herkennen, afwegen en uiteindelijk handelen.
+        Dat maakt de ervaring anders dan een traditionele kennistoets. De deelnemer oefent met het
+        proces achter een beslissing: informatie interpreteren, belangen herkennen, afwegen en
+        uiteindelijk handelen.
       - Het verhaal geeft daarbij context en spanning. De dilemma’s zorgen voor actieve betrokkenheid.
       - >-
         Zo ontstaat een veilige omgeving waarin deelnemers verschillende keuzes kunnen onderzoeken
@@ -153,8 +152,8 @@ blokken:
         er middenin te plaatsen.
       - >-
         In plaats van alleen te praten over besluitvorming tijdens verstoringen, kunnen deelnemers
-        ermee oefenen. Ze ervaren dat beslissingen samenhangen, dat verschillende belangen
-        tegelijkertijd kunnen spelen en dat een keuze zelden op zichzelf staat.
+        ermee oefenen. Ze ervaren dat beslissingen samenhangen en dat verschillende belangen
+        tegelijkertijd kunnen spelen.
       - De interactieve vorm maakt die complexiteit niet eenvoudiger dan zij werkelijk is.
       - Ze maakt haar <strong>verkenbaar</strong>.
       - >-
@@ -172,11 +171,11 @@ blokken:
         belangrijkste kennis juist in het begrijpen van de spanning tussen verschillende mogelijkheden.
       - Een verhaal geeft die spanning context. Spelprincipes maken het mogelijk om ermee te experimenteren.
       - >-
-        Deelnemers mogen zoeken, kiezen en proberen, zonder te verdwalen. Ze ervaren gevolgen binnen
+        Deelnemers mogen zoeken en proberen, zonder te verdwalen. Ze ervaren gevolgen binnen
         een veilige omgeving en kunnen daarna reflecteren op hun eigen route.
       - >-
-        Dat is voor ons de kracht van Play: niet vertellen welke afweging iemand moet maken, maar een
-        omgeving ontwerpen waarin mensen kunnen <strong>oefenen met het maken van die afweging</strong>.
+        Dat is voor ons de kracht van Play: een omgeving ontwerpen waarin mensen kunnen
+        <strong>oefenen met het maken van die afweging</strong>.
   - kop: Van complexe keuze naar leerbare ervaring
     slot: true
     alineas:

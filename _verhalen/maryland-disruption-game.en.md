@@ -50,8 +50,8 @@ inleiding:
     And a choice that makes sense for one party can create new problems for another.
   - >-
     For TU Delft we developed **The Disruption Game**: an interactive Dilemma Story that takes
-    participants into a logistics disruption. Not to find one right answer, but to experience
-    how decisions ripple through a complex system.
+    participants into a logistics disruption and lets them experience how decisions ripple
+    through a complex system.
 feiten_kop: Project details
 feiten:
   - label: Client
@@ -95,8 +95,8 @@ blokken:
         information? And what happens when other parties are making their own choices in the meantime?
       - That is exactly where the learning challenge lay.
       - >-
-        The experience should not tell participants what to think, but place them in a situation
-        in which they **had to weigh, choose and respond to the consequences themselves**.
+        The experience had to place participants in a situation in which they **had to weigh, choose
+        and respond to the consequences themselves**. Telling them what to think was not part of it.
   - kop: The design question
     subkop: Can we make decision-making playable?
     alineas:
@@ -105,10 +105,9 @@ blokken:
         **How do we create a realistic logistics scenario in which participants make choices under
         pressure, weigh different interests and experience how their decisions ripple through the system?**
       - That shifted the focus from transferring knowledge to decision-making.
-      - Not explaining first and testing afterwards.
       - >-
-        But first creating a situation in which knowledge, insight and judgement become necessary
-        in order to move forward.
+        The scenario had to create a situation in which knowledge and judgement are needed to
+        move forward.
   - kop: The route
     subkop: From logistics process to interactive story
     alineas:
@@ -139,8 +138,8 @@ blokken:
       - The participant therefore has to keep setting their own course.
       - >-
         That makes the experience different from a traditional knowledge test. The participant
-        does not reproduce an answer, but practises the process behind a decision: interpreting
-        information, recognising interests, weighing them and finally acting.
+        practises the process behind a decision: interpreting information, recognising interests,
+        weighing them and finally acting.
       - The story provides context and tension. The dilemmas create active involvement.
       - >-
         That creates a safe setting in which participants can explore different choices and
@@ -153,8 +152,8 @@ blokken:
         participants in the middle of it.
       - >-
         Instead of only talking about decision-making during disruptions, participants can practise
-        with it. They experience that decisions are connected, that different interests can be at
-        play at the same time and that a choice rarely stands on its own.
+        with it. They experience that decisions are connected and that different interests can be
+        at play at the same time.
       - The interactive form does not make that complexity simpler than it really is.
       - It makes it **explorable**.
       - >-
@@ -172,11 +171,11 @@ blokken:
         important knowledge sits in understanding the tension between different possibilities.
       - A story gives that tension context. Game principles make it possible to experiment with it.
       - >-
-        Participants may search, choose and try, without getting lost. They experience consequences
+        Participants may search and try, without getting lost. They experience consequences
         in a safe setting and can then reflect on their own route.
       - >-
-        That is the power of Play for us: not telling someone which trade-off to make, but designing
-        an environment in which people can **practise making that trade-off**.
+        That is the power of Play for us: designing an environment in which people can
+        **practise making that trade-off**.
   - kop: From a complex choice to a learnable experience
     slot: true
     alineas:

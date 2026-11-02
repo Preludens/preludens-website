@@ -85,8 +85,8 @@ blokken:
     subkop: Understanding complexity by playing with it
     alineas:
       - >-
-        The processes behind a container terminal can be explained at length with models, diagrams
-        and simulations.
+        The processes behind a container terminal can be explained at length with models and
+        simulations.
       - >-
         But for education an important question then appears: how much complexity does a participant
         need in order to actually understand the system?
@@ -129,7 +129,7 @@ blokken:
         Players earn points by processing containers correctly and handling ships efficiently.
         Containers that are not loaded, unloaded or moved away in time have a negative effect
         on the result.
-      - The score is therefore not a separate game element, but feedback on the chosen strategy.
+      - The score therefore becomes feedback on the chosen strategy.
   - kop: The experience
     subkop: First choose. Then see what happens.
     alineas:
@@ -143,8 +143,8 @@ blokken:
       - Are the right containers available when a ship needs them?
       - By playing again, the participant can try another strategy and compare the result.
       - >-
-        That creates a safe setting in which to experiment. Not by giving all the answers first,
-        but by letting participants discover patterns themselves.
+        That creates a safe setting in which to experiment, where participants discover patterns
+        themselves.
   - kop: The result
     subkop: More than 20,000 missions played
     alineas:
@@ -156,15 +156,15 @@ blokken:
         than <strong>20,000 missions have been played</strong>.
       - That makes the project special for us.
       - >-
-        Not only because of the lifespan of the game, but above all because the original play
-        principle still holds: give participants a clear goal, let them make choices themselves
-        and use the consequences of those choices as feedback.
+        That comes from the lifespan of the game, and above all from the original play principle
+        that still holds: give participants a clear goal, let them make choices themselves and use
+        the consequences of those choices as feedback.
       - In 2026 we therefore started a full redevelopment together with TU Delft.
       - >-
         The technical foundation is being renewed, the visual style is being sharpened and the
         scoring and level system, among other things, are being developed further. At the same
         time the original gameplay is kept as much as possible.
-      - Not redesigning because we can, but keeping what works and renewing what is needed.
+      - We keep what works and renew what is needed.
   - kop: The insight
     subkop: A good MicroGame does not make everything simpler
     alineas:
@@ -179,7 +179,7 @@ blokken:
         process, but also experience <strong>why their own decisions matter</strong>.
       - We still use that principle when designing MicroGames.
       - From loose information to a learnable experience.
-      - From an explanation of a process to trying, adjusting and playing again.
+      - From an explanation of a process to trying things yourself and playing again.
   - kop: Which knowledge in your organisation would you want to make playable?
     slot: true
     alineas:
@@ -189,7 +189,7 @@ blokken:
         recurring choice.
       - >-
         With MicroGames we bring that core forward and design an environment in which participants
-        can actively discover, choose, practise and grow.
+        can actively discover and practise.
       - "<strong>Together we look for the game that is already hidden in your practice.</strong>"
 order: 4
 ---

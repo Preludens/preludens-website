@@ -85,8 +85,8 @@ blokken:
     subkop: Complexiteit begrijpen door ermee te spelen
     alineas:
       - >-
-        De processen achter een containerterminal kunnen uitgebreid worden uitgelegd met modellen,
-        schema's en simulaties.
+        De processen achter een containerterminal kunnen uitgebreid worden uitgelegd met modellen en
+        simulaties.
       - >-
         Maar voor onderwijs ontstaat dan een belangrijke vraag: hoeveel complexiteit heeft een
         deelnemer nodig om het systeem daadwerkelijk te begrijpen?
@@ -132,7 +132,7 @@ blokken:
         Spelers verdienen punten door containers correct te verwerken en schepen efficiënt af te
         handelen. Containers die niet op tijd worden geladen, gelost of afgevoerd hebben juist een
         negatief effect op het resultaat.
-      - Zo wordt de score geen los spelelement, maar feedback op de gekozen strategie.
+      - Zo wordt de score feedback op de gekozen strategie.
   - kop: De ervaring
     subkop: Eerst kiezen. Dan zien wat er gebeurt.
     alineas:
@@ -148,8 +148,8 @@ blokken:
         Door opnieuw te spelen kan de deelnemer een andere strategie proberen en het resultaat
         vergelijken.
       - >-
-        Daarmee ontstaat een veilige omgeving om te experimenteren. Niet door eerst alle antwoorden
-        te geven, maar door deelnemers zelf patronen te laten ontdekken.
+        Daarmee ontstaat een veilige omgeving om te experimenteren, waarin deelnemers zelf patronen
+        ontdekken.
   - kop: Het resultaat
     subkop: Meer dan 20.000 gespeelde missies
     alineas:
@@ -161,15 +161,15 @@ blokken:
         zijn er meer dan <strong>20.000 missies gespeeld</strong>.
       - Dat maakt het project voor ons bijzonder.
       - >-
-        Niet alleen vanwege de levensduur van de game, maar vooral omdat het oorspronkelijke
-        spelprincipe nog steeds overeind staat: geef deelnemers een helder doel, laat ze zelf keuzes
-        maken en gebruik de gevolgen van die keuzes als feedback.
+        Dat komt door de levensduur van de game, en vooral doordat het oorspronkelijke spelprincipe
+        nog steeds overeind staat: geef deelnemers een helder doel, laat ze zelf keuzes maken en
+        gebruik de gevolgen van die keuzes als feedback.
       - In 2026 zijn we daarom samen met de TU Delft begonnen aan een volledige herontwikkeling.
       - >-
         De technische basis wordt vernieuwd, de visuele stijl wordt aangescherpt en onder andere het
         scoring- en levelsysteem worden verder uitgewerkt. Tegelijkertijd blijft de oorspronkelijke
         gameplay zoveel mogelijk behouden.
-      - Niet opnieuw ontwerpen omdat het kan, maar behouden wat werkt en vernieuwen wat nodig is.
+      - We behouden wat werkt en vernieuwen wat nodig is.
   - kop: Het inzicht
     subkop: Een goede MicroGame maakt niet alles eenvoudiger
     alineas:
@@ -184,7 +184,7 @@ blokken:
         proces gebeurt, maar ervaren ook <strong>waarom hun eigen beslissingen ertoe doen</strong>.
       - Dat principe gebruiken we nog steeds bij het ontwerpen van MicroGames.
       - Van losse informatie naar een leerbare ervaring.
-      - Van uitleg over een proces naar zelf proberen, bijsturen en opnieuw spelen.
+      - Van uitleg over een proces naar zelf proberen en opnieuw spelen.
   - kop: Welke kennis binnen jouw organisatie zou je speelbaar willen maken?
     slot: true
     alineas:
@@ -193,7 +193,7 @@ blokken:
         Soms zit de belangrijkste leerervaring in één proces, één vaardigheid of één terugkerende keuze.
       - >-
         Met MicroGames brengen we die kern naar voren en ontwerpen we een omgeving waarin deelnemers
-        actief kunnen ontdekken, kiezen, oefenen en groeien.
+        actief kunnen ontdekken en oefenen.
       - "<strong>Samen zoeken we naar het spel dat al in jouw praktijk verborgen zit.</strong>"
 order: 4
 ---

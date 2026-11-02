@@ -23,7 +23,7 @@ permalink: /contact/
 {% capture talk_body %}
 <h3>Voor wie al een vraag heeft of wil sparren</h3>
 <h2>Start het gesprek</h2>
-<p class="sp-lead">Wil je een leeropgave verkennen, een vraag stellen of samen kijken welke route past bij jouw organisatie? Neem gerust contact op. We denken graag met je mee.</p>
+<p class="sp-lead">Wil je een leeropgave verkennen of samen kijken welke route past bij jouw organisatie? Neem gerust contact op. We denken graag met je mee.</p>
 {% include panels/values.html label="Contactgegevens van Preludens" columns="two" items=contact_items %}
 <p class="sp-lead">Stuur een mail naar <a href="mailto:info@preludens.nl">info@preludens.nl</a>. We nemen contact met je op om samen te kijken welke vervolgstap logisch is.</p>
 {% endcapture %}
@@ -31,12 +31,12 @@ permalink: /contact/
 
 {% capture start_main %}
 <h3>Start met een GameStorm</h3>
-<p class="sp-lead">Een creatieve workshop van een dagdeel waarin we jouw leeropgave verkennen en vertalen naar een eerste richting. Je krijgt meer grip op doelgroep, leerdoelen, verhaal en mogelijke spelmechanismen.</p>
+<p class="sp-lead">Een creatieve workshop van een dagdeel waarin we jouw leeropgave verkennen en vertalen naar een eerste richting. Je krijgt meer grip op je doelgroep en leerdoelen, en een beeld van het verhaal dat daarbij past.</p>
 {% include panels/actions.html secondary_label="Meer over GameStorm" secondary_href="/gamestorm/" %}
 {% endcapture %}
 {% capture start_aside %}
 <h3>Of begin klein met één hoofdstuk</h3>
-<p class="sp-lead">Ontwikkel in één maand een eerste MicroGame Story-hoofdstuk rond één vaardigheid of leerdoelcluster. Zo ervaar je snel hoe verhaal, keuzes en feedback jouw inhoud speelbaar maken.</p>
+<p class="sp-lead">Ontwikkel in één maand een eerste MicroGame Story-hoofdstuk rond één vaardigheid of leerdoelcluster. Zo ervaar je snel hoe verhaal en keuzes jouw inhoud speelbaar maken.</p>
 {% include panels/actions.html secondary_label="Meer over één hoofdstuk" secondary_href="/diensten/microgame-stories/#begin-klein" %}
 {% endcapture %}
 {% capture start_body %}
@@ -52,8 +52,8 @@ permalink: /contact/
 {% capture expect_copy %}
 <h3>Voor wie een leeropgave wil verkennen en richting wil krijgen</h3>
 <h2>Wat kun je verwachten?</h2>
-<p class="sp-lead">We beginnen met een kennismaking. Daarin brengen we je vraagstuk, doelgroep en kennisbehoefte in kaart. Je hoeft nog geen uitgewerkt plan te hebben; juist de eerste verkenning helpt om scherp te krijgen waar de leerervaring op moet aansluiten.</p>
-<p class="sp-lead">Daarna kunnen we in een GameStorm de belangrijkste verhalen, vaardigheden en leerdoelen samen ontwerpen. Vanuit die richting werken we toe naar een leerervaring met herkenbare situaties, keuzes, feedback en spelmechanismen die passen bij de praktijk.</p>
+<p class="sp-lead">We beginnen met een kennismaking. Daarin brengen we je vraagstuk en doelgroep in kaart. Je hoeft nog geen uitgewerkt plan te hebben; juist de eerste verkenning helpt om scherp te krijgen waar de leerervaring op moet aansluiten.</p>
+<p class="sp-lead">Daarna kunnen we in een GameStorm de belangrijkste verhalen en leerdoelen samen ontwerpen. Vanuit die richting werken we toe naar een leerervaring met herkenbare situaties en keuzes die passen bij de praktijk.</p>
 <p class="sp-lead">Als de richting staat, ontwerpen en ontwikkelen we de leerervaring. We testen, verbeteren en bereiden de oplevering voor. Afhankelijk van de gekozen route kan de leerervaring daarna worden gebruikt in je eigen LMS of beschikbaar worden gemaakt via Prepo.</p>
 {% endcapture %}
 {% capture expect_body %}
@@ -66,7 +66,7 @@ permalink: /contact/
 {% include panels/check.html text="In een GameStorm vertalen we vraagstuk, doelgroep en leerdoelen naar een eerste richting." %}
 {% include panels/check.html text="We ontwerpen een verhaal, keuzes, feedback en spelmechanismen die passen bij de praktijk." %}
 {% include panels/check.html text="We ontwikkelen, testen en verbeteren de leerervaring." %}
-{% include panels/check.html text="Na oplevering zorgen we voor distributie, beheer en support via je eigen LMS of via Prepo." %}
+{% include panels/check.html text="Na oplevering zorgen we voor beheer en support via je eigen LMS of via Prepo." %}
 {% endcapture %}
 {% capture route_body %}
 <h3>De route in het kort</h3>
@@ -76,8 +76,8 @@ permalink: /contact/
 {% include panels/panel.html variant="paper" body=route_body %}
 
 {% capture prepo_copy %}
-<p class="sp-lead">Via Prepo blijven MicroGames en Stories beschikbaar, vindbaar en goed te beheren. Je houdt grip op distributie, feedback, versies, statistieken, bestanden en support vanuit één omgeving.</p>
-<p class="sp-lead">Bij nieuwe MicroGames en Stories is drie maanden toegang tot Prepo inbegrepen. In die periode kan de leerervaring rustig worden gelanceerd, getest, gevolgd en waar nodig verbeterd.</p>
+<p class="sp-lead">Via Prepo blijven MicroGames en Stories beschikbaar en goed te beheren. Je houdt grip op distributie, feedback, versies, statistieken, bestanden en support vanuit één omgeving.</p>
+<p class="sp-lead">Bij nieuwe MicroGames en Stories is drie maanden toegang tot Prepo inbegrepen. In die periode kan de leerervaring rustig worden gelanceerd, gevolgd en waar nodig verbeterd.</p>
 {% include panels/actions.html primary_label="Meer over Prepo →" primary_href="/prepo/" %}
 {% endcapture %}
 {% capture prepo_body %}

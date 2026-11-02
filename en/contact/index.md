@@ -23,7 +23,7 @@ permalink: /contact/
 {% capture talk_body %}
 <h3>For anyone with a question or who wants to spar</h3>
 <h2>Start the conversation</h2>
-<p class="sp-lead">Want to explore a learning challenge, ask a question or look together at which route fits your organisation? Feel free to get in touch. We are happy to think along with you.</p>
+<p class="sp-lead">Want to explore a learning challenge or look together at which route fits your organisation? Feel free to get in touch. We are happy to think along with you.</p>
 {% include panels/values.html label="Preludens contact details" columns="two" items=contact_items %}
 <p class="sp-lead">Send an email to <a href="mailto:info@preludens.nl">info@preludens.nl</a>. We will get in touch to look together at which next step makes sense.</p>
 {% endcapture %}
@@ -31,12 +31,12 @@ permalink: /contact/
 
 {% capture start_main %}
 <h3>Start with a GameStorm</h3>
-<p class="sp-lead">A creative half-day workshop in which we explore your learning challenge and translate it into a first direction. You get more grip on audience, learning goals, story and possible game mechanisms.</p>
+<p class="sp-lead">A creative half-day workshop in which we explore your learning challenge and translate it into a first direction. You get more grip on your audience and learning goals, and a sense of the story that fits them.</p>
 {% include panels/actions.html secondary_label="More about GameStorm" secondary_href="/gamestorm/" %}
 {% endcapture %}
 {% capture start_aside %}
 <h3>Or start small with one chapter</h3>
-<p class="sp-lead">Develop a first MicroGame Story chapter in one month around one skill or learning-goal cluster. That way you quickly experience how story, choices and feedback make your content playable.</p>
+<p class="sp-lead">Develop a first MicroGame Story chapter in one month around one skill or learning-goal cluster. That way you quickly experience how story and choices make your content playable.</p>
 {% include panels/actions.html secondary_label="More about one chapter" secondary_href="/diensten/#microgame-stories" %}
 {% endcapture %}
 {% capture start_body %}
@@ -52,8 +52,8 @@ permalink: /contact/
 {% capture expect_copy %}
 <h3>For anyone who wants to explore a learning challenge and get direction</h3>
 <h2>What can you expect?</h2>
-<p class="sp-lead">We start with an introduction. In that conversation we map your challenge, audience and knowledge need. You do not need a fully worked-out plan yet; the first exploration helps clarify what the learning experience should connect to.</p>
-<p class="sp-lead">After that we can design the key stories, skills and learning goals together in a GameStorm. From that direction we work towards a learning experience with recognisable situations, choices, feedback and game mechanisms that fit practice.</p>
+<p class="sp-lead">We start with an introduction. In that conversation we map your challenge and audience. You do not need a fully worked-out plan yet; the first exploration helps clarify what the learning experience should connect to.</p>
+<p class="sp-lead">After that we can design the key stories and learning goals together in a GameStorm. From that direction we work towards a learning experience with recognisable situations and choices that fit practice.</p>
 <p class="sp-lead">Once the direction is clear, we design and develop the learning experience. We test, improve and prepare delivery. Depending on the chosen route, the experience can then be used in your own LMS or made available via Prepo.</p>
 {% endcapture %}
 {% capture expect_body %}
@@ -66,7 +66,7 @@ permalink: /contact/
 {% include panels/check.html text="In a GameStorm we translate challenge, audience and learning goals into a first direction." %}
 {% include panels/check.html text="We design a story, choices, feedback and game mechanisms that fit practice." %}
 {% include panels/check.html text="We develop, test and improve the learning experience." %}
-{% include panels/check.html text="After delivery we support distribution, management and support via your LMS or via Prepo." %}
+{% include panels/check.html text="After delivery we arrange management and support via your own LMS or via Prepo." %}
 {% endcapture %}
 {% capture route_body %}
 <h3>The route in short</h3>
@@ -76,8 +76,8 @@ permalink: /contact/
 {% include panels/panel.html variant="paper" body=route_body %}
 
 {% capture prepo_copy %}
-<p class="sp-lead">Via Prepo, MicroGames and Stories stay available, findable and well managed. You keep grip on distribution, feedback, versions, statistics, files and support from one environment.</p>
-<p class="sp-lead">For new MicroGames and Stories, three months of Prepo access is included. In that period the learning experience can be launched, tested, followed and improved where needed.</p>
+<p class="sp-lead">Via Prepo, MicroGames and Stories stay available and well managed. You keep grip on distribution, feedback, versions, statistics, files and support from one environment.</p>
+<p class="sp-lead">For new MicroGames and Stories, three months of Prepo access is included. In that period the learning experience can be launched, followed and improved where needed.</p>
 {% include panels/actions.html primary_label="More about Prepo →" primary_href="/prepo/" %}
 {% endcapture %}
 {% capture prepo_body %}

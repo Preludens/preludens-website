@@ -10,7 +10,7 @@ summary: >-
 reading_time: 6 min
 ---
 
-Play triggers a change in behaviour — and that is crucial for any successful transition. **Game Thinking** (or Serious Game Thinking) is ideal for organisations that want to align their transformations with the human scale while seeking maximum impact, motivation and activation.
+Play triggers a change in behaviour — and that is crucial for any successful transition. **Game Thinking** (or Serious Game Thinking) is ideal for organisations that want to align their transformations with the human scale while seeking maximum impact and motivation.
 
 Think of adding direct feedback mechanisms within a process, introducing measuring points or scores to make progress visible, or introducing challenges that clarify expectations. The focus is on human behaviour and action (the soft side), and less on systems (the hard side).
 
@@ -33,7 +33,7 @@ It is crucial that an organisation can estimate up front what the impact of a se
 
 A serious game project requires good preparation. Before production starts, you must already be able to answer several questions. To make impact measurable afterwards, you must formulate the (learning) objectives properly up front — and those stem from a problem and audience analysis. During a Game Thinking project I do this work and design the tools to get more grip on the outcome of your transformation.
 
-Game Thinking also suits organisations that don't (yet) want to deploy serious games but do see the added value. Through Game Thinking you approach a case through the eyes of a game: mechanisms that work well in a game are applied within your situation.
+Game Thinking also suits organisations that see the added value of serious games and are not yet ready to start producing one. Through Game Thinking you approach a case through the eyes of a game: mechanisms that work well in a game are applied within your situation.
 
 ## My 7 design principles
 

@@ -10,8 +10,8 @@ permalink: /team/
 <div class="panel-stack">
 {% include panels/clips.html %}
 
-{% capture hero_title %}We believe people learn better when they're actively involved{% endcapture %}
-{% capture hero_lead %}That's why we design learning experiences where people don't just receive information, but make their own choices, experience the consequences of their actions and get targeted feedback. By applying knowledge in a recognisable context, it is better understood, remembered and used when it matters.{% endcapture %}
+{% capture hero_title %}People learn better when they're actively involved{% endcapture %}
+{% capture hero_lead %}That's why we design learning experiences where people make their own choices, experience the consequences of their actions and get targeted feedback. By applying knowledge in a recognisable context, it is better remembered and used when it matters.{% endcapture %}
 {% capture hero_actions %}
 {% include panels/actions.html hero_cta=true primary_label="Get in touch →" primary_href="/contact/" secondary_label="Our services" secondary_href="/diensten/" %}
 {% endcapture %}
@@ -19,8 +19,8 @@ permalink: /team/
 
 {% capture intro_main %}
 <p class="sp-lead">Preludens is made up of Daan Groen and Jan-Willem Manenschijn, complemented by specialists when a project calls for it. We combine expertise in storytelling, game design and learning &amp; development to prepare teams for situations where knowledge and action come together.</p>
-<p class="sp-lead">We work in small, dedicated teams and keep the lines short. Clients work directly with the designers and developers who run the project. That lets us move quickly, ask critical questions and test ideas early.</p>
-<p class="sp-lead">Preludens makes complex knowledge playable, narrative and applicable. With MicroGames, storytelling and play principles we create learning experiences that spark curiosity, stimulate active involvement and motivate people to keep learning.</p>
+<p class="sp-lead">We work in small, dedicated teams and keep the lines short. Clients work directly with the designers and developers who run the project. That lets us move quickly and test ideas early.</p>
+<p class="sp-lead">Preludens makes complex knowledge playable and applicable. With MicroGames and storytelling we create learning experiences that spark curiosity and motivate people to keep learning.</p>
 {% endcapture %}
 {% capture intro_checks %}
 {% include panels/check.html text="Involvement activates people." %}
@@ -41,7 +41,7 @@ permalink: /team/
 
 {% capture daan_body %}
 <p class="sp-lead">Daan rarely settles for the first answer. He digs deeper for creative responses to process challenges, with game mechanics and win-win thinking as his compass. With more than fifteen years of experience in MicroGaming, he guides organisations that want to use play and story more thoughtfully for learning and change.</p>
-<p class="sp-lead">His strength lies in surfacing the game that's often already hidden in reality — not by adding game elements on top, but by exploring the tension, choices and behavioural patterns already present.</p>
+<p class="sp-lead">His strength lies in surfacing the game that's often already hidden in reality. He explores the tension, choices and behavioural patterns already present, rather than adding game elements on top.</p>
 {% endcapture %}
 {% capture jw_body %}
 <p class="sp-lead">Jan-Willem is an enthusiastic creative with a passion for education, technology and puzzles. He turns vague ideas into concrete prototypes and gets people moving, from escape rooms to serious games.</p>
@@ -54,7 +54,7 @@ permalink: /team/
 {% capture team_body %}
 <h3>Meet the team</h3>
 <h2>Design and technology, in one focused team</h2>
-<p class="sp-lead">Where Daan unravels learning problems and surfaces game mechanics, Jan-Willem translates ideas into clear, working experiences. Together we bring serious games, storytelling, instructional design and technology together.</p>
+<p class="sp-lead">Where Daan unravels learning problems and surfaces game mechanics, Jan-Willem translates ideas into clear, working experiences. Together we bring instructional design and technology together.</p>
 {% include panels/people.html label="The Preludens team" items=people_items %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" body=team_body %}
@@ -63,7 +63,7 @@ permalink: /team/
 {% capture missie_copy %}
 <h3>Why we started Preludens</h3>
 <h2>Game-based learning should be accessible to everyone</h2>
-<p class="sp-lead">Our mission is to make game-based learning accessible to every organisation — large and small. After years of experience with serious games, we saw how much stronger learning becomes when people can actively choose, practise and experience what their actions mean.</p>
+<p class="sp-lead">Our mission is to make game-based learning accessible to every organisation — large and small. After years of experience with serious games, we saw how much stronger learning becomes when people can choose for themselves and experience what their actions mean.</p>
 <p class="sp-lead">That's why we develop learning experiences that are affordable, scalable and tangible: manageable development costs, modular solutions and products clients can deploy without unnecessary technical barriers within their existing learning environment.</p>
 {% endcapture %}
 {% capture missie_body %}
@@ -73,7 +73,7 @@ permalink: /team/
 
 {% capture value_items %}
 {% include panels/value.html title="Robust" text="A learning experience must inspire confidence. We design solutions that feel logical, work reliably and are clear. The technology should never get in the way of the experience." %}
-{% include panels/value.html title="Purposeful" text="We make design choices not because they're fun, but because they contribute to learning. Every story, choice and MicroGame traces back to clear learning goals." %}
+{% include panels/value.html title="Purposeful" text="Every design choice must contribute to learning. Stories, choices and MicroGames trace back to clear learning goals." %}
 {% include panels/value.html title="Accessible" text="Complex knowledge doesn't have to feel complicated. We translate content into recognisable situations, clear choices and concrete feedback, so people can discover and grow." %}
 {% include panels/value.html title="Curious" text="We don't just accept the first solution. We explore the practice, ask questions and look for the route that connects knowledge, behaviour and experience." %}
 {% endcapture %}
@@ -94,7 +94,7 @@ permalink: /team/
 {% include panels/step.html num="7" title="The next step always clear" %}
 {% endcapture %}
 {% capture principles_main %}
-<p class="sp-lead">Every design is sharp in content, solid in technology and aimed at learning that becomes applicable in practice. Our design methodology explains exactly how we do that — from clear objectives to clear feedback and an always-visible next step.</p>
+<p class="sp-lead">Every design is sharp in content and aimed at learning that becomes applicable in practice. Our design methodology explains exactly how we do that, from clear objectives to an always-visible next step.</p>
 {% include panels/actions.html primary_label="See our design methodology →" primary_href="/ontwerpmethodiek/" %}
 {% endcapture %}
 {% capture principles_aside %}

@@ -29,7 +29,7 @@ permalink: /impact/
 {% include panels/panel.html variant="mist" body=impact_body %}
 
 {% capture closing_body %}
-<p class="sp-lead">For us, impact is not only completion rates, but a noticeable shift in how people weigh options, choose, and act when it counts.</p>
+<p class="sp-lead">For us, impact is a noticeable shift in how people weigh options and act when it counts.</p>
 {% include panels/actions.html secondary_label="Read stories from our clients →" secondary_href="/verhalen/" %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" body=closing_body %}

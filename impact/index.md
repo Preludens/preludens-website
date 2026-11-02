@@ -29,7 +29,7 @@ permalink: /impact/
 {% include panels/panel.html variant="mist" body=impact_body %}
 
 {% capture closing_body %}
-<p class="sp-lead">Impact betekent voor ons niet alleen afrondingspercentages, maar merkbare verandering in hoe mensen afwegen, kiezen en handelen wanneer het erop aankomt.</p>
+<p class="sp-lead">Impact betekent voor ons merkbare verandering in hoe mensen afwegen en handelen wanneer het erop aankomt.</p>
 {% include panels/actions.html secondary_label="Bekijk verhalen van opdrachtgevers →" secondary_href="/verhalen/" %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" body=closing_body %}

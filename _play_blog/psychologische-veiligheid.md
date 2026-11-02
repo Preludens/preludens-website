@@ -4,8 +4,8 @@ permalink: /play/blog/psychologische-veiligheid/
 title: Leren begint met een veilige speelruimte
 date: 2026-04-24
 summary: >-
-  Psychologische veiligheid is geen soft culture-topic — het is de basis waarop spel,
-  experimenteren en echte gedragsverandering rusten. Zo ontwerp je die ruimte bewust.
+  Psychologische veiligheid is de basis waarop spel, experimenteren en echte
+  gedragsverandering rusten. Zo ontwerp je die ruimte bewust.
 reading_time: 6 min
 featured: true
 image: /assets/images/play/magische-cirkel.jpg
@@ -21,11 +21,11 @@ Johan Huizinga beschreef spel als een **magische cirkel**: een afgescheiden ruim
 
 Die cirkel valt in elkaar zodra iemand denkt: *Als ik dit verkeerd doe, word ik afgerekend.* Dan stopt spel. Dan wordt leren weer een verplichting.
 
-Bij Preludens ontwerpen we MicroGames en verhalende scenario's met die cirkel expliciet in gedachten. Niet om moeilijke onderwerpen te verzachten, maar om mensen ruimte te geven om te **oefenen** voordat het ertoe doet.
+Bij Preludens ontwerpen we MicroGames en verhalende scenario's met die cirkel expliciet in gedachten, zodat mensen ruimte hebben om te **oefenen** voordat het ertoe doet.
 
 ## Vijf bewegingen die je vandaag kunt oefenen
 
-In [The Learning Brief](https://ldshakers.substack.com/p/playing-for-psychological-safety) — de nieuwsbrief van de L&D Shakers-community — kwam het thema psychologische veiligheid prominent voorbij. De kern: behandel veiligheid niet als abstract begrip, maar als iets dat je **speelt** — met concrete bewegingen in gesprekken, workshops en teamrituelen.
+In [The Learning Brief](https://ldshakers.substack.com/p/playing-for-psychological-safety) — de nieuwsbrief van de L&D Shakers-community — kwam het thema psychologische veiligheid prominent voorbij. De kern: veiligheid verschuift van abstract begrip naar iets dat je **speelt** — met concrete bewegingen in gesprekken, workshops en teamrituelen.
 
 Hier zijn vijf daarvan, vertaald naar wat wij in leertrajecten zien werken:
 
@@ -57,7 +57,7 @@ Wanneer een team een mislukte poging behandelt als verrassing, leert niemand dur
 
 > *"Wat heeft dit ons laten zien dat we eerder niet wisten?"*
 
-Dat sluit naadloos aan bij Play: in een spel is falen onderdeel van het proces, geen eindpunt. De vraag is altijd: *wat doe je met wat je ontdekte?*
+Dat sluit aan bij Play: in een spel is falen onderdeel van het proces, geen eindpunt. De vraag is altijd: *wat doe je met wat je ontdekte?*
 
 ### 5. Check of iedereen mee kon doen
 
@@ -69,7 +69,7 @@ Die vraag hoort thuis in elke GameStorm-afsluiting — en in elke leeromgeving d
 
 ## Van playbook naar leerervaring
 
-De term *play* wordt in dit verband letterlijk bedoeld: niet als trucje, maar als herhaalbare **zet** die je kunt oefenen, aanpassen en inbedden in je teamrituelen. Net zoals een game designer mechanismen test tot ze kloppen, kun jij als L&D-professional of teamleider veiligheid ontwerpen — beweging voor beweging.
+De term *play* wordt in dit verband letterlijk bedoeld: als herhaalbare **zet** die je kunt oefenen, aanpassen en inbedden in je teamrituelen. Net zoals een game designer mechanismen test tot ze kloppen, kun jij als L&D-professional of teamleider veiligheid ontwerpen — beweging voor beweging.
 
 Dat is ook waarom we Play niet los zien van verhaal en data. Een goed scenario nodigt uit tot keuzes. Veilige omstandigheden maken dat mensen die keuzes eerlijk maken. En de interactiedata laat zien waar het wringt — zodat je gericht kunt bijsturen.
 

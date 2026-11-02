@@ -12,14 +12,14 @@ permalink: /play/
 
 {% capture hero_title %}Play creates the space to learn{% endcapture %}
 {% capture hero_lead %}When people are mostly focused on avoiding mistakes and limiting risk, there is little room to practise new behaviour. Play breaks that pattern.{% endcapture %}
-{% capture hero_lead2 %}Preludens creates safe learning experiences where teams can explore, try and choose again. With clear rules, recognisable situations and immediate feedback, engagement, intrinsic motivation and the confidence to act more strongly in practice all grow.{% endcapture %}
+{% capture hero_lead2 %}Preludens creates safe learning experiences where teams can explore, try and choose again. With clear rules and immediate feedback, engagement and the confidence to act more strongly in practice grow.{% endcapture %}
 {% capture hero_actions %}
 {% include panels/actions.html hero_cta=true primary_label="Get in touch →" primary_href="/contact/" secondary_label="Our services" secondary_href="/diensten/" %}
 {% endcapture %}
 {% include panels/hero.html kicker="Play" title=hero_title lead=hero_lead lead2=hero_lead2 actions=hero_actions figure_src="/assets/images/hero/play-hero.jpg" figure_alt="An open world in which someone chooses their own route" figure_href="/gamestorm/" figure_caption="Room to try, without real damage." %}
 
 {% capture circle_main %}
-<p class="sp-lead">In practice, teams make daily choices that affect safety, production, quality or efficiency. That is exactly why it is hard to practise new knowledge there directly. Pressure is high, mistakes have consequences and there is little room to pause, try or choose again.</p>
+<p class="sp-lead">In practice, teams make daily choices that affect safety, production, quality or efficiency. That is exactly why it is hard to practise new knowledge there directly. Pressure is high, mistakes have consequences and there is little room to pause or choose again.</p>
 <p class="sp-lead">As a result, people often stay in a practical survival mode: avoid mistakes, limit risk and move quickly to the next task. Understandable, but not always helpful when they need to learn something new or develop different behaviour.</p>
 <p class="sp-lead">The alternative is often a passive learning form: reading theory, following instructions and taking a test afterwards. That can transfer information, but it does not always help people act more strongly when the situation becomes complex.</p>
 <p class="sp-lead">At Preludens we use Play to create that practice space. We design a safe learning space with clear rules, recognisable situations, focused feedback and enough freedom to explore, try and choose again.</p>
@@ -43,8 +43,8 @@ permalink: /play/
 {% capture huizinga_copy %}
 <h3>Homo Ludens: the playing human</h3>
 <h2>Play according to Huizinga</h2>
-<p class="sp-lead">Johan Huizinga saw play not as distraction, but as a fundamental way people give meaning to behaviour, rules and collaboration. Play has its own space. There are clear rules, a beginning and an end. Participants temporarily step out of everyday reality, but take the experience seriously.</p>
-<p class="sp-lead">That combination makes Play powerful for learning. It offers freedom to try, structure to keep direction and safety to learn from what happens. Play makes learning not only more active, but also safer, more recognisable and easier to follow.</p>
+<p class="sp-lead">Johan Huizinga described play as more than diversion: a fundamental way people give meaning to behaviour, rules and collaboration. Play has its own space. There are clear rules, a beginning and an end. Participants temporarily step out of everyday reality, but take the experience seriously.</p>
+<p class="sp-lead">That combination makes Play powerful for learning. It offers freedom to try, structure to keep direction and safety to learn from what happens. Play makes learning more active, safer and easier to follow.</p>
 {% endcapture %}
 {% capture huizinga_body %}
 {% include panels/media.html src="/assets/images/play/magische-cirkel.jpg" webp="/assets/images/play/magische-cirkel.webp" alt="An open world with a subtle path of light — the magic circle of learning" body=huizinga_copy %}
@@ -53,9 +53,9 @@ permalink: /play/
 
 {% capture value_items %}
 {% include panels/value.html title="Safe experimentation" text="Play makes it possible to practise without immediate consequences in the real world. Participants try choices, make mistakes and discover what works — without fear of getting it wrong." %}
-{% include panels/value.html title="Active engagement" text="In Play a passive stance is hard to maintain. Participants look, choose, respond and act. They become part of the experience instead of spectators of the content." %}
+{% include panels/value.html title="Active engagement" text="In Play a passive stance is hard to maintain. Participants look, choose and act. Their role shifts from spectator to player." %}
 {% include panels/value.html title="Recognisable context" text="With storytelling, realistic scenarios and MicroGames we place knowledge in situations that feel familiar to the work. That is how information gains meaning." %}
-{% include panels/value.html title="Visibility of growth" text="Play makes behaviour visible. Choices, progress, scores and feedback show where participants are strong and where they get stuck. Those insights help improve learning experiences." %}
+{% include panels/value.html title="Visibility of growth" text="Play makes behaviour visible. Choices, scores and feedback show where participants are strong and where they get stuck. Those insights help improve learning experiences." %}
 {% endcapture %}
 {% capture value_body %}
 <h3>What it delivers</h3>
@@ -66,8 +66,8 @@ permalink: /play/
 
 {% capture daily_main %}
 <p class="sp-lead">We practise conversations before they happen. We turn repeating tasks into small challenges. We try something first in a safe setting before we really need to be able to do it. We learn by doing, repeating and discovering what works.</p>
-<p class="sp-lead">In organisations the same happens. Teams need to deal with new rules, processes, responsibilities and choices. Explanation alone is often not enough. People need to explore what a situation asks and experience what their actions cause.</p>
-<p class="sp-lead">Play helps design that practice space deliberately. It makes learning lighter, but not less serious. Precisely because people are allowed to try, they become more active, sharper and more confident when it matters in practice.</p>
+<p class="sp-lead">In organisations the same happens. Teams need to deal with new rules, processes and responsibilities. Explanation alone is often not enough. People need to explore what a situation asks and experience what their actions cause.</p>
+<p class="sp-lead">Play helps design that practice space deliberately. It makes learning lighter, but not less serious. Precisely because people are allowed to try, they become more active and more confident when it matters in practice.</p>
 {% endcapture %}
 {% capture daily_quote_text %}Play is an inseparable aspect of human culture. The spirit of playful competition is, as a social impulse, older than culture itself and pervades all life like a veritable ferment.{% endcapture %}
 {% capture daily_aside %}
@@ -80,13 +80,13 @@ permalink: /play/
 {% endcapture %}
 {% include panels/panel.html variant="paper" body=daily_body %}
 
-{% capture find_left %}We do not add play afterwards as a layer over the content. We start with reality. In every challenge, game elements are already hidden: goals, rules, choices, tension, feedback and consequences. An employee needs to recognise something. A team needs to weigh something. An organisation wants to strengthen certain behaviour.{% endcapture %}
-{% capture find_right %}We call that Find the Game. We look for the game already present in practice and make it visible. Then we translate that structure into a learning experience with stories, MicroGames, dilemmas or other play forms. That keeps Play recognisable, relevant and directly connected to the situations in which people will soon need to act more strongly.{% endcapture %}
+{% capture find_left %}We start with reality. Play is not a layer we add over the content. In every challenge, game elements are already hidden: goals, rules, choices, tension, feedback and consequences. An employee needs to recognise something. A team needs to weigh something. An organisation wants to strengthen certain behaviour.{% endcapture %}
+{% capture find_right %}We call that Find the Game. We look for the game already present in practice and make it visible. Then we translate that structure into a learning experience with stories, MicroGames, dilemmas or other play forms. That keeps Play recognisable and directly connected to the situations in which people will soon need to act more strongly.{% endcapture %}
 {% capture find_body %}
 <h3>Find the Game</h3>
 <h2>How Preludens uses Play</h2>
 {% include panels/split.html left=find_left right=find_right %}
-<p class="sp-lead sp-lead--center">Not a loose game. Not a trick to make learning more fun. But a carefully designed learning route in which people practise with choices, knowledge and behaviour that matter.</p>
+<p class="sp-lead sp-lead--center">The result is a carefully designed learning route in which people practise with choices, knowledge and behaviour that matter.</p>
 {% endcapture %}
 {% include panels/panel.html variant="mist" body=find_body %}
 

@@ -40,19 +40,17 @@ blokken:
     alineas:
       - >-
         Koolmonoxide kun je niet zien, ruiken of proeven. Juist daarom is het belangrijk dat
-        professionals niet alleen de regels kennen, maar ook leren herkennen wanneer een
-        situatie mogelijk onveilig is.
+        professionals de regels kennen en leren herkennen wanneer een situatie mogelijk
+        onveilig is.
       - Daar lag de uitdaging voor CO Wijzer.
       - >-
         De doelgroep beschikt vaak al over technische kennis. Nog meer informatie aanbieden
-        is dan niet automatisch de oplossing. In de praktijk moeten monteurs situaties kunnen
-        beoordelen, signalen herkennen, verbanden leggen en op het juiste moment de juiste
-        veiligheidskeuze maken.
+        is dan niet automatisch de oplossing. In de praktijk moeten monteurs signalen
+        herkennen, verbanden leggen en op het juiste moment de juiste veiligheidskeuze maken.
       - Dat vraagt om een andere manier van leren.
       - >-
-        Niet alleen uitleggen wat iemand moet weten, maar deelnemers laten oefenen met
-        situaties waarin die kennis nodig is. Niet passief door informatie klikken, maar
-        kijken, onderzoeken, kiezen en feedback krijgen.
+        Deelnemers oefenen met situaties waarin die kennis nodig is en krijgen feedback op
+        hun keuzes. Passief door informatie klikken levert dat niet op.
       - "De ontwerpvraag werd daarom:"
       - >-
         Hoe maken we van een veiligheidsopleiding een leerervaring waarin professionals
@@ -78,20 +76,20 @@ blokken:
       - >-
         De verhalen geven context. Ze plaatsen technische kennis in herkenbare situaties met
         personages, problemen en gevolgen. De MicroGames maken de deelnemer actief. Daar moet
-        de kennis worden gebruikt om iets te herkennen, te beoordelen of een keuze te maken.
+        de kennis worden gebruikt om iets te herkennen of een keuze te maken.
       - Zo ontstaat een route van begrijpen naar toepassen.
   - kop: Eerst de situatie begrijpen. Dan zelf aan de slag.
     alineas:
       - >-
-        In CO Wijzer krijgt de deelnemer de kennis niet alleen uitgelegd. De leerstof wordt
-        gekoppeld aan situaties waarin die kennis betekenis krijgt.
+        In CO Wijzer wordt de leerstof gekoppeld aan situaties waarin die kennis betekenis
+        krijgt.
       - >-
         Verhalen helpen om zo'n situatie neer te zetten. Wat is er aan de hand? Waar zit het
         risico? Welke informatie is belangrijk? En wat vraagt dat van de professional?
       - Vanuit het verhaal stapt de deelnemer een MicroGame in.
       - >-
-        Daar wordt de kennis actief gebruikt. De deelnemer onderzoekt situaties, interpreteert
-        signalen, maakt veiligheidsafwegingen en krijgt direct feedback op gemaakte keuzes.
+        Daar wordt de kennis actief gebruikt. De deelnemer interpreteert signalen, maakt
+        veiligheidsafwegingen en krijgt direct feedback op gemaakte keuzes.
       - "Zo ontstaat steeds dezelfde beweging:"
       - ontdekken → begrijpen → kiezen → feedback → opnieuw toepassen
       - >-
@@ -112,8 +110,7 @@ blokken:
           - verschillende leerlijnen rond technische en veiligheidsgerelateerde onderwerpen
           - een didactische structuur waarop nieuwe onderdelen kunnen voortbouwen
       - >-
-        Daarmee wordt veiligheidsinformatie niet alleen aangeboden, maar bruikbaar gemaakt om
-        mee te oefenen.
+        Daarmee wordt veiligheidsinformatie bruikbaar gemaakt om mee te oefenen.
       - >-
         De deelnemer krijgt steeds opnieuw de vraag: wat zie je hier, wat betekent dat en wat
         doe je vervolgens?
@@ -130,9 +127,9 @@ blokken:
         moment moet herkennen en toepassen.
       - >-
         Storytelling helpt om die context zichtbaar te maken. MicroGames creëren vervolgens
-        een veilige omgeving waarin deelnemers kunnen oefenen, keuzes kunnen maken en directe
-        feedback krijgen.
-      - Met MicroGames en verhalen maken we complexe kennis speelbaar, herkenbaar en toepasbaar.
+        een veilige omgeving waarin deelnemers keuzes kunnen maken en directe feedback
+        krijgen.
+      - Met MicroGames en verhalen maken we complexe kennis speelbaar en toepasbaar.
       - Bij veiligheid is weten wat de regel is uiteindelijk niet genoeg.
       - >-
         Je moet een risicosituatie herkennen, begrijpen wat er gebeurt en weten hoe je moet handelen.
@@ -141,8 +138,8 @@ blokken:
     slot: true
     alineas:
       - >-
-        Heb je technische kennis, veiligheidsprocedures of andere inhoud die mensen niet alleen
-        moeten kennen, maar vooral moeten kunnen toepassen?
+        Heb je technische kennis, veiligheidsprocedures of andere inhoud die mensen in de
+        praktijk moeten kunnen toepassen?
       - >-
         Dan onderzoeken we graag welke situaties, keuzes en vaardigheden centraal staan — en hoe
         we daar een actieve leerervaring van kunnen maken.

@@ -5,8 +5,8 @@ title: Learning starts in a safe play space
 description: Psychological safety is the foundation on which play, experimentation and real behaviour change rest.
 date: 2026-04-24
 summary: >-
-  Psychological safety is not a soft culture topic — it is the foundation on which play,
-  experimentation, and real behaviour change rest. Here is how to design that space deliberately.
+  Psychological safety is the foundation on which play, experimentation, and real
+  behaviour change rest. Here is how to design that space deliberately.
 reading_time: 6 min
 featured: true
 image: /assets/images/play/magische-cirkel.jpg
@@ -22,11 +22,11 @@ Johan Huizinga described play as a **magic circle**: a separate space with clear
 
 That circle collapses the moment someone thinks: *If I get this wrong, I will be judged.* Then play stops. Then learning becomes obligation again.
 
-At Preludens, we design MicroGames and narrative scenarios with that circle explicitly in mind. Not to soften difficult topics, but to give people room to **practise** before it truly matters.
+At Preludens, we design MicroGames and narrative scenarios with that circle explicitly in mind, so people have room to **practise** before it truly matters.
 
 ## Five moves you can practise today
 
-In [The Learning Brief](https://ldshakers.substack.com/p/playing-for-psychological-safety) — the newsletter from the L&D Shakers community — psychological safety featured prominently. The core idea: do not treat safety as an abstract concept, but as something you **play** — with concrete moves in conversations, workshops, and team rituals.
+In [The Learning Brief](https://ldshakers.substack.com/p/playing-for-psychological-safety) — the newsletter from the L&D Shakers community — psychological safety featured prominently. The core idea: safety shifts from an abstract concept to something you **play** — with concrete moves in conversations, workshops, and team rituals.
 
 Here are five of them, translated into what we see working in learning programmes:
 
@@ -58,7 +58,7 @@ When a team treats a failed attempt as a surprise, nobody learns to take risks. 
 
 > *"What did this show us that we did not know before?"*
 
-That aligns seamlessly with Play: in a game, failure is part of the process, not the endpoint. The question is always: *what do you do with what you discovered?*
+That aligns with Play: in a game, failure is part of the process, not the endpoint. The question is always: *what do you do with what you discovered?*
 
 ### 5. Check whether everyone could participate
 
@@ -70,7 +70,7 @@ That question belongs in every GameStorm wrap-up — and in every learning envir
 
 ## From playbook to learning experience
 
-The word *play* is meant literally here: not as a gimmick, but as a repeatable **move** you can practise, adapt, and embed in team rituals. Just as a game designer tests mechanics until they work, you can design safety as an L&D professional or team leader — move by move.
+The word *play* is meant literally here: as a repeatable **move** you can practise, adapt, and embed in team rituals. Just as a game designer tests mechanics until they work, you can design safety as an L&D professional or team leader — move by move.
 
 That is also why we do not see Play separately from story and data. A good scenario invites choices. Safe conditions mean people make those choices honestly. And interaction data shows where things stick — so you can adjust with purpose.
 

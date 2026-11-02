@@ -9,7 +9,7 @@ summary: >-
 reading_time: 6 min
 ---
 
-Play triggert een verandering in gedrag — en dat is cruciaal voor elke succesvolle transitie. **Game Thinking** (of Serious Game Thinking) is ideaal voor organisaties die hun transformaties beter willen afstemmen op de menselijke maat en daarbij maximale impact, motivatie en activatie zoeken.
+Play triggert een verandering in gedrag — en dat is cruciaal voor elke succesvolle transitie. **Game Thinking** (of Serious Game Thinking) is ideaal voor organisaties die hun transformaties beter willen afstemmen op de menselijke maat en daarbij maximale impact en motivatie zoeken.
 
 Denk aan het toevoegen van directe feedbackmechanismen binnen een proces, het aanbrengen van meetpunten of scores om voortgang zichtbaar te maken, of het introduceren van uitdagingen die helder maken wat de verwachtingen zijn. De focus ligt op menselijk gedrag en handelen (de zachte kant), en minder op de systemen (de harde kant).
 
@@ -32,7 +32,7 @@ Het is cruciaal dat een organisatie vooraf kan inschatten wat de impact van een 
 
 Een serious game traject vereist een goede voorbereiding. Voordat de productie start, moet je al meerdere vragen kunnen beantwoorden. Om de impact achteraf meetbaar te maken, moet je vooraf de (leer)doelen op de juiste manier formuleren — en die komen weer voort uit een probleem- en doelgroepanalyse. Tijdens een Game Thinking traject voer ik dit werk uit en ontwerp ik handvatten om meer grip te krijgen op de uitkomst van jullie transformatie.
 
-Game Thinking is ook geschikt voor organisaties die (nog) geen serious games willen inzetten, maar wel de toegevoegde waarde zien. Via Game Thinking benader je een casus door de ogen van een game: mechanismen die goed werken in een spel zet je in binnen jouw situatie.
+Game Thinking is ook geschikt voor organisaties die de toegevoegde waarde van serious games zien en nog niet aan productie willen beginnen. Via Game Thinking benader je een casus door de ogen van een game: mechanismen die goed werken in een spel zet je in binnen jouw situatie.
 
 ## Mijn 7 ontwerpprincipes
 

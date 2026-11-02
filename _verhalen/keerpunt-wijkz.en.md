@@ -49,9 +49,8 @@ inleiding:
     But how simple is that still when worries pile up and you feel less and less room to look ahead?
   - >-
     With <strong>Keerpunt</strong> we developed a card game that lets players experience what financial
-    and emotional pressure can do to people. Not to tell them how poverty feels, but to create a
-    situation in which participants notice for themselves what happens when income, energy and
-    focus come under pressure.
+    and emotional pressure can do to people. In the game participants notice for themselves what
+    happens when income, energy and focus come under pressure.
 feiten_kop: Project details
 feiten:
   - label: Project
@@ -87,9 +86,9 @@ blokken:
     subkop: Can you create understanding by letting someone experience it?
     alineas:
       - >-
-        We did not want to make a game that mainly gives participants more information about
+        We wanted to make a game that does more than give participants information about
         livelihood security.
-      - "The ambition was to set something else in motion: awareness and conversation."
+      - The ambition was to set awareness and conversation in motion.
       - For that, the player had to experience something themselves.
       - >-
         What does it feel like when problems start to pile up? What do you do when you do not have
@@ -114,7 +113,7 @@ blokken:
         it becomes harder again to solve the financial problem.
       - That is how a negative spiral can appear.
   - kop: The route
-    subkop: Not telling what happens, but letting it happen
+    subkop: From telling to letting it happen
     alineas:
       - Keerpunt is deliberately a low-threshold card game.
       - >-
@@ -133,8 +132,8 @@ blokken:
     subkop: When an unpaid bill suddenly creates tension
     alineas:
       - >-
-        During workshops we saw what happens when participants do not only talk about financial
-        problems, but start playing with them.
+        During workshops we saw what happens when participants experience that pressure themselves
+        in a game.
       - >-
         Players noticed how hard it becomes to keep an overview when several problems demand
         attention at the same time. They discovered how long you can keep thinking that it will
@@ -153,7 +152,7 @@ blokken:
     alineas:
       - >-
         Keerpunt is used in workshops with, among others, professionals who work on livelihood
-        security, support, health and welfare.
+        security, support work, health and welfare.
       - Playing is not the end point.
       - Afterwards there is room for reflection.
       - >-
@@ -175,18 +174,18 @@ blokken:
         Focus determines how much room you have to keep an overview and look ahead.
       - When one part is under pressure, that has consequences for the others.
       - A game can make a system visible that is hard to explain in a conversation.
-      - Not by adding more information, but by placing participants in the middle of it.
+      - It places participants in the middle of that system.
   - kop: First experience it, then have the conversation
     slot: true
     alineas:
-      - Some subjects do not ask for yet another presentation, explanation or step-by-step plan.
+      - Some subjects do not ask for yet another presentation or step-by-step plan.
       - They ask for an experience that helps people look from another perspective.
       - Keerpunt shows what play can mean in that.
       - >-
         By letting participants make choices, experience consequences and then reflect together,
         a different starting point appears for the conversation about livelihood security.
       - >-
-        <strong>Not only understanding what is going on, but briefly experiencing what it means
-        when every choice counts.</strong>
+        <strong>Understanding what is going on and briefly experiencing what it means when every
+        choice counts.</strong>
 order: 6
 ---
