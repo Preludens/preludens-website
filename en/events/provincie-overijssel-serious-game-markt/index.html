@@ -1,0 +1,37 @@
+---
+layout: null
+lang: en
+title: "Serious Game Markt — Provincie Overijssel"
+permalink: /events/provincie-overijssel-serious-game-markt/
+permalink_lang:
+  nl: /events/provincie-overijssel-serious-game-markt/
+sitemap: false
+robots: noindex, nofollow
+---
+{%- comment -%}
+  Deze pagina is er alleen voor Nederlandse bezoekers van de Serious Game
+  Markt van provincie Overijssel. Zonder dit bestand zet polyglot er een
+  Engelstalige URL met Nederlandse tekst neer; nu gaat /en/ door naar het
+  origineel. site.baseurl in plaats van relative_url, want relative_url zet
+  in een Engelse build het /en-voorvoegsel er weer voor.
+
+  De meta-refresh doet het werk en houdt het pad binnen de site. In href en
+  canonical zou polyglot datzelfde /en er alsnog voor zetten, dus die wijzen
+  naar het productiedomein — waar deze pagina uiteindelijk ook staat.
+{%- endcomment -%}
+{%- capture target -%}{{ site.baseurl }}/events/provincie-overijssel-serious-game-markt/{%- endcapture -%}
+{%- capture canonical -%}{{ site.prod_url }}/events/provincie-overijssel-serious-game-markt/{%- endcapture -%}
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="{{ canonical }}">
+  <meta http-equiv="refresh" content="0; url={{ target }}">
+  <title>{{ page.title | escape }}</title>
+</head>
+<body>
+  <p>This page is in Dutch. <a href="{{ canonical }}">Ga naar de pagina over de Serious Game Markt</a>.</p>
+</body>
+</html>

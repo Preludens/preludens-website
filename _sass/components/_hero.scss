@@ -50,6 +50,17 @@
   justify-self: start;
 }
 
+/* Eventpagina: de hero heeft geen beeld naast de tekst, dus de tweede kolom
+   hoeft geen ruimte te reserveren. De kolom houdt wel de breedte die hij
+   naast een beeld ook heeft, zodat kop en inleiding niet uitlopen. */
+body.page-event .panel--hero .panel__inner {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+body.page-event .panel--hero .sp-hero-copy {
+  max-width: 46rem;
+}
+
 .sp-nowrap {
   white-space: nowrap;
 }
