@@ -15,7 +15,7 @@ permalink_lang:
 {% capture hero_title %}Wij versterken <span class="hl">kennisretentie</span> <span class="sp-nowrap">binnen organisaties.</span>{% endcapture %}
 {% capture hero_lead %}Preludens ontwerpt en ontwikkelt online trainingen waarin medewerkers oefenen met situaties uit de praktijk. Met storytelling en game-based leren dagen we deelnemers uit om zelf keuzes te maken. Gerichte feedback en herhaling helpen de kennis beter te onthouden en toe te passen in hun werk.{% endcapture %}
 {% capture hero_actions %}
-{% include panels/actions.html hero_cta=true primary_label="Ontdek onze aanpak →" primary_href="/diensten/" play_label="Bekijk een MicroGame" play_href="/play/" %}
+{% include panels/actions.html hero_cta=true primary_label="Ontdek onze aanpak →" primary_href="/diensten/" play_label="Bekijk een MicroGame" play_href="/verhalen/microgame-demo/" %}
 {% endcapture %}
 {% capture hero_steps %}
 {% include panels/steps.html i1="01" t1="Uitdagen" p1="Daag teams uit om binnen realistische situaties keuzes te maken en te ervaren wat die keuzes opleveren." i2="02" t2="Activeren" p2="Gebruik Play om deelnemers actief te laten kiezen. Ze proberen iets en krijgen meteen te zien wat het oplevert." i3="03" t3="Motiveren" p3="Versterk de betrokkenheid en intrinsieke motivatie, zodat teams met meer vertrouwen handelen wanneer het er in de praktijk echt op aankomt." %}
