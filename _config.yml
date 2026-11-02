@@ -52,6 +52,13 @@ exclude:
   - AGENTS.md
   - content-structuur-en-copy.md
 
+  # Werkmap met ontwerpvarianten om naast elkaar te bekijken. Deze twaalf
+  # bestanden stonden publiek op preludens.nl en in de sitemap, zonder
+  # noindex. Het is statische HTML zonder Liquid die relatief naar
+  # preview.css wijst, dus je opent ze net zo goed rechtstreeks vanaf schijf;
+  # door Jekyll hoeven ze niet.
+  - preview
+
 plugins:
   - jekyll-polyglot
   - jekyll-seo-tag
