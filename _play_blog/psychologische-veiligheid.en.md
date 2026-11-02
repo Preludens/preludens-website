@@ -2,6 +2,7 @@
 lang: en
 permalink: /play/blog/psychologische-veiligheid/
 title: Learning starts in a safe play space
+description: Psychological safety is the foundation on which play, experimentation and real behaviour change rest.
 date: 2026-04-24
 summary: >-
   Psychological safety is not a soft culture topic — it is the foundation on which play,

@@ -2,6 +2,7 @@
 lang: en
 permalink: /verhalen/onitnow-verhaal-maria/
 title: Learning the USM method through the story of Maria
+description: Maria's search for calm and control is the heart of a MicroGame Story that introduces the USM method through a recognisable story.
 client: onITnow
 project: The story of Maria
 sector: IT services and service management

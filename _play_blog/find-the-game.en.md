@@ -2,6 +2,7 @@
 lang: en
 permalink: /play/blog/find-the-game/
 title: Find the Game — a game is hidden inside every transition
+description: A game is already hidden inside every change. Finding that game matters more than designing new game mechanics.
 date: 2022-07-14
 summary: >-
   A game is already hidden inside every change. With the right guidance and method, finding that

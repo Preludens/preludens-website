@@ -3,7 +3,7 @@ layout: default
 lang: en
 title: Contact
 description: Get in touch with Preludens — from a GameStorm to a first chapter or a full playable learning experience.
-body_class: page-panels
+body_class: page-panels page-contact
 permalink: /contact/
 ---
 
@@ -46,7 +46,7 @@ permalink: /contact/
 <h3>Tell us briefly what you are running into</h3>
 {% include panels/actions.html primary_label="Send an email to info@preludens.nl →" primary_href="mailto:info@preludens.nl" %}
 {% endcapture %}
-{% include panels/panel.html variant="paper" body=start_body %}
+{% include panels/panel.html variant="paper" id="een-hoofdstuk" body=start_body %}
 
 <!-- TODO [WACHTEN OP FOTO]: replace gamestorm/sessie.* with a photo of you together (TU Twente project) -->
 {% capture expect_copy %}

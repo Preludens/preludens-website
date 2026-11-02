@@ -87,7 +87,6 @@ permalink: /play/
 <h2>Hoe Preludens Play inzet</h2>
 {% include panels/split.html left=find_left right=find_right %}
 <p class="sp-lead sp-lead--center">Geen los spel. Geen trucje om leren leuker te maken. Maar een zorgvuldig ontworpen leerroute waarin mensen oefenen met keuzes, kennis en gedrag die ertoe doen.</p>
-{% include panels/actions.html secondary_label="Lees de Play-blog" secondary_href="/play/blog/" secondary2_label="Play in de praktijk" secondary2_href="/play/in-de-praktijk/" %}
 {% endcapture %}
 {% include panels/panel.html variant="mist" body=find_body %}
 

@@ -19,7 +19,7 @@ body_class: page-home page-panels
 {% include panels/actions.html hero_cta=true primary_label="Discover our approach →" primary_href="/diensten/" play_label="View a MicroGame" play_href="/play/" %}
 {% endcapture %}
 {% capture hero_steps %}
-{% include panels/steps.html i1="01" t1="Challenge" p1="Invite teams to make choices in realistic situations, practise weighing options and experience the consequences of what they do." i2="02" t2="Activate" p2="Use Play so participants actively choose. Trying, responding, deciding and learning from direct feedback." i3="03" t3="Motivate" p3="Strengthen engagement and intrinsic motivation, so teams act with more confidence when it really matters in practice." %}
+{% include panels/steps.html i1="01" t1="Challenge" p1="Invite teams to make choices in realistic situations, practise weighing options and experience the consequences of what they do." i2="02" t2="Activate" p2="Use Play so participants actively choose. Not watching or clicking, but trying, responding, deciding and learning from direct feedback." i3="03" t3="Motivate" p3="Strengthen engagement and intrinsic motivation, so teams act with more confidence when it really matters in practice." %}
 {% endcapture %}
 {% include panels/hero.html kicker="Learning by doing" title=hero_title lead=hero_lead actions=hero_actions steps=hero_steps figure_src="/assets/images/hero/homepage-concept-route.jpg" figure_alt="A person on a path leading towards a flag on the horizon" figure_href="/play/" figure_caption="From information to knowledge." %}
 
@@ -34,12 +34,12 @@ body_class: page-home page-panels
 {% include panels/panel.html variant="mist" line="online-focus" body=focus_body %}
 
 {% capture track_items %}
-{% include panels/track.html href="/diensten/" title="E-learning" text="Online training in which employees practise with situations from their work, make choices and receive direct feedback." more="Information" frame="4" screen="/assets/images/verhalen/basis-koeltechniek-onderdelen.jpg" %}
+{% include panels/track.html href="/e-learning/" title="E-learning" text="Online training in which employees practise with situations from their work, make choices and receive direct feedback." more="Information" frame="4" screen="/assets/images/verhalen/basis-koeltechniek-onderdelen.jpg" %}
 {% include panels/track.html href="/prepo/" title="Preludens Portal" text="One environment to use, manage and keep developing MicroGames and Stories, also after delivery." more="Information" frame="3" screen="/assets/images/prepo/overzicht.jpg" %}
-{% include panels/track.html href="/diensten/#microgame-stories" title="MicroGame Stories" text="Short, visual stories that connect basic knowledge to recognisable work situations, with play and repetition." more="Information" frame="2" screen="/assets/images/verhalen/studium-co-wijzer.jpg" %}
-{% include panels/track.html href="/diensten/#dilemma-storytelling" title="Dilemma short Stories" text="Short scenarios in which teams make difficult choices, experience the consequences and learn to weigh their options." more="Information" frame="1" screen="/assets/images/verhalen/disruption-game.jpg" %}
+{% include panels/track.html href="/diensten/microgame-stories/" title="MicroGame Stories" text="Short, visual stories that connect basic knowledge to recognisable work situations, with play and repetition." more="Information" frame="2" screen="/assets/images/verhalen/studium-co-wijzer.jpg" %}
+{% include panels/track.html href="/diensten/dilemma-storytelling/" title="Dilemma short Stories" text="Short scenarios in which teams make difficult choices, experience the consequences and learn to weigh their options." more="Information" frame="1" screen="/assets/images/verhalen/disruption-game.jpg" %}
 {% endcapture %}
-{% capture paper_lead %}<strong>Which form fits your challenge?</strong> If you want to train and secure basic knowledge, a MicroGame Story is the natural choice. If you want to strengthen decision-making around difficult choices, Dilemma Storytelling fits. If you first want a grip on behaviour, learning goals and interventions, we start with Game Thinking.{% endcapture %}
+{% capture paper_lead %}<strong>Which form fits your challenge?</strong> If you want to train basic knowledge and make it stick, a MicroGame Story is the natural choice. If you want to strengthen decision-making around difficult choices, Dilemma Storytelling fits. If you first want a clearer view of behaviour, learning goals and interventions, we start with Game Thinking.{% endcapture %}
 {% capture paper_title %}<span class="hl">Knowledge journeys</span> with story, play and impact.{% endcapture %}
 {% capture paper_body %}
 <h3>What we do</h3>
@@ -50,7 +50,7 @@ body_class: page-home page-panels
 {% include panels/panel.html variant="paper" body=paper_body %}
 
 {% capture warm_left %}In a GameStorm we explore your learning challenge together. In one half-day we bring the audience, context and key learning goals into sharp focus. Then we translate those insights into a first storyline, fitting choices and short game mechanisms.{% endcapture %}
-{% capture warm_right %}You leave with a clear concept and a concrete direction for your learning experience. Even without a follow-up project, the session gives valuable footing for better e-learning, training or knowledge transfer.{% endcapture %}
+{% capture warm_right %}You leave with a clear concept and a concrete direction for your learning experience. Even without a follow-up project, the session gives a solid basis for better e-learning, training or knowledge transfer.{% endcapture %}
 {% include panels/cta.html kicker="No obligation · no commitments · a reply within one working day" title="Take the first step tomorrow" left=warm_left right=warm_right primary_label="Plan a GameStorm" primary_href="/gamestorm/" secondary_label="Discover Play" secondary_href="/play/" %}
 
 {% capture proof_body %}
@@ -70,44 +70,6 @@ body_class: page-home page-panels
   <li><span class="sp-steps__num">6</span> Production</li>
   <li><span class="sp-steps__num">7</span> Implementation</li>
 </ol>
-<ul class="sp-clients" aria-label="A selection of clients">
-  <li>Amsterdam University of Applied Sciences</li>
-  <li>
-    <img
-      class="sp-clients__logo"
-      src="{{ '/assets/images/clients/nnvo.png' | relative_url }}"
-      alt="NNVO"
-      width="160"
-      height="48"
-      loading="lazy"
-      decoding="async"
-    >
-  </li>
-  <li>
-    <img
-      class="sp-clients__logo"
-      src="{{ '/assets/images/clients/21cc.png' | relative_url }}"
-      alt="21CC"
-      width="160"
-      height="48"
-      loading="lazy"
-      decoding="async"
-    >
-  </li>
-  <li>
-    <img
-      class="sp-clients__logo"
-      src="{{ '/assets/images/clients/studium.png' | relative_url }}"
-      alt="Studium"
-      width="160"
-      height="48"
-      loading="lazy"
-      decoding="async"
-    >
-  </li>
-  <li>Wijkz</li>
-  <li>onITnow</li>
-</ul>
 {% include panels/actions.html primary_label="Read the stories" primary_href="/verhalen/" %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" body=proof_body %}

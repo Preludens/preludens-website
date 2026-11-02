@@ -21,11 +21,11 @@
       {% unless item_lang == current_lang %}{% continue %}{% endunless %}
       {% assign verhaal_type = verhaal.type | default: "projecten" %}
       {% if verhaal_type == "demos" %}
-        {% assign tile_cta = "Speel de demo" %}
-        {% assign tile_aria = "Speel de demo: " | append: verhaal.title %}
+        {% assign tile_cta = t.verhalen.play_demo %}
+        {% assign tile_aria = t.verhalen.play_demo_aria | replace: "%s", verhaal.title %}
       {% else %}
-        {% assign tile_cta = "Bekijk het project" %}
-        {% assign tile_aria = "Bekijk het project: " | append: verhaal.title %}
+        {% assign tile_cta = t.verhalen.view_project %}
+        {% assign tile_aria = t.verhalen.view_project_aria | replace: "%s", verhaal.title %}
         {% if verhaal.client %}
           {% assign tile_aria = tile_aria | append: ", " | append: verhaal.client %}
         {% endif %}
@@ -73,7 +73,7 @@
           title=post.title
           summary=post.summary
           url=post.url
-          cta="Lees het artikel"
+          cta=t.play_blog.read_post
           aria=kennis_aria
           kind="kennis"
         %}
@@ -81,7 +81,7 @@
     {% endfor %}
   </div>
 
-  <p class="strip-search-empty" data-verhalen-search-empty hidden>Geen inspiratie.</p>
+  <p class="strip-search-empty" data-verhalen-search-empty hidden>{{ t.verhalen.search_empty }}</p>
 
   <div class="verhalen-empty" data-verhalen-empty hidden>
     <p class="verhalen-empty__title" data-whitepapers-title="{{ t.verhalen.empty_whitepapers_title }}" data-demos-title="{{ t.verhalen.empty_demos_title }}">{{ t.verhalen.empty_whitepapers_title }}</p>
@@ -90,8 +90,8 @@
 </div>
 
 <div class="strip-pager" data-verhalen-pager>
-  <p class="strip-pager__title">Kies meer inspiratie.</p>
-  <div class="strip-pager__dots" data-verhalen-dots role="tablist" aria-label="Pagina's"></div>
+  <p class="strip-pager__title">{{ t.verhalen.pager_title }}</p>
+  <div class="strip-pager__dots" data-verhalen-dots role="tablist" aria-label="{{ t.verhalen.pager_pages }}"></div>
 </div>
 <script>
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

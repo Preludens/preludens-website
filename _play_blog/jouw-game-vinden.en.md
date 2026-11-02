@@ -2,6 +2,7 @@
 lang: en
 permalink: /play/blog/jouw-game-vinden/
 title: The moment someone finds their game
+description: Sooner or later, with every client, something shifts. That is when they have found their game.
 date: 2026-02-11
 summary: >-
   Sooner or later, with every client, I see something shift in their eyes. As if a light switches

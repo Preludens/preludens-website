@@ -5,6 +5,8 @@ title: "Prepo Class: MicroGames in de klas"
 description: "Ontdek Prepo Class: een klasomgeving voor Prepo-games. Docenten begeleiden de les en deelnemers sluiten aan met een klascode."
 body_class: page-panels
 permalink: /prepo-class/
+permalink_lang:
+  en: /prepo-class/
 ---
 
 <div class="panel-stack">

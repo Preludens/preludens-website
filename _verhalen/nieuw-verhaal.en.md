@@ -2,6 +2,7 @@
 lang: en
 permalink: /verhalen/nieuw-verhaal/
 title: From abstract refrigeration to active learning
+description: For Basic Refrigeration we developed a digital learning experience in which installation technicians do not only receive theory, but actively work with it.
 lead: How do you make complex professional knowledge understandable and applicable, without simplifying the content?
 client: Climatools BV
 clients:

@@ -2,6 +2,7 @@
 lang: en
 permalink: /play/blog/twee-stappen-serious-games/
 title: Two steps closer to serious games
+description: With a solid preliminary phase and a card game, you bring serious gaming two steps closer — and make it smaller.
 date: 2026-02-11
 summary: >-
   Serious games are powerful tools for learning and change. With a solid preliminary phase and a

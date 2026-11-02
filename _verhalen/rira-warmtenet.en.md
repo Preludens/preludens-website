@@ -2,6 +2,7 @@
 lang: en
 permalink: /verhalen/rira-warmtenet/
 title: Experiencing the heat transition by making choices together
+description: The RiRa Heat Network Game makes the motivations and consequences of the heat transition visible by letting players make choices together.
 client: Amsterdam University of Applied Sciences
 project: RiRa Heat Network Game
 sector: Education and energy transition
