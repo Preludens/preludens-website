@@ -66,12 +66,20 @@ body.page-panels {
   letter-spacing: 0.015em;
 }
 
-/* Oplichtwoord op de lichte panelen: het heldere goud haalt daar maar
-   1,7–2,0:1, ook als grote kop. --color-ink-gold is dezelfde accentkleur in de
-   tekst-op-licht variant en haalt 5,0:1 of meer. */
-.panel h2 .hl,
+/* Oplichtwoord buiten een kop: het heldere goud haalt op de lichte panelen
+   maar ~2:1, en in lopende tekst is dat onleesbaar. --color-ink-gold is
+   dezelfde accentkleur in de tekst-op-licht variant en haalt 5,0:1 of meer.
+   Vandaag staat er nergens een .hl in lopende tekst; dit is het vangnet. */
 body.page-panels .hl {
   color: var(--color-ink-gold);
+}
+
+/* In de koppen wel het heldere goud: dat is de kleur die Preludens wil zien,
+   en de letters staan er dik en groot genoeg bij om hem te dragen. Bewuste
+   keuze van de eigenaar, met het contrast erbij gemeten — niet per ongeluk. */
+.panel h1 .hl,
+.panel h2 .hl {
+  color: var(--color-preludens-gold);
 }
 
 .panel h3 {
