@@ -2420,10 +2420,6 @@ p { margin: 0 0 var(--space-sm); }
   font-size: 0.95rem;
 }
 
-.play-blog-detail {
-  max-width: 42rem;
-}
-
 .play-blog-hero {
   h1,
   .play-blog-lead {
@@ -2454,6 +2450,11 @@ p { margin: 0 0 var(--space-sm); }
   padding-top: clamp(4rem, 7vw, 5.5rem);
 }
 
+/* De leesbreedte van een blogartikel zit hier, via .prose (42rem), en lijnt
+   links uit binnen .container. Zet geen max-width op .play-blog-detail: dat
+   element is zelf .container, en een smallere breedte daar maakte er een
+   gecentreerde kolom van die 240px rechts van de rest van de site begon. De
+   hero erboven is wel met opzet gecentreerd. */
 .play-blog-body {
   p {
     text-align: justify;
