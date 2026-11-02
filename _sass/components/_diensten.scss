@@ -1,0 +1,267 @@
+/* Dienstenpagina — de afwijkingen die deze pagina op het panelensysteem maakt.
+   Stond eerder als <style>-blok in zowel diensten/index.md als
+   en/diensten/index.md, dus elke wijziging moest twee keer. */
+
+/* Kennis blijft hangen: kop en alinea's op de linkerkant van de hero. */
+#kennis-hangen .panel__inner {
+  width: min(100% - 2rem, var(--max-width));
+  padding-inline: 0;
+}
+
+#kennis-hangen h2,
+#kennis-hangen .sp-aside-split__main {
+  text-align: left;
+}
+
+/* Onze diensten: de gecentreerde inleiding boven de dienstenrij. */
+#onze-diensten h2,
+#onze-diensten h3,
+#onze-diensten p.sp-lead {
+  text-align: center;
+  margin-inline: auto;
+}
+
+#onze-diensten .panel__inner {
+  padding-bottom: 2.25rem;
+}
+
+/* ---------------------------------------------------------------------------
+   De dienstenrij
+   --------------------------------------------------------------------------- */
+
+/* Rechte bovenrand, met een kleinere versie van de paneelsnede rechtsboven. */
+#diensten-slots {
+  --slot-jump: 22px;
+  --slot-run: 26px;
+  margin-top: 0;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 11rem - var(--slot-run)) 0,
+    calc(100% - 11rem) var(--slot-jump),
+    100% var(--slot-jump),
+    100% calc(100% - var(--sp-jump)),
+    50% calc(100% - var(--sp-jump)),
+    calc(50% - var(--sp-run)) 100%,
+    0 100%
+  );
+}
+
+#diensten-slots .panel__inner {
+  padding-top: 4.5rem;
+  padding-bottom: calc(40px + var(--sp-jump) + 3rem);
+}
+
+#diensten-slots .diensten-lijst {
+  border-top: 1px solid var(--color-border);
+}
+
+/* De regel loopt een halve stap naar buiten en vult dat weer op met padding.
+   Zo is het hover-vlak iets ruimer dan de tekst, terwijl de namen precies op
+   de linkerlijn van de rest van de site blijven staan. Het paneel houdt hier
+   altijd meer ruimte over (--space-lg, onder 600px --space-md), dus de
+   negatieve marge steekt nergens buiten het paneel. */
+#diensten-slots .diensten-regel {
+  display: grid;
+  grid-template-columns: minmax(0, 16rem) minmax(0, 1fr) 1.75rem;
+  gap: 0 var(--space-lg);
+  align-items: start;
+  margin-inline: calc(var(--space-sm) * -1);
+  padding: var(--space-md) var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+  color: inherit;
+  text-decoration: none;
+  transition: background var(--transition);
+}
+
+#diensten-slots .diensten-regel:hover {
+  background: var(--color-cloud-white);
+}
+
+#diensten-slots .diensten-regel:focus-visible {
+  @include focus-ring(2px);
+}
+
+/* De naam is hier geen kicker maar de kop van de regel, dus zonder de
+   kapitalen en de spatiëring die .panel h3 verder overal geeft. */
+#diensten-slots .diensten-regel__naam {
+  grid-column: 1;
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--color-brand-navy);
+}
+
+#diensten-slots .diensten-regel__tekst {
+  grid-column: 2;
+}
+
+#diensten-slots .diensten-regel p.sp-lead {
+  max-width: 54ch;
+  margin: 0;
+}
+
+#diensten-slots .diensten-regel__keuze {
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
+}
+
+#diensten-slots .diensten-regel__keuze b {
+  font-weight: 600;
+  color: var(--color-brand-navy);
+}
+
+#diensten-slots .diensten-regel__pijl {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  color: var(--color-ink-gold);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.35;
+  transition: transform var(--transition);
+}
+
+#diensten-slots .diensten-regel:hover .diensten-regel__pijl {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #diensten-slots .diensten-regel,
+  #diensten-slots .diensten-regel__pijl {
+    transition: none;
+  }
+
+  #diensten-slots .diensten-regel:hover .diensten-regel__pijl {
+    transform: none;
+  }
+}
+
+/* Onder deze breedte past de naam niet meer naast de tekst; hij gaat erboven
+   staan en de pijl blijft op de eerste regel mee. */
+@media (max-width: 860px) {
+  #diensten-slots .panel__inner {
+    padding-top: 3.5rem;
+  }
+
+  #diensten-slots .diensten-regel {
+    grid-template-columns: minmax(0, 1fr) 1.75rem;
+    gap: 0.45rem var(--space-sm);
+  }
+
+  #diensten-slots .diensten-regel__tekst {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  #diensten-slots .diensten-regel__pijl {
+    grid-column: 2;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   De route in zeven stappen
+   --------------------------------------------------------------------------- */
+
+#route .sp-hero-steps--pyramid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.65rem 1.75rem;
+  align-items: stretch;
+  width: 100%;
+  overflow-x: visible;
+  padding-bottom: 0.35rem;
+}
+
+#route .sp-hero-steps--pyramid article,
+#route .sp-hero-steps--pyramid article:nth-child(n + 4) {
+  grid-column: auto;
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  color: var(--color-white);
+}
+
+#route .sp-step-face {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: calc(5px + 1.15rem) calc(5px + 1.05rem) calc(5px + 2.75rem) calc(5px + 2.5rem);
+  background: var(--color-white);
+  clip-path: url("#sp-step-bl-clip");
+  filter: drop-shadow(3px 4px 4px color-mix(in srgb, var(--color-brand-navy) 24%, transparent));
+  color: var(--color-white);
+}
+
+#route .sp-step-face::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  z-index: 0;
+  background: var(--color-brand-navy);
+  clip-path: url("#sp-step-bl-clip");
+  pointer-events: none;
+}
+
+#route .sp-step-face > * {
+  position: relative;
+  z-index: 1;
+}
+
+#route .sp-hero-steps h3 {
+  display: block;
+  width: 100%;
+  margin: 0 0 0.85rem;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  color: var(--color-white);
+}
+
+#route .sp-hero-steps h3 span {
+  color: var(--color-white);
+  font-size: 1.15rem;
+}
+
+#route .sp-hero-steps h3::after {
+  background: var(--color-preludens-gold);
+}
+
+#route .sp-hero-steps p {
+  max-width: none;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--color-white);
+}
+
+#route .sp-hero-steps--pyramid article:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: calc(100% + 0.875rem);
+  transform: translate(-50%, -50%);
+  color: var(--color-brand-navy);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+#route .sp-hero-steps--pyramid article:nth-child(4)::after {
+  content: none;
+}
+
+@media (max-width: 800px) {
+  #route .sp-hero-steps--pyramid {
+    grid-template-columns: 1fr;
+  }
+
+  #route .sp-hero-steps--pyramid article::after {
+    content: none;
+  }
+}
