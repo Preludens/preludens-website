@@ -4,6 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% include verhaal-social.html %}
+  {%- comment -%}
+    Alleen op de anderstalige pagina's: de SEO-tag bouwt og:url uit page.url en
+    kent het /en/-voorvoegsel van polyglot niet, dus daar zette hij de
+    Nederlandse URL neer terwijl de canonical ernaast wel naar /en/ wees. Deze
+    staat er bewust vóór, net als de Open Graph-tags in verhaal-social.html:
+    consumenten nemen de eerste. Op Nederlandse pagina's klopt de tag van de
+    gem al en voegen we niets toe.
+  {%- endcomment -%}
+  {%- if site.active_lang != site.default_lang -%}
+  <meta property="og:url" content="{{ site.url }}/{{ site.active_lang }}{{ page.url }}">
+  {%- endif -%}
   {% seo canonical=false %}
   {% if page.robots %}
   <meta name="robots" content="{{ page.robots }}">
