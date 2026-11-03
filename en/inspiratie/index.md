@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: en
-title: Inspiration
+title: Inspiration — projects, knowledge and demos
 description: Projects, knowledge articles and demos from teams who learn by playing with Preludens.
 permalink: /inspiratie/
 permalink_lang:

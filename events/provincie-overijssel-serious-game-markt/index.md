@@ -1,8 +1,8 @@
 ---
 layout: default
 lang: nl
-title: "Serious Game Markt Overijssel: stuur ons je dilemma"
-description: Je sprak ons op de Serious Game Introductiemarkt van provincie Overijssel. Stuur één dilemma uit je werk, dan maken wij daar gratis een eerste ruwe demo van. Bekijk hier ook de reel die bij onze stand draaide.
+title: Serious Game Markt Overijssel, stuur je dilemma
+description: Je sprak ons op de Serious Game Introductiemarkt van provincie Overijssel. Stuur één dilemma uit je werk, dan maken wij daar gratis een ruwe demo.
 body_class: page-panels page-event
 permalink: /events/provincie-overijssel-serious-game-markt/
 # De Engelse tegenhanger is een stub die /en/ doorstuurt naar deze pagina en

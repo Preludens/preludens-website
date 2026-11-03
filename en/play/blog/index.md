@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: en
-title: Play blog
+title: Play blog on play and behaviour change
 description: Insights on play, learning, and behaviour change — warm, practical, and educational.
 body_class: page-panels page-play-blog
 permalink: /play/blog/

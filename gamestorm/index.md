@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: nl
-title: GameStorm
+title: GameStorm — game-based leren verkennen
 description: In één dagdeel brengen we samen jouw leeruitdaging, doelgroep en leerdoelen scherp in beeld — de eerste stap naar een speelbare leerervaring.
 body_class: page-panels
 permalink: /gamestorm/

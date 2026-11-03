@@ -2,6 +2,7 @@
 lang: nl
 permalink: /verhalen/maryland-disruption-game/
 title: The Disruption Game
+description: In The Disruption Game nemen deelnemers beslissingen tijdens een logistieke verstoring, met onvolledige informatie en belangen die schuren.
 lead: Oefenen met beslissingen wanneer de situatie ineens verandert
 client: TU Delft
 clients:

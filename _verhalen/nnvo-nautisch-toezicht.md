@@ -2,7 +2,7 @@
 published: false
 lang: nl
 permalink: /verhalen/nnvo-nautisch-toezicht/
-title: Oefenen met keuzes in de praktijk van nautisch toezicht
+title: Oefenen met keuzes in het nautisch toezicht
 client: NNVO
 client_logo: nnvo.png
 project: Nautisch toezichthouden

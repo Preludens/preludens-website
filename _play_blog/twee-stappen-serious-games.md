@@ -2,6 +2,7 @@
 lang: nl
 permalink: /play/blog/twee-stappen-serious-games/
 title: In twee stappen dichter bij serious games
+description: Een solide voortraject en een kaartspel maken serious gaming kleiner en concreter, met een business case voordat de productie start.
 date: 2026-02-11
 summary: >-
   Serious games zijn krachtige instrumenten voor leer- en verandertrajecten. Met een solide

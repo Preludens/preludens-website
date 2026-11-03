@@ -2,6 +2,7 @@
 lang: nl
 permalink: /play/blog/jouw-game-vinden/
 title: Het moment waarop iemand zijn game vindt
+description: Veel opdrachtgevers nemen aan dat serious games niet bij hun situatie passen. Het moment waarop die aanname kantelt, is goed te zien.
 date: 2026-02-11
 summary: >-
   Vroeg of laat zie ik bij elke opdrachtgever iets veranderen in hun blik. Alsof er een lampje

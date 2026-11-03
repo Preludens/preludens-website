@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: en
-title: Home
+title: Knowledge retention through game-based learning
 description: We strengthen knowledge retention in organisations with storytelling and MicroGames.
 permalink: /
 permalink_lang:

@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: en
-title: Contact
+title: Contact — from GameStorm to learning experience
 description: Get in touch with Preludens — from a GameStorm to a first chapter or a full playable learning experience.
 body_class: page-panels page-contact
 permalink: /contact/

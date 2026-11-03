@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: en
-title: Services
+title: Learning experiences that activate people
 description: E-learning, MicroGame Stories, Dilemma Storytelling and Game Thinking — four routes to make knowledge playable and applicable.
 body_class: page-panels
 permalink: /diensten/

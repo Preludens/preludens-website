@@ -2,6 +2,7 @@
 lang: nl
 permalink: /verhalen/microgame-demo/
 title: Zo voelt een MicroGame
+description: Speel in een paar minuten een MicroGame over koeltechniek. Je maakt een keuze, krijgt feedback en ziet meteen wat die keuze oplevert.
 project: MicroGame
 type: demos
 featured: true

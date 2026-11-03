@@ -1,7 +1,8 @@
 ---
 lang: nl
 permalink: /play/blog/game-thinking/
-title: Game Thinking — game design als ontwerpmethode voor oplossingen
+title: Game Thinking — game design als ontwerpmethode
+description: Game Thinking ontwerpt interventies vanuit game-mechanismen uit de eigen praktijk, en levert een blauwdruk voordat de productie begint.
 date: 2023-04-17
 summary: >-
   Play triggert gedragsverandering, en dat is cruciaal voor elke succesvolle transitie. Game

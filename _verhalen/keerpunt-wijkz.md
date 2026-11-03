@@ -2,6 +2,7 @@
 lang: nl
 permalink: /verhalen/keerpunt-wijkz/
 title: Keerpunt
+description: Keerpunt is een kaartspel over bestaanszekerheid. Deelnemers merken zelf wat er gebeurt wanneer inkomen, energie en focus onder druk staan.
 lead: Wat gebeurt er met je keuzes als geldzorgen steeds meer ruimte innemen?
 client: Wijkz
 clients:

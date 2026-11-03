@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: nl
-title: Inspiratie
+title: Inspiratie — projecten, kennis en demo’s
 description: Projecten, kennisartikelen en demo’s van teams die met Preludens leren door te spelen.
 permalink: /inspiratie/
 permalink_lang:

@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: nl
-title: Play
+title: Play — ruimte om nieuw gedrag te oefenen
 description: Play creëert de ruimte om te leren — veilige leerervaringen waarin teams mogen onderzoeken, proberen en opnieuw kiezen.
 body_class: page-panels
 permalink: /play/

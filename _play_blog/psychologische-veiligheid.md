@@ -2,6 +2,7 @@
 lang: nl
 permalink: /play/blog/psychologische-veiligheid/
 title: Leren begint met een veilige speelruimte
+description: Psychologische veiligheid is de ruimte waarin mensen durven oefenen. Vijf bewegingen om die ruimte bewust te ontwerpen.
 date: 2026-04-24
 summary: >-
   Psychologische veiligheid is de basis waarop spel, experimenteren en echte

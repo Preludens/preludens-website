@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: en
-title: Design methodology
+title: Seven principles behind every learning design
 description: The seven principles behind every Preludens design — sharp in content, solid in technology and always aimed at learning that becomes applicable.
 body_class: page-panels
 permalink: /ontwerpmethodiek/

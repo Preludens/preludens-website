@@ -1,7 +1,7 @@
 ---
 lang: en
 permalink: /verhalen/nnvo-wet-en-regelgeving/
-title: Keeping experienced operators sharp on laws and regulations
+title: Keeping operators sharp on laws and regulations
 description: For NNVO, Preludens developed a refresher that challenges the experience of bridge and lock operators, rather than re-teaching the basics.
 client: NNVO
 client_logo: nnvo.png

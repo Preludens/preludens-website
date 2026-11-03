@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: en
-title: Play
+title: Play — room to practise new behaviour
 description: Play creates the space to learn — safe learning experiences where teams can explore, try and choose again.
 body_class: page-panels
 permalink: /play/

@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: en
-title: Impact
+title: Learning that delivers visible results
 description: Visible results through storytelling, MicroGames, and data-driven improvement.
 body_class: page-panels
 permalink: /impact/

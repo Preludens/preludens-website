@@ -1,7 +1,7 @@
 ---
 lang: en
 permalink: /verhalen/yard-crane-scheduler/
-title: How do you plan containers without losing the overview?
+title: Planning containers without losing the overview
 description: Together with TU Delft we are working on Yard Crane Scheduler, a MicroGame in which participants experience how choices in a container terminal affect each other.
 lead: Yard Crane Scheduler
 client: TU Delft

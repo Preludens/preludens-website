@@ -6,7 +6,20 @@
   {%- capture share_text -%}{% include verhaal-share-text.html %}{%- endcapture -%}
   {%- assign share_text = share_text | strip -%}
   {%- if share_text != "" -%}
+    {%- comment -%}
+      og:description blijft de openingsalinea: LinkedIn neemt de eerste en daar
+      leest die alinea beter dan een samenvatting.
+
+      De meta description niet. Die zette hier onvoorwaardelijk de openingstekst
+      neer, vóór de SEO-tag, waardoor elke verhaal- en blogpagina er twee had en
+      de geschreven description uit de front matter als tweede kwam te staan.
+      Google kiest er dan zelf een. Daarom komt deze er alleen nog als de
+      pagina zelf geen description heeft; dan is de openingsalinea nog altijd
+      beter dan de algemene sitebeschrijving waar de SEO-tag op terugvalt.
+    {%- endcomment -%}
+    {%- unless page.description and page.description != "" -%}
     <meta name="description" content="{{ share_text | escape }}">
+    {%- endunless -%}
     <meta property="og:description" content="{{ share_text | escape }}">
   {%- endif -%}
   {%- if page.image and page.image != "" -%}

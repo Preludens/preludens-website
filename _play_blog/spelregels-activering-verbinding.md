@@ -1,7 +1,8 @@
 ---
 lang: nl
 permalink: /play/blog/spelregels-activering-verbinding/
-title: Spelregels — de sleutel tot activering en verbinding
+title: Spelregels die mensen activeren en verbinden
+description: Een relatiegeschenk dat bleef liggen, tot er spelregels bij kwamen. Wat een paar weloverwogen regels doen met betrokkenheid.
 date: 2023-06-12
 summary: >-
   In elk aspect van ons leven is het spel aanwezig. Met een paar weloverwogen regels breng je

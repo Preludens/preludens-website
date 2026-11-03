@@ -1,7 +1,8 @@
 ---
 lang: nl
 permalink: /verhalen/yard-crane-scheduler/
-title: Hoe plan je containers zonder het overzicht te verliezen?
+title: Containers plannen en het overzicht houden
+description: In Yard Crane Scheduler plannen deelnemers containers op een terminal en ervaren ze hoe elke keuze de doorlooptijd van een schip beïnvloedt.
 lead: Yard Crane Scheduler
 client: TU Delft
 clients:

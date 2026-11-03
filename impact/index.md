@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: nl
-title: Impact
+title: Leren dat zichtbaar resultaat oplevert
 description: Zichtbaar resultaat door storytelling, MicroGames en data-gedreven verbetering.
 body_class: page-panels
 permalink: /impact/

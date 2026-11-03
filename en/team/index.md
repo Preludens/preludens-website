@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: en
-title: Team
+title: The team behind our learning experiences
 description: The people behind Preludens — storytelling, game design, didactics and technology, brought together in learning experiences that stay with you.
 body_class: page-panels
 permalink: /team/

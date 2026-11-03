@@ -1,7 +1,7 @@
 ---
 lang: en
 permalink: /play/blog/spelregels-activering-verbinding/
-title: Game rules — the key to activation and connection
+title: Game rules that activate and connect people
 description: With a few well-considered rules you bring elements to life and encourage people to explore, play and start a conversation.
 date: 2023-06-12
 summary: >-

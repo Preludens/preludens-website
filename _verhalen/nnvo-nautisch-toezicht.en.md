@@ -2,7 +2,7 @@
 published: false
 lang: en
 permalink: /verhalen/nnvo-nautisch-toezicht/
-title: Practising choices in the reality of maritime supervision
+title: Practising choices in maritime supervision
 client: NNVO
 client_logo: nnvo.png
 project: Maritime supervision

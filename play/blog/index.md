@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: nl
-title: Play-blog
+title: Play-blog over spel en gedragsverandering
 description: Inzichten over spel, leren en gedragsverandering — warm, praktisch en educatief.
 body_class: page-panels page-play-blog
 permalink: /play/blog/

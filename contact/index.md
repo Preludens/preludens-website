@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: nl
-title: Contact
+title: Contact — van GameStorm tot leerervaring
 description: Neem contact op met Preludens — van GameStorm tot eerste hoofdstuk of volledige speelbare leerervaring.
 body_class: page-panels page-contact
 permalink: /contact/

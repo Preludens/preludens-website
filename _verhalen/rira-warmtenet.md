@@ -1,7 +1,8 @@
 ---
 lang: nl
 permalink: /verhalen/rira-warmtenet/
-title: De warmtetransitie ervaren door samen keuzes te maken
+title: De warmtetransitie ervaren door samen te kiezen
+description: Het RiRa Warmtenetspel laat spelers samen kiezen tussen een collectief warmtenet en een eigen oplossing, en maakt de belangen daarachter zichtbaar.
 client: Hogeschool van Amsterdam
 project: RiRa Warmtenetspel
 sector: Onderwijs en energietransitie

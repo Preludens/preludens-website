@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: nl
-title: Ontwerpmethodiek
+title: Zeven principes achter elk leerontwerp
 description: De zeven principes achter elk Preludens-ontwerp — inhoudelijk scherp, technisch stevig en altijd gericht op leren dat toepasbaar wordt.
 body_class: page-panels
 permalink: /ontwerpmethodiek/

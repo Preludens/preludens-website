@@ -1,7 +1,8 @@
 ---
 lang: nl
 permalink: /verhalen/nnvo-wet-en-regelgeving/
-title: Ervaren operators scherp houden op wet- en regelgeving
+title: Operators scherp houden op wet- en regelgeving
+description: Een herscholing die de ervaring van brug- en sluisoperators uitdaagt, met veertien korte scenario’s en een praktijkdag met praatplaten.
 client: NNVO
 client_logo: nnvo.png
 project: Herscholing Wet- en Regelgeving

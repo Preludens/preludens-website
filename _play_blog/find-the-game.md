@@ -1,7 +1,8 @@
 ---
 lang: nl
 permalink: /play/blog/find-the-game/
-title: Find the Game — het spel zit al verstopt in elke transitie
+title: Find the Game — elke transitie bevat een spel
+description: In elke verandering schuilt al een spel. Find the Game zoekt dat spel op in de regels, doelen en mechanismen die er al zijn.
 date: 2022-07-14
 summary: >-
   In elke verandering schuilt al een spel. Met de juiste begeleiding en methode is het vinden van

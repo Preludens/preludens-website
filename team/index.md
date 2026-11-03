@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: nl
-title: Team
+title: Het team achter onze leerervaringen
 description: De mensen achter Preludens — storytelling, game design, didactiek en techniek, samengebracht in leerervaringen die blijven hangen.
 body_class: page-panels
 permalink: /team/

@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: en
-title: GameStorm
+title: GameStorm — exploring game-based learning
 description: In a single half-day we map your learning challenge, audience and learning goals together — the first step towards a playable learning experience.
 body_class: page-panels
 permalink: /gamestorm/

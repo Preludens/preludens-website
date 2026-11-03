@@ -2,6 +2,7 @@
 lang: nl
 permalink: /verhalen/studium-co-wijzer/
 title: CO Wijzer
+description: Koolmonoxide kun je niet zien, ruiken of proeven. In CO Wijzer oefenen monteurs met het herkennen van risico’s en het kiezen van veilig handelen.
 lead: Leren herkennen wat je niet kunt zien
 client: 21CC Education / Studium
 clients:
