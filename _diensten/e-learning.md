@@ -104,7 +104,7 @@ body_class: page-panels page-elearning
 <p class="sp-lead">Voor het project Basis Koeltechniek (BRL200) werkte Preludens samen met Climatools BV, 21CC Education en Studium. Onderwerpen zoals het mechanisch koudeproces, oververhitting, onderkoeling en het h-log-P-diagram zijn belangrijk, maar kunnen abstract blijven wanneer ze uitsluitend via tekst en uitleg worden aangeboden.</p>
 <p class="sp-lead">Daarom ontwikkelden we een reeks interactieve MicroGames. Deelnemers verkennen technische processen, herkennen verbanden en passen kennis toe binnen visuele opdrachten. Daarnaast ontwikkelden we een gameframework waarmee voortgang, prestaties en leeractiviteiten inzichtelijk kunnen worden gemaakt.</p>
 <p class="sp-lead">Het project laat zien hoe complexe vakkennis vertaald kan worden naar korte, gerichte leerervaringen.</p>
-{% include panels/actions.html secondary_label="Bekijk het project Basis Koeltechniek" secondary_href="/verhalen/nieuw-verhaal/" %}
+{% include panels/actions.html secondary_label="Bekijk het project Basis Koeltechniek" secondary_href="/verhalen/basis-koeltechniek/" %}
 {% endcapture %}
 {% capture case_body %}
 <h3>Uit de praktijk</h3>

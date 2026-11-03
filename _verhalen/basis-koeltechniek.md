@@ -1,6 +1,6 @@
 ---
 lang: nl
-permalink: /verhalen/nieuw-verhaal/
+permalink: /verhalen/basis-koeltechniek/
 title: Van abstracte koeltechniek naar actief leren
 description: Voor Basis Koeltechniek maakten we met Climatools, 21CC Learning en Studium negen MicroGames waarin monteurs koeltechnische theorie toepassen.
 lead: Hoe maak je complexe vakkennis begrijpelijk en toepasbaar, zonder de inhoud te versimpelen?

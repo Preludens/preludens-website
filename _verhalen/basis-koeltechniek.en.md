@@ -1,6 +1,6 @@
 ---
 lang: en
-permalink: /verhalen/nieuw-verhaal/
+permalink: /verhalen/basis-koeltechniek/
 title: From abstract refrigeration to active learning
 description: For Basic Refrigeration we developed a digital learning experience in which installation technicians actively work with refrigeration theory.
 lead: How do you make complex professional knowledge understandable and applicable, without simplifying the content?

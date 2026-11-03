@@ -51,7 +51,7 @@ body_class: page-panels
 {% endcapture %}
 {% capture what_body %}
 <h2>What are <span class="hl">MicroGame Stories?</span></h2>
-{% include panels/media.html angle=true src="/assets/images/verhalen/basis-koeltechniek-gesprek.jpg" alt="Comic scene from Basic Refrigeration Technology: two technicians talking on a terrace" width="1024" height="462" ratio="1024 / 462" href="/verhalen/nieuw-verhaal/" caption="Refrigeration technology was developed for Climatools and 21CC." body=what_media %}
+{% include panels/media.html angle=true src="/assets/images/verhalen/basis-koeltechniek-gesprek.jpg" alt="Comic scene from Basic Refrigeration Technology: two technicians talking on a terrace" width="1024" height="462" ratio="1024 / 462" href="/verhalen/basis-koeltechniek/" caption="Refrigeration technology was developed for Climatools and 21CC." body=what_media %}
 {% include panels/values.html label="Three parts of a MicroGame Story" items=parts %}
 {% endcapture %}
 {% include panels/panel.html variant="mist" align="left" id="wat-zijn-microgame-stories" body=what_body %}
@@ -148,7 +148,7 @@ body_class: page-panels
 {% endcapture %}
 {% capture case_koeltechniek %}
 <p class="sp-lead">How do you make complex technical knowledge accessible for professionals who have to apply the theory in their daily work? That challenge was central to the Basic Refrigeration Technology project (BRL200).</p>
-{% include panels/actions.html secondary_label="View the project Basic Refrigeration Technology" secondary_href="/verhalen/nieuw-verhaal/" %}
+{% include panels/actions.html secondary_label="View the project Basic Refrigeration Technology" secondary_href="/verhalen/basis-koeltechniek/" %}
 {% include panels/case-pager.html label="Projects" maria="The story of Maria" koel="Basic Refrigeration Technology" co="CO-Wijzer" %}
 {% endcapture %}
 {% capture case_cowijzer %}

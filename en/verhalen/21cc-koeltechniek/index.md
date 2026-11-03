@@ -7,7 +7,7 @@ permalink_lang:
   nl: /verhalen/21cc-koeltechniek/
 sitemap: false
 robots: noindex, nofollow
-redirect_to: /verhalen/nieuw-verhaal/
+redirect_to: /verhalen/basis-koeltechniek/
 ---
 {%- comment -%}
   Deze case stond van 24 mei tot 1 juli 2026 op preludens.nl en is daarna op

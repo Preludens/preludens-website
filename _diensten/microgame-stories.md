@@ -51,7 +51,7 @@ body_class: page-panels
 {% endcapture %}
 {% capture what_body %}
 <h2>Wat zijn <span class="hl">MicroGame Stories?</span></h2>
-{% include panels/media.html angle=true src="/assets/images/verhalen/basis-koeltechniek-gesprek.jpg" alt="Stripscène uit Basis Koeltechniek: twee monteurs in gesprek op een terras" width="1024" height="462" ratio="1024 / 462" href="/verhalen/nieuw-verhaal/" caption="Koeltechniek is ontwikkeld voor Climatools en 21CC." body=what_media %}
+{% include panels/media.html angle=true src="/assets/images/verhalen/basis-koeltechniek-gesprek.jpg" alt="Stripscène uit Basis Koeltechniek: twee monteurs in gesprek op een terras" width="1024" height="462" ratio="1024 / 462" href="/verhalen/basis-koeltechniek/" caption="Koeltechniek is ontwikkeld voor Climatools en 21CC." body=what_media %}
 {% include panels/values.html label="Drie onderdelen van een MicroGame Story" items=parts %}
 {% endcapture %}
 {% include panels/panel.html variant="mist" align="left" id="wat-zijn-microgame-stories" body=what_body %}
@@ -148,7 +148,7 @@ body_class: page-panels
 {% endcapture %}
 {% capture case_koeltechniek %}
 <p class="sp-lead">Hoe maak je complexe technische kennis toegankelijk voor professionals die de theorie in hun dagelijks werk moeten toepassen? Die uitdaging stond centraal bij het project Basis Koeltechniek (BRL200).</p>
-{% include panels/actions.html secondary_label="Bekijk het project Basis Koeltechniek" secondary_href="/verhalen/nieuw-verhaal/" %}
+{% include panels/actions.html secondary_label="Bekijk het project Basis Koeltechniek" secondary_href="/verhalen/basis-koeltechniek/" %}
 {% include panels/case-pager.html %}
 {% endcapture %}
 {% capture case_cowijzer %}

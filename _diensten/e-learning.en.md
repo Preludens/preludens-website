@@ -104,7 +104,7 @@ body_class: page-panels page-elearning
 <p class="sp-lead">For the Basic Refrigeration Technology project (BRL200), Preludens worked with Climatools BV, 21CC Education and Studium. Topics such as the mechanical cooling process, superheating, subcooling and the h-log-P diagram matter, but can stay abstract when they are offered only through text and explanation.</p>
 <p class="sp-lead">That is why we developed a series of interactive MicroGames. Participants explore technical processes, recognise connections and apply knowledge in visual tasks. We also developed a game framework that can make progress, performance and learning activity visible.</p>
 <p class="sp-lead">The project shows how complex professional knowledge can be turned into short, focused learning experiences.</p>
-{% include panels/actions.html secondary_label="View the Basic Refrigeration Technology project" secondary_href="/verhalen/nieuw-verhaal/" %}
+{% include panels/actions.html secondary_label="View the Basic Refrigeration Technology project" secondary_href="/verhalen/basis-koeltechniek/" %}
 {% endcapture %}
 {% capture case_body %}
 <h3>From practice</h3>
