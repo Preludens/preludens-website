@@ -3,7 +3,12 @@ tagline: Find the Game
 description: >-
   Preludens bereidt teams voor op de toekomst met storytelling,
   MicroGames en interactieve leerervaringen.
-url: "https://preludens.github.io"
+# Het eigen domein, niet de github.io-URL: jekyll-seo-tag bouwt hiermee de
+# canonical en og:url, jekyll-sitemap de <loc>'s en jekyll-feed de feed-links.
+# Stond op https://preludens.github.io, waardoor de hele site en de sitemap
+# naar GitHub Pages verwezen in plaats van naar preludens.nl. De deploy-workflow
+# zet baseurl zelf leeg bij een custom domain (zie .github/workflows/pages.yml).
+url: "https://preludens.nl"
 baseurl: "/preludens-website"
 # Canoniek productie-domein (via CNAME). Gebruikt voor structured data, og:image
 # en robots/sitemap, zodat AI-engines en social previews het juiste domein zien.
