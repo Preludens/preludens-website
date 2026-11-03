@@ -1,0 +1,9 @@
+{% comment %}
+  Cirkels onder de projectknop. Elke knop toont een ander project in
+  hetzelfde blok. De tekst staat vast; assets/js/main.js wisselt de slide.
+{% endcomment %}
+<div class="sp-case__pager" role="tablist" aria-label="{{ include.label | default: 'Projecten' }}">
+  <button type="button" class="sp-case__dot is-active" role="tab" aria-selected="true" aria-label="{{ include.maria | default: 'Het verhaal van Maria' }}" data-sp-case-dot="0"></button>
+  <button type="button" class="sp-case__dot" role="tab" aria-selected="false" aria-label="{{ include.koel | default: 'Basis Koeltechniek' }}" data-sp-case-dot="1"></button>
+  <button type="button" class="sp-case__dot" role="tab" aria-selected="false" aria-label="{{ include.co | default: 'CO-Wijzer' }}" data-sp-case-dot="2"></button>
+</div>

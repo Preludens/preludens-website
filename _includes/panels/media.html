@@ -1,13 +1,15 @@
 {% comment %}
   Beeld naast tekst, in hetzelfde uitgeknipte kader als het herobeeld.
-  Pass: src, webp (optioneel), alt, width, height, body, reverse, ratio.
+  Pass: src, webp (optioneel), alt, width, height, body, reverse, ratio, href, caption, angle.
+  `angle` zet de snede linksboven en rechtsonder op 45 graden.
+  `angle="flip"` zet die snede rechtsboven en linksonder.
   `ratio` (bijv. "1400 / 499") zet de beeldverhouding van het kader; zonder
   die opgave is het 16/9 en snijdt een afwijkend beeld aan de zijkanten weg.
 
   Het kader zelf staat in panels/figure.html, zodat een los beeld in een
   smalle kolom dezelfde vorm krijgt.
 {% endcomment %}
-<div class="sp-media{% if include.reverse %} sp-media--reverse{% endif %}">
-  {% include panels/figure.html src=include.src webp=include.webp alt=include.alt width=include.width height=include.height ratio=include.ratio %}
+<div class="sp-media{% if include.reverse %} sp-media--reverse{% endif %}{% if include.angle == "flip" %} sp-media--angle-flip{% elsif include.angle %} sp-media--angle{% endif %}">
+  {% include panels/figure.html src=include.src webp=include.webp alt=include.alt width=include.width height=include.height ratio=include.ratio href=include.href caption=include.caption %}
   <div class="sp-media__body">{{ include.body }}</div>
 </div>

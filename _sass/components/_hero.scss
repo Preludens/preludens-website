@@ -233,6 +233,116 @@ body.page-event .panel--hero .sp-hero-copy {
   grid-column: 1 / -1;
 }
 
+/* Donkere stappenkaarten: 3×2, witte rand, schaduw, licht afgerond,
+   met een kleine 45°-snede rechtsboven. */
+.sp-hero-steps--cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(2.25rem, 4vw, 3.25rem);
+  width: min(100%, 62rem);
+  margin: clamp(var(--space-lg), 5vh, 3.5rem) auto 0;
+  padding: 0;
+}
+
+.sp-hero-steps--cards article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: calc(5px + 1.85rem) calc(5px + 1.15rem) calc(5px + 2.6rem) calc(5px + 1.2rem);
+  background: transparent;
+  color: var(--color-white);
+  /* Zelfde schaduw als .sp-hero-shadow om de afbeeldingen. De snede zit op
+     de lagen erin, anders knipt clip-path de schaduw weg. */
+  --sp-card-notch: 1.5rem;
+  filter: drop-shadow(3px 4px 4px rgba(17, 56, 71, 0.24));
+}
+
+.sp-hero-steps--cards article::before,
+.sp-hero-steps--cards article::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.sp-hero-steps--cards article::before {
+  inset: 0;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  /* Gelijke afstand op beide assen, zodat de snede 45° blijft. */
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--sp-card-notch)) 0,
+    100% var(--sp-card-notch),
+    100% 100%,
+    0 100%
+  );
+}
+
+.sp-hero-steps--cards article::after {
+  inset: 5px;
+  background: var(--color-brand-navy);
+  border-radius: calc(var(--radius-md) - 5px);
+  /* Iets kleinere snede, zodat de witte rand langs de schuine zijde 5px blijft. */
+  --sp-card-notch-inner: calc(var(--sp-card-notch) - 10px + 5px * sqrt(2));
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--sp-card-notch-inner)) 0,
+    100% var(--sp-card-notch-inner),
+    100% 100%,
+    0 100%
+  );
+}
+
+.sp-hero-steps--cards h3,
+.sp-hero-steps--cards p {
+  position: relative;
+  z-index: 1;
+}
+
+#hoe-het-werkt .sp-hero-steps--cards h3 {
+  align-items: flex-start;
+  gap: 0.75rem;
+  /* Gelijke ruimte tussen titel en streep, en tussen streep en tekst. */
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.85rem;
+}
+
+#hoe-het-werkt .sp-hero-steps--cards h3::after {
+  width: 50%;
+}
+
+.sp-hero-steps--cards p {
+  max-width: none;
+}
+
+#hoe-het-werkt h2 {
+  text-align: center;
+}
+
+#hoe-het-werkt .sp-hero-steps--cards h3,
+#hoe-het-werkt .sp-hero-steps--cards p {
+  color: var(--color-white);
+}
+
+#hoe-het-werkt .sp-hero-steps--cards h3 span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.05rem;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-brand-navy);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
 /* Stappenband als raster: drie gelijke kolommen binnen een paneel, zonder de
    hero-marges. Voor een reeks die geen piramide is (bijvoorbeeld negen
    functies in 3x3). */
@@ -365,6 +475,10 @@ body.page-event .panel--hero .sp-hero-copy {
   }
 
   .sp-hero-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-hero-steps--cards {
     grid-template-columns: 1fr;
   }
 

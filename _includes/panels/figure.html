@@ -1,12 +1,17 @@
 {% comment %}
   Eén beeld in het uitgeknipte kader, zonder tekst ernaast. Dit is de
   beeldhelft van panels/media.html, apart bruikbaar in een smalle kolom.
-  Pass: src, webp (optioneel), alt, width, height, ratio.
+  Pass: src, webp (optioneel), alt, width, height, ratio, href, caption.
+  `href` maakt het beeld een link en laat het bij hover iets omhoog komen.
+  `caption` staat onder het kader, buiten de link.
 
   Het kader gebruikt #sp-hero-clip, dus panels/clips.html moet op de pagina
   staan.
 {% endcomment %}
 <figure class="sp-media__figure">
+  {% if include.href %}
+  <a class="sp-media__link" href="{% include panels/href.html href=include.href %}">
+  {% endif %}
   <div class="sp-hero-shadow">
     <div class="sp-media__frame"{% if include.ratio %} style="--sp-media-ratio: {{ include.ratio }};"{% endif %}>
       <picture>
@@ -15,4 +20,10 @@
       </picture>
     </div>
   </div>
+  {% if include.href %}
+  </a>
+  {% endif %}
+  {% if include.caption %}
+  <figcaption class="sp-media__caption">{{ include.caption }}</figcaption>
+  {% endif %}
 </figure>

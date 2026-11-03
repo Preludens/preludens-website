@@ -2714,6 +2714,38 @@ body.page-scroll-preview .sp-panel--hero .btn-primary {
   }
 }
 
+/* MicroGame Stories: tekst links op het bosbeeld. De contactknop blijft
+   het oranje accent; Plan een GameStorm gebruikt de bannerknop. */
+.hero-banner--story {
+  .hero-banner__inner {
+    max-width: 42rem;
+  }
+
+  .hero-banner__lead {
+    max-width: 38rem;
+    color: var(--color-white);
+  }
+
+  .hero-banner__actions {
+    align-items: center;
+  }
+}
+
+.hero-banner--story .hero-banner__contact {
+  background: var(--color-preludens-gold);
+  color: var(--color-deep-navy) !important;
+  border-color: transparent;
+  box-shadow: none;
+
+  &::after { content: none; }
+
+  &:hover {
+    background: var(--color-deep-gold);
+    color: var(--color-deep-navy) !important;
+    border-color: transparent;
+  }
+}
+
 /* Tekst + beeld naast elkaar */
 .media-block {
   display: grid;

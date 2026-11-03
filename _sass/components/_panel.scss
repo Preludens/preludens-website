@@ -14,7 +14,8 @@ body.page-panels {
   background: var(--color-white);
 
   .panel--mist,
-  .panel--warm {
+  .panel--warm,
+  .panel--harbor {
     margin-block: var(--sp-gap);
   }
 
@@ -290,6 +291,119 @@ body.page-panels .sp-actions .btn {
   }
 }
 
+/* Iets donkerder blauw dan de mistband, lichter dan het volle navy.
+   Zelfde 40°-snede aan boven- en onderzijde als de mistband. */
+.panel--harbor {
+  background-color: var(--color-harbor-teal);
+  color: var(--color-white);
+  clip-path: polygon(
+    0 var(--sp-jump),
+    calc(68% - var(--sp-run)) var(--sp-jump),
+    68% 0,
+    100% 0,
+    100% calc(100% - var(--sp-jump)),
+    50% calc(100% - var(--sp-jump)),
+    calc(50% - var(--sp-run)) 100%,
+    0 100%
+  );
+
+  .panel__inner {
+    padding-top: calc(var(--sp-jump) + 60px);
+    padding-bottom: calc(40px + var(--sp-jump));
+  }
+
+  h2,
+  h3,
+  p {
+    color: var(--color-white);
+  }
+}
+
+#storytelling .sp-media {
+  margin-top: 0;
+  align-items: start;
+}
+
+#storytelling .sp-media__figure {
+  width: 85%;
+  justify-self: end;
+}
+
+#storytelling .sp-media__frame {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  clip-path: none;
+}
+
+#storytelling .sp-media__frame img {
+  clip-path: none;
+}
+
+#storytelling .sp-story__next {
+  max-width: 16ch;
+  margin-top: clamp(var(--space-xl), 8vh, 5.5rem);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.sp-steps3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, var(--space-lg));
+  margin: clamp(var(--space-lg), 5vh, 3rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sp-steps3 li {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: clamp(1.25rem, 2vw, 1.75rem);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.panel .sp-steps3 h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+  color: var(--color-ink);
+}
+
+.panel .sp-steps3 h3 span {
+  color: var(--color-ink-gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.panel .sp-steps3 p {
+  margin: 0;
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+}
+
+.panel .sp-steps3__q {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--color-harbor-teal);
+}
+
+@media (max-width: 800px) {
+  .sp-steps3 {
+    grid-template-columns: 1fr;
+  }
+}
+
 .panel--mist.panel--line::after {
   content: "";
   position: absolute;
@@ -300,6 +414,157 @@ body.page-panels .sp-actions .btn {
   background-position: center;
   background-repeat: no-repeat;
   pointer-events: none;
+}
+
+/* Lichte pastel van het goud. De bovenrand blijft recht en schuift onder het
+   mistpaneel erboven, zodat die schuine snede blauw blijft en er geen wit
+   vlak tussen valt. De onderrand heeft dezelfde snede als een mistpaneel,
+   zodat het papier eronder zijn schuine rechterbovenhoek houdt. */
+.panel--mist:has(+ .panel--pale) {
+  position: relative;
+  z-index: 2;
+  /* Onderste snede staat links van het midden; de bovenrand blijft gelijk. */
+  clip-path: polygon(
+    0 var(--sp-jump),
+    calc(68% - var(--sp-run)) var(--sp-jump),
+    68% 0,
+    100% 0,
+    100% calc(100% - var(--sp-jump)),
+    36% calc(100% - var(--sp-jump)),
+    calc(36% - var(--sp-run)) 100%,
+    0 100%
+  );
+
+  .panel__inner {
+    padding-bottom: calc(40px + var(--sp-jump) + var(--space-xl));
+  }
+}
+
+.panel--pale {
+  --pale-jump: 28px;
+  --pale-run: 33.4px;
+  position: relative;
+  z-index: 1;
+  margin-top: calc(-1 * (var(--sp-gap) + var(--sp-jump)));
+  background: var(--color-pale-gold);
+  color: var(--color-ink);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--pale-jump)),
+    50% calc(100% - var(--pale-jump)),
+    calc(50% - var(--pale-run)) 100%,
+    0 100%
+  );
+
+  .panel__inner {
+    padding-top: calc(clamp(2.25rem, 7vh, 6rem) + var(--sp-jump));
+    padding-bottom: calc(clamp(2.25rem, 7vh, 6rem) + var(--pale-jump));
+  }
+
+  h2 {
+    max-width: none;
+  }
+
+  p.sp-lead {
+    max-width: 68ch;
+    color: var(--color-ink-soft);
+  }
+
+  h2,
+  h3 {
+    color: var(--color-ink);
+  }
+
+  /* De tekst blijft in de stroom en bepaalt de hoogte. De strip hangt
+     rechts daarnaast, van de titel tot de onderkant van de knoppen. */
+  .sp-media {
+    display: block;
+    position: relative;
+    margin-top: 0;
+  }
+
+  .sp-media__body {
+    padding-right: calc(17.5rem + clamp(1.75rem, 4vw, 3.5rem));
+  }
+
+  .sp-media__figure {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    margin: 0;
+  }
+
+  .sp-hero-shadow,
+  .sp-media__frame {
+    height: 100%;
+  }
+
+  /* Zelfde witte rand als de andere beelden, rechthoekig. De schaduw zit
+     op .sp-hero-shadow; clip-path zou die rand schuin afsnijden. */
+  .sp-media__frame,
+  .sp-media__frame img {
+    clip-path: none;
+  }
+
+  .sp-media__frame {
+    width: auto;
+    aspect-ratio: 906 / 979;
+  }
+
+  .sp-media__frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 900px) {
+  .panel--pale .sp-media__body {
+    padding-right: 0;
+  }
+
+  .panel--pale .sp-media__figure {
+    position: static;
+    width: min(100%, 20rem);
+    margin: var(--space-lg) auto 0;
+  }
+
+  .panel--pale .sp-hero-shadow,
+  .panel--pale .sp-media__frame {
+    height: auto;
+  }
+
+  .panel--pale .sp-media__frame {
+    aspect-ratio: 906 / 979;
+  }
+}
+
+/* Begin klein: rechte onderkant, omhooggetrokken oranje band valt eroverheen. */
+#begin-klein {
+  clip-path: polygon(
+    0 var(--sp-jump),
+    calc(68% - var(--sp-run)) var(--sp-jump),
+    68% 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+#begin-klein + .panel--warm {
+  margin-top: calc(-1 * (var(--sp-gap) + var(--sp-jump)));
+  margin-bottom: 0;
+  clip-path: polygon(
+    0 var(--sp-jump),
+    calc(32% - var(--sp-run)) var(--sp-jump),
+    32% 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
 }
 
 .panel--warm {
@@ -435,8 +700,18 @@ body.page-panels .sp-actions .btn {
   margin: 0 0 var(--space-md);
 }
 
-.sp-aside-split__main p.sp-lead:last-child {
+.sp-aside-split__main p.sp-lead:last-child,
+.sp-aside-split__aside p.sp-lead:last-child {
   margin-bottom: 0;
+}
+
+.sp-aside-split__aside p.sp-lead {
+  max-width: 70ch;
+  margin: 0 0 var(--space-md);
+}
+
+#bestaande-e-learning .sp-aside-split {
+  margin-top: 0;
 }
 
 /* Beeld naast tekst (panels/media.html), in het uitgeknipte herokader. */
@@ -471,6 +746,390 @@ body.page-panels .sp-actions .btn {
   height: 100%;
   object-fit: cover;
   clip-path: url("#sp-hero-clip");
+}
+
+/* Gelijke pixelafstand op beide assen, zodat de snede 45° blijft
+   ook als het beeld veel breder is dan het hoog is. */
+.sp-media--angle .sp-media__frame,
+.sp-media--angle .sp-media__frame img {
+  clip-path: polygon(
+    0 3.25rem,
+    3.25rem 0,
+    calc(100% - 0.55rem) 0,
+    100% 0.55rem,
+    100% calc(100% - 3.25rem),
+    calc(100% - 3.25rem) 100%,
+    0.55rem 100%,
+    0 calc(100% - 0.55rem)
+  );
+}
+
+/* Zelfde 45°-snede, maar rechtsboven en linksonder. */
+.sp-media--angle-flip .sp-media__frame,
+.sp-media--angle-flip .sp-media__frame img {
+  clip-path: polygon(
+    0.55rem 0,
+    calc(100% - 3.25rem) 0,
+    100% 3.25rem,
+    100% calc(100% - 0.55rem),
+    calc(100% - 0.55rem) 100%,
+    3.25rem 100%,
+    0 calc(100% - 3.25rem),
+    0 0.55rem
+  );
+}
+
+/* Alle projectslides liggen op elkaar, zodat het paneel de hoogte van de
+   hoogste slide aanhoudt. */
+.sp-case {
+  display: grid;
+}
+
+.sp-case__slide {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-case .sp-media {
+  align-items: stretch;
+  flex: 1 1 auto;
+}
+
+.sp-case .sp-media__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-case .sp-media__body .sp-actions {
+  margin-top: auto;
+}
+
+.sp-case__slide:not(.is-active) {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#basis-koeltechniek .sp-case h2 {
+  font-size: clamp(2.6rem, 5.2vw, 4.1rem);
+  color: var(--color-preludens-gold);
+}
+
+.panel p.sp-lead--justify {
+  text-align: justify;
+  hyphens: auto;
+}
+
+#wat-zijn-microgame-stories .sp-values {
+  margin-top: var(--space-xl);
+}
+
+/* MicroGame Stories: 80px van de content tot de rand van elk blok.
+   Bij een schuine rand telt die 80px vanaf de snede. Een volgend blok dat
+   over die rand heen valt, houdt diezelfde 80px zichtbaar. */
+.page-microgame-stories {
+  .panel--paper .panel__inner,
+  .panel--warm .panel__inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .panel--mist .panel__inner,
+  .panel--harbor .panel__inner,
+  .panel--pale .panel__inner {
+    padding-top: calc(var(--sp-jump) + 80px);
+  }
+
+  .panel--mist .panel__inner,
+  .panel--harbor .panel__inner {
+    padding-bottom: calc(var(--sp-jump) + 80px);
+  }
+
+  .panel--pale .panel__inner {
+    padding-bottom: calc(var(--pale-jump) + 80px);
+  }
+
+  /* Rechte onderkant, met het volgende blok 50px eroverheen. */
+  #waarom .panel__inner,
+  #begin-klein .panel__inner {
+    padding-bottom: calc(var(--sp-jump) + 80px);
+  }
+
+  /* De oranje afsluiter is in het midden recht; de snede zit links. */
+  .panel--warm .panel__inner {
+    text-align: center;
+  }
+
+  .panel--warm h2 {
+    max-width: none;
+  }
+
+  .panel--warm h2,
+  .panel--warm h3,
+  .panel--warm .sp-warm-copy,
+  .panel--warm .sp-warm-copy p.sp-lead {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .panel--warm .sp-actions {
+    justify-content: center;
+  }
+
+  #hoe-het-werkt .sp-hero-steps--cards p,
+  #storytelling .sp-steps3 p {
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  #storytelling .sp-steps3__q {
+    text-align: left;
+    hyphens: manual;
+  }
+
+  #storytelling .sp-steps3 h3 span {
+    color: var(--color-preludens-gold);
+  }
+
+  #storytelling .sp-story__next + .sp-lead {
+    max-width: 62ch;
+    margin-inline: auto;
+  }
+}
+
+/* Leeruitdagingen: iets smallere kaarten, gelijke ruimte ertussen, lichtere schaduw. */
+#leeruitdagingen .sp-values {
+  gap: var(--space-md);
+  max-width: 58rem;
+  margin-inline: auto;
+}
+
+#leeruitdagingen .sp-values li {
+  box-shadow: 0 3px 14px rgba(11, 42, 53, 0.08);
+}
+
+/* Ontwikkelroute: één pad met zes haltes. Oneven stappen links, even rechts.
+   De lijn buigt per stap een stukje opzij en loopt door het nummer heen. */
+#ontwikkeling .sp-hero-steps--route {
+  --route-node: 2.4rem;
+  --route-drift: 2.25rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: min(100%, 58rem);
+  margin: clamp(var(--space-lg), 5vh, 3.5rem) auto 0;
+  padding: 0;
+}
+
+#ontwikkeling .sp-hero-steps--route article {
+  --node-x: calc(50% - var(--route-drift));
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 8rem;
+  align-items: start;
+  margin: 0;
+  padding: 0 0 2rem;
+}
+
+#ontwikkeling .sp-hero-steps--route article:nth-child(even) {
+  --node-x: calc(50% + var(--route-drift));
+}
+
+#ontwikkeling .sp-hero-steps--route article:last-child {
+  padding-bottom: 0;
+}
+
+#ontwikkeling .sp-hero-steps--route article:nth-child(odd):not(:last-child)::before,
+#ontwikkeling .sp-hero-steps--route article:nth-child(even):not(:last-child)::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: calc(var(--route-node) / 2);
+  width: calc(var(--route-drift) * 2);
+  height: 100%;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#ontwikkeling .sp-hero-steps--route article:nth-child(odd):not(:last-child)::before {
+  left: var(--node-x);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' preserveAspectRatio='none'%3E%3Cline x1='0' y1='0' x2='100%25' y2='100%25' stroke='%23EDA70E' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+}
+
+#ontwikkeling .sp-hero-steps--route article:nth-child(even):not(:last-child)::before {
+  left: calc(var(--node-x) - (var(--route-drift) * 2));
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' preserveAspectRatio='none'%3E%3Cline x1='100%25' y1='0' x2='0' y2='100%25' stroke='%23EDA70E' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+}
+
+#ontwikkeling .sp-hero-steps--route h3,
+#ontwikkeling .sp-hero-steps--route p {
+  position: relative;
+  z-index: 1;
+}
+
+#ontwikkeling .sp-hero-steps--route h3 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: var(--route-node);
+  margin: 0 0 0.4rem;
+  padding: 0;
+  position: static;
+  text-transform: uppercase;
+}
+
+#ontwikkeling .sp-hero-steps--route h3::after {
+  content: none;
+}
+
+#ontwikkeling .sp-hero-steps--route h3 span {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: var(--node-x);
+  transform: translateX(-50%);
+  display: grid;
+  place-items: center;
+  width: var(--route-node);
+  height: var(--route-node);
+  border-radius: 50%;
+  background: var(--color-preludens-gold);
+  color: var(--color-deep-navy);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+#ontwikkeling .sp-hero-steps--route p {
+  max-width: none;
+}
+
+#ontwikkeling .sp-hero-steps--route article:nth-child(odd) h3,
+#ontwikkeling .sp-hero-steps--route article:nth-child(odd) p {
+  grid-column: 1;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+#ontwikkeling .sp-hero-steps--route article:nth-child(even) h3,
+#ontwikkeling .sp-hero-steps--route article:nth-child(even) p {
+  grid-column: 2;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+@media (max-width: 800px) {
+  #ontwikkeling .sp-hero-steps--route article {
+    display: block;
+    padding: 0 0 1.5rem 3.4rem;
+  }
+
+  #ontwikkeling .sp-hero-steps--route h3 span {
+    left: 0;
+    transform: none;
+  }
+
+  #ontwikkeling .sp-hero-steps--route article:nth-child(odd) h3,
+  #ontwikkeling .sp-hero-steps--route article:nth-child(odd) p,
+  #ontwikkeling .sp-hero-steps--route article:nth-child(even) h3,
+  #ontwikkeling .sp-hero-steps--route article:nth-child(even) p {
+    grid-column: auto;
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  #ontwikkeling .sp-hero-steps--route article:nth-child(odd):not(:last-child)::before,
+  #ontwikkeling .sp-hero-steps--route article:nth-child(even):not(:last-child)::before {
+    left: calc(var(--route-node) / 2 - 1px);
+    width: 2px;
+    background-image: none;
+    background-color: var(--color-preludens-gold);
+  }
+}
+
+/* Rechte onderzijde, meer lucht onder de kaarten, en het blok doorgetrokken
+   tot onder de schuine bovenrand van het donkerblauwe paneel. */
+#waarom {
+  z-index: 1;
+  margin-bottom: 0;
+  clip-path: polygon(
+    0 var(--sp-jump),
+    calc(68% - var(--sp-run)) var(--sp-jump),
+    68% 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+#storytelling {
+  z-index: 2;
+  margin-top: calc(-1 * var(--sp-jump));
+}
+
+.sp-case__slide[hidden] {
+  display: none;
+}
+
+.sp-case__pager {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: var(--space-md);
+}
+
+.sp-case__dot {
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.sp-case__dot::before {
+  content: "";
+  position: absolute;
+  inset: 0.72rem;
+  border-radius: 50%;
+  background: rgba(17, 56, 71, 0.28);
+}
+
+.sp-case__dot.is-active::before {
+  background: var(--color-preludens-gold);
+}
+
+.sp-case__dot:focus-visible {
+  @include focus-ring(3px);
+}
+
+.sp-media__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.35s ease;
+}
+
+.sp-media__link:hover,
+.sp-media__link:focus-visible {
+  transform: translateY(-8px);
+}
+
+.sp-media__link:focus-visible {
+  @include focus-ring(4px);
+}
+
+.sp-media__caption {
+  margin: 12px 0 0;
+  text-align: left;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--color-ink-soft);
 }
 
 /* Video in hetzelfde witte kader als .sp-media__frame, maar met ronde in
@@ -1014,5 +1673,11 @@ body.page-contact .panel .sp-values li span a:focus-visible {
   .panel {
     transform: none;
     filter: none;
+  }
+
+  .sp-media__link,
+  .sp-media__link:hover,
+  .sp-media__link:focus-visible {
+    transform: none;
   }
 }

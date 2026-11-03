@@ -529,3 +529,33 @@
     if (lastTrigger) lastTrigger.focus();
   });
 })();
+
+/* Projecten onder Uit de praktijk: cirkels wisselen de slide. */
+(function () {
+  var roots = document.querySelectorAll("[data-sp-case]");
+  if (!roots.length) return;
+
+  roots.forEach(function (root) {
+    var slides = Array.prototype.slice.call(root.querySelectorAll("[data-sp-case-slide]"));
+
+    function show(index) {
+      slides.forEach(function (slide, i) {
+        var on = i === index;
+        slide.classList.toggle("is-active", on);
+        slide.inert = !on;
+        slide.setAttribute("aria-hidden", on ? "false" : "true");
+      });
+      root.querySelectorAll("[data-sp-case-dot]").forEach(function (dot) {
+        var on = Number(dot.getAttribute("data-sp-case-dot")) === index;
+        dot.classList.toggle("is-active", on);
+        dot.setAttribute("aria-selected", on ? "true" : "false");
+      });
+    }
+
+    root.addEventListener("click", function (event) {
+      var dot = event.target.closest("[data-sp-case-dot]");
+      if (!dot || !root.contains(dot)) return;
+      show(Number(dot.getAttribute("data-sp-case-dot")) || 0);
+    });
+  });
+})();
