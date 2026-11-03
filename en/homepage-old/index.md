@@ -8,6 +8,8 @@ permalink: /homepage-old/
 permalink_lang:
   nl: /homepage-old/
 
+sitemap: false
+robots: noindex, nofollow
 ---
 
 <style>

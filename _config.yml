@@ -23,7 +23,10 @@ exclude_from_localization:
   - assets
   - admin
   - cloudflare
-  - sitemap.xml
+  # sitemap.xml staat hier bewust NIET meer tussen. Zolang hij uitgesloten was,
+  # zag jekyll-sitemap het eigen sitemap.xml in de Engelse pass niet en zette
+  # hij daar zijn eigen /en/sitemap.xml neer. De gem zit in de jekyll_plugins-
+  # groep van de Gemfile en laadt dus altijd, ook zonder vermelding bij plugins.
   - CNAME
   - .gitignore
   - .github
@@ -64,11 +67,23 @@ exclude:
   # door Jekyll hoeven ze niet.
   - preview
 
+  # Losse demopagina van 32 KB in de repo-root ("Preludens — Demo Storytelling
+  # Website", juni 2026). Zonder front matter kopieerde Jekyll hem mee, en
+  # jekyll-sitemap neemt elk los .html-bestand op: hij stond dus indexeerbaar
+  # op preludens.nl en was bij Google aangemeld. Het bestand blijft in de
+  # repository staan; alleen de site publiceert hem niet meer.
+  - daan.html
+
 plugins:
   - jekyll-polyglot
   - jekyll-seo-tag
-  - jekyll-sitemap
   - jekyll-feed
+# Geen jekyll-sitemap meer; de sitemap staat als sitemap.xml in de bron.
+# De plugin draait per taalpass van polyglot: in de Nederlandse pass maakte hij
+# /sitemap.xml met 40 Nederlandse URL's, en in de Engelse pass /en/sitemap.xml
+# met nog eens 38 Nederlandse URL's. Geen van beide bevatte ook maar een
+# Engelse pagina, en naar de tweede verwees niets. robots.txt genereerde hij
+# ook, maar die staat hier al in de bron.
 
 collections:
   verhalen:

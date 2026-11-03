@@ -5,6 +5,9 @@ title: "Serious Game Markt Overijssel: stuur ons je dilemma"
 description: Je sprak ons op de Serious Game Introductiemarkt van provincie Overijssel. Stuur één dilemma uit je werk, dan maken wij daar gratis een eerste ruwe demo van. Bekijk hier ook de reel die bij onze stand draaide.
 body_class: page-panels page-event
 permalink: /events/provincie-overijssel-serious-game-markt/
+# De Engelse tegenhanger is een stub die /en/ doorstuurt naar deze pagina en
+# staat op noindex; die URL hoort dus niet in de sitemap.
+sitemap_langs: [nl]
 ---
 
 <div class="panel-stack">

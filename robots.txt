@@ -5,4 +5,9 @@ sitemap: false
 User-agent: *
 Allow: /
 
+# De CMS-omgeving hoort niet in de zoekresultaten. admin/index.html heeft geen
+# front matter, dus Jekyll kopieert hem letterlijk mee en er is geen plek voor
+# een noindex-tag; dit is de aangewezen plek om hem buiten te houden.
+Disallow: /admin/
+
 Sitemap: {{ site.prod_url | default: site.url }}/sitemap.xml

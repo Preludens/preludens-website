@@ -10,4 +10,5 @@ summary: >-
 permalink: /diensten/prepo/
 redirect_to: /prepo/
 order: 5
+sitemap: false
 ---

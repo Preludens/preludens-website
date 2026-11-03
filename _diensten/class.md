@@ -9,4 +9,5 @@ summary: >-
 permalink: /diensten/class/
 redirect_to: /prepo-class/
 order: 6
+sitemap: false
 ---

@@ -9,6 +9,8 @@ permalink: /homepage-old/
 permalink_lang:
   en: /homepage-old/
 
+sitemap: false
+robots: noindex, nofollow
 ---
 
 <style>

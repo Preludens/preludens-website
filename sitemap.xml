@@ -1,0 +1,65 @@
+---
+layout: null
+sitemap: false
+---
+{%- comment -%}
+  Eigen sitemap in plaats van die van jekyll-sitemap, die hier niet meer bij
+  plugins staat.
+
+  Die plugin draait in elke taalpass van polyglot en maakte er dus twee:
+  /sitemap.xml met 40 Nederlandse URL's, en /en/sitemap.xml met nog eens 38
+  Nederlandse URL's. Er stond geen enkele Engelse pagina in, en naar de tweede
+  verwees niets. De gem zit in de jekyll_plugins-groep van de Gemfile en laadt
+  daardoor altijd; hij gaat alleen opzij als hij dit bestand ziet
+  (`unless file_exists?("sitemap.xml")`). Daarom staat sitemap.xml niet meer in
+  exclude_from_localization: zolang dat zo was, zag hij het in de Engelse pass
+  niet en zette hij daar alsnog zijn eigen versie neer.
+
+  Alle permalinks zijn in beide talen gelijk — permalink_lang wijkt nergens af —
+  dus de Engelse URL is overal /en plus het Nederlandse pad. Dat is precies wat
+  polyglots I18n_Headers ook als hreflang neerzet.
+
+  Een pagina die in de ene taal wel en in de andere niet geindexeerd mag worden,
+  zet zelf `sitemap_langs:` in de front matter, met de talen die eruit mogen
+  komen. Dat is nodig omdat we de Engelse URL afleiden uit de Nederlandse
+  pagina, en de front matter van de Engelse tegenhanger hier niet zichtbaar is.
+  Zie events/provincie-overijssel-serious-game-markt/index.md.
+
+  Static files staan er bewust niet in. Die van jekyll-sitemap nam elk los
+  .html-bestand mee, waardoor /daan.html en /admin/ werden aangemeld.
+
+  Geen <lastmod>: collectiedocumenten zonder eigen date krijgen van Jekyll het
+  buildmoment, en dat zou bij elke deploy alle verhalen en diensten als zojuist
+  gewijzigd aanmelden. Liever geen datum dan een onjuiste.
+{%- endcomment -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- assign collections = site.collections | where_exp:'c','c.output != false' -%}
+{%- for collection in collections -%}
+{%- for item in collection.docs -%}
+{%- unless item.sitemap == false or item.layout == 'redirect' or item.robots contains 'noindex' -%}
+{%- for lang in site.languages -%}
+{%- assign toon = true -%}
+{%- if item.sitemap_langs -%}{%- unless item.sitemap_langs contains lang -%}{%- assign toon = false -%}{%- endunless -%}{%- endif -%}
+{%- if toon -%}
+{%- if lang == site.default_lang -%}{%- assign pad = item.url -%}{%- else -%}{%- assign pad = '/' | append: lang | append: item.url -%}{%- endif %}
+  <url><loc>{{ pad | replace:'/index.html','/' | absolute_url | xml_escape }}</loc></url>
+{%- endif -%}
+{%- endfor -%}
+{%- endunless -%}
+{%- endfor -%}
+{%- endfor -%}
+{%- assign losse_paginas = site.html_pages | where_exp:'p','p.sitemap != false' | where_exp:'p','p.url != "/404.html"' -%}
+{%- for item in losse_paginas -%}
+{%- unless item.layout == 'redirect' or item.robots contains 'noindex' -%}
+{%- for lang in site.languages -%}
+{%- assign toon = true -%}
+{%- if item.sitemap_langs -%}{%- unless item.sitemap_langs contains lang -%}{%- assign toon = false -%}{%- endunless -%}{%- endif -%}
+{%- if toon -%}
+{%- if lang == site.default_lang -%}{%- assign pad = item.url -%}{%- else -%}{%- assign pad = '/' | append: lang | append: item.url -%}{%- endif %}
+  <url><loc>{{ pad | replace:'/index.html','/' | absolute_url | xml_escape }}</loc></url>
+{%- endif -%}
+{%- endfor -%}
+{%- endunless -%}
+{%- endfor %}
+</urlset>
