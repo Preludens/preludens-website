@@ -69,7 +69,7 @@ permalink_lang:
   <li><span class="sp-steps__num">6</span> Productie</li>
   <li><span class="sp-steps__num">7</span> Implementatie</li>
 </ol>
-{% include panels/actions.html primary_label="Lees de verhalen" primary_href="/inspiratie/" %}
+{% include panels/actions.html primary_label="Bekijk de projecten" primary_href="/inspiratie/" %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" body=proof_body %}
 

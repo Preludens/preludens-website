@@ -821,7 +821,7 @@ robots: noindex, nofollow
         <li>onITnow</li>
       </ul>
       <div class="sp-actions">
-        <a class="btn btn-primary" href="{{ '/inspiratie/' | relative_url }}">Read the stories</a>
+        <a class="btn btn-primary" href="{{ '/inspiratie/' | relative_url }}">See the projects</a>
       </div>
     </div>
   </section>
