@@ -13,9 +13,9 @@ permalink: /impact/
 {% capture hero_title %}Learning that delivers visible results{% endcapture %}
 {% capture hero_lead %}We measure what matters: engagement, decisiveness, and behaviour change in practice.{% endcapture %}
 {% capture hero_actions %}
-{% include panels/actions.html hero_cta=true primary_label="See the stories →" primary_href="/verhalen/" secondary_label="Get in touch" secondary_href="/contact/" %}
+{% include panels/actions.html hero_cta=true primary_label="See the stories →" primary_href="/inspiratie/" secondary_label="Get in touch" secondary_href="/contact/" %}
 {% endcapture %}
-{% include panels/hero.html kicker="Impact" title=hero_title lead=hero_lead actions=hero_actions figure_src="/assets/images/hero/impact-hero.jpg" figure_alt="A route on which progress becomes visible" figure_href="/verhalen/" figure_caption="A noticeable shift, not just numbers." %}
+{% include panels/hero.html kicker="Impact" title=hero_title lead=hero_lead actions=hero_actions figure_src="/assets/images/hero/impact-hero.jpg" figure_alt="A route on which progress becomes visible" figure_href="/inspiratie/" figure_caption="A noticeable shift, not just numbers." %}
 
 {% capture impact_items %}
 {% include panels/value.html icon="📈" title="Activate" text="MicroGames and dilemmas turn knowledge into action — with immediate feedback on every choice." %}
@@ -30,7 +30,7 @@ permalink: /impact/
 
 {% capture closing_body %}
 <p class="sp-lead">For us, impact is a noticeable shift in how people weigh options and act when it counts.</p>
-{% include panels/actions.html secondary_label="Read stories from our clients →" secondary_href="/verhalen/" %}
+{% include panels/actions.html secondary_label="Read stories from our clients →" secondary_href="/inspiratie/" %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" body=closing_body %}
 

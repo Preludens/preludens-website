@@ -22,7 +22,7 @@ permalink: /play/in-de-praktijk/
 {% endcapture %}
 {% capture story_body %}
 {% include panels/steps.html variant="grid" items=story_items %}
-{% include panels/actions.html secondary_label="← Terug naar Play" secondary_href="/play/" secondary2_label="Bekijk klantverhalen →" secondary2_href="/verhalen/" %}
+{% include panels/actions.html secondary_label="← Terug naar Play" secondary_href="/play/" secondary2_label="Bekijk klantverhalen →" secondary2_href="/inspiratie/" %}
 {% endcapture %}
 {% include panels/panel.html variant="mist" body=story_body %}
 

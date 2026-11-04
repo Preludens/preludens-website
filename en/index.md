@@ -70,7 +70,7 @@ body_class: page-home page-panels
   <li><span class="sp-steps__num">6</span> Production</li>
   <li><span class="sp-steps__num">7</span> Implementation</li>
 </ol>
-{% include panels/actions.html primary_label="Read the stories" primary_href="/verhalen/" %}
+{% include panels/actions.html primary_label="Read the stories" primary_href="/inspiratie/" %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" body=proof_body %}
 
