@@ -16,7 +16,7 @@ body_class: page-home page-panels
 {% capture hero_title %}We strengthen <span class="hl">knowledge retention</span> <span class="sp-nowrap">in organisations.</span>{% endcapture %}
 {% capture hero_lead %}Preludens designs and develops online training in which employees practise with situations from their work. With storytelling and game-based learning we invite participants to make their own choices. Focused feedback and repetition help them remember the knowledge and apply it in their work.{% endcapture %}
 {% capture hero_actions %}
-{% include panels/actions.html hero_cta=true primary_label="Discover our approach →" primary_href="/diensten/" play_label="View a MicroGame" play_href="/verhalen/microgame-demo/" %}
+{% include panels/actions.html hero_cta=true primary_label="Discover our approach →" primary_href="/diensten/" %}
 {% endcapture %}
 {% capture hero_steps %}
 {% include panels/steps.html i1="01" t1="Challenge" p1="Invite teams to make choices in realistic situations, practise weighing options and experience the consequences of what they do." i2="02" t2="Activate" p2="Use Play so participants actively choose. Not watching or clicking, but trying, responding, deciding and learning from direct feedback." i3="03" t3="Motivate" p3="Strengthen engagement and intrinsic motivation, so teams act with more confidence when it really matters in practice." %}

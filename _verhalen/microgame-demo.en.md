@@ -1,4 +1,5 @@
 ---
+published: false
 lang: en
 permalink: /verhalen/microgame-demo/
 title: How a MicroGame feels
