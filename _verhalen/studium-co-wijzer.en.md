@@ -1,6 +1,6 @@
 ---
 lang: en
-permalink: /verhalen/studium-co-wijzer/
+permalink: /verhalen/co-wijzer/
 title: CO Wijzer
 description: Carbon monoxide cannot be seen, smelled or tasted. CO Wijzer lets professionals practise recognising risks and making the right safety choice.
 lead: Learning to recognise what you cannot see

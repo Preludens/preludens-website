@@ -35,7 +35,7 @@ body_class: page-panels
 {% endcapture %}
 {% capture transfer_body %}
 <h2>From passing on information to <span class="hl">active</span> learning</h2>
-{% include panels/media.html reverse=true angle=true src="/assets/images/verhalen/co-wijzer-ruimtes.jpg" alt="Cross-section of a house in which you point out rooms where a CO alarm belongs, from the MicroGame CO-Wijzer" width="1024" height="464" ratio="1024 / 464" href="/verhalen/studium-co-wijzer/" caption="CO-Wijzer was developed for 21CC and Studium." body=transfer_copy %}
+{% include panels/media.html reverse=true angle=true src="/assets/images/verhalen/co-wijzer-ruimtes.jpg" alt="Cross-section of a house in which you point out rooms where a CO alarm belongs, from the MicroGame CO-Wijzer" width="1024" height="464" ratio="1024 / 464" href="/verhalen/co-wijzer/" caption="CO-Wijzer was developed for 21CC and Studium." body=transfer_copy %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="actief-leren" body=transfer_body %}
 
@@ -153,7 +153,7 @@ body_class: page-panels
 {% endcapture %}
 {% capture case_cowijzer %}
 <p class="sp-lead">You cannot see, smell or taste carbon monoxide. In CO-Wijzer, professionals practise recognising that risk and making the safe choice.</p>
-{% include panels/actions.html secondary_label="View the project CO-Wijzer" secondary_href="/verhalen/studium-co-wijzer/" %}
+{% include panels/actions.html secondary_label="View the project CO-Wijzer" secondary_href="/verhalen/co-wijzer/" %}
 {% include panels/case-pager.html label="Projects" maria="The story of Maria" koel="Basic Refrigeration Technology" co="CO-Wijzer" %}
 {% endcapture %}
 {% capture case_body %}

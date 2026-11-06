@@ -35,7 +35,7 @@ body_class: page-panels
 {% endcapture %}
 {% capture transfer_body %}
 <h2>Van informatieoverdracht naar <span class="hl">actief</span> leren</h2>
-{% include panels/media.html reverse=true angle=true src="/assets/images/verhalen/co-wijzer-ruimtes.jpg" alt="Doorsnede van een huis waarin je ruimtes aanwijst waar een CO-melder hoort, uit de MicroGame CO-Wijzer" width="1024" height="464" ratio="1024 / 464" href="/verhalen/studium-co-wijzer/" caption="CO-Wijzer is ontwikkeld voor 21CC en Studium." body=transfer_copy %}
+{% include panels/media.html reverse=true angle=true src="/assets/images/verhalen/co-wijzer-ruimtes.jpg" alt="Doorsnede van een huis waarin je ruimtes aanwijst waar een CO-melder hoort, uit de MicroGame CO-Wijzer" width="1024" height="464" ratio="1024 / 464" href="/verhalen/co-wijzer/" caption="CO-Wijzer is ontwikkeld voor 21CC en Studium." body=transfer_copy %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="actief-leren" body=transfer_body %}
 
@@ -153,7 +153,7 @@ body_class: page-panels
 {% endcapture %}
 {% capture case_cowijzer %}
 <p class="sp-lead">Koolmonoxide kun je niet zien, ruiken of proeven. Bij CO-Wijzer oefenen professionals met het herkennen van dat risico en het maken van de veilige keuze.</p>
-{% include panels/actions.html secondary_label="Bekijk het project CO-Wijzer" secondary_href="/verhalen/studium-co-wijzer/" %}
+{% include panels/actions.html secondary_label="Bekijk het project CO-Wijzer" secondary_href="/verhalen/co-wijzer/" %}
 {% include panels/case-pager.html %}
 {% endcapture %}
 {% capture case_body %}
