@@ -33,6 +33,17 @@ figures:
     caption: Start screen of The Disruption Game
   - file: disruption-staking.jpg
     caption: The controller and the trucker strike
+video:
+  file: disruption-explainer.mp4
+  poster: /assets/images/verhalen/maryland-disruption-game-video-poster.jpg
+  label: >-
+    Explainer for The Disruption Game: black-and-white container terminal scenes with
+    situation panels, choice cards and Frank's response to his own decision
+  caption: >-
+    A minute from the game. You play Frank, the controller at a container terminal, on
+    the day the truckers go on strike. Every decision shifts the situation you make the
+    next one in.
+  download_label: Download the video (mp4, 3.7 MB)
 summary: >-
   For TU Delft we developed The Disruption Game: an interactive Dilemma Story in which
   participants experience how decisions ripple through a logistics disruption.

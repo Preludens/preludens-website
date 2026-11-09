@@ -33,6 +33,17 @@ figures:
     caption: Startscherm van The Disruption Game
   - file: disruption-staking.jpg
     caption: De controller en de staking van de truckers
+video:
+  file: disruption-explainer.mp4
+  poster: /assets/images/verhalen/maryland-disruption-game-video-poster.jpg
+  label: >-
+    Explainer van The Disruption Game: zwart-witbeelden van een containerterminal met
+    situatieschermen, keuzekaarten en de reactie van Frank op zijn eigen beslissing
+  caption: >-
+    Een minuut uit het spel. Je speelt Frank, de controller op een containerterminal, op
+    de dag dat de truckers gaan staken. Elke beslissing verschuift de situatie waarin je
+    de volgende neemt. Het spel en de voice-over zijn Engels.
+  download_label: Download de video (mp4, 3,7 MB)
 summary: >-
   Voor de TU Delft ontwikkelden we The Disruption Game: een interactieve Dilemma Story waarin
   deelnemers ervaren hoe beslissingen doorwerken in een logistieke verstoring.
