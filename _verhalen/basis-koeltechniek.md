@@ -29,6 +29,17 @@ figures:
     caption: Werken met het h-log-P-diagram
   - file: basis-koeltechniek-gesprek.jpg
     caption: Theorie toepassen in een herkenbaar gesprek
+video:
+  file: koeltechniek-explainer.mp4
+  poster: /assets/images/verhalen/basis-koeltechniek-video-poster.jpg
+  label: >-
+    Explainer van Basis Koeltechniek: het koelcircuit met verdamper, condensor,
+    compressor en expansieventiel, waarin processen naar hun component worden gesleept
+  caption: >-
+    Een minuut uit de game. Je sleept verdampen, condenseren, comprimeren en expanderen
+    naar de component waar ze gebeuren, en bij elke zet komt de uitleg meteen terug. In
+    de video wordt bewust een keer misgegokt, zodat je ook de correctie ziet.
+  download_label: Download de video (mp4, 3,5 MB)
 summary: >-
   Voor Basis Koeltechniek ontwikkelden we samen met Climatools BV, 21CC Learning en Studium
   een digitale leerervaring waarin installatiemonteurs actief met koeltechnische theorie

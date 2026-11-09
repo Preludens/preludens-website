@@ -29,6 +29,19 @@ figures:
     caption: Working with the h-log-P diagram
   - file: basis-koeltechniek-gesprek.jpg
     caption: Applying theory in a recognisable conversation
+video:
+  file: koeltechniek-explainer.mp4
+  poster: /assets/images/verhalen/basis-koeltechniek-video-poster.jpg
+  label: >-
+    Explainer for Basis Koeltechniek: the refrigeration circuit with evaporator,
+    condenser, compressor and expansion valve, where processes are dragged onto
+    their component
+  caption: >-
+    A minute from the game. You drag evaporating, condensing, compressing and expanding
+    onto the component where each happens, and every move answers back with the reason.
+    The video gets one wrong on purpose, so you see the correction too. The voice-over
+    is Dutch.
+  download_label: Download the video (mp4, 3.5 MB)
 summary: >-
   For Basic Refrigeration we developed, together with Climatools BV, 21CC Learning and Studium,
   a digital learning experience in which installation technicians actively work with
