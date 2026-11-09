@@ -29,6 +29,18 @@ figures:
     caption: Hoe een CLV-systeem lucht aanvoert
   - file: co-wijzer-clv-start.jpg
     caption: Start van de MicroGame over CLV-systemen
+video:
+  file: cowijzer-explainer.mp4
+  poster: /assets/images/verhalen/studium-co-wijzer-video-poster.jpg
+  label: >-
+    Explainer van CO Wijzer: een rookgaskanaal in doorsnede, een CO-meter die oploopt,
+    en afsluitkappen die op de open aansluitstompen worden gezet
+  caption: >-
+    Een minuut uit het spel. Je bent de monteur in een flat waar meerdere woningen een
+    rookgaskanaal delen. Haal je een oud toestel weg en blijven de aansluitstompen open,
+    dan loopt de CO-meter in de woning op. Het spel legt daarna uit welke regel erachter
+    zit.
+  download_label: Download de video (mp4, 3,3 MB)
 summary: >-
   Koolmonoxide kun je niet zien, ruiken of proeven. CO Wijzer laat professionals oefenen
   met het herkennen van risico's en het maken van de juiste veiligheidskeuze.

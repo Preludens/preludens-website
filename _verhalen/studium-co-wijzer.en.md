@@ -29,6 +29,18 @@ figures:
     caption: How a CLV system brings air in
   - file: co-wijzer-clv-start.jpg
     caption: Start of the MicroGame about CLV systems
+video:
+  file: cowijzer-explainer.mp4
+  poster: /assets/images/verhalen/studium-co-wijzer-video-poster.jpg
+  label: >-
+    Explainer for CO Wijzer: a cross-section of a shared flue, a CO meter climbing, and
+    caps being fitted to the open connection sockets
+  caption: >-
+    A minute from the game. You are the engineer in a block of flats where several homes
+    share one flue. Remove an old appliance while the connection sockets stay open, and
+    the CO meter in the home starts to climb. The game then explains the rule behind it.
+    The voice-over is Dutch.
+  download_label: Download the video (mp4, 3.3 MB)
 summary: >-
   Carbon monoxide cannot be seen, smelled or tasted. CO Wijzer lets professionals practise
   recognising risks and making the right safety choice.
