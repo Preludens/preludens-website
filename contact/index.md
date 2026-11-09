@@ -16,7 +16,7 @@ permalink: /contact/
 
 {% capture contact_items %}
 {% include panels/value.html title="Preludens B.V." text="KVK: 99042827<br>Btw-id: NL868763664B01" %}
-{% include panels/value.html title="Algemeen" text="E-mail: <a href=\"mailto:info@preludens.nl\">info@preludens.nl</a><br>Telefoon: <a href=\"tel:+31154042027\">+31 15 404 202 7</a>" %}
+{% include panels/value.html title="Algemeen" text="E-mail: <a href=\"mailto:info@preludens.nl\">info@preludens.nl</a><br>Telefoon: <a href=\"tel:+31152024047\">+31 15 202 404 7</a>" %}
 {% include panels/value.html title="Support" text="E-mail: <a href=\"mailto:support@preludens.nl\">support@preludens.nl</a><br>Telefoon: <a href=\"tel:+31154042028\">+31 15 404 202 8</a>" %}
 {% include panels/value.html title="Bezoek" text="Alleen op afspraak." %}
 {% endcapture %}

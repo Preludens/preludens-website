@@ -85,7 +85,7 @@ sitemap_langs: [nl]
 {% capture offer_main %}
 <p class="sp-lead">Het kost je niets en je zit nergens aan vast. Wel eerlijk over waarom we het doen: we hopen natuurlijk dat je daarna met ons verder wil, en we leren zelf van jouw praktijk. Zegt de demo je niets, dan is dat ook een antwoord — dan weet je het in vijf minuten spelen, in plaats van na vijf pagina's offerte.</p>
 <p class="sp-lead">We bouwen deze demo's naast ons lopende werk, dus we pakken er een paar tegelijk op. Je hoort bij ontvangst van ons wanneer je hem kunt verwachten, en als het uitloopt hoor je dat ook. Je dilemma blijft onder ons, tenzij je zegt dat we het mogen laten zien.</p>
-<p class="sp-lead">Stuur het naar <a href="mailto:info@preludens.nl?subject=Mijn%20dilemma">info@preludens.nl</a>. Noem erbij dat je ons op de markt sprak, dan weten we meteen waar we elkaar van kennen. Bellen mag ook: <a href="tel:+31154042027">+31 15 404 202 7</a>. En wil je nu alvast voelen hoe zo'n keuze werkt, dan staat er <a href="{{ '/diensten/dilemma-storytelling/#dilemma' | relative_url }}">een kort fictief dilemma</a> dat je zelf kunt doorklikken.</p>
+<p class="sp-lead">Stuur het naar <a href="mailto:info@preludens.nl?subject=Mijn%20dilemma">info@preludens.nl</a>. Noem erbij dat je ons op de markt sprak, dan weten we meteen waar we elkaar van kennen. Bellen mag ook: <a href="tel:+31152024047">+31 15 202 404 7</a>. En wil je nu alvast voelen hoe zo'n keuze werkt, dan staat er <a href="{{ '/diensten/dilemma-storytelling/#dilemma' | relative_url }}">een kort fictief dilemma</a> dat je zelf kunt doorklikken.</p>
 {% include panels/actions.html primary_label="Mail je dilemma" primary_href="mailto:info@preludens.nl?subject=Mijn%20dilemma" %}
 {% endcapture %}
 {% capture offer_aside %}

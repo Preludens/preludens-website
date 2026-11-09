@@ -16,7 +16,7 @@ permalink: /contact/
 
 {% capture contact_items %}
 {% include panels/value.html title="Preludens B.V." text="Chamber of Commerce: 99042827<br>VAT ID: NL868763664B01" %}
-{% include panels/value.html title="General" text="Email: <a href=\"mailto:info@preludens.nl\">info@preludens.nl</a><br>Phone: <a href=\"tel:+31154042027\">+31 15 404 202 7</a>" %}
+{% include panels/value.html title="General" text="Email: <a href=\"mailto:info@preludens.nl\">info@preludens.nl</a><br>Phone: <a href=\"tel:+31152024047\">+31 15 202 404 7</a>" %}
 {% include panels/value.html title="Support" text="Email: <a href=\"mailto:support@preludens.nl\">support@preludens.nl</a><br>Phone: <a href=\"tel:+31154042028\">+31 15 404 202 8</a>" %}
 {% include panels/value.html title="Visit" text="By appointment only." %}
 {% endcapture %}
