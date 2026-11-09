@@ -10,6 +10,19 @@ sector: Maritime sector and training
 doelgroep: Bridge and lock operators with years of experience
 vorm: Game-based online training with MicroGames, comics and discussion sheets
 rol: Storyline, MicroGames and discussion sheets
+video:
+  file: nnvo-wetgeving-explainer.mp4
+  poster: /assets/images/verhalen/nnvo-wet-en-regelgeving-video-poster.jpg
+  label: >-
+    Explainer for Herscholing Wet- en Regelgeving: a waterway showing the national,
+    provincial, municipal and water-authority levels, and cards of Dutch inland
+    shipping law being placed in order
+  caption: >-
+    A minute from the training. On one stretch of water, rules from the national
+    government, the province, the municipality and the water authority all apply at
+    once. You place the act, the decree and the regulation in the right order, and see
+    straight away whether it fits. The voice-over is Dutch.
+  download_label: Download the video (mp4, 3.7 MB)
 summary: >-
   How do you keep experienced bridge and lock operators sharp in a field where the rules are
   constantly evolving? For NNVO, Preludens developed a refresher that challenges experience rather

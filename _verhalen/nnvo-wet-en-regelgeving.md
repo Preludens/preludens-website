@@ -10,6 +10,18 @@ sector: Nautische sector en opleidingen
 doelgroep: Brug- en sluisoperators met jaren ervaring
 vorm: Game-based online training met MicroGames, comics en praatplaten
 rol: Verhaallijn, MicroGames en praatplaten
+video:
+  file: nnvo-wetgeving-explainer.mp4
+  poster: /assets/images/verhalen/nnvo-wet-en-regelgeving-video-poster.jpg
+  label: >-
+    Explainer van Herscholing Wet- en Regelgeving: een vaarwater met de niveaus van
+    Rijk, provincie, gemeente en waterschap, en kaarten van de Binnenvaartwet die in
+    rangorde worden gelegd
+  caption: >-
+    Een minuut uit de training. Op een stuk water gelden tegelijk regels van het Rijk,
+    de provincie, de gemeente en het waterschap. Je legt de Binnenvaartwet, het besluit
+    en de regeling in de juiste rangorde, en ziet meteen of het klopt.
+  download_label: Download de video (mp4, 3,7 MB)
 summary: >-
   Hoe houd je ervaren brug- en sluisoperators scherp in een vakgebied waar regels voortdurend in
   beweging zijn? Voor NNVO ontwikkelde Preludens een herscholing die ervaring uitdaagt in plaats
