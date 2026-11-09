@@ -38,7 +38,7 @@ video:
     their component
   caption: >-
     A minute from the game. You drag evaporating, condensing, compressing and expanding
-    onto the component where each happens, and every move answers back with the reason.
+    onto the component where each happens, and each move comes back with the explanation.
     The video gets one wrong on purpose, so you see the correction too. The voice-over
     is Dutch.
   download_label: Download the video (mp4, 3.5 MB)

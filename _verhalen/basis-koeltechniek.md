@@ -36,7 +36,7 @@ video:
     Explainer van Basis Koeltechniek: het koelcircuit met verdamper, condensor,
     compressor en expansieventiel, waarin processen naar hun component worden gesleept
   caption: >-
-    Een minuut uit de game. Je sleept verdampen, condenseren, comprimeren en expanderen
+    Een minuut uit het spel. Je sleept verdampen, condenseren, comprimeren en expanderen
     naar de component waar ze gebeuren, en bij elke zet komt de uitleg meteen terug. In
     de video wordt bewust een keer misgegokt, zodat je ook de correctie ziet.
   download_label: Download de video (mp4, 3,5 MB)

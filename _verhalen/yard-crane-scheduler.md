@@ -34,7 +34,7 @@ video:
     Explainer van Yard Crane Scheduler: de yard, de kranen en de schepen in beeld
     terwijl een missie wordt gepland en gespeeld
   caption: >-
-    Een minuut uit de game. Je geeft elke container een plek, zet de kranen klaar en
+    Een minuut uit het spel. Je geeft elke container een plek, zet de kranen klaar en
     ziet daarna wat je planning oplevert: korte ritten, of AGV's die staan te wachten
     bij het blok. De vijf sterren aan het eind laten zien waar de tijd verloren ging.
     De voice-over is Engels.
