@@ -27,6 +27,18 @@ figures:
     caption: De yard vullen terwijl een schip wordt geladen
   - file: yard-crane-hub.jpg
     caption: Het missiebord van Yard Crane Scheduler
+video:
+  file: ycs-explainer.mp4
+  poster: /assets/images/verhalen/yard-crane-scheduler-video-poster.jpg
+  label: >-
+    Explainer van Yard Crane Scheduler: de yard, de kranen en de schepen in beeld
+    terwijl een missie wordt gepland en gespeeld
+  caption: >-
+    Een minuut uit de game. Je geeft elke container een plek, zet de kranen klaar en
+    ziet daarna wat je planning oplevert: korte ritten, of AGV's die staan te wachten
+    bij het blok. De vijf sterren aan het eind laten zien waar de tijd verloren ging.
+    De voice-over is Engels.
+  download_label: Download de video (mp4, 3,1 MB)
 summary: >-
   Samen met de TU Delft werken we aan Yard Crane Scheduler: een MicroGame waarin deelnemers
   ervaren hoe keuzes in een containerterminal elkaar beïnvloeden. De eerste versie is ongeveer

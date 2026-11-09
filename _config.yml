@@ -17,6 +17,12 @@ lang: nl
 email: info@preludens.nl
 logo: /assets/images/logo/preludens-logo.png
 
+# Waar de game-explainers staan. De video's zijn te zwaar voor de repository en
+# horen in een Scaleway-bucket; hier staat de basis-URL waar de bestandsnaam uit
+# `video.file` achter geplakt wordt (sluit af met een /). Zolang dit leeg is,
+# laat de verhaal-layout de speler weg en blijft de pagina heel.
+media_base: ""
+
 languages: ["nl", "en"]
 default_lang: "nl"
 exclude_from_localization:

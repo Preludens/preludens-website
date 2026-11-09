@@ -2,17 +2,25 @@
   Video in hetzelfde witte kader als panels/figure.html, maar met ronde in
   plaats van schuine hoeken: de snede van #sp-hero-clip loopt rechtsonder
   dwars door de bedieningsbalk van de speler heen.
-  Pass: src, poster, label, caption, ratio, download_label.
+  Pass: src, poster, label, caption, ratio, download_label, class.
+
+  `src` en `poster` mogen een pad binnen de site zijn of een volledige URL —
+  de game-explainers staan in een bucket, buiten de repository. Een absolute
+  URL laten we met rust; `relative_url` zou er de baseurl voor plakken.
 
   `preload="none"` houdt de pagina licht: pas bij een klik op afspelen haalt
   de browser de video op. De posterafbeelding staat er tot die tijd.
 {% endcomment %}
-<figure class="sp-video">
+{% assign video_src = include.src %}
+{% unless video_src contains "://" %}{% assign video_src = video_src | relative_url %}{% endunless %}
+{% assign video_poster = include.poster %}
+{% unless video_poster contains "://" %}{% assign video_poster = video_poster | relative_url %}{% endunless %}
+<figure class="sp-video{% if include.class %} {{ include.class }}{% endif %}">
   <div class="sp-hero-shadow">
     <div class="sp-video__frame"{% if include.ratio %} style="--sp-media-ratio: {{ include.ratio }};"{% endif %}>
-      <video class="sp-video__player" controls playsinline preload="none" poster="{{ include.poster | relative_url }}"{% if include.label %} aria-label="{{ include.label }}"{% endif %}>
-        <source src="{{ include.src | relative_url }}" type="video/mp4">
-        <p>Je browser kan deze video niet afspelen. <a href="{{ include.src | relative_url }}">{{ include.download_label | default: "Download de video (mp4)" }}</a>.</p>
+      <video class="sp-video__player" controls playsinline preload="none" poster="{{ video_poster }}"{% if include.label %} aria-label="{{ include.label }}"{% endif %}>
+        <source src="{{ video_src }}" type="video/mp4">
+        <p>Je browser kan deze video niet afspelen. <a href="{{ video_src }}">{{ include.download_label | default: "Download de video (mp4)" }}</a>.</p>
       </video>
     </div>
   </div>

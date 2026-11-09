@@ -2300,6 +2300,24 @@ p { margin: 0 0 var(--space-sm); }
   }
 }
 
+/* De game-explainer in de tekstkolom van een verhaal. Het witte kader, de
+   ronde hoeken en de speler zelf komen uit .sp-video; hier staat alleen wat
+   de verhaalkolom anders doet dan een paneelband: ruimte eromheen en een
+   bijschrift dat de regellengte van de lopende tekst aanhoudt. */
+/* Twee klassen diep, want components/_panel.scss wordt na dit bestand
+   geïmporteerd: op gelijke specificiteit zou de marge van .sp-video winnen. */
+.verhaal-main .verhaal-video {
+  margin: var(--space-lg) 0 var(--space-xl);
+}
+
+.verhaal-main .verhaal-video .sp-video__caption {
+  max-width: 70ch;
+  margin: var(--space-xs) 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .verhaal-facts-block {
   margin-top: var(--space-xl);
 

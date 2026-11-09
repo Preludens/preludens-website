@@ -27,6 +27,17 @@ figures:
     caption: Filling the yard while a ship is loaded
   - file: yard-crane-hub.jpg
     caption: The mission board of Yard Crane Scheduler
+video:
+  file: ycs-explainer.mp4
+  poster: /assets/images/verhalen/yard-crane-scheduler-video-poster.jpg
+  label: >-
+    Explainer for Yard Crane Scheduler: the yard, the cranes and the ships on screen
+    while a mission is planned and played
+  caption: >-
+    A minute from the game. You give every container a slot, position the cranes, and
+    then watch what your plan does: short trips, or AGVs queueing at the block. The
+    five goal stars at the end show where the time went.
+  download_label: Download the video (mp4, 3.1 MB)
 summary: >-
   Together with TU Delft we are working on Yard Crane Scheduler: a MicroGame in which
   participants experience how choices in a container terminal affect each other. The first

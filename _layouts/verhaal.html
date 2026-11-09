@@ -16,6 +16,16 @@ layout: default
 {% endif %}
 {% assign aside_image = local_image %}
 
+{% comment %}
+  Een verhaalpagina rendert volledig uit front matter; de body is leeg. Een
+  game-explainer hangt daarom aan de sleutel `video:` met file, poster, label,
+  caption en download_label.
+
+  `file` is alleen de bestandsnaam: de video's staan in een bucket buiten de
+  repository en `site.media_base` zegt waar. Staat die leeg, dan laten we de
+  speler weg in plaats van een kapotte bron neer te zetten.
+{% endcomment %}
+{% capture verhaal_video %}{% if page.video and site.media_base and site.media_base != "" %}{% assign video_src = site.media_base | append: page.video.file %}{% include panels/video.html src=video_src poster=page.video.poster label=page.video.label caption=page.video.caption ratio=page.video.ratio download_label=page.video.download_label class="verhaal-video" %}{% endif %}{% endcapture %}
 <article class="verhaal-a">
   <header class="verhaal-hero{% if local_image == "" %} verhaal-hero--plain{% endif %}">
     {% if local_image != "" %}
@@ -54,6 +64,7 @@ layout: default
                 <p>{{ page.intro }}</p>
               </section>
             {% endif %}
+            {{ verhaal_video }}
             {% if page.feiten_eerst and page.feiten %}
               <section class="verhaal-facts-block">
                 <h2>{{ page.feiten_kop | default: t.verhaal.facts_label }}</h2>
@@ -82,6 +93,7 @@ layout: default
               </section>
             {% endfor %}
           {% else %}
+          {{ verhaal_video }}
           {% if uitdaging %}
             <section class="verhaal-section">
               <h2>{{ t.verhaal.challenge }}</h2>
