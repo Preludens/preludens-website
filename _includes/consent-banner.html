@@ -1,0 +1,54 @@
+{%- comment -%}
+  De consentbanner. Staat onderaan, is niet modaal en legt de hero niet toe:
+  de bezoeker kan de pagina lezen en daarna kiezen.
+
+  Geen donkere patronen. Accepteren en weigeren zijn twee knoppen naast elkaar,
+  beide één klik, beide even vindbaar. "Zelf kiezen" vouwt de categorieën uit
+  voor wie statistieken wel en marketing niet wil.
+
+  Hij staat `hidden` in de HTML en wordt door assets/js/consent.js zichtbaar
+  gemaakt zodra blijkt dat er nog geen keuze is. Zonder JavaScript is er ook
+  niets om toestemming voor te vragen — dan laadt er geen enkele tag.
+{%- endcomment -%}
+{% include locale.html %}
+<div class="consent" data-consent hidden>
+  <div class="consent__inner" role="dialog" aria-modal="false" aria-labelledby="consent-title" aria-describedby="consent-text">
+    <div class="consent__copy">
+      <h2 class="consent__title" id="consent-title">{{ t.consent.title }}</h2>
+      <p class="consent__text" id="consent-text">{{ t.consent.text }}</p>
+    </div>
+
+    <div class="consent__options" data-consent-options hidden>
+      <ul class="consent__list">
+        <li class="consent__option">
+          <label class="consent__label">
+            <input type="checkbox" checked disabled>
+            <span class="consent__option-name">{{ t.consent.categories.necessary }}</span>
+          </label>
+          <p class="consent__option-text">{{ t.consent.categories.necessary_text }}</p>
+        </li>
+        <li class="consent__option">
+          <label class="consent__label">
+            <input type="checkbox" data-consent-category="statistics">
+            <span class="consent__option-name">{{ t.consent.categories.statistics }}</span>
+          </label>
+          <p class="consent__option-text">{{ t.consent.categories.statistics_text }}</p>
+        </li>
+        <li class="consent__option">
+          <label class="consent__label">
+            <input type="checkbox" data-consent-category="marketing">
+            <span class="consent__option-name">{{ t.consent.categories.marketing }}</span>
+          </label>
+          <p class="consent__option-text">{{ t.consent.categories.marketing_text }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="consent__actions">
+      <button class="btn btn-primary" type="button" data-consent-accept>{{ t.consent.accept }}</button>
+      <button class="btn btn-secondary" type="button" data-consent-reject>{{ t.consent.reject }}</button>
+      <button class="btn btn-secondary" type="button" data-consent-save hidden>{{ t.consent.save }}</button>
+      <button class="consent__toggle" type="button" data-consent-customise aria-expanded="false">{{ t.consent.customise }}</button>
+    </div>
+  </div>
+</div>

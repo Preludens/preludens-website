@@ -1,0 +1,11 @@
+{%- comment -%}
+  Veelgestelde vragen: een kolom <details>-elementen, opgebouwd uit
+  panels/faq-item.html. Pass: items, label.
+
+  Het bezwarenblok van de landingspagina's. Geen eigen accordeon in
+  JavaScript: <details> doet open en dicht, onthoudt de stand bij zoeken op de
+  pagina en werkt met het toetsenbord zonder dat we dat opnieuw bouwen.
+{%- endcomment -%}
+<div class="sp-faq" aria-label="{{ include.label }}">
+  {{ include.items }}
+</div>

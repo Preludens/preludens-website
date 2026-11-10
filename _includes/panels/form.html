@@ -1,0 +1,90 @@
+{%- comment -%}
+  Het formulierblok van de landingspagina's. Eigen formulier in de huisstijl,
+  dat naar de HubSpot Forms API post — geen HubSpot-embed in een iframe, want
+  die is nauwelijks te stylen en je moet voor een form_submit-event op
+  postMessage gaan luisteren.
+
+  Pass: title, lead, casus, id, submit_note.
+
+  Vijf velden en niet meer. Bij honderd bezoekers kost elk extra veld een
+  merkbaar deel van de oogst, dus geen telefoonnummer, geen functietitel en
+  geen aanhef.
+
+  Spam gaat tegen zonder captcha: een honeypot-veld dat een mens niet ziet, en
+  een tijdsdrempel in assets/js/form.js — wie het formulier binnen drie
+  seconden invult, is geen mens.
+
+  Het bevestigingsscherm komt op de plaats van het formulier. Een bedankpagina
+  zou een extra afhaakmoment zijn, en bij dit volume is één bezoeker die
+  onderweg wegvalt al een procent.
+
+  Dit blok hoort op _layouts/landing.html: daar laadt assets/js/form.js.
+  Zet je het op een pagina met de gewone layout, voeg dat script daar dan toe,
+  anders staat er een formulier dat niets doet.
+
+  Verzenden kan alleen als preludens.hubspot.portal_id en form_guid in
+  _config.yml staan. Zolang die leeg zijn, staat het formulier er wel en
+  weigert hij te verzenden: beter een zichtbare foutmelding dan een post naar
+  een endpoint dat niet bestaat.
+{%- endcomment -%}
+{% include locale.html %}
+{% capture form_body %}
+<div class="lead-form" data-lead-form-wrap>
+  <div class="lead-form__intro">
+    <h2>{{ include.title }}</h2>
+    {% if include.lead %}<p class="sp-lead">{{ include.lead }}</p>{% endif %}
+  </div>
+
+  <form class="lead-form__form" data-lead-form data-casus="{{ include.casus }}"
+        data-error-send="{{ t.form.error_send }}" data-sending="{{ t.form.sending }}" novalidate>
+    <div class="lead-form__row">
+      <label class="lead-form__field">
+        <span class="lead-form__label">{{ t.form.name }}</span>
+        <input type="text" name="name" autocomplete="name" required data-error="{{ t.form.error_name }}">
+      </label>
+      <label class="lead-form__field">
+        <span class="lead-form__label">{{ t.form.email }}</span>
+        <input type="email" name="email" autocomplete="email" required data-error="{{ t.form.error_email }}">
+      </label>
+    </div>
+
+    <label class="lead-form__field">
+      <span class="lead-form__label">{{ t.form.company }}</span>
+      <input type="text" name="company" autocomplete="organization" required data-error="{{ t.form.error_company }}">
+    </label>
+
+    <label class="lead-form__field">
+      <span class="lead-form__label">{{ t.form.message }}</span>
+      <textarea name="message" rows="4"></textarea>
+      <span class="lead-form__hint">{{ t.form.message_hint }}</span>
+    </label>
+
+    {%- comment -%}
+      Het honeypot-veld. Niet `hidden` en niet display:none — sommige bots
+      slaan die over. Het staat buiten beeld en buiten de tabvolgorde, en een
+      schermlezer krijgt de instructie te lezen om het leeg te laten.
+    {%- endcomment -%}
+    <div class="lead-form__trap" data-honeypot aria-hidden="true">
+      <label>
+        {{ t.form.honeypot_label }}
+        <input type="text" name="website" tabindex="-1" autocomplete="off">
+      </label>
+    </div>
+
+    <input type="hidden" name="casus" value="{{ include.casus }}">
+
+    <p class="lead-form__error" data-form-error role="alert" hidden></p>
+
+    <div class="lead-form__actions">
+      <button class="btn btn-primary" type="submit" data-cta-position="{{ include.id | default: 'formulier' }}">{{ t.form.submit }}</button>
+      {% if include.submit_note %}<span class="lead-form__note">{{ include.submit_note }}</span>{% endif %}
+    </div>
+  </form>
+
+  <div class="lead-form__done" data-form-done hidden>
+    <h2>{{ t.form.success_title }}</h2>
+    <p class="sp-lead">{{ t.form.success_text }}</p>
+  </div>
+</div>
+{% endcapture %}
+{% include panels/panel.html variant="pale" id=include.id body=form_body %}

@@ -1,0 +1,58 @@
+{%- comment -%}
+  Layout voor de landingspagina's onder /oplossingen/.
+
+  Geen hoofdnavigatie en een voettekst zonder menu: één uitgang per pagina. Wie
+  hier komt uit een advertentie of een persoonlijke mail heeft één ding te
+  beslissen, en elke andere link is een manier om dat niet te doen. De uitgang
+  is de call to action in de pagina zelf.
+
+  De <head> komt uit _includes/head.html, hetzelfde bestand als default.html
+  gebruikt. Daar zit ook de consentlaag en de GTM-container in; als die twee
+  koppen uit elkaar lopen, mist precies de pagina waar het om gaat zijn meting.
+
+  De voettekst houdt wat een bezoeker nodig heeft en laat de rest weg: direct
+  contact, het jaartal en de cookiekeuze. Geen logo dat naar de homepage wijst
+  — dat is de uitgang die we juist niet willen.
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="{{ site.active_lang | default: site.default_lang | default: 'nl' }}">
+<head>
+{% include head.html %}
+</head>
+<body class="landing {% if page.body_class %}{{ page.body_class }}{% endif %}"{% if page.casus %} data-casus="{{ page.casus }}"{% endif %}>
+{% include analytics-noscript.html %}
+  {% include locale.html %}
+  <a class="skip-link" href="#main">{{ t.skip_link }}</a>
+
+  <header class="landing-header">
+    <div class="landing-header__inner">
+      <img class="landing-header__logo" src="{{ '/assets/images/logo/preludens-logo.svg' | relative_url }}" alt="Preludens" width="402" height="119">
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  <footer class="landing-footer">
+    <div class="landing-footer__inner">
+      <p class="landing-footer__contact">
+        <strong>{{ t.footer.direct_contact }}</strong>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <a href="tel:+31152024047">+31 15 202 404 7</a>
+      </p>
+      <p class="landing-footer__meta">
+        &copy; {{ 'now' | date: '%Y' }} Preludens
+        <span aria-hidden="true"> · </span>
+        <button class="footer-consent" type="button" data-consent-revoke>{{ t.consent.revoke }}</button>
+      </p>
+    </div>
+  </footer>
+
+  {% include consent-banner.html %}
+  <script src="{{ '/assets/js/consent.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/tracking.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/form.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

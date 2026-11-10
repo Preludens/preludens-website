@@ -1,0 +1,82 @@
+{%- comment -%}
+  Consent Mode v2, modus advanced.
+
+  Advanced betekent: de Google-tags laden altijd, maar zonder toestemming zetten
+  ze geen cookies en sturen ze alleen een geanonimiseerde ping. Dat is hier de
+  reden dat het advanced is en niet basic: bij 60 tot 150 bezoekers per pagina
+  en een weigeringspercentage van 30 tot 50 procent is de helft van de dataset
+  het verschil tussen een conclusie en een gok.
+
+  Dit blok staat met opzet inline en synchroon vóór de container: zodra GTM
+  laadt, moet de stand er al zijn. `wait_for_update` geeft de bezoeker een halve
+  seconde om te kiezen voordat de tags met de standaardstand vertrekken.
+
+  De standaardstand is alles geweigerd, behalve wat de site zelf nodig heeft om
+  te werken. Daarna zet de bewaarde keuze er direct een `update` bovenop, zodat
+  een terugkerende bezoeker geen moment in de geweigerde stand hangt.
+{%- endcomment -%}
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+
+    (function () {
+      var COOKIE = "preludens_consent";
+      var saved = null;
+
+      try {
+        var match = document.cookie.match(/(?:^|;\s*)preludens_consent=([^;]*)/);
+        if (match) {
+          var parsed = JSON.parse(decodeURIComponent(match[1]));
+          /* Alleen een keuze die deze versie van de banner heeft gezet telt.
+             Komen er later categorieën bij, dan loopt het versienummer op en
+             vraagt de banner het opnieuw in plaats van iets aan te nemen. */
+          if (parsed && parsed.v === 1) saved = parsed;
+        }
+      } catch (e) {
+        saved = null;
+      }
+
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+        personalization_storage: "denied",
+        functionality_storage: "granted",
+        security_storage: "granted",
+        wait_for_update: 500
+      });
+
+      gtag("set", "ads_data_redaction", true);
+      gtag("set", "url_passthrough", true);
+
+      if (saved) {
+        var statistics = saved.statistics ? "granted" : "denied";
+        var marketing = saved.marketing ? "granted" : "denied";
+
+        gtag("consent", "update", {
+          ad_storage: marketing,
+          ad_user_data: marketing,
+          ad_personalization: marketing,
+          analytics_storage: statistics,
+          personalization_storage: marketing
+        });
+
+        if (saved.marketing) gtag("set", "ads_data_redaction", false);
+      }
+
+      /* De banner en de tracking-scripts lezen dit; het staat hier zodat ze
+         niet nog een keer het cookie hoeven te ontleden. */
+      window.preludensConsent = {
+        cookieName: COOKIE,
+        version: 1,
+        state: saved
+      };
+
+      dataLayer.push({
+        event: "consent_state",
+        consent_statistics: saved ? (saved.statistics ? "granted" : "denied") : "unset",
+        consent_marketing: saved ? (saved.marketing ? "granted" : "denied") : "unset"
+      });
+    })();
+  </script>

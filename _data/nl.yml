@@ -138,3 +138,43 @@ play_blog:
   back_to_play: "← Terug naar Play"
   read_post: "Lees het artikel"
   read_post_aria: "Lees het artikel: %s"
+
+# Consentbanner (Consent Mode v2, modus advanced). Zie _includes/consent-banner.html.
+consent:
+  title: "Mogen we meten hoe deze pagina werkt?"
+  text: >-
+    Noodzakelijke cookies staan altijd aan. Voor statistieken en marketing
+    vragen we het je. Je keuze geldt zes maanden en is onderaan elke pagina te
+    wijzigen.
+  accept: "Alles accepteren"
+  reject: "Alleen noodzakelijk"
+  save: "Keuze opslaan"
+  customise: "Zelf kiezen"
+  revoke: "Cookievoorkeuren"
+  categories:
+    necessary: "Noodzakelijk"
+    necessary_text: "Houdt je taalkeuze en deze cookiekeuze vast. Zonder deze werkt de site niet."
+    statistics: "Statistieken"
+    statistics_text: "Hoeveel mensen een pagina lezen, hoe ver ze komen en waar ze afhaken."
+    marketing: "Marketing"
+    marketing_text: "Welke advertentie of welke bron iemand hier bracht."
+
+# Het formulier op de landingspagina's. Zie _includes/panels/form.html.
+form:
+  name: "Naam"
+  email: "E-mailadres"
+  company: "Organisatie"
+  message: "Waar loop je tegenaan?"
+  message_hint: "Niet verplicht. Eén of twee regels is genoeg."
+  submit: "Verstuur"
+  sending: "Versturen…"
+  error_name: "Vul je naam in."
+  error_email: "Vul een e-mailadres in waarop we je kunnen bereiken."
+  error_company: "Vul je organisatie in."
+  error_send: "Het versturen lukte niet. Probeer het nog eens, of mail ons op info@preludens.nl — je tekst staat er nog."
+  success_title: "Je bericht is binnen"
+  # De reactietermijn is met opzet niet ingevuld: dat is een toezegging die
+  # Preludens doet, niet een tekst om te verzinnen. Zet hem erin zodra hij
+  # vaststaat — "we reageren binnen twee werkdagen" is sterker dan dit.
+  success_text: "We lezen mee en nemen contact met je op. Geen bevestigingsmail nodig: deze pagina is je bevestiging."
+  honeypot_label: "Laat dit veld leeg"

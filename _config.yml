@@ -28,6 +28,39 @@ logo: /assets/images/logo/preludens-logo.png
 # anders blijft een bezoeker die de pagina al eens zag de oude film houden.
 media_base: "https://preludens-website-content.s3.fr-par.scw.cloud/video/"
 
+# Meting en leadopvolging voor de vier landingspagina's onder /oplossingen/
+# (zie _marketing/overdracht-stap-0-meetfundament.md). Alles staat hier leeg:
+# zolang een waarde leeg is, laadt het bijbehorende script niet. Zo staat er
+# nergens een half ingevuld container-ID of een formulier dat naar niets post.
+#
+# Vul je gtm_id, dan laadt de container op elke pagina, met Consent Mode v2 in
+# de modus advanced ervoor (zie _includes/consent-default.html). GA4 en
+# Microsoft Clarity hangen binnen GTM aan de categorie statistieken; ze staan
+# dus niet in de site zelf. ga4_measurement_id en clarity_project_id staan hier
+# alleen zodat in de repository terug te vinden is welke property en welk
+# project erbij horen.
+preludens:
+  analytics:
+    gtm_id: ""                # GTM-XXXXXXX
+    ga4_measurement_id: ""    # G-XXXXXXXXXX — geconfigureerd in GTM, niet hier
+    clarity_project_id: ""    # Clarity-project — geconfigureerd in GTM, niet hier
+  hubspot:
+    # Portal-ID en form-GUID van het HubSpot-formulier waar de landingspagina's
+    # naartoe posten. Beide leeg: het formulier rendert en valideert wel, maar
+    # weigert te verzenden in plaats van naar een verzonnen endpoint te posten.
+    portal_id: ""
+    form_guid: ""
+    # De HubSpot-trackingcode op de hele site, achter de categorie statistieken.
+    # Nodig omdat hubspotutk er al moet staan voordat iemand het formulier
+    # bereikt; anders mist de bronkoppeling van de lead.
+    tracking: false
+  demo:
+    # De URL waarop de MicroGame-demo direct opent. Staat leeg zolang
+    # beslissing F open is (draait de demo in Prepo, op de site, in een
+    # iframe?). Zolang hij leeg is, wijst de primaire knop op de
+    # landingspagina's naar het formulier in plaats van naar een dode link.
+    url: ""
+
 languages: ["nl", "en"]
 default_lang: "nl"
 exclude_from_localization:

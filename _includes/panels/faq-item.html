@@ -1,0 +1,11 @@
+{%- comment -%}
+  Eén vraag in het blok veelgestelde vragen (panels/faq.html).
+  Pass: question, answer, open.
+{%- endcomment -%}
+<details class="sp-faq__item"{% if include.open %} open{% endif %}>
+  <summary class="sp-faq__question">
+    {{ include.question }}
+    <span class="sp-faq__sign" aria-hidden="true"></span>
+  </summary>
+  <p class="sp-faq__answer">{{ include.answer }}</p>
+</details>

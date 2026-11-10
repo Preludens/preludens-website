@@ -1,0 +1,41 @@
+{%- comment -%}
+  De <head> van de site, als los bestand zodat _layouts/default.html en
+  _layouts/landing.html dezelfde meta-, font- en meetcode delen. Zat tot stap 0
+  van de marketingexperimenten (zie _marketing/) in default.html; de
+  landingspagina's hebben hem ook nodig, en twee koppen die uit elkaar lopen is
+  precies hoe je een ontbrekend event krijgt.
+
+  De volgorde in dit bestand is niet vrij: de consentstand moet in de dataLayer
+  staan vóór de GTM-container laadt, anders vuurt GTM zijn tags al voordat hij
+  weet wat mag.
+{%- endcomment -%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include verhaal-social.html %}
+  {%- comment -%}
+    Alleen op de anderstalige pagina's: de SEO-tag bouwt og:url uit page.url en
+    kent het /en/-voorvoegsel van polyglot niet, dus daar zette hij de
+    Nederlandse URL neer terwijl de canonical ernaast wel naar /en/ wees. Deze
+    staat er bewust vóór, net als de Open Graph-tags in verhaal-social.html:
+    consumenten nemen de eerste. Op Nederlandse pagina's klopt de tag van de
+    gem al en voegen we niets toe.
+  {%- endcomment -%}
+  {%- if site.active_lang != site.default_lang -%}
+  <meta property="og:url" content="{{ site.url }}/{{ site.active_lang }}{{ page.url }}">
+  {%- endif -%}
+  {% seo canonical=false %}
+  {% if page.robots %}
+  <meta name="robots" content="{{ page.robots }}">
+  {% endif %}
+  {% I18n_Headers %}
+  {% include structured-data.html %}
+  {% if page.hero_preload %}
+  <link rel="preload" as="image" href="{{ page.hero_preload | relative_url }}" type="image/webp" fetchpriority="high">
+  {% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>">
+  {% include consent-default.html %}
+  {% include analytics.html %}

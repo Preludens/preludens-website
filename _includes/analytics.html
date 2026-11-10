@@ -1,0 +1,38 @@
+{%- comment -%}
+  Google Tag Manager, plus de paginawaarden die elk event nodig heeft.
+
+  Eén container voor de hele site. GA4, Microsoft Clarity en de
+  HubSpot-trackingcode hangen daarbinnen aan de categorie statistieken; de
+  advertentietags aan marketing. De configuratie van die tags staat in
+  _marketing/gtm-configuratie.md, met een importeerbare container ernaast.
+
+  De push met paginawaarden staat vóór de container, zodat `casus` en
+  `page_language` al in de dataLayer staan als GTM zijn eerste page_view
+  afvuurt. Zet je hem erna, dan mist precies het eerste event zijn casus — en
+  dat is bij dit volume het event dat je niet kunt missen.
+
+  `site.preludens` komt uit _config.yml. Staat er geen gtm_id, dan laadt er
+  niets: de site werkt dan gewoon zonder meting, in plaats van met een
+  container-ID dat niet bestaat.
+{%- endcomment -%}
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.preludensSite = {
+      hubspotPortalId: {{ site.preludens.hubspot.portal_id | default: "" | jsonify }},
+      hubspotFormGuid: {{ site.preludens.hubspot.form_guid | default: "" | jsonify }},
+      hubspotTracking: {{ site.preludens.hubspot.tracking | default: false | jsonify }},
+      casus: {{ page.casus | default: "" | jsonify }},
+      language: {{ site.active_lang | default: site.default_lang | default: "nl" | jsonify }}
+    };
+    dataLayer.push({
+      casus: window.preludensSite.casus,
+      page_language: window.preludensSite.language,
+      page_path: window.location.pathname
+    });
+  </script>
+  {%- assign gtm_id = site.preludens.analytics.gtm_id -%}
+  {%- if gtm_id and gtm_id != "" -%}
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{ gtm_id }}');</script>
+  {%- else -%}
+  <!-- Geen preludens.analytics.gtm_id in _config.yml: de container laadt niet. -->
+  {%- endif -%}

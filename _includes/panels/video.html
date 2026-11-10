@@ -2,7 +2,14 @@
   Video in hetzelfde witte kader als panels/figure.html, maar met ronde in
   plaats van schuine hoeken: de snede van #sp-hero-clip loopt rechtsonder
   dwars door de bedieningsbalk van de speler heen.
-  Pass: src, poster, label, caption, ratio, download_label, play_label, class.
+  Pass: src, poster, label, caption, ratio, download_label, play_label, class,
+  title.
+
+  `title` is de korte naam die als `video_title` meegaat op de events
+  video_play en video_75 (assets/js/tracking.js). Zonder opgave is het de
+  paginatitel. Het is met opzet niet `label`: dat is de beschrijving voor een
+  schermlezer en loopt makkelijk over de honderd tekens die GA4 aan een
+  parameterwaarde geeft.
 
   Over de poster ligt een gouden afspeelknop die het hele kader beslaat: je
   kunt overal op het stilstaande beeld klikken. Hij staat in de HTML maar is
@@ -23,7 +30,7 @@
 <figure class="sp-video{% if include.class %} {{ include.class }}{% endif %}">
   <div class="sp-hero-shadow">
     <div class="sp-video__frame" data-sp-video{% if include.ratio %} style="--sp-media-ratio: {{ include.ratio }};"{% endif %}>
-      <video class="sp-video__player" controls playsinline preload="none" poster="{{ video_poster }}"{% if include.label %} aria-label="{{ include.label }}"{% endif %}>
+      <video class="sp-video__player" controls playsinline preload="none" poster="{{ video_poster }}"{% if include.label %} aria-label="{{ include.label }}"{% endif %} data-video-title="{{ include.title | default: page.title }}">
         <source src="{{ video_src }}" type="video/mp4">
         <p>Je browser kan deze video niet afspelen. <a href="{{ video_src }}">{{ include.download_label | default: "Download de video (mp4)" }}</a>.</p>
       </video>

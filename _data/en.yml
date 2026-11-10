@@ -138,3 +138,42 @@ play_blog:
   back_to_play: "← Back to Play"
   read_post: "Read the article"
   read_post_aria: "Read the article: %s"
+
+# Consent banner (Consent Mode v2, advanced). See _includes/consent-banner.html.
+consent:
+  title: "May we measure how this page works?"
+  text: >-
+    Necessary cookies are always on. For statistics and marketing we ask
+    first. Your choice holds for six months and can be changed at the bottom
+    of any page.
+  accept: "Accept all"
+  reject: "Necessary only"
+  save: "Save choice"
+  customise: "Choose yourself"
+  revoke: "Cookie preferences"
+  categories:
+    necessary: "Necessary"
+    necessary_text: "Remembers your language and this cookie choice. Without these the site does not work."
+    statistics: "Statistics"
+    statistics_text: "How many people read a page, how far they get and where they drop off."
+    marketing: "Marketing"
+    marketing_text: "Which advert or which source brought someone here."
+
+# The form on the landing pages. See _includes/panels/form.html.
+form:
+  name: "Name"
+  email: "Email address"
+  company: "Organisation"
+  message: "What are you running into?"
+  message_hint: "Optional. One or two lines is enough."
+  submit: "Send"
+  sending: "Sending…"
+  error_name: "Please fill in your name."
+  error_email: "Please fill in an email address we can reach you on."
+  error_company: "Please fill in your organisation."
+  error_send: "Sending failed. Try again, or email us at info@preludens.nl — your text is still here."
+  success_title: "Your message arrived"
+  # See the note in nl.yml: the response time is a promise Preludens makes,
+  # not copy to invent.
+  success_text: "We are reading along and will get in touch. No confirmation email needed: this page is your confirmation."
+  honeypot_label: "Leave this field empty"

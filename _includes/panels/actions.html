@@ -13,8 +13,15 @@
     {% endcomment %}
     {% elsif include.primary_fixed %}
     <a class="btn btn-primary" {% static_href %}href="{{ site.baseurl }}{{ include.primary_href }}"{% endstatic_href %}>{{ include.primary_label }}</a>
+    {% comment %}
+      primary_demo: zet data-demo-start op de knop. assets/js/tracking.js vuurt
+      daarop demo_start, met de casus van de pagina erbij. Alleen voor de knop
+      die de demo echt opent — niet voor een knop die ernaartoe scrollt.
+    {% endcomment %}
+    {% elsif include.primary_demo %}
+    <a class="btn btn-primary" href="{% include panels/href.html href=action_href %}" data-demo-start{% if include.casus %} data-casus="{{ include.casus }}"{% endif %}{% if include.primary_position %} data-cta-position="{{ include.primary_position }}"{% endif %}>{{ include.primary_label }}</a>
     {% else %}
-    <a class="btn btn-primary" href="{% include panels/href.html href=action_href %}">{{ include.primary_label }}</a>
+    <a class="btn btn-primary" href="{% include panels/href.html href=action_href %}"{% if include.primary_position %} data-cta-position="{{ include.primary_position }}"{% endif %}>{{ include.primary_label }}</a>
     {% endif %}
   {% endif %}
   {% if include.secondary_label %}

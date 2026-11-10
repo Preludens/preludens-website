@@ -1,0 +1,203 @@
+/* Het leadformulier op de landingspagina's.
+
+   De site heeft nergens anders invoervelden, dus dit is de eerste keer dat ze
+   vorm krijgen. Ze volgen de kaarten: wit vlak, haarlijn, dezelfde radius als
+   de knoppen. De gouden lijn komt alleen bij focus — dat is het enige moment
+   waarop een veld de aandacht hoort te hebben. */
+
+.lead-form {
+  display: grid;
+  gap: var(--space-lg);
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+.lead-form__intro {
+  display: grid;
+  gap: var(--space-xs);
+
+  h2 { margin: 0; }
+  p { margin: 0; }
+}
+
+.lead-form__form {
+  display: grid;
+  gap: var(--space-md);
+  text-align: left;
+}
+
+.lead-form__row {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.lead-form__field {
+  display: grid;
+  gap: 0.375rem;
+}
+
+.lead-form__label {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.lead-form__field input,
+.lead-form__field textarea {
+  width: 100%;
+  padding: 0.75rem 0.875rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-ink);
+  background: var(--color-cloud-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition);
+
+  &::placeholder { color: var(--color-slate-teal); }
+
+  &:hover { border-color: var(--color-slate-teal); }
+
+  &:focus-visible {
+    border-color: var(--color-deep-gold);
+    @include focus-ring(2px);
+  }
+}
+
+.lead-form__field textarea {
+  resize: vertical;
+  min-height: 6.5rem;
+}
+
+.lead-form__hint {
+  font-size: 0.875rem;
+  color: var(--color-ink-soft);
+}
+
+/* Het honeypot-veld. Buiten beeld in plaats van display:none, omdat een deel
+   van de bots velden met display:none overslaat. */
+.lead-form__trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.lead-form__error {
+  margin: 0;
+  padding: 0.75rem 0.875rem;
+  font-size: 0.9375rem;
+  color: var(--color-ink);
+  /* Wit vlak, niet het bleke goud: het formulier staat op een paneel dat zelf
+     al bleekgoud is, en dan is de melding geen vlak meer maar een losse regel
+     met een streepje ervoor. */
+  background: var(--color-cloud-white);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-deep-gold);
+  border-radius: var(--radius-sm);
+
+  &[hidden] { display: none; }
+}
+
+.lead-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.lead-form__note {
+  font-size: 0.875rem;
+  color: var(--color-ink-soft);
+}
+
+.lead-form__form[hidden] { display: none; }
+
+/* Het bevestigingsscherm komt op de plek van het formulier, niet op een eigen
+   pagina. Zelfde breedte, zodat het paneel niet verschiet bij de wissel. */
+.lead-form__done {
+  display: grid;
+  gap: var(--space-xs);
+  padding: var(--space-lg);
+  background: var(--color-cloud-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  h2 { margin: 0; }
+  p { margin: 0; }
+
+  &[hidden] { display: none; }
+  &:focus-visible { @include focus-ring(2px); }
+}
+
+@media (max-width: 48rem) {
+  .lead-form__row { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Veelgestelde vragen: een kolom <details>, met de vraag als samenvatting.
+   Open en dicht met de eigen bediening van de browser — een eigen accordeon
+   zou hier alleen toetsenbordgedrag opnieuw moeten verzinnen. */
+.sp-faq {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.sp-faq__item {
+  background: var(--color-cloud-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.sp-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker { display: none; }
+
+  &:focus-visible { @include focus-ring-inset(2px); }
+}
+
+.sp-faq__sign {
+  flex: 0 0 auto;
+  width: 1.25rem;
+  height: 1.25rem;
+  position: relative;
+  color: var(--color-deep-gold);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 50%;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+  }
+
+  &::after { transform: rotate(90deg); }
+}
+
+.sp-faq__item[open] .sp-faq__sign::after { transform: rotate(0deg); }
+
+.sp-faq__answer {
+  margin: 0;
+  padding: 0 var(--space-md) var(--space-md);
+  color: var(--color-ink-soft);
+}

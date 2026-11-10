@@ -31,6 +31,15 @@
   </div>
 
   <div class="container footer-bottom">
-    <p>&copy; {{ 'now' | date: '%Y' }} Preludens. {{ t.footer.rights }}</p>
+    {%- comment -%}
+      De cookiekeuze moet herroepbaar zijn, en dit is de plek waar iemand hem
+      zoekt. Het is een knop en geen link: hij opent de banner opnieuw in
+      plaats van naar een pagina te gaan. Zonder JavaScript staat hij er niet,
+      wat klopt — dan is er ook geen keuze om te herroepen.
+    {%- endcomment -%}
+    <p>&copy; {{ 'now' | date: '%Y' }} Preludens. {{ t.footer.rights }}
+      <span class="footer-bottom__sep" aria-hidden="true"> · </span>
+      <button class="footer-consent" type="button" data-consent-revoke>{{ t.consent.revoke }}</button>
+    </p>
   </div>
 </footer>

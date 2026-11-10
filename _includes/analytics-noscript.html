@@ -1,0 +1,9 @@
+{%- comment -%}
+  Het noscript-deel van de container, hoort direct achter de opening van <body>.
+  Zonder JavaScript vuurt alleen dit; events uit de dataLayer vallen dan weg,
+  wat klopt — die hangen allemaal aan JavaScript.
+{%- endcomment -%}
+{%- assign gtm_id = site.preludens.analytics.gtm_id -%}
+{%- if gtm_id and gtm_id != "" -%}
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ gtm_id }}" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+{%- endif -%}
