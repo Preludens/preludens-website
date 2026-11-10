@@ -14,9 +14,9 @@ voorbij is.
 ```yaml
 preludens:
   analytics:
-    gtm_id: "GTM-XXXXXXX"
-    ga4_measurement_id: "G-XXXXXXXXXX"
-    clarity_project_id: "xxxxxxxxxx"
+    gtm_id: "GTM-5MMK7TXD"
+    ga4_measurement_id: "G-Q0JG5Q810R"
+    clarity_project_id: "zbl8vhhvgy"
   hubspot:
     portal_id: "XXXXXXXX"
     form_guid: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
@@ -25,19 +25,58 @@ preludens:
     url: "/..."
 ```
 
+De drie bovenste staan inmiddels in `_config.yml`. De HubSpot-waarden en de
+demo-URL nog niet; zolang die leeg zijn, verstuurt het formulier niet en wijst
+de primaire knop naar het formulier in plaats van naar de demo.
+
 Zolang `gtm_id` leeg is, laadt de container niet en vuurt er niets. Dat is geen
 storing; dat is de site zonder meting.
 
 ## 1. GA4-property
 
-| Instelling | Waarde |
+Account `Preludens` (415690069), property `preludens.nl` (563530409),
+webstream `preludens.nl` (16314192540), metings-ID `G-Q0JG5Q810R`.
+
+| Instelling | Waarde | Staat |
+|---|---|---|
+| Datastream | één, voor `preludens.nl` | staat |
+| Dataretentie | 14 maanden, gebeurtenissen én gebruikers | staat |
+| Google Signals | **uit** | staat (was al uit) |
+| Delen met Google | alle vier de vinkjes uit | staat |
+| Verbeterde meting → Formulierinteracties | **uit** | staat |
+| Verwijzingen uitsluiten | `preludens.nl` | opgeslagen, nog niet gepubliceerd |
+| Intern verkeer | uitsluiten op het kantoor-IP, filter op actief | open |
+| Key event | `form_submit` | open |
+
+Drie aantekeningen bij die tabel.
+
+**Formulierinteracties staan uit** in de verbeterde meting. Die functie stuurt
+zelf gebeurtenissen die `form_start` en `form_submit` heten — precies de namen
+die de site zelf in de `dataLayer` duwt. Aan laten staan betekent elke inzending
+dubbel tellen, zonder `casus` op de helft ervan. De andere zes onderdelen van de
+verbeterde meting staan aan; die botsen nergens mee.
+
+**De uitgesloten verwijzing is opgeslagen maar nog niet live.** GA4 heeft de
+Google-tag omgezet naar een eigen container `GTM-WB3PXW46`. Dat is níét de
+container van de site (`GTM-5MMK7TXD`); hij houdt alleen de taginstellingen van
+deze stream vast. Instellingen daarin gelden pas na *Verzenden* in die
+container.
+
+**`form_submit` is nog geen key event.** GA4 laat alleen een gebeurtenis
+aanvinken die minstens één keer is binnengekomen. Zet dat vinkje dus direct na
+de eerste testinzending uit stap 5 hieronder, bij Beheer → Gebeurtenissen.
+
+### 1.1 Aangepaste dimensies
+
+Alle vijf aangemaakt, bereik **gebeurtenis**:
+
+| Dimensienaam | Gebeurtenisparameter |
 |---|---|
-| Datastream | één, voor `preludens.nl` |
-| Dataretentie | 14 maanden |
-| Google Signals | **uit** |
-| Intern verkeer | uitsluiten op het kantoor-IP, filter op actief |
-| Verwijzingen uitsluiten | `preludens.nl` |
-| Key event | `form_submit` |
+| Casus | `casus` |
+| CTA label | `cta_label` |
+| CTA positie | `cta_position` |
+| Linktekst | `link_text` |
+| Videotitel | `video_title` |
 
 `form_submit` ook importeren als conversie in Google Ads (beslissing I).
 
@@ -119,10 +158,10 @@ configuratie. Eén tag per regel, met de trigger uit paragraaf 3:
 | `GA4 - form_submit` | `form_submit` | `casus` = `{{dlv - casus}}` |
 | `GA4 - mailto_click` | `mailto_click` | `link_text` = `{{dlv - link_text}}`, `casus` = `{{dlv - casus}}` |
 
-In GA4 moeten `casus`, `cta_label`, `cta_position`, `video_title` en
-`link_text` als **aangepaste dimensie** worden aangemeld, bereik gebeurtenis.
-Zonder die stap komen ze binnen maar zijn ze niet in een rapport te kiezen —
-en dat is bij vier casussen de hele vergelijking.
+`casus`, `cta_label`, `cta_position`, `video_title` en `link_text` staan in GA4
+als **aangepaste dimensie** aangemeld (zie 1.1). Zonder die stap komen ze binnen
+maar zijn ze niet in een rapport te kiezen — en dat is bij vier casussen de hele
+vergelijking. Voeg je later een parameter toe, meld hem daar dan ook aan.
 
 ### 4.3 Microsoft Clarity
 

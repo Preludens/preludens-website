@@ -41,9 +41,9 @@ media_base: "https://preludens-website-content.s3.fr-par.scw.cloud/video/"
 # project erbij horen.
 preludens:
   analytics:
-    gtm_id: ""                # GTM-XXXXXXX
-    ga4_measurement_id: ""    # G-XXXXXXXXXX — geconfigureerd in GTM, niet hier
-    clarity_project_id: ""    # Clarity-project — geconfigureerd in GTM, niet hier
+    gtm_id: "GTM-5MMK7TXD"    # container "preludens.nl", account Preludens
+    ga4_measurement_id: "G-Q0JG5Q810R"  # property "preludens.nl", stream 16314192540 — als tag in GTM, niet in de site
+    clarity_project_id: "zbl8vhhvgy"  # project "Preludens" — als tag in GTM, niet in de site
   hubspot:
     # Portal-ID en form-GUID van het HubSpot-formulier waar de landingspagina's
     # naartoe posten. Beide leeg: het formulier rendert en valideert wel, maar
