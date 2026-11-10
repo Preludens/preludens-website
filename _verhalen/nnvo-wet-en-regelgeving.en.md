@@ -22,7 +22,7 @@ video:
     government, the province, the municipality and the water authority all apply at
     once. You place the act, the decree and the regulation in the right order, and see
     straight away whether it fits. The voice-over is Dutch.
-  download_label: Download the video (mp4, 3.7 MB)
+  download_label: Download the video (mp4, 3.5 MB)
 summary: >-
   How do you keep experienced bridge and lock operators sharp in a field where the rules are
   constantly evolving? For NNVO, Preludens developed a refresher that challenges experience rather

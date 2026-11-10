@@ -21,7 +21,7 @@ video:
     Een minuut uit de training. Op een stuk water gelden tegelijk regels van het Rijk,
     de provincie, de gemeente en het waterschap. Je legt de Binnenvaartwet, het besluit
     en de regeling in de juiste rangorde, en ziet meteen of het klopt.
-  download_label: Download de video (mp4, 3,7 MB)
+  download_label: Download de video (mp4, 3,5 MB)
 summary: >-
   Hoe houd je ervaren brug- en sluisoperators scherp in een vakgebied waar regels voortdurend in
   beweging zijn? Voor NNVO ontwikkelde Preludens een herscholing die ervaring uitdaagt in plaats

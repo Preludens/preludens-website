@@ -33,13 +33,15 @@ video:
   file: koeltechniek-explainer.mp4
   poster: /assets/images/verhalen/basis-koeltechniek-video-poster.jpg
   label: >-
-    Explainer van Basis Koeltechniek: het koelcircuit met verdamper, condensor,
-    compressor en expansieventiel, waarin processen naar hun component worden gesleept
+    Explainer van Basis Koeltechniek: meetpunten aanwijzen in een draaiende installatie,
+    componenten op hun lijn in het h-log-P-diagram, en korte fragmenten uit alle negen
+    MicroGames
   caption: >-
-    Een minuut uit het spel. Je sleept verdampen, condenseren, comprimeren en expanderen
-    naar de component waar ze gebeuren, en bij elke zet komt de uitleg meteen terug. In
-    de video wordt bewust een keer misgegokt, zodat je ook de correctie ziet.
-  download_label: Download de video (mp4, 3,5 MB)
+    Een minuut uit het spel, uit vier verschillende MicroGames. Je wijst meetpunten aan in
+    een draaiende installatie, legt componenten op hun lijn in het h-log-P-diagram, kiest
+    welk lijnstuk de oververhitting is en regelt een expansieventiel bij. Aan het eind
+    flitsen alle negen MicroGames kort voorbij.
+  download_label: Download de video (mp4, 3,7 MB)
 summary: >-
   Voor Basis Koeltechniek ontwikkelden we samen met Climatools BV, 21CC Learning en Studium
   een digitale leerervaring waarin installatiemonteurs actief met koeltechnische theorie

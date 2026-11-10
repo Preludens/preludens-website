@@ -33,15 +33,15 @@ video:
   file: koeltechniek-explainer.mp4
   poster: /assets/images/verhalen/basis-koeltechniek-video-poster.jpg
   label: >-
-    Explainer for Basis Koeltechniek: the refrigeration circuit with evaporator,
-    condenser, compressor and expansion valve, where processes are dragged onto
-    their component
+    Explainer for Basis Koeltechniek: marking measuring points on a running system,
+    placing components on their line in the h-log-P diagram, and short clips from all
+    nine MicroGames
   caption: >-
-    A minute from the game. You drag evaporating, condensing, compressing and expanding
-    onto the component where each happens, and each move comes back with the explanation.
-    The video gets one wrong on purpose, so you see the correction too. The voice-over
-    is Dutch.
-  download_label: Download the video (mp4, 3.5 MB)
+    A minute from the game, drawn from four different MicroGames. You mark measuring points
+    on a running system, place components on their line in the h-log-P diagram, pick which
+    segment is the superheat, and adjust an expansion valve. At the end all nine MicroGames
+    flash past. The voice-over is Dutch.
+  download_label: Download the video (mp4, 3.7 MB)
 summary: >-
   For Basic Refrigeration we developed, together with Climatools BV, 21CC Learning and Studium,
   a digital learning experience in which installation technicians actively work with

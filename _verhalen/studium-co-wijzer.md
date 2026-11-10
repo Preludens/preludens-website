@@ -30,17 +30,18 @@ figures:
   - file: co-wijzer-clv-start.jpg
     caption: Start van de MicroGame over CLV-systemen
 video:
-  file: cowijzer-explainer.mp4
-  poster: /assets/images/verhalen/studium-co-wijzer-video-poster.jpg
+  file: cowijzer-melder-explainer.mp4
+  poster: /assets/images/verhalen/co-wijzer-melder-video-poster.jpg
   label: >-
-    Explainer van CO Wijzer: een rookgaskanaal in doorsnede, een CO-meter die oploopt,
-    en afsluitkappen die op de open aansluitstompen worden gezet
+    Explainer van CO Wijzer: een huis in doorsnede waarin per ruimte een CO-melder wordt
+    geplaatst, met de afstand tot de bron en tot het plafond die meelopen tijdens het
+    slepen
   caption: >-
-    Een minuut uit het spel. Je bent de monteur in een flat waar meerdere woningen een
-    rookgaskanaal delen. Haal je een oud toestel weg en blijven de aansluitstompen open,
-    dan loopt de CO-meter in de woning op. Het spel legt daarna uit welke regel erachter
-    zit.
-  download_label: Download de video (mp4, 3,3 MB)
+    Een minuut uit het spel. Je bent de monteur die net een ketel heeft gecontroleerd en
+    ziet dat er nergens CO-melders hangen. Per beschermingsniveau kies je de ruimtes en
+    hang je de melder op; de afstand tot de bron en tot het plafond loopt mee terwijl je
+    sleept. In de slaapkamer gaat het eerst mis, en daarna hangt hij op slaaphoogte.
+  download_label: Download de video (mp4, 2,5 MB)
 summary: >-
   Koolmonoxide kun je niet zien, ruiken of proeven. CO Wijzer laat professionals oefenen
   met het herkennen van risico's en het maken van de juiste veiligheidskeuze.
