@@ -114,6 +114,7 @@ verhaal:
   lightbox_close: "Sluiten"
   lightbox_zoom: "Vergroot"
   share_linkedin: "Deel op LinkedIn"
+  video_play: "Speel de video af"
 
 # Maandnamen voor datums in de eigen taal; de `date`-filter van Jekyll
 # kent alleen Engelse maanden.

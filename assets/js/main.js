@@ -559,3 +559,42 @@
     });
   });
 })();
+
+/* Video's: de gouden afspeelknop over de poster. De knop staat in de HTML maar
+   blijft verborgen tot hij hier bruikbaar wordt gemaakt — zonder JavaScript
+   houdt de bezoeker de eigen bedieningsbalk van de browser. Na afloop komt hij
+   terug, zodat je met één klik opnieuw kunt kijken. */
+(function () {
+  var frames = document.querySelectorAll("[data-sp-video]");
+  if (!frames.length) return;
+
+  frames.forEach(function (frame) {
+    var video = frame.querySelector("video");
+    var button = frame.querySelector("[data-sp-video-play]");
+    if (!video || !button) return;
+
+    frame.classList.add("is-ready");
+    /* Tot de eerste klik is de gouden knop de hele bediening; de balk van de
+       browser zou er alleen onder liggen te wachten. Zodra er gespeeld wordt,
+       komt hij terug. */
+    video.removeAttribute("controls");
+
+    button.addEventListener("click", function () {
+      var started = video.play();
+      if (started && started.catch) {
+        started.catch(function () {
+          frame.classList.remove("is-playing");
+        });
+      }
+    });
+
+    video.addEventListener("play", function () {
+      video.setAttribute("controls", "controls");
+      frame.classList.add("is-playing");
+    });
+
+    video.addEventListener("ended", function () {
+      frame.classList.remove("is-playing");
+    });
+  });
+})();

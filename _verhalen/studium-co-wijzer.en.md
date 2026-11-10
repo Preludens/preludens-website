@@ -30,7 +30,7 @@ figures:
   - file: co-wijzer-clv-start.jpg
     caption: Start of the MicroGame about CLV systems
 video:
-  file: cowijzer-melder-explainer.mp4
+  file: cowijzer-melder-explainer.mp4?v=2
   poster: /assets/images/verhalen/co-wijzer-melder-video-poster.jpg
   label: >-
     Explainer for CO Wijzer: a cross-section of a house in which a CO alarm is placed room

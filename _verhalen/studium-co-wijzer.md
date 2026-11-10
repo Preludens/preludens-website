@@ -30,7 +30,7 @@ figures:
   - file: co-wijzer-clv-start.jpg
     caption: Start van de MicroGame over CLV-systemen
 video:
-  file: cowijzer-melder-explainer.mp4
+  file: cowijzer-melder-explainer.mp4?v=2
   poster: /assets/images/verhalen/co-wijzer-melder-video-poster.jpg
   label: >-
     Explainer van CO Wijzer: een huis in doorsnede waarin per ruimte een CO-melder wordt

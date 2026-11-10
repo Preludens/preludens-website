@@ -22,6 +22,10 @@ logo: /assets/images/logo/preludens-logo.png
 # staat de basis-URL waar de bestandsnaam uit `video.file` achter geplakt wordt
 # (sluit af met een /). Maak dit leeg en de verhaal-layout laat de speler weg,
 # zodat de pagina heel blijft.
+#
+# De bucket zet er een dag cache op. Overschrijf je een film zonder zijn naam te
+# wijzigen, zet dan `?v=` een nummer hoger achter de bestandsnaam in `video.file`;
+# anders blijft een bezoeker die de pagina al eens zag de oude film houden.
 media_base: "https://preludens-website-content.s3.fr-par.scw.cloud/video/"
 
 languages: ["nl", "en"]

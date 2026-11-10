@@ -11,7 +11,7 @@ doelgroep: Brug- en sluisoperators met jaren ervaring
 vorm: Game-based online training met MicroGames, comics en praatplaten
 rol: Verhaallijn, MicroGames en praatplaten
 video:
-  file: nnvo-wetgeving-explainer.mp4
+  file: nnvo-wetgeving-explainer.mp4?v=2
   poster: /assets/images/verhalen/nnvo-wet-en-regelgeving-video-poster.jpg
   label: >-
     Explainer van Herscholing Wet- en Regelgeving: een vaarwater met de niveaus van

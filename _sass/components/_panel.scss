@@ -1156,6 +1156,81 @@ body.page-panels .sp-actions .btn {
   object-fit: cover;
 }
 
+/* Afspeelknop over de poster. De knop beslaat het hele beeld, zodat een klik
+   overal raak is; de gouden schijf in het midden is wat je ziet. De lichte
+   wassing eroverheen houdt de schijf leesbaar op een druk spelbeeld en trekt
+   bij hover op, zodat het beeld even oplicht onder de cursor. */
+.sp-video__play {
+  position: absolute;
+  inset: 5px;
+  display: none;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 5px);
+  background: rgba(11, 42, 53, 0.16);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sp-video__frame.is-ready .sp-video__play {
+  display: grid;
+}
+
+.sp-video__frame.is-playing .sp-video__play {
+  display: none;
+}
+
+.sp-video__play:hover {
+  background: rgba(11, 42, 53, 0.06);
+}
+
+.sp-video__play-disc {
+  display: grid;
+  place-items: center;
+  width: clamp(4.5rem, 7vw, 6.5rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-preludens-gold);
+  color: var(--color-deep-navy);
+  box-shadow: 0 10px 28px rgba(11, 42, 53, 0.38);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* De punt van de driehoek weegt rechts zwaarder dan de rechte zijde links;
+   een paar pixels naar rechts zet hem optisch in het midden. */
+.sp-video__play-disc svg {
+  width: 45%;
+  height: auto;
+  translate: 6% 0;
+}
+
+.sp-video__play:hover .sp-video__play-disc {
+  background: var(--color-soft-gold);
+  transform: scale(1.06);
+}
+
+.sp-video__play:active .sp-video__play-disc {
+  transform: scale(0.98);
+}
+
+.sp-video__play:focus-visible {
+  outline: 3px solid var(--color-preludens-gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-video__play,
+  .sp-video__play-disc {
+    transition: none;
+  }
+
+  .sp-video__play:hover .sp-video__play-disc,
+  .sp-video__play:active .sp-video__play-disc {
+    transform: none;
+  }
+}
+
 .panel .sp-video__caption {
   max-width: 70ch;
   margin: var(--space-sm) 0 0;

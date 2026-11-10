@@ -30,7 +30,7 @@ figures:
   - file: basis-koeltechniek-gesprek.jpg
     caption: Theorie toepassen in een herkenbaar gesprek
 video:
-  file: koeltechniek-explainer.mp4
+  file: koeltechniek-explainer.mp4?v=2
   poster: /assets/images/verhalen/basis-koeltechniek-video-poster.jpg
   label: >-
     Explainer van Basis Koeltechniek: meetpunten aanwijzen in een draaiende installatie,

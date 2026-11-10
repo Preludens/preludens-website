@@ -25,7 +25,7 @@ layout: default
   repository en `site.media_base` zegt waar. Staat die leeg, dan laten we de
   speler weg in plaats van een kapotte bron neer te zetten.
 {% endcomment %}
-{% capture verhaal_video %}{% if page.video and site.media_base and site.media_base != "" %}{% assign video_src = site.media_base | append: page.video.file %}{% include panels/video.html src=video_src poster=page.video.poster label=page.video.label caption=page.video.caption ratio=page.video.ratio download_label=page.video.download_label class="verhaal-video" %}{% endif %}{% endcapture %}
+{% capture verhaal_video %}{% if page.video and site.media_base and site.media_base != "" %}{% assign video_src = site.media_base | append: page.video.file %}{% include panels/video.html src=video_src poster=page.video.poster label=page.video.label caption=page.video.caption ratio=page.video.ratio download_label=page.video.download_label play_label=t.verhaal.video_play class="verhaal-video" %}{% endif %}{% endcapture %}
 <article class="verhaal-a">
   <header class="verhaal-hero{% if local_image == "" %} verhaal-hero--plain{% endif %}">
     {% if local_image != "" %}

@@ -11,7 +11,7 @@ doelgroep: Bridge and lock operators with years of experience
 vorm: Game-based online training with MicroGames, comics and discussion sheets
 rol: Storyline, MicroGames and discussion sheets
 video:
-  file: nnvo-wetgeving-explainer.mp4
+  file: nnvo-wetgeving-explainer.mp4?v=2
   poster: /assets/images/verhalen/nnvo-wet-en-regelgeving-video-poster.jpg
   label: >-
     Explainer for Herscholing Wet- en Regelgeving: a waterway showing the national,

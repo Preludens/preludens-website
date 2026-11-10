@@ -30,7 +30,7 @@ figures:
   - file: basis-koeltechniek-gesprek.jpg
     caption: Applying theory in a recognisable conversation
 video:
-  file: koeltechniek-explainer.mp4
+  file: koeltechniek-explainer.mp4?v=2
   poster: /assets/images/verhalen/basis-koeltechniek-video-poster.jpg
   label: >-
     Explainer for Basis Koeltechniek: marking measuring points on a running system,
