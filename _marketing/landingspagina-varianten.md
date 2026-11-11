@@ -58,7 +58,9 @@ Beide soorten links herkent `booking_click` als `microsoft-bookings`.
 **Meldingen bij een boeking:**
 
 - **E-mail naar Jan-Willem:** de standaardinstelling van Bookings voor medewerkers, en de afspraak komt in zijn Outlook-agenda.
-- **Teams:** de Power Automate-flow **"Bookings Kennismaking naar Teams Sales"** (account Jan-Willem). Die plaatst bij elke nieuwe afspraak op `Preludens1@Preludens.nl` een bericht van de Flow-bot in **CRM → Sales**, met naam, e-mailadres en begintijd. De begintijd staat in UTC, en dat staat er ook bij. De lijst met Bookings-pagina's laadde in Power Automate niet (een tokenfout), dus het adres is met de hand ingevuld. Of de trigger daarop vuurt, blijkt pas bij de eerste echte boeking.
+- **Teams:** de Power Automate-flow **"Bookings Kennismaking naar Teams Sales"** (account Jan-Willem). Die plaatst bij elke nieuwe afspraak op `Preludens1@Preludens.nl` een bericht van de Flow-bot in **CRM → Sales**, met naam, e-mailadres en begintijd. De begintijd staat in UTC, en dat staat er ook bij. De lijst met Bookings-pagina's laadde in Power Automate niet (een tokenfout), dus het adres is met de hand ingevuld.
+
+**Getest op 11 november 2026** met een boeking voor 23 november om 16:30 uur, die daarna is geannuleerd. Het Teams-bericht stond binnen een seconde in Sales, met "15:30:00 (UTC)", dus 16:30 uur Nederlandse tijd. Jan-Willem kreeg de mail "Nieuwe reservering", de klant de mail "Bevestigd: Kennismaking", en na de annulering kwamen de annuleringsmails. Het testbericht staat nog in het kanaal Sales.
 
 **Bookings kan ook in de pagina zelf** (de knop *Embed* bij de reserveringspagina). Dan blijft de bezoeker op de site. Een geboekte afspraak meldt Bookings, anders dan Calendly, niet terug aan de pagina.
 
