@@ -76,8 +76,8 @@
   color: var(--color-ink);
   background: repeating-linear-gradient(
     135deg,
-    var(--color-pale-gold),
-    var(--color-pale-gold) 10px,
+    var(--color-mist-blue),
+    var(--color-mist-blue) 10px,
     var(--color-cloud-white) 10px,
     var(--color-cloud-white) 20px
   );
@@ -85,6 +85,10 @@
   border-radius: var(--radius-sm);
   text-align: left;
 }
+
+/* Een donker paneel (harbor) maakt al zijn alinea's wit. De plaatsaanduiding
+   staat op lichte strepen en houdt daarom haar donkere tekst. */
+.panel .landing-placeholder { color: var(--color-ink); }
 
 @media (max-width: 48rem) {
   .landing-header__inner { padding-inline: var(--space-md); }

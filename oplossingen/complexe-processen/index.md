@@ -91,7 +91,7 @@ sitemap: false
 <h2>Plaatsaanduiding: bewijs</h2>
 <p class="landing-placeholder">Eén project dat deze lezer herkent, met beeld uit assets/images/verhalen/ via panels/media.html, of de explainer via panels/video.html. video_play en video_75 vuren dan automatisch.</p>
 {% endcapture %}
-{% include panels/panel.html variant="pale" id="bewijs" body=bewijs %}
+{% include panels/panel.html variant="harbor" id="bewijs" body=bewijs %}
 
 {%- comment -%} 6. Bezwaren — de vragen die ze stellen voordat ze ja zeggen {%- endcomment -%}
 {% capture vragen %}
