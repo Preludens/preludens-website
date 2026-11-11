@@ -496,24 +496,38 @@ hem.** Zet bij beslissing E (waar landen de leads, wie krijgt bericht) dus een
 e-mailmelding op het formulier zelf, niet op een workflow; een workflow loopt
 op contactpersonen en ziet deze leads niet.
 
-**Ook nog niet getest:** UTM-parameters tot in GA4 en HubSpot.
-Wel nagelopen: een lege post naar het HubSpot-endpoint komt terug met
-`REQUIRED_FIELD` op `email` en niet met een 404, dus portal en GUID kloppen en
-het formulier is bereikbaar. Het protocol staat in `gtm-configuratie.md`
-paragraaf 5.
+**UTM-parameters komen aan in GA4 en in HubSpot** (getest op 11 november). Een
+nieuwe bezoeker (cookies gewist) opende
+`/oplossingen/praktijkdagen/?utm_source=utm-test&utm_medium=test&utm_campaign=meetfundament-utm-test`,
+accepteerde de cookies en deed een inzending.
 
-**Twee punten die buiten de code vallen en nog open staan:**
+- GA4: de eerste `page_view` van die bezoeker (`_fv=1`, `_ss=1`, `gcs=G111`)
+  heeft de drie UTM-parameters in de paginalocatie, en daar leidt GA4 bron,
+  medium en campagne uit af. In het realtime-rapport was de kaart *Bron voor
+  nieuwe gebruiker* een paar minuten later nog leeg; bevestig de campagne dus
+  na een dag in *Acquisitie*.
+- HubSpot: het contact kreeg *Originele verkeersbron* "Overige campagnes", met
+  als details `meetfundament-utm-test` en `utm-test / test`. De paginaweergaven
+  vóór de inzending hangen aan het contact.
 
-- **De reactietermijn op het bevestigingsscherm.** Daar staat nu "we nemen
-  contact met je op", zonder termijn. Een termijn is een toezegging die
-  Preludens doet; die heb ik niet verzonnen. Zet hem in `_data/nl.yml` en
-  `_data/en.yml` onder `form.success_text` zodra hij vaststaat — "binnen twee
-  werkdagen" is sterker dan wat er nu staat, en hangt samen met beslissing E.
-- **Beslissing E** — waar landen de leads, en wie krijgt bericht? Een lead die
-  drie dagen blijft liggen is bij dit volume een verspild experiment.
-- **Beslissing J** — er is op deze site geen privacyverklaring. Geen pagina,
-  geen link, nergens. De banner verwijst er daarom niet naar, en dat is voor een
-  consentbanner een gat: iemand die op "Zelf kiezen" klikt, kan nergens nalezen
-  wie wat verwerkt. HubSpot, Google en Microsoft Clarity horen er alle drie in te
-  staan. Dit is geen juridisch advies, wel iets wat vóór de start afgevinkt moet
-  zijn.
+Gebruik in de advertenties de gangbare mediums: `cpc` voor zoekadvertenties,
+`paid_social` voor LinkedIn en Meta, `email` voor mailings. Met een eigen
+medium zoals `test` zet HubSpot de bron op "Overige campagnes" en GA4 op
+*Unassigned*; met de gangbare mediums komen ze onder *Betaalde zoekopdracht* en
+*Betaalde sociale media*. Het contact en de inzending van de test zijn daarna
+verwijderd.
+
+**Beslissing E is genomen: leads komen binnen op info@preludens.nl.** HubSpot
+stuurt bij elke inzending van *Landingspagina's oplossingen* een mail naar
+info@preludens.nl, ook bij een lead met alleen een telefoonnummer — Jan-Willem
+zag die mail binnenkomen. Dat loopt via de meldingsinstelling *indiening
+formulier* van het account, niet via een workflow. Een melding in het Teams-kanaal
+Sales (team CRM) kon via het e-mailadres van dat kanaal, maar is op verzoek niet
+ingesteld.
+
+**De reactietermijn staat erin: binnen één werkdag**, op het bevestigingsscherm
+in beide talen (`form.success_text` in `_data/nl.yml` en `_data/en.yml`).
+
+**Beslissing J loopt.** Een aparte sessie schrijft de privacyverklaring voor
+`/privacy/` en `/en/privacy/`, met links vanuit de footer en de cookiebanner. Tot
+die er staat, verwijst de banner nergens naar.
