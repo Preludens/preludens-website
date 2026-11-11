@@ -176,7 +176,6 @@ form:
   error_message: "Tell us briefly what you are running into."
   error_send: "Sending failed. Try again, or email us at info@preludens.nl — your text is still here."
   success_title: "Your message arrived"
-  # See the note in nl.yml: the response time is a promise Preludens makes,
-  # not copy to invent.
-  success_text: "We are reading along and will get in touch. No confirmation email needed: this page is your confirmation."
+  # See the note in nl.yml: one working day is a promise Preludens makes.
+  success_text: "We will get in touch within one working day. No confirmation email needed: this page is your confirmation."
   honeypot_label: "Leave this field empty"

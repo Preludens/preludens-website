@@ -176,8 +176,7 @@ form:
   error_message: "Vertel kort waar je tegenaan loopt."
   error_send: "Het versturen lukte niet. Probeer het nog eens, of mail ons op info@preludens.nl — je tekst staat er nog."
   success_title: "Je bericht is binnen"
-  # De reactietermijn is met opzet niet ingevuld: dat is een toezegging die
-  # Preludens doet, niet een tekst om te verzinnen. Zet hem erin zodra hij
-  # vaststaat — "we reageren binnen twee werkdagen" is sterker dan dit.
-  success_text: "We lezen mee en nemen contact met je op. Geen bevestigingsmail nodig: deze pagina is je bevestiging."
+  # De reactietermijn is een toezegging van Preludens (11 november 2026): binnen
+  # één werkdag. Verandert die afspraak, pas hem dan hier én in en.yml aan.
+  success_text: "We nemen binnen één werkdag contact met je op. Geen bevestigingsmail nodig: deze pagina is je bevestiging."
   honeypot_label: "Laat dit veld leeg"
