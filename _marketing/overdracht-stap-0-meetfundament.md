@@ -338,26 +338,46 @@ alleen Nederlands.
 
 ## Wat nog open is
 
-**Nodig voordat er iets gemeten wordt** — allemaal waarden in `_config.yml`
-onder `preludens:`, nu leeg:
+**De waarden in `_config.yml` staan er inmiddels in** (10 en 11 november 2026,
+opgehaald bij de bron, niets verzonnen):
 
-1. **GTM-container-ID** (`GTM-XXXXXXX`). Zolang die leeg is laadt de container
-   niet en vuurt er geen enkele tag. De site werkt verder gewoon.
-2. **GA4-meting-ID** en de property zelf, met de instellingen uit
-   `gtm-configuratie.md`.
-3. **Clarity-project-ID.**
-4. **HubSpot-portal-ID en form-GUID** (beslissing B en D). Niet verzonnen; dit
-   is de enige vraag waar het formulier op wacht. Vul ze in en verzenden werkt.
-   Maak in HubSpot ook de property `casus` aan, met `praktijkdagen`,
-   `complexe-processen`, `safety-doeners` en `onboarding-modules` als vaste
-   keuzelijst, anders komt het verborgen veld binnen zonder ergens te landen.
+| Waarde | Staat |
+|---|---|
+| `gtm_id` | `GTM-5MMK7TXD` — container `preludens.nl`, account Preludens |
+| `ga4_measurement_id` | `G-Q0JG5Q810R` — property `preludens.nl`, stream 16314192540 |
+| `clarity_project_id` | `zbl8vhhvgy` — project Preludens |
+| `hubspot.portal_id` | `149248161` — account Preludens, regio eu1 |
+| `hubspot.form_guid` | formulier *Landingspagina's oplossingen*, zes velden |
+| `hubspot.tracking` | aan, achter de categorie statistieken |
+| `demo.url` | **nog leeg** (beslissing F) |
+
+Google Analytics, Tag Manager en het Google-account draaien op
+`info@preludens.nl`. De eigenschap `casus` is in HubSpot aangemaakt als vrij
+tekstveld, niet als keuzelijst: zo hoeft HubSpot niet mee te veranderen als er
+later een vijfde casus bij komt. Wat er per interface staat, met de afwegingen
+erbij, staat in `gtm-configuratie.md`.
+
+**Wat daar nog bij hoort, en nog niet klaar is:**
+
+1. **De tags in GTM zelf.** De container bestaat en laadt, maar er staat nog
+   geen enkele tag, trigger of variabele in. Die lijst staat met de hand na te
+   lopen in `gtm-configuratie.md`, paragraaf 2 tot en met 4.
+2. **`form_submit` als key event in GA4.** Dat vinkje kan pas nadat het event
+   één keer is binnengekomen. Zet het direct na de eerste testinzending.
+3. **Intern verkeer uitsluiten in GA4.** Daar is het kantoor-IP voor nodig; dat
+   heb ik niet gevraagd en niet opgezocht.
+4. **De uitgesloten verwijzing `preludens.nl`** staat opgeslagen in de
+   Google-tagcontainer die GA4 zelf aanmaakte (`GTM-WB3PXW46`, níét die van de
+   site), maar is daar nog niet verzonden.
 5. **De demo-URL** (beslissing F), plus het `postMessage` hierboven.
 
-**Nog niet te testen zonder die waarden:** een testinzending in HubSpot met
-bronattributie, `form_submit` als key event in GA4 en als conversie in Google
-Ads, UTM-parameters tot in GA4 en HubSpot, de opname in Clarity, en de negen
-events in de voorbeeldmodus van GTM. Het protocol staat in `gtm-configuratie.md`
-paragraaf 5.
+**Nog niet getest:** een echte inzending in HubSpot met bronattributie,
+UTM-parameters tot in GA4 en HubSpot, de opname in Clarity, en de negen events
+in de voorbeeldmodus van GTM — dat laatste kan pas als de tags er staan. Wel
+nagelopen: een lege post naar het HubSpot-endpoint komt terug met
+`REQUIRED_FIELD` op `email` en niet met een 404, dus portal en GUID kloppen en
+het formulier is bereikbaar. Het protocol voor de rest staat in
+`gtm-configuratie.md` paragraaf 5.
 
 **Twee punten die buiten de code vallen en nog open staan:**
 
