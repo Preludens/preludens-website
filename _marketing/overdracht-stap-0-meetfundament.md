@@ -430,7 +430,8 @@ geen video en geen demo; die komen met de kopij. En de hele ronde nog een keer
 op de live site en in het Engels.
 
 Het testcontact **test-meetfundament@preludens.nl** staat nog in het CRM, met
-twee inzendingen op de tijdlijn. Dat mag weg zodra je het gezien hebt.
+twee inzendingen op de tijdlijn, plus één losse inzending van "Test Telefoon"
+zonder contactpersoon. Die mogen weg zodra je ze gezien hebt.
 
 **Wat daar nog bij hoort, en nog niet klaar is:**
 
@@ -474,11 +475,20 @@ uitdrukken, en laat lege velden weg uit de inzending.
   "nvt", een e-mailadres als "iemand@" en een geldig nummer zonder bericht geven
   elk hun eigen melding, met de cursor in het juiste veld.
 
-**Nog niet nagelopen: wat HubSpot doet met een inzending zonder e-mailadres.**
-HubSpot herkent contactpersonen aan het e-mailadres; het formulier zegt zelf
-"nieuwe contactpersonen voor e-mailadressen aanmaken". Het kan dus zijn dat een
-lead met alleen een telefoonnummer wel als inzending binnenkomt, maar niet als
-contactpersoon. Dat wijst één testinzending uit.
+**Een lead zonder e-mailadres wordt geen contactpersoon.** Getest met één
+inzending op `/contact/` met alleen een telefoonnummer (het kantoornummer van
+Preludens, als testwaarde). HubSpot nam hem aan en `form_submit` vuurde met
+`casus=contact`, maar in HubSpot staat hij alleen onder *Formulieren →
+Landingspagina's oplossingen → Inzendingen*, als "Geen
+contactpersoonoverzicht". Alle velden staan erin, ook `casus`. Er komt geen
+contactpersoon, dus hij staat niet in de contactenlijst, krijgt geen
+leadstatus en start geen workflow — HubSpot herkent contactpersonen aan het
+e-mailadres.
+
+Dat betekent: **wie zo'n lead niet in de inzendingenlijst ziet staan, mist
+hem.** Zet bij beslissing E (waar landen de leads, wie krijgt bericht) dus een
+e-mailmelding op het formulier zelf, niet op een workflow; een workflow loopt
+op contactpersonen en ziet deze leads niet.
 
 **Ook nog niet getest:** UTM-parameters tot in GA4 en HubSpot.
 Wel nagelopen: een lege post naar het HubSpot-endpoint komt terug met
