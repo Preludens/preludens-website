@@ -393,18 +393,19 @@ bij een opgeslagen keuze, dus een terugkerende bezoeker start Clarity via All
 Pages en een nieuwe via de nieuwe trigger. Opnieuw getest: Clarity vuurt nu op
 `consent_update` en de opnames gaan de deur uit.
 
-Het tweede moet jij beslissen, want het is een instelling in HubSpot:
-**HubSpot registreert elke inzending twee keer.** Naast de inzending die wij
-sturen (*Landingspagina's oplossingen*, zes velden, met `casus`) staat er een
+Het tweede is ook gerepareerd, maar het zat in HubSpot en niet in de code:
+**HubSpot registreerde elke inzending twee keer.** Naast de inzending die wij
+sturen (*Landingspagina's oplossingen*, zes velden, met `casus`) stond er een
 tweede op de tijdlijn, onder de naam `.lead-form__form`. Dat is HubSpots
 "niet-HubSpot-formulieren verzamelen": `collectedforms.js` komt mee met de
 trackingcode en pikt het formulier op aan zijn CSS-klasse. Die tweede inzending
-kent `casus` niet, en erger: hij zet het hele naamveld in **Voornaam**. Het
-testcontact heet daardoor "Test Meetfundament Meetfundament" in plaats van "Test
-Meetfundament". Bij elke lead zie je straks dus twee inzendingen en een scheve
-naam. Zet het verzamelen van niet-HubSpot-formulieren uit in de
-HubSpot-instellingen (of sluit dit formulier daar uit) — de trackingcode zelf
-moet blijven, want die levert `hutk` en daarmee de bronattributie hierboven.
+kende `casus` niet, en zette het hele naamveld in **Voornaam** — het testcontact
+heette daardoor "Test Meetfundament Meetfundament". *Instellingen → Marketing →
+Formulieren → Niet-HubSpot-formulieren → Gegevens verzamelen van
+websiteformulieren* staat nu **uit**. De trackingcode zelf blijft staan, want
+die levert `hutk` en daarmee de bronattributie hierboven. Een tweede
+testinzending bevestigde het: nog één inzending op de tijdlijn, en de voornaam
+staat weer goed.
 
 Het derde is een waarneming, geen storing: **`page_view` komt zonder `casus` en
 zonder `page_language` binnen.** Ze staan wel als configuratie-instelling op de
@@ -428,8 +429,8 @@ liever buiten `cta_click` houdt.
 geen video en geen demo; die komen met de kopij. En de hele ronde nog een keer
 op de live site en in het Engels.
 
-Het testcontact **test-meetfundament@preludens.nl** staat nog in het CRM. Dat
-mag weg zodra je het gezien hebt.
+Het testcontact **test-meetfundament@preludens.nl** staat nog in het CRM, met
+twee inzendingen op de tijdlijn. Dat mag weg zodra je het gezien hebt.
 
 **Wat daar nog bij hoort, en nog niet klaar is:**
 
@@ -451,9 +452,6 @@ mag weg zodra je het gezien hebt.
    Google-tagcontainer die GA4 zelf aanmaakte (`GTM-WB3PXW46`, níét die van de
    site), maar is daar nog niet verzonden.
 5. **De demo-URL** (beslissing F), plus het `postMessage` hierboven.
-6. **Het verzamelen van niet-HubSpot-formulieren staat aan** en registreert elke
-   inzending een tweede keer, met een scheve voornaam. Uitzetten in de
-   HubSpot-instellingen; de trackingcode zelf moet blijven staan.
 
 **Ook nog niet getest:** UTM-parameters tot in GA4 en HubSpot.
 Wel nagelopen: een lege post naar het HubSpot-endpoint komt terug met
