@@ -1,19 +1,20 @@
 /* Consentbanner. Zit onderaan het beeld, over de inhoud heen maar niet modaal:
    de bezoeker kan doorlezen en daarna kiezen.
 
-   Vorm uit het palet: de koele basis als vlak, de gouden knop als enige
-   accent, en een haarlijn boven in plaats van een slagschaduw die de pagina
-   optilt. Geen vlak dat de hele pagina dimt — dat zou de hero wegduwen, en bij
-   een landingspagina is dat het eerste wat iemand ziet. */
+   Vorm uit het palet: het lichtgoud van de warme panelen als vlak, met een
+   gouden bovenrand, zodat hij loskomt van de koele pagina erachter. De knoppen
+   hebben de afgesneden hoeken van de knop in de hero. Geen vlak dat de hele
+   pagina dimt — dat zou de hero wegduwen, en bij een landingspagina is dat het
+   eerste wat iemand ziet. */
 
 .consent {
   position: fixed;
   inset-inline: 0;
   bottom: 0;
   z-index: 900;
-  background: var(--color-cloud-white);
-  border-top: 1px solid var(--color-border);
-  box-shadow: 0 -8px 32px rgba(11, 42, 53, 0.1);
+  background: var(--color-pale-gold);
+  border-top: 4px solid var(--color-preludens-gold);
+  box-shadow: 0 -10px 40px rgba(11, 42, 53, 0.16);
 
   &[hidden] { display: none; }
 }
@@ -22,14 +23,14 @@
   width: 100%;
   max-width: var(--max-width);
   margin-inline: auto;
-  padding: var(--space-md) var(--space-lg);
+  padding: clamp(1.5rem, 3vw, 2.25rem) var(--space-lg);
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-md) var(--space-lg);
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas:
     "copy actions"
     "options options";
-  align-items: start;
+  align-items: center;
 }
 
 /* Zodra de categorieën openstaan, gaat alles onder elkaar. Naast elkaar
@@ -48,19 +49,20 @@
 .consent__actions { grid-area: actions; }
 
 .consent__title {
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.5rem;
   font-family: var(--font-display);
-  font-size: 1.0625rem;
-  font-weight: 600;
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.625rem);
+  font-weight: 700;
+  line-height: 1.2;
   color: var(--color-ink);
 }
 
 .consent__text {
   margin: 0;
-  max-width: 44rem;
-  font-size: 0.9375rem;
+  max-width: 40rem;
+  font-size: 1rem;
   line-height: 1.6;
-  color: var(--color-ink-soft);
+  color: var(--color-ink);
 }
 
 .consent__actions {
@@ -75,6 +77,62 @@
   .btn[hidden] { display: none; }
 }
 
+/* De knop met twee afgesneden hoeken, linksboven en rechtsonder: dezelfde vorm
+   als .sp-hero-cta, maar met een vaste snede in plaats van een percentage,
+   zodat een brede en een smalle knop dezelfde hoek krijgen. De lijst om de
+   knop heen is de rand; een border zou op de schuine kanten wegvallen. */
+.consent__frame {
+  --cut: 16px;
+  --frame: 2px;
+  display: inline-flex;
+  padding: var(--frame);
+  background: var(--color-brand-navy);
+  clip-path: polygon(
+    var(--cut) 0, 100% 0,
+    100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%,
+    0 100%, 0 var(--cut)
+  );
+  transition: transform var(--transition);
+
+  &:hover { transform: translateY(-2px); }
+
+  /* consent.js verbergt de knop, niet de lijst eromheen. */
+  &:has(> [hidden]) { display: none; }
+}
+
+.consent__frame--primary {
+  --frame: 3px;
+  background: var(--color-white);
+}
+
+.consent__btn {
+  --inner-cut: calc(var(--cut) - 1px);
+  padding: 0.95rem 1.75rem;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 0;
+  clip-path: polygon(
+    var(--inner-cut) 0, 100% 0,
+    100% calc(100% - var(--inner-cut)), calc(100% - var(--inner-cut)) 100%,
+    0 100%, 0 var(--inner-cut)
+  );
+
+  /* De lijst beweegt al; de knop zelf moet in zijn lijst blijven staan. */
+  &:hover { transform: none; box-shadow: none; }
+
+  /* Een ring om de knop heen valt weg achter clip-path. Deze ligt binnen de
+     knop, en blijft dus zichtbaar. */
+  &:focus-visible { @include focus-ring-inset(3px); }
+
+  &::after { content: none; }
+}
+
+.consent__btn.btn-secondary {
+  background: var(--color-pale-gold);
+
+  &:hover { background: var(--color-white); }
+}
+
 /* "Zelf kiezen" is geen knop maar een derde weg: hij moet vindbaar zijn zonder
    te concurreren met accepteren en weigeren, die beide één klik zijn. */
 .consent__toggle {
@@ -82,7 +140,7 @@
   background: none;
   border: 0;
   font-family: var(--font-body);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   color: var(--color-ink);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -152,7 +210,11 @@
 
   .consent__list { grid-template-columns: minmax(0, 1fr); }
 
-  .consent__actions .btn { flex: 1 1 10rem; }
+  /* Onder elkaar en even breed: accepteren en weigeren horen even vindbaar
+     te zijn, en naast elkaar past dat op een telefoon niet zonder dat een van
+     de twee smaller wordt. */
+  .consent__frame { flex: 1 1 100%; }
+  .consent__btn { flex: 1 1 auto; }
 }
 
 /* De herroeplink onderaan elke pagina. Staat in de voettekstregel, naast het

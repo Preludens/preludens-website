@@ -143,9 +143,8 @@ play_blog:
 consent:
   title: "May we measure how this page works?"
   text: >-
-    Necessary cookies are always on. For statistics and marketing we ask
-    first. Your choice holds for six months and can be changed at the bottom
-    of any page.
+    We use cookies to remember your language, to analyse visits and to market
+    our products. It's your choice!
   accept: "Accept all"
   reject: "Necessary only"
   save: "Save choice"

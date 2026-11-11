@@ -44,10 +44,23 @@
       </ul>
     </div>
 
+    {%- comment -%}
+      Elke knop zit in een eigen lijst: de vorm met de twee afgesneden hoeken
+      (dezelfde als de knop in de hero), met de lijst als rand. Een gewone
+      border volgt clip-path niet en zou op de schuine kanten wegvallen.
+      consent.js zet `hidden` op de knop zelf; de lijst verdwijnt dan mee via
+      :has() in _consent.scss.
+    {%- endcomment -%}
     <div class="consent__actions">
-      <button class="btn btn-primary" type="button" data-consent-accept>{{ t.consent.accept }}</button>
-      <button class="btn btn-secondary" type="button" data-consent-reject>{{ t.consent.reject }}</button>
-      <button class="btn btn-secondary" type="button" data-consent-save hidden>{{ t.consent.save }}</button>
+      <span class="consent__frame consent__frame--primary">
+        <button class="btn btn-primary consent__btn" type="button" data-consent-accept>{{ t.consent.accept }}</button>
+      </span>
+      <span class="consent__frame">
+        <button class="btn btn-secondary consent__btn" type="button" data-consent-reject>{{ t.consent.reject }}</button>
+      </span>
+      <span class="consent__frame">
+        <button class="btn btn-secondary consent__btn" type="button" data-consent-save hidden>{{ t.consent.save }}</button>
+      </span>
       <button class="consent__toggle" type="button" data-consent-customise aria-expanded="false">{{ t.consent.customise }}</button>
     </div>
   </div>

@@ -143,9 +143,8 @@ play_blog:
 consent:
   title: "Mogen we meten hoe deze pagina werkt?"
   text: >-
-    Noodzakelijke cookies staan altijd aan. Voor statistieken en marketing
-    vragen we het je. Je keuze geldt zes maanden en is onderaan elke pagina te
-    wijzigen.
+    We hebben cookies voor het onthouden van de taal, voor het analyseren van
+    bezoekers en het vermarkten van onze producten. Je mag kiezen!
   accept: "Alles accepteren"
   reject: "Alleen noodzakelijk"
   save: "Keuze opslaan"
