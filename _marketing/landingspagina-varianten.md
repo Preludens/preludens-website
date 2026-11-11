@@ -55,6 +55,11 @@ Beide soorten links herkent `booking_click` als `microsoft-bookings`.
 
 `afspraak.url` wijst naar de dienst zelf, zodat een bezoeker direct bij "Kennismaking" landt. Daan is nog niet toegevoegd als medewerker. Dat stuurt hem een uitnodiging, en dat laat ik aan jullie.
 
+**Meldingen bij een boeking:**
+
+- **E-mail naar Jan-Willem:** de standaardinstelling van Bookings voor medewerkers, en de afspraak komt in zijn Outlook-agenda.
+- **Teams:** de Power Automate-flow **"Bookings Kennismaking naar Teams Sales"** (account Jan-Willem). Die plaatst bij elke nieuwe afspraak op `Preludens1@Preludens.nl` een bericht van de Flow-bot in **CRM → Sales**, met naam, e-mailadres en begintijd. De begintijd staat in UTC, en dat staat er ook bij. De lijst met Bookings-pagina's laadde in Power Automate niet (een tokenfout), dus het adres is met de hand ingevuld. Of de trigger daarop vuurt, blijkt pas bij de eerste echte boeking.
+
 **Bookings kan ook in de pagina zelf** (de knop *Embed* bij de reserveringspagina). Dan blijft de bezoeker op de site. Een geboekte afspraak meldt Bookings, anders dan Calendly, niet terug aan de pagina.
 
 Twee opties:
