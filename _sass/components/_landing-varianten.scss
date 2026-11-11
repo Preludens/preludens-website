@@ -814,3 +814,85 @@ body.lv-paths-ready:not([data-path="koper"]):not([data-path="beide"]) [data-land
 .panel p.lv-choose__reply[hidden] {
   display: none;
 }
+
+/* ---------- afspraak inplannen ---------- */
+
+.panel p.lv-afspraak__note {
+  margin: var(--space-xs) 0 0;
+  font-size: 0.9375rem;
+  color: var(--color-ink-soft);
+}
+
+/* Onder de vragen: een rustige regel met de twee wegen naar contact. */
+.lv-faq-more {
+  max-width: 44rem;
+  margin: var(--space-lg) auto 0;
+  text-align: left;
+}
+
+.panel .lv-faq-more p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.lv-faq-more .sp-actions {
+  margin-top: var(--space-sm);
+}
+
+/* De uitgang van variant D: het afspraakblok en het formulier eronder vormen
+   samen één donker vlak. Het afspraakblok schuift onder de snede van de
+   mistband erboven, net zoals het formulier dat op de stubs doet. */
+.lv-afspraak-band {
+  position: relative;
+  z-index: 1;
+  margin-top: calc(-1 * (var(--sp-gap) + var(--sp-jump)));
+  background: var(--color-deep-navy);
+  color: var(--color-cloud-white);
+
+  .panel__inner {
+    padding-top: calc(clamp(2.25rem, 7vh, 6rem) + var(--sp-jump));
+    padding-bottom: var(--space-lg);
+  }
+
+  /* Zelfde kolom als het formulier eronder (.lead-form: 44rem, gecentreerd),
+     zodat afspraak en formulier één blok lezen. */
+  .lv-afspraak-band__body {
+    max-width: 44rem;
+    margin-inline: auto;
+  }
+
+  .sp-actions {
+    margin-top: var(--space-md);
+  }
+
+  h2 {
+    color: var(--color-cloud-white);
+  }
+
+  p.sp-lead {
+    color: color-mix(in srgb, var(--color-cloud-white) 82%, transparent);
+  }
+
+  p.lv-afspraak__note {
+    color: color-mix(in srgb, var(--color-cloud-white) 72%, transparent);
+  }
+}
+
+[data-landing-variant] .lv-afspraak-band + #actie {
+  margin-top: 0;
+
+  .panel__inner {
+    padding-top: var(--space-lg);
+  }
+
+  .lead-form {
+    padding-top: var(--space-lg);
+    border-top: 1px solid color-mix(in srgb, var(--color-cloud-white) 16%, transparent);
+  }
+
+  .lead-form__intro h2 {
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  }
+}

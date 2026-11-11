@@ -168,13 +168,13 @@ sitemap: false
 {% include panels/faq-item.html question="Wat kost het?" answer="Dat hangt af van het aantal situaties en van waar het draait. Je kunt klein beginnen: één moment uit één training. Dan weet je of het werkt voordat je meer doet." %}
 {% endcapture %}
 {% capture bezwaren %}
-<h2>Vragen voordat je ja zegt</h2>
+<h2>Wat je je misschien afvraagt</h2>
 {% include panels/faq.html label="Vragen van wie beslist" items=koper_vragen %}
 {% endcapture %}
 {% include panels/panel.html variant="mist" id="bezwaren" body=bezwaren %}
 </div>
 
-{% include panels/form.html id="actie" casus="praktijkdagen" title="Laat zien hoe dit bij jouw training past" lead="Vertel om welke training het gaat. We kijken samen welk moment van de dag je als eerste terug wilt." submit_note="Je krijgt een persoonlijk antwoord, geen nieuwsbrief." %}
+{% include panels/form.html id="actie" casus="praktijkdagen" title="Versterk jouw praktijkdag" lead="Vertel om welke training het gaat. We kijken samen welk moment van de dag je als eerste terug wilt." submit_note="Je krijgt een persoonlijk antwoord, geen nieuwsbrief." %}
 
 </div>
 

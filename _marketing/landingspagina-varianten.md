@@ -2,7 +2,7 @@
 
 Voor: Jan-Willem en Daan
 Datum: 11 november 2026
-Status: concept, lokaal te bekijken, niets op `production`. Ronde 2 (variant D) staat direct hieronder; daarna volgt het verslag van ronde 1 (A, B en C).
+Status: concept, lokaal te bekijken, niets op `production`. Hieronder eerst ronde 3 (beelden, knopteksten en de afspraakknop), dan ronde 2 (variant D), dan het verslag van ronde 1 (A, B en C).
 
 Drie uitwerkingen van dezelfde casus (1, betere praktijkdagen), elk met een andere tactische keuze. Ze zijn bedoeld om naast elkaar te leggen en te kiezen. Ze zijn niet bedoeld om tegen elkaar te A/B-testen: bij zestig tot honderdvijftig bezoekers per pagina zie je met een test alleen enorme verschillen (zie *Bij weinig verkeer*, onderaan).
 
@@ -15,6 +15,41 @@ Drie uitwerkingen van dezelfde casus (1, betere praktijkdagen), elk met een ande
 - D, kiezen en doen: <http://localhost:4000/preludens-website/oplossingen/varianten/d/>, ook met `?pad=koper` of `?pad=instructeur`
 
 Alle vijf staan op `noindex, nofollow` en buiten `sitemap.xml` (gecontroleerd in de gebouwde site).
+
+---
+
+## Ronde 3: beelden kiezen, knopteksten en direct een afspraak
+
+### De beelden staan in één bestand
+
+`_data/varianten.yml` bevat per blok van D welk beeld er staat, met de alt-tekst. Bij elk blok staat in een opmerking waar het beeld komt. Je hoeft dus niet in de pagina zelf te zoeken. Alleen `src` en `alt` zijn nodig; het kader snijdt een beeld met een andere verhouding zelf bij. Na het opslaan bouwt `./bin/serve` de pagina opnieuw.
+
+### Knopteksten en koppen
+
+- **"Laat zien hoe dit bij jouw training past" is weg**, in alle vier de varianten. Het zei niet wat er gebeurt. Nu staat er:
+  - **Plan een kennismaking**: een afspraak.
+  - **Stuur een bericht** en **Stel je vraag per bericht**: het formulier.
+- **"Vragen voordat je ja zegt" heet nu "Wat je je misschien afvraagt".** Er is op dat moment nog niets om ja op te zeggen.
+- **Onder de vragen** staat nu "Staat je vraag er niet bij?" met twee knoppen: een afspraak inplannen, of de vraag per bericht stellen.
+- **De uitgang van D** bestaat uit twee wegen in één donker vlak. Bovenaan "Versterk jouw praktijkdag" met een knop om direct een afspraak in te plannen. Daaronder het formulier, met de kop "Of stuur ons een bericht". Ze staan bewust in één blok, zodat ze niet om aandacht concurreren.
+- In de hero van D is de tweede knop nu ook "Plan een kennismaking".
+
+### Direct een afspraak inplannen
+
+Op de site stond nog geen afsprakenlink. De knop staat er wel, en werkt zodra er een link is: zet die in `_data/varianten.yml` onder `afspraak.url`. Tot die tijd gaat de knop naar het formulier.
+
+Twee opties:
+
+| | Microsoft Bookings | Calendly |
+|---|---|---|
+| Wat | "Bookings with me" in Outlook, of een gedeelde Bookings-pagina | Losse dienst |
+| Teams | Maakt zelf een Teams-vergadering aan | Via een koppeling |
+| Kosten | Zit in veel Microsoft 365-abonnementen; nagaan of het in dat van Preludens zit | Gratis voor één soort afspraak, daarna betaald |
+| Meten | Klik op de knop (`booking_click`) | Klik op de knop, en in de pagina ingebed ook een geboekte afspraak (`booking_complete`) |
+
+**Advies: Microsoft Bookings**, omdat jullie al op Teams zitten en de afspraak dan meteen een Teams-vergadering is. Wil je kunnen zien dat iemand ook echt boekte, en niet alleen klikte, dan is Calendly in de pagina de enige van de twee die dat terugmeldt. Ik heb niet nagekeken welk Microsoft 365-abonnement jullie hebben.
+
+**Events:** `booking_click` met `booking_service` en `cta_position`, naast de gewone `cta_click`. Het script luistert ook al naar `booking_complete`, maar dat event vuurt alleen bij Calendly in de pagina. Met een link in een nieuw tabblad meldt geen van beide diensten iets terug.
 
 ---
 
@@ -211,6 +246,8 @@ Nieuw, in `assets/js/landing-varianten.js`:
 | `question_answer` | elk antwoord op een vraag, ook een tweede klik | `casus`, `question_id` (`herkenning`, `herhaal-tijd`, `eigenaar-elearning`), `answer` |
 | `path_select` | rolkeuze in C en D | `casus`, `path_choice` (`instructeur`, `koper`, en in C ook `beide`), `path_source` (`klik` of `url`) |
 | `faq_open` | een vraag gaat open (één keer per vraag) | `casus`, `faq_question`, `faq_position` |
+| `booking_click` | klik op "Plan een kennismaking" met een afsprakenlink | `casus`, `booking_service`, `cta_position` |
+| `booking_complete` | geboekte afspraak, alleen bij Calendly in de pagina | `casus`, `booking_service` |
 
 Daarnaast zet het script `landing_variant` (`a` tot en met `d`) in de dataLayer, zonder event.
 
@@ -265,6 +302,8 @@ Alleen nieuwe bestanden, plus één regel in een gedeeld bestand:
 | `oplossingen/varianten/a/index.md`, `b/`, `c/`, `d/` | de vier varianten |
 | `_includes/varianten/co-melder.html` | de CO-melder, gedeeld door alle vier |
 | `_includes/varianten/herkenning.html` | de herkenningsvraag |
+| `_includes/varianten/afspraak.html` | de knop "Plan een kennismaking" |
+| `_data/varianten.yml` | afsprakenlink en de beelden van D, op één plek |
 | `assets/images/verhalen/co-wijzer-slaapkamer-leeg.jpg` | de slaapkamer uit CO Wijzer zonder score en markering (64 kB) |
 | `assets/js/landing-varianten.js` | CO-melder, vragen, rolkeuze (D), paden (C), `faq_open` |
 | `_sass/components/_landing-varianten.scss` | stijl, alleen bestaande tokens |

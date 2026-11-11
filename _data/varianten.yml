@@ -1,0 +1,61 @@
+# Instellingen voor de landingspagina-varianten (oplossingen/varianten/).
+# Hier kies je de beelden per blok en de link om direct een afspraak in te
+# plannen, zonder in de pagina's zelf te hoeven zoeken.
+#
+# Na een wijziging herlaadt ./bin/serve dit bestand vanzelf.
+
+# Direct een afspraak inplannen.
+# Plak hier de link van de afsprakenpagina, bijvoorbeeld van Microsoft
+# Bookings ("Bookings with me" in Outlook, die maakt zelf een Teams-afspraak)
+# of van Calendly. Zolang hij leeg is, gaat de knop "Plan een kennismaking"
+# naar het formulier onderaan de pagina.
+afspraak:
+  url: ""
+  # Wat er onder de knop staat. Leeg laten mag.
+  toelichting: "Online, via Teams. Je kiest zelf een moment."
+
+# Beelden voor variant D, per blok. Alleen src en alt zijn nodig; het kader
+# snijdt een beeld met een andere verhouding zelf bij. Beelden staan onder
+# assets/images/ (spelbeelden in assets/images/verhalen/).
+#
+# alt beschrijft wat er op het beeld staat, voor wie het niet ziet. Is het
+# beeld puur sfeer naast een kop die alles al zegt, laat alt dan leeg ("").
+d:
+  # Poster op de video in de hero. De video zelf is de explainer van
+  # CO Wijzer; staat er een andere video in de hero, kies dan een passende
+  # poster.
+  hero_poster: /assets/images/verhalen/co-wijzer-melder-video-poster.jpg
+
+  # De twee kaarten onder "Waar sta jij?"
+  kies_instructeur:
+    src: /assets/images/verhalen/co-wijzer-ketel.jpg
+    alt: ""
+  kies_koper:
+    src: /assets/images/verhalen/studium-co-wijzer.jpg
+    alt: ""
+
+  # Naast "Je weet 's ochtends niet wie wat mist" (voor de instructeur)
+  instructeur:
+    src: /assets/images/verhalen/basis-koeltechniek-diagram.jpg
+    alt: "Scène uit Basis Koeltechniek: de deelnemer wijst punten aan in het h-log-P-diagram van een koelinstallatie"
+
+  # Naast "De dag is al korter gemaakt…" (voor wie beslist)
+  koper:
+    src: /assets/images/verhalen/basis-koeltechniek-onderdelen.jpg
+    alt: "Scène uit Basis Koeltechniek: de deelnemer kiest bij een omschrijving het juiste onderdeel van het koelcircuit"
+
+  # De drie stappen onder "Hoe het werkt"
+  stap_1:
+    src: /assets/images/verhalen/basis-koeltechniek-gesprek.jpg
+    alt: ""
+  stap_2:
+    src: /assets/images/verhalen/basis-koeltechniek-kringloop.jpg
+    alt: ""
+  stap_3:
+    src: /assets/images/verhalen/co-wijzer-ruimtes.jpg
+    alt: ""
+
+  # Naast "Waar het eerder werkte"
+  bewijs:
+    src: /assets/images/verhalen/basis-koeltechniek-video-poster.jpg
+    alt: "Titelbeeld van Basis Koeltechniek"

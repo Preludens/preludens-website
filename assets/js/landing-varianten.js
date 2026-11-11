@@ -19,6 +19,8 @@
    | question_answer  | casus, question_id, answer                              |
    | path_select      | casus, path_choice, path_source ("klik" of "url")       |
    | faq_open         | casus, faq_question, faq_position                       |
+   | booking_click    | casus, booking_service, cta_position                    |
+   | booking_complete | casus, booking_service (alleen bij Calendly in de pagina)|
 
    Daarnaast zet dit bestand landing_variant in de dataLayer (zonder event),
    zodat een GTM-variabele hem op elk volgend event kan meegeven. */
@@ -368,6 +370,31 @@
     if (preset && root.querySelector('[data-path="' + preset + '"]')) {
       choose(preset, "url", false);
     }
+  });
+
+  /* ---------- afspraak inplannen ----------
+     De knop opent de afsprakenpagina (link in _data/varianten.yml). Naast
+     cta_click vuurt booking_click, met de dienst erbij. Draait de afspraken-
+     pagina later in de pagina zelf (Calendly kan dat), dan meldt Calendly een
+     geboekte afspraak met postMessage; die vangen we hier als
+     booking_complete. Een link in een nieuw tabblad meldt niets terug. */
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest("[data-booking]");
+    if (!link) return;
+    var host = "";
+    try { host = new URL(link.href).hostname; } catch (e) { host = ""; }
+    var section = link.closest("[id]");
+    track("booking_click", {
+      booking_service: /calendly/.test(host) ? "calendly" : (/office|outlook|microsoft/.test(host) ? "microsoft-bookings" : host),
+      cta_position: link.getAttribute("data-cta-position") || (section ? section.id : "")
+    });
+  });
+
+  window.addEventListener("message", function (event) {
+    var data = event.data;
+    if (!data || typeof data !== "object" || data.event !== "calendly.event_scheduled") return;
+    if (!/calendly\.com$/.test(new URL(event.origin).hostname)) return;
+    track("booking_complete", { booking_service: "calendly" });
   });
 
   /* ---------- bezwaren: welke vraag gaat open ----------

@@ -1,0 +1,29 @@
+{%- comment -%}
+  Knop om direct een kennismaking in te plannen, voor de landingspagina-
+  varianten. De link staat in _data/varianten.yml (afspraak.url).
+
+  Pass: position (cta_position), secondary_label en secondary_href
+        (optioneel), note (true: de toelichting uit varianten.yml eronder),
+        style ("secondary" voor een witte knop), bare (true: alleen de
+        knop, zonder eigen rij, om naast een andere knop te zetten).
+
+  Met een link opent de afsprakenpagina in een nieuw tabblad, en vuurt naast
+  cta_click ook booking_click. Zonder link gaat de knop naar het formulier
+  onderaan (#actie): dan staat er nog geen afsprakenpagina, en een knop die
+  nergens heen gaat is erger dan een omweg.
+{%- endcomment -%}
+{%- assign booking = site.data.varianten.afspraak -%}
+{%- assign btn_style = include.style | default: "primary" -%}
+{%- unless include.bare %}<div class="sp-actions lv-afspraak">{% endunless %}
+  {%- if booking.url and booking.url != "" %}
+  <a class="btn btn-{{ btn_style }}" href="{{ booking.url }}" target="_blank" rel="noopener" data-booking data-cta-position="{{ include.position }}" aria-label="Plan een kennismaking (opent in een nieuw tabblad)">Plan een kennismaking</a>
+  {%- else %}
+  <a class="btn btn-{{ btn_style }}" href="#actie" data-cta-position="{{ include.position }}">Plan een kennismaking</a>
+  {%- endif %}
+  {%- if include.secondary_label %}
+  <a class="btn btn-secondary" href="{{ include.secondary_href | default: '#actie' }}">{{ include.secondary_label }}</a>
+  {%- endif %}
+{%- unless include.bare %}</div>{% endunless %}
+{%- if include.note and booking.toelichting and booking.toelichting != "" %}
+<p class="lv-afspraak__note">{{ booking.toelichting }}</p>
+{%- endif %}

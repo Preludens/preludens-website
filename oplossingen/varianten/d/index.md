@@ -37,6 +37,8 @@ sitemap: false
 
 {% include panels/clips.html %}
 {% assign demo_url = site.preludens.demo.url %}
+{%- comment -%} Beelden en afsprakenlink: _data/varianten.yml {%- endcomment -%}
+{% assign beeld = site.data.varianten.d %}
 
 <div class="panel-stack" data-landing-variant="d">
 
@@ -46,11 +48,14 @@ sitemap: false
     <div class="sp-hero-copy">
       <h1>Je herhaalt op de trainingsdag wat ze in de e-learning al gehad hebben</h1>
       <p class="sp-lead">Wij maken de voorbereiding speelbaar. Deelnemers oefenen vooraf met situaties uit hun vak, en de instructeur ziet 's&nbsp;ochtends waar de groep staat. Zo gaat de praktijkdag naar oefenen.</p>
-      {% include panels/actions.html primary_label="Probeer het zelf" primary_href="#probeer" primary_position="hero" secondary_label="Laat zien hoe dit bij jouw training past" secondary_href="#actie" %}
+      <div class="sp-actions">
+        <a class="btn btn-primary" href="#probeer" data-cta-position="hero">Probeer het zelf</a>
+        {% include varianten/afspraak.html position="hero" style="secondary" bare=true %}
+      </div>
     </div>
     <div class="lv-hero__media">
       {% assign co_video = site.media_base | append: "cowijzer-melder-explainer.mp4?v=2" %}
-      {% include panels/video.html src=co_video poster="/assets/images/verhalen/co-wijzer-melder-video-poster.jpg" title="CO Wijzer explainer (hero)" label="Explainer van CO Wijzer: een huis in doorsnede waarin per ruimte een CO-melder wordt geplaatst" caption="Voorbeeld uit ons werk: CO Wijzer, de voorbereiding voor monteurs. Een minuut uit het spel." download_label="Download de video (mp4, 2,5 MB)" play_label="Speel het voorbeeld af" %}
+      {% include panels/video.html src=co_video poster=beeld.hero_poster title="CO Wijzer explainer (hero)" label="Explainer van CO Wijzer: een huis in doorsnede waarin per ruimte een CO-melder wordt geplaatst" caption="Voorbeeld uit ons werk: CO Wijzer, de voorbereiding voor monteurs. Een minuut uit het spel." download_label="Download de video (mp4, 2,5 MB)" play_label="Speel het voorbeeld af" %}
     </div>
   </div>
 </section>
@@ -62,11 +67,11 @@ sitemap: false
 <div class="lv-choose" data-lv-choose>
   <div class="lv-choose__options" role="group" aria-label="Kies je rol">
     <a class="lv-choose__option" href="#voor-instructeur" data-choose="instructeur" data-reply="Jij geeft de training. Hieronder: wat jij ervan merkt op de dag.">
-      <img src="{{ '/assets/images/verhalen/co-wijzer-ketel.jpg' | relative_url }}" alt="" width="1024" height="472" loading="lazy" decoding="async">
+      <img src="{{ beeld.kies_instructeur.src | relative_url }}" alt="{{ beeld.kies_instructeur.alt }}" width="1024" height="448" loading="lazy" decoding="async">
       <span class="lv-choose__body"><strong>Ik geef de training</strong><span>Je staat zelf voor de groep</span></span>
     </a>
     <a class="lv-choose__option" href="#voor-koper" data-choose="koper" data-reply="Jij beslist over de training. Hieronder: wat het jullie oplevert, en hoe het past bij wat er al is.">
-      <img src="{{ '/assets/images/verhalen/studium-co-wijzer.jpg' | relative_url }}" alt="" width="1024" height="384" loading="lazy" decoding="async">
+      <img src="{{ beeld.kies_koper.src | relative_url }}" alt="{{ beeld.kies_koper.alt }}" width="1024" height="448" loading="lazy" decoding="async">
       <span class="lv-choose__body"><strong>Ik beslis over de training</strong><span>Je kiest wat er vooraf en op de dag gebeurt</span></span>
     </a>
   </div>
@@ -98,7 +103,7 @@ sitemap: false
 </div>
 {% endcapture %}
 {% capture instructeur %}
-{% include panels/media.html src="/assets/images/verhalen/basis-koeltechniek-diagram.jpg" alt="Scène uit Basis Koeltechniek: de deelnemer wijst punten aan in het h-log-P-diagram van een koelinstallatie" width="1024" height="462" ratio="1024 / 462" angle=true body=instructeur_body %}
+{% include panels/media.html src=beeld.instructeur.src alt=beeld.instructeur.alt ratio="16 / 9" angle=true body=instructeur_body %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="voor-instructeur" body=instructeur %}
 
@@ -123,7 +128,7 @@ sitemap: false
 </div>
 {% endcapture %}
 {% capture koper %}
-{% include panels/media.html src="/assets/images/verhalen/basis-koeltechniek-onderdelen.jpg" alt="Scène uit Basis Koeltechniek: de deelnemer kiest bij een omschrijving het juiste onderdeel van het koelcircuit" width="1024" height="499" ratio="1024 / 499" angle="flip" reverse=true body=koper_body %}
+{% include panels/media.html src=beeld.koper.src alt=beeld.koper.alt ratio="16 / 9" angle="flip" reverse=true body=koper_body %}
 {% endcapture %}
 {% include panels/panel.html variant="harbor" id="voor-koper" body=koper %}
 
@@ -136,9 +141,9 @@ sitemap: false
   <div class="lv-after">
     <p class="lv-claim">We vervangen de praktijkdag niet. We zorgen dat die dag naar oefenen gaat.</p>
     {% if demo_url and demo_url != "" %}
-      {% include panels/actions.html primary_label="Speel de hele demo (2 minuten)" primary_href=demo_url primary_demo=true casus="praktijkdagen" primary_position="probeer" secondary_label="Laat zien hoe dit bij jouw training past" secondary_href="#actie" %}
+      {% include panels/actions.html primary_label="Speel de hele demo (2 minuten)" primary_href=demo_url primary_demo=true casus="praktijkdagen" primary_position="probeer" %}
     {% else %}
-      {% include panels/actions.html primary_label="Laat zien hoe dit bij jouw training past" primary_href="#actie" primary_position="probeer" %}
+      {% include varianten/afspraak.html position="probeer" secondary_label="Stuur een bericht" secondary_href="#actie" %}
     {% endif %}
   </div>
 </div>
@@ -150,17 +155,17 @@ sitemap: false
 <h2>Hoe het werkt</h2>
 <ol class="lv-steps">
   <li>
-    <img src="{{ '/assets/images/verhalen/basis-koeltechniek-gesprek.jpg' | relative_url }}" alt="" width="1024" height="462" loading="lazy" decoding="async">
+    <img src="{{ beeld.stap_1.src | relative_url }}" alt="{{ beeld.stap_1.alt }}" width="1024" height="640" loading="lazy" decoding="async">
     <h3>We zoeken waar de dag op vastloopt</h3>
     <p>Samen met jullie instructeurs: welke uitleg komt elke keer terug, en waar gaat het in de hal mis?</p>
   </li>
   <li>
-    <img src="{{ '/assets/images/verhalen/basis-koeltechniek-kringloop.jpg' | relative_url }}" alt="" width="1024" height="460" loading="lazy" decoding="async">
+    <img src="{{ beeld.stap_2.src | relative_url }}" alt="{{ beeld.stap_2.alt }}" width="1024" height="640" loading="lazy" decoding="async">
     <h3>Dat worden korte speelbare situaties</h3>
     <p>De deelnemer kiest, ziet wat er gebeurt en krijgt uitleg. Een paar minuten per situatie, in jullie eigen leeromgeving.</p>
   </li>
   <li>
-    <img src="{{ '/assets/images/verhalen/co-wijzer-ruimtes.jpg' | relative_url }}" alt="" width="1024" height="464" loading="lazy" decoding="async">
+    <img src="{{ beeld.stap_3.src | relative_url }}" alt="{{ beeld.stap_3.alt }}" width="1024" height="640" loading="lazy" decoding="async">
     <h3>De instructeur ziet waar de groep staat</h3>
     <p>Vóór de dag, per situatie. De dag begint bij wat misging.</p>
   </li>
@@ -175,7 +180,7 @@ sitemap: false
 <p class="sp-lead">Bij een andere opdrachtgever, een vijfdaagse training op locatie, konden twee dagen vervallen toen de deelnemers vooraf oefenden. Dat is één traject en geen belofte. Wij sturen op meer oefentijd op de dag, niet op minder dagen.</p>
 {% endcapture %}
 {% capture bewijs %}
-{% include panels/media.html src="/assets/images/verhalen/basis-koeltechniek-video-poster.jpg" alt="Titelbeeld van Basis Koeltechniek" width="1920" height="1080" angle=true body=bewijs_body %}
+{% include panels/media.html src=beeld.bewijs.src alt=beeld.bewijs.alt ratio="16 / 9" angle=true body=bewijs_body %}
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="bewijs" body=bewijs %}
 
@@ -188,12 +193,31 @@ sitemap: false
 {% include panels/faq-item.html question="Wat kost het?" answer="Dat hangt af van het aantal situaties en van waar het draait. Je kunt klein beginnen: één moment uit één training. Dan weet je of het werkt voordat je meer doet." %}
 {% endcapture %}
 {% capture bezwaren %}
-<h2>Vragen voordat je ja zegt</h2>
+<h2>Wat je je misschien afvraagt</h2>
 {% include panels/faq.html label="Vragen over de voorbereiding" items=vragen %}
+<div class="lv-faq-more">
+  <p>Staat je vraag er niet bij? Dan bespreken we hem graag.</p>
+  {% include varianten/afspraak.html position="bezwaren" secondary_label="Stel je vraag per bericht" secondary_href="#actie" %}
+</div>
 {% endcapture %}
 {% include panels/panel.html variant="mist" id="bezwaren" body=bezwaren %}
 
-{% include panels/form.html id="actie" casus="praktijkdagen" title="Laat zien hoe dit bij jouw training past" lead="Vertel om welke training het gaat. We kijken samen welk moment van de dag je als eerste terug wilt." submit_note="Je krijgt een persoonlijk antwoord, geen nieuwsbrief." %}
+{%- comment -%}
+  9. De uitgang: eerst direct een afspraak, daaronder het formulier. Twee
+  wegen naar hetzelfde, in één donker vlak, zodat ze niet om aandacht
+  concurreren. De afsprakenlink staat in _data/varianten.yml.
+{%- endcomment -%}
+<section class="panel lv-afspraak-band" id="afspraak">
+  <div class="panel__inner">
+    <div class="lv-afspraak-band__body">
+      <h2>Versterk jouw praktijkdag</h2>
+      <p class="sp-lead">Plan direct een online kennismaking. We kijken samen welk moment van de dag je als eerste terug wilt, en hoe een voorbereiding daar past.</p>
+      {% include varianten/afspraak.html position="afspraak" note=true %}
+    </div>
+  </div>
+</section>
+
+{% include panels/form.html id="actie" casus="praktijkdagen" title="Of stuur ons een bericht" lead="Vertel om welke training het gaat. We nemen contact met je op." submit_note="Je krijgt een persoonlijk antwoord, geen nieuwsbrief." %}
 
 </div>
 
