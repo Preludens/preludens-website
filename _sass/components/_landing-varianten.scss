@@ -644,7 +644,7 @@
   margin-top: var(--space-lg);
 }
 
-body.lv-paths-ready:not([data-path="koper"]):not([data-path="beide"]) [data-landing-variant="c"] #actie {
+body.lv-paths-ready:not([data-path="koper"]):not([data-path="beide"]) [data-landing-variant="c"] #afspraak {
   margin-top: 0;
 }
 
@@ -731,7 +731,8 @@ body.lv-paths-ready:not([data-path="koper"]):not([data-path="beide"]) [data-land
 /* Het formulier schuift met een negatieve marge onder het paneel ervoor;
    op de stubs is dat een mistband met een snede. Staat er een wit paneel
    voor, dan valt de onderrand van de inhoud eronder weg. */
-[data-landing-variant] .panel--paper:has(+ .panel--pale) .panel__inner {
+[data-landing-variant] .panel--paper:has(+ .panel--pale) .panel__inner,
+[data-landing-variant] .panel--paper:has(+ .lv-afspraak-band) .panel__inner {
   padding-bottom: calc(clamp(2.25rem, 7vh, 6rem) + var(--sp-gap) + var(--sp-jump));
 }
 
@@ -894,5 +895,34 @@ body.lv-paths-ready:not([data-path="koper"]):not([data-path="beide"]) [data-land
 
   .lead-form__intro h2 {
     font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  }
+}
+
+/* De Bookings-agenda in de pagina. Hoog genoeg voor kalender, tijden en
+   het invulformulier van Bookings zonder dubbele scrollbalk op desktop; op
+   een telefoon staat alles onder elkaar en is hij hoger nodig. */
+.lv-afspraak-frame {
+  margin-top: var(--space-md);
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--color-cloud-white);
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 1180px;
+    border: 0;
+  }
+}
+
+.panel .lv-afspraak-band p.lv-afspraak__note a {
+  color: var(--color-soft-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 34rem) {
+  .lv-afspraak-frame iframe {
+    height: 1500px;
   }
 }

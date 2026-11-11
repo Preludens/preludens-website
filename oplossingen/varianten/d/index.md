@@ -203,19 +203,11 @@ sitemap: false
 {% include panels/panel.html variant="mist" id="bezwaren" body=bezwaren %}
 
 {%- comment -%}
-  9. De uitgang: eerst direct een afspraak, daaronder het formulier. Twee
-  wegen naar hetzelfde, in één donker vlak, zodat ze niet om aandacht
-  concurreren. De afsprakenlink staat in _data/varianten.yml.
+  9. De uitgang: eerst de agenda van Bookings in de pagina, daaronder het
+  formulier. Twee wegen naar hetzelfde, in één donker vlak, zodat ze niet om
+  aandacht concurreren. De afsprakenlink staat in _data/varianten.yml.
 {%- endcomment -%}
-<section class="panel lv-afspraak-band" id="afspraak">
-  <div class="panel__inner">
-    <div class="lv-afspraak-band__body">
-      <h2>Versterk jouw praktijkdag</h2>
-      <p class="sp-lead">Plan direct een online kennismaking. We kijken samen welk moment van de dag je als eerste terug wilt, en hoe een voorbereiding daar past.</p>
-      {% include varianten/afspraak.html position="afspraak" note=true %}
-    </div>
-  </div>
-</section>
+{% include varianten/afspraak-embed.html %}
 
 {% include panels/form.html id="actie" casus="praktijkdagen" title="Of stuur ons een bericht" lead="Vertel om welke training het gaat. We nemen contact met je op." submit_note="Je krijgt een persoonlijk antwoord, geen nieuwsbrief." %}
 

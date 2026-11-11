@@ -174,7 +174,9 @@ sitemap: false
 {% include panels/panel.html variant="mist" id="bezwaren" body=bezwaren %}
 </div>
 
-{% include panels/form.html id="actie" casus="praktijkdagen" title="Versterk jouw praktijkdag" lead="Vertel om welke training het gaat. We kijken samen welk moment van de dag je als eerste terug wilt." submit_note="Je krijgt een persoonlijk antwoord, geen nieuwsbrief." %}
+{% include varianten/afspraak-embed.html %}
+
+{% include panels/form.html id="actie" casus="praktijkdagen" title="Of stuur ons een bericht" lead="Vertel om welke training het gaat. We nemen contact met je op." submit_note="Je krijgt een persoonlijk antwoord, geen nieuwsbrief." %}
 
 </div>
 

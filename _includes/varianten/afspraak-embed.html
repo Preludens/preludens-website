@@ -1,0 +1,35 @@
+{%- comment -%}
+  Afspraakblok voor de landingspagina-varianten: de Bookings-pagina van
+  Preludens staat in de pagina zelf, zodat een bezoeker de site niet verlaat
+  om een kennismaking te plannen. De link staat in _data/varianten.yml
+  (afspraak.url); zonder link valt het blok terug op een knop naar het
+  formulier.
+
+  Pass: title, lead (optioneel).
+
+  Het blok heeft id "afspraak"; alle knoppen "Plan een kennismaking" wijzen
+  daarnaartoe (_includes/varianten/afspraak.html). Wat er binnen de agenda
+  gebeurt, kan de pagina niet zien: Bookings meldt een geboekte afspraak niet
+  terug. Wel meet assets/js/landing-varianten.js booking_view zodra de agenda
+  in beeld komt. Een geboekte afspraak zie je in Teams (CRM → Sales) en in
+  Bookings zelf.
+
+  Het formulier staat er direct onder, in hetzelfde donkere vlak.
+{%- endcomment -%}
+{%- assign booking = site.data.varianten.afspraak -%}
+<section class="panel lv-afspraak-band" id="afspraak">
+  <div class="panel__inner">
+    <div class="lv-afspraak-band__body">
+      <h2>{{ include.title | default: "Versterk jouw praktijkdag" }}</h2>
+      <p class="sp-lead">{{ include.lead | default: "Kies hieronder een moment voor een online kennismaking van een half uur. We kijken samen welk moment van de dag je als eerste terug wilt, en hoe een voorbereiding daar past." }}</p>
+      {%- if booking.url and booking.url != "" %}
+      <div class="lv-afspraak-frame" data-booking-frame>
+        <iframe src="{{ booking.url }}" title="Agenda om een kennismaking met Preludens te plannen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <p class="lv-afspraak__note">{{ booking.toelichting }} Laadt de agenda niet? <a href="{{ booking.url }}" target="_blank" rel="noopener" data-booking data-cta-position="afspraak-fallback">Open hem in een nieuw tabblad</a>.</p>
+      {%- else %}
+      {% include varianten/afspraak.html position="afspraak" note=true %}
+      {%- endif %}
+    </div>
+  </div>
+</section>

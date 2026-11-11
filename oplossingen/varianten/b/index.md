@@ -37,7 +37,7 @@ sitemap: false
       <h1>Je herhaalt op de trainingsdag wat ze in de e-learning al gehad hebben</h1>
       <p class="sp-lead">De e-learning is gedaan en de toets is gehaald. Toch begint de praktijkdag met een rondje theorie, voor de zekerheid. Dat ligt niet aan de instructeur, en ook niet aan de e-learning.</p>
       <p class="sp-lead">Hieronder lees je waarom het zo loopt, wat een voorbereiding anders kan doen, en hoe dat past naast wat jullie al hebben.</p>
-      {% include panels/actions.html primary_label="Speel een voorbeeld" primary_href="#voorbeeld" primary_position="hero" secondary_label="Plan een kennismaking" secondary_href="#actie" %}
+      {% include panels/actions.html primary_label="Speel een voorbeeld" primary_href="#voorbeeld" primary_position="hero" secondary_label="Plan een kennismaking" secondary_href="#afspraak" %}
     </div>
   </div>
 </section>
@@ -118,7 +118,9 @@ sitemap: false
 {% endcapture %}
 {% include panels/panel.html variant="mist" id="bezwaren" body=bezwaren %}
 
-{% include panels/form.html id="actie" casus="praktijkdagen" title="Versterk jouw praktijkdag" lead="Vertel om welke training het gaat. We kijken samen welk moment van de dag je als eerste terug wilt." submit_note="Je krijgt een persoonlijk antwoord, geen nieuwsbrief." %}
+{% include varianten/afspraak-embed.html %}
+
+{% include panels/form.html id="actie" casus="praktijkdagen" title="Of stuur ons een bericht" lead="Vertel om welke training het gaat. We nemen contact met je op." submit_note="Je krijgt een persoonlijk antwoord, geen nieuwsbrief." %}
 
 </div>
 

@@ -20,6 +20,7 @@
    | path_select      | casus, path_choice, path_source ("klik" of "url")       |
    | faq_open         | casus, faq_question, faq_position                       |
    | booking_click    | casus, booking_service, cta_position                    |
+   | booking_view     | casus, booking_service (agenda half in beeld)           |
    | booking_complete | casus, booking_service (alleen bij Calendly in de pagina)|
 
    Daarnaast zet dit bestand landing_variant in de dataLayer (zonder event),
@@ -373,27 +374,51 @@
   });
 
   /* ---------- afspraak inplannen ----------
-     De knop opent de afsprakenpagina (link in _data/varianten.yml). Naast
-     cta_click vuurt booking_click, met de dienst erbij. Draait de afspraken-
-     pagina later in de pagina zelf (Calendly kan dat), dan meldt Calendly een
-     geboekte afspraak met postMessage; die vangen we hier als
-     booking_complete. Een link in een nieuw tabblad meldt niets terug. */
+     De Bookings-agenda staat in de pagina zelf (#afspraak, zie
+     _includes/varianten/afspraak-embed.html). De knoppen "Plan een
+     kennismaking" scrollen ernaartoe; naast cta_click vuurt dan
+     booking_click. booking_view vuurt één keer, zodra de agenda voor de
+     helft in beeld is: dat is de beste benadering van "keek naar de
+     agenda", want wat er in de iframe gebeurt, kan de pagina niet zien.
+     Bookings meldt een geboekte afspraak niet terug; die zie je in Teams.
+     Mocht er later een Calendly-agenda in staan: die meldt een boeking wel,
+     met postMessage, en dat wordt booking_complete. */
+  function bookingService() {
+    var frame = document.querySelector("[data-booking-frame] iframe");
+    var src = frame ? frame.getAttribute("src") : "";
+    if (/calendly/.test(src)) return "calendly";
+    if (/office|outlook|microsoft/.test(src)) return "microsoft-bookings";
+    return src ? "anders" : "";
+  }
+
   document.addEventListener("click", function (event) {
     var link = event.target.closest("[data-booking]");
     if (!link) return;
-    var host = "";
-    try { host = new URL(link.href).hostname; } catch (e) { host = ""; }
     var section = link.closest("[id]");
     track("booking_click", {
-      booking_service: /calendly/.test(host) ? "calendly" : (/office|outlook|microsoft/.test(host) ? "microsoft-bookings" : host),
+      booking_service: bookingService(),
       cta_position: link.getAttribute("data-cta-position") || (section ? section.id : "")
     });
   });
 
+  var bookingFrame = document.querySelector("[data-booking-frame]");
+  if (bookingFrame && "IntersectionObserver" in window) {
+    var seen = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        seen.disconnect();
+        track("booking_view", { booking_service: bookingService() });
+      });
+    }, { threshold: 0.5 });
+    seen.observe(bookingFrame);
+  }
+
   window.addEventListener("message", function (event) {
     var data = event.data;
     if (!data || typeof data !== "object" || data.event !== "calendly.event_scheduled") return;
-    if (!/calendly\.com$/.test(new URL(event.origin).hostname)) return;
+    var host = "";
+    try { host = new URL(event.origin).hostname; } catch (e) { return; }
+    if (!/calendly\.com$/.test(host)) return;
     track("booking_complete", { booking_service: "calendly" });
   });
 

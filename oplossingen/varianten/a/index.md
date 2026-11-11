@@ -48,10 +48,10 @@ sitemap: false
     <div class="lv-hero__next">
       <p class="lv-claim">We vervangen de praktijkdag niet. We zorgen dat die dag naar oefenen gaat.</p>
       {% if demo_url and demo_url != "" %}
-        {% include panels/actions.html primary_label="Speel de hele demo (2 minuten)" primary_href=demo_url primary_demo=true casus="praktijkdagen" primary_position="hero" secondary_label="Plan een kennismaking" secondary_href="#actie" %}
+        {% include panels/actions.html primary_label="Speel de hele demo (2 minuten)" primary_href=demo_url primary_demo=true casus="praktijkdagen" primary_position="hero" secondary_label="Plan een kennismaking" secondary_href="#afspraak" %}
       {% else %}
         {%- comment -%} Beslissing F: zolang er geen demo-URL is, is het formulier de volgende stap. {%- endcomment -%}
-        {% include panels/actions.html primary_label="Plan een kennismaking" primary_href="#actie" primary_position="hero" %}
+        {% include panels/actions.html primary_label="Plan een kennismaking" primary_href="#afspraak" primary_position="hero" %}
       {% endif %}
     </div>
   </div>
@@ -80,7 +80,9 @@ sitemap: false
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="bewijs" body=bewijs %}
 
-{% include panels/form.html id="actie" casus="praktijkdagen" title="Versterk jouw praktijkdag" lead="Vertel om welke training het gaat. We kijken samen welk moment van de dag je als eerste terug wilt." submit_note="Je krijgt een persoonlijk antwoord, geen nieuwsbrief." %}
+{% include varianten/afspraak-embed.html %}
+
+{% include panels/form.html id="actie" casus="praktijkdagen" title="Of stuur ons een bericht" lead="Vertel om welke training het gaat. We nemen contact met je op." submit_note="Je krijgt een persoonlijk antwoord, geen nieuwsbrief." %}
 
 </div>
 

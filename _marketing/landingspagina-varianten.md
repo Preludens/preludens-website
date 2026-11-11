@@ -68,7 +68,13 @@ Beide soorten links herkent `booking_click` als `microsoft-bookings`.
 - **GIF.** Een willekeurige GIF van een kantoorfeestje (vijf gecontroleerde Giphy-links) staat als `<img>` in het bericht, maar Teams haalt externe plaatjes uit Flow-bot-berichten weg. Hij verschijnt dus niet. Het kan wel met een Adaptive Card in plaats van een gewoon bericht.
 - **Bevestigingsmail aan de klant.** Het sjabloon van Microsoft ("Uw reservering is bevestigd", "Reserveringsdetails", "u") is niet aan te passen. Wel kan er een eigen blok "Aanvullende informatie" bij, en dat staat erin. Maar: de editor van Bookings staat in de donkere modus en zet de tekst in lichtgrijs (`rgb(214,214,214)`) in de mail, waardoor hij op wit bijna onleesbaar is. **Opgelost:** Outlook kort op licht thema gezet, de tekst opnieuw ingevoerd, en het thema daarna teruggezet op systeeminstellingen. Gecontroleerd met een derde testboeking: de tekst staat nu in `rgb(51,51,51)`. Bookings legt de tekst per afspraak vast, dus een verzette afspraak houdt de oude versie. Wie de tekst later aanpast, moet dat in het lichte thema doen.
 
-**Bookings kan ook in de pagina zelf** (de knop *Embed* bij de reserveringspagina). Dan blijft de bezoeker op de site. Een geboekte afspraak meldt Bookings, anders dan Calendly, niet terug aan de pagina.
+**De agenda staat in de pagina zelf (11 november 2026).** Een bezoeker verlaat de site niet meer om een afspraak te plannen.
+
+- **Het afspraakblok.** In alle vier de varianten staat boven het formulier een blok `#afspraak` (`_includes/varianten/afspraak-embed.html`) met de Bookings-agenda als iframe. Alle knoppen "Plan een kennismaking" scrollen daarnaartoe.
+- **De link.** Die heeft `?ismsaljsauthenabled` erachter, net als in Microsofts eigen insluitcode.
+- **Lokaal laadt de agenda niet.** Bookings weigert insluiten op `http://localhost`: er gaat een CSP-melding naar `csp.microsoft.com`. Op een https-pagina laadt hij wel; dat is getest in Chrome op example.com. Op preludens.nl en op GitHub Pages werkt het dus. Lokaal zie je een lege rechthoek, met de reservelink "Open hem in een nieuw tabblad" eronder.
+- **Meting.** `booking_click` bij een klik op een afspraakknop, `booking_view` zodra de agenda voor de helft in beeld is. Een geboekte afspraak meldt Bookings niet terug aan de pagina; die zie je in Teams (CRM → Sales).
+- **De hoogte** van de agenda is vast: 1180 px op desktop, 1500 px op een telefoon. Na de livegang nakijken of dat zonder dubbele scrollbalk past.
 
 Twee opties:
 
@@ -280,7 +286,8 @@ Nieuw, in `assets/js/landing-varianten.js`:
 | `question_answer` | elk antwoord op een vraag, ook een tweede klik | `casus`, `question_id` (`herkenning`, `herhaal-tijd`, `eigenaar-elearning`), `answer` |
 | `path_select` | rolkeuze in C en D | `casus`, `path_choice` (`instructeur`, `koper`, en in C ook `beide`), `path_source` (`klik` of `url`) |
 | `faq_open` | een vraag gaat open (één keer per vraag) | `casus`, `faq_question`, `faq_position` |
-| `booking_click` | klik op "Plan een kennismaking" met een afsprakenlink | `casus`, `booking_service`, `cta_position` |
+| `booking_click` | klik op "Plan een kennismaking" (scrolt naar de agenda) | `casus`, `booking_service`, `cta_position` |
+| `booking_view` | de agenda is voor de helft in beeld (één keer) | `casus`, `booking_service` |
 | `booking_complete` | geboekte afspraak, alleen bij Calendly in de pagina | `casus`, `booking_service` |
 
 Daarnaast zet het script `landing_variant` (`a` tot en met `d`) in de dataLayer, zonder event.
@@ -337,6 +344,7 @@ Alleen nieuwe bestanden, plus één regel in een gedeeld bestand:
 | `_includes/varianten/co-melder.html` | de CO-melder, gedeeld door alle vier |
 | `_includes/varianten/herkenning.html` | de herkenningsvraag |
 | `_includes/varianten/afspraak.html` | de knop "Plan een kennismaking" |
+| `_includes/varianten/afspraak-embed.html` | het afspraakblok met de Bookings-agenda in de pagina |
 | `_data/varianten.yml` | afsprakenlink en de beelden van D, op één plek |
 | `assets/images/verhalen/co-wijzer-slaapkamer-leeg.jpg` | de slaapkamer uit CO Wijzer zonder score en markering (64 kB) |
 | `assets/js/landing-varianten.js` | CO-melder, vragen, rolkeuze (D), paden (C), `faq_open` |
