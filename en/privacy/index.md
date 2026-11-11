@@ -156,7 +156,7 @@ permalink: /privacy/
         <section class="privacy__section" id="retention" aria-labelledby="retention-title">
           <h2 id="retention-title">How long we keep data</h2>
           <ul>
-            <li>Your contact details and your question are kept for as long as needed to handle your question and follow up on the conversation.<!-- TODO [RETENTION]: Jan-Willem has yet to set the retention period for leads in HubSpot. Replace this sentence with the fixed period, in privacy/index.md too. --></li>
+            <li>We keep your contact details and your question for up to two years after our last contact with you. After that we delete them from HubSpot.</li>
             <li>If you become a client, we keep the data that ends up in our accounts for seven years, because the law requires it.</li>
             <li>Google Analytics keeps data linked to a visitor for 14 months.</li>
             <li>Cookies expire after the period in the table above.</li>

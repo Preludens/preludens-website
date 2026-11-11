@@ -161,7 +161,7 @@ permalink: /privacy/
         <section class="privacy__section" id="bewaren" aria-labelledby="bewaren-titel">
           <h2 id="bewaren-titel">Hoe lang we gegevens bewaren</h2>
           <ul>
-            <li>Je contactgegevens en je vraag bewaren we zo lang als nodig is om je vraag af te handelen en het gesprek op te volgen.<!-- TODO [BEWAARTERMIJN]: Jan-Willem legt de termijn voor leads in HubSpot nog vast. Vervang deze zin door de vaste termijn, ook in en/privacy/index.md. --></li>
+            <li>Je contactgegevens en je vraag bewaren we tot twee jaar na het laatste contact met je. Daarna verwijderen we ze uit HubSpot.</li>
             <li>Word je klant, dan bewaren we de gegevens die in onze administratie terechtkomen zeven jaar, omdat de wet dat van ons vraagt.</li>
             <li>Google Analytics bewaart gegevens die aan een bezoeker gekoppeld zijn 14 maanden.</li>
             <li>Cookies verlopen na de termijn in de tabel hierboven.</li>
