@@ -44,10 +44,12 @@ Twee opties:
 |---|---|---|
 | Wat | "Bookings with me" in Outlook, of een gedeelde Bookings-pagina | Losse dienst |
 | Teams | Maakt zelf een Teams-vergadering aan | Via een koppeling |
-| Kosten | Zit in veel Microsoft 365-abonnementen; nagaan of het in dat van Preludens zit | Gratis voor één soort afspraak, daarna betaald |
+| Kosten | Zit in Microsoft 365 Business Standard, en dat heeft Preludens (verlengd op 12 juli 2026). Niet in Exchange Online (Plan 1), dat er ook loopt: wie alleen die licentie heeft, krijgt geen Bookings | Gratis voor één soort afspraak, daarna betaald |
 | Meten | Klik op de knop (`booking_click`) | Klik op de knop, en in de pagina ingebed ook een geboekte afspraak (`booking_complete`) |
 
-**Advies: Microsoft Bookings**, omdat jullie al op Teams zitten en de afspraak dan meteen een Teams-vergadering is. Wil je kunnen zien dat iemand ook echt boekte, en niet alleen klikte, dan is Calendly in de pagina de enige van de twee die dat terugmeldt. Ik heb niet nagekeken welk Microsoft 365-abonnement jullie hebben.
+**Advies: Microsoft Bookings**, omdat jullie al op Teams zitten en de afspraak dan meteen een Teams-vergadering is. Het zit in jullie Business Standard-abonnement, dus het kost niets extra. Wil je kunnen zien dat iemand ook echt boekte, en niet alleen klikte, dan is Calendly in de pagina de enige van de twee die dat terugmeldt.
+
+Welke medewerker welke licentie heeft, is uit de mail niet af te leiden. Dat staat in het Microsoft 365-beheercentrum onder *Gebruikers → Actieve gebruikers → Licenties en apps*. Daar staat ook of Bookings voor die gebruiker aan staat.
 
 **Events:** `booking_click` met `booking_service` en `cta_position`, naast de gewone `cta_click`. Het script luistert ook al naar `booking_complete`, maar dat event vuurt alleen bij Calendly in de pagina. Met een link in een nieuw tabblad meldt geen van beide diensten iets terug.
 
