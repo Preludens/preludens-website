@@ -1,8 +1,8 @@
 /* Consentbanner. Zit onderaan het beeld, over de inhoud heen maar niet modaal:
    de bezoeker kan doorlezen en daarna kiezen.
 
-   Vorm uit het palet: het lichtgoud van de warme panelen als vlak, met een
-   gouden bovenrand, zodat hij loskomt van de koele pagina erachter. De knoppen
+   Vorm uit het palet: het donkerblauw van de footer als vlak, met een gouden
+   bovenrand, zodat hij loskomt van de lichte pagina erachter. De knoppen
    hebben de afgesneden hoeken van de knop in de hero. Geen vlak dat de hele
    pagina dimt — dat zou de hero wegduwen, en bij een landingspagina is dat het
    eerste wat iemand ziet. */
@@ -12,7 +12,7 @@
   inset-inline: 0;
   bottom: 0;
   z-index: 900;
-  background: var(--color-pale-gold);
+  background: var(--color-prussian-blue);
   border-top: 4px solid var(--color-preludens-gold);
   box-shadow: 0 -10px 40px rgba(11, 42, 53, 0.16);
 
@@ -54,7 +54,7 @@
   font-size: clamp(1.25rem, 1rem + 1vw, 1.625rem);
   font-weight: 700;
   line-height: 1.2;
-  color: var(--color-ink);
+  color: var(--color-white);
 }
 
 .consent__text {
@@ -62,7 +62,7 @@
   max-width: 40rem;
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--color-ink);
+  color: rgba(246, 249, 249, 0.85);
 }
 
 .consent__actions {
@@ -86,7 +86,7 @@
   --frame: 2px;
   display: inline-flex;
   padding: var(--frame);
-  background: var(--color-brand-navy);
+  background: var(--color-white);
   clip-path: polygon(
     var(--cut) 0, 100% 0,
     100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%,
@@ -128,9 +128,13 @@
 }
 
 .consent__btn.btn-secondary {
-  background: var(--color-pale-gold);
+  background: var(--color-prussian-blue);
+  color: var(--color-white) !important;
 
-  &:hover { background: var(--color-white); }
+  &:hover {
+    background: var(--color-harbor-teal);
+    color: var(--color-white) !important;
+  }
 }
 
 /* "Zelf kiezen" is geen knop maar een derde weg: hij moet vindbaar zijn zonder
@@ -141,12 +145,12 @@
   border: 0;
   font-family: var(--font-body);
   font-size: 1rem;
-  color: var(--color-ink);
+  color: var(--color-white);
   text-decoration: underline;
   text-underline-offset: 3px;
   cursor: pointer;
 
-  &:hover { color: var(--color-ink-gold); }
+  &:hover { color: var(--color-soft-gold); }
   &:focus-visible { @include focus-ring(2px); }
 }
 
@@ -156,7 +160,7 @@
   margin: 0;
   padding: var(--space-md) 0 0;
   list-style: none;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(246, 249, 249, 0.2);
   display: grid;
   gap: var(--space-md);
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -171,13 +175,13 @@
   font-family: var(--font-display);
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--color-ink);
+  color: var(--color-white);
   cursor: pointer;
 
   input {
     width: 1.125rem;
     height: 1.125rem;
-    accent-color: var(--color-deep-gold);
+    accent-color: var(--color-preludens-gold);
     cursor: pointer;
   }
 
@@ -193,7 +197,7 @@
   margin: 0.25rem 0 0 1.625rem;
   font-size: 0.875rem;
   line-height: 1.55;
-  color: var(--color-ink-soft);
+  color: rgba(246, 249, 249, 0.75);
 }
 
 @media (max-width: 60rem) {
