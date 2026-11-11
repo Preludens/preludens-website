@@ -429,9 +429,10 @@ liever buiten `cta_click` houdt.
 geen video en geen demo; die komen met de kopij. En de hele ronde nog een keer
 op de live site en in het Engels.
 
-Het testcontact **test-meetfundament@preludens.nl** staat nog in het CRM, met
-twee inzendingen op de tijdlijn, plus één losse inzending van "Test Telefoon"
-zonder contactpersoon. Die mogen weg zodra je ze gezien hebt.
+De testgegevens zijn op 11 november opgeruimd: de drie testinzendingen zijn
+uit het formulier verwijderd, en het testcontact
+**test-meetfundament@preludens.nl** staat in de prullenbak van HubSpot (daar
+nog 90 dagen terug te halen).
 
 **Wat daar nog bij hoort, en nog niet klaar is:**
 
