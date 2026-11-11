@@ -376,9 +376,12 @@ Assistant én in het netwerkverkeer naar `region1.google-analytics.com`):
 | `cta_click` | `cta_label=Vraag een gesprek aan`, `cta_position=hero`, `casus=praktijkdagen` |
 | `mailto_click` | `link_text` en `casus` staan erbij |
 | `form_start` | Vuurt op het eerste veld, met `casus`; in GA4 DebugView aangekomen mét `casus` |
+| `form_submit` | Vuurt na een echte inzending, met `casus`; de tag `GA4 - form_submit` meldt *Gelukt* |
+| De lead in HubSpot | Staat erin, met **Casus: praktijkdagen** en de vijf andere velden |
+| Bronattributie | Werkt: het contact is "gemaakt van Direct verkeer van localhost/preludens-website/oplossingen/praktijkdagen", en de paginaweergaven vóór de inzending hangen aan het contact — `hutk` doet zijn werk |
 | Clarity | Start, en stuurt daarna zelf naar `a.clarity.ms/collect` |
 
-**De test leverde twee dingen op.**
+**De test leverde drie dingen op.**
 
 Het eerste is gerepareerd: **Clarity startte nooit voor een nieuwe bezoeker.**
 Op All Pages staat `analytics_storage` nog op *denied*, dus GTM hield de tag
@@ -390,7 +393,20 @@ bij een opgeslagen keuze, dus een terugkerende bezoeker start Clarity via All
 Pages en een nieuwe via de nieuwe trigger. Opnieuw getest: Clarity vuurt nu op
 `consent_update` en de opnames gaan de deur uit.
 
-Het tweede is een waarneming, geen storing: **`page_view` komt zonder `casus` en
+Het tweede moet jij beslissen, want het is een instelling in HubSpot:
+**HubSpot registreert elke inzending twee keer.** Naast de inzending die wij
+sturen (*Landingspagina's oplossingen*, zes velden, met `casus`) staat er een
+tweede op de tijdlijn, onder de naam `.lead-form__form`. Dat is HubSpots
+"niet-HubSpot-formulieren verzamelen": `collectedforms.js` komt mee met de
+trackingcode en pikt het formulier op aan zijn CSS-klasse. Die tweede inzending
+kent `casus` niet, en erger: hij zet het hele naamveld in **Voornaam**. Het
+testcontact heet daardoor "Test Meetfundament Meetfundament" in plaats van "Test
+Meetfundament". Bij elke lead zie je straks dus twee inzendingen en een scheve
+naam. Zet het verzamelen van niet-HubSpot-formulieren uit in de
+HubSpot-instellingen (of sluit dit formulier daar uit) — de trackingcode zelf
+moet blijven, want die levert `hutk` en daarmee de bronattributie hierboven.
+
+Het derde is een waarneming, geen storing: **`page_view` komt zonder `casus` en
 zonder `page_language` binnen.** Ze staan wel als configuratie-instelling op de
 Google-tag en de variabelen zijn op dat moment gevuld (`dlv - casus` =
 `praktijkdagen`, `dlv - page_language` = `nl`, gecontroleerd in Tag Assistant),
@@ -400,12 +416,20 @@ blokkade: de vier casussen hebben elk hun eigen URL, dus `page_path` splitst de
 paginaweergaven net zo hard. Wil je `casus` ook als dimensie op `page_view`, dan
 is dat ná publiceren nog een keer nakijken waard.
 
-**Nog niet uitgeprobeerd, omdat het buiten de browser iets achterlaat of omdat
-de pagina's het nog niet hebben:** een echte inzending (`form_submit` plus de
-lead in HubSpot — dat maakt een contact aan in het echte CRM en wacht op jouw
-akkoord), `video_play`, `video_75`, `demo_start` en `demo_complete` (de vier
-stubpagina's hebben nog geen video en geen demo; die komen met de kopij), en de
-hele ronde nog een keer op de live site en in het Engels.
+Verder één ding om te weten, geen fout: de knop **Verstuur** telt ook als
+`cta_click`, met `cta_label=Verstuur` en `cta_position=actie`. Hij heeft de
+klasse `btn`, en `tracking.js` rekent elke `.btn` tot de call to action. Eén
+lead geeft dus `cta_click`, `form_start` én `form_submit`. In een rapport is dat
+uit elkaar te houden aan `cta_position`, dus laat het staan tenzij je de knop
+liever buiten `cta_click` houdt.
+
+**Nog niet uitgeprobeerd, omdat de pagina's het nog niet hebben:** `video_play`,
+`video_75`, `demo_start` en `demo_complete` — de vier stubpagina's hebben nog
+geen video en geen demo; die komen met de kopij. En de hele ronde nog een keer
+op de live site en in het Engels.
+
+Het testcontact **test-meetfundament@preludens.nl** staat nog in het CRM. Dat
+mag weg zodra je het gezien hebt.
 
 **Wat daar nog bij hoort, en nog niet klaar is:**
 
@@ -414,8 +438,10 @@ hele ronde nog een keer op de live site en in het Engels.
    live zetten, en dat is niet aan mij. Het testprotocol uit
    `gtm-configuratie.md` paragraaf 5 is wel langsgelopen — zie hierboven wat
    dat opleverde.
-2. **`form_submit` als key event in GA4.** Dat vinkje kan pas nadat het event
-   één keer is binnengekomen. Zet het direct na de eerste testinzending.
+2. **`form_submit` als key event in GA4.** Het event is binnen (11 november om
+   14:00), maar GA4 zegt zelf dat een nieuwe gebeurtenis pas binnen 24 uur in de
+   lijst staat. Vanaf 12 november staat `form_submit` onder *Beheer →
+   Gebeurtenissen → Recente gebeurtenissen*; zet daar het sterretje aan.
 3. **Het filter voor intern verkeer staat op *Testen*.** De regel *Kantoor
    Preludens* staat er met de twee kantoor-IP-adressen als `/32` (welke dat zijn, staat alleen in GA4). Activeren
    is onomkeerbaar en werkt niet terug; doe dat pas als in de test te zien is
@@ -425,8 +451,11 @@ hele ronde nog een keer op de live site en in het Engels.
    Google-tagcontainer die GA4 zelf aanmaakte (`GTM-WB3PXW46`, níét die van de
    site), maar is daar nog niet verzonden.
 5. **De demo-URL** (beslissing F), plus het `postMessage` hierboven.
+6. **Het verzamelen van niet-HubSpot-formulieren staat aan** en registreert elke
+   inzending een tweede keer, met een scheve voornaam. Uitzetten in de
+   HubSpot-instellingen; de trackingcode zelf moet blijven staan.
 
-**Ook nog niet getest:** bronattributie en UTM-parameters tot in GA4 en HubSpot.
+**Ook nog niet getest:** UTM-parameters tot in GA4 en HubSpot.
 Wel nagelopen: een lege post naar het HubSpot-endpoint komt terug met
 `REQUIRED_FIELD` op `email` en niet met een 404, dus portal en GUID kloppen en
 het formulier is bereikbaar. Het protocol staat in `gtm-configuratie.md`
