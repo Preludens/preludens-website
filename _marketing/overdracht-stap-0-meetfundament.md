@@ -357,23 +357,34 @@ tekstveld, niet als keuzelijst: zo hoeft HubSpot niet mee te veranderen als er
 later een vijfde casus bij komt. Wat er per interface staat, met de afwegingen
 erbij, staat in `gtm-configuratie.md`.
 
+**De container is ingericht.** In `GTM-5MMK7TXD`, werkruimte 2: elf eigen
+variabelen (negen uit de gegevenslaag, twee constanten) naast de ingebouwde
+`Click Element` en `Click Text`, tien triggers `ce - <gebeurtenis>`, en twaalf
+tags — `Google-tag - GA4` op Initialisatie, tien `GA4 - <gebeurtenis>` op hun
+eigen trigger, en `Clarity` achter `analytics_storage`. Dat dekt alle elf
+gebeurtenissen die de site duwt, `page_view` meegerekend.
+
 **Wat daar nog bij hoort, en nog niet klaar is:**
 
-1. **De tags in GTM zelf.** De container bestaat en laadt, maar er staat nog
-   geen enkele tag, trigger of variabele in. Die lijst staat met de hand na te
-   lopen in `gtm-configuratie.md`, paragraaf 2 tot en met 4.
+1. **De werkruimte is niet gepubliceerd.** Zolang je niet op *Verzenden* drukt,
+   staat dit alles wel in GTM maar niet op de site. Dat is bewust: publiceren is
+   live zetten, en dat is niet aan mij. Loop eerst het testprotocol in
+   `gtm-configuratie.md` paragraaf 5 langs in de voorbeeldmodus.
 2. **`form_submit` als key event in GA4.** Dat vinkje kan pas nadat het event
    één keer is binnengekomen. Zet het direct na de eerste testinzending.
-3. **Intern verkeer uitsluiten in GA4.** Daar is het kantoor-IP voor nodig; dat
-   heb ik niet gevraagd en niet opgezocht.
+3. **Het filter voor intern verkeer staat op *Testen*.** De regel *Kantoor
+   Preludens* staat er met de twee kantoor-IP-adressen als `/32` (welke dat zijn, staat alleen in GA4). Activeren
+   is onomkeerbaar en werkt niet terug; doe dat pas als in de test te zien is
+   dat het kantoorverkeer als intern binnenkomt. Het derde IP komt er later bij
+   als derde voorwaarde in dezelfde regel.
 4. **De uitgesloten verwijzing `preludens.nl`** staat opgeslagen in de
    Google-tagcontainer die GA4 zelf aanmaakte (`GTM-WB3PXW46`, níét die van de
    site), maar is daar nog niet verzonden.
 5. **De demo-URL** (beslissing F), plus het `postMessage` hierboven.
 
 **Nog niet getest:** een echte inzending in HubSpot met bronattributie,
-UTM-parameters tot in GA4 en HubSpot, de opname in Clarity, en de negen events
-in de voorbeeldmodus van GTM — dat laatste kan pas als de tags er staan. Wel
+UTM-parameters tot in GA4 en HubSpot, de opname in Clarity, en de elf events in
+de voorbeeldmodus van GTM. De tags staan er nu, dus dat laatste kan. Wel
 nagelopen: een lege post naar het HubSpot-endpoint komt terug met
 `REQUIRED_FIELD` op `email` en niet met een 404, dus portal en GUID kloppen en
 het formulier is bereikbaar. Het protocol voor de rest staat in

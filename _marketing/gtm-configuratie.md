@@ -81,7 +81,7 @@ webstream `preludens.nl` (16314192540), metings-ID `G-Q0JG5Q810R`.
 | Delen met Google | alle vier de vinkjes uit | staat |
 | Verbeterde meting → Formulierinteracties | **uit** | staat |
 | Verwijzingen uitsluiten | `preludens.nl` | opgeslagen, nog niet gepubliceerd |
-| Intern verkeer | uitsluiten op het kantoor-IP, filter op actief | open |
+| Intern verkeer | regel op de kantoor-IP's | regel staat, filter op *Testen* |
 | Key event | `form_submit` | open |
 
 Drie aantekeningen bij die tabel.
@@ -97,6 +97,14 @@ Google-tag omgezet naar een eigen container `GTM-WB3PXW46`. Dat is níét de
 container van de site (`GTM-5MMK7TXD`); hij houdt alleen de taginstellingen van
 deze stream vast. Instellingen daarin gelden pas na *Verzenden* in die
 container.
+
+**Het filter voor intern verkeer staat met opzet op *Testen*.** De regel
+*Kantoor Preludens* staat er, met de twee kantoor-IP-adressen als `/32` (welke dat zijn, staat alleen in GA4) —
+`/32` is hetzelfde als "IP-adres is gelijk aan". Activeren is volgens GA4's
+eigen waarschuwing onomkeerbaar en werkt niet met terugwerkende kracht, en er is
+nog geen verkeer waaraan te zien is of de regel raakt wat hij moet raken. Zet
+hem pas aan als het verkeer van kantoor in de test als intern binnenkomt. Het
+derde kantoor-IP komt er later bij als derde voorwaarde in dezelfde regel.
 
 **`form_submit` is nog geen key event.** GA4 laat alleen een gebeurtenis
 aanvinken die minstens één keer is binnengekomen. Zet dat vinkje dus direct na
@@ -122,6 +130,9 @@ Alle vijf aangemaakt, bereik **gebeurtenis**:
 
 ## 2. Variabelen in GTM
 
+Alles hieronder staat in container `GTM-5MMK7TXD`, werkruimte 2. Die
+werkruimte is nog niet gepubliceerd; dat geldt ook voor paragraaf 3 en 4.
+
 Ingebouwde variabelen aanzetten: `Page Path`, `Page URL`, `Click Element`,
 `Click Text`.
 
@@ -140,13 +151,13 @@ met een lege standaardwaarde:
 | `dlv - consent_statistics` | `consent_statistics` |
 | `dlv - consent_marketing` | `consent_marketing` |
 
-Plus twee constanten: `const - GA4 meting-ID` (`G-XXXXXXXXXX`) en
-`const - Clarity project-ID`.
+Plus twee constanten: `const - GA4 meting-ID` (`G-Q0JG5Q810R`) en
+`const - Clarity project-ID` (`zbl8vhhvgy`).
 
 ## 3. Triggers
 
-Allemaal van het type **Aangepaste gebeurtenis**, met de gebeurtenisnaam
-precies zoals hieronder, en "Alle aangepaste gebeurtenissen".
+Alle tien staan er. Van het type **Aangepaste gebeurtenis**, met de
+gebeurtenisnaam precies zoals hieronder, en "Alle aangepaste gebeurtenissen".
 
 | Trigger | Gebeurtenisnaam |
 |---|---|
@@ -166,6 +177,18 @@ precies zoals hieronder, en "Alle aangepaste gebeurtenissen".
 
 ## 4. Tags
 
+Alle twaalf staan er: `Google-tag - GA4`, tien tags `GA4 - <gebeurtenis>`
+en `Clarity`.
+
+Let op één ding als je hier later een gebeurtenistag bij maakt. Bij de eerste
+zette GTM er ongevraagd een tweede configuratietag bij: *Google Analytics
+G-Q0JG5Q810R*, ook op Initialisatie — alle pagina's. Die is verwijderd. Twee
+configuratietags op dezelfde initialisatie geven dezelfde opdracht twee keer, en
+de tweede had *dubbele instanties negeren* aanstaan — dan is het de vraag wiens
+`casus` en `page_language` blijven hangen, en dat is precies de dimensie waar
+dit experiment op draait. Tel na elke nieuwe gebeurtenistag dus even of de lijst
+nog twaalf tags telt.
+
 ### 4.1 Google-tag (GA4)
 
 - Type: **Google-tag**, tag-ID `{{const - GA4 meting-ID}}`
@@ -176,10 +199,12 @@ precies zoals hieronder, en "Alle aangepaste gebeurtenissen".
 
 Daarmee is `page_view` klaar.
 
-### 4.2 Negen GA4-gebeurtenistags
+### 4.2 Tien GA4-gebeurtenistags
 
-Alle van het type **GA4-gebeurtenis**, met de Google-tag hierboven als
-configuratie. Eén tag per regel, met de trigger uit paragraaf 3:
+Alle van het type **GA4-gebeurtenis**. In het veld *Metings-ID* staat
+`{{const - GA4 meting-ID}}`; GTM meldt daarna zelf dat het de configuratie van
+de Google-tag hierboven gebruikt. Eén tag per regel, met de trigger uit
+paragraaf 3:
 
 | Tag | Gebeurtenisnaam | Parameters |
 |---|---|---|
