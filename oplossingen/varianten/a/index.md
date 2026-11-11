@@ -16,12 +16,12 @@ sitemap: false
 {%- comment -%}
   Variant A — demo eerst. Zie _marketing/landingspagina-varianten.md.
 
-  Tactiek: laten ervaren vóór uitleggen. Het speelbare fragment staat in de
-  hero, de tekst eromheen is zo kort als het kan. Wat er na het fragment komt
+  Tactiek: laten ervaren vóór uitleggen. De CO-melder-interactie staat in de
+  hero, de tekst eromheen is zo kort als het kan. Wat erna komt
   is alleen wat je nodig hebt om ja te zeggen: wat je net zag, één bewijs en
   het formulier.
 
-  Volgorde: hero met fragment → wat je net speelde → bewijs → actie.
+  Volgorde: hero met interactie → wat je net speelde → bewijs → actie.
   Dat wijkt bewust af van de vaste blokvolgorde van de stubs: dit is een
   vergelijking van formats, niet van boodschappen.
 
@@ -38,11 +38,11 @@ sitemap: false
   <div class="panel__inner">
     <div class="sp-hero-copy lv-hero__copy">
       <h1>Je herhaalt op de trainingsdag wat ze in de e-learning al gehad hebben</h1>
-      <p class="sp-lead">Speel twee situaties uit een voorbereiding, zoals een deelnemer die thuis speelt. Daarna zie je wat jij als instructeur 's&nbsp;ochtends weet.</p>
+      <p class="sp-lead">Hang de CO-melder op, zoals een monteur dat vóór de praktijkdag oefent. Daarna zie je wat jij als instructeur 's&nbsp;ochtends weet.</p>
     </div>
 
     <div class="lv-hero__play">
-      {% include varianten/fragment.html position="hero" %}
+      {% include varianten/co-melder.html position="hero" %}
     </div>
 
     <div class="lv-hero__next">
@@ -73,7 +73,7 @@ sitemap: false
 <div class="lv-proof">
   <img src="{{ '/assets/images/verhalen/co-wijzer-slaapkamer.jpg' | relative_url }}" alt="Scène uit CO Wijzer: een slaapkamer in doorsnede, waar de speler een CO-melder op slaaphoogte hangt" width="1024" height="514" loading="lazy" decoding="async">
   <div>
-    <p>Het fragment komt uit de wereld van <strong>CO Wijzer</strong>, dat we maakten met 21CC Education en Studium. Monteurs oefenen daarin met risico's die je niet kunt zien of ruiken.</p>
+    <p>De slaapkamer komt uit <strong>CO Wijzer</strong>, dat we maakten met 21CC Education en Studium. Monteurs oefenen daarin met risico's die je niet kunt zien of ruiken.</p>
     <p class="lv-proof__source">Ook van ons: Basis Koeltechniek, negen MicroGames voor installatiemonteurs, met Climatools, 21CC Learning en Studium.</p>
   </div>
 </div>

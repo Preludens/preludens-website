@@ -29,7 +29,7 @@ sitemap: false
   - ?pad=instructeur, ?pad=koper of ?pad=beide kiest vooraf. Gebruik dat in
     de berichten aan de twee helften van de lijst van 40.
   - De keuze is het event path_select (path_choice, path_source); de
-    inschatting in het instructeurspad is estimate_select.
+    inschatting in het instructeurspad is question_answer (herhaal-tijd).
   - Het formulier hoort bij geen pad: het staat er altijd, ook voor wie niet
     kiest.
 
@@ -75,19 +75,19 @@ sitemap: false
 {% capture instructeur %}
 <h2 tabindex="-1">Je herhaalt op de dag wat ze in de e-learning al gehad hebben</h2>
 <p class="sp-lead">Je weet 's&nbsp;ochtends niet wie wat begrepen heeft, dus begin je bij het begin. Dat is goed lesgeven. Het kost alleen tijd die je liever in de hal had gebruikt.</p>
-<div class="lv-estimate" data-lv-estimate>
-  <p class="lv-estimate__q" id="lv-estimate-q">Hoeveel van je ochtend gaat er op aan herhalen?</p>
-  <div class="lv-estimate__options" role="group" aria-labelledby="lv-estimate-q">
-    <button type="button" data-estimate="kwartier">Een kwartier</button>
-    <button type="button" data-estimate="uur">Ongeveer een uur</button>
-    <button type="button" data-estimate="halve-ochtend">Een halve ochtend</button>
-    <button type="button" data-estimate="meer">Meer dan dat</button>
+<div class="lv-question" data-lv-question data-question-id="herhaal-tijd">
+  <p class="lv-question__q" id="lv-estimate-q">Hoeveel van je ochtend gaat er op aan herhalen?</p>
+  <div class="lv-question__options" role="group" aria-labelledby="lv-estimate-q">
+    <button type="button" data-answer="kwartier">Een kwartier</button>
+    <button type="button" data-answer="uur">Ongeveer een uur</button>
+    <button type="button" data-answer="halve-ochtend">Een halve ochtend</button>
+    <button type="button" data-answer="meer">Meer dan dat</button>
   </div>
-  <div class="lv-estimate__reply" aria-live="polite">
-    <p data-estimate-for="kwartier" hidden>Dat is weinig. Dan is de vraag eerder of je weet wie wat mist. Dat laat het voorbeeld hieronder zien.</p>
-    <p data-estimate-for="uur" hidden>Op een praktijkdag van zes uur is dat een zesde van de dag. Het voorbeeld hieronder laat zien hoe je dat uur gerichter besteedt.</p>
-    <p data-estimate-for="halve-ochtend" hidden>Dan gaat de ochtend op aan wat ze al gehad hebben, en begint het oefenen pas tegen elven. Het voorbeeld hieronder laat zien waar je dan wel begint.</p>
-    <p data-estimate-for="meer" hidden>Dan is de praktijkdag een theoriedag met een stuk praktijk. Daar is het meeste te winnen.</p>
+  <div class="lv-question__reply" aria-live="polite">
+    <p data-reply-for="kwartier" hidden>Dat is weinig. Dan is de vraag eerder of je weet wie wat mist. Dat laat het voorbeeld hieronder zien.</p>
+    <p data-reply-for="uur" hidden>Op een praktijkdag van zes uur is dat een zesde van de dag. Het voorbeeld hieronder laat zien hoe je dat uur gerichter besteedt.</p>
+    <p data-reply-for="halve-ochtend" hidden>Dan gaat de ochtend op aan wat ze al gehad hebben, en begint het oefenen pas tegen elven. Het voorbeeld hieronder laat zien waar je dan wel begint.</p>
+    <p data-reply-for="meer" hidden>Dan is de praktijkdag een theoriedag met een stuk praktijk. Daar is het meeste te winnen.</p>
   </div>
 </div>
 {% endcapture %}
@@ -111,13 +111,13 @@ sitemap: false
 {% include panels/panel.html variant="paper" id="pad-koper" body=koper %}
 </div>
 
-{%- comment -%} Voor alle paden: het fragment {%- endcomment -%}
+{%- comment -%} Voor alle paden: de CO-melder {%- endcomment -%}
 <div data-path-block="instructeur koper beide">
 {% capture voorbeeld %}
 <h2 tabindex="-1">Speel het zelf</h2>
-<p class="sp-lead sp-lead--center">Twee situaties uit een voorbereiding voor monteurs, en daarna wat de instructeur ziet. Het duurt nog geen minuut.</p>
+<p class="sp-lead sp-lead--center">Hang de CO-melder op, zoals monteurs dat in CO Wijzer oefenen. Daarna zie je wat de instructeur ziet. Het duurt nog geen minuut.</p>
 <div class="lv-inline-play">
-  {% include varianten/fragment.html position="voorbeeld" %}
+  {% include varianten/co-melder.html position="voorbeeld" %}
   {% if demo_url and demo_url != "" %}
   <div class="lv-after">
     {% include panels/actions.html primary_label="Speel de hele demo (2 minuten)" primary_href=demo_url primary_demo=true casus="praktijkdagen" primary_position="voorbeeld" %}

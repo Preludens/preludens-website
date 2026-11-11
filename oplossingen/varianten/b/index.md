@@ -75,9 +75,9 @@ sitemap: false
 
 {% capture voorbeeld %}
 <h2>Speel het zelf</h2>
-<p class="sp-lead sp-lead--center">Twee situaties uit een voorbereiding voor monteurs, en daarna wat de instructeur ziet. Het duurt nog geen minuut.</p>
+<p class="sp-lead sp-lead--center">Hang de CO-melder op, zoals monteurs dat in CO Wijzer oefenen. Daarna zie je wat de instructeur ziet. Het duurt nog geen minuut.</p>
 <div class="lv-inline-play">
-  {% include varianten/fragment.html position="voorbeeld" %}
+  {% include varianten/co-melder.html position="voorbeeld" %}
   <div class="lv-after">
     <p class="lv-claim">We vervangen de praktijkdag niet. We zorgen dat die dag naar oefenen gaat.</p>
     {% if demo_url and demo_url != "" %}

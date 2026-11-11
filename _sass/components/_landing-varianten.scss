@@ -1,161 +1,360 @@
-/* Drie landingspagina-varianten voor casus 1 (oplossingen/varianten/a, b, c).
+/* Landingspagina-varianten voor casus 1 (oplossingen/varianten/a tot en met d).
 
-   Alleen wat het panelsysteem nog niet had: het speelbare fragment in een
-   smalle kolom, de herkenningsvraag, de padkeuze van variant C en een smalle
-   bewijsregel bij het formulier. Kleuren en maten komen uit de tokens in
-   assets/css/main.scss; hier komt geen nieuwe kleur bij. */
+   Alleen wat het panelsysteem nog niet had: de CO-melder-interactie, vragen
+   met directe feedback, de rolkeuze, stappen met beeld, en een donker
+   formulierblok. Kleuren en maten komen uit de tokens in assets/css/main.scss;
+   hier komt geen nieuwe kleur bij. */
 
-/* ---------- het fragment ----------
-   Bouwt voort op .dilemma-play uit _panel.scss (donker vlak, gouden rand op
-   de keuzes). In een smalle kolom staan de keuzes onder elkaar. */
+/* ---------- de CO-melder ----------
+   Een donker vlak, net als .dilemma-play, met de echte spelkunst erin. De
+   melder hangt op een vaste plek aan de rechtermuur en schuift alleen
+   verticaal. */
 
-.lv-fragment {
-  margin-top: 0;
+.lv-melder {
+  padding: clamp(1rem, 3vw, 1.75rem);
+  border-radius: var(--radius-md);
+  background: var(--color-deep-navy);
+  color: var(--color-cloud-white);
   box-shadow: var(--shadow-soft);
 }
 
-.lv-fragment .dilemma-play__choices {
-  grid-template-columns: 1fr;
+.panel .lv-melder p {
+  color: color-mix(in srgb, var(--color-cloud-white) 88%, transparent);
+  max-width: 60ch;
 }
 
-.lv-fragment .dilemma-play__choices button {
-  min-height: 2.75rem;
-}
-
-.lv-fragment .dilemma-play__choices button:disabled {
-  cursor: default;
-  opacity: 0.6;
-}
-
-.lv-fragment .dilemma-play__choices button:disabled:hover {
-  background: transparent;
-  border-color: color-mix(in srgb, var(--color-soft-gold) 70%, transparent);
-  color: var(--color-cloud-white);
-}
-
-/* De goede keuze licht op in goud; de gekozen foute keuze blijft staan met
-   een doorlopende rand, zodat je ziet wat je zelf koos. Kleur alleen draagt
-   het niet: het oordeel staat er ook in tekst bij. */
-.lv-fragment .dilemma-play__choices button[data-state="correct"],
-.lv-fragment .dilemma-play__choices button[data-state="correct"]:hover {
-  opacity: 1;
-  background: var(--color-preludens-gold);
-  border-color: var(--color-preludens-gold);
-  color: var(--color-deep-navy);
-}
-
-.lv-fragment .dilemma-play__choices button[data-state="wrong"],
-.lv-fragment .dilemma-play__choices button[data-state="wrong"]:hover {
-  opacity: 1;
-  border-color: var(--color-cloud-white);
-  border-style: dashed;
-}
-
-.panel .lv-fragment p.lv-fragment__ask {
-  margin: var(--space-sm) 0 0;
-  font-family: var(--font-display);
-  font-weight: 600;
-  color: var(--color-cloud-white);
-}
-
-.lv-fragment__feedback {
-  margin-top: var(--space-sm);
-}
-
-.lv-fragment__feedback:empty {
-  display: none;
-}
-
-.panel .lv-fragment p.lv-fragment__verdict {
-  margin: 0 0 0.25rem;
-  font-family: var(--font-display);
-  font-weight: 700;
-  color: var(--color-soft-gold);
-}
-
-.panel .lv-fragment p.lv-fragment__verdict:empty {
-  display: none;
-}
-
-.panel .lv-fragment p.lv-fragment__meta {
+.panel .lv-melder p.lv-melder__task {
   margin: 0 0 var(--space-sm);
-  font-size: 0.875rem;
-  color: color-mix(in srgb, var(--color-cloud-white) 72%, transparent);
-}
-
-.lv-fragment__rows {
-  list-style: none;
-  margin: 0 0 var(--space-sm);
-  padding: 0;
-  display: grid;
-  gap: var(--space-xs);
-}
-
-.lv-fragment__rows li {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.15rem var(--space-sm);
-  padding: 0.75rem 0.9rem;
-  border-radius: var(--radius-sm);
-  background: color-mix(in srgb, var(--color-cloud-white) 8%, transparent);
-}
-
-.lv-fragment__topic {
-  font-family: var(--font-display);
-  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
   color: var(--color-cloud-white);
 }
 
-.lv-fragment__score {
-  grid-column: 1;
-  font-size: 0.9375rem;
-  font-variant-numeric: tabular-nums;
-  color: color-mix(in srgb, var(--color-cloud-white) 82%, transparent);
-}
-
-.lv-fragment__flag {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  align-self: center;
-  padding: 0.2rem 0.6rem;
+.lv-melder__label {
+  display: inline-block;
+  margin-right: 0.4rem;
+  padding: 0.1rem 0.5rem;
   border-radius: var(--radius-sm);
   background: var(--color-soft-gold);
   color: var(--color-deep-navy);
   font-family: var(--font-display);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.lv-fragment__flag--quiet {
-  background: transparent;
+.lv-melder__stage {
+  position: relative;
+  aspect-ratio: 648 / 372;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.lv-melder__scene {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Linksboven, op een lege muur: zelfde plek en rol als het zijpaneel in het
+   spel ("Afstand tot plafond"). */
+.panel .lv-melder p.lv-melder__hud {
+  position: absolute;
+  top: var(--space-xs);
+  left: var(--space-xs);
+  margin: 0;
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-deep-navy) 88%, transparent);
+  color: var(--color-cloud-white);
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  pointer-events: none;
+
+  strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-soft-gold);
+  }
+}
+
+/* De baan waarlangs de melder schuift: rechts tegen de muur naast het bed. */
+.lv-melder__track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 78%;
+  width: 20%;
+  pointer-events: none;
+}
+
+.lv-melder__guide {
+  position: absolute;
+  top: 4%;
+  bottom: 4%;
+  left: 75%;
+  border-left: 2px dashed color-mix(in srgb, var(--color-cloud-white) 70%, transparent);
+}
+
+.lv-melder.is-hung .lv-melder__guide {
+  display: none;
+}
+
+.lv-melder__ghosts {
+  position: absolute;
+  inset: 0;
+}
+
+.lv-melder__dot {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  margin: -0.5rem 0 0 -0.5rem;
+  border-radius: 50%;
+  background: var(--color-cloud-white);
+  border: 2px solid var(--color-deep-navy);
+  box-shadow: var(--shadow-card);
+}
+
+.lv-melder__dot--you {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: -0.875rem 0 0 -0.875rem;
+  background: var(--color-preludens-gold);
+  border-width: 3px;
+}
+
+/* De melder zelf: een ronde witte puck, zoals in het spel. Het grijpvlak is
+   groter dan de puck, zodat hij op een telefoon goed te pakken is. */
+.lv-melder__device {
+  position: absolute;
+  left: 93%;
+  top: 36%;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: -1.375rem 0 0 -1.375rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: grab;
+  touch-action: none;
+}
+
+.lv-melder__puck {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--color-cloud-white);
+  border: 3px solid var(--color-slate-teal);
+  box-shadow: var(--shadow-card);
+}
+
+.lv-melder.is-dragging .lv-melder__device {
+  cursor: grabbing;
+}
+
+.lv-melder__device:focus-visible {
+  outline: 3px solid var(--color-preludens-gold);
+  outline-offset: 2px;
+}
+
+.lv-melder.is-hung .lv-melder__device {
+  visibility: hidden;
+}
+
+.lv-melder[data-result-state="goed"] .lv-melder__puck {
+  border-color: var(--color-preludens-gold);
+}
+
+.lv-melder__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.panel .lv-melder p.lv-melder__hint {
+  margin: 0;
+  flex: 1 1 16rem;
+  font-size: 0.875rem;
   color: color-mix(in srgb, var(--color-cloud-white) 72%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-cloud-white) 24%, transparent);
 }
 
-.lv-fragment [tabindex="-1"]:focus {
+.lv-melder.is-hung .lv-melder__controls {
+  display: none;
+}
+
+.lv-melder__hang,
+.lv-melder__again {
+  min-height: 2.75rem;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--color-preludens-gold);
+  border-radius: var(--radius-sm);
+  background: var(--color-preludens-gold);
+  color: var(--color-deep-navy);
+  font-family: var(--font-display);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.lv-melder__hang:hover {
+  background: var(--color-deep-gold);
+  border-color: var(--color-deep-gold);
+}
+
+.lv-melder__again {
+  background: transparent;
+  color: var(--color-cloud-white);
+  border-color: color-mix(in srgb, var(--color-soft-gold) 70%, transparent);
+}
+
+.lv-melder__again:hover {
+  background: color-mix(in srgb, var(--color-cloud-white) 8%, transparent);
+}
+
+.lv-melder__hang:focus-visible,
+.lv-melder__again:focus-visible {
+  outline: 3px solid var(--color-cloud-white);
+  outline-offset: 2px;
+}
+
+.lv-melder__result {
+  margin-top: var(--space-sm);
+}
+
+.panel .lv-melder p.lv-melder__verdict {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-soft-gold);
+}
+
+.lv-melder__verdict:empty,
+.lv-melder__explain:empty {
+  display: none;
+}
+
+.panel .lv-melder p.lv-melder__explain {
+  margin: 0;
+}
+
+.lv-melder__group {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid color-mix(in srgb, var(--color-cloud-white) 16%, transparent);
+}
+
+.panel .lv-melder .lv-melder__group-title {
+  margin: 0 0 var(--space-xs);
+  max-width: none;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-cloud-white);
+}
+
+.lv-melder__group-title:focus {
   outline: none;
 }
 
-/* Wat er na het fragment komt: de volgende stap, op dezelfde plek. */
-.lv-after {
-  margin-top: var(--space-md);
+.lv-melder__you {
+  color: var(--color-soft-gold);
 }
 
-.lv-after p {
-  margin: 0 0 var(--space-xs);
+.panel .lv-melder p.lv-melder__advice {
+  margin: var(--space-xs) 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-cloud-white);
 }
 
-/* ---------- variant A: het fragment in de hero ----------
-   De kop is kleiner dan op de rest van de site, zodat het fragment op een
-   telefoon zo hoog mogelijk staat. De tweede kolom is breder dan voor een
-   beeld: er moet in gelezen en gekozen worden. */
+.panel .lv-melder p.lv-melder__meta {
+  margin: 0 0 var(--space-sm);
+  font-size: 0.8125rem;
+  color: color-mix(in srgb, var(--color-cloud-white) 66%, transparent);
+}
+
+/* ---------- vragen met directe feedback ---------- */
+
+.lv-question {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-preludens-gold);
+  border-radius: var(--radius-sm);
+  background: var(--color-cloud-white);
+  max-width: 44rem;
+}
+
+.panel p.lv-question__q {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  color: var(--color-ink);
+}
+
+.lv-question__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.lv-question__options button {
+  min-height: 2.75rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.lv-question__options button:hover {
+  background: var(--color-mist-blue);
+}
+
+.lv-question__options button[aria-pressed="true"] {
+  background: var(--color-ink);
+  color: var(--color-cloud-white);
+}
+
+.lv-question__options button:focus-visible,
+.lv-paths__option:focus-visible,
+.lv-choose__option:focus-visible {
+  outline: 3px solid var(--color-preludens-gold);
+  outline-offset: 2px;
+}
+
+.panel .lv-question__reply p {
+  margin: var(--space-sm) 0 0;
+  padding-left: var(--space-sm);
+  border-left: 3px solid var(--color-preludens-gold);
+  color: var(--color-ink);
+}
+
+/* ---------- variant A: de interactie in de hero ---------- */
 
 .lv-hero.panel--hero {
   padding-top: var(--space-lg);
   padding-bottom: var(--space-xl);
 
   .panel__inner {
-    grid-template-columns: minmax(0, 1fr) minmax(20rem, 31rem);
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 34rem);
     align-items: start;
   }
 
@@ -169,9 +368,6 @@
   padding-top: var(--space-sm);
 }
 
-/* Op een breed scherm staan kop en vervolgstap links en het fragment rechts.
-   Op een telefoon komt het fragment direct onder de kop en de vervolgstap
-   pas daarna: eerst spelen, dan pas de knop. */
 .lv-hero--play .panel__inner {
   grid-template-areas:
     "copy play"
@@ -187,70 +383,196 @@
   margin-top: var(--space-sm);
 }
 
-/* ---------- herkenningsvraag ---------- */
+/* ---------- varianten B en C: tekst-hero ---------- */
 
-.lv-recognize {
-  margin-top: var(--space-lg);
-  padding: var(--space-md);
+.lv-hero.lv-hero--text .panel__inner {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.lv-hero--text .sp-hero-copy {
+  max-width: 46rem;
+}
+
+.lv-hero--text .sp-hero-copy.lv-hero__wide {
+  max-width: none;
+  width: 100%;
+
+  h1,
+  .sp-lead {
+    max-width: 46rem;
+  }
+}
+
+/* ---------- variant D: hero met beeld ---------- */
+
+.lv-hero.lv-hero--media .panel__inner {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+}
+
+.lv-hero--media .sp-video {
+  margin: 0;
+}
+
+.panel .lv-hero--media .sp-video__caption {
+  margin-top: var(--space-xs);
+  font-size: 0.875rem;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- variant D: de rolkeuze onder de hero ---------- */
+
+.lv-choose {
+  max-width: 50rem;
+  margin: var(--space-md) auto 0;
+}
+
+.lv-choose__options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.lv-choose__option {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-cloud-white);
-  max-width: 44rem;
+  color: var(--color-ink);
+  text-decoration: none;
+  text-align: left;
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--transition), background-color var(--transition);
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+    /* Spelbeelden hebben hun tekstbalk onderin; die valt zo weg. */
+    object-position: center 15%;
+  }
 }
 
-.panel p.lv-recognize__q {
-  margin: 0 0 var(--space-sm);
+.lv-choose__body {
+  display: grid;
+  gap: 0.2rem;
+  padding: var(--space-sm) var(--space-md) var(--space-md);
+  border-top: 3px solid var(--color-preludens-gold);
+
+  strong {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  span {
+    font-size: 0.9375rem;
+    color: var(--color-ink-soft);
+  }
+}
+
+.lv-choose__option:hover {
+  border-color: var(--color-ink);
+}
+
+.lv-choose__option[aria-pressed="true"] {
+  border-color: var(--color-ink);
+
+  .lv-choose__body {
+    background: var(--color-ink);
+  }
+
+  strong,
+  span {
+    color: var(--color-cloud-white);
+  }
+}
+
+.panel p.lv-choose__reply {
+  margin: var(--space-md) auto 0;
+  max-width: 50rem;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.0625rem;
   color: var(--color-ink);
+  text-align: center;
 }
 
-.lv-recognize__options,
-.lv-estimate__options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-}
-
-.lv-recognize__options button,
-.lv-estimate__options button {
-  min-height: 2.75rem;
-  padding: 0.6rem 1rem;
-  border: 1px solid var(--color-ink);
+/* "Jij koos …" boven aan de sectie van die rol. */
+.panel p.lv-for-you {
+  display: inline-block;
+  margin: 0 0 var(--space-sm);
+  padding: 0.2rem 0.6rem;
   border-radius: var(--radius-sm);
-  background: transparent;
-  color: var(--color-ink);
+  background: var(--color-pale-gold);
+  color: var(--color-ink-gold);
   font-family: var(--font-display);
-  font-size: 0.98rem;
+  font-size: 0.9375rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: background-color var(--transition), color var(--transition);
 }
 
-.lv-recognize__options button:hover,
-.lv-estimate__options button:hover {
-  background: var(--color-mist-blue);
+/* ---------- variant D: stappen met beeld ---------- */
+
+.lv-steps {
+  list-style: none;
+  margin: var(--space-lg) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-lg);
+  counter-reset: lv-step;
 }
 
-.lv-recognize__options button[aria-pressed="true"],
-.lv-estimate__options button[aria-pressed="true"] {
-  background: var(--color-ink);
-  color: var(--color-cloud-white);
+.lv-steps li {
+  counter-increment: lv-step;
 }
 
-.lv-recognize__options button:focus-visible,
-.lv-estimate__options button:focus-visible,
-.lv-paths__option:focus-visible,
-.lv-path-switch:focus-visible {
-  outline: 3px solid var(--color-preludens-gold);
-  outline-offset: 2px;
+.lv-steps img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  clip-path: url("#sp-hero-clip");
 }
 
-.panel .lv-recognize__reply p,
-.panel .lv-estimate__reply p {
-  margin: var(--space-sm) 0 0;
+.lv-steps h3 {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  margin: var(--space-sm) 0 0.35rem;
+}
+
+.panel .lv-steps h3 {
+  font-size: 1.15rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.lv-steps h3::before {
+  content: counter(lv-step);
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--color-ink-gold);
+}
+
+.panel .lv-steps p {
+  margin: 0;
   color: var(--color-ink-soft);
+}
+
+/* ---------- interactie in de lopende pagina (B, C, D) ---------- */
+
+.lv-inline-play {
+  max-width: 44rem;
+  margin: var(--space-lg) auto 0;
+  text-align: left;
+}
+
+.lv-after {
+  margin-top: var(--space-md);
 }
 
 /* ---------- variant C: padkeuze ---------- */
@@ -317,40 +639,16 @@
   }
 }
 
-.lv-path-switch {
-  margin-top: var(--space-md);
-  padding: 0.5rem 0;
-  min-height: 2.75rem;
-  border: 0;
-  background: none;
-  color: var(--color-ink);
-  font-family: var(--font-display);
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  cursor: pointer;
+#doorsturen .sp-faq {
+  margin-inline: 0;
+  margin-top: var(--space-lg);
 }
 
-.lv-estimate {
-  margin-top: var(--space-md);
-  max-width: 44rem;
+body.lv-paths-ready:not([data-path="koper"]):not([data-path="beide"]) [data-landing-variant="c"] #actie {
+  margin-top: 0;
 }
 
-.panel p.lv-estimate__q {
-  margin: 0 0 var(--space-sm);
-  font-family: var(--font-display);
-  font-weight: 600;
-  color: var(--color-ink);
-}
-
-/* Het formulierpaneel (.panel--pale) schuift met een negatieve marge onder
-   het paneel ervoor; op de stubs is dat een mistband met een snede. Staat er
-   een wit paneel voor, dan valt de onderrand van de inhoud eronder weg. */
-[data-landing-variant] .panel--paper:has(+ .panel--pale) .panel__inner {
-  padding-bottom: calc(clamp(2.25rem, 7vh, 6rem) + var(--sp-gap) + var(--sp-jump));
-}
-
-/* ---------- bewijsregel en claimgrens ---------- */
+/* ---------- bewijs en claimgrens ---------- */
 
 .panel p.lv-claim {
   margin-top: var(--space-md);
@@ -385,8 +683,63 @@
   color: var(--color-ink-soft);
 }
 
+.lv-evidence {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+/* ---------- het formulier ----------
+   Op de varianten een donker vlak in plaats van het lichtgoud van
+   .panel--pale: het laatste blok krijgt het gewicht van de hero, en de
+   velden springen eruit. De snede onderaan en de overlap met de mistband
+   erboven blijven van .panel--pale. */
+
+[data-landing-variant] #actie {
+  background: var(--color-deep-navy);
+  color: var(--color-cloud-white);
+
+  h2,
+  .lead-form__label,
+  .lead-form__done h2 {
+    color: var(--color-cloud-white);
+  }
+
+  p.sp-lead,
+  .lead-form__hint,
+  .lead-form__note,
+  .lead-form__optional,
+  .lead-form__group legend,
+  .lead-form__done p {
+    color: color-mix(in srgb, var(--color-cloud-white) 82%, transparent);
+  }
+
+  .lead-form__field input,
+  .lead-form__field textarea {
+    border-color: transparent;
+  }
+
+  .lead-form__field input:focus,
+  .lead-form__field textarea:focus {
+    border-color: var(--color-preludens-gold);
+    outline: 2px solid var(--color-preludens-gold);
+    outline-offset: 1px;
+  }
+}
+
+/* Het formulier schuift met een negatieve marge onder het paneel ervoor;
+   op de stubs is dat een mistband met een snede. Staat er een wit paneel
+   voor, dan valt de onderrand van de inhoud eronder weg. */
+[data-landing-variant] .panel--paper:has(+ .panel--pale) .panel__inner {
+  padding-bottom: calc(clamp(2.25rem, 7vh, 6rem) + var(--sp-gap) + var(--sp-jump));
+}
+
+/* ---------- smalle schermen ---------- */
+
 @media (max-width: 900px) {
-  .lv-hero.panel--hero .panel__inner {
+  .lv-hero.panel--hero .panel__inner,
+  .lv-hero.lv-hero--media .panel__inner {
     grid-template-columns: 1fr;
   }
 
@@ -398,7 +751,9 @@
     grid-template-rows: auto;
   }
 
-  .lv-paths__options {
+  .lv-paths__options,
+  .lv-steps,
+  .lv-evidence {
     grid-template-columns: 1fr;
   }
 }
@@ -416,70 +771,46 @@
     padding: var(--space-sm);
   }
 
+  .lv-choose__options {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .lv-choose__option img {
+    aspect-ratio: 16 / 5;
+  }
+
   .lv-proof {
     grid-template-columns: 1fr;
+  }
+
+  .lv-melder {
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+  }
+
+  .panel .lv-melder p.lv-melder__hud {
+    top: 0.35rem;
+    left: 0.35rem;
+    padding: 0.2rem 0.45rem;
+    font-size: 0.6875rem;
+
+    strong {
+      font-size: 0.9375rem;
+    }
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .lv-recognize__options button,
-  .lv-estimate__options button,
-  .lv-paths__option {
+  .lv-question__options button,
+  .lv-paths__option,
+  .lv-choose__option,
+  .lv-melder__hang {
     transition: none;
   }
 }
 
-/* ---------- variant B: tekst-hero, fragment en bewijs in de lopende pagina ---------- */
-
-.lv-hero.lv-hero--text .panel__inner {
-  grid-template-columns: minmax(0, 1fr);
-}
-
-.lv-hero--text .sp-hero-copy {
-  max-width: 46rem;
-}
-
-.lv-inline-play {
-  max-width: 38rem;
-  margin: var(--space-lg) auto 0;
-}
-
-.lv-evidence {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: var(--space-lg);
-  align-items: start;
-}
-
-@media (max-width: 900px) {
-  .lv-evidence {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ---------- variant C: hero met padkeuze ---------- */
-
-.lv-hero--text .sp-hero-copy.lv-hero__wide {
-  max-width: none;
-  width: 100%;
-
-  h1,
-  .sp-lead {
-    max-width: 46rem;
-  }
-}
-
-/* Het formulier schuift onder het paneel ervoor (zie hierboven). In variant C
-   is dat paneel afhankelijk van het gekozen pad: bij de koper een mistband,
-   zoals bedoeld; bij de instructeur een wit paneel, en vóór de keuze de hero.
-   Dan zakt het formulier niet onder het vorige paneel. */
-body.lv-paths-ready:not([data-path="koper"]):not([data-path="beide"]) [data-landing-variant="c"] .panel--pale {
-  margin-top: 0;
-}
-
-/* In het doorstuurblok staan de vragen onder een links uitgelijnde kop en
-   knoppen; gecentreerd zouden ze los komen te hangen. */
-#doorsturen .sp-faq {
-  margin-inline: 0;
-  margin-top: var(--space-lg);
+.panel p.lv-for-you[hidden],
+.panel p.lv-choose__reply[hidden] {
+  display: none;
 }

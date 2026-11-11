@@ -1,0 +1,62 @@
+{%- comment -%}
+  Speelbare interactie voor de landingspagina-varianten van casus 1: hang de
+  CO-melder op in de slaapkamer. Nagebouwd uit CO Wijzer, met de echte
+  spelkunst (assets/images/verhalen/co-wijzer-slaapkamer-leeg.jpg is
+  co-wijzer-slaapkamer.jpg zonder score en markering).
+
+  Pass: position (de plek op de pagina, gaat mee als demo_position),
+        heading (optioneel: "h2" of "h3" voor de kop van het groepsoverzicht).
+
+  De regels komen uit het spel zelf (zie de explainer van CO Wijzer):
+  - in een ruimte waar mensen regelmatig of lang verblijven hangt de melder op
+    ademhalingshoogte, in een slaapkamer dus op slaaphoogte;
+  - in de ruimte met de CO-bron hangt hij aan het plafond, 1 tot 3 meter van
+    de bron, want warme lucht met CO stijgt.
+  De slaapkamer is gekozen omdat die twee regels daar botsen: wie de regel van
+  de ketelruimte onthoudt, hangt hem hier te hoog.
+
+  Werking en meting staan in assets/js/landing-varianten.js:
+  - sleep de melder, tik op de muur, of gebruik de pijltjestoetsen;
+  - eerste beweging: demo_start, demo_type "co-melder";
+  - "Hang hem hier": demo_complete met demo_result en demo_value (cm).
+  Het groepsoverzicht is voorbeeldgegevens en staat ook zo op het scherm.
+  Zonder JavaScript staat hier het beeld met de opdracht en de uitleg.
+{%- endcomment -%}
+{%- assign hx = include.heading | default: "h3" -%}
+<div class="lv-melder" data-lv-melder data-position="{{ include.position | default: 'probeer' }}">
+  <p class="lv-melder__task"><span class="lv-melder__label">Opdracht</span> Je hebt net de ketel gecontroleerd. Nergens in huis hangt een CO-melder. Hang er een op in de slaapkamer.</p>
+
+  <div class="lv-melder__stage" data-stage>
+    <img class="lv-melder__scene" src="{{ '/assets/images/verhalen/co-wijzer-slaapkamer-leeg.jpg' | relative_url }}" alt="Getekende slaapkamer uit CO Wijzer: iemand slaapt in een bed tegen de muur, met een raam en een radiator erboven" width="648" height="372" decoding="async">
+    <p class="lv-melder__hud" aria-hidden="true">Afstand tot plafond<strong data-readout>120 cm</strong></p>
+    <div class="lv-melder__track" data-track aria-hidden="true">
+      <span class="lv-melder__guide"></span>
+      <span class="lv-melder__ghosts" data-ghosts></span>
+    </div>
+    <div class="lv-melder__device" data-device tabindex="0" role="slider"
+         aria-label="CO-melder, afstand tot het plafond"
+         aria-valuemin="40" aria-valuemax="260" aria-valuenow="120"
+         aria-valuetext="120 centimeter onder het plafond">
+      <span class="lv-melder__puck"></span>
+    </div>
+  </div>
+
+  <div class="lv-melder__controls" data-controls>
+    <p class="lv-melder__hint">Sleep de melder omhoog of omlaag, of tik op de muur. Met het toetsenbord: pijltjes omhoog en omlaag.</p>
+    <button class="lv-melder__hang" type="button" data-hang>Hang hem hier</button>
+  </div>
+
+  <div class="lv-melder__result" data-result aria-live="polite">
+    <p class="lv-melder__verdict" data-verdict></p>
+    <p class="lv-melder__explain" data-explain></p>
+    <noscript><p>In een slaapkamer hangt de CO-melder op slaaphoogte: daar meet hij wat iemand in bed inademt. In de ruimte met de ketel hangt hij juist aan het plafond, want warme lucht met CO stijgt.</p></noscript>
+  </div>
+
+  <div class="lv-melder__group" data-group hidden>
+    <{{ hx }} class="lv-melder__group-title" tabindex="-1">Wat de instructeur 's&nbsp;ochtends ziet</{{ hx }}>
+    <p>Elke stip is een deelnemer uit dezelfde groep, <span class="lv-melder__you">de gouden ben jij</span>. <span data-group-count>6</span> van de 12 hingen hem te hoog, de meesten tegen het plafond: de regel van de ruimte met de ketel.</p>
+    <p class="lv-melder__advice">Begin de dag dus bij het verschil tussen die twee ruimtes, en niet bij hoofdstuk één.</p>
+    <p class="lv-melder__meta">Voorbeeldgegevens: elf deelnemers en jij.</p>
+    <button class="lv-melder__again" type="button" data-again data-cta>Probeer opnieuw</button>
+  </div>
+</div>

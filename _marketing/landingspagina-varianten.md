@@ -1,8 +1,8 @@
-# Drie formats voor de landingspagina's
+# Formats voor de landingspagina's
 
 Voor: Jan-Willem en Daan
 Datum: 11 november 2026
-Status: concept, lokaal te bekijken, niets op `production`
+Status: concept, lokaal te bekijken, niets op `production`. Ronde 2 (variant D) staat direct hieronder; daarna volgt het verslag van ronde 1 (A, B en C).
 
 Drie uitwerkingen van dezelfde casus (1, betere praktijkdagen), elk met een andere tactische keuze. Ze zijn bedoeld om naast elkaar te leggen en te kiezen. Ze zijn niet bedoeld om tegen elkaar te A/B-testen: bij zestig tot honderdvijftig bezoekers per pagina zie je met een test alleen enorme verschillen (zie *Bij weinig verkeer*, onderaan).
 
@@ -12,8 +12,79 @@ Drie uitwerkingen van dezelfde casus (1, betere praktijkdagen), elk met een ande
 - A, demo eerst: <http://localhost:4000/preludens-website/oplossingen/varianten/a/>
 - B, verhaal en bezwaren: <http://localhost:4000/preludens-website/oplossingen/varianten/b/>
 - C, zelfselectie: <http://localhost:4000/preludens-website/oplossingen/varianten/c/>, en met een vooraf gekozen pad: `…/c/?pad=koper` of `…/c/?pad=instructeur`
+- D, kiezen en doen: <http://localhost:4000/preludens-website/oplossingen/varianten/d/>, ook met `?pad=koper` of `?pad=instructeur`
 
-Alle vier staan op `noindex, nofollow` en buiten `sitemap.xml` (gecontroleerd in de gebouwde site).
+Alle vijf staan op `noindex, nofollow` en buiten `sitemap.xml` (gecontroleerd in de gebouwde site).
+
+---
+
+## Ronde 2: variant D, na de feedback van 11 november
+
+### Wat de feedback was
+
+- **Te leeg.** Veel wit, veel tekst, weinig beeld. Dat botst met spellen die juist heel beeldend zijn.
+- **De hero is nergens sterk.** A komt het dichtst bij, maar het voorbeeld spreekt niet: het is niet duidelijk dát het een voorbeeld is, en het is geen beeld.
+- **A mist de huisstijl**, zoals de schuine sneden.
+- **Interactie: graag, maar dan goed.** Het vraag-en-antwoord was te mager. Liever iets visueels uit CO Wijzer: de CO-melder ophangen.
+- **C: "allebei" werkt niet.** Twee blokken onder elkaar die allebei aandacht vragen. En wie niets kiest, ziet niets; je moet altijd kunnen scrollen.
+- **Het formulier onderaan** (lichtgoud) is lelijk, op alle pagina's.
+- **Gewenst:** onder de hero een vraag ("Waar sta jij?"). Een klik geeft meteen een reactie en scrolt naar het juiste deel, maar alles staat er ook gewoon. Daar opnieuw een vraag of mini-interactie, met feedback op wat je doet. En van elke klik de data.
+
+### Wat D doet
+
+| Blok | Wat er staat | Beeld | Wat er gemeten wordt |
+|---|---|---|---|
+| **Hero** | Kop A, één alinea, twee knoppen | De explainer van CO Wijzer met de poster "Microgame CO Wijzer", in een kader met het onderschrift *Voorbeeld uit ons werk* | `cta_click`, `video_play`, `video_75` |
+| **Waar sta jij?** | Twee kaarten: *Ik geef de training* / *Ik beslis over de training*. Geen "allebei". Een klik geeft eerst een reactie ("Jij geeft de training. Hieronder: …") en scrolt dan naar het deel voor die rol. Daar staat "Jij koos: …" | Een spelbeeld op elke kaart | `path_select` (`klik` of `url`) |
+| **Voor de instructeur** | Het grootste aandachtspunt: "Je weet 's ochtends niet wie wat mist". Daarna de vraag "Hoeveel van je ochtend gaat er op aan herhalen?", met per antwoord een eigen reactie | Basis Koeltechniek, schuin kader | `question_answer` (`herhaal-tijd`) |
+| **Voor de koper** | Het grootste aandachtspunt: "De dag is al korter gemaakt, en begint nog steeds met theorie". Daarna de vraag "Van wie is de e-learning die jullie nu vooraf gebruiken?": zelf, leverancier of normsteller, met per antwoord een eigen reactie | Basis Koeltechniek, schuin kader, op een donkere band met snede | `question_answer` (`eigenaar-elearning`) |
+| **Hang de CO-melder op** | Zie hieronder | De slaapkamer uit CO Wijzer | `demo_start`, `demo_complete` met uitkomst en hoogte |
+| **Hoe het werkt** | Drie stappen | Een spelbeeld per stap, in de schuine snede | — |
+| **Bewijs** | 21CC en CO Wijzer, Basis Koeltechniek, de vijfdaagse training met de nuance | Titelbeeld Basis Koeltechniek, schuin kader | — |
+| **Vragen** | Vijf bezwaren | — | `faq_open` |
+| **Formulier** | Ongewijzigd formulier, nu op een donker vlak | — | `form_start`, `form_submit` |
+
+Alles staat er altijd. Wie niet kiest, scrolt gewoon door alles heen. De keuze bepaalt alleen waar je terechtkomt en wat er bij jouw deel staat.
+
+**De vraag aan de koper is ook marktonderzoek.** "Van wie is de e-learning?" is de open vraag uit het A4 ("Is de e-learning van hen of van hun leverancier?"). Het antwoord bepaalt of formulering B kan. Nu levert elke bezoeker die klikt dat antwoord, ook wie niets invult.
+
+### De CO-melder
+
+Nagebouwd uit CO Wijzer, met de echte spelkunst. `assets/images/verhalen/co-wijzer-slaapkamer-leeg.jpg` is de bestaande schermafbeelding van de slaapkamer, met ffmpeg ontdaan van score, markering en knoppen.
+
+- **De opdracht:** "Je hebt net de ketel gecontroleerd. Nergens in huis hangt een CO-melder. Hang er een op in de slaapkamer."
+- **Spelen:** sleep de melder langs de muur naast het bed, of tik op de muur. Linksboven loopt "Afstand tot plafond" mee, net als in het spel. Met het toetsenbord: pijltjes, en Enter om op te hangen.
+- **Feedback:** te hoog, nog te hoog, goed of te laag, steeds met de reden.
+- **Wat de instructeur ziet:** daarna verschijnen op dezelfde muur de stippen van een voorbeeldgroep van elf, met de bezoeker als gouden stip. Eronder staat hoeveel van de twaalf hem te hoog hingen, en een advies: "Begin de dag dus bij het verschil tussen die twee ruimtes." Op het scherm staat dat het voorbeeldgegevens zijn.
+
+**De regels komen uit het spel zelf**, zoals de explainer van CO Wijzer ze laat zien:
+
+- In een ruimte waar mensen lang verblijven hangt de melder op ademhalingshoogte; in een slaapkamer is dat slaaphoogte. Goed is 170 tot 230 cm onder het plafond, en het spel rekent 200 cm goed.
+- In de ruimte met de CO-bron hangt de melder aan het plafond, 1 tot 3 meter van de bron, omdat warme lucht met CO stijgt.
+
+De slaapkamer is gekozen omdat die twee regels daar botsen. Wie de regel van de ketelruimte onthoudt, hangt de melder hier te hoog. Dat is precies het soort fout waar de instructeur 's ochtends iets aan heeft.
+
+**Correctie op ronde 1.** Het vraag-en-antwoordfragment zei dat een melder naast de ketel "te dicht op de bron" hangt. Dat klopt niet met het spel. Het fragment is weg, en ook A, B en C gebruiken nu de CO-melder.
+
+### Ook veranderd in A, B en C
+
+- De CO-melder vervangt het oude fragment.
+- Het formulier staat op een donker vlak in plaats van lichtgoud. Dat geldt alleen voor de varianten. De vier stubs en de contactpagina gebruiken `panels/form.html` met het lichtgoud nog, en dat bestand is van het meetfundament.
+- De herkenningsvraag in A en B en de inschatting in C sturen nu `question_answer`, net als de vragen in D. Eén event voor alle vragen betekent één tag in GTM.
+
+Verder heb ik A, B en C gelaten zoals ze waren, als vastlegging van ronde 1. D is waar de feedback in zit.
+
+### Advies na ronde 2
+
+Voor **casus 1** vervangt D het advies om C te nemen. D houdt wat C goed deed: de twee lezers, `?pad=` in de persoonlijke berichten, en de rolkeuze als meting. Het laat weg wat niet werkte: geen dichte blokken en geen "allebei". Wat D nog mist ten opzichte van C, is het doorsturen naar wie beslist. Dat past als knop onder de vraag aan de instructeur, als je het terug wilt.
+
+Voor de andere casussen geldt het patroon ook: hero met het spel, dan "Waar sta jij?", per rol een vraag met feedback, en één interactie uit een echt spel. Bij casus 3 is dat één Life Saving Rule. Bij casus 4 zijn het de paden AI-gebruik en cyber.
+
+### Wat nog openstaat bij D
+
+- **Meer eigen beeld.** D gebruikt alleen bestaande spelbeelden: CO Wijzer en Basis Koeltechniek. Er is geen beeld van een praktijkdag of van een instructeur voor een groep. De image-generator uit `AGENTS.md` kan dat maken, maar ik heb hem niet gebruikt: echt spelbeeld zegt meer dan een gegenereerde trainingshal. Zeg het als je het toch wilt.
+- **Antwoorden per lead.** De antwoorden gaan als events naar GA4: hoeveel mensen klikken, en wat ze kiezen. Wil je ze ook in HubSpot bij de lead zien, dan moeten `panels/form.html` en `form.js` ze meesturen. Die zijn van het meetfundament en heb ik niet aangeraakt.
+- **De stippen zijn voorbeeldgegevens**, en de belofte dat de instructeur dit per groep ziet, moet nog worden nagegaan (zie paragraaf 5).
 
 ---
 
@@ -42,7 +113,9 @@ Wat in alle drie hetzelfde is, zodat het verschil tussen de pagina's alleen in d
 
 ---
 
-## 2. De drie varianten
+## 2. De drie varianten van ronde 1
+
+*In ronde 2 is het fragment hieronder vervangen door de CO-melder. De beschrijving is van ronde 1 en blijft staan als vastlegging.*
 
 Alle drie gebruiken hetzelfde fragment (`_includes/varianten/fragment.html`): twee situaties uit een voorbereiding voor monteurs (een CO-melder ophangen, de melder gaat af) en daarna het overzicht dat de instructeur 's ochtends ziet. Dat overzicht maakt het tweede deel van het aanbod zichtbaar: **inzicht voor de instructeur**. Het staat erin omdat het onderzoek bij casus 1 twee lezers vond, en dit deel is voor de lezer die voor de groep staat.
 
@@ -133,25 +206,24 @@ Nieuw, in `assets/js/landing-varianten.js`:
 
 | Event | Wanneer | Parameters |
 |---|---|---|
-| `demo_start` | eerste keuze in het fragment | `casus`, `demo_type: "fragment"`, `demo_position` (`hero` of `voorbeeld`) |
-| `demo_complete` | het overzicht van de instructeur verschijnt | idem |
-| `recognition_select` | klik op de herkenningsvraag | `casus`, `recognition` (`ja`, `deels`, `nee`) |
-| `path_select` | keuze van een pad in C | `casus`, `path_choice` (`instructeur`, `koper`, `beide`), `path_source` (`klik` of `url`) |
-| `estimate_select` | inschatting in het instructeurspad | `casus`, `estimate` (`kwartier`, `uur`, `halve-ochtend`, `meer`) |
+| `demo_start` | eerste beweging van de CO-melder | `casus`, `demo_type: "co-melder"`, `demo_position` (`hero`, `voorbeeld` of `probeer`) |
+| `demo_complete` | "Hang hem hier" | idem, plus `demo_result` (`goed`, `te-hoog`, `nog-te-hoog`, `te-laag`), `demo_value` (cm onder het plafond) en `demo_attempt` |
+| `question_answer` | elk antwoord op een vraag, ook een tweede klik | `casus`, `question_id` (`herkenning`, `herhaal-tijd`, `eigenaar-elearning`), `answer` |
+| `path_select` | rolkeuze in C en D | `casus`, `path_choice` (`instructeur`, `koper`, en in C ook `beide`), `path_source` (`klik` of `url`) |
 | `faq_open` | een vraag gaat open (één keer per vraag) | `casus`, `faq_question`, `faq_position` |
 
-Daarnaast zet het script `landing_variant` (`a`, `b`, `c`) in de dataLayer, zonder event.
+Daarnaast zet het script `landing_variant` (`a` tot en met `d`) in de dataLayer, zonder event.
 
-**Voorgestelde naam voor de keuze in C: `path_select`.** Hij volgt de vorm van de bestaande events (zelfstandig naamwoord + werkwoord) en zegt niets over casus 1. Daardoor kan hij ook bij casus 4 gebruikt worden (paden AI en cyber).
+**Voorgestelde naam voor de rolkeuze: `path_select`.** Hij volgt de vorm van de bestaande events (zelfstandig naamwoord + werkwoord) en zegt niets over casus 1. Daardoor kan hij ook bij casus 4 gebruikt worden (paden AI en cyber).
 
 **In GTM nog te doen**, alleen als een variant wint. Getest is alleen dat de events in de dataLayer verschijnen, lokaal in de browser.
 
-- Data-laagvariabelen voor `demo_type`, `demo_position`, `recognition`, `path_choice`, `path_source`, `estimate`, `faq_question` en `landing_variant`.
-- `demo_type` toevoegen aan de bestaande tags `GA4 - demo_start` en `GA4 - demo_complete`. Zonder die variabele telt een gespeeld fragment in GA4 als een gespeelde demo. Zolang de demo niet bestaat, is dat geen probleem, en `page_path` scheidt de varianten.
-- Drie nieuwe tags: `recognition_select`, `path_select`, `faq_open`. `estimate_select` kan erbij als C gekozen wordt.
+- Data-laagvariabelen voor `demo_type`, `demo_position`, `demo_result`, `demo_value`, `question_id`, `answer`, `path_choice`, `path_source`, `faq_question` en `landing_variant`.
+- `demo_type` toevoegen aan de bestaande tags `GA4 - demo_start` en `GA4 - demo_complete`. Zonder die variabele telt een opgehangen CO-melder in GA4 als een gespeelde demo. Zolang de demo niet bestaat, is dat geen probleem, en `page_path` scheidt de varianten.
+- Drie nieuwe tags: `question_answer`, `path_select` en `faq_open`.
 - **Het pad komt niet mee in HubSpot.** Het formulier heeft één verborgen veld (`casus`) en dat is van het meetfundament. Wil je leads per pad zien, dan is er een tweede verborgen veld nodig in `panels/form.html`. Dat heb ik niet aangeraakt.
 
-Eén ding om te weten: het overzicht van de instructeur in het fragment ("5 van 12 in één keer goed") telt de antwoorden van de bezoeker mee bij een vaste voorbeeldgroep van elf. Er staat "voorbeeldgegevens" bij.
+Eén ding om te weten: het groepsoverzicht na de CO-melder telt de bezoeker mee bij een vaste voorbeeldgroep van elf. Er staat "voorbeeldgegevens" bij.
 
 ---
 
@@ -172,10 +244,10 @@ Kies je bij casus 3 en 4 voor zoekverkeer, dan geldt message match het hardst: d
 
 ## 5. Wat nog nagekeken moet worden voordat een variant live gaat
 
-- **De vakinhoud van het fragment.** De situaties leunen op CO Wijzer ("op slaaphoogte", "geen CO-melders bij de ketel") en op het gangbare advies bij een CO-alarm (ventileren, toestel uit, naar buiten). De onderbouwing in de uitleg ("te dicht op de bron") heb ik zelf geformuleerd. Laat iemand van het CO Wijzer-project meelezen.
+- **De vakinhoud van de CO-melder.** De regels en de goede hoogte komen uit de explainer van CO Wijzer. De grenzen voor "nog te hoog" (100–170 cm) en "te laag" (boven 230 cm) heb ik zelf gekozen. Laat iemand van het CO Wijzer-project meelezen.
 - **De zin over 21CC.** "21CC Education kwam bij ons met de vraag die op deze pagina staat" komt uit paragraaf 5 van het A4. Mag dat zo op de pagina?
 - **De vijfdaagse training.** Staat er anoniem in, zoals het A4 voorschrijft ("bij een vijfdaagse training op locatie konden twee dagen vervallen"), in B en in het koperspad van C. De nuance staat erbij. Het plan zegt over formulering C "alleen bij meerdaags maatwerk". Voor A heb ik hem weggelaten.
-- **Inzicht voor de instructeur.** De pagina's beloven dat de instructeur vóór de dag ziet waar de groep staat. Prepo levert "deelname, voortgang en scores" (zie `prepo/index.md`). Een overzicht per groep en per situatie, zoals in het fragment, heb ik nergens als bestaande functie gevonden. Kan dat, of moet de belofte kleiner?
+- **Inzicht voor de instructeur.** De pagina's beloven dat de instructeur vóór de dag ziet waar de groep staat. Prepo levert "deelname, voortgang en scores" (zie `prepo/index.md`). Een overzicht per groep en per situatie, zoals na de CO-melder, heb ik nergens als bestaande functie gevonden. Kan dat, of moet de belofte kleiner?
 - **SCORM en de publieke link.** Overgenomen van `prepo/index.md`. Geldt dat ook voor deze voorbereiding?
 - **"Wat kost het?"** heeft geen bedrag. Het antwoord stelt voor klein te beginnen met "één moment uit één training". Dat is een aanbod. Klopt het met wat jullie willen verkopen?
 - **De reactietermijn** onder het formulier ontbreekt nog steeds. Dat punt staat al open in het meetfundament.
@@ -190,10 +262,11 @@ Alleen nieuwe bestanden, plus één regel in een gedeeld bestand:
 | Bestand | Wat |
 |---|---|
 | `oplossingen/varianten/index.md` | overzicht, zonder casus (telt niet mee in de cijfers) |
-| `oplossingen/varianten/a/index.md`, `b/`, `c/` | de drie varianten |
-| `_includes/varianten/fragment.html` | het speelbare fragment, gedeeld door alle drie |
+| `oplossingen/varianten/a/index.md`, `b/`, `c/`, `d/` | de vier varianten |
+| `_includes/varianten/co-melder.html` | de CO-melder, gedeeld door alle vier |
 | `_includes/varianten/herkenning.html` | de herkenningsvraag |
-| `assets/js/landing-varianten.js` | fragment, herkenningsvraag, paden, inschatting, `faq_open` |
+| `assets/images/verhalen/co-wijzer-slaapkamer-leeg.jpg` | de slaapkamer uit CO Wijzer zonder score en markering (64 kB) |
+| `assets/js/landing-varianten.js` | CO-melder, vragen, rolkeuze (D), paden (C), `faq_open` |
 | `_sass/components/_landing-varianten.scss` | stijl, alleen bestaande tokens |
 | `assets/css/main.scss` | **één regel**: `@import "components/landing-varianten";` |
 
