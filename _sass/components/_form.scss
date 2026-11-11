@@ -26,6 +26,16 @@
   text-align: left;
 }
 
+/* Het formulier binnen een ander paneel (bare=true): wat lucht en een
+   haarlijn erboven, zodat het een eigen blok blijft onder de tekst ervoor, en
+   links uitgelijnd zoals die tekst. */
+.lead-form--bare {
+  margin-top: var(--space-lg);
+  margin-inline: 0;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
 .lead-form__row {
   display: grid;
   gap: var(--space-md);

@@ -4,7 +4,13 @@
   die is nauwelijks te stylen en je moet voor een form_submit-event op
   postMessage gaan luisteren.
 
-  Pass: title, lead, casus, id, submit_note.
+  Pass: title, lead, casus, id, submit_note, bare.
+
+  bare=true geeft het formulier zonder eigen paneel, om het in een bestaand
+  paneel te zetten. De contactpagina doet dat: daar zit erboven een mistpaneel
+  en eronder een wit paneel, en een eigen paneel ertussen zou met een van de
+  twee samenvallen. De id komt dan op het formulierblok zelf, zodat een link
+  naar #contactformulier blijft werken.
 
   Verplicht is alleen wat nodig is om te kunnen antwoorden: het bericht, en
   een e-mailadres óf een telefoonnummer. Naam en organisatie mogen leeg
@@ -31,7 +37,7 @@
 {%- endcomment -%}
 {% include locale.html %}
 {% capture form_body %}
-<div class="lead-form" data-lead-form-wrap>
+<div class="lead-form{% if include.bare %} lead-form--bare{% endif %}" data-lead-form-wrap{% if include.bare %} id="{{ include.id }}"{% endif %}>
   <div class="lead-form__intro">
     <h2>{{ include.title }}</h2>
     {% if include.lead %}<p class="sp-lead">{{ include.lead }}</p>{% endif %}
@@ -108,4 +114,4 @@
   </div>
 </div>
 {% endcapture %}
-{% include panels/panel.html variant="paper" id=include.id body=form_body %}
+{% if include.bare %}{{ form_body }}{% else %}{% include panels/panel.html variant="paper" id=include.id body=form_body %}{% endif %}

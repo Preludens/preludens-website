@@ -26,10 +26,9 @@ permalink: /contact/
 <p class="sp-lead">Want to explore a learning challenge or look together at which route fits your organisation? Feel free to get in touch. We are happy to think along with you.</p>
 {% include panels/values.html label="Preludens contact details" columns="two" items=contact_items %}
 <p class="sp-lead">Send an email to <a href="mailto:info@preludens.nl">info@preludens.nl</a>. We will get in touch to look together at which next step makes sense.</p>
+{% include panels/form.html id="contactformulier" casus="contact" title="Tell us briefly what you are running into" bare=true %}
 {% endcapture %}
 {% include panels/panel.html variant="mist" align="left" body=talk_body %}
-
-{% include panels/form.html id="contactformulier" casus="contact" title="Tell us briefly what you are running into" %}
 
 {% capture start_main %}
 <h3>Start with a GameStorm</h3>
