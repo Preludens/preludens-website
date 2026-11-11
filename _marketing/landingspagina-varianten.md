@@ -62,6 +62,12 @@ Beide soorten links herkent `booking_click` als `microsoft-bookings`.
 
 **Getest op 11 november 2026** met een boeking voor 23 november om 16:30 uur, die daarna is geannuleerd. Het Teams-bericht stond binnen een seconde in Sales, met "15:30:00 (UTC)", dus 16:30 uur Nederlandse tijd. Jan-Willem kreeg de mail "Nieuwe reservering", de klant de mail "Bevestigd: Kennismaking", en na de annulering kwamen de annuleringsmails. Het testbericht staat nog in het kanaal Sales.
 
+**Aangepast op 11 november 2026 (na de eerste test):**
+
+- **Teams-bericht.** De tijd staat er nu in Nederlandse tijd en in Chicago-tijd (`convertTimeZone`, met zomertijd). Ook staan erbij: in wiens agenda de afspraak staat (`StaffMembers`) en de notitie van de klant. Getest met een tweede boeking: "24-11-2026 16:30 Nederlandse tijd / 24-11-2026 09:30 Chicago-tijd". Eerst met `convertFromUtc` geprobeerd, maar dat faalt, omdat Bookings de tijd zonder `Z` levert.
+- **GIF.** Een willekeurige GIF van een kantoorfeestje (vijf gecontroleerde Giphy-links) staat als `<img>` in het bericht, maar Teams haalt externe plaatjes uit Flow-bot-berichten weg. Hij verschijnt dus niet. Het kan wel met een Adaptive Card in plaats van een gewoon bericht.
+- **Bevestigingsmail aan de klant.** Het sjabloon van Microsoft ("Uw reservering is bevestigd", "Reserveringsdetails", "u") is niet aan te passen. Wel kan er een eigen blok "Aanvullende informatie" bij, en dat staat erin. Maar: de editor van Bookings staat in de donkere modus en zet de tekst in lichtgrijs (`rgb(214,214,214)`) in de mail, waardoor hij op wit bijna onleesbaar is. Nog niet opgelost. Een donkere kleur kiezen hielp niet bij het verzetten van een bestaande afspraak; mogelijk legt Bookings de tekst per afspraak vast.
+
 **Bookings kan ook in de pagina zelf** (de knop *Embed* bij de reserveringspagina). Dan blijft de bezoeker op de site. Een geboekte afspraak meldt Bookings, anders dan Calendly, niet terug aan de pagina.
 
 Twee opties:
