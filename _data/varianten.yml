@@ -10,7 +10,10 @@
 # of van Calendly. Zolang hij leeg is, gaat de knop "Plan een kennismaking"
 # naar het formulier onderaan de pagina.
 afspraak:
-  url: ""
+  # Gedeelde Bookings-pagina "Preludens" (postvak Preludens1@Preludens.nl),
+  # dienst "Kennismaking": 30 minuten, Teams, ma-vr 9-17 uur. Deze link opent
+  # direct die dienst. Beheer: outlook.office.com/bookings.
+  url: "https://bookings.cloud.microsoft/book/Preludens1@Preludens.nl/s/OvwgvWbY1EGgPvzcT_cwwQ2"
   # Wat er onder de knop staat. Leeg laten mag.
   toelichting: "Online, via Teams. Je kiest zelf een moment."
 

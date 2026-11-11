@@ -45,6 +45,18 @@ Op de site stond nog geen afsprakenlink. De knop staat er wel, en werkt zodra er
 
 Beide soorten links herkent `booking_click` als `microsoft-bookings`.
 
+**Ingericht op 11 november 2026:** een gedeelde Bookings-pagina **Preludens**, met het postvak `Preludens1@Preludens.nl` (`Preludens@` was al in gebruik). Instellingen:
+
+- **Dienst:** "Kennismaking", 30 minuten, Teams-vergadering, Nederlandse omschrijving.
+- **Wie kan boeken:** iedereen, via een openbare pagina.
+- **Tijden:** ma–vr 9–17 uur, met minstens 24 uur van tevoren. De tijdzone stond bij het aanmaken op UTC; die is omgezet naar UTC+1, en alles is nagekeken op de openbare pagina (9:00–16:30 uur).
+- **Taal:** Nederlands.
+- **Medewerker:** alleen Jan-Willem. Zijn eigen agenda telt mee voor de beschikbaarheid, en hij krijgt een e-mail bij elke boeking.
+
+`afspraak.url` wijst naar de dienst zelf, zodat een bezoeker direct bij "Kennismaking" landt. Daan is nog niet toegevoegd als medewerker. Dat stuurt hem een uitnodiging, en dat laat ik aan jullie.
+
+**Bookings kan ook in de pagina zelf** (de knop *Embed* bij de reserveringspagina). Dan blijft de bezoeker op de site. Een geboekte afspraak meldt Bookings, anders dan Calendly, niet terug aan de pagina.
+
 Twee opties:
 
 | | Microsoft Bookings | Calendly |
