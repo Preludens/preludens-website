@@ -38,6 +38,13 @@ Alle vijf staan op `noindex, nofollow` en buiten `sitemap.xml` (gecontroleerd in
 
 Op de site stond nog geen afsprakenlink. De knop staat er wel, en werkt zodra er een link is: zet die in `_data/varianten.yml` onder `afspraak.url`. Tot die tijd gaat de knop naar het formulier.
 
+**Zo maak je de link in Bookings.** Er zijn twee soorten:
+
+- **Persoonlijk: Bookings with me.** Open in Outlook op het web je agenda en kies *Bookings with me*. Maak een openbaar afspraaktype, bijvoorbeeld "Kennismaking praktijkdag", met een duur, je beschikbare tijden en Teams als vergaderplek. Kopieer daarna de link van dat afspraaktype, niet die van de hele pagina, zodat bezoekers meteen bij de juiste afspraak landen.
+- **Gedeeld: een Bookings-pagina voor Preludens.** Ga naar `outlook.office.com/bookings` en maak een pagina met een dienst "Kennismaking" waar Jan-Willem en Daan allebei op te boeken zijn.
+
+Beide soorten links herkent `booking_click` als `microsoft-bookings`.
+
 Twee opties:
 
 | | Microsoft Bookings | Calendly |
@@ -47,7 +54,7 @@ Twee opties:
 | Kosten | Zit in Microsoft 365 Business Standard, en dat heeft Preludens (verlengd op 12 juli 2026). Niet in Exchange Online (Plan 1), dat er ook loopt: wie alleen die licentie heeft, krijgt geen Bookings | Gratis voor één soort afspraak, daarna betaald |
 | Meten | Klik op de knop (`booking_click`) | Klik op de knop, en in de pagina ingebed ook een geboekte afspraak (`booking_complete`) |
 
-**Advies: Microsoft Bookings**, omdat jullie al op Teams zitten en de afspraak dan meteen een Teams-vergadering is. Het zit in jullie Business Standard-abonnement, dus het kost niets extra. Wil je kunnen zien dat iemand ook echt boekte, en niet alleen klikte, dan is Calendly in de pagina de enige van de twee die dat terugmeldt.
+**Gekozen: Microsoft Bookings** (11 november 2026; Bookings staat aan voor Preludens). Eerder advies: Bookings, omdat jullie al op Teams zitten en de afspraak dan meteen een Teams-vergadering is. Het zit in jullie Business Standard-abonnement, dus het kost niets extra. Wil je kunnen zien dat iemand ook echt boekte, en niet alleen klikte, dan is Calendly in de pagina de enige van de twee die dat terugmeldt.
 
 Welke medewerker welke licentie heeft, is uit de mail niet af te leiden. Dat staat in het Microsoft 365-beheercentrum onder *Gebruikers → Actieve gebruikers → Licenties en apps*. Daar staat ook of Bookings voor die gebruiker aan staat.
 
