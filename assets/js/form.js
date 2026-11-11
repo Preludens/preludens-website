@@ -1,7 +1,13 @@
 /* Het leadformulier van de landingspagina's.
 
    Post naar de HubSpot Forms API:
-     POST https://api.hsforms.com/submissions/v3/integration/submit/{portalId}/{formGuid}
+     POST https://api-eu1.hsforms.com/submissions/v3/integration/submit/{portalId}/{formGuid}
+
+   De host is api-eu1, de regionale host van deze portal: de insluitcode van
+   het formulier zegt data-region="eu1", en de trackingcode in consent.js
+   laadt van js-eu1. De wereldwijde host api.hsforms.com werkt ook — beide
+   vonden het formulier bij een test — maar dan loopt de inzending eerst langs
+   een andere regio dan waar hij hoort.
 
    Dat endpoint is publiek en vraagt geen token in de browser, dus er is geen
    Worker en geen server nodig. Mee gaat `context.hutk` — het hubspotutk-cookie
@@ -17,7 +23,7 @@
   if (!forms.length) return;
 
   var config = window.preludensSite || {};
-  var ENDPOINT = "https://api.hsforms.com/submissions/v3/integration/submit/";
+  var ENDPOINT = "https://api-eu1.hsforms.com/submissions/v3/integration/submit/";
   /* Een mens doet er langer dan dit over om vier velden in te vullen. */
   var MIN_SECONDS = 3;
 

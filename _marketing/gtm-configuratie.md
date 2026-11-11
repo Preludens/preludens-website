@@ -18,16 +18,52 @@ preludens:
     ga4_measurement_id: "G-Q0JG5Q810R"
     clarity_project_id: "zbl8vhhvgy"
   hubspot:
-    portal_id: "XXXXXXXX"
-    form_guid: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+    portal_id: "149248161"
+    form_guid: "5504aefa-116d-477c-870c-11795c5165e5"
     tracking: true
   demo:
     url: "/..."
 ```
 
-De drie bovenste staan inmiddels in `_config.yml`. De HubSpot-waarden en de
-demo-URL nog niet; zolang die leeg zijn, verstuurt het formulier niet en wijst
-de primaire knop naar het formulier in plaats van naar de demo.
+Alleen `demo.url` is nog leeg (beslissing F). Zolang dat zo is, wijst de
+primaire knop op de landingspagina's naar het formulier in plaats van naar de
+demo — geen dode link, wel een pagina zonder demo.
+
+## 0.1 HubSpot
+
+Account `Preludens`, portal `149248161`, **regio eu1**. Het formulier post
+daarom naar `api-eu1.hsforms.com` en de trackingcode komt van
+`js-eu1.hs-scripts.com` — de regionale hosts van deze portal.
+
+Dat endpoint is nagelopen: een lege post naar portal plus GUID komt terug met
+`REQUIRED_FIELD` op `email`, niet met een 404. Het formulier bestaat dus en is
+te bereiken; alleen een echte inzending is nog niet gedaan.
+
+Formulier **Landingspagina's oplossingen**, zes velden, in deze koppeling:
+
+| Veld in `form.js` | Eigenschap in HubSpot |
+|---|---|
+| `firstname` | Voornaam |
+| `lastname` | Achternaam |
+| `email` | E-mail |
+| `company` | Naam onderneming |
+| `message` | Bericht |
+| `casus` | Casus (nieuw aangemaakt, één regel tekst) |
+
+Het formulier wordt nergens getoond. De site tekent zijn eigen formulier en
+post via de Forms API; HubSpot is hier alleen de ontvanger. Twee dingen staan
+daarom met opzet uit:
+
+- **reCAPTCHA.** HubSpot raadt het aan, maar de site stuurt niet het
+  HubSpot-formulier in; spam vangen we met een honeypot en een drempel van drie
+  seconden. Captcha aanzetten verandert niets aan de post en kost elke bezoeker
+  een extra stap.
+- **Het gegevensprivacyveld.** Dat hoort pas thuis als er een privacyverklaring
+  is om naar te wijzen. Die is er nog niet (beslissing J).
+
+Aan staat: *nieuwe contactpersonen aanmaken voor onbekende e-mailadressen*.
+Zonder dat vinkje komt de inzending wel binnen maar wordt er geen contact van
+gemaakt, en dat is nu juist de hele lead.
 
 Zolang `gtm_id` leeg is, laadt de container niet en vuurt er niets. Dat is geen
 storing; dat is de site zonder meting.
