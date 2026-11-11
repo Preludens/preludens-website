@@ -6,9 +6,11 @@
 
   Pass: title, lead, casus, id, submit_note.
 
-  Vijf velden en niet meer. Bij honderd bezoekers kost elk extra veld een
-  merkbaar deel van de oogst, dus geen telefoonnummer, geen functietitel en
-  geen aanhef.
+  Verplicht is alleen wat nodig is om te kunnen antwoorden: het bericht, en
+  een e-mailadres óf een telefoonnummer. Naam en organisatie mogen leeg
+  blijven. Elk verplicht veld kost bij honderd bezoekers een merkbaar deel van
+  de oogst, en wie liever gebeld wordt, hoort geen e-mailadres te hoeven
+  opgeven. Geen functietitel en geen aanhef.
 
   Spam gaat tegen zonder captcha: een honeypot-veld dat een mens niet ziet, en
   een tijdsdrempel in assets/js/form.js — wie het formulier binnen drie
@@ -18,9 +20,9 @@
   zou een extra afhaakmoment zijn, en bij dit volume is één bezoeker die
   onderweg wegvalt al een procent.
 
-  Dit blok hoort op _layouts/landing.html: daar laadt assets/js/form.js.
-  Zet je het op een pagina met de gewone layout, voeg dat script daar dan toe,
-  anders staat er een formulier dat niets doet.
+  assets/js/form.js laadt in zowel _layouts/landing.html als
+  _layouts/default.html, dus dit blok werkt op elke gewone pagina. Op een
+  pagina zonder formulier stopt het script in de eerste regels.
 
   Verzenden kan alleen als preludens.hubspot.portal_id en form_guid in
   _config.yml staan. Zolang die leeg zijn, staat het formulier er wel en
@@ -36,26 +38,45 @@
   </div>
 
   <form class="lead-form__form" data-lead-form data-casus="{{ include.casus }}"
-        data-error-send="{{ t.form.error_send }}" data-sending="{{ t.form.sending }}" novalidate>
+        data-error-send="{{ t.form.error_send }}" data-error-reach="{{ t.form.error_reach }}"
+        data-sending="{{ t.form.sending }}" novalidate>
+    {%- assign form_key = include.id | default: 'formulier' -%}
     <div class="lead-form__row">
       <label class="lead-form__field">
-        <span class="lead-form__label">{{ t.form.name }}</span>
-        <input type="text" name="name" autocomplete="name" required data-error="{{ t.form.error_name }}">
+        <span class="lead-form__label">{{ t.form.name }} <span class="lead-form__optional">{{ t.form.optional }}</span></span>
+        <input type="text" name="name" autocomplete="name">
       </label>
       <label class="lead-form__field">
-        <span class="lead-form__label">{{ t.form.email }}</span>
-        <input type="email" name="email" autocomplete="email" required data-error="{{ t.form.error_email }}">
+        <span class="lead-form__label">{{ t.form.company }} <span class="lead-form__optional">{{ t.form.optional }}</span></span>
+        <input type="text" name="company" autocomplete="organization">
       </label>
     </div>
 
-    <label class="lead-form__field">
-      <span class="lead-form__label">{{ t.form.company }}</span>
-      <input type="text" name="company" autocomplete="organization" required data-error="{{ t.form.error_company }}">
-    </label>
+    {%- comment -%}
+      E-mail en telefoon zijn elk los niet verplicht, samen wel: een van de
+      twee moet er staan. Dat kan HTML niet uitdrukken, dus form.js controleert
+      het aan de hand van data-reach. De hint eronder zegt het hardop, en beide
+      velden wijzen ernaar met aria-describedby.
+    {%- endcomment -%}
+    <div class="lead-form__group">
+      <div class="lead-form__row">
+        <label class="lead-form__field">
+          <span class="lead-form__label">{{ t.form.email }}</span>
+          <input type="email" name="email" autocomplete="email" data-reach
+                 aria-describedby="{{ form_key }}-reach" data-error="{{ t.form.error_email }}">
+        </label>
+        <label class="lead-form__field">
+          <span class="lead-form__label">{{ t.form.phone }}</span>
+          <input type="tel" name="phone" autocomplete="tel" inputmode="tel" data-reach
+                 aria-describedby="{{ form_key }}-reach" data-error="{{ t.form.error_phone }}">
+        </label>
+      </div>
+      <span class="lead-form__hint" id="{{ form_key }}-reach">{{ t.form.reach_hint }}</span>
+    </div>
 
     <label class="lead-form__field">
       <span class="lead-form__label">{{ t.form.message }}</span>
-      <textarea name="message" rows="4"></textarea>
+      <textarea name="message" rows="4" required data-error="{{ t.form.error_message }}"></textarea>
       <span class="lead-form__hint">{{ t.form.message_hint }}</span>
     </label>
 

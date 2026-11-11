@@ -29,6 +29,8 @@ permalink: /contact/
 {% endcapture %}
 {% include panels/panel.html variant="mist" align="left" body=talk_body %}
 
+{% include panels/form.html id="contactformulier" casus="contact" title="Tell us briefly what you are running into" %}
+
 {% capture start_main %}
 <h3>Start with a GameStorm</h3>
 <p class="sp-lead">A creative half-day workshop in which we explore your learning challenge and translate it into a first direction. You get more grip on your audience and learning goals, and a sense of the story that fits them.</p>

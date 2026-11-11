@@ -77,6 +77,22 @@
   color: var(--color-ink-soft);
 }
 
+/* "niet verplicht" achter het label: zachter dan het label zelf, zodat het
+   label blijft lezen als de naam van het veld. */
+.lead-form__optional {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-ink-soft);
+}
+
+/* E-mail en telefoon met hun gezamenlijke hint: dichter op elkaar dan de
+   velden eromheen, zodat ze als één vraag lezen. */
+.lead-form__group {
+  display: grid;
+  gap: 0.375rem;
+}
+
 /* Het honeypot-veld. Buiten beeld in plaats van display:none, omdat een deel
    van de bots velden met display:none overslaat. */
 .lead-form__trap {

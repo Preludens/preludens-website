@@ -453,6 +453,33 @@ twee inzendingen op de tijdlijn. Dat mag weg zodra je het gezien hebt.
    site), maar is daar nog niet verzonden.
 5. **De demo-URL** (beslissing F), plus het `postMessage` hierboven.
 
+**Het formulier is daarna omgebouwd, en staat nu ook op de contactpagina**
+(11 november, op verzoek van Jan-Willem). Verplicht is alleen nog het bericht,
+plus een e-mailadres óf een telefoonnummer; naam en organisatie mogen leeg
+blijven en dragen het label *niet verplicht*. Er is een telefoonveld bij
+gekomen. `form.js` controleert de of-of-regel zelf, want HTML kan die niet
+uitdrukken, en laat lege velden weg uit de inzending.
+
+- In HubSpot staat in *Landingspagina's oplossingen* nu het veld
+  *Telefoonnummer* (eigenschap `phone`), en *E-mail* is niet meer verplicht.
+  Gepubliceerd. Zonder die twee wijzigingen had HubSpot een inzending met
+  alleen een telefoonnummer geweigerd.
+- `/contact/` en `/en/contact/` hebben het formulier direct onder *Start het
+  gesprek*, met `casus: contact`. De kop is de zin die al op de pagina stond
+  ("Laat kort weten waar je tegenaan loopt"); er is geen nieuwe kopij voor
+  geschreven. De mailto-links staan er nog.
+- `form.js` laadt nu ook in `_layouts/default.html`, niet alleen in
+  `landing.html`. Op een pagina zonder formulier stopt het in de eerste regels.
+- Lokaal nagelopen zonder te versturen: leeg formulier, een telefoonnummer als
+  "nvt", een e-mailadres als "iemand@" en een geldig nummer zonder bericht geven
+  elk hun eigen melding, met de cursor in het juiste veld.
+
+**Nog niet nagelopen: wat HubSpot doet met een inzending zonder e-mailadres.**
+HubSpot herkent contactpersonen aan het e-mailadres; het formulier zegt zelf
+"nieuwe contactpersonen voor e-mailadressen aanmaken". Het kan dus zijn dat een
+lead met alleen een telefoonnummer wel als inzending binnenkomt, maar niet als
+contactpersoon. Dat wijst één testinzending uit.
+
 **Ook nog niet getest:** UTM-parameters tot in GA4 en HubSpot.
 Wel nagelopen: een lege post naar het HubSpot-endpoint komt terug met
 `REQUIRED_FIELD` op `email` en niet met een 404, dus portal en GUID kloppen en

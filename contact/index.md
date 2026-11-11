@@ -29,6 +29,8 @@ permalink: /contact/
 {% endcapture %}
 {% include panels/panel.html variant="mist" align="left" body=talk_body %}
 
+{% include panels/form.html id="contactformulier" casus="contact" title="Laat kort weten waar je tegenaan loopt" %}
+
 {% capture start_main %}
 <h3>Start met een GameStorm</h3>
 <p class="sp-lead">Een creatieve workshop van een dagdeel waarin we jouw leeropgave verkennen en vertalen naar een eerste richting. Je krijgt meer grip op je doelgroep en leerdoelen, en een beeld van het verhaal dat daarbij past.</p>
