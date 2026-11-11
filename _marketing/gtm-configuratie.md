@@ -156,8 +156,9 @@ Plus twee constanten: `const - GA4 meting-ID` (`G-Q0JG5Q810R`) en
 
 ## 3. Triggers
 
-Alle tien staan er. Van het type **Aangepaste gebeurtenis**, met de
-gebeurtenisnaam precies zoals hieronder, en "Alle aangepaste gebeurtenissen".
+Alle elf staan er: tien voor de gebeurtenissen van de pagina en één voor de
+toestemming. Van het type **Aangepaste gebeurtenis**, met de gebeurtenisnaam
+precies zoals hieronder, en "Alle aangepaste gebeurtenissen".
 
 | Trigger | Gebeurtenisnaam |
 |---|---|
@@ -171,9 +172,13 @@ gebeurtenisnaam precies zoals hieronder, en "Alle aangepaste gebeurtenissen".
 | `ce - form_start` | `form_start` |
 | `ce - form_submit` | `form_submit` |
 | `ce - mailto_click` | `mailto_click` |
+| `ce - consent_update` | `consent_update` |
 
 `page_view` krijgt geen trigger: die hangt aan de Google-tag zelf, op
 **Initialisatie — alle pagina's**.
+
+`ce - consent_update` hoort bij geen gebeurtenis van de pagina maar bij Clarity;
+waarom dat nodig is, staat in 4.3.
 
 ## 4. Tags
 
@@ -227,9 +232,22 @@ vergelijking. Voeg je later een parameter toe, meld hem daar dan ook aan.
 ### 4.3 Microsoft Clarity
 
 - Type: **Aangepaste HTML**
-- Trigger: Alle pagina's
+- Triggers: Alle pagina's **én** `ce - consent_update`
 - Toestemming: *Aanvullende toestemming vereist* → `analytics_storage`
 - Code: het script van Clarity, met `{{const - Clarity project-ID}}` als ID
+
+Die tweede trigger is geen extra: zonder hem start Clarity nooit voor iemand die
+de banner pas na het laden van de pagina wegklikt. Op All Pages staat
+`analytics_storage` nog op *denied*, dus GTM houdt de tag tegen — en GTM probeert
+een tegengehouden tag daarna niet uit zichzelf opnieuw. Dat is in de
+voorbeeldmodus ook precies zo gezien: Clarity stond bij *Container geladen* onder
+"geblokkeerd op basis van de instellingen voor toestemming" en vuurde daarna
+niet meer.
+
+Dubbel vuren kan het niet. `assets/js/consent.js` duwt `consent_update` alleen bij
+een **nieuwe** keuze; wie al een keuze in zijn cookie heeft, krijgt `consent_state`.
+Een terugkerende bezoeker start Clarity dus via All Pages, een nieuwe via
+`ce - consent_update`, en nooit allebei.
 
 Clarity staat met opzet in GTM en niet in de site: dan hangt hij aan dezelfde
 toestemmingscategorie als GA4, en is er één plek waar de statistiekentags staan.

@@ -357,19 +357,63 @@ tekstveld, niet als keuzelijst: zo hoeft HubSpot niet mee te veranderen als er
 later een vijfde casus bij komt. Wat er per interface staat, met de afwegingen
 erbij, staat in `gtm-configuratie.md`.
 
-**De container is ingericht.** In `GTM-5MMK7TXD`, werkruimte 2: elf eigen
-variabelen (negen uit de gegevenslaag, twee constanten) naast de ingebouwde
-`Click Element` en `Click Text`, tien triggers `ce - <gebeurtenis>`, en twaalf
-tags — `Google-tag - GA4` op Initialisatie, tien `GA4 - <gebeurtenis>` op hun
-eigen trigger, en `Clarity` achter `analytics_storage`. Dat dekt alle elf
+**De container is ingericht en getest.** In `GTM-5MMK7TXD`, werkruimte 2: elf
+eigen variabelen (negen uit de gegevenslaag, twee constanten) naast de
+ingebouwde `Click Element` en `Click Text`, elf triggers, en twaalf tags —
+`Google-tag - GA4` op Initialisatie, tien `GA4 - <gebeurtenis>` op hun eigen
+trigger, en `Clarity` op All Pages plus `ce - consent_update`. Dat dekt alle elf
 gebeurtenissen die de site duwt, `page_view` meegerekend.
+
+**Wat de voorbeeldmodus opleverde** (11 november 2026, op
+`localhost:4000/preludens-website/oplossingen/praktijkdagen/`, nagekeken in Tag
+Assistant én in het netwerkverkeer naar `region1.google-analytics.com`):
+
+| Stap uit paragraaf 5 | Uitkomst |
+|---|---|
+| Geen keuze gemaakt | Vijf Google-categorieën op *denied*, `functionality_storage` en `security_storage` op *granted*; de hit vertrekt met `gcs=G100`, `npa=1`, `pscdl=denied` — cookieloos, zoals bedoeld |
+| Accepteren | Alle vijf naar *granted*, `gcs=G111`; `page_view` binnen een seconde |
+| `scroll_50`, `scroll_90` | Beide één keer, met `casus=praktijkdagen` |
+| `cta_click` | `cta_label=Vraag een gesprek aan`, `cta_position=hero`, `casus=praktijkdagen` |
+| `mailto_click` | `link_text` en `casus` staan erbij |
+| `form_start` | Vuurt op het eerste veld, met `casus`; in GA4 DebugView aangekomen mét `casus` |
+| Clarity | Start, en stuurt daarna zelf naar `a.clarity.ms/collect` |
+
+**De test leverde twee dingen op.**
+
+Het eerste is gerepareerd: **Clarity startte nooit voor een nieuwe bezoeker.**
+Op All Pages staat `analytics_storage` nog op *denied*, dus GTM hield de tag
+tegen, en een tegengehouden tag probeert GTM daarna niet uit zichzelf opnieuw.
+Tag Assistant liet dat zien bij *Container geladen*. De tag heeft er nu een
+tweede trigger bij, `ce - consent_update`, en vuurt daarmee precies één keer:
+`consent.js` duwt `consent_update` alleen bij een nieuwe keuze en `consent_state`
+bij een opgeslagen keuze, dus een terugkerende bezoeker start Clarity via All
+Pages en een nieuwe via de nieuwe trigger. Opnieuw getest: Clarity vuurt nu op
+`consent_update` en de opnames gaan de deur uit.
+
+Het tweede is een waarneming, geen storing: **`page_view` komt zonder `casus` en
+zonder `page_language` binnen.** Ze staan wel als configuratie-instelling op de
+Google-tag en de variabelen zijn op dat moment gevuld (`dlv - casus` =
+`praktijkdagen`, `dlv - page_language` = `nl`, gecontroleerd in Tag Assistant),
+maar op de `page_view`-hit staan ze niet. De tien gebeurtenistags hebben er geen
+last van — die zetten `casus` zelf op de hit. Voor het experiment is het geen
+blokkade: de vier casussen hebben elk hun eigen URL, dus `page_path` splitst de
+paginaweergaven net zo hard. Wil je `casus` ook als dimensie op `page_view`, dan
+is dat ná publiceren nog een keer nakijken waard.
+
+**Nog niet uitgeprobeerd, omdat het buiten de browser iets achterlaat of omdat
+de pagina's het nog niet hebben:** een echte inzending (`form_submit` plus de
+lead in HubSpot — dat maakt een contact aan in het echte CRM en wacht op jouw
+akkoord), `video_play`, `video_75`, `demo_start` en `demo_complete` (de vier
+stubpagina's hebben nog geen video en geen demo; die komen met de kopij), en de
+hele ronde nog een keer op de live site en in het Engels.
 
 **Wat daar nog bij hoort, en nog niet klaar is:**
 
 1. **De werkruimte is niet gepubliceerd.** Zolang je niet op *Verzenden* drukt,
    staat dit alles wel in GTM maar niet op de site. Dat is bewust: publiceren is
-   live zetten, en dat is niet aan mij. Loop eerst het testprotocol in
-   `gtm-configuratie.md` paragraaf 5 langs in de voorbeeldmodus.
+   live zetten, en dat is niet aan mij. Het testprotocol uit
+   `gtm-configuratie.md` paragraaf 5 is wel langsgelopen — zie hierboven wat
+   dat opleverde.
 2. **`form_submit` als key event in GA4.** Dat vinkje kan pas nadat het event
    één keer is binnengekomen. Zet het direct na de eerste testinzending.
 3. **Het filter voor intern verkeer staat op *Testen*.** De regel *Kantoor
@@ -382,13 +426,11 @@ gebeurtenissen die de site duwt, `page_view` meegerekend.
    site), maar is daar nog niet verzonden.
 5. **De demo-URL** (beslissing F), plus het `postMessage` hierboven.
 
-**Nog niet getest:** een echte inzending in HubSpot met bronattributie,
-UTM-parameters tot in GA4 en HubSpot, de opname in Clarity, en de elf events in
-de voorbeeldmodus van GTM. De tags staan er nu, dus dat laatste kan. Wel
-nagelopen: een lege post naar het HubSpot-endpoint komt terug met
+**Ook nog niet getest:** bronattributie en UTM-parameters tot in GA4 en HubSpot.
+Wel nagelopen: een lege post naar het HubSpot-endpoint komt terug met
 `REQUIRED_FIELD` op `email` en niet met een 404, dus portal en GUID kloppen en
-het formulier is bereikbaar. Het protocol voor de rest staat in
-`gtm-configuratie.md` paragraaf 5.
+het formulier is bereikbaar. Het protocol staat in `gtm-configuratie.md`
+paragraaf 5.
 
 **Twee punten die buiten de code vallen en nog open staan:**
 
