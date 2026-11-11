@@ -39,6 +39,8 @@
     {%- endcomment -%}
     <p>&copy; {{ 'now' | date: '%Y' }} Preludens. {{ t.footer.rights }}
       <span class="footer-bottom__sep" aria-hidden="true"> · </span>
+      <a class="footer-privacy" href="{{ t.nav_paths.privacy | relative_url }}">{{ t.footer.privacy }}</a>
+      <span class="footer-bottom__sep" aria-hidden="true"> · </span>
       <button class="footer-consent" type="button" data-consent-revoke>{{ t.consent.revoke }}</button>
     </p>
   </div>

@@ -16,6 +16,11 @@
     <div class="consent__copy">
       <h2 class="consent__title" id="consent-title">{{ t.consent.title }}</h2>
       <p class="consent__text" id="consent-text">{{ t.consent.text }}</p>
+      {%- comment -%}
+        De link staat los onder de bannertekst: die zin is van Jan-Willem en
+        blijft zoals hij is.
+      {%- endcomment %}
+      <p class="consent__more"><a href="{{ t.nav_paths.privacy | relative_url }}">{{ t.consent.privacy }}</a></p>
     </div>
 
     <div class="consent__options" data-consent-options hidden>

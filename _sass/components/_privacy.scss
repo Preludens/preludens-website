@@ -1,0 +1,321 @@
+/* Privacyverklaring (privacy/index.md en en/privacy/index.md).
+
+   Lange lopende tekst in één paperpaneel: links een inhoudsopgave die op
+   brede schermen meeloopt, rechts een kolom op leesmaat. Geen kaarten, geen
+   iconen: het is een document om in te zoeken en terug te vinden, en de
+   koppen en een haarlijn tussen de paragrafen dragen de structuur. */
+
+/* De hero heeft geen beeld; de tweede kolom hoeft geen ruimte te houden. */
+body.page-privacy .panel--hero .panel__inner {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+body.page-privacy .panel--hero .sp-hero-copy {
+  max-width: 46rem;
+}
+
+body.page-privacy .panel--hero p.sp-lead {
+  max-width: 62ch;
+}
+
+.privacy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-lg);
+}
+
+/* Inhoudsopgave */
+.privacy__toc {
+  padding-left: var(--space-sm);
+  border-left: 1px solid var(--color-border);
+
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: privacy-toc;
+  }
+
+  li {
+    counter-increment: privacy-toc;
+    display: grid;
+    grid-template-columns: 1.75rem minmax(0, 1fr);
+    margin: 0;
+    padding: 0.3rem 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+
+    &::before {
+      content: counter(privacy-toc);
+      color: var(--color-ink-soft);
+      font-variant-numeric: tabular-nums;
+    }
+  }
+
+  a {
+    color: var(--color-ink);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-ink-gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+}
+
+.panel .privacy__toc-title {
+  margin: 0 0 var(--space-xs);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+/* Tekstkolom */
+.privacy__body {
+  max-width: 42rem;
+}
+
+.privacy__section {
+  scroll-margin-top: calc(var(--header-height) + var(--space-sm));
+
+  & + & {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+.panel .privacy__body {
+  h2 {
+    margin: 0 0 var(--space-sm);
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 1.85rem);
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: left;
+  }
+
+  /* .panel h3 is elders de bovenkop in hoofdletters; hier is het een
+     gewone tussenkop. */
+  h3 {
+    margin: var(--space-md) 0 var(--space-xs);
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  p,
+  li {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  p {
+    margin: 0 0 var(--space-sm);
+  }
+
+  ul {
+    margin: 0 0 var(--space-sm);
+    padding-left: 1.25rem;
+  }
+
+  li + li {
+    margin-top: var(--space-xs);
+  }
+
+  strong {
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  a {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--color-preludens-gold);
+    text-underline-offset: 3px;
+
+    &:hover {
+      color: var(--color-ink-gold);
+    }
+  }
+
+  code {
+    font-size: 0.9em;
+    padding: 0.1em 0.35em;
+    border-radius: calc(var(--radius-sm) / 2);
+    background: var(--color-mist-blue);
+    color: var(--color-ink);
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Gegevens van de verantwoordelijke: label en waarde naast elkaar. */
+.privacy__facts {
+  margin: 0 0 var(--space-md);
+  padding: var(--space-sm) 0;
+  border-block: 1px solid var(--color-border);
+
+  div {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: var(--space-sm);
+    padding: 0.3rem 0;
+  }
+
+  dt {
+    color: var(--color-ink-soft);
+  }
+
+  dd {
+    margin: 0;
+    color: var(--color-ink);
+  }
+}
+
+/* Cookietabel */
+.privacy__table-wrap {
+  margin-top: var(--space-md);
+}
+
+.privacy__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-ink);
+
+  th,
+  td {
+    padding: 0.6rem 0.75rem 0.6rem 0;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  thead th {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-ink-soft);
+  }
+
+  td:last-child {
+    white-space: nowrap;
+  }
+
+  td:first-child {
+    width: 11.5rem;
+
+    code {
+      white-space: nowrap;
+    }
+  }
+}
+
+.privacy__table-group th {
+  padding-top: var(--space-md);
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+/* De knop Cookievoorkeuren onderaan werkt alleen met JavaScript, net als die
+   in de footer. */
+.privacy__revoke {
+  font-family: var(--font-display);
+}
+
+@media (min-width: 960px) {
+  .privacy {
+    grid-template-columns: 15rem minmax(0, 1fr);
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  .privacy__toc {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-sm));
+  }
+}
+
+/* Op een telefoon past een tabel met vier kolommen niet. Elke rij wordt dan
+   een blokje met het label voor de waarde. */
+@media (max-width: 640px) {
+  .privacy__table {
+    thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+    }
+
+    tr {
+      display: block;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    th,
+    td {
+      display: grid;
+      grid-template-columns: 6rem minmax(0, 1fr);
+      justify-items: start;
+      gap: var(--space-xs);
+      padding: 0.15rem 0;
+      border: 0;
+    }
+
+    td:first-child {
+      width: auto;
+
+      code {
+        white-space: normal;
+      }
+    }
+
+    td:last-child {
+      white-space: normal;
+    }
+
+    td::before {
+      content: attr(data-label);
+      color: var(--color-ink-soft);
+    }
+  }
+
+  .privacy__table-group th {
+    display: block;
+    padding-top: var(--space-sm);
+  }
+}
+
+/* De link naar deze pagina in beide footers staat naast de knop
+   Cookievoorkeuren en krijgt dezelfde vorm, zodat de twee bij elkaar horen. */
+.site-footer a.footer-privacy,
+.landing-footer a.footer-privacy,
+body.page-panels .sp-footer-reveal .site-footer a.footer-privacy {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* De link in de cookiebanner, los onder de bannertekst. */
+.consent__more {
+  margin: var(--space-xs) 0 0;
+  font-size: 0.875rem;
+
+  a {
+    color: var(--color-white);
+    text-decoration: underline;
+    text-decoration-color: var(--color-preludens-gold);
+    text-underline-offset: 3px;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-soft-gold);
+    }
+  }
+}

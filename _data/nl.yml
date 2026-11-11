@@ -27,6 +27,7 @@ nav_paths:
   verhalen: "/inspiratie/"
   gamestorm: "/gamestorm/"
   contact: "/contact/"
+  privacy: "/privacy/"
 
 cta:
   gamestorm: "Kies een GameStorm"
@@ -43,6 +44,7 @@ footer:
   start_playing: "Start met spelen"
   start_playing_text: "Wil je online leren omzetten in een verhaal dat raakt? Plan een GameStorm."
   rights: "Alle rechten voorbehouden."
+  privacy: "Privacyverklaring"
 
 verhalen:
   filter_label: "Filter op type"
@@ -150,6 +152,7 @@ consent:
   save: "Keuze opslaan"
   customise: "Zelf kiezen"
   revoke: "Cookievoorkeuren"
+  privacy: "Lees de privacyverklaring"
   categories:
     necessary: "Noodzakelijk"
     necessary_text: "Houdt je taalkeuze en deze cookiekeuze vast. Zonder deze werkt de site niet."

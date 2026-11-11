@@ -44,6 +44,8 @@
       <p class="landing-footer__meta">
         &copy; {{ 'now' | date: '%Y' }} Preludens
         <span aria-hidden="true"> · </span>
+        <a class="footer-privacy" href="{{ t.nav_paths.privacy | relative_url }}">{{ t.footer.privacy }}</a>
+        <span aria-hidden="true"> · </span>
         <button class="footer-consent" type="button" data-consent-revoke>{{ t.consent.revoke }}</button>
       </p>
     </div>
