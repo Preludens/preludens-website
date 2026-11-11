@@ -156,7 +156,7 @@ Plus twee constanten: `const - GA4 meting-ID` (`G-Q0JG5Q810R`) en
 
 ## 3. Triggers
 
-Alle elf staan er: tien voor de gebeurtenissen van de pagina en één voor de
+Alle twaalf staan er: elf voor de gebeurtenissen van de pagina en één voor de
 toestemming. Van het type **Aangepaste gebeurtenis**, met de gebeurtenisnaam
 precies zoals hieronder, en "Alle aangepaste gebeurtenissen".
 
@@ -172,6 +172,7 @@ precies zoals hieronder, en "Alle aangepaste gebeurtenissen".
 | `ce - form_start` | `form_start` |
 | `ce - form_submit` | `form_submit` |
 | `ce - mailto_click` | `mailto_click` |
+| `ce - tel_click` | `tel_click` |
 | `ce - consent_update` | `consent_update` |
 
 `page_view` krijgt geen trigger: die hangt aan de Google-tag zelf, op
@@ -182,7 +183,7 @@ waarom dat nodig is, staat in 4.3.
 
 ## 4. Tags
 
-Alle twaalf staan er: `Google-tag - GA4`, tien tags `GA4 - <gebeurtenis>`
+Alle dertien staan er: `Google-tag - GA4`, elf tags `GA4 - <gebeurtenis>`
 en `Clarity`.
 
 Let op één ding als je hier later een gebeurtenistag bij maakt. Bij de eerste
@@ -192,7 +193,7 @@ configuratietags op dezelfde initialisatie geven dezelfde opdracht twee keer, en
 de tweede had *dubbele instanties negeren* aanstaan — dan is het de vraag wiens
 `casus` en `page_language` blijven hangen, en dat is precies de dimensie waar
 dit experiment op draait. Tel na elke nieuwe gebeurtenistag dus even of de lijst
-nog twaalf tags telt.
+nog dertien tags telt.
 
 ### 4.1 Google-tag (GA4)
 
@@ -204,7 +205,7 @@ nog twaalf tags telt.
 
 Daarmee is `page_view` klaar.
 
-### 4.2 Tien GA4-gebeurtenistags
+### 4.2 Elf GA4-gebeurtenistags
 
 Alle van het type **GA4-gebeurtenis**. In het veld *Metings-ID* staat
 `{{const - GA4 meting-ID}}`; GTM meldt daarna zelf dat het de configuratie van
@@ -223,6 +224,7 @@ paragraaf 3:
 | `GA4 - form_start` | `form_start` | `casus` = `{{dlv - casus}}` |
 | `GA4 - form_submit` | `form_submit` | `casus` = `{{dlv - casus}}` |
 | `GA4 - mailto_click` | `mailto_click` | `link_text` = `{{dlv - link_text}}`, `casus` = `{{dlv - casus}}` |
+| `GA4 - tel_click` | `tel_click` | `link_text` = `{{dlv - link_text}}`, `casus` = `{{dlv - casus}}` |
 
 `casus`, `cta_label`, `cta_position`, `video_title` en `link_text` staan in GA4
 als **aangepaste dimensie** aangemeld (zie 1.1). Zonder die stap komen ze binnen
@@ -265,7 +267,8 @@ Open elke landingspagina in de voorbeeldmodus en loop dit af:
 4. Scroll naar de helft en naar het eind: `scroll_50`, `scroll_90`.
 5. Speel de film: `video_play`, en na driekwart `video_75`.
 6. Klik elke knop: `cta_click`, met `cta_position` gelijk aan de id van het paneel.
-7. Klik een `mailto:`-link: `mailto_click` met `link_text`.
+7. Klik een `mailto:`-link: `mailto_click` met `link_text`. Klik een
+   telefoonnummer: `tel_click`, met het nummer als `link_text`.
 8. Zet de cursor in het eerste veld: `form_start`.
 9. Verstuur een testinzending: `form_submit`, en de lead in HubSpot met de juiste casus.
 10. Open en rond de demo af: `demo_start`, `demo_complete`.

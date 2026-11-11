@@ -1,4 +1,4 @@
-/* De negen events van de landingspagina-experimenten.
+/* De tien events van de landingspagina-experimenten.
 
    Alles gaat via dataLayer.push(); niets gaat rechtstreeks naar GA4. GTM
    bepaalt welke tag op welk event vuurt, zodat je een meting kunt bijstellen
@@ -14,6 +14,7 @@
    | form_start                 | eerste veld dat focus krijgt           |
    | form_submit                | assets/js/form.js, na een geslaagde post |
    | mailto_click               | elke mailto:-link                      |
+   | tel_click                  | elke tel:-link                         |
 
    `casus` hangt aan de pagina (front matter `casus:`) en gaat mee op elk event
    dat hem hoort te hebben. Op pagina's zonder casus blijft hij leeg in plaats
@@ -151,6 +152,17 @@
 
       if (href.indexOf("mailto:") === 0) {
         push("mailto_click", {
+          link_text: (link.textContent || "").trim(),
+          casus: casus
+        });
+        return;
+      }
+
+      /* Een klik op een telefoonnummer is net zo goed een contactmoment als een
+         klik op een e-mailadres. link_text is hier het nummer zoals het op de
+         pagina staat; dat zegt welk nummer gekozen werd (algemeen of support). */
+      if (href.indexOf("tel:") === 0) {
+        push("tel_click", {
           link_text: (link.textContent || "").trim(),
           casus: casus
         });

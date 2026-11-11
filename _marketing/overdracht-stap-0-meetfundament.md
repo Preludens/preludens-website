@@ -359,10 +359,14 @@ erbij, staat in `gtm-configuratie.md`.
 
 **De container is ingericht en getest.** In `GTM-5MMK7TXD`, werkruimte 2: elf
 eigen variabelen (negen uit de gegevenslaag, twee constanten) naast de
-ingebouwde `Click Element` en `Click Text`, elf triggers, en twaalf tags —
-`Google-tag - GA4` op Initialisatie, tien `GA4 - <gebeurtenis>` op hun eigen
-trigger, en `Clarity` op All Pages plus `ce - consent_update`. Dat dekt alle elf
-gebeurtenissen die de site duwt, `page_view` meegerekend.
+ingebouwde `Click Element` en `Click Text`, twaalf triggers, en dertien tags —
+`Google-tag - GA4` op Initialisatie, elf `GA4 - <gebeurtenis>` op hun eigen
+trigger, en `Clarity` op All Pages plus `ce - consent_update`. Dat dekt alle
+twaalf gebeurtenissen die de site duwt, `page_view` meegerekend. De twaalfde,
+`tel_click`, kwam er op 11 november bij: een klik op een telefoonnummer, met
+het nummer als `link_text`. Die vuurt op elke pagina, want het nummer staat in
+de footer. Getest in de voorbeeldmodus: de hit komt aan in GA4 met
+`link_text=+31 15 202 404 7`.
 
 **Wat de voorbeeldmodus opleverde** (11 november 2026, op
 `localhost:4000/preludens-website/oplossingen/praktijkdagen/`, nagekeken in Tag
@@ -375,6 +379,7 @@ Assistant én in het netwerkverkeer naar `region1.google-analytics.com`):
 | `scroll_50`, `scroll_90` | Beide één keer, met `casus=praktijkdagen` |
 | `cta_click` | `cta_label=Vraag een gesprek aan`, `cta_position=hero`, `casus=praktijkdagen` |
 | `mailto_click` | `link_text` en `casus` staan erbij |
+| `tel_click` | `link_text` (het nummer) en `casus` staan erbij |
 | `form_start` | Vuurt op het eerste veld, met `casus`; in GA4 DebugView aangekomen mét `casus` |
 | `form_submit` | Vuurt na een echte inzending, met `casus`; de tag `GA4 - form_submit` meldt *Gelukt* |
 | De lead in HubSpot | Staat erin, met **Casus: praktijkdagen** en de vijf andere velden |
