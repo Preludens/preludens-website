@@ -1,0 +1,22 @@
+{%- comment -%}
+  Herkenningsvraag met één klik, voor de landingspagina-varianten van casus 1.
+  Het experiment meet of het probleem herkend wordt; dit is de goedkoopste
+  manier om dat op de pagina zelf te vragen, ook van wie verder niets doet.
+
+  Pass: question (optioneel).
+  Event: recognition_select met recognition = ja | deels | nee
+  (assets/js/landing-varianten.js). Zonder JavaScript doen de knoppen niets.
+{%- endcomment -%}
+<div class="lv-recognize" data-lv-recognize>
+  <p class="lv-recognize__q" id="lv-recognize-q">{{ include.question | default: "Herken je dit uit je eigen trainingen?" }}</p>
+  <div class="lv-recognize__options" role="group" aria-labelledby="lv-recognize-q">
+    <button type="button" data-recognize="ja">Ja, zo gaat het</button>
+    <button type="button" data-recognize="deels">Deels</button>
+    <button type="button" data-recognize="nee">Nee, bij ons niet</button>
+  </div>
+  <div class="lv-recognize__reply" data-recognize-reply aria-live="polite" hidden>
+    <p data-reply-for="ja" hidden>Dank je. Hieronder zie je wat wij eraan doen.</p>
+    <p data-reply-for="deels" hidden>Dank je. Welk deel herken je niet? Eén regel in het formulier onderaan helpt ons verder.</p>
+    <p data-reply-for="nee" hidden>Dank je, dat is ook een antwoord. Hoe loopt de ochtend bij jullie wel? We horen het graag, via het formulier onderaan.</p>
+  </div>
+</div>

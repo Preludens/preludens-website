@@ -1,0 +1,485 @@
+/* Drie landingspagina-varianten voor casus 1 (oplossingen/varianten/a, b, c).
+
+   Alleen wat het panelsysteem nog niet had: het speelbare fragment in een
+   smalle kolom, de herkenningsvraag, de padkeuze van variant C en een smalle
+   bewijsregel bij het formulier. Kleuren en maten komen uit de tokens in
+   assets/css/main.scss; hier komt geen nieuwe kleur bij. */
+
+/* ---------- het fragment ----------
+   Bouwt voort op .dilemma-play uit _panel.scss (donker vlak, gouden rand op
+   de keuzes). In een smalle kolom staan de keuzes onder elkaar. */
+
+.lv-fragment {
+  margin-top: 0;
+  box-shadow: var(--shadow-soft);
+}
+
+.lv-fragment .dilemma-play__choices {
+  grid-template-columns: 1fr;
+}
+
+.lv-fragment .dilemma-play__choices button {
+  min-height: 2.75rem;
+}
+
+.lv-fragment .dilemma-play__choices button:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.lv-fragment .dilemma-play__choices button:disabled:hover {
+  background: transparent;
+  border-color: color-mix(in srgb, var(--color-soft-gold) 70%, transparent);
+  color: var(--color-cloud-white);
+}
+
+/* De goede keuze licht op in goud; de gekozen foute keuze blijft staan met
+   een doorlopende rand, zodat je ziet wat je zelf koos. Kleur alleen draagt
+   het niet: het oordeel staat er ook in tekst bij. */
+.lv-fragment .dilemma-play__choices button[data-state="correct"],
+.lv-fragment .dilemma-play__choices button[data-state="correct"]:hover {
+  opacity: 1;
+  background: var(--color-preludens-gold);
+  border-color: var(--color-preludens-gold);
+  color: var(--color-deep-navy);
+}
+
+.lv-fragment .dilemma-play__choices button[data-state="wrong"],
+.lv-fragment .dilemma-play__choices button[data-state="wrong"]:hover {
+  opacity: 1;
+  border-color: var(--color-cloud-white);
+  border-style: dashed;
+}
+
+.panel .lv-fragment p.lv-fragment__ask {
+  margin: var(--space-sm) 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-cloud-white);
+}
+
+.lv-fragment__feedback {
+  margin-top: var(--space-sm);
+}
+
+.lv-fragment__feedback:empty {
+  display: none;
+}
+
+.panel .lv-fragment p.lv-fragment__verdict {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-soft-gold);
+}
+
+.panel .lv-fragment p.lv-fragment__verdict:empty {
+  display: none;
+}
+
+.panel .lv-fragment p.lv-fragment__meta {
+  margin: 0 0 var(--space-sm);
+  font-size: 0.875rem;
+  color: color-mix(in srgb, var(--color-cloud-white) 72%, transparent);
+}
+
+.lv-fragment__rows {
+  list-style: none;
+  margin: 0 0 var(--space-sm);
+  padding: 0;
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.lv-fragment__rows li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.15rem var(--space-sm);
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-cloud-white) 8%, transparent);
+}
+
+.lv-fragment__topic {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-cloud-white);
+}
+
+.lv-fragment__score {
+  grid-column: 1;
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in srgb, var(--color-cloud-white) 82%, transparent);
+}
+
+.lv-fragment__flag {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-soft-gold);
+  color: var(--color-deep-navy);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.lv-fragment__flag--quiet {
+  background: transparent;
+  color: color-mix(in srgb, var(--color-cloud-white) 72%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-cloud-white) 24%, transparent);
+}
+
+.lv-fragment [tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* Wat er na het fragment komt: de volgende stap, op dezelfde plek. */
+.lv-after {
+  margin-top: var(--space-md);
+}
+
+.lv-after p {
+  margin: 0 0 var(--space-xs);
+}
+
+/* ---------- variant A: het fragment in de hero ----------
+   De kop is kleiner dan op de rest van de site, zodat het fragment op een
+   telefoon zo hoog mogelijk staat. De tweede kolom is breder dan voor een
+   beeld: er moet in gelezen en gekozen worden. */
+
+.lv-hero.panel--hero {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-xl);
+
+  .panel__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 31rem);
+    align-items: start;
+  }
+
+  h1 {
+    font-size: clamp(1.85rem, 3.6vw, 2.9rem);
+    line-height: 1.1;
+  }
+}
+
+.lv-hero .sp-hero-copy {
+  padding-top: var(--space-sm);
+}
+
+/* Op een breed scherm staan kop en vervolgstap links en het fragment rechts.
+   Op een telefoon komt het fragment direct onder de kop en de vervolgstap
+   pas daarna: eerst spelen, dan pas de knop. */
+.lv-hero--play .panel__inner {
+  grid-template-areas:
+    "copy play"
+    "next play";
+  grid-template-rows: auto 1fr;
+}
+
+.lv-hero__copy { grid-area: copy; }
+.lv-hero__play { grid-area: play; }
+.lv-hero__next { grid-area: next; }
+
+.lv-hero__next .sp-actions {
+  margin-top: var(--space-sm);
+}
+
+/* ---------- herkenningsvraag ---------- */
+
+.lv-recognize {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-cloud-white);
+  max-width: 44rem;
+}
+
+.panel p.lv-recognize__q {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  color: var(--color-ink);
+}
+
+.lv-recognize__options,
+.lv-estimate__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.lv-recognize__options button,
+.lv-estimate__options button {
+  min-height: 2.75rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.lv-recognize__options button:hover,
+.lv-estimate__options button:hover {
+  background: var(--color-mist-blue);
+}
+
+.lv-recognize__options button[aria-pressed="true"],
+.lv-estimate__options button[aria-pressed="true"] {
+  background: var(--color-ink);
+  color: var(--color-cloud-white);
+}
+
+.lv-recognize__options button:focus-visible,
+.lv-estimate__options button:focus-visible,
+.lv-paths__option:focus-visible,
+.lv-path-switch:focus-visible {
+  outline: 3px solid var(--color-preludens-gold);
+  outline-offset: 2px;
+}
+
+.panel .lv-recognize__reply p,
+.panel .lv-estimate__reply p {
+  margin: var(--space-sm) 0 0;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- variant C: padkeuze ---------- */
+
+.lv-paths {
+  margin-top: var(--space-md);
+  max-width: 54rem;
+}
+
+.panel p.lv-paths__q {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--color-ink);
+}
+
+.lv-paths__options {
+  display: grid;
+  gap: var(--space-sm);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.lv-paths__option {
+  display: grid;
+  gap: 0.25rem;
+  align-content: start;
+  min-height: 2.75rem;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-preludens-gold);
+  border-radius: var(--radius-sm);
+  background: var(--color-cloud-white);
+  color: var(--color-ink);
+  text-decoration: none;
+  box-shadow: var(--shadow-card);
+  transition: background-color var(--transition), border-color var(--transition);
+
+  strong {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  span {
+    font-size: 0.9375rem;
+    color: var(--color-ink-soft);
+  }
+}
+
+.lv-paths__option:hover {
+  border-color: var(--color-ink);
+  border-top-color: var(--color-preludens-gold);
+}
+
+.lv-paths__option[aria-pressed="true"] {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  border-top-color: var(--color-preludens-gold);
+
+  strong,
+  span {
+    color: var(--color-cloud-white);
+  }
+}
+
+.lv-path-switch {
+  margin-top: var(--space-md);
+  padding: 0.5rem 0;
+  min-height: 2.75rem;
+  border: 0;
+  background: none;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.lv-estimate {
+  margin-top: var(--space-md);
+  max-width: 44rem;
+}
+
+.panel p.lv-estimate__q {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+/* Het formulierpaneel (.panel--pale) schuift met een negatieve marge onder
+   het paneel ervoor; op de stubs is dat een mistband met een snede. Staat er
+   een wit paneel voor, dan valt de onderrand van de inhoud eronder weg. */
+[data-landing-variant] .panel--paper:has(+ .panel--pale) .panel__inner {
+  padding-bottom: calc(clamp(2.25rem, 7vh, 6rem) + var(--sp-gap) + var(--sp-jump));
+}
+
+/* ---------- bewijsregel en claimgrens ---------- */
+
+.panel p.lv-claim {
+  margin-top: var(--space-md);
+  padding-left: var(--space-sm);
+  border-left: 3px solid var(--color-preludens-gold);
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.lv-proof {
+  display: grid;
+  grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+  gap: var(--space-md);
+  align-items: center;
+  max-width: 52rem;
+}
+
+.lv-proof img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+.panel .lv-proof p {
+  margin: 0 0 var(--space-xs);
+}
+
+.panel .lv-proof p.lv-proof__source {
+  font-size: 0.875rem;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 900px) {
+  .lv-hero.panel--hero .panel__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .lv-hero--play .panel__inner {
+    grid-template-areas:
+      "copy"
+      "play"
+      "next";
+    grid-template-rows: auto;
+  }
+
+  .lv-paths__options {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 34rem) {
+  .lv-hero.panel--hero {
+    padding-top: var(--space-md);
+  }
+
+  .lv-hero .sp-hero-copy {
+    padding-top: 0;
+  }
+
+  .lv-paths__option {
+    padding: var(--space-sm);
+  }
+
+  .lv-proof {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lv-recognize__options button,
+  .lv-estimate__options button,
+  .lv-paths__option {
+    transition: none;
+  }
+}
+
+/* ---------- variant B: tekst-hero, fragment en bewijs in de lopende pagina ---------- */
+
+.lv-hero.lv-hero--text .panel__inner {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.lv-hero--text .sp-hero-copy {
+  max-width: 46rem;
+}
+
+.lv-inline-play {
+  max-width: 38rem;
+  margin: var(--space-lg) auto 0;
+}
+
+.lv-evidence {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .lv-evidence {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- variant C: hero met padkeuze ---------- */
+
+.lv-hero--text .sp-hero-copy.lv-hero__wide {
+  max-width: none;
+  width: 100%;
+
+  h1,
+  .sp-lead {
+    max-width: 46rem;
+  }
+}
+
+/* Het formulier schuift onder het paneel ervoor (zie hierboven). In variant C
+   is dat paneel afhankelijk van het gekozen pad: bij de koper een mistband,
+   zoals bedoeld; bij de instructeur een wit paneel, en vóór de keuze de hero.
+   Dan zakt het formulier niet onder het vorige paneel. */
+body.lv-paths-ready:not([data-path="koper"]):not([data-path="beide"]) [data-landing-variant="c"] .panel--pale {
+  margin-top: 0;
+}
+
+/* In het doorstuurblok staan de vragen onder een links uitgelijnde kop en
+   knoppen; gecentreerd zouden ze los komen te hangen. */
+#doorsturen .sp-faq {
+  margin-inline: 0;
+  margin-top: var(--space-lg);
+}

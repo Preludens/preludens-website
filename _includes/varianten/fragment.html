@@ -1,0 +1,84 @@
+{%- comment -%}
+  Speelbaar fragment voor de landingspagina-varianten van casus 1
+  (oplossingen/varianten/a, b en c). Alle drie de varianten tonen hetzelfde
+  fragment; wat verschilt is waar het staat. Zo vergelijk je de plek en de
+  tactiek, niet twee verschillende voorbeelden.
+
+  Pass: position (de plek op de pagina, gaat mee als demo_position),
+        heading (optioneel, h-niveau van de stapkoppen: "h2" of "h3").
+
+  Het fragment speelt twee situaties uit de voorbereiding van een deelnemer
+  en laat daarna zien wat de instructeur 's&nbsp;ochtends ziet. Die twee helften
+  horen bij de twee lezers van casus 1: de instructeur die het probleem voelt
+  en de koper die beslist.
+
+  Inhoud: de situaties leunen op CO Wijzer (_verhalen/studium-co-wijzer.md:
+  "geen CO-melders bij de ketel", "op slaaphoogte"). Laat de vakinhoud
+  nalezen voordat een variant live gaat. Het groepsoverzicht is
+  voorbeeldgegevens en staat ook zo op het scherm.
+
+  Meting (assets/js/landing-varianten.js): de eerste keuze duwt demo_start,
+  het groepsoverzicht duwt demo_complete, beide met demo_type "fragment".
+  Zonder JavaScript staat hier de eerste situatie met de uitleg eronder, en
+  doen de knoppen niets: de pagina blijft leesbaar.
+{%- endcomment -%}
+{%- assign hx = include.heading | default: "h3" -%}
+<div class="dilemma-play lv-fragment" data-lv-fragment data-position="{{ include.position | default: 'fragment' }}">
+  <p class="dilemma-play__kicker">Uit een voorbereiding</p>
+
+  <div class="lv-fragment__step" data-step="1">
+    <{{ hx }} class="sp-sub" tabindex="-1">Er hangt nergens een CO-melder</{{ hx }}>
+    <p>Je bent monteur en hebt net de cv-ketel op zolder gecontroleerd. In het hele huis hangt geen CO-melder. De bewoners slapen op de eerste verdieping.</p>
+    <p class="lv-fragment__ask" id="lv-q1-{{ include.position }}">Waar hang je de melder in de slaapkamer?</p>
+    <div class="dilemma-play__choices" role="group" aria-labelledby="lv-q1-{{ include.position }}">
+      <button type="button" data-choice="plafond">Tegen het plafond, zoals een rookmelder</button>
+      <button type="button" data-choice="slaaphoogte" data-correct>Op slaaphoogte, bij het bed</button>
+      <button type="button" data-choice="ketel">Niet in de slaapkamer: naast de ketel, bij de bron</button>
+    </div>
+    <div class="lv-fragment__feedback" data-feedback aria-live="polite">
+      <p class="lv-fragment__verdict" data-verdict></p>
+      <p data-feedback-for="plafond" hidden>Zo hang je een rookmelder op, en dat is precies waarom dit vaak misgaat. In een slaapkamer hangt de CO-melder op slaaphoogte, zodat hij meet wat iemand in bed inademt.</p>
+      <p data-feedback-for="slaaphoogte" hidden>Op slaaphoogte meet de melder wat iemand in bed inademt. Wie slaapt, merkt de eerste klachten niet op.</p>
+      <p data-feedback-for="ketel" hidden>Bij de ketel hangt hij te dicht op de bron. En wie boven ligt te slapen, hoort hem daar niet. De melder hoort in de ruimte waar mensen slapen, op slaaphoogte.</p>
+      <noscript><p>In een slaapkamer hangt de CO-melder op slaaphoogte, zodat hij meet wat iemand in bed inademt. Bij de ketel hangt hij te dicht op de bron.</p></noscript>
+      <button class="dilemma-play__reset" type="button" data-next hidden>Volgende situatie</button>
+    </div>
+  </div>
+
+  <div class="lv-fragment__step" data-step="2" hidden>
+    <{{ hx }} class="sp-sub" tabindex="-1">De melder gaat af</{{ hx }}>
+    <p>Een week later belt de bewoner. De melder in de slaapkamer piept, de ketel draait. Je bent er over een half uur.</p>
+    <p class="lv-fragment__ask" id="lv-q2-{{ include.position }}">Wat zeg je tegen de bewoner?</p>
+    <div class="dilemma-play__choices" role="group" aria-labelledby="lv-q2-{{ include.position }}">
+      <button type="button" data-choice="reset">Druk op de knop van de melder en kijk of hij opnieuw afgaat</button>
+      <button type="button" data-choice="buiten" data-correct>Ramen en deuren open, ketel uit, iedereen naar buiten</button>
+      <button type="button" data-choice="wachten">Blijf in de woonkamer, ik kom eraan</button>
+    </div>
+    <div class="lv-fragment__feedback" data-feedback aria-live="polite">
+      <p class="lv-fragment__verdict" data-verdict></p>
+      <p data-feedback-for="reset" hidden>Dan zit de bewoner nog een half uur in dezelfde lucht. Eerst ventileren, het toestel uit en naar buiten. Uitzoeken waarom hij afging, doe jij straks met je meter.</p>
+      <p data-feedback-for="buiten" hidden>Eerst de mensen uit de lucht en de bron uit. Waarom de melder afging, zoek jij straks uit met je meter.</p>
+      <p data-feedback-for="wachten" hidden>De woonkamer is dezelfde lucht. Eerst ventileren, het toestel uit en naar buiten. Uitzoeken waarom hij afging, doe jij straks met je meter.</p>
+      <button class="dilemma-play__reset" type="button" data-next hidden>Bekijk wat de instructeur ziet</button>
+    </div>
+  </div>
+
+  <div class="lv-fragment__step lv-fragment__overview" data-step="overzicht" hidden>
+    <{{ hx }} class="sp-sub" tabindex="-1">Wat de instructeur 's&nbsp;ochtends ziet</{{ hx }}>
+    <p class="lv-fragment__meta">Groep van dinsdag · 12 deelnemers · voorbeeldgegevens, jouw antwoorden tellen mee</p>
+    <ul class="lv-fragment__rows">
+      <li>
+        <span class="lv-fragment__topic">CO-melder in de slaapkamer</span>
+        <span class="lv-fragment__score"><span data-score="1" data-base="4">5</span> van 12 in één keer goed</span>
+        <span class="lv-fragment__flag">Begin hier</span>
+      </li>
+      <li>
+        <span class="lv-fragment__topic">De melder gaat af</span>
+        <span class="lv-fragment__score"><span data-score="2" data-base="10">11</span> van 12 in één keer goed</span>
+        <span class="lv-fragment__flag lv-fragment__flag--quiet">Zit</span>
+      </li>
+    </ul>
+    <p>De dag begint dus bij de slaapkamer, en niet bij hoofdstuk één. De rest van de ochtend is voor oefenen in de hal.</p>
+    <button class="dilemma-play__reset" type="button" data-restart>Speel opnieuw</button>
+  </div>
+</div>
