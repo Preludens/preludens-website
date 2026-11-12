@@ -88,6 +88,8 @@
     var config = window.preludensSite || {};
     if (hubspotLoaded) return;
     if (!config.hubspotTracking) return;
+    /* Lokaal niet meten, behalve met gtm_debug: zie _includes/analytics.html. */
+    if (config.measure === false) return;
     if (!config.hubspotPortalId) return;
     if (!state.statistics) return;
 

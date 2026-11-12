@@ -14,6 +14,15 @@
   `site.preludens` komt uit _config.yml. Staat er geen gtm_id, dan laadt er
   niets: de site werkt dan gewoon zonder meting, in plaats van met een
   container-ID dat niet bestaat.
+
+  Op een lokale server (localhost, 127.0.0.1, *.test, *.local) meet de site
+  niet: de container laadt er niet, en consent.js laadt de HubSpot-trackingcode
+  er niet. Anders loopt elk lokaal testbezoek mee in GA4, Clarity en HubSpot,
+  en bij 60 tot 150 bezoekers per pagina is dat een merkbaar deel van de
+  cijfers. Uitzondering: staat `gtm_debug` in de URL, dan meet hij wel, de rest
+  van die sessie in dat tabblad. Tag Assistant zet die parameter zelf als je de
+  voorbeeldmodus van GTM op localhost start; met de hand kan het ook, met
+  `?gtm_debug=1`. De banner en de dataLayer werken lokaal gewoon.
 {%- endcomment -%}
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -24,6 +33,19 @@
       casus: {{ page.casus | default: "" | jsonify }},
       language: {{ site.active_lang | default: site.default_lang | default: "nl" | jsonify }}
     };
+    (function () {
+      var host = window.location.hostname;
+      var local =
+        host === "localhost" || host === "127.0.0.1" || host === "[::1]" ||
+        /\.(localhost|local|test)$/.test(host);
+      var asked = /[?&]gtm_debug=/.test(window.location.search);
+      var debug = asked;
+      try {
+        if (asked) window.sessionStorage.setItem("preludens_gtm_debug", "1");
+        debug = debug || window.sessionStorage.getItem("preludens_gtm_debug") === "1";
+      } catch (e) {}
+      window.preludensSite.measure = !local || debug;
+    })();
     dataLayer.push({
       casus: window.preludensSite.casus,
       page_language: window.preludensSite.language,
@@ -32,7 +54,7 @@
   </script>
   {%- assign gtm_id = site.preludens.analytics.gtm_id -%}
   {%- if gtm_id and gtm_id != "" -%}
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{ gtm_id }}');</script>
+  <script>if(window.preludensSite.measure)(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{ gtm_id }}');</script>
   {%- else -%}
   <!-- Geen preludens.analytics.gtm_id in _config.yml: de container laadt niet. -->
   {%- endif -%}

@@ -12,6 +12,8 @@ Open [http://localhost:4000/preludens-website/](http://localhost:4000/preludens-
 
 Dit is het enige commando dat je nodig hebt: `bin/serve` zet de juiste Ruby in PATH, doet zo nodig `bundle install` en start daarna `jekyll serve`. Extra argumenten gaan door naar Jekyll, bijvoorbeeld `./bin/serve --livereload`.
 
+Lokaal meet de site niet: Google Tag Manager en de HubSpot-trackingcode laden op `localhost` alleen als `gtm_debug` in de URL staat, zoals in de voorbeeldmodus van GTM. Zie `_includes/analytics.html`.
+
 ### Ruby-versie
 
 `Gemfile.lock` is gemaakt met **bundler 4.0.12** en vraagt dus een moderne Ruby (zie `.ruby-version`: 4.0.5). De systeem-Ruby van macOS is 2.6 en staat vooraan in PATH, dus een kaal `bundle exec jekyll serve` faalt met:

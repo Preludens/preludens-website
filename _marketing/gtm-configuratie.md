@@ -259,6 +259,13 @@ Dertig opnames bekijken zegt meer dan elk percentage.
 
 ## 5. Nakijken in de voorbeeldmodus
 
+Op `localhost` laadt de site de container alleen als `gtm_debug` in de URL
+staat (zie `_includes/analytics.html`). Tag Assistant zet die parameter zelf
+als je de voorbeeldmodus start; laat het vinkje *Foutopsporingssignaal opnemen
+in de URL* dus aan staan. Daarna onthoudt de site het voor de rest van de
+sessie in dat tabblad. Zonder die parameter meet een lokale pagina niets, ook
+niet na toestemming: zo loopt lokaal testen niet mee in de cijfers.
+
 Open elke landingspagina in de voorbeeldmodus en loop dit af:
 
 1. Vóór een keuze in de banner: geen cookies van GA4, HubSpot of Clarity.

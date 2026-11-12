@@ -445,10 +445,10 @@ nog 90 dagen terug te halen).
    Jan-Willem): versie 2, *Meetfundament stap 0*, met 13 tags, 12 triggers en
    18 variabelen. Nagelopen dat `gtm.js?id=GTM-5MMK7TXD` versie 2 uitlevert met
    GA4, alle gebeurtenissen en Clarity erin. Dezelfde ochtend is `main` naar
-   `production` gezet, dus de meting draait nu op de live site. Bezoeken vanaf
-   `localhost` komen ook binnen, na toestemming; die zijn te herkennen aan de
-   hostnaam `localhost`, en vanaf kantoor vallen ze weg zodra het filter voor
-   intern verkeer actief is.
+   `production` gezet, dus de meting draait nu op de live site. Lokaal meet de
+   site niet meer: op `localhost` laden GTM en de HubSpot-trackingcode alleen
+   met `gtm_debug` in de URL, zoals in de voorbeeldmodus. Bezoeken van vóór
+   die wijziging (12 november) staan in GA4 met de hostnaam `localhost`.
 2. **`form_submit` is een key event in GA4** (12 november). Hij staat onder
    *Beheer → Gebeurtenissen → Belangrijke gebeurtenissen*.
 3. **Het filter voor intern verkeer staat op *Testen*.** De regel *Kantoor
