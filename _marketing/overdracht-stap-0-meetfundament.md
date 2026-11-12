@@ -444,24 +444,24 @@ nog 90 dagen terug te halen).
 1. **De container is gepubliceerd** (12 november 2026, op verzoek van
    Jan-Willem): versie 2, *Meetfundament stap 0*, met 13 tags, 12 triggers en
    18 variabelen. Nagelopen dat `gtm.js?id=GTM-5MMK7TXD` versie 2 uitlevert met
-   GA4, alle gebeurtenissen en Clarity erin. Op preludens.nl doet hij nog
-   niets: `production` staat op 10 november en laadt de container nog niet. Dat
-   verandert zodra `main` naar `production` gaat. Tot die tijd komen alleen
-   bezoeken van `localhost` binnen in GA4 en Clarity, na toestemming; die zijn
-   te herkennen aan de hostnaam `localhost`, en vanaf kantoor vallen ze weg zodra
-   het filter voor intern verkeer actief is.
-2. **`form_submit` als key event in GA4.** Het event is binnen (11 november om
-   14:00), maar GA4 zegt zelf dat een nieuwe gebeurtenis pas binnen 24 uur in de
-   lijst staat. Vanaf 12 november staat `form_submit` onder *Beheer →
-   Gebeurtenissen → Recente gebeurtenissen*; zet daar het sterretje aan.
+   GA4, alle gebeurtenissen en Clarity erin. Dezelfde ochtend is `main` naar
+   `production` gezet, dus de meting draait nu op de live site. Bezoeken vanaf
+   `localhost` komen ook binnen, na toestemming; die zijn te herkennen aan de
+   hostnaam `localhost`, en vanaf kantoor vallen ze weg zodra het filter voor
+   intern verkeer actief is.
+2. **`form_submit` is een key event in GA4** (12 november). Hij staat onder
+   *Beheer → Gebeurtenissen → Belangrijke gebeurtenissen*.
 3. **Het filter voor intern verkeer staat op *Testen*.** De regel *Kantoor
    Preludens* staat er met de twee kantoor-IP-adressen als `/32` (welke dat zijn, staat alleen in GA4). Activeren
    is onomkeerbaar en werkt niet terug; doe dat pas als in de test te zien is
-   dat het kantoorverkeer als intern binnenkomt. Het derde IP komt er later bij
+   dat het kantoorverkeer als intern binnenkomt. Dat kan pas sinds 12 november:
+   toen is de regel in de Google-tagcontainer verzonden (zie 4), en pas daarna
+   markeert de tag kantoorverkeer als intern. Het derde IP komt er later bij
    als derde voorwaarde in dezelfde regel.
-4. **De uitgesloten verwijzing `preludens.nl`** staat opgeslagen in de
-   Google-tagcontainer die GA4 zelf aanmaakte (`GTM-WB3PXW46`, níét die van de
-   site), maar is daar nog niet verzonden.
+4. **De uitgesloten verwijzing `preludens.nl` en de regel voor intern verkeer
+   zijn verzonden** in de Google-tagcontainer die GA4 zelf aanmaakte
+   (`GTM-WB3PXW46`, níét die van de site): versie 2, *Verwijzing en intern
+   verkeer*, 12 november.
 5. **De demo-URL** (beslissing F), plus het `postMessage` hierboven.
 
 **Het formulier is daarna omgebouwd, en staat nu ook op de contactpagina**
