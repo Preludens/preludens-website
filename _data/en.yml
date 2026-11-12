@@ -145,8 +145,8 @@ play_blog:
 consent:
   title: "May we measure how this page works?"
   text: >-
-    We use cookies to remember your language, to analyse visits and to market
-    our products. It's your choice!
+    We use cookies to remember your cookie choice, to analyse visits and to
+    market our products. It's your choice!
   accept: "Accept all"
   reject: "Necessary only"
   save: "Save choice"
@@ -155,7 +155,7 @@ consent:
   privacy: "Read our privacy statement"
   categories:
     necessary: "Necessary"
-    necessary_text: "Remembers your language and this cookie choice. Without these the site does not work."
+    necessary_text: "Remembers your cookie choice, so we do not ask again on every visit."
     statistics: "Statistics"
     statistics_text: "How many people read a page, how far they get and where they drop off."
     marketing: "Marketing"
