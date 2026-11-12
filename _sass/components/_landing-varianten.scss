@@ -1002,3 +1002,123 @@ body.lv-paths-ready:not([data-path="koper"]):not([data-path="beide"]) [data-land
     height: 1500px;
   }
 }
+
+/* ---------- knoppen en kaarten met de Preludens-snede ----------
+   Dezelfde vorm als .sp-hero-cta op de homepage en de knoppen in de
+   cookiebanner: linksboven en rechtsonder een hoek eraf. Met een vaste snede
+   in plaats van een percentage, zodat een brede en een smalle knop dezelfde
+   hoek krijgen. Een border valt op de schuine kanten weg; bij een witte knop
+   is de knop zelf daarom de rand, en ligt de vulling in ::before. Een ring om
+   de knop valt weg achter clip-path, dus de focusring ligt erbinnen. */
+
+.panel-stack[data-landing-variant] {
+  --lv-cut: 14px;
+  --lv-cut-sm: 10px;
+}
+
+.panel-stack[data-landing-variant] .btn,
+.lv-melder__hang,
+.lv-melder__again,
+.lv-question__options button {
+  --c: var(--lv-cut);
+  position: relative;
+  isolation: isolate;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  clip-path: polygon(
+    var(--c) 0, 100% 0,
+    100% calc(100% - var(--c)), calc(100% - var(--c)) 100%,
+    0 100%, 0 var(--c)
+  );
+
+  &:hover { box-shadow: none; }
+  &:focus-visible { outline: none; @include focus-ring-inset(3px); }
+}
+
+.panel-stack[data-landing-variant] .btn-primary {
+  background: var(--color-preludens-gold);
+
+  &::after { content: none; }
+  &:hover { background: var(--color-deep-gold); }
+}
+
+/* Witte knop met een donkere rand van 2px, ook langs de schuine kanten. De
+   binnensnede is iets kleiner, zodat de rand daar even dik blijft. */
+.panel-stack[data-landing-variant] .btn-secondary,
+.lv-question__options button {
+  background: var(--color-ink);
+  color: var(--color-ink) !important;
+
+  &::before {
+    --ci: calc(var(--c) - 1.2px);
+    content: "";
+    position: absolute;
+    inset: 2px;
+    z-index: -1;
+    background: var(--color-white);
+    clip-path: polygon(
+      var(--ci) 0, 100% 0,
+      100% calc(100% - var(--ci)), calc(100% - var(--ci)) 100%,
+      0 100%, 0 var(--ci)
+    );
+    transition: background-color var(--transition);
+  }
+
+  &:hover { background: var(--color-ink); }
+  &:hover::before { background: var(--color-mist-blue); }
+}
+
+/* Op een donkere band: witte rand, vulling in de kleur van de band. */
+.panel--harbor .btn-secondary,
+.lv-afspraak-band .btn-secondary {
+  background: var(--color-white);
+  color: var(--color-white) !important;
+
+  &::before { background: var(--color-harbor-teal); }
+  &:hover { background: var(--color-white); }
+  &:hover::before { background: color-mix(in srgb, var(--color-white) 14%, var(--color-harbor-teal)); }
+}
+
+.lv-afspraak-band .btn-secondary::before { background: var(--color-deep-navy); }
+
+/* Antwoordknoppen: kleinere snede; gekozen is vol donker. */
+.lv-question__options button {
+  --c: var(--lv-cut-sm);
+  border: 0;
+
+  &[aria-pressed="true"] { color: var(--color-cloud-white) !important; }
+  &[aria-pressed="true"]::before { background: var(--color-ink); }
+}
+
+/* De knoppen van de CO-melder staan op navy. */
+.lv-melder__hang,
+.lv-melder__again {
+  --c: var(--lv-cut-sm);
+}
+
+.lv-melder__again {
+  background: color-mix(in srgb, var(--color-cloud-white) 12%, transparent);
+
+  &:hover { background: color-mix(in srgb, var(--color-cloud-white) 22%, transparent); }
+}
+
+/* Rolkaarten: dezelfde snede, groter. De schaduw komt van de rij eromheen,
+   want een filter op de kaart zelf knipt clip-path weg. */
+.lv-choose__options {
+  filter: drop-shadow(3px 4px 4px rgba(17, 56, 71, 0.16));
+}
+
+.lv-choose__option {
+  --c: 22px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  clip-path: polygon(
+    var(--c) 0, 100% 0,
+    100% calc(100% - var(--c)), calc(100% - var(--c)) 100%,
+    0 100%, 0 var(--c)
+  );
+
+  &:focus-visible { outline: none; @include focus-ring-inset(3px); }
+}
