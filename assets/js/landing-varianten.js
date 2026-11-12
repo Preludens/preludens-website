@@ -297,7 +297,7 @@
         window.setTimeout(function () {
           scrollToEl(target);
           focusHeading(target);
-        }, reduceMotion ? 0 : 650);
+        }, reduceMotion ? 0 : 300);
       }
     }
 

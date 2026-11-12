@@ -1,14 +1,16 @@
 # Casus 3 — Safety voor doeners. Inhoud voor _includes/varianten/pagina-d.html.
 # Bron: _marketing/casus-3-safety-doeners.md en het plan van aanpak.
+# Persona-review: _marketing/reviews/persona-review-safety-doeners.md.
 # Claimgrens (strenger dan in het A4): geen rapport dat je "aan je opdrachtgever
 # kunt overhandigen", geen certificaat, geen Shell, geen uitspraken over minder
-# incidenten. "Jullie" Life Saving Rules, niet "de tien". De belofte: afronding
-# per persoon die in jullie eigen systeem landt.
+# incidenten, geen prijzen. "Jullie" Life Saving Rules, niet "de tien". De belofte:
+# afronding per persoon in jullie LMS, en per regel zien waar de groep verkeerd
+# kiest (Prepo of LMS, bevestigd 12 november 2026).
 
 hero:
   titel: "De veiligheidsinstructie wordt doorgeklikt, niet geleerd"
-  lead: "Wij maken jullie eigen Life Saving Rules speelbaar: situaties van jullie terrein, in de talen van jullie mensen, met afronding per persoon die in jullie eigen systeem landt."
-  knop: "Probeer één regel"
+  lead: "Wij maken jullie eigen Life Saving Rules speelbaar: situaties van jullie terrein, in de talen van jullie mensen. Je ziet per persoon wie het gedaan heeft, en per regel waar de groep de verkeerde keuze maakt."
+  knop: "Probeer hoe het werkt"
   video:
     file: "cowijzer-melder-explainer.mp4?v=2"
     poster: /assets/images/verhalen/co-wijzer-melder-video-poster.jpg
@@ -21,13 +23,13 @@ rollen:
     sectie: voor-opdrachtgever
     label: "Wij bepalen wat er op ons terrein geldt"
     sub: "Je bent verantwoordelijk voor HSE bij de opdrachtgever"
-    reactie: "Jullie bepalen de regels. Hieronder: hoe ze speelbaar worden, en waar de afronding landt."
-    kaart: { src: /assets/images/verhalen/co-wijzer-ketel.jpg, alt: "" }
+    reactie: "Jullie bepalen de regels. Hieronder: hoe ze speelbaar worden, en wat je daarna ziet."
+    kaart: { src: /assets/images/verhalen/co-wijzer-clv-systeem.jpg, alt: "" }
     beeld: { src: /assets/images/verhalen/co-wijzer-clv-koppelen.jpg, alt: "Scène uit CO Wijzer: de speler koppelt de luchttoevoer van een CLV-systeem" }
     titel: "Wie heeft het echt gedaan, en wie heeft het weggeklikt?"
     alineas:
-      - "Een poortinstructie of toolbox is snel afgevinkt. Of iemand de regel op het terrein ook toepast, zie je pas als het misgaat."
-      - "Wij maken van jullie Life Saving Rules korte situaties waarin iemand moet kiezen: werken op hoogte, een vergunning, een afzetting. Met jullie eigen regels, aantal en iconen. De afronding per persoon komt in jullie eigen systeem terecht."
+      - "Een poortinstructie of toolbox is snel afgevinkt. Iedereen haalt de toets, en wat dat zegt over het werk op het terrein, weet je niet."
+      - "Wij maken van jullie Life Saving Rules korte situaties waarin iemand moet kiezen: werken op hoogte, een vergunning, een afzetting. Doorklikken gaat niet: je kiest, je ziet het gevolg, en je keuze wordt vastgelegd. Zo zie je per regel waar de groep verkeerd kiest, in Prepo of in jullie LMS."
     vraag:
       id: afrondingssysteem
       vraag: "In welk systeem moet de afronding bij jullie terechtkomen?"
@@ -38,14 +40,14 @@ rollen:
   - pad: aannemer
     sectie: voor-aannemer
     label: "Wij werken op het terrein van een ander"
-    sub: "Je moet laten zien dat je mensen het weten"
-    reactie: "Jullie werken bij een opdrachtgever. Hieronder: hoe je mensen de regels leren, in hun eigen taal."
+    sub: "Je mensen spreken niet allemaal Nederlands"
+    reactie: "Jullie werken bij een opdrachtgever. Hieronder: hoe jullie mensen de regels leren, in hun eigen taal."
     kaart: { src: /assets/images/verhalen/studium-co-wijzer.jpg, alt: "" }
-    beeld: { src: /assets/images/verhalen/co-wijzer-slaapkamer.jpg, alt: "Scène uit CO Wijzer: de speler hangt een CO-melder op slaaphoogte en krijgt meteen feedback" }
-    titel: "Je mensen moeten het weten, in hun eigen taal"
+    beeld: { src: /assets/images/verhalen/co-wijzer-ketel.jpg, alt: "Scène uit CO Wijzer: een monteur bij de ketel, waar geen CO-melder hangt" }
+    titel: "Jullie mensen moeten het weten, in hun eigen taal"
     alineas:
-      - "Jouw mensen werken op het terrein van een opdrachtgever, met diens regels. Niet iedereen leest makkelijk Nederlands, en een document lezen is niet hetzelfde als het kunnen."
-      - "Een situatie spelen werkt ook voor wie liever doet dan leest. In de talen van je mensen, op hun telefoon."
+      - "Jullie mensen werken op het terrein van een opdrachtgever, met diens regels en diens instructie. Die blijft gelden. Maar niet iedereen leest makkelijk Nederlands, en een document lezen is niet hetzelfde als het kunnen."
+      - "Een situatie spelen werkt ook voor wie liever doet dan leest. In de talen van jullie mensen, op hun telefoon, met de afronding per persoon in jullie eigen LMS."
     vraag:
       id: talen
       vraag: "Hoeveel talen spreken jullie mensen op het terrein?"
@@ -56,44 +58,46 @@ rollen:
 
 probeer:
   type: co-melder
-  titel: "Probeer één regel"
-  lead: "Een voorbeeld uit CO Wijzer, veiligheid voor monteurs: hang de CO-melder op de goede plek. Daarna zie je wat jij als veiligheidskundige ziet."
+  titel: "Speel één situatie"
+  lead: "De CO-melder komt uit CO Wijzer, een spel voor monteurs, dus uit een andere sector dan de jouwe. Hang hem op de goede plek, en kijk vooral naar wat je daarna ziet."
   groep_titel: "Wat jij daarna ziet"
-  groep_advies: "Daar gaat de volgende toolbox over, en niet over wat iedereen al goed doet."
+  groep_advies: "Daar gaat de volgende toolbox over, en niet over wat iedereen al goed doet. Op jullie terrein werkt het net zo, bijvoorbeeld bij de gasmeting vóór het betreden van een besloten ruimte: je ziet wie hem overslaat."
   claim: "Wij bepalen de veiligheidsinhoud niet. Jullie regels liggen er al; wij maken ze speelbaar."
 
 stappen:
   items:
     - titel: "Jullie regels als vertrekpunt"
       tekst: "Jullie Life Saving Rules, met jullie aantal en jullie iconen. De negen van IOGP zijn hooguit een voorbeeld."
-      beeld: { src: /assets/images/verhalen/co-wijzer-ketel.jpg, alt: "" }
+      beeld: { src: /assets/images/verhalen/co-wijzer-clv-start.jpg, alt: "" }
     - titel: "Elke regel wordt een situatie"
       tekst: "Kort, herkenbaar en in de talen van jullie mensen. Kiezen, het gevolg zien, uitleg krijgen."
       beeld: { src: /assets/images/verhalen/co-wijzer-ruimtes.jpg, alt: "" }
-    - titel: "Afronding per persoon, in jullie systeem"
-      tekst: "Wie welke regel heeft gedaan, komt in jullie eigen LMS of systeem terecht."
+    - titel: "Per persoon en per regel zichtbaar"
+      tekst: "Wie welke regel heeft gedaan, en waar de groep verkeerd kiest. In jullie LMS of in Prepo."
       beeld: { src: /assets/images/verhalen/nnvo-it-veiligheid.png, alt: "" }
 
 bewijs:
   beeld: { src: /assets/images/verhalen/studium-co-wijzer.jpg, alt: "Titelbeeld van CO Wijzer: een huis in doorsnede met de ruimtes waar een CO-melder kan hangen" }
   alineas:
-    - "Voor 21CC Education en Studium maakten we <strong>CO Wijzer</strong>: monteurs oefenen met risico's die je niet kunt zien, ruiken of proeven, en kiezen hoe ze veilig handelen."
-    - "Voor NNVO maakten we <strong>IT-veiligheid</strong> die mensen begrijpen en toepassen."
+    - "Voor 21CC Education en Studium maakten we <strong>CO Wijzer</strong>: monteurs oefenen met risico's die je niet kunt zien, ruiken of proeven, en kiezen hoe ze veilig handelen. Met Climatools, 21CC Learning en Studium volgde <strong>Basis Koeltechniek</strong>: negen MicroGames voor installatiemonteurs."
+    - "Samen met NNVO ontwikkelen we MicroGames over <strong>IT-veiligheid</strong>: herkenbare situaties waarin mensen zelf kiezen en meteen zien wat werkt."
 
 vragen:
   label: "Vragen over speelbare veiligheidsregels"
   items:
+    - { vraag: "We hebben al een poortinstructie.", antwoord: "Die blijft. Dit komt ernaast, voor de regels waar het op het terrein misgaat. De poortinstructie vertelt de regel; in een situatie moet je hem toepassen." }
     - { vraag: "Krijgen we een certificaat?", antwoord: "Nee. Preludens is geen certificerende instantie. Wat je krijgt, is de afronding per persoon in jullie eigen systeem. Wat jullie opdrachtgevers als bewijs vragen, blijft van hen." }
     - { vraag: "Er bestaat al een e-learning voor de Life Saving Rules.", antwoord: "Klopt, voor de standaardset is er materiaal. Het verschil zit in jullie eigen regels, situaties van jullie terrein en de talen van jullie mensen." }
-    - { vraag: "Draait het in ons LMS?", antwoord: "Ja. Je krijgt een SCORM-bestand dat je in je eigen LMS zet. Zonder LMS kan het ook via een gewone link, in onze omgeving Prepo." }
-    - { vraag: "In welke talen?", antwoord: "In de talen van jullie mensen. Welke dat zijn, spreken we per project af." }
-    - { vraag: "Wat kost het?", antwoord: "Dat hangt af van het aantal regels en talen. Je kunt klein beginnen: één regel, één taal. Dan weet je of het werkt voordat je meer doet." }
+    - { vraag: "Wat als onze regels veranderen?", antwoord: "Dan pas je de teksten zelf aan in Prepo, onze beheeromgeving, en zet je een nieuw SCORM-bestand in jullie LMS. Je hoeft daarvoor niet terug naar ons." }
+    - { vraag: "Draait het in ons LMS, en op een telefoon?", antwoord: "Ja. Je krijgt een SCORM-bestand voor je eigen LMS. Zonder LMS gaat het via een link in Prepo, zonder installatie, op een telefoon of laptop." }
+    - { vraag: "In welke talen?", antwoord: "In de talen van jullie mensen; welke dat zijn, spreken we per project af. De vertaalde veiligheidstekst controleren en geven jullie zelf vrij." }
+    - { vraag: "Waar begin je mee?", antwoord: "Met één regel in één taal. Dan zie je hoe jullie mensen erop reageren voordat je meer doet." }
 
 afspraak:
-  titel: "Speel jullie eerste regel"
+  titel: "Kies samen jullie eerste regel"
   lead: "Kies hieronder een moment voor een online kennismaking van een half uur. We kiezen samen één regel, en kijken in welk systeem de afronding moet landen."
 
 formulier:
   titel: "Of stuur ons een bericht"
-  lead: "Vertel om welke regels en welk terrein het gaat. We nemen contact met je op."
-  noot: "Je krijgt een persoonlijk antwoord, geen nieuwsbrief."
+  lead: "Vertel om welke regels en welk terrein het gaat, en waar je nu tegenaan loopt."
+  noot: "Je krijgt binnen één werkdag een persoonlijk antwoord, geen nieuwsbrief."

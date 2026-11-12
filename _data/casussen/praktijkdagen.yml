@@ -4,7 +4,7 @@
 
 hero:
   titel: "Je herhaalt op de trainingsdag wat ze in de e-learning al gehad hebben"
-  lead: "Wij maken de voorbereiding speelbaar. Deelnemers oefenen vooraf met situaties uit hun vak, en de instructeur ziet 's&nbsp;ochtends waar de groep staat. Zo gaat de praktijkdag naar oefenen."
+  lead: "Wij maken de voorbereiding speelbaar, op maat van jullie training. Deelnemers oefenen vooraf met situaties uit hun vak, en de instructeur ziet 's&nbsp;ochtends waar de groep staat. Zo gaat de praktijkdag naar oefenen."
   video:
     file: "cowijzer-melder-explainer.mp4?v=2"
     poster: /assets/images/verhalen/co-wijzer-melder-video-poster.jpg
@@ -29,7 +29,7 @@ rollen:
       vraag: "Hoeveel van je ochtend gaat er op aan herhalen?"
       antwoorden:
         - { waarde: kwartier, label: "Een kwartier", reactie: "Dat is weinig. Dan is de vraag eerder of je weet wie wat mist. De melder hieronder laat zien hoe je dat vooraf ziet." }
-        - { waarde: uur, label: "Ongeveer een uur", reactie: "Op een praktijkdag van zes uur is dat een zesde van de dag. Met een voorbereiding die blijft hangen, besteed je dat uur aan wie het nodig heeft." }
+        - { waarde: uur, label: "Ongeveer een uur", reactie: "Dat uur gaat van de oefentijd af. Met een voorbereiding die blijft hangen, besteed je het aan wie het nodig heeft." }
         - { waarde: halve-ochtend, label: "Een halve ochtend", reactie: "Dan begint het oefenen pas tegen elven. Als je weet waar de groep staat, begin je daar, en niet bij hoofdstuk één." }
         - { waarde: meer, label: "Meer dan dat", reactie: "Dan is de praktijkdag een theoriedag met een stuk praktijk. Daar is het meeste te winnen." }
   - pad: koper
@@ -41,7 +41,7 @@ rollen:
     beeld: { src: /assets/images/verhalen/basis-koeltechniek-onderdelen.jpg, alt: "Scène uit Basis Koeltechniek: de deelnemer kiest bij een omschrijving het juiste onderdeel van het koelcircuit" }
     titel: "De dag is al korter gemaakt, en begint nog steeds met theorie"
     alineas:
-      - "De klant wilde minder verlet, dus kwam er een e-learning vooraf. Een gehaalde toegangstoets zegt alleen dat iemand de stof die week kende, niet wat er op de dag nog van over is."
+      - "De klant wilde minder verlet, dus kwam er een e-learning vooraf. Een gehaalde toegangstoets zegt weinig over wat er op de dag nog van over is."
       - "Wij maken van de momenten waar de dag op vastloopt korte speelbare situaties. Die draaien in jullie eigen leeromgeving, naast de e-learning die er al is."
     vraag:
       id: eigenaar-elearning
@@ -66,23 +66,24 @@ stappen:
       tekst: "De deelnemer kiest, ziet wat er gebeurt en krijgt uitleg. Een paar minuten per situatie, in jullie eigen leeromgeving."
       beeld: { src: /assets/images/verhalen/basis-koeltechniek-kringloop.jpg, alt: "" }
     - titel: "De instructeur ziet waar de groep staat"
-      tekst: "Vóór de dag, per situatie. De dag begint bij wat misging."
+      tekst: "Vóór de dag ziet de instructeur per situatie hoe de groep koos, in Prepo of in jullie LMS. De dag begint bij wat misging."
       beeld: { src: /assets/images/verhalen/co-wijzer-ruimtes.jpg, alt: "" }
 
 bewijs:
   beeld: { src: /assets/images/verhalen/basis-koeltechniek-video-poster.jpg, alt: "Titelbeeld van Basis Koeltechniek" }
   alineas:
     - "21CC Education kwam bij ons met de vraag die op deze pagina staat: hun praktijkdagen moesten meer opleveren, en daar hoorde een voorbereiding vooraf bij. Met hen en Studium maakten we <strong>CO Wijzer</strong>. Met Climatools, 21CC Learning en Studium volgde <strong>Basis Koeltechniek</strong>: negen MicroGames voor installatiemonteurs."
-    - "Bij een andere opdrachtgever, een vijfdaagse training op locatie, konden twee dagen vervallen toen de deelnemers vooraf oefenden. Dat is één traject en geen belofte. Wij sturen op meer oefentijd op de dag, niet op minder dagen."
 
 vragen:
   label: "Vragen over de voorbereiding"
   items:
     - { vraag: "Vervangt dit de praktijkdag?", antwoord: "Nee. We vervangen de praktijkdag niet. Wat in de hal geoefend moet worden, blijft in de hal. De voorbereiding zorgt dat er meer tijd voor overblijft." }
-    - { vraag: "Draait het in onze leeromgeving?", antwoord: "Ja. Je krijgt een SCORM-bestand dat je in je eigen LMS zet, naast de e-learning die er al staat. Zonder LMS kan het ook via een gewone link, in onze omgeving Prepo." }
+    - { vraag: "Waar ziet de instructeur hoe de groep het deed?", antwoord: "In Prepo, onze eigen beheeromgeving: daar staan deelname, voortgang en scores per situatie. Draait het in jullie eigen LMS, dan komen de resultaten per deelnemer daar binnen. De instructeur kijkt de dag ervoor en weet waar hij begint." }
+    - { vraag: "Draait het in onze leeromgeving?", antwoord: "Ja. Je krijgt een SCORM-bestand dat je in je eigen LMS zet, naast de e-learning die er al staat. Zonder LMS gaat het via een gewone link in Prepo; deelnemers hebben dan alleen die link nodig." }
+    - { vraag: "Komt er dan werk bij voor de deelnemer?", antwoord: "Een paar minuten per situatie, vooraf, op de telefoon of de laptop. Schrijft een normsteller of exameninstelling de e-learning voor, dan blijft die staan. Dit komt ernaast en gaat over de momenten waar de dag op vastloopt." }
     - { vraag: "Onze deelnemers zijn geen gamers.", antwoord: "Dat hoeven ze ook niet te zijn. Een situatie duurt een paar minuten en lijkt op hun werk: een klant, een installatie, een keuze. Ze spelen het op de telefoon of de laptop." }
-    - { vraag: "Wordt de praktijkdag dan nog korter?", antwoord: "Dat beslissen jullie. Wij sturen op meer oefentijd op dezelfde dag. Onderzoek naar voorbereiding vooraf vindt het grootste effect juist als de contacttijd niet wordt ingekort." }
-    - { vraag: "Wat kost het?", antwoord: "Dat hangt af van het aantal situaties en van waar het draait. Je kunt klein beginnen: één moment uit één training. Dan weet je of het werkt voordat je meer doet." }
+    - { vraag: "Wordt de praktijkdag dan nog korter?", antwoord: "Dat beslissen jullie. Wij sturen op meer oefentijd op dezelfde dag. Een meta-analyse van 114 studies naar voorbereiding vooraf vond een groter effect als de contacttijd niet werd ingekort. Bij één opdrachtgever, een vijfdaagse training op locatie, konden wel twee dagen vervallen toen deelnemers vooraf oefenden. Dat is één traject en geen belofte." }
+    - { vraag: "Waar begin je mee?", antwoord: "Met één moment uit één training: de uitleg die elke keer terugkomt. Dan weet je of het werkt voordat je meer doet." }
 
 afspraak:
   titel: "Versterk jouw praktijkdag"
@@ -90,5 +91,5 @@ afspraak:
 
 formulier:
   titel: "Of stuur ons een bericht"
-  lead: "Vertel om welke training het gaat. We nemen contact met je op."
-  noot: "Je krijgt een persoonlijk antwoord, geen nieuwsbrief."
+  lead: "Vertel om welke training het gaat en waar de dag op vastloopt."
+  noot: "Je krijgt binnen één werkdag een persoonlijk antwoord, geen nieuwsbrief."

@@ -2,7 +2,7 @@
 
 Voor: Jan-Willem en Daan
 Datum: 11 november 2026
-Status: concept, lokaal te bekijken, niets op `production`. Hieronder eerst ronde 4 (D op alle vier de casuspagina's), dan ronde 3 (beelden, knopteksten en de afspraakknop), dan ronde 2 (variant D), dan het verslag van ronde 1 (A, B en C).
+Status: concept, lokaal te bekijken, niets op `production`. Hieronder eerst ronde 5 (persona-reviews verwerkt), dan ronde 4 (D op alle vier de casuspagina's), dan ronde 3 (beelden, knopteksten en de afspraakknop), dan ronde 2 (variant D), dan het verslag van ronde 1 (A, B en C).
 
 Drie uitwerkingen van dezelfde casus (1, betere praktijkdagen), elk met een andere tactische keuze. Ze zijn bedoeld om naast elkaar te leggen en te kiezen. Ze zijn niet bedoeld om tegen elkaar te A/B-testen: bij zestig tot honderdvijftig bezoekers per pagina zie je met een test alleen enorme verschillen (zie *Bij weinig verkeer*, onderaan).
 
@@ -15,6 +15,75 @@ Drie uitwerkingen van dezelfde casus (1, betere praktijkdagen), elk met een ande
 - D, kiezen en doen: <http://localhost:4000/preludens-website/oplossingen/varianten/d/>, ook met `?pad=koper` of `?pad=instructeur`
 
 Alle vijf staan op `noindex, nofollow` en buiten `sitemap.xml` (gecontroleerd in de gebouwde site).
+
+---
+
+## Ronde 5: persona-reviews verwerkt
+
+Elke casuspagina is gelezen door een aparte sessie, vanuit een persona uit het marktonderzoek van die casus. De reviews staan in `_marketing/reviews/`:
+
+| Casus | Persona | Afspraak plannen? |
+|---|---|---|
+| 1 | Hoofd opleidingen bij een technische vakopleider | Nog niet: eerst doorsturen naar een instructeur |
+| 2 | Programmamanager arbeidsmarkt en onderwijs, haven buiten Rotterdam | Niet via Bookings; misschien na een persoonlijk bericht |
+| 3 | HSE-manager bij een opdrachtgever (aannemer als tweede rol) | Niet meteen; de aannemer niet |
+| 4 | L&D-adviseur bij een gemeente (CISO als tweede rol) | Nog niet; de CISO niet |
+
+### Besluiten van 12 november
+
+- **Geen prijzen.** De vraag "Wat kost het?" is overal vervangen door "Waar begin je mee?".
+- **Yard Crane Scheduler mag getoond worden.** 21CC en NNVO mogen bij naam genoemd worden.
+- **Het groepsoverzicht bestaat**, in Prepo én in het LMS. De pagina's beloven het nu ook: per persoon wie het gedaan heeft, en per situatie of regel hoe de groep koos.
+
+### Wat er veranderd is
+
+**Sjabloon** (`_includes/varianten/pagina-d.html` en verwante bestanden):
+
+- De reactie op de rolkeuze verscheen in de kiesband en verdween meteen uit beeld, omdat de pagina doorscrolt. Ze staat nu boven de kop van het blok waar je landt, in plaats van "Jij koos: …". Daarmee is ook de `downcase`-fout weg ("hr of l&d").
+- De toetsenbordhint van de CO-melder is verborgen op touchschermen.
+- Er is een nieuwe probeervorm, `dilemma`: een situatie met keuzes en feedback per keuze. Die hergebruikt de vraagopmaak en het event `question_answer`.
+- `probeer.demo {url, label}` zet een speelknop onder elk probeerblok. Zonder die waarde krijgt alleen de CO-melder de site-demo.
+- `hero.knop_href` laat de hoofdknop ergens anders heen wijzen dan `#probeer`.
+- De standaardkop van het bewijsblok is "Wat we eerder maakten" (was "Waar het eerder werkte": een resultaatclaim).
+
+**Kopij:**
+
+- **Casus 1.**
+  - Nieuwe FAQ: waar de instructeur het groepsoverzicht ziet, en of er werk bijkomt voor de deelnemer.
+  - Stap 3 noemt Prepo en het LMS.
+  - De vijfdaagse training staat nu in de FAQ over een kortere dag, niet meer als bewijs.
+  - De meta-analyse is met aantal studies genoemd, en "het grootste effect" is "een groter effect" geworden.
+- **Casus 2.**
+  - De organisator staat nu als eerste rol.
+  - Het vacaturecijfer heet nu Rotterdams.
+  - Werk buiten containers wordt genoemd (bulk, energie, binnenvaart).
+  - De onderschriften zeggen dat de voorbeelden Engels zijn.
+  - Nieuwe FAQ: onderhoud over drie jaar, en past het in een lesuur.
+  - "Meer dan een uitje" en GameStorm zijn weg. De hoofdknop gaat naar *Hoe het werkt*.
+  - Bij The Disruption Game noemen we geen opdrachtgever, zie hieronder.
+- **Casus 3.**
+  - Het probeerblok zegt eerlijk dat de CO-melder uit een andere sector komt, en slaat een brug naar een gasmeting.
+  - "Probeer één regel" is "Speel één situatie" geworden.
+  - Nieuwe FAQ: poortinstructie, regels die veranderen, telefoon, en wie de vertaling vrijgeeft.
+  - Het aannemersblok gaat over taal en zegt dat de instructie van de opdrachtgever blijft gelden.
+  - Basis Koeltechniek staat in het bewijs. NNVO staat er in de tegenwoordige tijd ("ontwikkelen we"), zonder "en toepassen".
+- **Casus 4.**
+  - Het probeerblok is een dilemma over AI-gebruik: een klacht van een inwoner met persoonsgegevens en een chatbot. Het is een voorbeeld, geen bestaande module.
+  - De hero toont het stripbeeld van Maria in plaats van het scorescherm.
+  - De HR-rol gaat over het beleid laten landen.
+  - De cijfers hebben een bronregel.
+  - Stap 3 en de LMS-vraag leggen Prepo en de afronding per medewerker uit.
+  - De paginatitel is "AI- en securitybeleid in losse modules"; de slug blijft.
+- **Alle vier:** het formulier noemt de reactietermijn van één werkdag.
+
+### Nog open
+
+- **The Disruption Game.** De verhaalpagina zegt TU Delft, maar de video toont het logo van de University of Maryland. Zoek uit wat klopt; tot die tijd noemt de casuspagina geen opdrachtgever.
+- **Een speelbaar stuk bij casus 2.** Als er een speelbare missie van Yard Crane Scheduler op een URL komt, zet die in `probeer.demo`.
+- **Beelden van een industrieterrein voor casus 3.** De pagina toont nog alleen CO Wijzer. Een gegenereerd beeld of een storyboard van één Life Saving Rule zou de brug sterker maken. Hetzelfde geldt voor een dilemma met een industriële regel: het sjabloon kan dat nu.
+- **Een uitkomst van een instructeur bij casus 1.** De review vraagt om één zin over wat een instructeur van 21CC op de dag anders deed. Die hebben we niet.
+- **Schooltablets bij casus 2.** "Werkt op een laptop, tablet of telefoon" — controleer dat voor de spellen die je zou laten zien.
+- **De koperskop bij casus 1** (wisselen op `utm_content=a2`) is niet gebouwd.
 
 ---
 

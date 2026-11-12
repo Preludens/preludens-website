@@ -7,11 +7,14 @@
 
   Opbouw:
   1. hero: het probleem in hun woorden, met het spel als beeld of video
-  2. kies (#kies): "Waar sta jij?", twee rollen. Een keuze geeft een reactie
-     en scrolt naar het deel van die rol. Alles blijft zichtbaar.
+  2. kies (#kies): "Waar sta jij?", twee rollen. Een keuze scrolt naar het
+     deel van die rol; daar staat dan de reactie (rollen[].reactie) boven de
+     kop. Alles blijft zichtbaar.
   3 en 4. per rol een blok met het grootste aandachtspunt en een vraag met
      directe feedback (question_answer)
-  5. probeer (#probeer): de CO-melder, een video of beelden uit een spel
+  5. probeer (#probeer): de CO-melder, een dilemma met feedback, een video
+     of beelden uit een spel. probeer.demo {url, label} zet er een speelknop
+     onder; zonder die waarde krijgt alleen de CO-melder de site-demo.
   6. hoe het werkt (#hoe-het-werkt), drie stappen met beeld
   7. bewijs (#bewijs)
   8. bezwaren (#bezwaren), met een afspraakknop eronder
@@ -34,7 +37,7 @@
       <h1>{{ d.hero.titel }}</h1>
       <p class="sp-lead">{{ d.hero.lead }}</p>
       <div class="sp-actions">
-        <a class="btn btn-primary" href="#probeer" data-cta-position="hero">{{ d.hero.knop | default: "Probeer het zelf" }}</a>
+        <a class="btn btn-primary" href="{{ d.hero.knop_href | default: '#probeer' }}" data-cta-position="hero">{{ d.hero.knop | default: "Probeer het zelf" }}</a>
         {% include varianten/afspraak.html position="hero" style="secondary" bare=true %}
       </div>
     </div>
@@ -59,13 +62,12 @@
 <div class="lv-choose" data-lv-choose>
   <div class="lv-choose__options" role="group" aria-label="Kies je rol">
     {%- for rol in d.rollen %}
-    <a class="lv-choose__option" href="#{{ rol.sectie }}" data-choose="{{ rol.pad }}" data-reply="{{ rol.reactie | escape }}">
+    <a class="lv-choose__option" href="#{{ rol.sectie }}" data-choose="{{ rol.pad }}">
       <img src="{{ rol.kaart.src | relative_url }}" alt="{{ rol.kaart.alt }}" width="1024" height="448" loading="lazy" decoding="async">
       <span class="lv-choose__body"><strong>{{ rol.label }}</strong><span>{{ rol.sub }}</span></span>
     </a>
     {%- endfor %}
   </div>
-  <p class="lv-choose__reply" data-choose-reply aria-live="polite" hidden></p>
 </div>
 {% endcapture %}
 {% include panels/panel.html variant="mist" id="kies" body=kies %}
@@ -73,7 +75,7 @@
 {%- comment -%} 3 en 4. Per rol {%- endcomment -%}
 {%- for rol in d.rollen %}
 {% capture rol_body %}
-<p class="lv-for-you" data-for-you="{{ rol.pad }}" hidden>Jij koos: {{ rol.label | downcase }}</p>
+<p class="lv-for-you" data-for-you="{{ rol.pad }}" aria-live="polite" hidden>{{ rol.reactie }}</p>
 <h2 tabindex="-1">{{ rol.titel }}</h2>
 {%- for alinea in rol.alineas %}
 <p class="sp-lead">{{ alinea }}</p>
@@ -118,6 +120,25 @@
   {%- elsif d.probeer.type == "video" %}
   {% assign probeer_video = site.media_base | append: d.probeer.video.file %}
   {% include panels/video.html src=probeer_video poster=d.probeer.video.poster title=d.probeer.video.title label=d.probeer.video.label caption=d.probeer.video.caption %}
+  {%- elsif d.probeer.type == "dilemma" %}
+  {%- assign dl = d.probeer.dilemma %}
+  <div class="lv-question lv-dilemma" data-lv-question data-question-id="{{ dl.id }}">
+    {%- if dl.beeld %}
+    <img class="lv-dilemma__beeld" src="{{ dl.beeld.src | relative_url }}" alt="{{ dl.beeld.alt }}" loading="lazy" decoding="async">
+    {%- endif %}
+    <p class="lv-dilemma__situatie">{{ dl.situatie }}</p>
+    <p class="lv-question__q" id="q-{{ dl.id }}">{{ dl.vraag }}</p>
+    <div class="lv-question__options" role="group" aria-labelledby="q-{{ dl.id }}">
+      {%- for a in dl.antwoorden %}
+      <button type="button" data-answer="{{ a.waarde }}">{{ a.label }}</button>
+      {%- endfor %}
+    </div>
+    <div class="lv-question__reply" aria-live="polite">
+      {%- for a in dl.antwoorden %}
+      <p data-reply-for="{{ a.waarde }}" hidden>{{ a.reactie }}</p>
+      {%- endfor %}
+    </div>
+  </div>
   {%- elsif d.probeer.type == "beelden" %}
   <ol class="lv-gallery">
     {%- for b in d.probeer.beelden %}
@@ -130,8 +151,11 @@
   {%- endif %}
   <div class="lv-after">
     {% if d.probeer.claim %}<p class="lv-claim">{{ d.probeer.claim }}</p>{% endif %}
-    {% if demo_url and demo_url != "" and d.probeer.type == "co-melder" %}
-      {% include panels/actions.html primary_label="Speel de hele demo (2 minuten)" primary_href=demo_url primary_demo=true casus=include.casus primary_position="probeer" %}
+    {%- assign probeer_demo = d.probeer.demo.url %}
+    {%- assign probeer_demo_label = d.probeer.demo.label | default: "Speel de hele demo (2 minuten)" %}
+    {%- if probeer_demo == nil or probeer_demo == "" %}{% if d.probeer.type == "co-melder" %}{% assign probeer_demo = demo_url %}{% endif %}{% endif %}
+    {% if probeer_demo and probeer_demo != "" %}
+      {% include panels/actions.html primary_label=probeer_demo_label primary_href=probeer_demo primary_demo=true casus=include.casus primary_position="probeer" %}
     {% else %}
       {% include varianten/afspraak.html position="probeer" secondary_label="Stuur een bericht" secondary_href="#actie" %}
     {% endif %}
@@ -157,7 +181,7 @@
 
 {%- comment -%} 7. Bewijs {%- endcomment -%}
 {% capture bewijs_body %}
-<h2>{{ d.bewijs.titel | default: "Waar het eerder werkte" }}</h2>
+<h2>{{ d.bewijs.titel | default: "Wat we eerder maakten" }}</h2>
 {%- for alinea in d.bewijs.alineas %}
 <p class="sp-lead">{{ alinea }}</p>
 {%- endfor %}

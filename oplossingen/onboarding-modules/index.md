@@ -1,7 +1,7 @@
 ---
 layout: landing
 lang: nl
-title: "Onboarding in losse modules"
+title: "AI- en securitybeleid in losse modules"
 description: >-
   Jullie AI- en securitybeleid speelbaar, in korte modules naast het leerplatform dat er al is.
 permalink: /oplossingen/onboarding-modules/

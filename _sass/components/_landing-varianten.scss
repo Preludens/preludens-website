@@ -185,6 +185,13 @@
   color: color-mix(in srgb, var(--color-cloud-white) 72%, transparent);
 }
 
+/* Op een touchscherm zonder muis is de toetsenbordhint ruis. */
+@media (hover: none) and (pointer: coarse) {
+  .lv-melder__keys {
+    display: none;
+  }
+}
+
 .lv-melder.is-hung .lv-melder__controls {
   display: none;
 }
@@ -566,6 +573,26 @@
 /* Probeer staat op papier, maar heeft een gecentreerde lead: de kop gaat mee. */
 [data-landing-variant="d"] #probeer h2 {
   text-align: center;
+}
+
+/* ---------- variant D: een dilemma als probeerblok ---------- */
+
+.lv-inline-play .lv-dilemma {
+  margin-top: 0;
+}
+
+.lv-dilemma__beeld {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin-bottom: var(--space-sm);
+  border-radius: var(--radius-sm);
+}
+
+.panel p.lv-dilemma__situatie {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-ink-soft);
 }
 
 /* ---------- variant D: beelden uit een spel (probeer, zonder interactie) ---------- */
