@@ -441,11 +441,15 @@ nog 90 dagen terug te halen).
 
 **Wat daar nog bij hoort, en nog niet klaar is:**
 
-1. **De werkruimte is niet gepubliceerd.** Zolang je niet op *Verzenden* drukt,
-   staat dit alles wel in GTM maar niet op de site. Dat is bewust: publiceren is
-   live zetten, en dat is niet aan mij. Het testprotocol uit
-   `gtm-configuratie.md` paragraaf 5 is wel langsgelopen — zie hierboven wat
-   dat opleverde.
+1. **De container is gepubliceerd** (12 november 2026, op verzoek van
+   Jan-Willem): versie 2, *Meetfundament stap 0*, met 13 tags, 12 triggers en
+   18 variabelen. Nagelopen dat `gtm.js?id=GTM-5MMK7TXD` versie 2 uitlevert met
+   GA4, alle gebeurtenissen en Clarity erin. Op preludens.nl doet hij nog
+   niets: `production` staat op 10 november en laadt de container nog niet. Dat
+   verandert zodra `main` naar `production` gaat. Tot die tijd komen alleen
+   bezoeken van `localhost` binnen in GA4 en Clarity, na toestemming; die zijn
+   te herkennen aan de hostnaam `localhost`, en vanaf kantoor vallen ze weg zodra
+   het filter voor intern verkeer actief is.
 2. **`form_submit` als key event in GA4.** Het event is binnen (11 november om
    14:00), maar GA4 zegt zelf dat een nieuwe gebeurtenis pas binnen 24 uur in de
    lijst staat. Vanaf 12 november staat `form_submit` onder *Beheer →
