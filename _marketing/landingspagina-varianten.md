@@ -2,7 +2,7 @@
 
 Voor: Jan-Willem en Daan
 Datum: 11 november 2026
-Status: concept, lokaal te bekijken, niets op `production`. Hieronder eerst ronde 3 (beelden, knopteksten en de afspraakknop), dan ronde 2 (variant D), dan het verslag van ronde 1 (A, B en C).
+Status: concept, lokaal te bekijken, niets op `production`. Hieronder eerst ronde 4 (D op alle vier de casuspagina's), dan ronde 3 (beelden, knopteksten en de afspraakknop), dan ronde 2 (variant D), dan het verslag van ronde 1 (A, B en C).
 
 Drie uitwerkingen van dezelfde casus (1, betere praktijkdagen), elk met een andere tactische keuze. Ze zijn bedoeld om naast elkaar te leggen en te kiezen. Ze zijn niet bedoeld om tegen elkaar te A/B-testen: bij zestig tot honderdvijftig bezoekers per pagina zie je met een test alleen enorme verschillen (zie *Bij weinig verkeer*, onderaan).
 
@@ -15,6 +15,63 @@ Drie uitwerkingen van dezelfde casus (1, betere praktijkdagen), elk met een ande
 - D, kiezen en doen: <http://localhost:4000/preludens-website/oplossingen/varianten/d/>, ook met `?pad=koper` of `?pad=instructeur`
 
 Alle vijf staan op `noindex, nofollow` en buiten `sitemap.xml` (gecontroleerd in de gebouwde site).
+
+---
+
+## Ronde 4: variant D op alle vier de casuspagina's
+
+De vier pagina's onder `/oplossingen/` waren nog stubs met plaatsaanduidingen. Ze gebruiken nu alle vier het format van D:
+
+- praktijkdagen: <http://localhost:4000/preludens-website/oplossingen/praktijkdagen/>
+- complexe processen: <http://localhost:4000/preludens-website/oplossingen/complexe-processen/>
+- safety voor doeners: <http://localhost:4000/preludens-website/oplossingen/safety-doeners/>
+- onboarding in modules: <http://localhost:4000/preludens-website/oplossingen/onboarding-modules/>
+
+Ze blijven op `noindex, nofollow` en buiten de sitemap tot de experimenten starten.
+
+### Hoe het in elkaar zit
+
+- **Opbouw:** `_includes/varianten/pagina-d.html`. Eén sjabloon, dus de vier pagina's verschillen alleen in boodschap, niet in indeling. Dat is ook wat je wilt meten.
+- **Tekst en beelden per casus:** `_data/casussen/<casus>.yml`. Kop, rollen, vragen met antwoorden en reacties, het probeerblok, stappen, bewijs, bezwaren, afspraak en formulier. Een beeld wisselen of een zin aanpassen doe je daar; aan de HTML hoef je niet te komen.
+- **Het probeerblok** kent drie vormen: `co-melder` (de sleepinteractie, casus 1 en 3), `video` (casus 2, The Disruption Game) en `beelden` (casus 4, drie scènes uit Het verhaal van Maria). De CO-melder neemt nu een eigen kop en advies voor het groepsoverzicht: bij casus 3 is dat de veiligheidskundige die de volgende toolbox kiest, niet de instructeur.
+- **Meting:** alles wat D al meet, nu met de juiste `casus` erbij: `path_select`, `question_answer`, `faq_open`, `booking_click`, `booking_view`, `cta_click`, `demo_*` en de formulier-events. Getest op de safety-pagina. `landing_variant` is overal `d`.
+- **De rollen per casus:**
+  - 1: instructeur en beslisser;
+  - 2: docent en organisator;
+  - 3: opdrachtgever en aannemer;
+  - 4: HR/L&D en security.
+
+  Te sturen met `?pad=`, bijvoorbeeld `?pad=aannemer`.
+
+`/oplossingen/varianten/d/` staat er nog los naast, met zijn eigen opmaak. Kiezen jullie definitief voor D, dan kan die weg of ook naar het sjabloon.
+
+### Wat nog moet gebeuren per casus
+
+**Casus 1, praktijkdagen.** Dezelfde inhoud als D. Niets nieuws open.
+
+**Casus 2, complexe processen.**
+
+- Navragen of Yard Crane Scheduler en The Disruption Game onder die naam getoond mogen worden, met TU Delft erbij. De hero leunt op Yard Crane.
+- Zo'n 6.000 vacatures, twee derde moeilijk te vullen: uit het arbeidsmarktonderzoek HIC 2024 (bron [3] in `casus-2-complexe-processen.md`). Bij een nieuwe editie bijwerken.
+- Er is geen speelbaar stuk op de pagina, alleen video. Een korte interactie met Yard Crane zou passen, maar die is er nog niet.
+
+**Casus 3, safety voor doeners.**
+
+- Er staat bewust geen certificaat, geen Shell en geen rapport "voor je opdrachtgever" in.
+- De voorbeeldinteractie is de CO-melder, dus een woonsituatie en geen terrein. Een korte Life Saving Rule als interactie (werken op hoogte, een afzetting) zou beter aansluiten.
+- Het antwoord over een register of toegangssysteem belooft geen koppeling, alleen een gesprek. Zo houden.
+
+**Casus 4, onboarding in modules.**
+
+- Er is geen speelbare module, alleen drie beelden. Dit is de zwakste van de vier.
+- Er staat geen prijs per module. Het FAQ-antwoord verwijst naar de kennismaking; vul een indicatie in als die er is.
+- Twee derde van het grootbedrijf gebruikt AI (CBS, 250+ werkzame personen, 2025) en 29% van de AI-gebruikers op het werk kreeg instructie (Newcom, juli 2026). Dat zijn twee verschillende groepen; de tekst zegt dat ook zo. Bronnen [9][11] in `casus-4-onboarding-modules.md`.
+- De zin over de Cyberbeveiligingswet noemt de zorgplicht sinds 15 augustus 2026 en belooft uitdrukkelijk geen compliance. De AI Act-vraag krijgt geen claim.
+
+**Voor alle vier.**
+
+- De meta-omschrijvingen zijn nieuw geschreven, één zin per pagina.
+- Haal `robots` en `sitemap: false` pas weg als een pagina live moet (beslissing G).
 
 ---
 

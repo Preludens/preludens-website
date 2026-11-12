@@ -563,6 +563,54 @@
   color: var(--color-ink-soft);
 }
 
+/* Probeer staat op papier, maar heeft een gecentreerde lead: de kop gaat mee. */
+[data-landing-variant="d"] #probeer h2 {
+  text-align: center;
+}
+
+/* ---------- variant D: beelden uit een spel (probeer, zonder interactie) ---------- */
+
+.lv-inline-play:has(.lv-gallery) {
+  max-width: 64rem;
+}
+
+.lv-gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+  counter-reset: lv-shot;
+}
+
+.lv-gallery li {
+  counter-increment: lv-shot;
+}
+
+.lv-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  clip-path: url("#sp-hero-clip");
+}
+
+.panel .lv-gallery p {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  margin: var(--space-xs) 0 0;
+  color: var(--color-ink-soft);
+}
+
+.lv-gallery p::before {
+  content: counter(lv-shot);
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--color-ink-gold);
+}
+
 /* ---------- interactie in de lopende pagina (B, C, D) ---------- */
 
 .lv-inline-play {
@@ -754,6 +802,7 @@ body.lv-paths-ready:not([data-path="koper"]):not([data-path="beide"]) [data-land
 
   .lv-paths__options,
   .lv-steps,
+  .lv-gallery,
   .lv-evidence {
     grid-template-columns: 1fr;
   }

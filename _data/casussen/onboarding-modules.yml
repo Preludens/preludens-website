@@ -1,0 +1,99 @@
+# Casus 4 — Onboarding in losse modules. Inhoud voor _includes/varianten/pagina-d.html.
+# Bron: _marketing/casus-4-onboarding-modules.md en het plan van aanpak (kop op het
+# beleid, niet op onboarding; implementatiepartner; naast het leerplatform).
+# Claimgrens: geen AI Act-claim (niet "verplicht", niet "vervallen"); bij cyber de
+# zorgplicht benoemen maar geen compliance beloven; we ontwerpen hun onboarding niet.
+# Nog open: een prijs per module; een speelbare voorbeeldmodule.
+
+hero:
+  titel: "Er is een AI-beleid. Niemand weet wat erin staat."
+  lead: "Wij maken jullie beleid speelbaar, in korte modules voor de situaties die alleen bij jullie voorkomen. Naast het leerplatform dat er al is, en klaar voor de onboarding van nieuwe mensen."
+  knop: "Zie hoe een module eruitziet"
+  beeld:
+    src: /assets/images/verhalen/onitnow-verhaal-maria.jpg
+    alt: "Titelbeeld van Het verhaal van Maria, een MicroGame Story voor onITnow"
+    caption: "Voorbeeld uit ons werk: Het verhaal van Maria, de onboarding van onITnow."
+
+rollen:
+  - pad: hr
+    sectie: voor-hr
+    label: "Ik zit bij HR of L&D"
+    sub: "Je richt de onboarding in"
+    reactie: "Jij richt de onboarding in. Hieronder: wat er nu ontbreekt, en hoe een module past."
+    kaart: { src: /assets/images/verhalen/maria-strip-macbooks.jpg, alt: "" }
+    beeld: { src: /assets/images/verhalen/maria-routines.png, alt: "Scène uit Het verhaal van Maria: de speler ordent de routines van een werkdag" }
+    titel: "De onboarding loopt achter op wat mensen nu doen"
+    alineas:
+      - "Twee derde van het grootbedrijf gebruikt AI. Van de mensen die het op hun werk gebruiken, kreeg minder dan een derde er instructie bij. Het beleid staat op intranet; wat het betekent op een dinsdagochtend, weet bijna niemand."
+      - "Wij maken modules voor de situaties die alleen bij jullie voorkomen. Losse modules, apart toe te wijzen en apart bij te werken, naast het leerplatform dat er al is."
+    vraag:
+      id: ai-beleid
+      vraag: "Hebben jullie al een AI-beleid?"
+      antwoorden:
+        - { waarde: ja, label: "Ja, het staat op papier", reactie: "Dan is de vraag of mensen weten wat het betekent als ze een AI-tool openen. Daar is een module voor." }
+        - { waarde: bezig, label: "We zijn ermee bezig", reactie: "Dan kan een module meegroeien: losse modules zijn apart bij te werken als het beleid verandert." }
+        - { waarde: nee, label: "Nog niet", reactie: "Dan is het beleid de eerste stap. Wij maken het speelbaar als het er is; het beleid zelf schrijven we niet." }
+  - pad: security
+    sectie: voor-security
+    label: "Ik ben verantwoordelijk voor security"
+    sub: "Je wilt dat mensen veilig handelen"
+    reactie: "Jij gaat over security. Hieronder: de kleine momenten waar het op aankomt."
+    kaart: { src: /assets/images/verhalen/nnvo-it-veiligheid.png, alt: "" }
+    beeld: { src: /assets/images/verhalen/maria-support.png, alt: "Scène uit Het verhaal van Maria: een supportvraag die om een keuze vraagt" }
+    titel: "Iemand kijkt mee op je scherm. Wat doe je?"
+    alineas:
+      - "Cybergedrag leer je niet uit een jaarlijkse training. Het zit in kleine momenten: een bericht dat net niet klopt, een collega die meekijkt, een usb-stick op de parkeerplaats. Voor wie onder de Cyberbeveiligingswet valt, is dat sinds 15 augustus 2026 ook een zorgplicht."
+      - "Wij maken die momenten speelbaar, met jullie eigen situaties en jullie eigen regels. We beloven geen compliance; we zorgen dat mensen weten wat ze moeten doen."
+    vraag:
+      id: awareness-nu
+      vraag: "Wat doen jullie nu aan awareness?"
+      antwoorden:
+        - { waarde: abonnement, label: "Een abonnement op een platform", reactie: "Dan houd je dat abonnement. De modules gaan over de situaties die alleen bij jullie voorkomen." }
+        - { waarde: jaarlijks, label: "Een jaarlijkse training", reactie: "Dan zit het gat tussen twee trainingen. Korte modules wijs je los toe, ook bij de onboarding." }
+        - { waarde: niets, label: "Niets vasts", reactie: "Dan is één module over jullie meest voorkomende situatie een goed begin." }
+
+probeer:
+  type: beelden
+  titel: "Zo ziet een module eruit"
+  lead: "Uit Het verhaal van Maria, de onboarding van onITnow: een herkenbare situatie, keuzes, en wat die keuzes doen."
+  beelden:
+    - { src: /assets/images/verhalen/maria-strip-macbooks.jpg, alt: "Stripbeeld uit Het verhaal van Maria: collega's achter hun laptops", caption: "Een herkenbaar moment op het werk" }
+    - { src: /assets/images/verhalen/maria-indelen.png, alt: "Scène uit Het verhaal van Maria: de speler deelt verzoeken in", caption: "Zelf kiezen en indelen" }
+    - { src: /assets/images/verhalen/maria-workflow.jpg, alt: "Scène uit Het verhaal van Maria: de workflow die volgt op de keuzes van de speler", caption: "Zien wat je keuze doet" }
+  claim: "Wij ontwerpen jullie onboarding niet. Jullie weten wat erin moet; wij maken het speelbaar."
+
+stappen:
+  items:
+    - titel: "Jullie kiezen het onderwerp"
+      tekst: "AI-gebruik, cybergedrag of een ander onderwerp dat nu ontbreekt."
+      beeld: { src: /assets/images/verhalen/maria-interactiemodel.png, alt: "" }
+    - titel: "Wij maken er een module van"
+      tekst: "Met jullie situaties en jullie beleid. Kort, speelbaar, apart toe te wijzen."
+      beeld: { src: /assets/images/verhalen/maria-operate.jpg, alt: "" }
+    - titel: "Hij draait naast wat er al is"
+      tekst: "Als SCORM-bestand in jullie leerplatform, en apart bij te werken als het beleid verandert."
+      beeld: { src: /assets/images/verhalen/nnvo-it-veiligheid.png, alt: "" }
+
+bewijs:
+  beeld: { src: /assets/images/verhalen/maria-storytelling.jpg, alt: "Beeld uit Het verhaal van Maria" }
+  alineas:
+    - "Voor onITnow maakten we <strong>Het verhaal van Maria</strong>: een MicroGame Story die nieuwe en bestaande medewerkers stap voor stap introduceert in de principes van USM."
+    - "Voor NNVO maakten we <strong>IT-veiligheid</strong> die mensen begrijpen en toepassen."
+
+vragen:
+  label: "Vragen over losse modules"
+  items:
+    - { vraag: "We hebben al een leerplatform met een catalogus.", antwoord: "Dat blijft. Dit komt ernaast, voor de situaties die alleen bij jullie voorkomen en die geen catalogus heeft." }
+    - { vraag: "Kunnen we dit niet zelf maken met AI?", antwoord: "Een quiz of een tekst wel. Wat een tool niet levert, is een situatie die klopt met jullie beleid en jullie praktijk." }
+    - { vraag: "Is dit verplicht onder de AI Act?", antwoord: "Daar doen we geen uitspraak over. Wat we wel weten: mensen gebruiken AI, en het beleid helpt alleen als ze weten wat erin staat." }
+    - { vraag: "Draait het in ons LMS?", antwoord: "Ja. Je krijgt een SCORM-bestand dat je in je eigen leerplatform zet. Zonder LMS kan het ook via een gewone link, in onze omgeving Prepo." }
+    - { vraag: "Wat kost een module?", antwoord: "Dat hangt af van het onderwerp en het aantal situaties. In een kennismaking noemen we een indicatie." }
+
+afspraak:
+  titel: "Begin met één module"
+  lead: "Kies hieronder een moment voor een online kennismaking van een half uur. We kiezen samen het onderwerp dat nu ontbreekt."
+
+formulier:
+  titel: "Of vraag de moduleopzet aan"
+  lead: "Vertel welk onderwerp in jullie onboarding ontbreekt. We sturen een opzet en nemen contact met je op."
+  noot: "Je krijgt een persoonlijk antwoord, geen nieuwsbrief."

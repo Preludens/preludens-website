@@ -5,7 +5,9 @@
   co-wijzer-slaapkamer.jpg zonder score en markering).
 
   Pass: position (de plek op de pagina, gaat mee als demo_position),
-        heading (optioneel: "h2" of "h3" voor de kop van het groepsoverzicht).
+        heading (optioneel: "h2" of "h3" voor de kop van het groepsoverzicht),
+        group_title en group_advice (optioneel: kop en advies onder het
+        groepsoverzicht; standaard voor de instructeur van casus 1).
 
   De regels komen uit het spel zelf (zie de explainer van CO Wijzer):
   - in een ruimte waar mensen regelmatig of lang verblijven hangt de melder op
@@ -53,9 +55,9 @@
   </div>
 
   <div class="lv-melder__group" data-group hidden>
-    <{{ hx }} class="lv-melder__group-title" tabindex="-1">Wat de instructeur 's&nbsp;ochtends ziet</{{ hx }}>
+    <{{ hx }} class="lv-melder__group-title" tabindex="-1">{{ include.group_title | default: "Wat de instructeur 's&nbsp;ochtends ziet" }}</{{ hx }}>
     <p>Elke stip is een deelnemer uit dezelfde groep, <span class="lv-melder__you">de gouden ben jij</span>. <span data-group-count>6</span> van de 12 hingen hem te hoog, de meesten tegen het plafond: de regel van de ruimte met de ketel.</p>
-    <p class="lv-melder__advice">Begin de dag dus bij het verschil tussen die twee ruimtes, en niet bij hoofdstuk één.</p>
+    <p class="lv-melder__advice">{{ include.group_advice | default: "Begin de dag dus bij het verschil tussen die twee ruimtes, en niet bij hoofdstuk één." }}</p>
     <p class="lv-melder__meta">Voorbeeldgegevens: elf deelnemers en jij.</p>
     <button class="lv-melder__again" type="button" data-again data-cta>Probeer opnieuw</button>
   </div>

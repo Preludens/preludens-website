@@ -1,0 +1,193 @@
+{%- comment -%}
+  Het format van variant D als sjabloon, voor de vier casuspagina's onder
+  /oplossingen/. De inhoud per casus staat in _data/casussen/<casus>.yml;
+  dit bestand bepaalt alleen de opbouw. Zie _marketing/landingspagina-varianten.md.
+
+  Pass: casus (de sleutel van het databestand, gelijk aan page.casus).
+
+  Opbouw:
+  1. hero: het probleem in hun woorden, met het spel als beeld of video
+  2. kies (#kies): "Waar sta jij?", twee rollen. Een keuze geeft een reactie
+     en scrolt naar het deel van die rol. Alles blijft zichtbaar.
+  3 en 4. per rol een blok met het grootste aandachtspunt en een vraag met
+     directe feedback (question_answer)
+  5. probeer (#probeer): de CO-melder, een video of beelden uit een spel
+  6. hoe het werkt (#hoe-het-werkt), drie stappen met beeld
+  7. bewijs (#bewijs)
+  8. bezwaren (#bezwaren), met een afspraakknop eronder
+  9. afspraak (#afspraak, Bookings in de pagina) en formulier (#actie)
+
+  De id's zijn de cta_position van cta_click. De id's van de rolblokken komen
+  uit het databestand (rollen[].sectie).
+{%- endcomment -%}
+{%- assign d = site.data.casussen[include.casus] -%}
+{%- assign demo_url = site.preludens.demo.url -%}
+
+{% include panels/clips.html %}
+
+<div class="panel-stack" data-landing-variant="d">
+
+{%- comment -%} 1. Hero {%- endcomment -%}
+<section class="panel panel--hero lv-hero lv-hero--media" id="hero">
+  <div class="panel__inner">
+    <div class="sp-hero-copy">
+      <h1>{{ d.hero.titel }}</h1>
+      <p class="sp-lead">{{ d.hero.lead }}</p>
+      <div class="sp-actions">
+        <a class="btn btn-primary" href="#probeer" data-cta-position="hero">{{ d.hero.knop | default: "Probeer het zelf" }}</a>
+        {% include varianten/afspraak.html position="hero" style="secondary" bare=true %}
+      </div>
+    </div>
+    <div class="lv-hero__media">
+      {%- if d.hero.video %}
+      {% assign hero_video = site.media_base | append: d.hero.video.file %}
+      {% include panels/video.html src=hero_video poster=d.hero.video.poster title=d.hero.video.title label=d.hero.video.label caption=d.hero.video.caption play_label="Speel het voorbeeld af" %}
+      {%- else %}
+      <figure class="sp-hero-scene">
+        <div class="sp-hero-shadow"><div class="sp-hero-frame"><img src="{{ d.hero.beeld.src | relative_url }}" alt="{{ d.hero.beeld.alt }}"></div></div>
+        {% if d.hero.beeld.caption %}<figcaption>{{ d.hero.beeld.caption }}</figcaption>{% endif %}
+      </figure>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+
+{%- comment -%} 2. Waar sta jij? {%- endcomment -%}
+{% capture kies %}
+<h2>{{ d.kies.titel | default: "Waar sta jij?" }}</h2>
+<p class="sp-lead sp-lead--center">{{ d.kies.lead | default: "Kies, en je gaat naar het deel dat voor jou het belangrijkst is. Je kunt ook gewoon verder lezen." }}</p>
+<div class="lv-choose" data-lv-choose>
+  <div class="lv-choose__options" role="group" aria-label="Kies je rol">
+    {%- for rol in d.rollen %}
+    <a class="lv-choose__option" href="#{{ rol.sectie }}" data-choose="{{ rol.pad }}" data-reply="{{ rol.reactie | escape }}">
+      <img src="{{ rol.kaart.src | relative_url }}" alt="{{ rol.kaart.alt }}" width="1024" height="448" loading="lazy" decoding="async">
+      <span class="lv-choose__body"><strong>{{ rol.label }}</strong><span>{{ rol.sub }}</span></span>
+    </a>
+    {%- endfor %}
+  </div>
+  <p class="lv-choose__reply" data-choose-reply aria-live="polite" hidden></p>
+</div>
+{% endcapture %}
+{% include panels/panel.html variant="mist" id="kies" body=kies %}
+
+{%- comment -%} 3 en 4. Per rol {%- endcomment -%}
+{%- for rol in d.rollen %}
+{% capture rol_body %}
+<p class="lv-for-you" data-for-you="{{ rol.pad }}" hidden>Jij koos: {{ rol.label | downcase }}</p>
+<h2 tabindex="-1">{{ rol.titel }}</h2>
+{%- for alinea in rol.alineas %}
+<p class="sp-lead">{{ alinea }}</p>
+{%- endfor %}
+{%- if rol.vraag %}
+<div class="lv-question" data-lv-question data-question-id="{{ rol.vraag.id }}">
+  <p class="lv-question__q" id="q-{{ rol.vraag.id }}">{{ rol.vraag.vraag }}</p>
+  <div class="lv-question__options" role="group" aria-labelledby="q-{{ rol.vraag.id }}">
+    {%- for a in rol.vraag.antwoorden %}
+    <button type="button" data-answer="{{ a.waarde }}">{{ a.label }}</button>
+    {%- endfor %}
+  </div>
+  <div class="lv-question__reply" aria-live="polite">
+    {%- for a in rol.vraag.antwoorden %}
+    <p data-reply-for="{{ a.waarde }}" hidden>{{ a.reactie }}</p>
+    {%- endfor %}
+  </div>
+</div>
+{%- endif %}
+{% endcapture %}
+{% capture rol_panel %}
+{%- if forloop.first %}
+{% include panels/media.html src=rol.beeld.src alt=rol.beeld.alt ratio="16 / 9" angle=true body=rol_body %}
+{%- else %}
+{% include panels/media.html src=rol.beeld.src alt=rol.beeld.alt ratio="16 / 9" angle="flip" reverse=true body=rol_body %}
+{%- endif %}
+{% endcapture %}
+{%- if forloop.first %}
+{% include panels/panel.html variant="paper" id=rol.sectie body=rol_panel %}
+{%- else %}
+{% include panels/panel.html variant="harbor" id=rol.sectie body=rol_panel %}
+{%- endif %}
+{%- endfor %}
+
+{%- comment -%} 5. Probeer het zelf {%- endcomment -%}
+{% capture probeer %}
+<h2>{{ d.probeer.titel }}</h2>
+<p class="sp-lead sp-lead--center">{{ d.probeer.lead }}</p>
+<div class="lv-inline-play">
+  {%- if d.probeer.type == "co-melder" %}
+  {% include varianten/co-melder.html position="probeer" group_title=d.probeer.groep_titel group_advice=d.probeer.groep_advies %}
+  {%- elsif d.probeer.type == "video" %}
+  {% assign probeer_video = site.media_base | append: d.probeer.video.file %}
+  {% include panels/video.html src=probeer_video poster=d.probeer.video.poster title=d.probeer.video.title label=d.probeer.video.label caption=d.probeer.video.caption %}
+  {%- elsif d.probeer.type == "beelden" %}
+  <ol class="lv-gallery">
+    {%- for b in d.probeer.beelden %}
+    <li>
+      <img src="{{ b.src | relative_url }}" alt="{{ b.alt }}" loading="lazy" decoding="async">
+      <p>{{ b.caption }}</p>
+    </li>
+    {%- endfor %}
+  </ol>
+  {%- endif %}
+  <div class="lv-after">
+    {% if d.probeer.claim %}<p class="lv-claim">{{ d.probeer.claim }}</p>{% endif %}
+    {% if demo_url and demo_url != "" and d.probeer.type == "co-melder" %}
+      {% include panels/actions.html primary_label="Speel de hele demo (2 minuten)" primary_href=demo_url primary_demo=true casus=include.casus primary_position="probeer" %}
+    {% else %}
+      {% include varianten/afspraak.html position="probeer" secondary_label="Stuur een bericht" secondary_href="#actie" %}
+    {% endif %}
+  </div>
+</div>
+{% endcapture %}
+{% include panels/panel.html variant="paper" id="probeer" body=probeer %}
+
+{%- comment -%} 6. Hoe het werkt {%- endcomment -%}
+{% capture werkt %}
+<h2>{{ d.stappen.titel | default: "Hoe het werkt" }}</h2>
+<ol class="lv-steps">
+  {%- for stap in d.stappen.items %}
+  <li>
+    <img src="{{ stap.beeld.src | relative_url }}" alt="{{ stap.beeld.alt }}" width="1024" height="640" loading="lazy" decoding="async">
+    <h3>{{ stap.titel }}</h3>
+    <p>{{ stap.tekst }}</p>
+  </li>
+  {%- endfor %}
+</ol>
+{% endcapture %}
+{% include panels/panel.html variant="mist" id="hoe-het-werkt" body=werkt %}
+
+{%- comment -%} 7. Bewijs {%- endcomment -%}
+{% capture bewijs_body %}
+<h2>{{ d.bewijs.titel | default: "Waar het eerder werkte" }}</h2>
+{%- for alinea in d.bewijs.alineas %}
+<p class="sp-lead">{{ alinea }}</p>
+{%- endfor %}
+{% endcapture %}
+{% capture bewijs %}
+{% include panels/media.html src=d.bewijs.beeld.src alt=d.bewijs.beeld.alt ratio="16 / 9" angle=true body=bewijs_body %}
+{% endcapture %}
+{% include panels/panel.html variant="paper" id="bewijs" body=bewijs %}
+
+{%- comment -%} 8. Bezwaren {%- endcomment -%}
+{% capture vragen %}
+{%- for v in d.vragen.items %}
+{% include panels/faq-item.html question=v.vraag answer=v.antwoord %}
+{%- endfor %}
+{% endcapture %}
+{% capture bezwaren %}
+<h2>{{ d.vragen.titel | default: "Wat je je misschien afvraagt" }}</h2>
+{% include panels/faq.html label=d.vragen.label items=vragen %}
+<div class="lv-faq-more">
+  <p>Staat je vraag er niet bij? Dan bespreken we hem graag.</p>
+  {% include varianten/afspraak.html position="bezwaren" secondary_label="Stel je vraag per bericht" secondary_href="#actie" %}
+</div>
+{% endcapture %}
+{% include panels/panel.html variant="mist" id="bezwaren" body=bezwaren %}
+
+{%- comment -%} 9. Afspraak en formulier {%- endcomment -%}
+{% include varianten/afspraak-embed.html title=d.afspraak.titel lead=d.afspraak.lead %}
+
+{% include panels/form.html id="actie" casus=include.casus title=d.formulier.titel lead=d.formulier.lead submit_note=d.formulier.noot %}
+
+</div>
+
+<script src="{{ '/assets/js/landing-varianten.js' | relative_url }}" defer></script>
