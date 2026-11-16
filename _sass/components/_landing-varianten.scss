@@ -1122,3 +1122,56 @@ body.lv-paths-ready:not([data-path="koper"]):not([data-path="beide"]) [data-land
 
   &:focus-visible { outline: none; @include focus-ring-inset(3px); }
 }
+
+/* Het kader van de CO-melder: dezelfde snede, groot. Het speelveld erin
+   krijgt een kleinere, zodat de vorm binnenin terugkomt. Geen schaduw: die
+   zou clip-path wegknippen, en het navy vlak staat op papier sterk genoeg. */
+.lv-melder,
+.lv-melder__stage {
+  --c: 24px;
+  border-radius: 0;
+  box-shadow: none;
+  clip-path: polygon(
+    var(--c) 0, 100% 0,
+    100% calc(100% - var(--c)), calc(100% - var(--c)) 100%,
+    0 100%, 0 var(--c)
+  );
+}
+
+.lv-melder__stage {
+  --c: 14px;
+}
+
+/* Het vraagkader (ook het dilemma): de rand is de achtergrond van het kader
+   zelf, met de gouden streep bovenaan; de witte vulling ligt in ::before.
+   Boven zit de rand 3px diep, elders 1px. Daarom twee binnensnedes, zodat de
+   rand langs beide schuine kanten ongeveer 1px blijft. */
+.lv-question {
+  --c: 22px;
+  --c-tl: calc(var(--c) - 2.6px);
+  --c-br: calc(var(--c) - 3.4px);
+  position: relative;
+  isolation: isolate;
+  border: 0;
+  border-radius: 0;
+  padding-top: calc(var(--space-md) + 2px);
+  background: linear-gradient(var(--color-preludens-gold) 0 3px, var(--color-border) 3px);
+  clip-path: polygon(
+    var(--c) 0, 100% 0,
+    100% calc(100% - var(--c)), calc(100% - var(--c)) 100%,
+    0 100%, 0 var(--c)
+  );
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 3px 1px 1px;
+    z-index: -1;
+    background: var(--color-cloud-white);
+    clip-path: polygon(
+      var(--c-tl) 0, 100% 0,
+      100% calc(100% - var(--c-br)), calc(100% - var(--c-br)) 100%,
+      0 100%, 0 var(--c-tl)
+    );
+  }
+}
