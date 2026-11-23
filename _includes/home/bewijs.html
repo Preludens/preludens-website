@@ -1,0 +1,71 @@
+{% comment %}
+  Bewijsband voor de homepage: drie gepubliceerde projecten met vraag, wat we
+  maakten en wat het opleverde, plus de ervaring van Renée Heller (HvA) bij het
+  RiRa Warmtenetspel. Alle regels komen uit de verhaalpagina's in _verhalen/:
+  nnvo-wet-en-regelgeving (resultaat), studium-co-wijzer (blok "Van
+  veiligheidsinformatie naar een speelbare leerroute") en maryland-disruption-game
+  (blok "Het resultaat"). Claimgrens The Disruption Game: alleen TU Delft
+  noemen, zoals de verhaalpagina (zie _data/casussen/complexe-processen.yml).
+  Geen cijfers of effecten die niet op die pagina's staan.
+  Staat binnen .panel-stack; panels/clips.html moet al op de pagina staan.
+{% endcomment %}
+{% capture nnvo_copy %}
+<h3>NNVO · brug- en sluisoperators</h3>
+<h4>Operators scherp houden op wet- en regelgeving</h4>
+<p><strong>De vraag.</strong> Ervaren operators kennen het vak, maar de regels blijven veranderen. Hoe fris je hun kennis op zonder een saaie opfriscursus?</p>
+<p><strong>Wat we maakten.</strong> Veertien korte scenario's met MicroGames, verteld in comics. Daarna een praktijkdag waarin groepen aan de hand van praatplaten bespreken waar regels niet eenduidig zijn.</p>
+<p><strong>Wat het opleverde.</strong> Na twee pilotdagen, begeleid en getoetst door de trainers van NNVO, is de herscholing verfijnd en klaar voor bredere inzet.</p>
+<p><a href="{{ '/verhalen/nnvo-wet-en-regelgeving/' | relative_url }}">Lees het project →</a></p>
+{% endcapture %}
+{% capture cowijzer_copy %}
+<h3>21CC Education en Studium · installatietechniek</h3>
+<h4>CO Wijzer</h4>
+<p><strong>De vraag.</strong> Koolmonoxide zie, ruik en proef je niet. Monteurs kennen de regels vaak al. Hoe leren ze een risico op tijd te herkennen en de juiste veiligheidskeuze te maken?</p>
+<p><strong>Wat we maakten.</strong> Visuele verhalen die kennis in een herkenbare situatie zetten, met MicroGames waarin monteurs zelf kijken, kiezen en direct feedback krijgen. Onder meer over rookgasanalyse en CLV-systemen.</p>
+<p><strong>Wat het opleverde.</strong> Een leerroute waarin monteurs oefenen met signalen herkennen en handelen, opgezet zodat er nieuwe onderdelen op kunnen voortbouwen.</p>
+<p><a href="{{ '/verhalen/co-wijzer/' | relative_url }}">Lees het project →</a></p>
+{% endcapture %}
+{% capture disruption_copy %}
+<h3>TU Delft · onderwijs en logistiek</h3>
+<h4>The Disruption Game</h4>
+<p><strong>De vraag.</strong> Hoe oefen je met beslissen tijdens een logistieke verstoring, als je niet alle informatie hebt en belangen schuren?</p>
+<p><strong>Wat we maakten.</strong> Een interactieve Dilemma Story. Je speelt de controller op een containerterminal, op de dag dat de truckers staken. Elke keuze werkt door in de volgende.</p>
+<p><strong>Wat het opleverde.</strong> Deelnemers oefenen met besluitvorming in plaats van er alleen over te praten. Hun keuzes geven stof voor reflectie en gesprek.</p>
+<p><a href="{{ '/verhalen/maryland-disruption-game/' | relative_url }}">Lees het project →</a></p>
+{% endcapture %}
+{% capture heller_context %}Over het RiRa Warmtenetspel, een spel met kaarten waarin spelers samen kiezen tussen een collectief warmtenet en een eigen oplossing. Het ontstond binnen het onderzoeksproject RiRa van de Hogeschool van Amsterdam. <a href="{{ '/verhalen/rira-warmtenet/' | relative_url }}">Lees het project →</a>{% endcapture %}
+
+{% capture bewijs_body %}
+<span class="sp-eyebrow">Uit de praktijk</span>
+<h2>Van vraagstuk naar spelbare leerervaring</h2>
+<p class="sp-lead">
+  Drie projecten, van het vraagstuk van de opdrachtgever tot wat het opleverde.
+</p>
+{% include panels/media.html src="/assets/images/verhalen/nnvo-wet-en-regelgeving-video-poster.jpg" alt="Beeld uit de NNVO-training: een kaart met vaarwater en de niveaus Rijk, provincie, gemeente en waterschap" width="1920" height="1080" body=nnvo_copy %}
+{% include panels/media.html src="/assets/images/verhalen/studium-co-wijzer.jpg" alt="Doorsnede van een woonhuis uit CO Wijzer, met per ruimte een naam" width="1024" height="384" ratio="1024 / 384" reverse=true body=cowijzer_copy %}
+{% include panels/media.html src="/assets/images/verhalen/disruption-game.jpg" alt="Scène uit The Disruption Game: een man in een keuken, de ochtend van de verstoring" width="1024" height="459" ratio="1024 / 459" body=disruption_copy %}
+{% include panels/actions.html primary_label="Bekijk de projecten" primary_href="/inspiratie/" %}
+
+<figure class="sp-testimonial">
+  <img
+    class="sp-testimonial__photo"
+    src="{{ '/assets/images/testimonials/renee-heller.jpg' | relative_url }}"
+    alt="Renée Heller"
+    width="800"
+    height="800"
+    loading="lazy"
+    decoding="async"
+  >
+  <div class="sp-testimonial__body">
+    <blockquote>
+      Daan heeft ons erg geholpen van een statische ontwerptool een game te maken waarin spelers op alle aspecten van hun keuzes uitgedaagd worden. Het werk van Daan zorgde ervoor dat alle stappen logisch en voor een breed publiek van professionals en studenten zijn neergezet in een prachtig kaartspel.
+    </blockquote>
+    <figcaption class="sp-testimonial__cite">
+      <span class="sp-testimonial__name">Renée Heller</span>
+      <span class="sp-testimonial__role">Professor Energy &amp; Innovation, Hogeschool van Amsterdam</span>
+    </figcaption>
+    <p class="sp-source">{{ heller_context }}</p>
+  </div>
+</figure>
+{% endcapture %}
+{% include panels/panel.html variant="mist" align="left" body=bewijs_body %}

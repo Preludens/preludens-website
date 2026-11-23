@@ -1,0 +1,26 @@
+{% comment %}
+  Herkenningsband voor de homepage, direct na de hero. Benoemt vier situaties
+  die een koper herkent, elk met de rol of sector erbij.
+  Bronnen: _data/casussen/*.yml en _marketing/casus-*.md. Claimgrenzen uit die
+  bestanden gelden: geen klantnamen buiten gepubliceerde verhalen, geen prijzen,
+  geen uitspraken over minder incidenten.
+{% endcomment %}
+{% capture herkenning_praktijk %}Opleiders en instructeurs herhalen op de trainingsdag wat deelnemers in de e-learning al gehad hebben. <a href="{{ '/verhalen/basis-koeltechniek/' | relative_url }}">Bekijk Basis Koeltechniek.</a>{% endcapture %}
+{% capture herkenning_safety %}HSE-verantwoordelijken zien de veiligheidsinstructie doorgeklikt worden, terwijl ze niet weten wie de regels echt kent. <a href="{{ '/verhalen/co-wijzer/' | relative_url }}">Bekijk CO Wijzer.</a>{% endcapture %}
+{% capture herkenning_proces %}Havens en onderwijs laten leerlingen één keer het terrein zien, maar niet hoe het werk van binnen is. <a href="{{ '/verhalen/yard-crane-scheduler/' | relative_url }}">Bekijk Yard Crane Scheduler.</a>{% endcapture %}
+{% capture herkenning_beleid %}HR en L&amp;D hebben beleid dat op intranet staat, terwijl niemand weet wat het op een dinsdagochtend betekent. <a href="{{ '/verhalen/onitnow-verhaal-maria/' | relative_url }}">Bekijk Het verhaal van Maria.</a>{% endcapture %}
+
+{% capture herkenning_items %}
+{% include panels/value.html title="De trainingsdag begint met herhalen" text=herkenning_praktijk %}
+{% include panels/value.html title="De instructie wordt doorgeklikt" text=herkenning_safety %}
+{% include panels/value.html title="Het werk blijft onzichtbaar" text=herkenning_proces %}
+{% include panels/value.html title="Het beleid staat er, maar niemand kent het" text=herkenning_beleid %}
+{% endcapture %}
+
+{% capture herkenning_body %}
+<h3>Herken je dit?</h3>
+<h2>Vier plekken waar kennis niet blijft hangen</h2>
+<p class="sp-lead">We komen ze tegen bij opleiders, HSE-verantwoordelijken, onderwijs en HR. Zit jouw situatie erbij? Dan praten we graag mee.</p>
+{% include panels/values.html items=herkenning_items label="Situaties die we herkennen" columns="two" %}
+{% endcapture %}
+{% include panels/panel.html variant="paper" body=herkenning_body %}
