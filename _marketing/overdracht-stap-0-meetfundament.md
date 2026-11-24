@@ -544,13 +544,13 @@ november: GA4 gekoppeld (koppeling 16404644938, door jan-willem@preludens.nl,
 gepersonaliseerd adverteren uit, autotagging aan) en `form_submit`
 geïmporteerd als primaire conversie, categorie *Contact*. Het doel
 *Contactmoment* is accountstandaard en hangt aan de ene campagne die er staat.
-Daarnaast staat er een telefoonconversie (*Lead van telefoongesprek*) die bij
-het aanmaken van het account is meegekomen. Om de koppeling te kunnen maken
+Het is het enige accountdoel: de telefoonconversie (*Door AI gekwalificeerde
+leads van telefoongesprekken*) die bij het aanmaken meekwam, is verwijderd. Om de koppeling te kunnen maken
 heeft jan-willem@preludens.nl in GA4 de rol Bewerker op de property gekregen.
 
 Wat hieronder over 192-444-7942 staat, is het eerste account, op
-info@preludens.nl. Dat is niet meer het hoofdaccount, maar het staat nog wel
-aan GA4 gekoppeld.
+info@preludens.nl. Dat is niet meer het hoofdaccount, en de koppeling met GA4
+is op 24 november verwijderd. Het account zelf bestaat nog.
 
 **Er is een Google Ads-account: 192-444-7942**, op info@preludens.nl, Nederland,
 euro, tijd in Nederland. Aangemaakt zonder campagne, dus er staat nog geen budget
