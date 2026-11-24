@@ -28,7 +28,16 @@
 
 {% include panels/clips.html %}
 
-<div class="panel-stack" data-landing-variant="d">
+{%- comment -%}
+  probeer.demo.terugkeer: true opent de demo in een nieuw tabblad en zet
+  onder het probeerblok het blok "Terug uit de demo" (#na-de-demo), dat
+  assets/js/demo.js openklapt zodra de bezoeker terugkomt. Daarin de twee
+  wegen uit de lead journey: een bericht sturen of direct een afspraak.
+{%- endcomment -%}
+{%- assign demo_terug = false -%}
+{%- if d.probeer.demo.url and d.probeer.demo.url != "" and d.probeer.demo.terugkeer -%}{%- assign demo_terug = true -%}{%- endif -%}
+
+<div class="panel-stack" data-landing-variant="d"{% if demo_terug %} data-demo-page data-demo-url="{{ d.probeer.demo.url }}"{% endif %}>
 
 {%- comment -%} 1. Hero {%- endcomment -%}
 <section class="panel panel--hero lv-hero lv-hero--media" id="hero">
@@ -154,7 +163,12 @@
     {%- assign probeer_demo = d.probeer.demo.url %}
     {%- assign probeer_demo_label = d.probeer.demo.label | default: "Speel de hele demo (2 minuten)" %}
     {%- if probeer_demo == nil or probeer_demo == "" %}{% if d.probeer.type == "co-melder" %}{% assign probeer_demo = demo_url %}{% endif %}{% endif %}
-    {% if probeer_demo and probeer_demo != "" %}
+    {% if demo_terug %}
+      <div class="sp-actions">
+        <a class="btn btn-primary" href="{{ probeer_demo }}" target="_blank" rel="noopener" data-demo-start data-demo-launch data-casus="{{ include.casus }}" data-cta-position="probeer">{{ probeer_demo_label }}<span class="sr-only"> (opent in een nieuw tabblad)</span></a>
+      </div>
+      <p class="demo-hero__note">{{ d.probeer.demo.noot | default: "De demo opent in een nieuw tabblad. Deze pagina blijft open." }}</p>
+    {% elsif probeer_demo and probeer_demo != "" %}
       {% include panels/actions.html primary_label=probeer_demo_label primary_href=probeer_demo primary_demo=true casus=include.casus primary_position="probeer" %}
     {% else %}
       {% include varianten/afspraak.html position="probeer" secondary_label="Stuur een bericht" secondary_href="#actie" %}
@@ -163,6 +177,23 @@
 </div>
 {% endcapture %}
 {% include panels/panel.html variant="paper" id="probeer" body=probeer %}
+
+{%- if demo_terug %}
+{%- comment -%} 5b. Terug uit de demo: verborgen tot demo.js de terugkeer ziet {%- endcomment -%}
+{%- assign terug = d.probeer.terug -%}
+{% capture terug_body %}
+<h2>{{ terug.titel | default: "Bedankt voor het spelen" }}</h2>
+<p class="sp-lead">{{ terug.lead }}</p>
+<div class="sp-actions lv-afspraak demo-return__actions">
+  <a class="btn btn-primary" href="#actie" data-cta-position="na-de-demo">Stuur ons een bericht</a>
+  {%- assign booking = site.data.varianten.afspraak %}
+  <a class="btn btn-secondary" href="{% if booking.url and booking.url != '' %}#afspraak{% else %}#actie{% endif %}"{% if booking.url and booking.url != '' %} data-booking{% endif %} data-cta-position="na-de-demo">Plan direct een afspraak</a>
+</div>
+{% endcapture %}
+<div class="demo-return" id="na-de-demo" data-demo-return hidden>
+{% include panels/panel.html variant="harbor" body=terug_body %}
+</div>
+{%- endif %}
 
 {%- comment -%} 6. Hoe het werkt {%- endcomment -%}
 {% capture werkt %}
@@ -215,3 +246,6 @@
 </div>
 
 <script src="{{ '/assets/js/landing-varianten.js' | relative_url }}" defer></script>
+{%- if demo_terug %}
+<script src="{{ '/assets/js/demo.js' | relative_url }}" defer></script>
+{%- endif %}

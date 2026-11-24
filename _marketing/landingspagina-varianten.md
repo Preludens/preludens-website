@@ -18,6 +18,27 @@ Alle vijf staan op `noindex, nofollow` en buiten `sitemap.xml` (gecontroleerd in
 
 ---
 
+## Ronde 6: twee pagina's voor de demo AI Wijzer (24 november 2026)
+
+Op basis van Daans twee doelgroepen (Teams, CRM › Marketing):
+
+- organisaties met een intern leerprogramma: <http://localhost:4000/preludens-website/oplossingen/ai-leerprogramma/>
+- trainers die workshops en praktijkdagen geven: <http://localhost:4000/preludens-website/oplossingen/ai-trainers/>
+
+De kopij schreef Fable 5.2 in `_data/casussen/ai-leerprogramma.yml` en `ai-trainers.yml`. Daarna is elke pagina langs de 30 punten van de Homepage Review gelegd. Verwerkt: wie Preludens is (bewijsblok), wat het oplevert (leerprogramma), voor wie het wel en niet is, wat een trainer precies afneemt, het telefoonnummer, en wat er na het formulier gebeurt.
+
+**Sjabloon.** `probeer.demo.terugkeer: true` opent de demo in een nieuw tabblad. Komt de bezoeker terug, dan klapt onder het probeerblok "Bedankt voor het spelen" open met **Stuur ons een bericht** en **Plan direct een afspraak**, zoals in Daans route. Het gedrag komt uit `assets/js/demo.js` (event `demo_return`).
+
+**Nog open:**
+
+- Er staan geen resultaten of citaten van klanten op (punten 17 en 19). Die verzinnen we niet.
+- Wat een trainer afneemt en hoe dat werkt met licenties of prijzen, is nog niet besloten. De FAQ noemt twee vormen zonder prijs.
+- De bevestigingsmail met onepager uit Daans route staat er niet in zolang die niet live is.
+- Hoe lang een traject duurt, staat er niet.
+- Beide pagina's staan op `noindex` en buiten de sitemap.
+
+---
+
 ## Ronde 5: persona-reviews verwerkt
 
 Elke casuspagina is gelezen door een aparte sessie, vanuit een persona uit het marktonderzoek van die casus. De reviews staan in `_marketing/reviews/`:
