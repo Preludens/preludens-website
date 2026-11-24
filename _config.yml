@@ -97,6 +97,9 @@ sass:
 exclude:
   - Gemfile
   - Gemfile.lock
+  # Hulpscripts (serve, tegelbeelden, QR). Zonder deze regel kopieerde Jekyll
+  # ze mee en stonden ze publiek op de site.
+  - bin
   - README.md
   - vendor
   - .bundle
