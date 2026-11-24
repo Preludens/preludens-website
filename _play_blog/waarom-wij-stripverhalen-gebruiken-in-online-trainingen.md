@@ -32,13 +32,13 @@ De deelnemer leest onze stripverhalen op een telefoon, tablet of computer en scr
 
 Per scène bepalen we wat het beeld vertelt en wat de dialoog daaraan toevoegt. Zodra de lezer ziet dat de mailwisseling al in de prompt staat, kan de tekst meteen ingaan op Joris’ twijfel. Zo blijven de gesprekken kort en natuurlijk en kan de deelnemer zich in de situatie verplaatsen.
 
-De combinatie van beeld en tekst sluit aan bij het multimediaprincipe van Richard Mayer (2021). In de experimenten die hij bespreekt, konden deelnemers het geleerde beter toepassen op nieuwe vragen wanneer ze uitleg kregen in woorden én relevante beelden. De beelden helpen de deelnemer om zich een voorstelling van de situatie te maken en die te verbinden aan de uitleg. [Multimediaprincipe van Richard Mayer](https://www.cambridge.org/core/books/abs/cambridge-handbook-of-multimedia-learning/multimedia-principle/D09A773C7C5C214FA19D4C9841FBC83B)
+De combinatie van beeld en tekst sluit aan bij het multimediaprincipe van Richard Mayer (2021). In de experimenten die hij bespreekt, konden deelnemers het geleerde beter toepassen op nieuwe vragen wanneer ze uitleg kregen in woorden én relevante beelden. De beelden helpen de deelnemer om zich een voorstelling van de situatie te maken en die te verbinden aan de uitleg.
 
 ## Een herkenbare situatie geeft kennis betekenis
 
 Een interne afspraak over AI-gebruik kan tijdens een training helder zijn. Op het werk moet een medewerker eerst herkennen **dát er iets af te wegen valt**. Voor Joris voelt het kopiëren van de mailwisseling aanvankelijk als een manier om tijd te winnen. Juist daardoor kan hij makkelijk over het hoofd zien dat hij op het punt staat ook informatie over een collega te delen.
 
-We brengen kennis en inzichten in het verhaal op het moment dat de personages die nodig hebben. Zo ontdekt Joris dat het verwijderen van een naam onvoldoende kan zijn. Andere details kunnen samen alsnog duidelijk maken om wie het gaat. Dat inzicht krijgt betekenis doordat de deelnemer ziet wat er voor Joris en Sanne op het spel staat. Dit past bij de meta-analyse van Mar en collega’s (2021), waarin verhalende teksten gemiddeld beter werden begrepen en herinnerd dan uiteenzettende teksten. [Meta-analyse van Mar en collega’s](https://doi.org/10.3758/S13423-020-01853-1)
+We brengen kennis en inzichten in het verhaal op het moment dat de personages die nodig hebben. Zo ontdekt Joris dat het verwijderen van een naam onvoldoende kan zijn. Andere details kunnen samen alsnog duidelijk maken om wie het gaat. Dat inzicht krijgt betekenis doordat de deelnemer ziet wat er voor Joris en Sanne op het spel staat. Dit past bij de meta-analyse van Mar en collega’s (2021), waarin verhalende teksten gemiddeld beter werden begrepen en herinnerd dan uiteenzettende teksten.
 
 ## De deelnemer houdt overzicht en bepaalt het leestempo
 
@@ -51,7 +51,7 @@ Wanneer het verhaal na de MicroGame terugkeert naar Joris, is de tekst op zijn s
   <figcaption>Sanne komt langs bij het bureau van Joris.</figcaption>
 </figure>
 
-Bij een doorlopende video moet de deelnemer op zo’n moment de video pauzeren of een eerder fragment terugzoeken. Bewegend beeld kan goed werken wanneer de beweging zelf iets verduidelijkt. Voor het verhaal van Joris kiezen we voor afzonderlijke beelden die de deelnemer in eigen tempo kan bekijken. Dat sluit aan bij onderzoek van Rey en collega’s (2019). Hun meta-analyse laat zien dat het opdelen van multimediale uitleg in betekenisvolle delen het onthouden en toepassen van kennis kan ondersteunen. [Meta-analyse van Rey en collega’s](https://doi.org/10.1007/S10648-018-9456-4)
+Bij een doorlopende video moet de deelnemer op zo’n moment de video pauzeren of een eerder fragment terugzoeken. Bewegend beeld kan goed werken wanneer de beweging zelf iets verduidelijkt. Voor het verhaal van Joris kiezen we voor afzonderlijke beelden die de deelnemer in eigen tempo kan bekijken. Dat sluit aan bij onderzoek van Rey en collega’s (2019). Hun meta-analyse laat zien dat het opdelen van multimediale uitleg in betekenisvolle delen het onthouden en toepassen van kennis kan ondersteunen.
 
 ## Van het verhaal naar zelf oefenen
 
@@ -59,7 +59,7 @@ Bij Preludens gaan we ervan uit dat verandering begint bij betrokkenheid. In het
 
 In de MicroGame bij *AI Wijzer* bekijkt de deelnemer fragmenten uit de mailwisseling en bepaalt per fragment of de informatie nodig is voor de vraag, aangepast moet worden of kan worden weggelaten. De feedback helpt de deelnemer om de gevolgen van een keuze te begrijpen en geeft richting aan de volgende poging.
 
-Voor het oefenen van basiskennis gebruiken we MicroGames, dilemma’s en andere interactieve oefeningen. Met concrete keuzes en feedback willen we deelnemers uitdagen, activeren en motiveren om verder te oefenen. Zo helpen we hen om de kennis te onthouden en later toe te passen. De meta-analyse van Wouters en collega’s (2013) laat zien dat serious games het leren en onthouden van kennis kunnen ondersteunen. [Meta-analyse van Wouters en collega’s](https://doi.org/10.1037/a0031311)
+Voor het oefenen van basiskennis gebruiken we MicroGames, dilemma’s en andere interactieve oefeningen. Met concrete keuzes en feedback willen we deelnemers uitdagen, activeren en motiveren om verder te oefenen. Zo helpen we hen om de kennis te onthouden en later toe te passen. De meta-analyse van Wouters en collega’s (2013) laat zien dat serious games het leren en onthouden van kennis kunnen ondersteunen.
 
 ## Als geheel of modulair in het eigen LMS
 

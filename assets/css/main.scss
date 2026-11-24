@@ -2517,9 +2517,8 @@ p { margin: 0 0 var(--space-sm); }
   .play-blog-body {
     margin-inline: auto;
 
-    p {
-      text-align: inherit;
-      hyphens: manual;
+    > figure {
+      margin-block: var(--space-lg);
     }
 
     ul,
