@@ -36,19 +36,21 @@ demo_url: "https://learn.prepo.nl/demo-s/1knzJ0tBf7xENKTzVZQg7pCaKXx8qh3j/index.
 # blok "Liever eerst kijken?" er niet. file is de bestandsnaam in de bucket
 # van site.media_base, poster een pad in de site.
 video:
-  file: ai-wijzer-explainer.mp4
+  file: ai-wijzer-explainer.mp4?v=2
   poster: /assets/images/demo/ai-wijzer-video-poster.jpg
   title: AI Wijzer (demopagina)
   label: >-
-    Explainer van AI Wijzer: Joris staat op het punt een prompt met het definitieve bod
-    te versturen, daarna mails beoordelen, de keten van een AI-dienst bouwen, profielen
-    puzzelen en de meters voor context en gevoeligheid
+    Explainer van AI Wijzer: Joris moet voor vier uur een beslisnotitie over een bod
+    sturen en heeft een prompt klaarstaan waar het definitieve bod in staat. Daarna
+    informatie classificeren, de keten van een AI-dienst bouwen, profielen puzzelen en
+    de meters voor context en gevoeligheid
   caption: >-
-    Een kleine anderhalve minuut uit het spel. Joris wil een prompt met het definitieve bod
-    versturen. Daartussen zie je wat je in de drie missies doet: informatie in mails
-    herkennen, de weg van je invoer door een AI-dienst volgen en zelf een prompt
-    voorbereiden, met meteen feedback als je verkeerd kiest.
-  download_label: Download de video (mp4, 6,3 MB)
+    Anderhalve minuut uit het spel. Joris moet voor vier uur reageren op een aanbod en
+    laat AI helpen met de beslisnotitie, maar in zijn prompt staat het definitieve bod.
+    Daartussen zie je de drie missies: informatie classificeren, volgen wat een
+    AI-dienst met je invoer doet en een model met vier controles om AI privacyvriendelijk
+    te gebruiken. Kies je verkeerd, dan krijg je meteen feedback.
+  download_label: Download de video (mp4, 6,9 MB)
 
 # Een citaat van een opdrachtgever of speler. Alleen invullen met een echte
 # uitspraak, met naam en functie; zolang text leeg is, staat er geen citaat.
