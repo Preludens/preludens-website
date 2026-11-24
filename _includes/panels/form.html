@@ -4,7 +4,14 @@
   die is nauwelijks te stylen en je moet voor een form_submit-event op
   postMessage gaan luisteren.
 
-  Pass: title, lead, casus, id, submit_note, bare.
+  Pass: title, lead, casus, id, submit_note, bare, compact, message,
+  submit_label.
+
+  compact=true laat organisatie en het berichtveld weg: alleen naam en een
+  e-mailadres of telefoonnummer. Voor de plek waar de vraag al duidelijk is,
+  zoals na het spelen van de demo. Het bericht gaat dan als verborgen veld
+  mee, met de tekst uit `message`, zodat in HubSpot te zien is waar de lead
+  vandaan kwam.
 
   bare=true geeft het formulier zonder eigen paneel, om het in een bestaand
   paneel te zetten. De contactpagina doet dat: daar zit erboven een mistpaneel
@@ -52,10 +59,12 @@
         <span class="lead-form__label">{{ t.form.name }} <span class="lead-form__optional">{{ t.form.optional }}</span></span>
         <input type="text" name="name" autocomplete="name">
       </label>
+      {% unless include.compact %}
       <label class="lead-form__field">
         <span class="lead-form__label">{{ t.form.company }} <span class="lead-form__optional">{{ t.form.optional }}</span></span>
         <input type="text" name="company" autocomplete="organization">
       </label>
+      {% endunless %}
     </div>
 
     {%- comment -%}
@@ -80,11 +89,15 @@
       <span class="lead-form__hint" id="{{ form_key }}-reach">{{ t.form.reach_hint }}</span>
     </div>
 
+    {% if include.compact %}
+    <input type="hidden" name="message" value="{{ include.message | escape }}">
+    {% else %}
     <label class="lead-form__field">
       <span class="lead-form__label">{{ t.form.message }}</span>
       <textarea name="message" rows="4" required data-error="{{ t.form.error_message }}"></textarea>
       <span class="lead-form__hint">{{ t.form.message_hint }}</span>
     </label>
+    {% endif %}
 
     {%- comment -%}
       Het honeypot-veld. Niet `hidden` en niet display:none — sommige bots
@@ -103,7 +116,7 @@
     <p class="lead-form__error" data-form-error role="alert" hidden></p>
 
     <div class="lead-form__actions">
-      <button class="btn btn-primary" type="submit" data-cta-position="{{ include.id | default: 'formulier' }}">{{ t.form.submit }}</button>
+      <button class="btn btn-primary" type="submit" data-cta-position="{{ include.id | default: 'formulier' }}">{{ include.submit_label | default: t.form.submit }}</button>
       {% if include.submit_note %}<span class="lead-form__note">{{ include.submit_note }}</span>{% endif %}
     </div>
   </form>
