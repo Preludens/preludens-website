@@ -2468,11 +2468,6 @@ p { margin: 0 0 var(--space-sm); }
   padding-top: clamp(4rem, 7vw, 5.5rem);
 }
 
-/* De leesbreedte van een blogartikel zit hier, via .prose (42rem), en lijnt
-   links uit binnen .container. Zet geen max-width op .play-blog-detail: dat
-   element is zelf .container, en een smallere breedte daar maakte er een
-   gecentreerde kolom van die 240px rechts van de rest van de site begon. De
-   hero erboven is wel met opzet gecentreerd. */
 .play-blog-body {
   p {
     text-align: justify;
@@ -2513,6 +2508,30 @@ p { margin: 0 0 var(--space-sm); }
     p:last-child {
       margin-bottom: 0;
     }
+  }
+}
+
+.play-blog-post {
+  text-align: center;
+
+  .play-blog-body {
+    margin-inline: auto;
+
+    p {
+      text-align: inherit;
+      hyphens: manual;
+    }
+
+    ul,
+    ol {
+      width: fit-content;
+      margin-inline: auto;
+      text-align: start;
+    }
+  }
+
+  .verhaal-actions {
+    justify-content: center;
   }
 }
 
