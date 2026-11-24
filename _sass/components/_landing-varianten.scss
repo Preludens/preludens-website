@@ -1152,3 +1152,209 @@ body.lv-paths-ready:not([data-path="koper"]):not([data-path="beide"]) [data-land
     );
   }
 }
+
+/* ---------- vragen en dilemma's als wegwijzer (ronde 7) ----------
+   _includes/varianten/vraag.html. Keuzerijen in een raster in plaats van
+   losse knopjes; de reactie is een mistvlak met kop, gevolg, uitleg en één
+   vervolgstap. Goud zit alleen in de streep boven de kaart en, bij het
+   groepsbeeld, in de balk van je eigen keuze.
+   Zie _marketing/plan-interacties-landingspagina.md. */
+
+.lv-question__options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-xs);
+}
+
+.lv-dilemma .lv-question__options {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.lv-question__options button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+  min-height: 3.25rem;
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  line-height: 1.3;
+}
+
+.lv-question__label {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.lv-question__sub {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: var(--color-ink-soft);
+}
+
+.lv-question__options button[aria-pressed="true"] .lv-question__sub {
+  color: color-mix(in srgb, var(--color-cloud-white) 82%, transparent);
+}
+
+/* Na een antwoord: de rand van de andere rijen wordt rustiger. Ze blijven
+   leesbaar en klikbaar. */
+.lv-question.is-answered .lv-question__options button[aria-pressed="false"] {
+  background: var(--color-ink-soft);
+}
+
+/* Het groepsbeeld in de knoppen: aantal rechts, dunne balk onderin. */
+.lv-question.has-group .lv-question__options button {
+  padding-right: 5.5rem;
+}
+
+.lv-question__count,
+.lv-question__bar {
+  display: none;
+}
+
+.lv-question.show-group .lv-question__count {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: var(--space-md);
+  transform: translateY(-50%);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-soft);
+}
+
+.lv-question.show-group .lv-question__bar {
+  display: block;
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  height: 3px;
+  background: color-mix(in srgb, var(--color-ink-soft) 35%, transparent);
+  transform: scaleX(var(--share, 0));
+  transform-origin: left center;
+  transition: transform 300ms ease-out;
+}
+
+.lv-question__options button[aria-pressed="true"] .lv-question__count {
+  color: var(--color-cloud-white);
+}
+
+.lv-question__options button[aria-pressed="true"] .lv-question__bar {
+  background: var(--color-preludens-gold);
+}
+
+/* De reactie */
+.lv-reply {
+  --c: var(--lv-cut-sm, 10px);
+  margin-top: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-mist-blue);
+  clip-path: polygon(
+    var(--c) 0, 100% 0,
+    100% calc(100% - var(--c)), calc(100% - var(--c)) 100%,
+    0 100%, 0 var(--c)
+  );
+  animation: lv-reply-in 200ms ease-out;
+}
+
+@keyframes lv-reply-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+
+.panel .lv-question__reply .lv-reply p {
+  margin: 0 0 var(--space-xs);
+  padding: 0;
+  border: 0;
+  color: var(--color-ink);
+}
+
+.panel .lv-question__reply .lv-reply p:last-child {
+  margin-bottom: 0;
+}
+
+.panel .lv-question__reply p.lv-reply__kop {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.0625rem;
+}
+
+.lv-reply__label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+}
+
+.lv-reply__stap {
+  display: inline-block;
+  margin-top: var(--space-xs);
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover { color: var(--color-harbor-teal); }
+  &:focus-visible { outline: 3px solid var(--color-preludens-gold); outline-offset: 2px; }
+}
+
+/* Onder het dilemma: wat een trainer of beheerder daarna ziet. */
+.lv-question__group {
+  margin-top: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.panel .lv-question__group h3 {
+  margin: 0 0 var(--space-xs);
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--color-ink);
+}
+
+.panel .lv-question__group p {
+  margin: 0 0 var(--space-xs);
+  color: var(--color-ink);
+}
+
+.panel .lv-question__group p.lv-question__advice {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.panel .lv-question__group p.lv-question__meta,
+.panel p.lv-question__again {
+  font-size: 0.8125rem;
+  color: var(--color-ink-soft);
+}
+
+.panel p.lv-question__again {
+  margin: var(--space-sm) 0 0;
+}
+
+@media (max-width: 760px) {
+  .lv-question.has-group .lv-question__options button {
+    padding-right: var(--space-md);
+  }
+
+  .lv-question.show-group .lv-question__count {
+    position: static;
+    transform: none;
+    margin-top: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lv-reply { animation: none; }
+  .lv-question.show-group .lv-question__bar { transition: none; }
+}

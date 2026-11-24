@@ -90,19 +90,7 @@
 <p class="sp-lead">{{ alinea }}</p>
 {%- endfor %}
 {%- if rol.vraag %}
-<div class="lv-question" data-lv-question data-question-id="{{ rol.vraag.id }}">
-  <p class="lv-question__q" id="q-{{ rol.vraag.id }}">{{ rol.vraag.vraag }}</p>
-  <div class="lv-question__options" role="group" aria-labelledby="q-{{ rol.vraag.id }}">
-    {%- for a in rol.vraag.antwoorden %}
-    <button type="button" data-answer="{{ a.waarde }}">{{ a.label }}</button>
-    {%- endfor %}
-  </div>
-  <div class="lv-question__reply" aria-live="polite">
-    {%- for a in rol.vraag.antwoorden %}
-    <p data-reply-for="{{ a.waarde }}" hidden>{{ a.reactie }}</p>
-    {%- endfor %}
-  </div>
-</div>
+{% include varianten/vraag.html q=rol.vraag type="vraag" %}
 {%- endif %}
 {% endcapture %}
 {% capture rol_panel %}
@@ -130,24 +118,7 @@
   {% assign probeer_video = site.media_base | append: d.probeer.video.file %}
   {% include panels/video.html src=probeer_video poster=d.probeer.video.poster title=d.probeer.video.title label=d.probeer.video.label caption=d.probeer.video.caption %}
   {%- elsif d.probeer.type == "dilemma" %}
-  {%- assign dl = d.probeer.dilemma %}
-  <div class="lv-question lv-dilemma" data-lv-question data-question-id="{{ dl.id }}">
-    {%- if dl.beeld %}
-    <img class="lv-dilemma__beeld" src="{{ dl.beeld.src | relative_url }}" alt="{{ dl.beeld.alt }}" loading="lazy" decoding="async">
-    {%- endif %}
-    <p class="lv-dilemma__situatie">{{ dl.situatie }}</p>
-    <p class="lv-question__q" id="q-{{ dl.id }}">{{ dl.vraag }}</p>
-    <div class="lv-question__options" role="group" aria-labelledby="q-{{ dl.id }}">
-      {%- for a in dl.antwoorden %}
-      <button type="button" data-answer="{{ a.waarde }}">{{ a.label }}</button>
-      {%- endfor %}
-    </div>
-    <div class="lv-question__reply" aria-live="polite">
-      {%- for a in dl.antwoorden %}
-      <p data-reply-for="{{ a.waarde }}" hidden>{{ a.reactie }}</p>
-      {%- endfor %}
-    </div>
-  </div>
+  {% include varianten/vraag.html q=d.probeer.dilemma type="dilemma" %}
   {%- elsif d.probeer.type == "beelden" %}
   <ol class="lv-gallery">
     {%- for b in d.probeer.beelden %}
@@ -232,7 +203,7 @@
 {%- comment -%} 8. Bezwaren {%- endcomment -%}
 {% capture vragen %}
 {%- for v in d.vragen.items %}
-{% include panels/faq-item.html question=v.vraag answer=v.antwoord %}
+{% include panels/faq-item.html question=v.vraag answer=v.antwoord id=v.id %}
 {%- endfor %}
 {% endcapture %}
 {% capture bezwaren %}

@@ -30,10 +30,29 @@ rollen:
     vraag:
       id: ai-beleid
       vraag: "Hebben jullie al een AI-beleid?"
+      veld: "AI-beleid"
       antwoorden:
-        - { waarde: ja, label: "Ja, het staat op papier", reactie: "Dan is de vraag of mensen weten wat het betekent als ze een AI-tool openen." }
-        - { waarde: bezig, label: "We zijn ermee bezig", reactie: "Dan kan een module meegroeien: losse modules zijn apart bij te werken als het beleid verandert." }
-        - { waarde: nee, label: "Nog niet", reactie: "Dan is het beleid de eerste stap. Wij maken het speelbaar als het er is; het beleid zelf schrijven we niet." }
+        - waarde: ja
+          label: "Ja, het staat op papier"
+          sub: "Op intranet of in het personeelshandboek"
+          kop: "Het staat er. Weten mensen wat het betekent?"
+          reactie: "Dat merk je pas als iemand een AI-tool opent. Hieronder kies je zelf in zo'n situatie."
+          stap: { label: "Probeer één situatie", href: "#probeer" }
+          formulier: "Vertel sinds wanneer het beleid er is en voor wie het geldt."
+        - waarde: bezig
+          label: "We zijn ermee bezig"
+          sub: "Er ligt een concept"
+          kop: "Een module kan meegroeien"
+          reactie: "Losse modules werk je apart bij als het beleid verandert. De teksten pas je zelf aan in Prepo."
+          stap: { label: "Lees hoe een module in jullie LMS komt", href: "#faq-lms" }
+          formulier: "Vertel wanneer jullie het beleid verwachten."
+        - waarde: nee
+          label: "Nog niet"
+          sub: "Er zijn nog geen afspraken"
+          kop: "Het beleid is de eerste stap"
+          reactie: "Wij maken het speelbaar als het er is; het beleid zelf schrijven we niet. Een module over een ander onderwerp kan nu al."
+          stap: { label: "Lees waar we mee beginnen", href: "#faq-begin" }
+          formulier: "Vertel welk onderwerp bij jullie nu het meest ontbreekt."
   - pad: security
     sectie: voor-security
     label: "Ik ben verantwoordelijk voor security"
@@ -48,10 +67,29 @@ rollen:
     vraag:
       id: awareness-nu
       vraag: "Wat doen jullie nu aan awareness?"
+      veld: "Awareness nu"
       antwoorden:
-        - { waarde: abonnement, label: "Een abonnement op een platform", reactie: "Dan houd je dat abonnement. De modules gaan over de situaties die alleen bij jullie voorkomen." }
-        - { waarde: jaarlijks, label: "Een jaarlijkse training", reactie: "Dan zit het gat tussen twee trainingen. Korte modules wijs je los toe, ook bij de onboarding." }
-        - { waarde: niets, label: "Niets vasts", reactie: "Dan is één module over jullie meest voorkomende situatie een goed begin." }
+        - waarde: abonnement
+          label: "Een abonnement op een platform"
+          sub: "Met phishingtests of een catalogus"
+          kop: "Dat abonnement houd je"
+          reactie: "De modules komen ernaast en gaan over de situaties die alleen bij jullie voorkomen."
+          stap: { label: "Lees hoe het naast een catalogus past", href: "#faq-catalogus" }
+          formulier: "Noem het platform en een situatie die er niet in staat."
+        - waarde: jaarlijks
+          label: "Een jaarlijkse training"
+          sub: "Eén keer per jaar, voor iedereen"
+          kop: "Het gat zit tussen twee trainingen"
+          reactie: "Korte modules wijs je los toe, ook bij de onboarding. Zo komt een onderwerp vaker dan één keer per jaar langs."
+          stap: { label: "Bekijk hoe een module ontstaat", href: "#hoe-het-werkt" }
+          formulier: "Vertel wanneer de training is en wat er tussendoor misgaat."
+        - waarde: niets
+          label: "Niets vasts"
+          sub: "Af en toe een mail of een bericht op intranet"
+          kop: "Begin met één situatie"
+          reactie: "Eén module over wat bij jullie het vaakst voorkomt. Daarna zie je hoe medewerkers erop reageren voordat je meer doet."
+          stap: { label: "Lees waar we mee beginnen", href: "#faq-begin" }
+          formulier: "Vertel welke situatie bij jullie het vaakst voorkomt."
 
 probeer:
   type: dilemma
@@ -59,13 +97,36 @@ probeer:
   lead: "Zo werkt een situatie in een module, hier over AI-gebruik. In een module voor jullie staat bij elke keuze wat jullie eigen beleid zegt."
   dilemma:
     id: dilemma-ai
+    veld: "Dilemma"
     situatie: "Een inwoner mailt een klacht, met naam, adres en details over een zorgaanvraag. Je wilt snel een nette, rustige reactie sturen. Een AI-chatbot schrijft die tekst in een minuut."
     vraag: "Wat doe je?"
     antwoorden:
-      - { waarde: openbare-chatbot, label: "Ik plak de mail in een openbare chatbot", reactie: "Dan staan de persoonsgegevens van de inwoner bij een externe dienst, en weet je niet wat ermee gebeurt. In een module staat hier jullie eigen regel, en zie je wat er daarna gebeurt." }
-      - { waarde: anonimiseren, label: "Ik haal eerst naam en adres weg", reactie: "Dat is een stap. Maar met de details over de zorgaanvraag is iemand vaak nog te herkennen. Wat jullie beleid hier zegt, is in een module het antwoord." }
-      - { waarde: interne-tool, label: "Ik gebruik de AI-tool die we intern mogen gebruiken", reactie: "Als die er is, is dit vaak precies wat het beleid bedoelt. Weet iedereen welke tool dat is, en wat er wel en niet in mag? Daar gaat een module over." }
-      - { waarde: zelf-schrijven, label: "Ik schrijf het zelf", reactie: "Veilig, en het kost tijd. Een goed beleid zegt ook wat wél mag, zodat mensen niet uit voorzichtigheid alles zelf blijven doen." }
+      - waarde: openbare-chatbot
+        label: "Ik plak de mail in een openbare chatbot"
+        kop: "De gegevens staan nu bij een externe dienst"
+        gevolg: "Na een minuut heb je een nette reactie. Naam, adres en zorgaanvraag van de inwoner staan nu bij een AI-dienst."
+        reactie: "Wat die dienst ermee doet, weet je niet. In een module staat hier jullie eigen regel."
+      - waarde: anonimiseren
+        label: "Ik haal eerst naam en adres weg"
+        kop: "Zonder naam nog te herkennen"
+        gevolg: "Je haalt naam en adres weg en plakt de rest in de chatbot. De details over de zorgaanvraag gaan mee."
+        reactie: "Met die details is iemand vaak nog te herkennen. Wat jullie beleid hier zegt, is in een module het antwoord."
+      - waarde: interne-tool
+        label: "Ik gebruik de AI-tool die we intern mogen gebruiken"
+        kop: "Vaak precies wat het beleid bedoelt"
+        gevolg: "Je opent de assistent die jullie mogen gebruiken en plakt de mail erin."
+        reactie: "Weet iedereen welke tool dat is, en wat er wel en niet in mag? Daar gaat een module over."
+      - waarde: zelf-schrijven
+        label: "Ik schrijf het zelf"
+        kop: "Veilig, en het kost tijd"
+        gevolg: "Twintig minuten later staat je antwoord er. De volgende klacht wacht al."
+        reactie: "Een goed beleid zegt ook wat wél mag, zodat mensen niet uit voorzichtigheid alles zelf blijven doen."
+    groep:
+      titel: "Wat jij daarna ziet"
+      tekst: "Zo kiest een voorbeeldgroep van elf medewerkers, en jij. In Prepo zie je dit per situatie voor jullie eigen medewerkers."
+      aantallen: { openbare-chatbot: 2, anonimiseren: 5, interne-tool: 3, zelf-schrijven: 1 }
+      advies: "De grootste groep haalt naam en adres weg en plakt de rest erin. Daar gaat je volgende uitleg over: ook zonder naam is iemand te herkennen."
+      meta: "Voorbeeldgegevens: elf medewerkers en jij."
   claim: "Wij ontwerpen jullie onboarding niet en schrijven jullie beleid niet. Jullie weten wat erin moet; wij maken het speelbaar."
 
 stappen:
@@ -89,11 +150,11 @@ bewijs:
 vragen:
   label: "Vragen over losse modules"
   items:
-    - { vraag: "We hebben al een leerplatform met een catalogus.", antwoord: "Dat blijft. Dit komt ernaast, voor de situaties die alleen bij jullie voorkomen en die geen catalogus heeft." }
-    - { vraag: "Kunnen we dit niet zelf maken met AI?", antwoord: "Een quiz of een tekst wel. Wat wij erbij doen: het verhaal en de keuzes ontwerpen, het testen met jullie medewerkers, en het beheer in Prepo, zodat de module bij blijft als het beleid verandert." }
-    - { vraag: "Is dit verplicht onder de AI Act?", antwoord: "Daar doen we geen uitspraak over. Wat we wel weten: mensen gebruiken AI, en het beleid helpt alleen als ze weten wat erin staat." }
-    - { vraag: "Draait het in ons LMS?", antwoord: "Ja. Je krijgt een SCORM-bestand voor je eigen leerplatform; de afronding per medewerker komt daar binnen. Zonder LMS gaat het via een link in Prepo, onze beheeromgeving, waar je deelname en voortgang ziet." }
-    - { vraag: "Waar begin je mee?", antwoord: "Met één onderwerp dat nu ontbreekt, in één module. Dan zie je hoe medewerkers erop reageren voordat je meer doet." }
+    - { id: catalogus, vraag: "We hebben al een leerplatform met een catalogus.", antwoord: "Dat blijft. Dit komt ernaast, voor de situaties die alleen bij jullie voorkomen en die geen catalogus heeft." }
+    - { id: zelf-maken, vraag: "Kunnen we dit niet zelf maken met AI?", antwoord: "Een quiz of een tekst wel. Wat wij erbij doen: het verhaal en de keuzes ontwerpen, het testen met jullie medewerkers, en het beheer in Prepo, zodat de module bij blijft als het beleid verandert." }
+    - { id: ai-act, vraag: "Is dit verplicht onder de AI Act?", antwoord: "Daar doen we geen uitspraak over. Wat we wel weten: mensen gebruiken AI, en het beleid helpt alleen als ze weten wat erin staat." }
+    - { id: lms, vraag: "Draait het in ons LMS?", antwoord: "Ja. Je krijgt een SCORM-bestand voor je eigen leerplatform; de afronding per medewerker komt daar binnen. Zonder LMS gaat het via een link in Prepo, onze beheeromgeving, waar je deelname en voortgang ziet." }
+    - { id: begin, vraag: "Waar begin je mee?", antwoord: "Met één onderwerp dat nu ontbreekt, in één module. Dan zie je hoe medewerkers erop reageren voordat je meer doet." }
 
 afspraak:
   titel: "Begin met één module"

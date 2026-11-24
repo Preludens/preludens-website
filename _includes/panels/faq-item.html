@@ -1,8 +1,9 @@
 {%- comment -%}
   Eén vraag in het blok veelgestelde vragen (panels/faq.html).
-  Pass: question, answer, open.
+  Pass: question, answer, open, id (optioneel: wordt id="faq-<id>", het doel
+  van een vervolgstap uit een vraag op een landingspagina).
 {%- endcomment -%}
-<details class="sp-faq__item"{% if include.open %} open{% endif %}>
+<details class="sp-faq__item"{% if include.id and include.id != "" %} id="faq-{{ include.id }}"{% endif %}{% if include.open %} open{% endif %}>
   <summary class="sp-faq__question">
     {{ include.question }}
     <span class="sp-faq__sign" aria-hidden="true"></span>

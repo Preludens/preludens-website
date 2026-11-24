@@ -18,6 +18,24 @@ Alle vijf staan op `noindex, nofollow` en buiten `sitemap.xml` (gecontroleerd in
 
 ---
 
+## Ronde 7: de vragen en het dilemma als wegwijzer (24 november 2026)
+
+Plan van Fable 5.2: `_marketing/plan-interacties-landingspagina.md`. Gebouwd op alle zes de pagina's.
+
+- **Vraag per rol.** Keuzerijen met een tweede regel in plaats van kleine knopjes. Een antwoord geeft een kop, uitleg en één vervolgstap naar het blok of de FAQ-vraag die erbij hoort. Een FAQ-vraag klapt dan open en krijgt de focus.
+- **Dilemma** (de twee AI-pagina's en onboarding). Per keuze een kop, *wat er gebeurt* en uitleg. Daarnaast een groepsbeeld op voorbeeldgegevens ("6 van 12"), met de regel "Voorbeeldgegevens" eronder, zoals bij de CO-melder.
+- **Formulier.** Rol en antwoorden staan als regel boven het berichtveld ("Niet meesturen" kan) en gaan onder het bericht mee naar HubSpot. De hint onder het berichtveld wisselt per antwoord.
+- **Sjabloon.** `_includes/varianten/vraag.html` voor vraag en dilemma; FAQ-vragen hebben een `id` (`#faq-<id>`).
+- **Meting.** `question_answer` krijgt `question_type` en `answer_order`. Nieuw is `question_step`. `faq_open` krijgt `faq_source`, en `form_submit` krijgt `path_choice` en `answers`.
+
+**Nog te doen:**
+
+- GTM: datalaagvariabelen `question_type`, `answer_order`, `step_target`, `faq_source`, `answers` en een tag voor `question_step`. Nog niet ingesteld.
+- De losse HubSpot-velden voor rol en antwoorden. Tot dan staan ze alleen in het bericht.
+- Daan laten nalopen: de `sub`-regels en de dilemmagevolgen zijn door Fable ingevuld.
+
+---
+
 ## Ronde 6: twee pagina's voor de demo AI Wijzer (24 november 2026)
 
 Op basis van Daans twee doelgroepen (Teams, CRM › Marketing):

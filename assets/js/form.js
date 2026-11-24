@@ -161,6 +161,22 @@
       send();
     });
 
+    /* Wat de bezoeker op een landingspagina koos, als regel onder het
+       bericht (assets/js/landing-varianten.js zet preludensKeuzes). Wie op
+       "Niet meesturen" klikte, zet data-keuzes-off op het formulier. */
+    function keuzes() {
+      var k = window.preludensKeuzes;
+      if (!k || form.hasAttribute("data-keuzes-off")) return null;
+      return typeof k.regel === "function" ? k : null;
+    }
+
+    function withKeuzes(message) {
+      var k = keuzes();
+      var regel = k ? k.regel() : "";
+      if (!regel) return message;
+      return (message ? message + "\n\n" : "") + "Gekozen op de pagina: " + regel;
+    }
+
     function send() {
       sending = true;
       clearError();
@@ -184,7 +200,7 @@
         { name: "email", value: value("email") },
         { name: "phone", value: value("phone") },
         { name: "company", value: value("company") },
-        { name: "message", value: value("message") }
+        { name: "message", value: withKeuzes(value("message")) }
       ].filter(function (item) {
         return item.value !== "";
       });
@@ -230,7 +246,15 @@
          formulier dat er niet meer is. */
       done.setAttribute("tabindex", "-1");
       done.focus();
-      if (real) track("form_submit", { casus: casus });
+      if (real) {
+        var k = keuzes();
+        var params = { casus: casus };
+        if (k) {
+          params.path_choice = k.pad ? k.pad.waarde : "";
+          params.answers = k.aantal();
+        }
+        track("form_submit", params);
+      }
     }
   });
 })();

@@ -34,10 +34,29 @@ rollen:
     vraag:
       id: aanbod-nu
       vraag: "Wat bieden jullie scholen nu aan?"
+      veld: "Aanbod nu"
       antwoorden:
-        - { waarde: rondleiding, label: "Een rondleiding of excursie", reactie: "Dan komt dit ernaast: het spel bereidt het bezoek voor of werkt het na. De rondleiding blijft." }
-        - { waarde: lespakket, label: "Een lespakket of gastles", reactie: "Dan kan een speelbaar verhaal het deel worden waarin ze het werk zelf doen, naast het verhaal van de gastdocent." }
-        - { waarde: niets, label: "Nog niets vasts", reactie: "Dan is één functie een goed begin: één rol, één verhaal, en zien hoe leerlingen erop reageren." }
+        - waarde: rondleiding
+          label: "Een rondleiding of excursie"
+          sub: "Scholen komen naar de haven"
+          kop: "De rondleiding blijft"
+          reactie: "Het spel bereidt het bezoek voor of werkt het na. Wie niet kan komen, speelt het vanuit de klas."
+          stap: { label: "Lees hoe het naast een rondleiding past", href: "#faq-rondleiding" }
+          formulier: "Vertel hoeveel groepen jullie per jaar ontvangen en van welke scholen."
+        - waarde: lespakket
+          label: "Een lespakket of gastles"
+          sub: "Jullie komen naar de school"
+          kop: "Het deel waarin ze het werk zelf doen"
+          reactie: "Een speelbaar verhaal komt naast het verhaal van de gastdocent. Die vertelt over het werk; in het spel doen leerlingen het zelf."
+          stap: { label: "Bekijk hoe zo'n verhaal ontstaat", href: "#hoe-het-werkt" }
+          formulier: "Vertel welk lespakket of welke gastles er nu is, en voor welke klassen."
+        - waarde: niets
+          label: "Nog niets vasts"
+          sub: "Het verschilt per school en per jaar"
+          kop: "Begin met één functie"
+          reactie: "Eén rol en één verhaal. Daarna zie je hoe leerlingen erop reageren voordat je meer doet."
+          stap: { label: "Lees waar we mee beginnen", href: "#faq-begin" }
+          formulier: "Vertel welk werk in jullie haven het moeilijkst uit te leggen is."
   - pad: docent
     sectie: voor-docent
     label: "Ik geef les aan de groep"
@@ -52,10 +71,29 @@ rollen:
     vraag:
       id: bezoek-moment
       vraag: "Wanneer zou je het inzetten?"
+      veld: "Moment"
       antwoorden:
-        - { waarde: vooraf, label: "Vóór het bezoek", reactie: "Dan weten ze waar ze naar kijken. Ze herkennen de kraan die ze zelf hebben aangestuurd." }
-        - { waarde: achteraf, label: "Na het bezoek", reactie: "Dan krijgt wat ze zagen een plek in hun eigen keuzes." }
-        - { waarde: geen-bezoek, label: "Er is geen bezoek", reactie: "Dan brengt het spel de terminal naar de klas, ook als de haven een uur rijden is." }
+        - waarde: vooraf
+          label: "Vóór het bezoek"
+          sub: "Als voorbereiding in de les"
+          kop: "Ze weten waar ze naar kijken"
+          reactie: "Op de kade herkennen ze de kraan die ze zelf hebben aangestuurd. Hoe lang het verhaal duurt, stemmen we af op je les."
+          stap: { label: "Lees of het in een lesuur past", href: "#faq-lesuur" }
+          formulier: "Vertel welke klas of opleiding, en of er een bezoek gepland staat."
+        - waarde: achteraf
+          label: "Na het bezoek"
+          sub: "Als verwerking in de les"
+          kop: "Wat ze zagen, doen ze nu zelf"
+          reactie: "Wat ze vanaf de bus zagen, krijgt een plek in hun eigen keuzes. Het draait in de browser, op een laptop, tablet of telefoon."
+          stap: { label: "Lees of het op een schooltablet werkt", href: "#faq-lesuur" }
+          formulier: "Vertel welke klas of opleiding, en wanneer het bezoek is."
+        - waarde: geen-bezoek
+          label: "Er is geen bezoek"
+          sub: "De haven is te ver, of het past niet in het rooster"
+          kop: "De terminal komt naar de klas"
+          reactie: "Het spel werkt ook zonder bezoek, ook als de haven een uur rijden is. De video hieronder laat een minuut uit zo'n verhaal zien."
+          stap: { label: "Bekijk een minuut uit het spel", href: "#probeer" }
+          formulier: "Vertel welke klas of opleiding, en waarom een bezoek er niet in zit."
 
 probeer:
   type: video
@@ -91,11 +129,11 @@ bewijs:
 vragen:
   label: "Vragen over een speelbaar verhaal"
   items:
-    - { vraag: "We hebben al een rondleiding of een bezoekerscentrum.", antwoord: "Dat blijft. Dit komt ernaast: het spel bereidt het bezoek voor of werkt het na, en werkt ook voor wie niet kan komen." }
-    - { vraag: "Wie onderhoudt het over drie jaar?", antwoord: "Het spel staat in Prepo, onze beheeromgeving. Daar pas je zelf teksten aan als het werk verandert, en zie je hoe vaak het gespeeld wordt. Yard Crane Scheduler wordt al zo'n veertien jaar gespeeld." }
-    - { vraag: "Past het in een lesuur, en werkt het op een schooltablet?", antwoord: "Het draait in de browser, op een laptop, tablet of telefoon, via een link zonder installatie. Hoe lang een verhaal duurt, stemmen we af op jullie les." }
-    - { vraag: "Wie bepaalt wat er in het spel klopt?", antwoord: "Jullie. Wij zijn geen logistiek adviesbureau: jullie kennen het werk, wij maken het speelbaar en testen het met jullie mensen." }
-    - { vraag: "Waar begin je mee?", antwoord: "Met één functie en één verhaal. Dan zie je hoe leerlingen erop reageren voordat je meer doet." }
+    - { id: rondleiding, vraag: "We hebben al een rondleiding of een bezoekerscentrum.", antwoord: "Dat blijft. Dit komt ernaast: het spel bereidt het bezoek voor of werkt het na, en werkt ook voor wie niet kan komen." }
+    - { id: onderhoud, vraag: "Wie onderhoudt het over drie jaar?", antwoord: "Het spel staat in Prepo, onze beheeromgeving. Daar pas je zelf teksten aan als het werk verandert, en zie je hoe vaak het gespeeld wordt. Yard Crane Scheduler wordt al zo'n veertien jaar gespeeld." }
+    - { id: lesuur, vraag: "Past het in een lesuur, en werkt het op een schooltablet?", antwoord: "Het draait in de browser, op een laptop, tablet of telefoon, via een link zonder installatie. Hoe lang een verhaal duurt, stemmen we af op jullie les." }
+    - { id: klopt, vraag: "Wie bepaalt wat er in het spel klopt?", antwoord: "Jullie. Wij zijn geen logistiek adviesbureau: jullie kennen het werk, wij maken het speelbaar en testen het met jullie mensen." }
+    - { id: begin, vraag: "Waar begin je mee?", antwoord: "Met één functie en één verhaal. Dan zie je hoe leerlingen erop reageren voordat je meer doet." }
 
 afspraak:
   titel: "Kies het werk dat je wilt laten zien"

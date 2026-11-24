@@ -43,11 +43,36 @@ rollen:
     vraag:
       id: trainer-moment
       vraag: "Waar in je programma zou je het inzetten?"
+      veld: "Moment"
       antwoorden:
-        - { waarde: vooraf, label: "Als voorbereiding", reactie: "Dan komen deelnemers binnen met dezelfde situaties in hun hoofd. Speelt de groep via een eigen link in Prepo, dan zie jij vooraf per situatie hoe ze kozen." }
-        - { waarde: tijdens, label: "Tijdens de sessie", reactie: "Dan speelt iedereen op zijn eigen telefoon of laptop. Waar de groep verschillend kiest, heb je je gesprek." }
-        - { waarde: erna, label: "Als vervolgopdracht", reactie: "Dan oefenen deelnemers nog een keer als ze weer aan het werk zijn. Onderzoek naar serious games vond meer effect als een spel over meerdere sessies loopt en andere instructie aanvult (Wouters e.a., 2013)." }
-        - { waarde: weet-niet, label: "Dat weet ik nog niet", reactie: "Speel dan eerst de demo. In een gesprek van een half uur kiezen we het moment." }
+        - waarde: vooraf
+          label: "Als voorbereiding"
+          sub: "Deelnemers spelen vóór de sessie"
+          kop: "Je weet vóór de sessie waar de groep staat"
+          reactie: "Speelt de groep via een eigen link in Prepo, dan zie je per situatie hoe ze kozen. Je begint je uitleg waar het misging."
+          stap: { label: "Lees wat je van de groep ziet", href: "#faq-groep-zien" }
+          formulier: "Noem de datum van je sessie en de grootte van je groep."
+        - waarde: tijdens
+          label: "Tijdens de sessie"
+          sub: "Als werkvorm in de zaal"
+          kop: "Iedereen speelt op zijn eigen scherm"
+          reactie: "Telefoon of laptop, niets installeren. Waar de groep verschillend kiest, heb je je gesprek."
+          stap: { label: "Lees wat deelnemers nodig hebben", href: "#faq-laptop" }
+          formulier: "Vertel hoe lang je sessie duurt en hoeveel tijd je voor een oefening hebt."
+        - waarde: erna
+          label: "Als vervolgopdracht"
+          sub: "Terug op het werk"
+          kop: "Ze oefenen nog een keer als het ertoe doet"
+          reactie: "Onderzoek naar serious games vond meer effect als een spel over meerdere sessies loopt en andere instructie aanvult (Wouters e.a., 2013)."
+          stap: { label: "Lees hoe vóór, tijdens en na werkt", href: "#faq-moment" }
+          formulier: "Vertel wat deelnemers na je sessie anders moeten doen."
+        - waarde: weet-niet
+          label: "Dat weet ik nog niet"
+          sub: "Ik wil het eerst zien"
+          kop: "Speel eerst de demo"
+          reactie: "Dan weet je wat een deelnemer doet en ziet. Het moment kiezen we daarna, in een gesprek van een half uur."
+          stap: { label: "Ga naar de demo", href: "#probeer" }
+          formulier: "Vertel welke workshop je geeft en voor wie."
   - pad: opdrachtgever
     sectie: voor-opdrachtgever
     label: "Ik organiseer de training"
@@ -62,10 +87,29 @@ rollen:
     vraag:
       id: opdrachtgever-afspraken
       vraag: "Hebben jullie al afspraken over AI-gebruik?"
+      veld: "AI-afspraken"
       antwoorden:
-        - { waarde: ja, label: "Ja, die liggen vast", reactie: "Dan kan een versie op maat ze laten toepassen: bij elke keuze staat wat jullie afspraken zeggen." }
-        - { waarde: bezig, label: "Daar werken we aan", reactie: "Dan is een workshop een goed moment om te horen waar medewerkers tegenaan lopen. De demo laat zien hoe het oefenen er daarna uitziet." }
-        - { waarde: nee, label: "Nog niet", reactie: "Dan werkt AI Wijzer zoals hij is: algemene afspraken bij het fictieve Northfield. Een versie op maat kan later." }
+        - waarde: ja
+          label: "Ja, die liggen vast"
+          sub: "Medewerkers kunnen ze nalezen"
+          kop: "Een versie op maat laat ze toepassen"
+          reactie: "Bij elke keuze staat wat jullie afspraken zeggen. Jullie leveren ze aan; het beleid schrijven wij niet."
+          stap: { label: "Lees hoe een versie op maat werkt", href: "#faq-op-maat" }
+          formulier: "Vertel voor welke groep de training is en wanneer."
+        - waarde: bezig
+          label: "Daar werken we aan"
+          sub: "Er ligt een concept"
+          kop: "In de workshop hoor je waar mensen tegenaan lopen"
+          reactie: "AI Wijzer zoals hij is, kan daar nu al naast. Een versie op maat volgt als de afspraken vastliggen."
+          stap: { label: "Lees welke twee vormen er zijn", href: "#faq-afnemen" }
+          formulier: "Vertel wanneer jullie de afspraken verwachten."
+        - waarde: nee
+          label: "Nog niet"
+          sub: "Iedereen doet wat hem verstandig lijkt"
+          kop: "AI Wijzer werkt ook zoals hij is"
+          reactie: "Algemene afspraken bij het fictieve Northfield: wat deel je, wanneer controleer je het antwoord, wanneer vraag je na. Een versie op maat kan later."
+          stap: { label: "Ga naar de demo", href: "#probeer" }
+          formulier: "Vertel om hoeveel medewerkers het gaat."
 
 probeer:
   type: dilemma
@@ -73,13 +117,36 @@ probeer:
   lead: "Kies zelf, en lees wat je er in een zaal mee doet. Daaronder speel je de hele demo: een stripverhaal over Joris, met AI Wijzer erin."
   dilemma:
     id: dilemma-ai-offerte
+    veld: "Dilemma"
     situatie: "Een leverancier heeft een offerte gestuurd: twaalf pagina's met prijzen en voorwaarden. Over een uur wil je leidinggevende een samenvatting. Een AI-chatbot maakt die in een minuut."
     vraag: "Wat doe je?"
     antwoorden:
-      - { waarde: hele-offerte, label: "Ik upload de hele offerte", reactie: "Dan staan de prijzen en voorwaarden van de leverancier bij een AI-dienst. Of dat mag, hangt af van de tool en van de afspraken in de organisatie. In de zaal is dit een goede eerste vraag: wie heeft dit weleens gedaan?" }
-      - { waarde: training-uit, label: "Ik zet eerst modeltraining uit en upload hem dan", reactie: "Modeltraining uitzetten is niet hetzelfde als niet bewaren. Over dat verschil gaat missie&nbsp;2 van de demo. Kiest een deel van je groep dit, dan weet je waar je uitleg begint." }
-      - { waarde: zonder-prijzen, label: "Ik laat de prijzen weg en upload de rest", reactie: "Je deelt minder. De vraag aan de groep: wat staat er dan nog in dat vertrouwelijk is? Voorwaarden, namen en contactgegevens zijn dat vaak ook." }
-      - { waarde: navragen, label: "Ik vraag eerst na welke tool hiervoor mag", reactie: "Dat kost tijd, en het uur loopt. Bij de ene organisatie staat het antwoord in de afspraken, bij de andere weet niemand het. Welke van de twee het is, hoor je in de zaal." }
+      - waarde: hele-offerte
+        label: "Ik upload de hele offerte"
+        kop: "Snel klaar, en de offerte ligt bij een ander"
+        gevolg: "Na een minuut heb je je samenvatting. De prijzen en voorwaarden van je leverancier staan nu bij een AI-dienst."
+        reactie: "Of dat mag, hangt af van de tool en van de afspraken in de organisatie. In de zaal is dit een goede eerste vraag: wie heeft dit weleens gedaan?"
+      - waarde: training-uit
+        label: "Ik zet eerst modeltraining uit en upload hem dan"
+        kop: "Niet trainen is iets anders dan niet bewaren"
+        gevolg: "Je zet de schakelaar om en uploadt de offerte. Of de dienst het bestand bewaart, heb je niet bekeken."
+        reactie: "Over dat verschil gaat missie&nbsp;2 van de demo. Kiest een deel van je groep dit, dan weet je waar je uitleg begint."
+      - waarde: zonder-prijzen
+        label: "Ik laat de prijzen weg en upload de rest"
+        kop: "Minder gedeeld. Wat staat er nog in?"
+        gevolg: "Je haalt de prijstabel eruit en uploadt de rest."
+        reactie: "Voorwaarden, namen en contactgegevens zijn vaak ook vertrouwelijk. Dat is de vraag voor je groep."
+      - waarde: navragen
+        label: "Ik vraag eerst na welke tool hiervoor mag"
+        kop: "Het uur loopt"
+        gevolg: "Je stuurt een bericht aan IT. Twintig minuten later is er nog geen antwoord."
+        reactie: "Bij de ene organisatie staat het antwoord in de afspraken, bij de andere weet niemand het. Welke van de twee het is, hoor je in de zaal."
+    groep:
+      titel: "Wat jij van je groep ziet"
+      tekst: "Zo kiest een voorbeeldgroep van elf deelnemers, en jij. Speelt je groep via Prepo of het LMS, dan zie je dit per situatie."
+      aantallen: { hele-offerte: 3, training-uit: 5, zonder-prijzen: 2, navragen: 1 }
+      advies: "De grootste groep zet modeltraining uit en uploadt dan toch. Daar begint je uitleg."
+      meta: "Voorbeeldgegevens: elf deelnemers en jij."
   claim: "Dit dilemma is een voorbeeld en komt niet uit de demo. Kiest je groep verschillend, dan begint daar het gesprek. In Prepo of in het LMS zie je per situatie hoe de groep koos."
   demo:
     url: "https://learn.prepo.nl/demo-s/1knzJ0tBf7xENKTzVZQg7pCaKXx8qh3j/index.html"
@@ -117,17 +184,17 @@ bewijs:
 vragen:
   label: "Vragen van trainers over AI Wijzer"
   items:
-    - { vraag: "Kan ik de demo in mijn eigen workshop gebruiken?", antwoord: "De demo op deze pagina is om zelf te proberen. Voor een groep krijg je een eigen link in Prepo; dan zie je ook hoe de groep koos." }
-    - { vraag: "Ik gebruik al Mentimeter of Kahoot.", antwoord: "Die vragen deelnemers wat ze vinden of weten. In AI Wijzer doen ze het werk: een mail beoordelen, een prompt inkorten, kiezen of hij weg mag. Ze krijgen feedback op die keuze, en jij ziet waar het misging. Een poll ernaast blijft prima voor het gesprek." }
-    - { vraag: "Past het vóór, tijdens of na de sessie?", antwoord: "Alle drie kan. Vooraf zie je waar de groep staat. Tijdens de sessie is het een opstap naar het gesprek. Erna is het een vervolgopdracht voor als deelnemers weer aan het werk zijn." }
-    - { vraag: "Wat neem ik dan precies af?", antwoord: "Er zijn twee vormen. AI Wijzer zoals hij is, met een eigen link in Prepo voor jouw groep, zodat je ziet hoe de groep koos. Of een versie op maat van je opdrachtgever, met diens afspraken en situaties. Welke past, hangt af van je opdracht; dat bespreken we in het eerste gesprek." }
-    - { vraag: "Wat kost het?", antwoord: "AI Wijzer met een eigen groepslink kost &lt;bedrag&gt; per &lt;deelnemer, groep of sessie&gt;, inclusief het groepsoverzicht in Prepo. Een versie op maat van je opdrachtgever begint bij &lt;bedrag&gt;, afhankelijk van het aantal situaties. &lt;Eventueel: trainers krijgen &lt;percentage&gt; korting als ze het in hun eigen aanbod opnemen.&gt;" }
-    - { vraag: "Hoe snel kan ik het gebruiken?", antwoord: "Een groepslink voor AI Wijzer staat binnen &lt;aantal&gt; werkdagen klaar. Een versie op maat duurt &lt;aantal&gt; weken, met &lt;aantal&gt; testrondes. Staat je workshop al gepland, noem dan de datum, dan kijken we wat haalbaar is." }
-    - { vraag: "Wie betaalt: ik of mijn opdrachtgever?", antwoord: "Dat verschilt per opdracht. Soms neemt een trainer het op in zijn eigen programma, soms neemt de opdrachtgever het af voor zijn medewerkers. Dat bespreken we in het eerste gesprek." }
-    - { vraag: "Kan het op maat van mijn opdrachtgever?", antwoord: "Ja. In de demo werk je bij het fictieve Northfield. In een versie op maat staan de afspraken, de toegestane tools en de situaties van die organisatie. De organisatie levert de afspraken aan; het beleid schrijven wij niet." }
-    - { vraag: "Zie ik wat de groep koos?", antwoord: "Ja, als je groep via Prepo of het LMS van je opdrachtgever speelt: per persoon wie het deed, en per situatie hoe de groep koos. Via de openbare demolink op deze pagina zie je dat niet." }
-    - { vraag: "Hebben deelnemers een laptop nodig?", antwoord: "Nee. Het draait in de browser, op laptop of telefoon. Deelnemers installeren niets; ze hebben alleen de link nodig." }
-    - { vraag: "Waar begin je mee?", antwoord: "Met de demo. Daarna met één sessie die al gepland staat: één groep, één moment in je programma. Dan zie je hoe deelnemers reageren voordat je het vaker gebruikt." }
+    - { id: eigen-workshop, vraag: "Kan ik de demo in mijn eigen workshop gebruiken?", antwoord: "De demo op deze pagina is om zelf te proberen. Voor een groep krijg je een eigen link in Prepo; dan zie je ook hoe de groep koos." }
+    - { id: mentimeter, vraag: "Ik gebruik al Mentimeter of Kahoot.", antwoord: "Die vragen deelnemers wat ze vinden of weten. In AI Wijzer doen ze het werk: een mail beoordelen, een prompt inkorten, kiezen of hij weg mag. Ze krijgen feedback op die keuze, en jij ziet waar het misging. Een poll ernaast blijft prima voor het gesprek." }
+    - { id: moment, vraag: "Past het vóór, tijdens of na de sessie?", antwoord: "Alle drie kan. Vooraf zie je waar de groep staat. Tijdens de sessie is het een opstap naar het gesprek. Erna is het een vervolgopdracht voor als deelnemers weer aan het werk zijn." }
+    - { id: afnemen, vraag: "Wat neem ik dan precies af?", antwoord: "Er zijn twee vormen. AI Wijzer zoals hij is, met een eigen link in Prepo voor jouw groep, zodat je ziet hoe de groep koos. Of een versie op maat van je opdrachtgever, met diens afspraken en situaties. Welke past, hangt af van je opdracht; dat bespreken we in het eerste gesprek." }
+    - { id: kosten, vraag: "Wat kost het?", antwoord: "AI Wijzer met een eigen groepslink kost &lt;bedrag&gt; per &lt;deelnemer, groep of sessie&gt;, inclusief het groepsoverzicht in Prepo. Een versie op maat van je opdrachtgever begint bij &lt;bedrag&gt;, afhankelijk van het aantal situaties. &lt;Eventueel: trainers krijgen &lt;percentage&gt; korting als ze het in hun eigen aanbod opnemen.&gt;" }
+    - { id: snelheid, vraag: "Hoe snel kan ik het gebruiken?", antwoord: "Een groepslink voor AI Wijzer staat binnen &lt;aantal&gt; werkdagen klaar. Een versie op maat duurt &lt;aantal&gt; weken, met &lt;aantal&gt; testrondes. Staat je workshop al gepland, noem dan de datum, dan kijken we wat haalbaar is." }
+    - { id: wie-betaalt, vraag: "Wie betaalt: ik of mijn opdrachtgever?", antwoord: "Dat verschilt per opdracht. Soms neemt een trainer het op in zijn eigen programma, soms neemt de opdrachtgever het af voor zijn medewerkers. Dat bespreken we in het eerste gesprek." }
+    - { id: op-maat, vraag: "Kan het op maat van mijn opdrachtgever?", antwoord: "Ja. In de demo werk je bij het fictieve Northfield. In een versie op maat staan de afspraken, de toegestane tools en de situaties van die organisatie. De organisatie levert de afspraken aan; het beleid schrijven wij niet." }
+    - { id: groep-zien, vraag: "Zie ik wat de groep koos?", antwoord: "Ja, als je groep via Prepo of het LMS van je opdrachtgever speelt: per persoon wie het deed, en per situatie hoe de groep koos. Via de openbare demolink op deze pagina zie je dat niet." }
+    - { id: laptop, vraag: "Hebben deelnemers een laptop nodig?", antwoord: "Nee. Het draait in de browser, op laptop of telefoon. Deelnemers installeren niets; ze hebben alleen de link nodig." }
+    - { id: begin, vraag: "Waar begin je mee?", antwoord: "Met de demo. Daarna met één sessie die al gepland staat: één groep, één moment in je programma. Dan zie je hoe deelnemers reageren voordat je het vaker gebruikt." }
 
 afspraak:
   titel: "Bespreek je workshop of praktijkdag"

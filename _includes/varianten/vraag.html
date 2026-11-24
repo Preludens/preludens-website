@@ -1,0 +1,64 @@
+{%- comment -%}
+  Eén vraag of dilemma op een landingspagina (pagina-d.html), met
+  keuzerijen, een reactie per antwoord en zo nodig een vervolgstap.
+  Zie _marketing/plan-interacties-landingspagina.md.
+
+  Pass: q (het vraag- of dilemma-object uit _data/casussen/<casus>.yml),
+        type ("vraag" of "dilemma").
+
+  Alle nieuwe sleutels zijn optioneel; een vraag met alleen label en
+  reactie rendert zoals vroeger, in de nieuwe opmaak.
+  - q.veld                 naam van dit antwoord in het formulier
+  - antwoord.sub           tweede regel op de knop
+  - antwoord.kop           kop van de reactie
+  - antwoord.gevolg        (dilemma) wat er na de keuze gebeurt
+  - antwoord.stap          {label, href}: één link naar een anker op de pagina
+  - antwoord.formulier     hint onder het berichtveld na dit antwoord
+  - q.groep                (dilemma) groepsbeeld op voorbeeldgegevens:
+                           {titel, tekst, aantallen {waarde: n}, advies, meta}
+
+  Gedrag: assets/js/landing-varianten.js ([data-lv-question]).
+{%- endcomment -%}
+{%- assign q = include.q -%}
+{%- assign qtype = include.type | default: "vraag" -%}
+{%- assign groep = q.groep -%}
+<div class="lv-question{% if qtype == 'dilemma' %} lv-dilemma{% endif %}{% if groep %} has-group{% endif %}" data-lv-question data-question-id="{{ q.id }}" data-question-type="{{ qtype }}" data-field="{{ q.veld | default: q.id }}">
+  {%- if q.beeld %}
+  <img class="lv-dilemma__beeld" src="{{ q.beeld.src | relative_url }}" alt="{{ q.beeld.alt }}" loading="lazy" decoding="async">
+  {%- endif %}
+  {%- if q.situatie %}
+  <p class="lv-dilemma__situatie">{{ q.situatie }}</p>
+  {%- endif %}
+  <p class="lv-question__q" id="q-{{ q.id }}">{{ q.vraag }}</p>
+  <div class="lv-question__options" role="group" aria-labelledby="q-{{ q.id }}">
+    {%- for a in q.antwoorden %}
+    {%- assign basis = 0 %}{% if groep and groep.aantallen[a.waarde] %}{% assign basis = groep.aantallen[a.waarde] %}{% endif %}
+    <button type="button" data-answer="{{ a.waarde }}"{% if a.formulier %} data-form-hint="{{ a.formulier | escape }}"{% endif %}{% if groep %} data-group-base="{{ basis }}"{% endif %}>
+      <span class="lv-question__label">{{ a.label }}</span>
+      {%- if a.sub %}<span class="lv-question__sub">{{ a.sub }}</span>{% endif %}
+      {%- if groep %}<span class="lv-question__count" data-group-count></span><span class="lv-question__bar" aria-hidden="true"></span>{% endif %}
+    </button>
+    {%- endfor %}
+  </div>
+  <div class="lv-question__reply" aria-live="polite">
+    {%- for a in q.antwoorden %}
+    <div class="lv-reply" data-reply-for="{{ a.waarde }}" hidden>
+      {%- if a.kop %}<p class="lv-reply__kop">{{ a.kop }}</p>{% endif %}
+      {%- if a.gevolg %}<p class="lv-reply__gevolg"><span class="lv-reply__label">Wat er gebeurt</span> {{ a.gevolg }}</p>{% endif %}
+      <p class="lv-reply__tekst">{{ a.reactie }}</p>
+      {%- if a.stap and a.stap.href %}<a class="lv-reply__stap" href="{{ a.stap.href }}" data-step>{{ a.stap.label }}</a>{% endif %}
+    </div>
+    {%- endfor %}
+  </div>
+  {%- if groep %}
+  <div class="lv-question__group" data-group hidden>
+    <h3>{{ groep.titel | default: "Wat jij daarna ziet" }}</h3>
+    {%- if groep.tekst %}<p>{{ groep.tekst }}</p>{% endif %}
+    {%- if groep.advies %}<p class="lv-question__advice">{{ groep.advies }}</p>{% endif %}
+    {%- if groep.meta %}<p class="lv-question__meta">{{ groep.meta }}</p>{% endif %}
+  </div>
+  {%- endif %}
+  {%- if qtype == "dilemma" %}
+  <p class="lv-question__again" data-again hidden>Kies gerust een andere: elke keuze heeft een eigen gevolg.</p>
+  {%- endif %}
+</div>

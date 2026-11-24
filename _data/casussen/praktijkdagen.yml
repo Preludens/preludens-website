@@ -27,11 +27,36 @@ rollen:
     vraag:
       id: herhaal-tijd
       vraag: "Hoeveel van je ochtend gaat er op aan herhalen?"
+      veld: "Herhalen"
       antwoorden:
-        - { waarde: kwartier, label: "Een kwartier", reactie: "Dat is weinig. Dan is de vraag eerder of je weet wie wat mist. De melder hieronder laat zien hoe je dat vooraf ziet." }
-        - { waarde: uur, label: "Ongeveer een uur", reactie: "Dat uur gaat van de oefentijd af. Met een voorbereiding die blijft hangen, besteed je het aan wie het nodig heeft." }
-        - { waarde: halve-ochtend, label: "Een halve ochtend", reactie: "Dan begint het oefenen pas tegen elven. Als je weet waar de groep staat, begin je daar, en niet bij hoofdstuk één." }
-        - { waarde: meer, label: "Meer dan dat", reactie: "Dan is de praktijkdag een theoriedag met een stuk praktijk. Daar is het meeste te winnen." }
+        - waarde: kwartier
+          label: "Een kwartier"
+          sub: "Een korte opfrisser en door"
+          kop: "De vraag is eerder wie wat mist"
+          reactie: "Een kwartier is weinig. De winst zit in weten wie wat mist voordat de dag begint. In de melder hieronder zie je hoe dat eruitziet."
+          stap: { label: "Hang de melder op en zie wat je vooraf weet", href: "#probeer" }
+          formulier: "Vertel welke training je geeft en wat je vooraf over de groep zou willen weten."
+        - waarde: uur
+          label: "Ongeveer een uur"
+          sub: "Het eerste blok van de dag"
+          kop: "Dat uur gaat van de oefentijd af"
+          reactie: "Met een voorbereiding die blijft hangen, besteed je het aan wie het nodig heeft. Je ziet vooraf per situatie hoe de groep koos."
+          stap: { label: "Lees waar je ziet hoe de groep het deed", href: "#faq-groepsoverzicht" }
+          formulier: "Vertel welke uitleg je elke keer opnieuw geeft."
+        - waarde: halve-ochtend
+          label: "Een halve ochtend"
+          sub: "Tot de koffie, of langer"
+          kop: "Het oefenen schuift naar later op de dag"
+          reactie: "Weet je waar de groep staat, dan begin je daar, en niet bij hoofdstuk één. Je kijkt de dag ervoor en ziet waar het misging."
+          stap: { label: "Lees wat je de dag ervoor ziet", href: "#faq-groepsoverzicht" }
+          formulier: "Vertel welke onderdelen je 's ochtends herhaalt en hoe groot je groepen zijn."
+        - waarde: meer
+          label: "Meer dan dat"
+          sub: "De hal komt pas na de lunch"
+          kop: "Een theoriedag met een stuk praktijk"
+          reactie: "Hier is het meeste te winnen. In een half uur zoeken we uit welke uitleg naar de voorbereiding kan."
+          stap: { label: "Bespreek welk deel van de dag je terug wilt", href: "#afspraak" }
+          formulier: "Vertel hoe de dag nu is ingedeeld en wat je in de hal tekortkomt."
   - pad: koper
     sectie: voor-koper
     label: "Ik beslis over de training"
@@ -46,10 +71,29 @@ rollen:
     vraag:
       id: eigenaar-elearning
       vraag: "Van wie is de e-learning die jullie nu vooraf gebruiken?"
+      veld: "E-learning vooraf"
       antwoorden:
-        - { waarde: zelf, label: "Die maken we zelf", reactie: "Dan kan hij misschien korter: wat deelnemers al spelend oefenen, hoef je niet ook nog uit te leggen. Dat is een keuze, geen voorwaarde." }
-        - { waarde: leverancier, label: "Die komt van een leverancier", reactie: "Dan blijft die zoals hij is. De situaties komen ernaast, voor de momenten waar jullie dag op vastloopt." }
-        - { waarde: normsteller, label: "Die is verplicht vanuit een normsteller", reactie: "Dan blijft de verplichte e-learning staan, met toets en al. Dit komt ernaast, en gaat over wat er op de dag nog van over is." }
+        - waarde: zelf
+          label: "Die maken we zelf"
+          sub: "Eigen inhoud, in jullie eigen LMS"
+          kop: "Korter kan, het hoeft niet"
+          reactie: "Wat deelnemers al spelend oefenen, hoef je niet ook nog uit te leggen. Of de e-learning daardoor korter wordt, is een keuze en geen voorwaarde."
+          stap: { label: "Lees hoeveel tijd het de deelnemer kost", href: "#faq-werk-erbij" }
+          formulier: "Noem de training en het LMS waar de e-learning in staat."
+        - waarde: leverancier
+          label: "Die komt van een leverancier"
+          sub: "Ingekocht of in licentie"
+          kop: "Die blijft zoals hij is"
+          reactie: "De situaties komen ernaast, voor de momenten waar jullie dag op vastloopt. Ze draaien in dezelfde leeromgeving."
+          stap: { label: "Lees hoe het in jullie leeromgeving komt", href: "#faq-leeromgeving" }
+          formulier: "Noem de training, de leverancier en jullie LMS."
+        - waarde: normsteller
+          label: "Die is verplicht vanuit een normsteller"
+          sub: "Met een toets die deelnemers moeten halen"
+          kop: "De verplichte e-learning blijft, met toets en al"
+          reactie: "Dit komt ernaast en gaat over wat er op de dag nog van over is. Het kost de deelnemer een paar minuten per situatie."
+          stap: { label: "Lees hoe het naast een verplichte e-learning past", href: "#faq-werk-erbij" }
+          formulier: "Noem de normsteller en de training waar het om gaat."
 
 probeer:
   type: co-melder
@@ -77,13 +121,13 @@ bewijs:
 vragen:
   label: "Vragen over de voorbereiding"
   items:
-    - { vraag: "Vervangt dit de praktijkdag?", antwoord: "Nee. We vervangen de praktijkdag niet. Wat in de hal geoefend moet worden, blijft in de hal. De voorbereiding zorgt dat er meer tijd voor overblijft." }
-    - { vraag: "Waar ziet de instructeur hoe de groep het deed?", antwoord: "In Prepo, onze eigen beheeromgeving: daar staan deelname, voortgang en scores per situatie. Draait het in jullie eigen LMS, dan komen de resultaten per deelnemer daar binnen. De instructeur kijkt de dag ervoor en weet waar hij begint." }
-    - { vraag: "Draait het in onze leeromgeving?", antwoord: "Ja. Je krijgt een SCORM-bestand dat je in je eigen LMS zet, naast de e-learning die er al staat. Zonder LMS gaat het via een gewone link in Prepo; deelnemers hebben dan alleen die link nodig." }
-    - { vraag: "Komt er dan werk bij voor de deelnemer?", antwoord: "Een paar minuten per situatie, vooraf, op de telefoon of de laptop. Schrijft een normsteller of exameninstelling de e-learning voor, dan blijft die staan. Dit komt ernaast en gaat over de momenten waar de dag op vastloopt." }
-    - { vraag: "Onze deelnemers zijn geen gamers.", antwoord: "Dat hoeven ze ook niet te zijn. Een situatie duurt een paar minuten en lijkt op hun werk: een klant, een installatie, een keuze. Ze spelen het op de telefoon of de laptop." }
-    - { vraag: "Wordt de praktijkdag dan nog korter?", antwoord: "Dat beslissen jullie. Wij sturen op meer oefentijd op dezelfde dag. Een meta-analyse van 114 studies naar voorbereiding vooraf vond een groter effect als de contacttijd niet werd ingekort. Bij één opdrachtgever, een vijfdaagse training op locatie, konden wel twee dagen vervallen toen deelnemers vooraf oefenden. Dat is één traject en geen belofte." }
-    - { vraag: "Waar begin je mee?", antwoord: "Met één moment uit één training: de uitleg die elke keer terugkomt. Dan weet je of het werkt voordat je meer doet." }
+    - { id: vervangt, vraag: "Vervangt dit de praktijkdag?", antwoord: "Nee. We vervangen de praktijkdag niet. Wat in de hal geoefend moet worden, blijft in de hal. De voorbereiding zorgt dat er meer tijd voor overblijft." }
+    - { id: groepsoverzicht, vraag: "Waar ziet de instructeur hoe de groep het deed?", antwoord: "In Prepo, onze eigen beheeromgeving: daar staan deelname, voortgang en scores per situatie. Draait het in jullie eigen LMS, dan komen de resultaten per deelnemer daar binnen. De instructeur kijkt de dag ervoor en weet waar hij begint." }
+    - { id: leeromgeving, vraag: "Draait het in onze leeromgeving?", antwoord: "Ja. Je krijgt een SCORM-bestand dat je in je eigen LMS zet, naast de e-learning die er al staat. Zonder LMS gaat het via een gewone link in Prepo; deelnemers hebben dan alleen die link nodig." }
+    - { id: werk-erbij, vraag: "Komt er dan werk bij voor de deelnemer?", antwoord: "Een paar minuten per situatie, vooraf, op de telefoon of de laptop. Schrijft een normsteller of exameninstelling de e-learning voor, dan blijft die staan. Dit komt ernaast en gaat over de momenten waar de dag op vastloopt." }
+    - { id: gamers, vraag: "Onze deelnemers zijn geen gamers.", antwoord: "Dat hoeven ze ook niet te zijn. Een situatie duurt een paar minuten en lijkt op hun werk: een klant, een installatie, een keuze. Ze spelen het op de telefoon of de laptop." }
+    - { id: korter, vraag: "Wordt de praktijkdag dan nog korter?", antwoord: "Dat beslissen jullie. Wij sturen op meer oefentijd op dezelfde dag. Een meta-analyse van 114 studies naar voorbereiding vooraf vond een groter effect als de contacttijd niet werd ingekort. Bij één opdrachtgever, een vijfdaagse training op locatie, konden wel twee dagen vervallen toen deelnemers vooraf oefenden. Dat is één traject en geen belofte." }
+    - { id: begin, vraag: "Waar begin je mee?", antwoord: "Met één moment uit één training: de uitleg die elke keer terugkomt. Dan weet je of het werkt voordat je meer doet." }
 
 afspraak:
   titel: "Versterk jouw praktijkdag"

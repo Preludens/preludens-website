@@ -16,9 +16,12 @@
    | demo_start       | casus, demo_type "co-melder", demo_position             |
    | demo_complete    | casus, demo_type, demo_position, demo_result,           |
    |                  | demo_value (cm onder het plafond), demo_attempt         |
-   | question_answer  | casus, question_id, answer                              |
+   | question_answer  | casus, question_id, answer, question_type ("vraag" of   |
+   |                  | "dilemma"), answer_order (1 = eerste klik op die vraag) |
+   | question_step    | casus, question_id, answer, step_target (het anker)     |
    | path_select      | casus, path_choice, path_source ("klik" of "url")       |
-   | faq_open         | casus, faq_question, faq_position                       |
+   | faq_open         | casus, faq_question, faq_position, faq_source           |
+   |                  | ("klik" of "antwoord": geopend via een vervolgstap)     |
    | booking_click    | casus, booking_service, cta_position                    |
    | booking_complete | casus, booking_service (alleen bij Calendly in de pagina)|
 
@@ -242,25 +245,161 @@
     set(cm);
   });
 
-  /* ---------- vragen met directe feedback ----------
+  /* ---------- keuzes: rol en antwoorden, mee naar het formulier ----------
 
-     Elke vraag heeft een data-question-id; elke knop een data-answer. Het
-     antwoord krijgt meteen een reactie ([data-reply-for]) en gaat als
-     question_answer de dataLayer in. Een tweede klik telt ook: dan zie je
-     dat iemand van gedachten veranderde. */
+     Eén object op window.preludensKeuzes, ook in sessionStorage (per pagina),
+     zodat een herladen pagina het nog weet. Per vraag telt het laatste
+     antwoord. assets/js/form.js zet regel() onder het bericht, tenzij de
+     bezoeker op "Niet meesturen" klikte. */
+  var KEUZES_KEY = "preludens-keuzes:" + window.location.pathname;
+  var keuzes = { pad: null, antwoorden: {}, volgorde: [] };
+  try {
+    var stored = JSON.parse(window.sessionStorage.getItem(KEUZES_KEY) || "null");
+    if (stored && stored.antwoorden) keuzes = stored;
+  } catch (e) { /* geen opslag: dan alleen in het geheugen */ }
+
+  function regel() {
+    var parts = [];
+    if (keuzes.pad) parts.push("Rol: " + keuzes.pad.tekst);
+    keuzes.volgorde.forEach(function (id) {
+      var a = keuzes.antwoorden[id];
+      if (a) parts.push(a.veld + ": " + a.tekst);
+    });
+    return parts.join(" · ");
+  }
+
+  window.preludensKeuzes = {
+    regel: regel,
+    aantal: function () { return keuzes.volgorde.length; },
+    get pad() { return keuzes.pad; }
+  };
+
+  var defaultHints = new Map();
+  function renderKeuzes(hint) {
+    try { window.sessionStorage.setItem(KEUZES_KEY, JSON.stringify(keuzes)); } catch (e) { /* zie boven */ }
+    var tekst = regel();
+    document.querySelectorAll("[data-lead-form]").forEach(function (form) {
+      var box = form.querySelector("[data-form-keuzes]");
+      if (box) {
+        box.querySelector("[data-form-keuzes-text]").textContent = tekst;
+        box.hidden = !tekst || form.hasAttribute("data-keuzes-off");
+      }
+      var hintEl = form.querySelector("[data-form-hint]");
+      if (hintEl && hint) {
+        if (!defaultHints.has(hintEl)) defaultHints.set(hintEl, hintEl.textContent);
+        hintEl.textContent = hint;
+      }
+    });
+  }
+
+  document.querySelectorAll("[data-form-keuzes-off]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var form = button.closest("[data-lead-form]");
+      form.setAttribute("data-keuzes-off", "");
+      button.closest("[data-form-keuzes]").hidden = true;
+    });
+  });
+
+  /* Keuzes van eerder in dit tabblad: meteen in het formulier. */
+  if (regel()) renderKeuzes();
+
+  /* ---------- vragen en dilemma's: een keuze brengt je ergens ----------
+
+     _includes/varianten/vraag.html. Een klik toont de reactie bij dat
+     antwoord (kop, gevolg, uitleg) en zo nodig één vervolgstap naar een
+     anker op de pagina. Bij een dilemma met groepsbeeld telt de keuze mee in
+     een voorbeeldgroep. Er scrolt niets vanzelf, behalve een kleine correctie
+     als de reactie onder de rand van het scherm valt.
+
+     Events: question_answer (+ question_type, answer_order) en question_step
+     (question_id, answer, step_target). */
+  function openTarget(target) {
+    if (target.tagName === "DETAILS") {
+      target.setAttribute("data-faq-source", "antwoord");
+      target.open = true;
+      target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+      var summary = target.querySelector("summary");
+      if (summary) summary.focus({ preventScroll: true });
+      return;
+    }
+    scrollToEl(target);
+    var heading = target.querySelector("h2, h3");
+    if (heading) {
+      if (!heading.hasAttribute("tabindex")) heading.setAttribute("tabindex", "-1");
+      heading.focus({ preventScroll: true });
+    }
+  }
+
   document.querySelectorAll("[data-lv-question]").forEach(function (root) {
     var id = root.getAttribute("data-question-id") || "vraag";
-    root.querySelectorAll("[data-answer]").forEach(function (button) {
+    var type = root.getAttribute("data-question-type") || "vraag";
+    var field = root.getAttribute("data-field") || id;
+    var buttons = root.querySelectorAll("[data-answer]");
+    var group = root.querySelector("[data-group]");
+    var again = root.querySelector("[data-again]");
+    var clicks = 0;
+    root.classList.add("is-ready");
+
+    /* Een stap zonder bestaand doel doet niets: dan laten we hem weg. */
+    root.querySelectorAll("[data-step]").forEach(function (step) {
+      var target = document.getElementById(step.getAttribute("href").slice(1));
+      if (!target) { step.remove(); return; }
+      step.addEventListener("click", function (event) {
+        event.preventDefault();
+        var reply = step.closest("[data-reply-for]");
+        track("question_step", {
+          question_id: id,
+          answer: reply ? reply.getAttribute("data-reply-for") : "",
+          step_target: target.id
+        });
+        openTarget(target);
+      });
+    });
+
+    function drawGroup(chosen) {
+      if (!group) return;
+      var total = 1;
+      buttons.forEach(function (b) { total += parseInt(b.getAttribute("data-group-base") || "0", 10); });
+      buttons.forEach(function (b) {
+        var n = parseInt(b.getAttribute("data-group-base") || "0", 10) + (b === chosen ? 1 : 0);
+        var count = b.querySelector("[data-group-count]");
+        if (count) count.innerHTML = n + " van " + total + '<span class="sr-only"> kozen dit</span>';
+        b.style.setProperty("--share", (n / total).toFixed(3));
+      });
+      root.classList.add("show-group");
+      group.hidden = false;
+    }
+
+    buttons.forEach(function (button) {
       button.addEventListener("click", function () {
         var answer = button.getAttribute("data-answer");
-        root.querySelectorAll("[data-answer]").forEach(function (other) {
+        clicks += 1;
+        buttons.forEach(function (other) {
           other.setAttribute("aria-pressed", other === button ? "true" : "false");
         });
+        var shown = null;
         root.querySelectorAll("[data-reply-for]").forEach(function (reply) {
-          reply.hidden = reply.getAttribute("data-reply-for") !== answer;
+          var match = reply.getAttribute("data-reply-for") === answer;
+          reply.hidden = !match;
+          if (match) shown = reply;
         });
         root.classList.add("is-answered");
-        track("question_answer", { question_id: id, answer: answer });
+        drawGroup(button);
+        if (again) again.hidden = false;
+
+        var label = button.querySelector(".lv-question__label");
+        if (!keuzes.antwoorden[id]) keuzes.volgorde.push(id);
+        keuzes.antwoorden[id] = { veld: field, waarde: answer, tekst: (label ? label.textContent : button.textContent).trim() };
+        renderKeuzes(button.getAttribute("data-form-hint"));
+
+        track("question_answer", { question_id: id, answer: answer, question_type: type, answer_order: clicks });
+
+        if (shown) {
+          var rect = shown.getBoundingClientRect();
+          if (rect.bottom > window.innerHeight) {
+            shown.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
+          }
+        }
       });
     });
   });
@@ -290,6 +429,9 @@
         note.hidden = note.getAttribute("data-for-you") !== path;
       });
       document.body.setAttribute("data-path", path);
+      var strong = option.querySelector("strong");
+      keuzes.pad = { waarde: path, tekst: (strong ? strong.textContent : path).trim() };
+      renderKeuzes();
       track("path_select", { path_choice: path, path_source: source });
 
       if (source === "klik" && target) {
@@ -345,6 +487,9 @@
         if (visible && !first) first = block;
       });
       document.body.setAttribute("data-path", path);
+      var strong = option.querySelector("strong");
+      keuzes.pad = { waarde: path, tekst: (strong ? strong.textContent : path).trim() };
+      renderKeuzes();
       track("path_select", { path_choice: path, path_source: source });
 
       if (scroll && first) {
@@ -417,7 +562,9 @@
       var summary = item.querySelector("summary");
       var question = summary ? summary.textContent.trim().slice(0, 100) : "";
       var section = item.closest("[id]");
-      track("faq_open", { faq_question: question, faq_position: section ? section.id : "" });
+      var source = item.getAttribute("data-faq-source") || "klik";
+      item.removeAttribute("data-faq-source");
+      track("faq_open", { faq_question: question, faq_position: section ? section.id : "", faq_source: source });
     });
   });
 })();

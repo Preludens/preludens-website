@@ -33,10 +33,29 @@ rollen:
     vraag:
       id: afrondingssysteem
       vraag: "In welk systeem moet de afronding bij jullie terechtkomen?"
+      veld: "Afronding in"
       antwoorden:
-        - { waarde: lms, label: "Ons eigen LMS", reactie: "Dan leveren we een SCORM-bestand. De afronding per persoon staat dan in jullie LMS, naast de rest." }
-        - { waarde: register, label: "Een register of toegangssysteem", reactie: "Dat zoeken we graag met je uit. Hoe de koppeling eruitziet, hangt af van het systeem." }
-        - { waarde: weet-niet, label: "Dat weten we nog niet", reactie: "Dan is dat een goede eerste vraag voor een kennismaking. Het bepaalt hoe de afronding bij jullie terechtkomt." }
+        - waarde: lms
+          label: "Ons eigen LMS"
+          sub: "Waar de andere instructies ook staan"
+          kop: "De afronding staat naast de rest"
+          reactie: "Je krijgt een SCORM-bestand voor jullie LMS. De afronding per persoon komt daar binnen."
+          stap: { label: "Lees hoe het in jullie LMS en op een telefoon draait", href: "#faq-lms-telefoon" }
+          formulier: "Noem jullie LMS en om hoeveel mensen het gaat."
+        - waarde: register
+          label: "Een register of toegangssysteem"
+          sub: "Zoals het systeem bij de poort"
+          kop: "Dat hangt af van het systeem"
+          reactie: "Wat vaststaat: de afronding per persoon staat in jullie LMS of in Prepo. Of en hoe die doorgaat naar een register of toegangssysteem, zoeken we per systeem met je uit. Dat beloven we niet vooraf."
+          stap: { label: "Bespreek jullie systeem in een half uur", href: "#afspraak" }
+          formulier: "Noem het register of toegangssysteem waar de afronding in moet."
+        - waarde: weet-niet
+          label: "Dat weten we nog niet"
+          sub: "Of het verschilt per terrein"
+          kop: "Er zijn twee plekken waar het nu al kan"
+          reactie: "Jullie eigen LMS, of Prepo, onze beheeromgeving, via een link. Welke van de twee past, bepaalt hoe de afronding bij jullie terechtkomt."
+          stap: { label: "Lees wat er met en zonder LMS kan", href: "#faq-lms-telefoon" }
+          formulier: "Vertel wie de afronding nu bijhoudt, en waarin."
   - pad: aannemer
     sectie: voor-aannemer
     label: "Wij werken op het terrein van een ander"
@@ -51,10 +70,29 @@ rollen:
     vraag:
       id: talen
       vraag: "Hoeveel talen spreken jullie mensen op het terrein?"
+      veld: "Talen"
       antwoorden:
-        - { waarde: een, label: "Vooral Nederlands", reactie: "Dan begin je met één taal. Er komt een taal bij als het team verandert." }
-        - { waarde: twee-drie, label: "Twee of drie", reactie: "Dan helpt speelbaar maken precies: de situatie is in elke taal dezelfde, alleen de tekst verandert." }
-        - { waarde: meer, label: "Meer dan drie", reactie: "Dan zit het probleem vooral in de tekst. Een situatie die je ziet en speelt, leunt minder op lezen." }
+        - waarde: een
+          label: "Vooral Nederlands"
+          sub: "Een enkeling spreekt iets anders"
+          kop: "Begin met één taal"
+          reactie: "Er komt een taal bij als het team verandert. De situatie blijft dezelfde."
+          stap: { label: "Lees waar we mee beginnen", href: "#faq-begin" }
+          formulier: "Noem de talen op jullie terrein."
+        - waarde: twee-drie
+          label: "Twee of drie"
+          sub: "Bijvoorbeeld Nederlands, Engels en Pools"
+          kop: "Dezelfde situatie, een andere tekst"
+          reactie: "De situatie is in elke taal dezelfde, alleen de tekst verandert. Welke talen het worden, spreken we per project af."
+          stap: { label: "Lees hoe het met de talen gaat", href: "#faq-talen" }
+          formulier: "Noem de talen op jullie terrein."
+        - waarde: meer
+          label: "Meer dan drie"
+          sub: "De ploeg wisselt per project"
+          kop: "Het probleem zit vooral in de tekst"
+          reactie: "Een situatie die je ziet en speelt, leunt minder op lezen. De vertaalde veiligheidstekst controleren en geven jullie zelf vrij."
+          stap: { label: "Lees wie de vertalingen vrijgeeft", href: "#faq-talen" }
+          formulier: "Noem de talen op jullie terrein, en welke het vaakst voorkomen."
 
 probeer:
   type: co-melder
@@ -85,13 +123,13 @@ bewijs:
 vragen:
   label: "Vragen over speelbare veiligheidsregels"
   items:
-    - { vraag: "We hebben al een poortinstructie.", antwoord: "Die blijft. Dit komt ernaast, voor de regels waar het op het terrein misgaat. De poortinstructie vertelt de regel; in een situatie moet je hem toepassen." }
-    - { vraag: "Krijgen we een certificaat?", antwoord: "Nee. Preludens is geen certificerende instantie. Wat je krijgt, is de afronding per persoon in jullie eigen systeem. Wat jullie opdrachtgevers als bewijs vragen, blijft van hen." }
-    - { vraag: "Er bestaat al een e-learning voor de Life Saving Rules.", antwoord: "Klopt, voor de standaardset is er materiaal. Het verschil zit in jullie eigen regels, situaties van jullie terrein en de talen van jullie mensen." }
-    - { vraag: "Wat als onze regels veranderen?", antwoord: "Dan pas je de teksten zelf aan in Prepo, onze beheeromgeving, en zet je een nieuw SCORM-bestand in jullie LMS. Je hoeft daarvoor niet terug naar ons." }
-    - { vraag: "Draait het in ons LMS, en op een telefoon?", antwoord: "Ja. Je krijgt een SCORM-bestand voor je eigen LMS. Zonder LMS gaat het via een link in Prepo, zonder installatie, op een telefoon of laptop." }
-    - { vraag: "In welke talen?", antwoord: "In de talen van jullie mensen; welke dat zijn, spreken we per project af. De vertaalde veiligheidstekst controleren en geven jullie zelf vrij." }
-    - { vraag: "Waar begin je mee?", antwoord: "Met één regel in één taal. Dan zie je hoe jullie mensen erop reageren voordat je meer doet." }
+    - { id: poortinstructie, vraag: "We hebben al een poortinstructie.", antwoord: "Die blijft. Dit komt ernaast, voor de regels waar het op het terrein misgaat. De poortinstructie vertelt de regel; in een situatie moet je hem toepassen." }
+    - { id: certificaat, vraag: "Krijgen we een certificaat?", antwoord: "Nee. Preludens is geen certificerende instantie. Wat je krijgt, is de afronding per persoon in jullie eigen systeem. Wat jullie opdrachtgevers als bewijs vragen, blijft van hen." }
+    - { id: bestaande-elearning, vraag: "Er bestaat al een e-learning voor de Life Saving Rules.", antwoord: "Klopt, voor de standaardset is er materiaal. Het verschil zit in jullie eigen regels, situaties van jullie terrein en de talen van jullie mensen." }
+    - { id: regels-veranderen, vraag: "Wat als onze regels veranderen?", antwoord: "Dan pas je de teksten zelf aan in Prepo, onze beheeromgeving, en zet je een nieuw SCORM-bestand in jullie LMS. Je hoeft daarvoor niet terug naar ons." }
+    - { id: lms-telefoon, vraag: "Draait het in ons LMS, en op een telefoon?", antwoord: "Ja. Je krijgt een SCORM-bestand voor je eigen LMS. Zonder LMS gaat het via een link in Prepo, zonder installatie, op een telefoon of laptop." }
+    - { id: talen, vraag: "In welke talen?", antwoord: "In de talen van jullie mensen; welke dat zijn, spreken we per project af. De vertaalde veiligheidstekst controleren en geven jullie zelf vrij." }
+    - { id: begin, vraag: "Waar begin je mee?", antwoord: "Met één regel in één taal. Dan zie je hoe jullie mensen erop reageren voordat je meer doet." }
 
 afspraak:
   titel: "Kies samen jullie eerste regel"

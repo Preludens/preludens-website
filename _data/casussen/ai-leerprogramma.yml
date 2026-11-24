@@ -42,10 +42,36 @@ rollen:
     vraag:
       id: ai-aanleiding
       vraag: "Wat is bij jullie de aanleiding?"
+      veld: "Aanleiding"
       antwoorden:
-        - { waarde: tools, label: "We rollen AI-tools uit", reactie: "Dan gaan mensen ze gebruiken, met of zonder oefening. Een module bij de uitrol laat ze oefenen met wat er in die tools wel en niet mag." }
-        - { waarde: richtlijnen, label: "Er zijn net AI-richtlijnen", reactie: "Dan is de vraag of mensen weten wat die betekenen als ze een AI-tool openen. In een versie voor jullie staat bij elke keuze wat jullie richtlijnen zeggen." }
-        - { waarde: training, label: "Een bestaande training moet praktischer", reactie: "Dan blijft die training staan. De MicroGame komt erbij als oefening, in hetzelfde leerplatform." }
+        - waarde: tools
+          label: "We rollen AI-tools uit"
+          sub: "Een assistent in de kantoorsoftware of een eigen chatbot"
+          kop: "Mensen gaan ze gebruiken, geoefend of niet"
+          reactie: "Een module bij de uitrol laat medewerkers oefenen met wat er in die tools wel en niet mag. Hij staat in hetzelfde leerplatform als de rest van de uitrol."
+          stap: { label: "Lees hoe het in jullie LMS komt", href: "#faq-lms" }
+          formulier: "Noem de tools die jullie uitrollen en wanneer de uitrol begint."
+        - waarde: richtlijnen
+          label: "Er zijn net AI-richtlijnen"
+          sub: "Ze staan op papier of op intranet"
+          kop: "Er staat wat mag. De vraag is wat mensen ermee doen"
+          reactie: "In een versie voor jullie staat bij elke keuze wat jullie richtlijnen zeggen. Jullie leveren ze aan; het beleid zelf schrijven wij niet."
+          stap: { label: "Lees hoe dat met jullie eigen beleid gaat", href: "#faq-eigen-beleid" }
+          formulier: "Vertel sinds wanneer de richtlijnen er zijn en voor wie ze gelden."
+        - waarde: training
+          label: "Een bestaande training moet praktischer"
+          sub: "Een e-learning, workshop of catalogus"
+          kop: "Die training blijft staan"
+          reactie: "De MicroGame komt erbij als oefening, in hetzelfde leerplatform. De training legt uit; in de module kiezen medewerkers zelf, in situaties uit hun werk."
+          stap: { label: "Lees wat het toevoegt aan een catalogus", href: "#faq-catalogus" }
+          formulier: "Vertel welke training er nu is en wat er praktischer aan moet."
+        - waarde: orienteren
+          label: "We oriënteren ons nog"
+          sub: "Er is nog geen concrete aanleiding"
+          kop: "Begin met de demo"
+          reactie: "Tien opdrachten bij het fictieve Northfield laten zien hoe oefenen eruitziet. Daarna kun je beter inschatten of het in jullie programma past."
+          stap: { label: "Ga naar de demo", href: "#probeer" }
+          formulier: "Vertel wat je zou willen weten voordat je verder kijkt."
   - pad: toetser
     sectie: voor-toetser
     label: "Ik toets de inhoud"
@@ -60,10 +86,29 @@ rollen:
     vraag:
       id: ai-tools
       vraag: "Welke AI-tools mogen medewerkers bij jullie gebruiken?"
+      veld: "AI-tools"
       antwoorden:
-        - { waarde: een-tool, label: "Eén aangewezen tool", reactie: "Dan gaat de module over wat er in die tool wel en niet mag, met situaties uit jullie werk." }
-        - { waarde: meerdere, label: "Meerdere, per taak verschillend", reactie: "Dan is de keuze voor de juiste tool zelf een situatie om te oefenen. Die kan erin." }
-        - { waarde: onbeslist, label: "Dat is nog niet besloten", reactie: "Dan is dat besluit de eerste stap, en dat ligt bij jullie. Daarna maken wij het speelbaar." }
+        - waarde: een-tool
+          label: "Eén aangewezen tool"
+          sub: "De rest is niet toegestaan"
+          kop: "De module gaat over die ene tool"
+          reactie: "Wat erin mag, wat niet, en wanneer iemand moet navragen: in situaties uit jullie werk. Jullie toetsen elke situatie voordat een medewerker hem ziet."
+          stap: { label: "Lees wie de inhoud goedkeurt", href: "#faq-goedkeuren" }
+          formulier: "Noem de tool, en de afspraak waar medewerkers het meest over twijfelen."
+        - waarde: meerdere
+          label: "Meerdere, per taak verschillend"
+          sub: "Welke tool hangt af van het werk"
+          kop: "De juiste tool kiezen is zelf een oefening"
+          reactie: "Welke tool voor welke taak, en wat er in welke mag: dat wordt een situatie in de module."
+          stap: { label: "Lees hoe dat met jullie eigen beleid gaat", href: "#faq-eigen-beleid" }
+          formulier: "Vertel welke tools er zijn en waar medewerkers ze door elkaar halen."
+        - waarde: onbeslist
+          label: "Dat is nog niet besloten"
+          sub: "Er wordt aan gewerkt"
+          kop: "Dat besluit is de eerste stap, en het ligt bij jullie"
+          reactie: "Het beleid schrijven wij niet. Is het er, dan maken wij het speelbaar. Tot die tijd laat de demo zien hoe dat eruitziet."
+          stap: { label: "Lees voor wie dit nu al past", href: "#faq-voor-wie" }
+          formulier: "Vertel wanneer jullie het besluit verwachten."
 
 probeer:
   type: dilemma
@@ -71,13 +116,36 @@ probeer:
   lead: "Zo ziet een keuze eruit zoals medewerkers die in een MicroGame krijgen. Daaronder speel je de hele demo: een stripverhaal over Joris, met AI Wijzer erin."
   dilemma:
     id: dilemma-ai-gesprek
+    veld: "Dilemma"
     situatie: "Je bent teamleider. Morgen heb je een lastig gesprek met een medewerker, en je wilt de AI-assistent om advies vragen. Een naam typ je niet. Wel dit: de enige planner op de vestiging Zwolle, sinds maart terug na ziekte."
     vraag: "Wat doe je?"
     antwoorden:
-      - { waarde: versturen, label: "Ik verstuur het, er staat geen naam in", reactie: "Een naam is niet nodig om iemand aan te wijzen. Functie, vestiging en omstandigheden wijzen hier samen precies één persoon aan, en er staat iets over zijn gezondheid bij. In de demo oefen je dit in missie&nbsp;2." }
-      - { waarde: algemeen, label: "Ik haal vestiging en ziekte eruit en vraag algemeen advies", reactie: "Voor gespreksadvies heeft de assistent die details meestal niet nodig. Je deelt minder en krijgt toch een bruikbaar antwoord. Of dit bij jullie de bedoeling is, hangt af van de tool en van jullie afspraken." }
-      - { waarde: interne-tool, label: "Ik gebruik de AI-tool die we intern mogen gebruiken", reactie: "Dat is vaak de eerste stap. De tweede vraag blijft: mag informatie over iemands gezondheid in die tool? In een versie voor jullie staat hier wat jullie afspraken daarover zeggen." }
-      - { waarde: navragen, label: "Ik vraag het eerst na bij HR of privacy", reactie: "Dat kost tijd, en soms is het precies wat de afspraken vragen. Een medewerker moet weten wanneer navragen nodig is, en bij wie. Ook dat kun je oefenen." }
+      - waarde: versturen
+        label: "Ik verstuur het, er staat geen naam in"
+        kop: "Geen naam, wel één persoon"
+        gevolg: "De assistent geeft je een bruikbaar gespreksplan. De beschrijving van je medewerker, met zijn ziekte erbij, staat nu bij een AI-dienst."
+        reactie: "Functie, vestiging en omstandigheden wijzen samen precies één persoon aan. In de demo oefen je dit in missie&nbsp;2."
+      - waarde: algemeen
+        label: "Ik haal vestiging en ziekte eruit en vraag algemeen advies"
+        kop: "Minder gedeeld, toch een antwoord"
+        gevolg: "Je vraagt hoe je een gesprek voert met iemand die terug is na een lange afwezigheid. Het advies is even bruikbaar."
+        reactie: "Voor gespreksadvies heeft de assistent die details meestal niet nodig. Of dit bij jullie de bedoeling is, hangt af van de tool en van jullie afspraken."
+      - waarde: interne-tool
+        label: "Ik gebruik de AI-tool die we intern mogen gebruiken"
+        kop: "De goede tool. Dan de tweede vraag"
+        gevolg: "Je opent de assistent die jullie mogen gebruiken en typt hetzelfde bericht."
+        reactie: "Mag informatie over iemands gezondheid in die tool? In een versie voor jullie staat hier wat jullie afspraken daarover zeggen."
+      - waarde: navragen
+        label: "Ik vraag het eerst na bij HR of privacy"
+        kop: "Het kost tijd, en soms is het de afspraak"
+        gevolg: "HR antwoordt aan het eind van de middag. Je gesprek is morgenochtend."
+        reactie: "Een medewerker moet weten wanneer navragen nodig is, en bij wie. Ook dat kun je oefenen."
+    groep:
+      titel: "Wat jij daarna ziet"
+      tekst: "Zo kiest een voorbeeldgroep van elf medewerkers, en jij. In Prepo zie je dit per situatie voor jullie eigen medewerkers."
+      aantallen: { versturen: 5, algemeen: 3, interne-tool: 2, navragen: 1 }
+      advies: "De grootste groep verstuurt het bericht. Daar gaat je volgende uitleg over: iemand is ook zonder naam herkenbaar."
+      meta: "Voorbeeldgegevens: elf medewerkers en jij."
   claim: "Dit dilemma is een voorbeeld en komt niet uit de demo. In een versie voor jullie staat bij elke keuze wat jullie afspraken zeggen."
   demo:
     url: "https://learn.prepo.nl/demo-s/1knzJ0tBf7xENKTzVZQg7pCaKXx8qh3j/index.html"
@@ -115,15 +183,15 @@ bewijs:
 vragen:
   label: "Vragen over AI Wijzer in een leerprogramma"
   items:
-    - { vraag: "We hebben al een catalogus of abonnement met AI-trainingen.", antwoord: "Dat blijft. Een catalogus legt uit wat AI is en wat in het algemeen verstandig is. Deze module gaat over jullie afspraken en over de situaties die bij jullie voorkomen. Onderzoek naar serious games wijst dezelfde kant op: ze leveren het meest op als ze andere instructie aanvullen (Wouters e.a., 2013)." }
-    - { vraag: "Past het in ons LMS?", antwoord: "Ja. Je krijgt een SCORM-bestand voor je eigen leerplatform; de afronding per medewerker komt daar binnen. Zonder LMS gaat het via een link in Prepo, onze beheeromgeving, waar je deelname en voortgang ziet." }
-    - { vraag: "Kan het met ons eigen AI-beleid?", antwoord: "Ja, daar is het voor. Jullie weten welke tools mogen en wat er wel en niet in mag; wij maken daar situaties van. Het beleid zelf schrijven we niet." }
-    - { vraag: "Wie keurt de inhoud goed?", antwoord: "Jullie. Wie bij jullie over AI, privacy of security gaat, toetst de situaties en de feedback aan de interne afspraken. Elke versie staat in Prepo klaar om te testen, dus meelezen kan voordat een medewerker de module ziet." }
-    - { vraag: "Regelt dit onze AI-geletterdheid of compliance?", antwoord: "Nee, dat beloven we niet. Wat het wel doet: zorgen dat mensen weten wat ze moeten doen als ze een AI-tool openen, en laten zien waar ze nog verkeerd kiezen." }
-    - { vraag: "Kunnen we dit niet zelf maken met AI?", antwoord: "Een quiz of een tekst wel. Wat wij erbij doen: de situaties en de keuzes ontwerpen, het testen met jullie medewerkers, en het beheer in Prepo, zodat de module bij blijft als de afspraken veranderen." }
-    - { vraag: 'Is dit iets voor ons?', antwoord: "Het past het best bij organisaties die al een leerplatform of online trainingen hebben, en die AI-tools uitrollen of net afspraken over AI hebben gemaakt. Zijn er nog geen afspraken over wat wel en niet mag, dan is dat eerst aan jullie. Zonder leerplatform kan het ook, via een link in Prepo." }
-    - { vraag: "Hoe lang duurt het voordat een module draait?", antwoord: "Van het eerste gesprek tot een module in jullie leerplatform duurt het &lt;aantal&gt; weken. Daarin zitten &lt;aantal&gt; testrondes met jullie. AI Wijzer zoals hij is, staat binnen &lt;aantal&gt; werkdagen klaar." }
-    - { vraag: "Waar begin je mee?", antwoord: "Met de demo. Daarna met één module over één onderwerp, voor één groep. Na een gesprek van een half uur krijg je een voorstel." }
+    - { id: catalogus, vraag: "We hebben al een catalogus of abonnement met AI-trainingen.", antwoord: "Dat blijft. Een catalogus legt uit wat AI is en wat in het algemeen verstandig is. Deze module gaat over jullie afspraken en over de situaties die bij jullie voorkomen. Onderzoek naar serious games wijst dezelfde kant op: ze leveren het meest op als ze andere instructie aanvullen (Wouters e.a., 2013)." }
+    - { id: lms, vraag: "Past het in ons LMS?", antwoord: "Ja. Je krijgt een SCORM-bestand voor je eigen leerplatform; de afronding per medewerker komt daar binnen. Zonder LMS gaat het via een link in Prepo, onze beheeromgeving, waar je deelname en voortgang ziet." }
+    - { id: eigen-beleid, vraag: "Kan het met ons eigen AI-beleid?", antwoord: "Ja, daar is het voor. Jullie weten welke tools mogen en wat er wel en niet in mag; wij maken daar situaties van. Het beleid zelf schrijven we niet." }
+    - { id: goedkeuren, vraag: "Wie keurt de inhoud goed?", antwoord: "Jullie. Wie bij jullie over AI, privacy of security gaat, toetst de situaties en de feedback aan de interne afspraken. Elke versie staat in Prepo klaar om te testen, dus meelezen kan voordat een medewerker de module ziet." }
+    - { id: compliance, vraag: "Regelt dit onze AI-geletterdheid of compliance?", antwoord: "Nee, dat beloven we niet. Wat het wel doet: zorgen dat mensen weten wat ze moeten doen als ze een AI-tool openen, en laten zien waar ze nog verkeerd kiezen." }
+    - { id: zelf-maken, vraag: "Kunnen we dit niet zelf maken met AI?", antwoord: "Een quiz of een tekst wel. Wat wij erbij doen: de situaties en de keuzes ontwerpen, het testen met jullie medewerkers, en het beheer in Prepo, zodat de module bij blijft als de afspraken veranderen." }
+    - { id: voor-wie, vraag: 'Is dit iets voor ons?', antwoord: "Het past het best bij organisaties die al een leerplatform of online trainingen hebben, en die AI-tools uitrollen of net afspraken over AI hebben gemaakt. Zijn er nog geen afspraken over wat wel en niet mag, dan is dat eerst aan jullie. Zonder leerplatform kan het ook, via een link in Prepo." }
+    - { id: doorlooptijd, vraag: "Hoe lang duurt het voordat een module draait?", antwoord: "Van het eerste gesprek tot een module in jullie leerplatform duurt het &lt;aantal&gt; weken. Daarin zitten &lt;aantal&gt; testrondes met jullie. AI Wijzer zoals hij is, staat binnen &lt;aantal&gt; werkdagen klaar." }
+    - { id: begin, vraag: "Waar begin je mee?", antwoord: "Met de demo. Daarna met één module over één onderwerp, voor één groep. Na een gesprek van een half uur krijg je een voorstel." }
 
 afspraak:
   titel: "Bespreek waar het in jullie programma past"

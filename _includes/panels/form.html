@@ -92,13 +92,23 @@
       <span class="lead-form__hint" id="{{ form_key }}-reach">{{ t.form.reach_hint }}</span>
     </div>
 
+    {%- comment -%}
+      Wat de bezoeker op een landingspagina koos (rol, antwoorden), als één
+      regel die mee gaat onder het bericht. Leeg en verborgen tot
+      assets/js/landing-varianten.js hem vult; op andere pagina's doet hij niets.
+    {%- endcomment -%}
+    <div class="lead-form__keuzes" data-form-keuzes hidden>
+      <p><span class="lead-form__keuzes-intro">We sturen mee wat je koos:</span> <span data-form-keuzes-text></span></p>
+      <button type="button" class="lead-form__keuzes-off" data-form-keuzes-off>Niet meesturen</button>
+    </div>
+
     {% if include.compact %}
     <input type="hidden" name="message" value="{{ include.message | escape }}">
     {% else %}
     <label class="lead-form__field">
       <span class="lead-form__label">{{ t.form.message }}</span>
       <textarea name="message" rows="4" required data-error="{{ t.form.error_message }}"></textarea>
-      <span class="lead-form__hint">{{ t.form.message_hint }}</span>
+      <span class="lead-form__hint" data-form-hint>{{ t.form.message_hint }}</span>
     </label>
     {% endif %}
 
