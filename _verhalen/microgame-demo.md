@@ -1,4 +1,5 @@
 ---
+published: false
 lang: nl
 layout: default
 permalink: /verhalen/microgame-demo/
