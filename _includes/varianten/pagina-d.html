@@ -18,7 +18,7 @@
   6. hoe het werkt (#hoe-het-werkt), drie stappen met beeld
   7. bewijs (#bewijs)
   8. bezwaren (#bezwaren), met een afspraakknop eronder
-  9. afspraak (#afspraak, Bookings in de pagina) en formulier (#actie)
+  9. afspraak (#afspraak, knop naar Bookings in een nieuw tabblad) en formulier (#actie)
 
   De id's zijn de cta_position van cta_click. De id's van de rolblokken komen
   uit het databestand (rollen[].sectie).
@@ -187,7 +187,11 @@
 <div class="sp-actions lv-afspraak demo-return__actions">
   <a class="btn btn-primary" href="#actie" data-cta-position="na-de-demo">Stuur ons een bericht</a>
   {%- assign booking = site.data.varianten.afspraak %}
-  <a class="btn btn-secondary" href="{% if booking.url and booking.url != '' %}#afspraak{% else %}#actie{% endif %}"{% if booking.url and booking.url != '' %} data-booking{% endif %} data-cta-position="na-de-demo">Plan direct een afspraak</a>
+  {%- if booking.url and booking.url != '' %}
+  <a class="btn btn-secondary" href="{{ booking.url }}" target="_blank" rel="noopener" data-booking data-cta-position="na-de-demo">Plan direct een afspraak<span class="sr-only"> (opent in een nieuw tabblad)</span></a>
+  {%- else %}
+  <a class="btn btn-secondary" href="#actie" data-cta-position="na-de-demo">Plan direct een afspraak</a>
+  {%- endif %}
 </div>
 {% endcapture %}
 <div class="demo-return" id="na-de-demo" data-demo-return hidden>

@@ -20,7 +20,6 @@
    | path_select      | casus, path_choice, path_source ("klik" of "url")       |
    | faq_open         | casus, faq_question, faq_position                       |
    | booking_click    | casus, booking_service, cta_position                    |
-   | booking_view     | casus, booking_service (agenda half in beeld)           |
    | booking_complete | casus, booking_service (alleen bij Calendly in de pagina)|
 
    Daarnaast zet dit bestand landing_variant in de dataLayer (zonder event),
@@ -374,18 +373,15 @@
   });
 
   /* ---------- afspraak inplannen ----------
-     De Bookings-agenda staat in de pagina zelf (#afspraak, zie
-     _includes/varianten/afspraak-embed.html). De knoppen "Plan een
-     kennismaking" scrollen ernaartoe; naast cta_click vuurt dan
-     booking_click. booking_view vuurt één keer, zodra de agenda voor de
-     helft in beeld is: dat is de beste benadering van "keek naar de
-     agenda", want wat er in de iframe gebeurt, kan de pagina niet zien.
-     Bookings meldt een geboekte afspraak niet terug; die zie je in Teams.
-     Mocht er later een Calendly-agenda in staan: die meldt een boeking wel,
-     met postMessage, en dat wordt booking_complete. */
-  function bookingService() {
-    var frame = document.querySelector("[data-booking-frame] iframe");
-    var src = frame ? frame.getAttribute("src") : "";
+     De knoppen "Plan een kennismaking" en "Kies een moment" openen de
+     Bookings-pagina in een nieuw tabblad (_includes/varianten/afspraak.html
+     en afspraak-embed.html); naast cta_click vuurt dan booking_click.
+     Wat er daarna in Bookings gebeurt, ziet de site niet; een geboekte
+     afspraak zie je in Teams. Mocht er later een Calendly-agenda in de
+     pagina komen: die meldt een boeking wel, met postMessage, en dat wordt
+     booking_complete. */
+  function bookingService(link) {
+    var src = link ? link.getAttribute("href") || "" : "";
     if (/calendly/.test(src)) return "calendly";
     if (/office|outlook|microsoft/.test(src)) return "microsoft-bookings";
     return src ? "anders" : "";
@@ -396,22 +392,10 @@
     if (!link) return;
     var section = link.closest("[id]");
     track("booking_click", {
-      booking_service: bookingService(),
+      booking_service: bookingService(link),
       cta_position: link.getAttribute("data-cta-position") || (section ? section.id : "")
     });
   });
-
-  var bookingFrame = document.querySelector("[data-booking-frame]");
-  if (bookingFrame && "IntersectionObserver" in window) {
-    var seen = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        seen.disconnect();
-        track("booking_view", { booking_service: bookingService() });
-      });
-    }, { threshold: 0.5 });
-    seen.observe(bookingFrame);
-  }
 
   window.addEventListener("message", function (event) {
     var data = event.data;
