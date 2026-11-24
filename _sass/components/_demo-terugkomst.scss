@@ -1,0 +1,288 @@
+/* Drie varianten van het blok na de demo (preview:
+   /verhalen/ai-wijzer/terugkomst/). Zodra er een gekozen is, blijft alleen
+   die over en gaat de rest weg. */
+
+/* ---------- labels tussen de varianten ---------- */
+
+.dt-label {
+  padding-block: var(--space-xl) var(--space-md);
+
+  .panel__inner {
+    max-width: 62ch;
+    margin-inline: auto;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-ink-soft);
+  }
+
+  .dt-label__name {
+    margin-bottom: var(--space-xs);
+    font-size: 1.15rem;
+    color: var(--color-ink);
+  }
+}
+
+/* De formulieren in de varianten hebben geen eigen kop en geen haarlijn
+   erboven: het blok eromheen draagt de kop al. */
+.dt-peak,
+.dt-step,
+.dt-debrief {
+  .lead-form--bare {
+    margin-top: var(--space-md);
+    padding-top: 0;
+    border-top: 0;
+    max-width: none;
+  }
+}
+
+/* ---------- A. Peak-end: het donkere kantoor uit de game ---------- */
+
+.dt-peak {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-deep-navy);
+  color: var(--color-cloud-white);
+}
+
+/* Het titelbeeld van de game rechts, uitlopend naar navy links, zodat de
+   tekst op een rustig vlak staat. */
+.dt-peak__art {
+  position: absolute;
+  inset: 0 0 0 35%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.55;
+  mask-image: linear-gradient(to right, transparent 0%, #000 45%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 45%);
+}
+
+.dt-peak__inner {
+  position: relative;
+  max-width: var(--max-width);
+  padding-block: var(--space-2xl);
+
+  > * {
+    max-width: 36rem;
+  }
+
+  h2 {
+    margin: var(--space-sm) 0 var(--space-xs);
+    color: var(--color-cloud-white);
+  }
+
+  p.sp-lead {
+    margin: 0;
+    color: color-mix(in srgb, var(--color-cloud-white) 84%, transparent);
+  }
+}
+
+.dt-peak__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.35rem 0.85rem 0.35rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-preludens-gold) 18%, transparent);
+  color: var(--color-soft-gold);
+  font-weight: 500;
+
+  svg {
+    color: var(--color-preludens-gold);
+  }
+}
+
+/* Velden op navy: de labels licht, de velden zelf blijven licht. Het
+   formulier blijft in de tekstkolom, links van het beeld. */
+.dt-peak {
+  .lead-form--bare {
+    max-width: 36rem;
+  }
+
+  .lead-form__label,
+  .lead-form__hint,
+  .lead-form__optional,
+  .lead-form__note {
+    color: color-mix(in srgb, var(--color-cloud-white) 78%, transparent);
+  }
+
+  .lead-form__label {
+    color: var(--color-cloud-white);
+  }
+
+  .lead-form__note {
+    color: color-mix(in srgb, var(--color-cloud-white) 70%, transparent);
+  }
+
+  .lead-form__done h2 {
+    color: var(--color-cloud-white);
+  }
+}
+
+/* ---------- B. Eén vraag tegelijk ---------- */
+
+.dt-step__card {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: start;
+  max-width: 52rem;
+  margin-inline: auto;
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 3px 4px 12px rgba(17, 56, 71, 0.1);
+}
+
+.dt-step__thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.panel .dt-step__body h2 {
+  margin: 0.25rem 0 var(--space-md);
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+}
+
+.dt-step__kicker,
+.dt-debrief__kicker {
+  margin: 0;
+  font-weight: 500;
+  color: var(--color-ink-gold);
+}
+
+.dt-step__choice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.dt-step__choice[hidden],
+.dt-step__form[hidden] {
+  display: none;
+}
+
+.panel .dt-step__reply {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ---------- C. Debriefing ---------- */
+
+.dt-debrief__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.panel .dt-debrief__recap h2 {
+  margin: 0.25rem 0 var(--space-sm);
+  text-align: left;
+}
+
+.panel .dt-debrief__recap > p {
+  margin: 0;
+}
+
+.dt-debrief__checks {
+  list-style: none;
+  margin: var(--space-md) 0 0;
+  padding: 0;
+  counter-reset: dt-check;
+  display: grid;
+  gap: var(--space-sm);
+
+  li {
+    counter-increment: dt-check;
+    position: relative;
+    padding-left: 2.75rem;
+    line-height: 1.55;
+  }
+
+  li::before {
+    content: counter(dt-check);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: grid;
+    place-items: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 50%;
+    background: var(--color-preludens-gold);
+    color: var(--color-deep-navy);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+
+  strong {
+    display: block;
+    color: var(--color-ink);
+  }
+}
+
+.dt-debrief__ask {
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border-top: 4px solid var(--color-preludens-gold);
+  box-shadow: 3px 4px 12px rgba(17, 56, 71, 0.1);
+
+  h3 {
+    margin: 0 0 var(--space-xs);
+    font-size: 1.35rem;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  > p {
+    margin: 0;
+    color: var(--color-ink-soft);
+  }
+
+  /* Smal kader: e-mail en telefoon onder elkaar. */
+  .lead-form__row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- smal ---------- */
+
+@media (max-width: 760px) {
+  .dt-peak__art {
+    inset: 0;
+    opacity: 0.25;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .dt-peak__inner {
+    padding-block: var(--space-xl);
+  }
+
+  .dt-step__card {
+    grid-template-columns: minmax(0, 1fr);
+    padding: var(--space-md);
+  }
+
+  .dt-step__thumb {
+    width: 6rem;
+  }
+
+  .dt-debrief__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .dt-debrief__ask {
+    padding: var(--space-md);
+  }
+}

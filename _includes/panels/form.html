@@ -45,10 +45,13 @@
 {% include locale.html %}
 {% capture form_body %}
 <div class="lead-form{% if include.bare %} lead-form--bare{% endif %}" data-lead-form-wrap{% if include.bare %} id="{{ include.id }}"{% endif %}>
+  {%- comment -%} Zonder title geen intro: dan staat de kop al in het blok eromheen. {%- endcomment -%}
+  {% if include.title and include.title != "" %}
   <div class="lead-form__intro">
     <h2>{{ include.title }}</h2>
     {% if include.lead %}<p class="sp-lead">{{ include.lead }}</p>{% endif %}
   </div>
+  {% endif %}
 
   <form class="lead-form__form" data-lead-form data-casus="{{ include.casus }}"
         data-error-send="{{ t.form.error_send }}" data-error-reach="{{ t.form.error_reach }}"
