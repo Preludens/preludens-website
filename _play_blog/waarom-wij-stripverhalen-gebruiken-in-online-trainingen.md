@@ -13,8 +13,8 @@ summary: >-
 Joris moet morgen een herstelplan presenteren voor een vertraagd project. Hij wil ChatGPT vragen om de oorzaken van de vertraging uit een lange mailwisseling te halen. De hele mailwisseling staat al in zijn prompt. Daarin staan reacties over de planning, maar ook details over de gezondheid van zijn collega Sanne. Joris heeft nog niet op verzenden geklikt.
 
 <figure>
-  <img src="{{ '/assets/images/demo/bewust-met-ai-m3-beeld-1-conceptprompt.jpg' | relative_url }}" alt="Joris kijkt naar een conceptprompt op zijn laptop." width="900" height="900" loading="lazy" decoding="async">
-  <figcaption>Joris bij zijn conceptprompt in <em>AI Wijzer</em>.</figcaption>
+  <img src="{{ '/assets/images/verhalen/omgaan-met-ai-01.png' | relative_url }}" alt="Joris zit achter zijn laptop en overweegt ChatGPT om advies te vragen over de vertraging. Hij kopieert de e-mail in de prompt en twijfelt of hij die zal versturen." width="947" height="589" loading="lazy" decoding="async">
+  <figcaption>Joris heeft zijn prompt klaargezet in <em>AI Wijzer</em>.</figcaption>
 </figure>
 
 **Welke informatie heeft AI nodig om Joris te helpen met zijn herstelplan? Wat kan hij weglaten?**
@@ -26,8 +26,8 @@ Voor mij begint het ontwerp van een training bij zo’n moment. Ik wil weten wel
 De deelnemer leest onze stripverhalen op een telefoon, tablet of computer en scrolt van scène naar scène. Het beeld van Joris’ laptop laat zien wat hij op het punt staat te doen. Een eerder gesprek bij de koffieautomaat verklaart waarom hij dat overweegt. Zijn collega Ahmed stelt voor om een eigen account te gebruiken. Volgens hem komt het wel goed zolang Joris geen namen invoert.
 
 <figure>
-  <img src="{{ '/assets/images/demo/bewust-met-ai-m1-beeld-2-hoge-tafel.jpg' | relative_url }}" alt="Twee collega’s staan samen aan een hoge tafel met een laptop en twee mokken." width="900" height="900" loading="lazy" decoding="async">
-  <figcaption>Een gesprek tussen collega’s in <em>AI Wijzer</em>.</figcaption>
+  <img src="{{ '/assets/images/verhalen/omgaan-met-ai-02.png' | relative_url }}" alt="Ahmed stelt voor ChatGPT om hulp te vragen. Joris vraagt of het gebruik ervan al wordt ondersteund, omdat de richtlijnen nog niet rond zijn." width="985" height="548" loading="lazy" decoding="async">
+  <figcaption>Ahmed en Joris bespreken het gebruik van ChatGPT.</figcaption>
 </figure>
 
 Per scène bepalen we wat het beeld vertelt en wat de dialoog daaraan toevoegt. Zodra de lezer ziet dat de mailwisseling al in de prompt staat, kan de tekst meteen ingaan op Joris’ twijfel. Zo blijven de gesprekken kort en natuurlijk en kan de deelnemer zich in de situatie verplaatsen.
@@ -46,7 +46,10 @@ Een doorlopend stripverhaal geeft overzicht doordat de beelden direct op elkaar 
 
 Wanneer het verhaal na de MicroGame terugkeert naar Joris, is de tekst op zijn scherm wazig. Alleen de woorden *Sanne* en *ziek* zijn scherp. De deelnemer kan rustig bij dat beeld stilstaan en eventueel terugscrollen naar het gesprek met Ahmed. Zo kan de deelnemer het detail op het scherm in verband brengen met Ahmeds eerdere advies om alleen de namen weg te laten.
 
-{% comment %}Stripbeeld waarin alleen ‘Sanne’ en ‘ziek’ scherp zijn.{% endcomment %}
+<figure>
+  <img src="{{ '/assets/images/verhalen/omgaan-met-ai-03.png' | relative_url }}" alt="Sanne komt langs bij het bureau van Joris. Hij kijkt verrast op en vraagt hoe het met haar gaat." width="974" height="474" loading="lazy" decoding="async">
+  <figcaption>Sanne komt langs bij het bureau van Joris.</figcaption>
+</figure>
 
 Bij een doorlopende video moet de deelnemer op zo’n moment de video pauzeren of een eerder fragment terugzoeken. Bewegend beeld kan goed werken wanneer de beweging zelf iets verduidelijkt. Voor het verhaal van Joris kiezen we voor afzonderlijke beelden die de deelnemer in eigen tempo kan bekijken. Dat sluit aan bij onderzoek van Rey en collega’s (2019). Hun meta-analyse laat zien dat het opdelen van multimediale uitleg in betekenisvolle delen het onthouden en toepassen van kennis kan ondersteunen. [Meta-analyse van Rey en collega’s](https://doi.org/10.1007/S10648-018-9456-4)
 
