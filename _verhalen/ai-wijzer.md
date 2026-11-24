@@ -105,13 +105,31 @@ getuigenis:
 
 {%- comment -%}
   2. Terug uit de demo. Verborgen tot assets/js/demo.js ziet dat iemand de demo
-  heeft geopend en na een tijdje terugkomt. Zonder JavaScript blijft het dicht;
-  het formulier onderaan staat er altijd.
+  heeft geopend en terugkomt; dan komt het tevoorschijn met een korte
+  animatie. Eerst één vraag (ja of nee), pas na "ja" de velden: zo staat er
+  geen formulier in de weg van wie verder wil lezen. Gekozen uit drie
+  varianten op 24 november 2026 (variant B, progressive disclosure). Zonder
+  JavaScript blijft het dicht; het formulier onderaan staat er altijd.
 {%- endcomment -%}
-<div class="demo-return" id="na-de-demo" data-demo-return hidden>
-{% capture terug_lead %}Zo voelt het als je oefent in plaats van een beleidsdocument leest. Wil je dit ook voor jouw organisatie, met jullie eigen AI-beleid en jullie eigen situaties? Of een ander spel of e-learning die je mensen aan het werk zet? Laat je naam en een e-mailadres of telefoonnummer achter, dan nemen we contact met je op.{% endcapture %}
-{% include panels/form.html id="na-de-demo-formulier" casus=page.casus compact=true message="Wil contact na het spelen van de demo AI Wijzer" title="Bedankt voor het spelen" lead=terug_lead submit_label="Neem contact met me op" submit_note="Liever zelf bellen? 015 202 404 7" %}
-</div>
+<section class="panel panel--paper demo-return" id="na-de-demo" data-demo-return hidden aria-labelledby="na-de-demo-titel">
+  <div class="panel__inner">
+    <div class="demo-ask" data-demo-ask>
+      <img class="demo-ask__thumb" src="{{ '/assets/images/demo/bewust-met-ai-m3-beeld-3-eindcontrole.jpg' | relative_url }}" alt="" width="900" height="900" loading="lazy" decoding="async">
+      <div class="demo-ask__body">
+        <p class="demo-ask__kicker">Bedankt voor het spelen</p>
+        <h2 id="na-de-demo-titel">Wil je zo'n MicroGame voor jouw organisatie?</h2>
+        <div class="demo-ask__choice" data-demo-ask-choice>
+          <button class="btn btn-primary" type="button" data-demo-ask-yes data-cta-position="na-de-demo">Ja, neem contact met me op</button>
+          <a class="btn btn-secondary" href="#leerdoelen" data-cta-position="na-de-demo">Eerst verder lezen</a>
+        </div>
+        <div class="demo-ask__form" data-demo-ask-form hidden>
+          <p class="demo-ask__reply">Fijn. Hoe kunnen we je bereiken?</p>
+          {% include panels/form.html id="na-de-demo-formulier" bare=true casus=page.casus compact=true message="Wil contact na het spelen van de demo AI Wijzer" title="" submit_label="Neem contact met me op" submit_note="We reageren binnen één werkdag." %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 {%- comment -%} 3. De video, zodra die er is {%- endcomment -%}
 {% if heeft_video %}

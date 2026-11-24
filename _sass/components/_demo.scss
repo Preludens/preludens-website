@@ -90,22 +90,142 @@
   }
 }
 
-/* ---------- terug uit de demo ---------- */
+/* ---------- terug uit de demo ----------
 
-/* Het blok staat in de paneelstapel, direct onder de hero. De gouden rand
-   links zegt "dit is nieuw" zonder een tweede accentkleur. */
-.demo-return .lead-form {
-  border-left: 4px solid var(--color-preludens-gold);
-  padding-left: var(--space-md);
+   Eén kaart met één vraag; na "ja" verschijnen de velden. Komt de bezoeker
+   terug naar dit tabblad, dan krijgt het blok .is-arriving en komt de kaart
+   omhoog: eerst iets te ver, dan zet hij zich neer. Het beeld en de knoppen
+   volgen een fractie later, zodat het oog van kop naar knop loopt. */
+
+.demo-return[hidden],
+.demo-ask__choice[hidden],
+.demo-ask__form[hidden] {
+  display: none;
 }
 
-/* Ruimte voor de vaste kopbalk, anders schuift de kop eronder. */
+/* Ruimte voor de vaste kopbalk, anders schuift de kaart eronder. */
 .demo-return {
   scroll-margin-top: 6rem;
 }
 
 .demo-return h2:focus {
   outline: none;
+}
+
+.demo-ask {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: start;
+  max-width: 52rem;
+  margin-inline: auto;
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 3px 4px 12px rgba(17, 56, 71, 0.1);
+}
+
+.demo-ask__thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.panel .demo-ask__body h2 {
+  margin: 0.25rem 0 var(--space-md);
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  text-align: left;
+}
+
+.panel .demo-ask__kicker {
+  margin: 0;
+  font-weight: 500;
+  color: var(--color-ink-gold);
+}
+
+.demo-ask__choice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.panel .demo-ask__reply {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Het formulier zonder eigen kop en haarlijn: de kaart draagt de kop al. */
+.demo-ask .lead-form--bare {
+  max-width: none;
+  margin-top: var(--space-md);
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* De velden komen zacht in beeld na "ja". */
+.demo-ask__form:not([hidden]) {
+  animation: demo-ask-fade 0.35s ease-out both;
+}
+
+/* De verschijning bij terugkomst. De korte vertraging laat het scrollen
+   eerst beginnen, zodat de kaart in beeld opkomt en niet erbuiten. */
+.demo-return.is-arriving .demo-ask {
+  animation: demo-ask-arrive 0.7s cubic-bezier(0.22, 1.2, 0.36, 1) 0.3s both;
+}
+
+.demo-return.is-arriving .demo-ask__thumb {
+  animation: demo-ask-pop 0.5s cubic-bezier(0.22, 1.3, 0.36, 1) 0.55s both;
+}
+
+.demo-return.is-arriving .demo-ask__choice {
+  animation: demo-ask-fade 0.4s ease-out 0.7s both;
+}
+
+@keyframes demo-ask-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(2.5rem) scale(0.96);
+    box-shadow: 0 0 0 rgba(17, 56, 71, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    box-shadow: 3px 4px 12px rgba(17, 56, 71, 0.1);
+  }
+}
+
+@keyframes demo-ask-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.85) rotate(-3deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes demo-ask-fade {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-return.is-arriving .demo-ask,
+  .demo-return.is-arriving .demo-ask__thumb,
+  .demo-return.is-arriving .demo-ask__choice,
+  .demo-ask__form:not([hidden]) {
+    animation: none;
+  }
 }
 
 /* ---------- video ---------- */
@@ -203,7 +323,13 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .demo-return .lead-form {
-    padding-left: var(--space-sm);
+  .demo-ask {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  .demo-ask__thumb {
+    width: 6rem;
   }
 }

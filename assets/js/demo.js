@@ -20,7 +20,11 @@
    dichtgaat. Lukt opslaan niet (privévenster, geblokkeerde opslag), dan
    houden we hem in het geheugen; dat volstaat zolang de pagina open blijft.
 
-   Event: demo_return, met seconds (hoe lang de demo open stond) en casus. */
+   Komt de bezoeker na een tweede keer spelen weer terug, dan speelt de
+   verschijning opnieuw; demo_return gaat maar één keer mee.
+
+   Events: demo_return, met seconds (hoe lang de demo open stond) en casus;
+   demo_ask_yes als iemand op "Ja, neem contact met me op" klikt. */
 (function () {
   var page = document.querySelector("[data-demo-page]");
   if (!page) return;
@@ -66,14 +70,32 @@
     return memory;
   }
 
+  /* De verschijning: het blok komt omhoog en zet zich neer, op het moment
+     dat het tabblad weer zichtbaar is. De klasse gaat er eerst af en de
+     browser rekent opnieuw (offsetWidth), zodat de animatie ook bij een
+     tweede terugkeer opnieuw speelt. Bij prefers-reduced-motion zet de CSS
+     de animatie uit. */
+  function arrive() {
+    panel.classList.remove("is-arriving");
+    void panel.offsetWidth;
+    panel.classList.add("is-arriving");
+  }
+
+  panel.addEventListener("animationend", function (event) {
+    if (event.target === panel.querySelector("[data-demo-ask]")) {
+      panel.classList.remove("is-arriving");
+    }
+  });
+
   function show(seconds) {
-    if (shown) return;
+    var again = shown;
     shown = true;
     stamp(null);
     panel.hidden = false;
 
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     panel.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+    arrive();
 
     /* De focus naar de kop, zodat een schermlezer hoort wat er verscheen. */
     var heading = panel.querySelector("h2");
@@ -82,7 +104,23 @@
       heading.focus({ preventScroll: true });
     }
 
-    track("demo_return", { seconds: seconds, casus: casus() });
+    if (!again) track("demo_return", { seconds: seconds, casus: casus() });
+  }
+
+  /* Eerst de vraag, na "ja" de velden, met de cursor in het eerste veld. */
+  var yes = panel.querySelector("[data-demo-ask-yes]");
+  if (yes) {
+    yes.addEventListener("click", function () {
+      var choice = panel.querySelector("[data-demo-ask-choice]");
+      var form = panel.querySelector("[data-demo-ask-form]");
+      if (choice) choice.hidden = true;
+      if (form) {
+        form.hidden = false;
+        var first = form.querySelector("input:not([type=hidden]):not([tabindex='-1'])");
+        if (first) first.focus();
+      }
+      track("demo_ask_yes", { casus: casus() });
+    });
   }
 
   function check() {
