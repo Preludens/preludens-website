@@ -16,7 +16,7 @@
 
 hero:
   titel: "De zaal knikt bij de regels over AI. Wat ze morgen in een chatbot plakken, zie je niet."
-  lead: "Wij maken MicroGames: korte speelbare situaties waarin deelnemers zelf kiezen wat ze met een AI-dienst delen, en meteen zien wat die keuze doet. Je gebruikt ze als voorbereiding, tijdens je workshop of als vervolgopdracht. Speel eerst zelf de demo AI Wijzer."
+  lead: "Zet AI Wijzer in je workshop. Elke deelnemer kiest op telefoon of laptop wat hij met een AI-dienst deelt en krijgt direct feedback. Speelt je groep via een eigen link, dan zie je per situatie hoe ze kozen, en begin je je uitleg waar het misging. Vooraf, tijdens of na de sessie."
   knop: "Speel de demo"
   knop_href: "#probeer"
   beeld:
@@ -33,13 +33,13 @@ rollen:
     sectie: voor-trainer
     label: "Ik geef de workshop"
     sub: "Je bepaalt programma en werkvormen"
-    reactie: "Jij geeft de workshop. Hieronder: waar een MicroGame in je programma past."
+    reactie: "Jij geeft de workshop. Hieronder: wat AI Wijzer in je zaal doet."
     kaart: { src: /assets/images/verhalen/basis-koeltechniek-gesprek.jpg, alt: "" }
     beeld: { src: /assets/images/demo/bewust-met-ai-m1-beeld-1-inbox-bureau.jpg, alt: "Beeld uit AI Wijzer: een medewerker aan zijn bureau, met de mailbox van Northfield op het scherm" }
     titel: "Slides en voorbeelden heb je. Een oefening met een echte keuze nog niet"
     alineas:
       - "Je vertelt wat een AI-dienst met invoer doet, en je laat voorbeelden zien. Iedereen begrijpt het. Of iemand het ook doet als er een klantmail klaarstaat en de tijd dringt, merk je in de zaal niet."
-      - "In een MicroGame kiest elke deelnemer zelf, op zijn eigen telefoon of laptop, en krijgt hij bij elke keuze feedback. Jij zet hem in waar hij in je programma past. Vooraf, zodat je weet waar de groep staat. Tijdens de sessie, als opstap naar het gesprek. Of erna, als vervolgopdracht."
+      - "In AI Wijzer werkt elke deelnemer in een mailbox en een chatbot, kiest zelf en krijgt bij elke keuze feedback. Jij ziet per situatie hoe de groep koos. Dan bespreek je niet een voorbeeld van een ander, maar wat je eigen groep koos."
     vraag:
       id: trainer-moment
       vraag: "Waar in je programma zou je het inzetten?"
@@ -47,25 +47,25 @@ rollen:
         - { waarde: vooraf, label: "Als voorbereiding", reactie: "Dan komen deelnemers binnen met dezelfde situaties in hun hoofd. Speelt de groep via een eigen link in Prepo, dan zie jij vooraf per situatie hoe ze kozen." }
         - { waarde: tijdens, label: "Tijdens de sessie", reactie: "Dan speelt iedereen op zijn eigen telefoon of laptop. Waar de groep verschillend kiest, heb je je gesprek." }
         - { waarde: erna, label: "Als vervolgopdracht", reactie: "Dan oefenen deelnemers nog een keer als ze weer aan het werk zijn. Onderzoek naar serious games vond meer effect als een spel over meerdere sessies loopt en andere instructie aanvult (Wouters e.a., 2013)." }
-        - { waarde: weet-niet, label: "Dat weet ik nog niet", reactie: "Speel dan eerst de demo. Daarna denken we graag mee over de plek in je programma." }
+        - { waarde: weet-niet, label: "Dat weet ik nog niet", reactie: "Speel dan eerst de demo. In een gesprek van een half uur kiezen we het moment." }
   - pad: opdrachtgever
     sectie: voor-opdrachtgever
     label: "Ik organiseer de training"
     sub: "Je huurt een trainer in of regelt de dag"
-    reactie: "Jij organiseert de training. Hieronder: wat een MicroGame aan de dag toevoegt, en hoe het met jullie eigen afspraken kan."
+    reactie: "Jij organiseert de training. Hieronder: wat er na de dag blijft hangen, en hoe het met jullie eigen afspraken kan."
     kaart: { src: /assets/images/verhalen/maria-strip-macbooks.jpg, alt: "" }
     beeld: { src: /assets/images/demo/bewust-met-ai-m2-beeld-1-ai-instellingen.jpg, alt: "Beeld uit AI Wijzer: een medewerker bekijkt de instellingen van een AI-chatbot op zijn laptop" }
     titel: "Na de workshop gaat iedereen weer aan het werk"
     alineas:
-      - "Een goede trainer maakt het onderwerp duidelijk en haalt de vragen uit de groep. Met een MicroGame oefenen deelnemers daarnaast zelf, vóór de dag of in de weken erna, met situaties die op hun werk lijken."
-      - "De demo speelt bij het fictieve bedrijf Northfield. In een versie voor jullie staat bij elke keuze wat jullie eigen afspraken zeggen. Die draait in jullie LMS of via een link, en je ziet wie hem heeft gedaan. Het beleid schrijven we niet, en we beloven geen compliance."
+      - "De trainer maakt het onderwerp duidelijk. Met AI Wijzer oefent elke deelnemer daarnaast zelf, vóór de dag of in de weken erna. Jij ziet wie het gedaan heeft, en waar mensen nog verkeerd kiezen."
+      - "Een versie op maat gebruikt jullie eigen afspraken en tools, in jullie LMS of via een link. Het beleid schrijven we niet, en we beloven geen compliance."
     vraag:
       id: opdrachtgever-afspraken
       vraag: "Hebben jullie al afspraken over AI-gebruik?"
       antwoorden:
         - { waarde: ja, label: "Ja, die liggen vast", reactie: "Dan kan een versie op maat ze laten toepassen: bij elke keuze staat wat jullie afspraken zeggen." }
         - { waarde: bezig, label: "Daar werken we aan", reactie: "Dan is een workshop een goed moment om te horen waar medewerkers tegenaan lopen. De demo laat zien hoe het oefenen er daarna uitziet." }
-        - { waarde: nee, label: "Nog niet", reactie: "Dan zijn de afspraken de eerste stap. Wij maken ze speelbaar als ze er zijn; schrijven doen we ze niet. De demo kun je nu al spelen." }
+        - { waarde: nee, label: "Nog niet", reactie: "Dan werkt AI Wijzer zoals hij is: algemene afspraken bij het fictieve Northfield. Een versie op maat kan later." }
 
 probeer:
   type: dilemma
@@ -88,15 +88,15 @@ probeer:
     noot: "Drie missies, zonder account. De demo opent in een nieuw tabblad; deze pagina blijft open."
   terug:
     titel: "Bedankt voor het spelen"
-    lead: "Nu heb je gespeeld wat een deelnemer speelt. Wil je het in je eigen workshop of praktijkdag gebruiken, vooraf, tijdens of erna? Stuur ons een bericht, of plan een verkennend gesprek van een half uur. We denken mee over je programma."
+    lead: "Nu heb je gespeeld wat een deelnemer speelt. Wil je het in je volgende workshop of praktijkdag gebruiken? In een gesprek van een half uur kiezen we het moment en de vorm."
 
 stappen:
   items:
     - titel: "Je speelt de demo zelf"
       tekst: "Drie missies bij het fictieve bedrijf Northfield. Je ziet wat deelnemers doen en welke feedback ze krijgen."
       beeld: { src: /assets/images/demo/bewust-met-ai-m3-beeld-3-eindcontrole.jpg, alt: "" }
-    - titel: "We kijken waar het in je programma past"
-      tekst: "Als voorbereiding, tijdens de sessie of als vervolgopdracht. Heeft je opdrachtgever eigen AI-afspraken, dan kan een versie op maat."
+    - titel: "We kiezen de vorm"
+      tekst: "In een gesprek van een half uur: een groepslink voor AI Wijzer zoals hij is, of een versie op maat van je opdrachtgever. En het moment: vooraf, tijdens of erna."
       beeld: { src: /assets/images/demo/bewust-met-ai-m2-beeld-3-profiel-verbanden.jpg, alt: "" }
     - titel: "Je groep speelt, jij ziet hoe ze kozen"
       tekst: "Op telefoon of laptop, via een link in Prepo of in het LMS van je opdrachtgever. Per persoon zie je wie het deed, per situatie hoe de groep koos."
@@ -107,7 +107,7 @@ bewijs:
   beeld: { src: /assets/images/verhalen/basis-koeltechniek-video-poster.jpg, alt: "Titelbeeld van Basis Koeltechniek" }
   alineas:
     - "&lt;Trainer of opdrachtgever&gt; zette AI Wijzer in bij &lt;workshop of praktijkdag&gt; met &lt;aantal&gt; deelnemers. &lt;resultaat, bijvoorbeeld wat de trainer vooraf zag en anders deed in de zaal&gt;."
-    - "Preludens ontwerpt en ontwikkelt online trainingen voor opleiders, L&amp;D- en HR-teams, veiligheidsafdelingen en onderwijs. Deelnemers oefenen met situaties uit de praktijk en maken zelf keuzes."
+    - "Preludens maakt MicroGames: online oefeningen waarin mensen keuzes uit hun werk maken en direct feedback krijgen. We werken samen met opleiders en trainers, en voor L&amp;D-teams en veiligheidsafdelingen."
     - "21CC Education kwam bij ons omdat hun praktijkdagen meer moesten opleveren, en daar hoorde een voorbereiding vooraf bij. Met hen en Studium maakten we <strong>CO Wijzer</strong>, waarmee monteurs vóór de praktijkdag oefenen. Met Climatools, 21CC Learning en Studium volgde <strong>Basis Koeltechniek</strong>: negen MicroGames voor installatiemonteurs."
     - "<strong>AI Wijzer</strong> is de demo op deze pagina: drie missies en tien opdrachten over wat je wel en niet met een AI-dienst deelt, in het Nederlands en het Engels. Samen met NNVO ontwikkelen we MicroGames over <strong>IT-veiligheid</strong>."
 
@@ -117,12 +117,13 @@ bewijs:
 vragen:
   label: "Vragen van trainers over AI Wijzer"
   items:
-    - { vraag: "Kan ik de demo in mijn eigen workshop gebruiken?", antwoord: "Speel hem eerst zelf, en laat ons weten wat je van plan bent. Dan kijken we samen hoe je hem met een groep inzet. Met een eigen link in Prepo zie je ook hoe de groep koos." }
+    - { vraag: "Kan ik de demo in mijn eigen workshop gebruiken?", antwoord: "De demo op deze pagina is om zelf te proberen. Voor een groep krijg je een eigen link in Prepo; dan zie je ook hoe de groep koos." }
+    - { vraag: "Ik gebruik al Mentimeter of Kahoot.", antwoord: "Die vragen deelnemers wat ze vinden of weten. In AI Wijzer doen ze het werk: een mail beoordelen, een prompt inkorten, kiezen of hij weg mag. Ze krijgen feedback op die keuze, en jij ziet waar het misging. Een poll ernaast blijft prima voor het gesprek." }
     - { vraag: "Past het vóór, tijdens of na de sessie?", antwoord: "Alle drie kan. Vooraf zie je waar de groep staat. Tijdens de sessie is het een opstap naar het gesprek. Erna is het een vervolgopdracht voor als deelnemers weer aan het werk zijn." }
     - { vraag: "Wat neem ik dan precies af?", antwoord: "Er zijn twee vormen. AI Wijzer zoals hij is, met een eigen link in Prepo voor jouw groep, zodat je ziet hoe de groep koos. Of een versie op maat van je opdrachtgever, met diens afspraken en situaties. Welke past, hangt af van je opdracht; dat bespreken we in het eerste gesprek." }
     - { vraag: "Wat kost het?", antwoord: "AI Wijzer met een eigen groepslink kost &lt;bedrag&gt; per &lt;deelnemer, groep of sessie&gt;, inclusief het groepsoverzicht in Prepo. Een versie op maat van je opdrachtgever begint bij &lt;bedrag&gt;, afhankelijk van het aantal situaties. &lt;Eventueel: trainers krijgen &lt;percentage&gt; korting als ze het in hun eigen aanbod opnemen.&gt;" }
     - { vraag: "Hoe snel kan ik het gebruiken?", antwoord: "Een groepslink voor AI Wijzer staat binnen &lt;aantal&gt; werkdagen klaar. Een versie op maat duurt &lt;aantal&gt; weken, met &lt;aantal&gt; testrondes. Staat je workshop al gepland, noem dan de datum, dan kijken we wat haalbaar is." }
-    - { vraag: "Wie betaalt: ik of mijn opdrachtgever?", antwoord: "Dat verschilt per opdracht. Soms neemt een trainer het op in zijn eigen programma, soms neemt de opdrachtgever het af voor zijn medewerkers. We denken mee over wat bij jouw opdracht past." }
+    - { vraag: "Wie betaalt: ik of mijn opdrachtgever?", antwoord: "Dat verschilt per opdracht. Soms neemt een trainer het op in zijn eigen programma, soms neemt de opdrachtgever het af voor zijn medewerkers. Dat bespreken we in het eerste gesprek." }
     - { vraag: "Kan het op maat van mijn opdrachtgever?", antwoord: "Ja. In de demo werk je bij het fictieve Northfield. In een versie op maat staan de afspraken, de toegestane tools en de situaties van die organisatie. De organisatie levert de afspraken aan; het beleid schrijven wij niet." }
     - { vraag: "Zie ik wat de groep koos?", antwoord: "Ja, als je groep via Prepo of het LMS van je opdrachtgever speelt: per persoon wie het deed, en per situatie hoe de groep koos. Via de openbare demolink op deze pagina zie je dat niet." }
     - { vraag: "Hebben deelnemers een laptop nodig?", antwoord: "Nee. Het draait in de browser, op laptop of telefoon. Deelnemers installeren niets; ze hebben alleen de link nodig." }
@@ -130,7 +131,7 @@ vragen:
 
 afspraak:
   titel: "Bespreek je workshop of praktijkdag"
-  lead: "Kies hieronder een moment voor een verkennend gesprek van een half uur, online. We kijken naar je programma en naar het moment waarop deelnemers zelf moeten kiezen."
+  lead: "Een half uur, online. We kijken naar je programma, kiezen het moment en de vorm, en je krijgt daarna een voorstel."
 
 formulier:
   titel: "Of stuur ons een bericht"

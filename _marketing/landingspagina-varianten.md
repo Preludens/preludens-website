@@ -34,6 +34,7 @@ De kopij schreef Fable 5.2 in `_data/casussen/ai-leerprogramma.yml` en `ai-train
 - een resultaat in het bewijsblok (beide pagina's);
 - een citaat met naam en functie (`bewijs.citaat`, nieuw in het sjabloon; leeg laten = geen citaat);
 - de doorlooptijd (vraag "Hoe lang duurt het…" en "Hoe snel kan ik het gebruiken?");
+- bij leerprogramma's in *Hoe het werkt*: hoeveel sessies de start kost, en hoeveel opdrachten en minuten speeltijd een module heeft;
 - de prijs voor trainers ("Wat kost het?"). Let op: dit wijkt af van het besluit van 12 november om geen prijzen te noemen. Haal de vraag weg als dat besluit blijft staan.
 
 **Nog open:**

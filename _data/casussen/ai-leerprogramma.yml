@@ -13,8 +13,8 @@
 # description: Een MicroGame waarin medewerkers jullie AI-afspraken toepassen op keuzes uit hun werk, als module in je eigen leerplatform. Speel de demo AI Wijzer.
 
 hero:
-  titel: "De AI-afspraken staan in jullie leerprogramma. De praktijksituaties nog niet."
-  lead: "Wij maken van jullie afspraken een MicroGame: korte situaties uit het werk waarin medewerkers zelf kiezen wat ze met AI delen, wanneer ze een antwoord controleren en wanneer ze hulp vragen. Hij draait als module in het leerplatform dat er al is. Speel eerst de demo AI Wijzer, dan zie je hoe dat werkt."
+  titel: "De AI-richtlijnen staan op intranet. Wat mag er morgen in de chatbot?"
+  lead: "Medewerkers oefenen met jullie eigen AI-afspraken in situaties uit hun werk: wat deel ik, wanneer controleer ik het antwoord, wanneer vraag ik het na. Jij ziet per situatie waar ze verkeerd kiezen. Het is een module in het leerplatform dat er al is. Speel de demo AI Wijzer om te zien hoe het werkt."
   knop: "Speel de demo"
   knop_href: "#probeer"
   beeld:
@@ -31,14 +31,14 @@ rollen:
     sectie: voor-programma
     label: "Ik organiseer het leerprogramma"
     sub: "L&D, opleidingen of AI-adoptie"
-    reactie: "Jij organiseert het leerprogramma. Hieronder: wat er naast de uitleg nog ontbreekt, en hoe een MicroGame erbij past."
+    reactie: "Jij organiseert het leerprogramma. Hieronder: wat er naast de uitleg ontbreekt, en wat je ervoor terugkrijgt."
     kaart: { src: /assets/images/verhalen/maria-strip-macbooks.jpg, alt: "" }
     beeld: { src: /assets/images/demo/bewust-met-ai-m1-beeld-1-inbox-bureau.jpg, alt: "Beeld uit AI Wijzer: een medewerker aan zijn bureau, met de mailbox van Northfield op het scherm" }
     titel: "De uitleg is er al. Het oefenen komt erbij"
     alineas:
       - "Er is een training, een e-learning of een pagina op intranet. Daar staat wat mag. Wat een medewerker doet op een dinsdagochtend, met een volle inbox en een chatbot die in een minuut een antwoord schrijft, oefent hij daar niet."
-      - "In een MicroGame passen medewerkers de afspraken toe op keuzes die ze uit hun werk kennen, en zien ze bij elke keuze wat er gebeurt. Hij komt naast wat er al is: in het AI-programma, in de onboarding of bij de training over informatiebeveiliging. Welke situaties erin moeten, zoeken we samen uit. Dat hoef je vooraf niet te weten."
-      - "Wat het je oplevert: je ziet per situatie waar medewerkers verkeerd kiezen. Dan weet je welke afspraak nog niet landt, en waar je programma meer uitleg of een gesprek nodig heeft."
+      - "Een algemene AI-training legt uit wat verstandig is. Deze module gaat over jullie afspraken, jullie tools en de situaties die bij jullie voorkomen. Medewerkers kiezen zelf en zien bij elke keuze wat er gebeurt. Hij komt in het AI-programma, de onboarding of de training over informatiebeveiliging."
+      - "Wat je terugkrijgt: per situatie hoe medewerkers kozen. Dan weet je welke afspraak nog niet landt, en waar je programma meer uitleg nodig heeft."
     vraag:
       id: ai-aanleiding
       vraag: "Wat is bij jullie de aanleiding?"
@@ -55,15 +55,15 @@ rollen:
     beeld: { src: /assets/images/demo/bewust-met-ai-m3-beeld-3-eindcontrole.jpg, alt: "Beeld uit AI Wijzer: een medewerker controleert een prompt voordat hij hem verstuurt" }
     titel: "Wat het goede antwoord is, bepalen jullie afspraken"
     alineas:
-      - "In de demo werk je bij het fictieve bedrijf Northfield. In een versie voor jullie staat bij elke keuze wat jullie eigen afspraken zeggen: welke tools mogen, wat erin mag en wanneer iemand moet navragen. Dat beleid schrijven wij niet. Jullie leveren het aan, wij maken er situaties van."
-      - "Elke versie staat in Prepo, onze beheeromgeving, klaar om te testen. Je speelt en leest dus mee voordat een medewerker de module ziet. Draait hij, dan zie je wie hem heeft gedaan en waar mensen verkeerd kiezen. We beloven geen compliance. We zorgen dat mensen kunnen oefenen met wat jullie hebben afgesproken."
+      - "In de demo werk je bij het fictieve bedrijf Northfield. In een versie voor jullie staat bij elke keuze wat jullie eigen afspraken zeggen: welke tools mogen, wat erin mag en wanneer iemand moet navragen. Jullie leveren de afspraken aan, wij maken er situaties van."
+      - "Elke versie staat in Prepo, onze beheeromgeving, klaar om te testen. Je speelt en leest dus mee voordat een medewerker de module ziet. Draait hij, dan zie je wie hem heeft gedaan en waar mensen verkeerd kiezen. Wij beloven geen compliance; wel dat je kunt zien of de afspraken in de praktijk landen."
     vraag:
       id: ai-tools
       vraag: "Welke AI-tools mogen medewerkers bij jullie gebruiken?"
       antwoorden:
         - { waarde: een-tool, label: "Eén aangewezen tool", reactie: "Dan gaat de module over wat er in die tool wel en niet mag, met situaties uit jullie werk." }
         - { waarde: meerdere, label: "Meerdere, per taak verschillend", reactie: "Dan is de keuze voor de juiste tool zelf een situatie om te oefenen. Die kan erin." }
-        - { waarde: onbeslist, label: "Dat is nog niet besloten", reactie: "Dan is dat besluit de eerste stap. Wij maken het speelbaar als het er is; het beleid zelf schrijven we niet." }
+        - { waarde: onbeslist, label: "Dat is nog niet besloten", reactie: "Dan is dat besluit de eerste stap, en dat ligt bij jullie. Daarna maken wij het speelbaar." }
 
 probeer:
   type: dilemma
@@ -78,7 +78,7 @@ probeer:
       - { waarde: algemeen, label: "Ik haal vestiging en ziekte eruit en vraag algemeen advies", reactie: "Voor gespreksadvies heeft de assistent die details meestal niet nodig. Je deelt minder en krijgt toch een bruikbaar antwoord. Of dit bij jullie de bedoeling is, hangt af van de tool en van jullie afspraken." }
       - { waarde: interne-tool, label: "Ik gebruik de AI-tool die we intern mogen gebruiken", reactie: "Dat is vaak de eerste stap. De tweede vraag blijft: mag informatie over iemands gezondheid in die tool? In een versie voor jullie staat hier wat jullie afspraken daarover zeggen." }
       - { waarde: navragen, label: "Ik vraag het eerst na bij HR of privacy", reactie: "Dat kost tijd, en soms is het precies wat de afspraken vragen. Een medewerker moet weten wanneer navragen nodig is, en bij wie. Ook dat kun je oefenen." }
-  claim: "Dit dilemma is een voorbeeld en komt niet uit de demo. De demo speelt bij het fictieve bedrijf Northfield; een versie voor jullie gebruikt jullie eigen afspraken en situaties. Het beleid schrijven we niet."
+  claim: "Dit dilemma is een voorbeeld en komt niet uit de demo. In een versie voor jullie staat bij elke keuze wat jullie afspraken zeggen."
   demo:
     url: "https://learn.prepo.nl/demo-s/kt5MjzM1ReigJw7rCRDhztNg_l8j-IDX/index.html"
     label: "Speel de hele demo AI Wijzer"
@@ -86,18 +86,18 @@ probeer:
     noot: "Drie missies, zonder account. De demo opent in een nieuw tabblad; deze pagina blijft open."
   terug:
     titel: "Bedankt voor het spelen"
-    lead: "Je speelde bij Northfield. In een versie voor jullie staan jullie eigen afspraken, tools en situaties. Wil je weten hoe dat in jullie leerprogramma past? Stuur ons een bericht, of plan een verkennend gesprek van een half uur."
+    lead: "Je speelde bij Northfield. Een versie voor jullie gebruikt jullie eigen afspraken, tools en situaties. In een gesprek van een half uur kijken we waar hij in jullie programma past."
 
 stappen:
   items:
-    - titel: "We zoeken de situaties op"
-      tekst: "Met wie het programma organiseert en wie de inhoud toetst. Waar twijfelen medewerkers, en wat zeggen jullie afspraken daar?"
+    - titel: "We kiezen de situaties"
+      tekst: "In &lt;een of twee sessies van &lt;aantal&gt; uur&gt; met wie het programma organiseert en wie de inhoud toetst. Waar twijfelen medewerkers, en wat zeggen jullie afspraken daar?"
       beeld: { src: /assets/images/demo/bewust-met-ai-m2-beeld-3-profiel-verbanden.jpg, alt: "" }
-    - titel: "Wij maken er een MicroGame van"
-      tekst: "Eerst de leerdoelen, dan per leerdoel een opdracht met een keuze en feedback. We testen op laptop en telefoon; jullie testen mee in Prepo."
+    - titel: "Wij bouwen de module"
+      tekst: "Per leerdoel een opdracht met een keuze en feedback, zoals in de demo: &lt;aantal&gt; opdrachten, ongeveer &lt;aantal&gt; minuten speeltijd. Jullie testen mee in Prepo voordat een medewerker hem ziet."
       beeld: { src: /assets/images/demo/bewust-met-ai-m2-beeld-1-ai-instellingen.jpg, alt: "" }
-    - titel: "Hij draait in jullie leerplatform"
-      tekst: "Als SCORM-bestand, naast wat er al staat. De afronding per medewerker komt in jullie LMS binnen. Veranderen de afspraken, dan pas je de teksten zelf aan in Prepo en zet je een nieuwe versie klaar."
+    - titel: "Hij draait, jij ziet hoe er gekozen wordt"
+      tekst: "Als SCORM-bestand in jullie LMS, met de afronding per medewerker. In Prepo zie je per situatie hoe er gekozen is. Veranderen de afspraken, dan pas je de teksten zelf aan."
       beeld: { src: /assets/images/verhalen/prepo-overzicht.jpg, alt: "" }
 
 bewijs:
@@ -105,7 +105,7 @@ bewijs:
   beeld: { src: /assets/images/verhalen/nnvo-it-veiligheid.png, alt: "" }
   alineas:
     - "Bij &lt;opdrachtgever&gt; speelden &lt;aantal&gt; medewerkers de module. &lt;resultaat, bijvoorbeeld: het aandeel juiste keuzes bij de eindcontrole steeg van &lt;percentage&gt; naar &lt;percentage&gt;&gt;."
-    - "Preludens ontwerpt en ontwikkelt online trainingen voor opleiders, L&amp;D- en HR-teams, veiligheidsafdelingen en onderwijs. Deelnemers oefenen met situaties uit de praktijk en maken zelf keuzes."
+    - "Preludens maakt MicroGames: online oefeningen waarin mensen keuzes uit hun werk maken en direct feedback krijgen. We werken voor L&amp;D- en HR-teams, opleiders en veiligheidsafdelingen."
     - "<strong>AI Wijzer</strong> is de demo op deze pagina: drie missies en tien opdrachten bij het fictieve bedrijf Northfield, in het Nederlands en het Engels. Aan het eind pas je vier controles toe voordat je iets naar AI verstuurt."
     - "Samen met NNVO ontwikkelen we MicroGames over <strong>IT-veiligheid</strong>: herkenbare situaties waarin mensen zelf kiezen en meteen zien wat werkt. Met Climatools, 21CC Learning en Studium maakten we <strong>Basis Koeltechniek</strong>, negen MicroGames voor installatiemonteurs."
 
@@ -117,17 +117,17 @@ vragen:
   items:
     - { vraag: "We hebben al een catalogus of abonnement met AI-trainingen.", antwoord: "Dat blijft. Een catalogus legt uit wat AI is en wat in het algemeen verstandig is. Deze module gaat over jullie afspraken en over de situaties die bij jullie voorkomen. Onderzoek naar serious games wijst dezelfde kant op: ze leveren het meest op als ze andere instructie aanvullen (Wouters e.a., 2013)." }
     - { vraag: "Past het in ons LMS?", antwoord: "Ja. Je krijgt een SCORM-bestand voor je eigen leerplatform; de afronding per medewerker komt daar binnen. Zonder LMS gaat het via een link in Prepo, onze beheeromgeving, waar je deelname en voortgang ziet." }
-    - { vraag: "Kan het met ons eigen AI-beleid?", antwoord: "Ja, daar is het voor. Jullie weten welke tools mogen en wat er wel en niet in mag; wij maken daar situaties van. Het beleid zelf schrijven we niet. Is er nog geen beleid, dan is dat de eerste stap." }
+    - { vraag: "Kan het met ons eigen AI-beleid?", antwoord: "Ja, daar is het voor. Jullie weten welke tools mogen en wat er wel en niet in mag; wij maken daar situaties van. Het beleid zelf schrijven we niet." }
     - { vraag: "Wie keurt de inhoud goed?", antwoord: "Jullie. Wie bij jullie over AI, privacy of security gaat, toetst de situaties en de feedback aan de interne afspraken. Elke versie staat in Prepo klaar om te testen, dus meelezen kan voordat een medewerker de module ziet." }
     - { vraag: "Regelt dit onze AI-geletterdheid of compliance?", antwoord: "Nee, dat beloven we niet. Wat het wel doet: zorgen dat mensen weten wat ze moeten doen als ze een AI-tool openen, en laten zien waar ze nog verkeerd kiezen." }
     - { vraag: "Kunnen we dit niet zelf maken met AI?", antwoord: "Een quiz of een tekst wel. Wat wij erbij doen: de situaties en de keuzes ontwerpen, het testen met jullie medewerkers, en het beheer in Prepo, zodat de module bij blijft als de afspraken veranderen." }
     - { vraag: 'Is dit iets voor ons?', antwoord: "Het past het best bij organisaties die al een leerplatform of online trainingen hebben, en die AI-tools uitrollen of net afspraken over AI hebben gemaakt. Zijn er nog geen afspraken over wat wel en niet mag, dan is dat eerst aan jullie. Zonder leerplatform kan het ook, via een link in Prepo." }
     - { vraag: "Hoe lang duurt het voordat een module draait?", antwoord: "Van het eerste gesprek tot een module in jullie leerplatform duurt het &lt;aantal&gt; weken. Daarin zitten &lt;aantal&gt; testrondes met jullie. AI Wijzer zoals hij is, staat binnen &lt;aantal&gt; werkdagen klaar." }
-    - { vraag: "Waar begin je mee?", antwoord: "Met de demo. Daarna met één onderwerp in één module, voor één groep. Dan zie je hoe medewerkers erop reageren voordat je meer doet." }
+    - { vraag: "Waar begin je mee?", antwoord: "Met de demo. Daarna met één module over één onderwerp, voor één groep. Na een gesprek van een half uur krijg je een voorstel." }
 
 afspraak:
   titel: "Bespreek waar het in jullie programma past"
-  lead: "Kies hieronder een moment voor een verkennend gesprek van een half uur, online. We kijken naar het programma dat er al is, naar jullie afspraken en naar de eerste situatie die je wilt laten oefenen."
+  lead: "Een half uur, online. We kijken naar het programma dat er al is, jullie afspraken en de eerste situatie die medewerkers moeten oefenen. Daarna krijg je een voorstel."
 
 formulier:
   titel: "Of stuur ons een bericht"
