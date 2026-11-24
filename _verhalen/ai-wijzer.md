@@ -1,10 +1,10 @@
 ---
 lang: nl
 layout: default
-permalink: /verhalen/bewust-met-ai/
-title: "Speel de demo: Bewust met AI"
+permalink: /verhalen/ai-wijzer/
+title: "Speel de demo: AI Wijzer"
 description: >-
-  Speel gratis de MicroGame Bewust met AI. Je oefent welke persoonsgegevens en
+  Speel gratis de MicroGame AI Wijzer. Je oefent welke persoonsgegevens en
   bedrijfsinformatie je wel en niet met een AI-dienst deelt, en past vier
   controles toe voordat je een prompt verstuurt.
 body_class: page-panels page-demo
@@ -13,7 +13,7 @@ body_class: page-panels page-demo
 casus: ai-demo
 # Alleen Nederlands; de Engelse URL toont dezelfde Nederlandse pagina.
 sitemap_langs: [nl]
-project: Bewust met AI
+project: AI Wijzer
 type: demos
 featured: true
 quote: false
@@ -30,7 +30,7 @@ highlights:
 # De publieke link van de game, die in een nieuw tabblad opent (Prepo-project
 # "Pas op met Privacy", game "AI Bewust"). Zolang hij leeg is, wijst de
 # afspeelknop naar de video op deze pagina in plaats van naar een dode link.
-demo_url: ""
+demo_url: "https://learn.prepo.nl/demo-s/kt5MjzM1ReigJw7rCRDhztNg_l8j-IDX/index.html"
 
 # De video onder de hero. Leeg zolang de demovideo er niet is; dan staat het
 # blok "Liever eerst kijken?" er niet. file is de bestandsnaam in de bucket
@@ -38,8 +38,8 @@ demo_url: ""
 video:
   file: ""
   poster: /assets/images/demo/bewust-met-ai-titel.jpg
-  title: Bewust met AI (demopagina)
-  label: Video van de MicroGame Bewust met AI
+  title: AI Wijzer (demopagina)
+  label: Video van de MicroGame AI Wijzer
   caption: ""
   download_label: Download de video (mp4)
 
@@ -50,7 +50,7 @@ getuigenis:
   cite: ""
 ---
 {%- comment -%}
-  De demopagina van "Bewust met AI" (0263 in de microgames-repository). De
+  De demopagina van "AI Wijzer" (0263 in de microgames-repository). De
   leerdoelen en de opbouw komen uit het game design van die game
   (docs/0263-design-v2/game-design.md daar). Verandert de game, kijk dan of
   deze pagina nog klopt.
@@ -72,7 +72,7 @@ getuigenis:
   <div class="panel__inner">
     <div class="sp-hero-copy">
       <h3>Gratis demo</h3>
-      <h1>Bewust met AI: wat stuur je eigenlijk mee?</h1>
+      <h1>AI Wijzer: wat stuur je eigenlijk mee?</h1>
       <p class="sp-lead">Een AI-chatbot schrijft je mail in een minuut. Maar alles wat je erin plakt, gaat naar een dienstverlener: namen, klantgegevens, cijfers. In deze MicroGame oefen je welke informatie je wel en niet deelt.</p>
       <p class="sp-lead">Je werkt bij het fictieve bedrijf Northfield, met een mailbox en een chatbot zoals je ze van je werk kent. Drie missies, en aan het eind pas je <strong>vier controles</strong> toe voordat je iets naar AI verstuurt.</p>
       <div class="sp-actions">
@@ -98,7 +98,7 @@ getuigenis:
           <span class="sr-only">{% if demo_url != "" %}Start de demo (opent in een nieuw tabblad){% else %}Vraag de demo aan{% endif %}</span>
         </a>
       </div>
-      <figcaption>Het titelscherm van Bewust met AI</figcaption>
+      <figcaption>Het titelscherm van AI Wijzer</figcaption>
     </figure>
   </div>
 </section>
@@ -110,7 +110,7 @@ getuigenis:
 {%- endcomment -%}
 <div class="demo-return" id="na-de-demo" data-demo-return hidden>
 {% capture terug_lead %}Zo voelt het als je oefent in plaats van een beleidsdocument leest. Wil je dit ook voor jouw organisatie, met jullie eigen AI-beleid en jullie eigen situaties? Of een ander spel of e-learning die je mensen aan het werk zet? Laat je naam en een e-mailadres of telefoonnummer achter, dan nemen we contact met je op.{% endcapture %}
-{% include panels/form.html id="na-de-demo-formulier" casus=page.casus compact=true message="Wil contact na het spelen van de demo Bewust met AI" title="Bedankt voor het spelen" lead=terug_lead submit_label="Neem contact met me op" submit_note="Liever zelf bellen? 015 202 404 7" %}
+{% include panels/form.html id="na-de-demo-formulier" casus=page.casus compact=true message="Wil contact na het spelen van de demo AI Wijzer" title="Bedankt voor het spelen" lead=terug_lead submit_label="Neem contact met me op" submit_note="Liever zelf bellen? 015 202 404 7" %}
 </div>
 
 {%- comment -%} 3. De video, zodra die er is {%- endcomment -%}
@@ -161,7 +161,7 @@ getuigenis:
 {%- comment -%} 5. Het proces: wat een klant kan verwachten {%- endcomment -%}
 {% capture aanpak %}
 <h2>Zo maken we dit, ook voor jouw organisatie</h2>
-<p class="sp-lead sp-lead--center">Bewust met AI begon niet met een spel, maar met de vraag wat een medewerker moet kunnen voordat hij op verzenden klikt. Zo gaat het bij elk traject.</p>
+<p class="sp-lead sp-lead--center">AI Wijzer begon niet met een spel, maar met de vraag wat een medewerker moet kunnen voordat hij op verzenden klikt. Zo gaat het bij elk traject.</p>
 {% capture aanpak_items %}
 {% include panels/step.html num="01" title="We bepalen de leerdoelen, per niveau" text="Wat moet iemand onthouden, wat moet hij begrijpen en wat moet hij kunnen toepassen? Voor deze game werden dat acht leerdoelen, verdeeld over drie missies." %}
 {% include panels/step.html num="02" title="Elk leerdoel wordt een opdracht" text="Een leerdoel krijgt een situatie waarin je moet kiezen: lijnen trekken in een mailbox, verbanden leggen, een prompt inkorten. Zo werden het tien opdrachten." %}
@@ -229,7 +229,7 @@ getuigenis:
 {% include panels/panel.html variant="paper" id="vragen" body=vragen_body %}
 
 {%- comment -%} 9. Het formulier, voor iedereen, gespeeld of niet {%- endcomment -%}
-{% include panels/form.html id="contact" casus=page.casus compact=true message="Wil contact over de demo Bewust met AI" title="Wil je dit ook voor jouw organisatie?" lead="Een module over AI-gebruik met jullie eigen beleid, of een ander spel of e-learning die echt werkt. Laat je naam en een e-mailadres of telefoonnummer achter; we bellen of mailen je om te horen waar jouw mensen mee moeten oefenen." submit_label="Neem contact met me op" submit_note="Je krijgt een persoonlijk antwoord, geen nieuwsbrief." %}
+{% include panels/form.html id="contact" casus=page.casus compact=true message="Wil contact over de demo AI Wijzer" title="Wil je dit ook voor jouw organisatie?" lead="Een module over AI-gebruik met jullie eigen beleid, of een ander spel of e-learning die echt werkt. Laat je naam en een e-mailadres of telefoonnummer achter; we bellen of mailen je om te horen waar jouw mensen mee moeten oefenen." submit_label="Neem contact met me op" submit_note="Je krijgt een persoonlijk antwoord, geen nieuwsbrief." %}
 
 {% include panels/footer-reveal.html %}
 </div>

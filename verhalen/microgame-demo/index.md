@@ -7,12 +7,12 @@ permalink_lang:
   en: /verhalen/microgame-demo/
 sitemap: false
 robots: noindex, nofollow
-redirect_to: /verhalen/bewust-met-ai/
+redirect_to: /verhalen/ai-wijzer/
 ---
 {%- comment -%}
   De koeltechniekdemo heeft nog geen speelbare versie en staat op published: false. De URL kan
   nog in een zoekresultaat of vanaf de homepage zijn gedeeld, dus die loopt
-  door naar de demo Bewust met AI in plaats van op een 404 te stranden.
+  door naar de demo AI Wijzer in plaats van op een 404 te stranden.
 
   Haal dit bestand weg zodra _verhalen/microgame-demo.md weer gepubliceerd wordt;
   anders bezet deze redirect dezelfde permalink.
