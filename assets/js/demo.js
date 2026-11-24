@@ -5,9 +5,12 @@
    dan klapt onder de hero het blok "Bedankt voor het spelen" open, met het
    korte formulier, en scrolt de pagina ernaartoe.
 
-   "Na een tijdje" is MIN_SECONDS. Wie binnen een paar seconden terugklikt,
-   heeft nog niet gespeeld; dan blijft het blok dicht en blijft de stempel
-   staan, zodat het bij de volgende terugkeer alsnog opengaat.
+   "Na een tijdje" is MIN_SECONDS: net genoeg om het moment van openen zelf
+   over te slaan (sommige browsers geven de pagina nog even focus vlak na de
+   klik). Eerst stond hij op twintig seconden, maar wie de demo even bekijkt
+   en terugkomt, verwacht ook het formulier te zien. Komt iemand binnen die
+   paar seconden terug, dan blijft de stempel staan en gaat het blok bij de
+   volgende terugkeer open.
 
    Stuurt de demo zelf { preludens: "demo_complete" } met postMessage (via
    window.opener), dan gaat het blok ook open — zonder wachttijd. tracking.js
@@ -26,7 +29,7 @@
   if (!panel) return;
 
   var KEY = "preludens-demo-opened";
-  var MIN_SECONDS = 20;
+  var MIN_SECONDS = 5;
   var memory = null;
   var shown = false;
 
