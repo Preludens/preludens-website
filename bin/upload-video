@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#
+# Zet een video in de bucket van de site (map video/), openbaar leesbaar.
+# Sleutels komen uit .env in de repository-root (zie .env.example).
+#
+# Gebruik:  ./bin/upload-video pad/naar/film.mp4 [naam-in-bucket.mp4]
+# Daarna:   zet de naam in `video.file` van de pagina. Overschrijf je een bestaande
+#           film, zet dan `?v=` een nummer hoger (de bucket cachet een dag).
+
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+[ -f .env ] || { echo "Geen .env gevonden; kopieer .env.example naar .env en vul de sleutels in." >&2; exit 1; }
+set -a; . ./.env; set +a
+[ -n "${SCW_ACCESS_KEY:-}" ] && [ -n "${SCW_SECRET_KEY:-}" ] || { echo "SCW_ACCESS_KEY en SCW_SECRET_KEY staan nog leeg in .env." >&2; exit 1; }
+
+src="${1:?Gebruik: bin/upload-video <bestand.mp4> [naam-in-bucket.mp4]}"
+name="${2:-$(basename "$src")}"
+
+AWS_ACCESS_KEY_ID="$SCW_ACCESS_KEY" AWS_SECRET_ACCESS_KEY="$SCW_SECRET_KEY" \
+  aws s3 cp "$src" "s3://$SCW_BUCKET/video/$name" \
+  --endpoint-url "$SCW_ENDPOINT" --region "$SCW_REGION" \
+  --acl public-read --content-type video/mp4
+
+url="https://$SCW_BUCKET.s3.$SCW_REGION.scw.cloud/video/$name"
+code=$(curl -s -o /dev/null -w "%{http_code}" -I "$url")
+echo "$url → HTTP $code"
