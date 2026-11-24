@@ -70,7 +70,7 @@ rollen:
 probeer:
   type: dilemma
   titel: "Eén keuze, zoals je deelnemers die krijgen"
-  lead: "Kies zelf, en lees wat je er in een zaal mee doet. Daaronder speel je de hele demo AI Wijzer."
+  lead: "Kies zelf, en lees wat je er in een zaal mee doet. Daaronder speel je de hele demo: een stripverhaal over Joris, met AI Wijzer erin."
   dilemma:
     id: dilemma-ai-offerte
     situatie: "Een leverancier heeft een offerte gestuurd: twaalf pagina's met prijzen en voorwaarden. Over een uur wil je leidinggevende een samenvatting. Een AI-chatbot maakt die in een minuut."
@@ -82,10 +82,10 @@ probeer:
       - { waarde: navragen, label: "Ik vraag eerst na welke tool hiervoor mag", reactie: "Dat kost tijd, en het uur loopt. Bij de ene organisatie staat het antwoord in de afspraken, bij de andere weet niemand het. Welke van de twee het is, hoor je in de zaal." }
   claim: "Dit dilemma is een voorbeeld en komt niet uit de demo. Kiest je groep verschillend, dan begint daar het gesprek. In Prepo of in het LMS zie je per situatie hoe de groep koos."
   demo:
-    url: "https://learn.prepo.nl/demo-s/kt5MjzM1ReigJw7rCRDhztNg_l8j-IDX/index.html"
-    label: "Speel de hele demo AI Wijzer"
+    url: "https://learn.prepo.nl/demo-s/1knzJ0tBf7xENKTzVZQg7pCaKXx8qh3j/index.html"
+    label: "Speel de demo Pas op met Privacy"
     terugkeer: true
-    noot: "Drie missies, zonder account. De demo opent in een nieuw tabblad; deze pagina blijft open."
+    noot: "Een kort stripverhaal met de drie missies van AI Wijzer erin, zonder account. De demo opent in een nieuw tabblad; deze pagina blijft open."
   terug:
     titel: "Bedankt voor het spelen"
     lead: "Nu heb je gespeeld wat een deelnemer speelt. Wil je het in je volgende workshop of praktijkdag gebruiken? In een gesprek van een half uur kiezen we het moment en de vorm."
@@ -93,7 +93,7 @@ probeer:
 stappen:
   items:
     - titel: "Je speelt de demo zelf"
-      tekst: "Drie missies bij het fictieve bedrijf Northfield. Je ziet wat deelnemers doen en welke feedback ze krijgen."
+      tekst: "Een kort stripverhaal en drie missies bij het fictieve bedrijf Northfield. Je ziet wat deelnemers doen en welke feedback ze krijgen."
       beeld: { src: /assets/images/demo/bewust-met-ai-m3-beeld-3-eindcontrole.jpg, alt: "" }
     - titel: "We kiezen de vorm"
       tekst: "In een gesprek van een half uur: een groepslink voor AI Wijzer zoals hij is, of een versie op maat van je opdrachtgever. En het moment: vooraf, tijdens of erna."

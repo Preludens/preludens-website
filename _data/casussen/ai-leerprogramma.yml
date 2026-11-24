@@ -68,7 +68,7 @@ rollen:
 probeer:
   type: dilemma
   titel: "Probeer eerst één keuze"
-  lead: "Zo ziet een keuze eruit zoals medewerkers die in een MicroGame krijgen. Daaronder speel je de hele demo AI Wijzer."
+  lead: "Zo ziet een keuze eruit zoals medewerkers die in een MicroGame krijgen. Daaronder speel je de hele demo: een stripverhaal over Joris, met AI Wijzer erin."
   dilemma:
     id: dilemma-ai-gesprek
     situatie: "Je bent teamleider. Morgen heb je een lastig gesprek met een medewerker, en je wilt de AI-assistent om advies vragen. Een naam typ je niet. Wel dit: de enige planner op de vestiging Zwolle, sinds maart terug na ziekte."
@@ -80,10 +80,10 @@ probeer:
       - { waarde: navragen, label: "Ik vraag het eerst na bij HR of privacy", reactie: "Dat kost tijd, en soms is het precies wat de afspraken vragen. Een medewerker moet weten wanneer navragen nodig is, en bij wie. Ook dat kun je oefenen." }
   claim: "Dit dilemma is een voorbeeld en komt niet uit de demo. In een versie voor jullie staat bij elke keuze wat jullie afspraken zeggen."
   demo:
-    url: "https://learn.prepo.nl/demo-s/kt5MjzM1ReigJw7rCRDhztNg_l8j-IDX/index.html"
-    label: "Speel de hele demo AI Wijzer"
+    url: "https://learn.prepo.nl/demo-s/1knzJ0tBf7xENKTzVZQg7pCaKXx8qh3j/index.html"
+    label: "Speel de demo Pas op met Privacy"
     terugkeer: true
-    noot: "Drie missies, zonder account. De demo opent in een nieuw tabblad; deze pagina blijft open."
+    noot: "Een kort stripverhaal met de drie missies van AI Wijzer erin, zonder account. De demo opent in een nieuw tabblad; deze pagina blijft open."
   terug:
     titel: "Bedankt voor het spelen"
     lead: "Je speelde bij Northfield. Een versie voor jullie gebruikt jullie eigen afspraken, tools en situaties. In een gesprek van een half uur kijken we waar hij in jullie programma past."
