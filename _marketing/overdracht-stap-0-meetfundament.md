@@ -535,3 +535,30 @@ in beide talen (`form.success_text` in `_data/nl.yml` en `_data/en.yml`).
 **Beslissing J loopt.** Een aparte sessie schrijft de privacyverklaring voor
 `/privacy/` en `/en/privacy/`, met links vanuit de footer en de cookiebanner. Tot
 die er staat, verwijst de banner nergens naar.
+
+## Google Ads en de tweede livegang (24 november 2026)
+
+**Er is een Google Ads-account: 192-444-7942**, op info@preludens.nl, Nederland,
+euro, tijd in Nederland. Aangemaakt zonder campagne, dus er staat nog geen budget
+en er loopt niets. Het betaalprofiel heeft Jan-Willem zelf ingevuld.
+
+- **GA4 is gekoppeld** aan het Ads-account (koppeling 16404297786).
+  Statistieken importeren staat aan. Doelgroepen importeren en gepersonaliseerd
+  adverteren staan **uit**: remarketing valt buiten wat de privacyverklaring nu
+  zegt. Zet je dat later aan, pas dan eerst die verklaring aan.
+- **`form_submit` is een conversie in Google Ads**, geïmporteerd uit GA4:
+  *preludens.nl (web) form_submit*, primair, één conversie per klik,
+  doorklikperiode 90 dagen, data-driven attributie. De categorie is *Contact*,
+  want "leadformulier" stond niet in de lijst. Het doel *Contactmoment* is
+  daarmee een accountstandaard, dus nieuwe campagnes bieden er vanzelf op.
+  Een Google Ads-tag op de site is niet nodig: de conversie loopt via GA4.
+- Bedrijfsprofiel en telefoonconversies zijn niet gekoppeld. De voorgestelde
+  conversies `cta_click` en `mailto_click` zijn niet overgenomen.
+
+**`production` staat op 85b6ee2.** Daarmee staan `url_passthrough` uit en de
+localhost-uitzondering live, net als variant D en de persona-reviews op de vier
+casuspagina's. De nieuwe homepagetekst (d81c547) staat bewust nog alleen op
+`main`.
+
+**Nog open:** het filter voor intern verkeer staat nog op *Testen*, en de demo-URL
+(beslissing F) ontbreekt nog.
