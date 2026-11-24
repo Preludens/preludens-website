@@ -538,6 +538,20 @@ die er staat, verwijst de banner nergens naar.
 
 ## Google Ads en de tweede livegang (24 november 2026)
 
+**Hoofdaccount is Preludens B.V., 350-202-4858**, op jan-willem@preludens.nl.
+Daar zit de promotiecode op, dus daar draaien de advertenties. Ingericht op 24
+november: GA4 gekoppeld (koppeling 16404644938, door jan-willem@preludens.nl,
+gepersonaliseerd adverteren uit, autotagging aan) en `form_submit`
+geïmporteerd als primaire conversie, categorie *Contact*. Het doel
+*Contactmoment* is accountstandaard en hangt aan de ene campagne die er staat.
+Daarnaast staat er een telefoonconversie (*Lead van telefoongesprek*) die bij
+het aanmaken van het account is meegekomen. Om de koppeling te kunnen maken
+heeft jan-willem@preludens.nl in GA4 de rol Bewerker op de property gekregen.
+
+Wat hieronder over 192-444-7942 staat, is het eerste account, op
+info@preludens.nl. Dat is niet meer het hoofdaccount, maar het staat nog wel
+aan GA4 gekoppeld.
+
 **Er is een Google Ads-account: 192-444-7942**, op info@preludens.nl, Nederland,
 euro, tijd in Nederland. Aangemaakt zonder campagne, dus er staat nog geen budget
 en er loopt niets. Het betaalprofiel heeft Jan-Willem zelf ingevuld.
