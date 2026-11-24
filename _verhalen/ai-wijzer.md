@@ -36,12 +36,19 @@ demo_url: "https://learn.prepo.nl/demo-s/kt5MjzM1ReigJw7rCRDhztNg_l8j-IDX/index.
 # blok "Liever eerst kijken?" er niet. file is de bestandsnaam in de bucket
 # van site.media_base, poster een pad in de site.
 video:
-  file: ""
-  poster: /assets/images/demo/bewust-met-ai-titel.jpg
+  file: ai-wijzer-explainer.mp4
+  poster: /assets/images/demo/ai-wijzer-video-poster.jpg
   title: AI Wijzer (demopagina)
-  label: Video van de MicroGame AI Wijzer
-  caption: ""
-  download_label: Download de video (mp4)
+  label: >-
+    Explainer van AI Wijzer: Joris staat op het punt een prompt met het definitieve bod
+    te versturen, daarna mails beoordelen, de keten van een AI-dienst bouwen, profielen
+    puzzelen en de meters voor context en gevoeligheid
+  caption: >-
+    Een kleine anderhalve minuut uit het spel. Joris wil een prompt met het definitieve bod
+    versturen. Daartussen zie je wat je in de drie missies doet: informatie in mails
+    herkennen, de weg van je invoer door een AI-dienst volgen en zelf een prompt
+    voorbereiden, met meteen feedback als je verkeerd kiest.
+  download_label: Download de video (mp4, 6,3 MB)
 
 # Een citaat van een opdrachtgever of speler. Alleen invullen met een echte
 # uitspraak, met naam en functie; zolang text leeg is, staat er geen citaat.
