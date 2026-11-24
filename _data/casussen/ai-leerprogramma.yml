@@ -104,10 +104,14 @@ bewijs:
   titel: "Wie we zijn en wat we eerder maakten"
   beeld: { src: /assets/images/verhalen/nnvo-it-veiligheid.png, alt: "" }
   alineas:
+    - "Bij &lt;opdrachtgever&gt; speelden &lt;aantal&gt; medewerkers de module. &lt;resultaat, bijvoorbeeld: het aandeel juiste keuzes bij de eindcontrole steeg van &lt;percentage&gt; naar &lt;percentage&gt;&gt;."
     - "Preludens ontwerpt en ontwikkelt online trainingen voor opleiders, L&amp;D- en HR-teams, veiligheidsafdelingen en onderwijs. Deelnemers oefenen met situaties uit de praktijk en maken zelf keuzes."
     - "<strong>AI Wijzer</strong> is de demo op deze pagina: drie missies en tien opdrachten bij het fictieve bedrijf Northfield, in het Nederlands en het Engels. Aan het eind pas je vier controles toe voordat je iets naar AI verstuurt."
     - "Samen met NNVO ontwikkelen we MicroGames over <strong>IT-veiligheid</strong>: herkenbare situaties waarin mensen zelf kiezen en meteen zien wat werkt. Met Climatools, 21CC Learning en Studium maakten we <strong>Basis Koeltechniek</strong>, negen MicroGames voor installatiemonteurs."
 
+  citaat:
+    tekst: "&lt;Citaat van een L&amp;D-adviseur of opleidingsmanager over wat de module opleverde.&gt;"
+    bron: "&lt;Naam&gt;, &lt;functie&gt; bij &lt;organisatie&gt;"
 vragen:
   label: "Vragen over AI Wijzer in een leerprogramma"
   items:
@@ -118,6 +122,7 @@ vragen:
     - { vraag: "Regelt dit onze AI-geletterdheid of compliance?", antwoord: "Nee, dat beloven we niet. Wat het wel doet: zorgen dat mensen weten wat ze moeten doen als ze een AI-tool openen, en laten zien waar ze nog verkeerd kiezen." }
     - { vraag: "Kunnen we dit niet zelf maken met AI?", antwoord: "Een quiz of een tekst wel. Wat wij erbij doen: de situaties en de keuzes ontwerpen, het testen met jullie medewerkers, en het beheer in Prepo, zodat de module bij blijft als de afspraken veranderen." }
     - { vraag: 'Is dit iets voor ons?', antwoord: "Het past het best bij organisaties die al een leerplatform of online trainingen hebben, en die AI-tools uitrollen of net afspraken over AI hebben gemaakt. Zijn er nog geen afspraken over wat wel en niet mag, dan is dat eerst aan jullie. Zonder leerplatform kan het ook, via een link in Prepo." }
+    - { vraag: "Hoe lang duurt het voordat een module draait?", antwoord: "Van het eerste gesprek tot een module in jullie leerplatform duurt het &lt;aantal&gt; weken. Daarin zitten &lt;aantal&gt; testrondes met jullie. AI Wijzer zoals hij is, staat binnen &lt;aantal&gt; werkdagen klaar." }
     - { vraag: "Waar begin je mee?", antwoord: "Met de demo. Daarna met één onderwerp in één module, voor één groep. Dan zie je hoe medewerkers erop reageren voordat je meer doet." }
 
 afspraak:

@@ -106,16 +106,22 @@ bewijs:
   titel: "Wie we zijn en wat we eerder maakten"
   beeld: { src: /assets/images/verhalen/basis-koeltechniek-video-poster.jpg, alt: "Titelbeeld van Basis Koeltechniek" }
   alineas:
+    - "&lt;Trainer of opdrachtgever&gt; zette AI Wijzer in bij &lt;workshop of praktijkdag&gt; met &lt;aantal&gt; deelnemers. &lt;resultaat, bijvoorbeeld wat de trainer vooraf zag en anders deed in de zaal&gt;."
     - "Preludens ontwerpt en ontwikkelt online trainingen voor opleiders, L&amp;D- en HR-teams, veiligheidsafdelingen en onderwijs. Deelnemers oefenen met situaties uit de praktijk en maken zelf keuzes."
     - "21CC Education kwam bij ons omdat hun praktijkdagen meer moesten opleveren, en daar hoorde een voorbereiding vooraf bij. Met hen en Studium maakten we <strong>CO Wijzer</strong>, waarmee monteurs vóór de praktijkdag oefenen. Met Climatools, 21CC Learning en Studium volgde <strong>Basis Koeltechniek</strong>: negen MicroGames voor installatiemonteurs."
     - "<strong>AI Wijzer</strong> is de demo op deze pagina: drie missies en tien opdrachten over wat je wel en niet met een AI-dienst deelt, in het Nederlands en het Engels. Samen met NNVO ontwikkelen we MicroGames over <strong>IT-veiligheid</strong>."
 
+  citaat:
+    tekst: "&lt;Citaat van een trainer over hoe de groep op de MicroGame reageerde.&gt;"
+    bron: "&lt;Naam&gt;, &lt;trainer of facilitator&gt;, &lt;eigen bedrijf&gt;"
 vragen:
   label: "Vragen van trainers over AI Wijzer"
   items:
     - { vraag: "Kan ik de demo in mijn eigen workshop gebruiken?", antwoord: "Speel hem eerst zelf, en laat ons weten wat je van plan bent. Dan kijken we samen hoe je hem met een groep inzet. Met een eigen link in Prepo zie je ook hoe de groep koos." }
     - { vraag: "Past het vóór, tijdens of na de sessie?", antwoord: "Alle drie kan. Vooraf zie je waar de groep staat. Tijdens de sessie is het een opstap naar het gesprek. Erna is het een vervolgopdracht voor als deelnemers weer aan het werk zijn." }
     - { vraag: "Wat neem ik dan precies af?", antwoord: "Er zijn twee vormen. AI Wijzer zoals hij is, met een eigen link in Prepo voor jouw groep, zodat je ziet hoe de groep koos. Of een versie op maat van je opdrachtgever, met diens afspraken en situaties. Welke past, hangt af van je opdracht; dat bespreken we in het eerste gesprek." }
+    - { vraag: "Wat kost het?", antwoord: "AI Wijzer met een eigen groepslink kost &lt;bedrag&gt; per &lt;deelnemer, groep of sessie&gt;, inclusief het groepsoverzicht in Prepo. Een versie op maat van je opdrachtgever begint bij &lt;bedrag&gt;, afhankelijk van het aantal situaties. &lt;Eventueel: trainers krijgen &lt;percentage&gt; korting als ze het in hun eigen aanbod opnemen.&gt;" }
+    - { vraag: "Hoe snel kan ik het gebruiken?", antwoord: "Een groepslink voor AI Wijzer staat binnen &lt;aantal&gt; werkdagen klaar. Een versie op maat duurt &lt;aantal&gt; weken, met &lt;aantal&gt; testrondes. Staat je workshop al gepland, noem dan de datum, dan kijken we wat haalbaar is." }
     - { vraag: "Wie betaalt: ik of mijn opdrachtgever?", antwoord: "Dat verschilt per opdracht. Soms neemt een trainer het op in zijn eigen programma, soms neemt de opdrachtgever het af voor zijn medewerkers. We denken mee over wat bij jouw opdracht past." }
     - { vraag: "Kan het op maat van mijn opdrachtgever?", antwoord: "Ja. In de demo werk je bij het fictieve Northfield. In een versie op maat staan de afspraken, de toegestane tools en de situaties van die organisatie. De organisatie levert de afspraken aan; het beleid schrijven wij niet." }
     - { vraag: "Zie ik wat de groep koos?", antwoord: "Ja, als je groep via Prepo of het LMS van je opdrachtgever speelt: per persoon wie het deed, en per situatie hoe de groep koos. Via de openbare demolink op deze pagina zie je dat niet." }

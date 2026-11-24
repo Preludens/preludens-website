@@ -29,10 +29,14 @@ De kopij schreef Fable 5.2 in `_data/casussen/ai-leerprogramma.yml` en `ai-train
 
 **Sjabloon.** `probeer.demo.terugkeer: true` opent de demo in een nieuw tabblad. Komt de bezoeker terug, dan klapt onder het probeerblok "Bedankt voor het spelen" open met **Stuur ons een bericht** en **Plan direct een afspraak**, zoals in Daans route. Het gedrag komt uit `assets/js/demo.js` (event `demo_return`).
 
-**Nog open:**
+**Plekhouders.** Wat we nog niet weten, staat als `<…>` op de pagina, zichtbaar voor de bezoeker. Zoek ze met `grep -n "&lt;" _data/casussen/ai-*.yml`, en vul ze in vóór de livegang:
 
-- Er staan geen resultaten of citaten van klanten op (punten 17 en 19). Die verzinnen we niet.
-- Wat een trainer afneemt en hoe dat werkt met licenties of prijzen, is nog niet besloten. De FAQ noemt twee vormen zonder prijs.
+- een resultaat in het bewijsblok (beide pagina's);
+- een citaat met naam en functie (`bewijs.citaat`, nieuw in het sjabloon; leeg laten = geen citaat);
+- de doorlooptijd (vraag "Hoe lang duurt het…" en "Hoe snel kan ik het gebruiken?");
+- de prijs voor trainers ("Wat kost het?"). Let op: dit wijkt af van het besluit van 12 november om geen prijzen te noemen. Haal de vraag weg als dat besluit blijft staan.
+
+**Nog open:**
 - De bevestigingsmail met onepager uit Daans route staat er niet in zolang die niet live is.
 - Hoe lang een traject duurt, staat er niet.
 - Beide pagina's staan op `noindex` en buiten de sitemap.

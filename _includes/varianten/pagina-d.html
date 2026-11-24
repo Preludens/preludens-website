@@ -216,6 +216,9 @@
 {%- for alinea in d.bewijs.alineas %}
 <p class="sp-lead">{{ alinea }}</p>
 {%- endfor %}
+{%- if d.bewijs.citaat and d.bewijs.citaat.tekst != "" %}
+{% include panels/quote.html text=d.bewijs.citaat.tekst cite=d.bewijs.citaat.bron variant="aside" %}
+{%- endif %}
 {% endcapture %}
 {% capture bewijs %}
 {% include panels/media.html src=d.bewijs.beeld.src alt=d.bewijs.beeld.alt ratio="16 / 9" angle=true body=bewijs_body %}
