@@ -30,7 +30,7 @@ highlights:
 # De publieke link van de game, die in een nieuw tabblad opent (Prepo-project
 # "Pas op met Privacy", game "AI Bewust"). Zolang hij leeg is, wijst de
 # afspeelknop naar de video op deze pagina in plaats van naar een dode link.
-demo_url: "https://learn.prepo.nl/demo-s/kt5MjzM1ReigJw7rCRDhztNg_l8j-IDX/index.html"
+demo_url: "https://learn.prepo.nl/demo-s/1knzJ0tBf7xENKTzVZQg7pCaKXx8qh3j/index.html"
 
 # De video onder de hero. Leeg zolang de demovideo er niet is; dan staat het
 # blok "Liever eerst kijken?" er niet. file is de bestandsnaam in de bucket
