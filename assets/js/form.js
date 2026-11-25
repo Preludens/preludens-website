@@ -205,6 +205,10 @@
         return item.value !== "";
       });
       fields.push({ name: "casus", value: casus });
+      /* Leadbron is een keuzelijst in HubSpot; "Contactformulier" is de interne
+         waarde van die optie. Het veld staat verborgen in het formulier, want
+         de Forms API vult geen standaardwaarden in: alleen wat hier meegaat. */
+      fields.push({ name: "leadbron", value: "Contactformulier" });
 
       var payload = {
         fields: fields,
