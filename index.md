@@ -73,7 +73,6 @@ permalink_lang:
 {% include home/bewijs.html %}
 
 {% capture team_body %}
-<span class="sp-eyebrow">Het team</span>
 <h2>De mensen achter Preludens</h2>
 <p class="sp-lead">
   Preludens bouwt voort op meer dan vijftien jaar ervaring in serious games. Storytelling, game design en didactiek zitten bij ons aan dezelfde tafel. Je werkt rechtstreeks met de ontwerpers en ontwikkelaars die je project uitvoeren. Zo wordt complexe kennis een leerervaring waarin mensen zelf kiezen en oefenen.

@@ -54,7 +54,6 @@ body_class: page-home page-panels
 {% include panels/cta.html kicker="No obligation · no commitments · a reply within one working day" title="Take the first step tomorrow" left=warm_left right=warm_right primary_label="Plan a GameStorm" primary_href="/gamestorm/" secondary_label="Discover Play" secondary_href="/play/" %}
 
 {% capture proof_body %}
-<span class="sp-eyebrow">Proven in practice</span>
 <h2>From challenge to playable learning experience</h2>
 <p class="sp-lead">
   From nautical supervision to the energy transition: every project starts with a challenge that asks for
@@ -107,7 +106,6 @@ body_class: page-home page-panels
 {% include panels/panel.html variant="mist" body=quote_body %}
 
 {% capture team_body %}
-<span class="sp-eyebrow">The team</span>
 <h2>The people behind Preludens</h2>
 <p class="sp-lead">
   Preludens combines more than fifteen years of experience in serious games with storytelling,

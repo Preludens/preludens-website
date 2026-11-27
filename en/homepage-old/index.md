@@ -212,17 +212,6 @@ robots: noindex, nofollow
   .sp-panel--warm::after  { background-image: url("{{ '/assets/images/panels/cta.svg' | relative_url }}"); }
 
   /* Typografie inside panels */
-  .sp-eyebrow {
-    display: inline-block;
-    font-family: var(--font-display);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--color-gold);
-    margin-bottom: var(--space-sm);
-  }
-  .sp-panel--cream .sp-eyebrow { color: var(--color-harbor-teal); }
 
   .sp-panel h2 {
     font-family: var(--font-display);
@@ -417,7 +406,6 @@ robots: noindex, nofollow
     background-image: radial-gradient(ellipse at 18% 22%, rgba(237, 167, 14, 0.12), transparent 48%);
     color: var(--color-ink);
   }
-  .sp-panel--testimonial .sp-eyebrow { color: var(--color-harbor-teal); }
 
   /* B5: bloktitel boven carousel — h2 voor SEO, visueel als blok-H1 */
   .sp-panel--testimonial > .sp-inner > h2 {
@@ -638,7 +626,6 @@ robots: noindex, nofollow
   <!-- 1. Hero -->
   <section class="sp-panel sp-panel--hero" data-sp="0">
     <div class="sp-inner">
-      <p class="sp-eyebrow">Challenge · Activate · Motivate</p>
       <h1>Activate your team and challenge them to explore the <span class="hl">future</span>.</h1>
       <p class="sp-lead">
         Preludens uses storytelling and game-based learning to challenge teams, activate them and let them explore
@@ -673,7 +660,6 @@ robots: noindex, nofollow
   <!-- 2. Online focus -->
   <section class="sp-panel sp-panel--cream" data-sp="1">
     <div class="sp-inner">
-      <span class="sp-eyebrow">Online focus</span>
       <h2>Interactive stories that challenge, activate and motivate teams</h2>
       <p class="sp-lead">
         At Preludens we believe online learning only works when people become actively engaged. That is why we design
@@ -708,7 +694,6 @@ robots: noindex, nofollow
   <!-- 3. Services -->
   <section class="sp-panel sp-panel--navy" data-sp="2">
     <div class="sp-inner">
-      <span class="sp-eyebrow">What we do</span>
       <h2>Learning experiences with story, play and impact</h2>
       <div class="sp-cards">
         <article class="card card--coral">
@@ -766,7 +751,6 @@ robots: noindex, nofollow
   <!-- 5. Stories — proof from practice -->
   <section class="sp-panel sp-panel--verhalen" data-sp="4" data-title="Stories from practice">
     <div class="sp-inner">
-      <span class="sp-eyebrow">Proven in practice</span>
       <h2>From challenge to playable learning experience</h2>
       <p class="sp-lead">
         From nautical supervision to the energy transition: every project starts with a challenge that asks for
@@ -863,7 +847,6 @@ robots: noindex, nofollow
   <!-- 7. Team -->
   <section class="sp-panel sp-panel--team" data-sp="6" data-title="The team">
     <div class="sp-inner">
-      <span class="sp-eyebrow">The team</span>
       <h2>The people behind Preludens</h2>
       <p class="sp-lead">
         Preludens combines more than fifteen years of experience in serious games with storytelling, game design,

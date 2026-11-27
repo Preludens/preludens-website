@@ -2,17 +2,6 @@
    Light paper and mist only. Scoped so the snap page keeps its own inline rules. */
 
 body.page-panels {
-  .sp-eyebrow {
-    display: inline-block;
-    margin: 0 0 var(--space-sm);
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    line-height: 1.25;
-    text-transform: uppercase;
-    color: var(--color-ink);
-  }
 
   .sp-steps li {
     background: var(--color-mist-blue);

@@ -14,7 +14,6 @@ body_class: page-verhalen-test
 <section class="hero-banner hero-banner--dark" style="--hero-bg: url('{{ '/assets/images/hero/verhalen-hero.jpg' | relative_url }}');">
   <div class="container">
     <div class="hero-banner__inner">
-      <p class="hero-banner__eyebrow">Inspiratie</p>
       <h1>Verhalen die teams <span class="hl">in beweging</span> zetten</h1>
       <hr class="hero-banner__accent">
       <p class="hero-banner__lead">

@@ -22,13 +22,6 @@ robots: noindex, nofollow
     hyphens: manual;
   }
 
-  .sp-panel--cream > .sp-inner > .sp-eyebrow,
-  .sp-panel--band > .sp-inner > .sp-eyebrow {
-    display: block;
-    text-align: center;
-  }
-  .sp-panel--band .sp-eyebrow { color: var(--color-harbor-teal); }
-
   .sp-split {
     display: grid;
     grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 26rem);
@@ -171,7 +164,6 @@ robots: noindex, nofollow
 
   <section class="sp-panel sp-panel--cream" id="magische-cirkel" data-sp="1">
     <div class="sp-inner">
-      <span class="sp-eyebrow">Take your team out of survival mode</span>
       <h2>Play: the magic circle of <span class="hl">learning</span></h2>
       <div class="sp-focus-copy">
         <p class="sp-lead">
@@ -202,7 +194,6 @@ robots: noindex, nofollow
     <div class="sp-inner">
       <div class="sp-split">
         <div>
-          <span class="sp-eyebrow">Homo Ludens: the playing human</span>
           <h2>Play according to <span class="hl">Huizinga</span></h2>
           <p class="sp-lead">
             Johan Huizinga did not see play as a distraction, but as a fundamental way in which people give meaning to
@@ -231,7 +222,6 @@ robots: noindex, nofollow
 
   <section class="sp-panel sp-panel--band" data-sp="3">
     <div class="sp-inner">
-      <span class="sp-eyebrow">What it delivers</span>
       <h2>What Play <span class="hl">delivers</span></h2>
       <ul class="sp-pain-points sp-pain-points--pairs">
         <li>
@@ -258,7 +248,6 @@ robots: noindex, nofollow
     <div class="sp-inner">
       <div class="sp-split sp-split--start">
         <div>
-          <span class="sp-eyebrow">We use Play more often than we think</span>
           <h2>Why Play also belongs in your daily <span class="hl">work</span></h2>
           <p class="sp-lead">
             We practise conversations before they happen. We turn repeating tasks into small challenges. We try
@@ -288,7 +277,6 @@ robots: noindex, nofollow
 
   <section class="sp-panel sp-panel--verhalen" data-sp="5">
     <div class="sp-inner">
-      <span class="sp-eyebrow">Homo Ludens: the playing human</span>
       <h2>How Preludens uses <span class="hl">Play</span></h2>
       <p class="sp-lead">
         We do not add play afterwards as a layer on top of the content. We start from reality. Every

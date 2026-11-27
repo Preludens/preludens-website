@@ -77,7 +77,7 @@ Brand palette (CSS: `assets/css/main.scss`):
 | prussian-blue | `#011C42` | Hero-achtergrond, footer, quote-blokken |
 | regal-navy | `#123763` | Koppen, donkere UI (`--color-ink`) |
 | dusk-blue | `#37547E` | Bodytekst, secundaire accenten (`--color-ink-soft`) |
-| sandy-brown | `#FCA653` | Warm accent, labels, hero-eyebrows (`--color-gold`) |
+| sandy-brown | `#FCA653` | Warm accent, labels (`--color-gold`) |
 
 Use semantic color tokens. Never hardcode hex values in components.
 - **primary**: `#123763` — use as `var(--color-ink)` / `var(--hs-color-primary)`

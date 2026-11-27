@@ -22,13 +22,6 @@ robots: noindex, nofollow
     hyphens: manual;
   }
 
-  .sp-panel--cream > .sp-inner > .sp-eyebrow,
-  .sp-panel--band > .sp-inner > .sp-eyebrow {
-    display: block;
-    text-align: center;
-  }
-  .sp-panel--band .sp-eyebrow { color: var(--color-harbor-teal); }
-
   .sp-split {
     display: grid;
     grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 26rem);
@@ -171,7 +164,6 @@ robots: noindex, nofollow
 
   <section class="sp-panel sp-panel--cream" id="magische-cirkel" data-sp="1">
     <div class="sp-inner">
-      <span class="sp-eyebrow">Haal je team uit de overlevingsstand</span>
       <h2>Play: de magische cirkel van <span class="hl">leren</span></h2>
       <div class="sp-focus-copy">
         <p class="sp-lead">
@@ -202,7 +194,6 @@ robots: noindex, nofollow
     <div class="sp-inner">
       <div class="sp-split">
         <div>
-          <span class="sp-eyebrow">Homo Ludens: de spelende mens</span>
           <h2>Play volgens <span class="hl">Huizinga</span></h2>
           <p class="sp-lead">
             Johan Huizinga zag spel niet als afleiding, maar als een fundamentele manier waarop mensen betekenis geven aan
@@ -231,7 +222,6 @@ robots: noindex, nofollow
 
   <section class="sp-panel sp-panel--band" data-sp="3">
     <div class="sp-inner">
-      <span class="sp-eyebrow">Wat het oplevert</span>
       <h2>Wat Play <span class="hl">oplevert</span></h2>
       <ul class="sp-pain-points sp-pain-points--pairs">
         <li>
@@ -258,7 +248,6 @@ robots: noindex, nofollow
     <div class="sp-inner">
       <div class="sp-split sp-split--start">
         <div>
-          <span class="sp-eyebrow">We gebruiken Play vaker dan we denken</span>
           <h2>Waarom Play ook in je dagelijkse <span class="hl">werk</span> thuishoort</h2>
           <p class="sp-lead">
             We oefenen gesprekken voordat ze plaatsvinden. We maken kleine uitdagingen van herhalende taken. We proberen
@@ -288,7 +277,6 @@ robots: noindex, nofollow
 
   <section class="sp-panel sp-panel--verhalen" data-sp="5">
     <div class="sp-inner">
-      <span class="sp-eyebrow">Homo Ludens: de spelende mens</span>
       <h2>Hoe Preludens <span class="hl">Play</span> inzet</h2>
       <p class="sp-lead">
         Wij voegen spel niet achteraf toe als laagje over de inhoud. We beginnen bij de werkelijkheid. In elk
